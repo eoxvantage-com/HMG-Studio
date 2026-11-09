@@ -1,0 +1,28 @@
+{
+  "actor": "qa_hmg_inbox_20261106",
+  "fixture": {
+    "id": "275aeb92-a8ae-5021-b639-7a0fc9050631",
+    "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+    "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a",
+    "title": "Synthetic inventory review ready",
+    "message": "Review the sample stone catalog. SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+    "type": "info",
+    "priority": "normal",
+    "action_url": "/inventory",
+    "read_at": null,
+    "created_at": "2026-11-06T17:00:00Z"
+  },
+  "mcp_readback_verified": true,
+  "normal_read_http": 400,
+  "normal_read": {
+    "status": "error",
+    "message": "Data type error",
+    "code": "VALIDATION_ERROR",
+    "detail": "Invalid value 'q' for type uuid. Please provide a valid uuid value.",
+    "errors": {
+      "detail": [
+        "Data type error"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1815 @@
+{
+  "route": "/api/apps/hmg-studio/check/resources/",
+  "body": {
+    "resources": [
+      {
+        "resource": {
+          "kind": "datatable:product_supplier",
+          "id": "cb21aa4f-b2ab-590b-b7e0-7a288d18ed85",
+          "attr": {
+            "id": "cb21aa4f-b2ab-590b-b7e0-7a288d18ed85",
+            "product_id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+            "supplier_id": "3cbfe2a1-9ff3-5714-b3d4-33b624990a0f",
+            "cost_price": "600.00",
+            "is_primary": true,
+            "created_at": "2026-05-01T00:00:00Z",
+            "updated_at": "2026-05-01T00:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:product_supplier",
+          "id": "2751b366-6330-5fcc-9368-5e8f635ba265",
+          "attr": {
+            "id": "2751b366-6330-5fcc-9368-5e8f635ba265",
+            "product_id": "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+            "supplier_id": "badd9e98-0fa5-5def-8c9b-08b8a5a4e752",
+            "cost_price": "750.00",
+            "is_primary": true,
+            "created_at": "2026-05-01T00:00:00Z",
+            "updated_at": "2026-05-01T00:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:product_supplier",
+          "id": "f0eaf954-1178-5a6e-9349-ed391db4d9ec",
+          "attr": {
+            "id": "f0eaf954-1178-5a6e-9349-ed391db4d9ec",
+            "product_id": "3b609029-5b0a-57c4-95de-cdf2df54b94f",
+            "supplier_id": "8ad2b991-1813-5165-a61c-817984cf5c0b",
+            "cost_price": "900.00",
+            "is_primary": true,
+            "created_at": "2026-05-01T00:00:00Z",
+            "updated_at": "2026-05-01T00:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:product_supplier",
+          "id": "f9be6377-98ea-501e-874b-9c504cfc3034",
+          "attr": {
+            "id": "f9be6377-98ea-501e-874b-9c504cfc3034",
+            "product_id": "f949147a-8c25-5ce2-a9c6-5db6a1b8ebd7",
+            "supplier_id": "3cbfe2a1-9ff3-5714-b3d4-33b624990a0f",
+            "cost_price": "1050.00",
+            "is_primary": true,
+            "created_at": "2026-05-01T00:00:00Z",
+            "updated_at": "2026-05-01T00:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:product_supplier",
+          "id": "00000000-0000-0000-0000-000000000000",
+          "attr": {
+            "id": "00000000-0000-0000-0000-000000000000"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:product_supplier",
+          "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+          "attr": {
+            "id": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:product_components",
+          "id": "79c9d3fa-cb19-5583-95ee-307643052f0e",
+          "attr": {
+            "id": "79c9d3fa-cb19-5583-95ee-307643052f0e",
+            "parent_product_id": "99a10c63-b0a1-5fdd-916f-da4eacf788a0",
+            "component_product_id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+            "quantity": "2",
+            "sort_order": 0,
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "created_at": "2026-05-01T00:00:00Z",
+            "updated_at": "2026-05-01T00:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:product_components",
+          "id": "1b792a9c-4c3e-58c1-85eb-b26b8edf6f72",
+          "attr": {
+            "id": "1b792a9c-4c3e-58c1-85eb-b26b8edf6f72",
+            "parent_product_id": "f2e984e0-7a5b-54e0-93da-0b2e04d14b61",
+            "component_product_id": "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+            "quantity": "2",
+            "sort_order": 0,
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "created_at": "2026-05-01T00:00:00Z",
+            "updated_at": "2026-05-01T00:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:product_components",
+          "id": "00000000-0000-0000-0000-000000000000",
+          "attr": {
+            "id": "00000000-0000-0000-0000-000000000000"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:product_components",
+          "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+          "attr": {
+            "id": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "c374e5d0-f792-5295-8c86-a18ff7bd0f5c",
+          "attr": {
+            "id": "c374e5d0-f792-5295-8c86-a18ff7bd0f5c",
+            "order_id": "a3ea2917-e149-59ae-888a-a6fdf0717b8c",
+            "product_id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+            "product_name": "SYNTHETIC Silver Grey Slab",
+            "sku": "H60-SYN-P001",
+            "quantity": 2,
+            "unit_price": "1000.00",
+            "unit_cost": "600.00",
+            "subtotal": "2000.00",
+            "tax": "0.00",
+            "total": "2000.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-05-14T09:00:00Z",
+            "updated_at": "2026-05-14T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "1b18de37-0279-594d-85c9-89aed22b4c3d",
+          "attr": {
+            "id": "1b18de37-0279-594d-85c9-89aed22b4c3d",
+            "order_id": "86bfed33-12bc-5796-bb7a-df729cd3a042",
+            "product_id": "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+            "product_name": "SYNTHETIC Golden Eagle Slab",
+            "sku": "H60-SYN-P002",
+            "quantity": 3,
+            "unit_price": "1250.00",
+            "unit_cost": "750.00",
+            "subtotal": "3750.00",
+            "tax": "0.00",
+            "total": "3750.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-05-20T09:00:00Z",
+            "updated_at": "2026-05-20T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "663eba69-fcf8-5631-a41a-b40aab98aa89",
+          "attr": {
+            "id": "663eba69-fcf8-5631-a41a-b40aab98aa89",
+            "order_id": "9e609829-9779-55fe-880c-1c5fc6388bfb",
+            "product_id": "3b609029-5b0a-57c4-95de-cdf2df54b94f",
+            "product_name": "SYNTHETIC Calacatta Galena Slab",
+            "sku": "H60-SYN-P003",
+            "quantity": 2,
+            "unit_price": "1500.00",
+            "unit_cost": "900.00",
+            "subtotal": "3000.00",
+            "tax": "0.00",
+            "total": "3000.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-05-24T09:00:00Z",
+            "updated_at": "2026-05-24T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "c0fc13ce-404d-5e4f-be9b-2b8961f45951",
+          "attr": {
+            "id": "c0fc13ce-404d-5e4f-be9b-2b8961f45951",
+            "order_id": "f979c608-b8df-5153-8ad6-fa990de5afe5",
+            "product_id": "f949147a-8c25-5ce2-a9c6-5db6a1b8ebd7",
+            "product_name": "SYNTHETIC Bianco Carrara Slab",
+            "sku": "H60-SYN-P004",
+            "quantity": 3,
+            "unit_price": "1750.00",
+            "unit_cost": "1050.00",
+            "subtotal": "5250.00",
+            "tax": "0.00",
+            "total": "5250.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-06-14T09:00:00Z",
+            "updated_at": "2026-06-14T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "8121c04c-35c9-582c-8128-fe51e2fa4e09",
+          "attr": {
+            "id": "8121c04c-35c9-582c-8128-fe51e2fa4e09",
+            "order_id": "be74d20b-88a0-50c8-b892-5bf4f25b3f19",
+            "product_id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+            "product_name": "SYNTHETIC Silver Grey Slab",
+            "sku": "H60-SYN-P001",
+            "quantity": 2,
+            "unit_price": "1000.00",
+            "unit_cost": "600.00",
+            "subtotal": "2000.00",
+            "tax": "0.00",
+            "total": "2000.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-06-20T09:00:00Z",
+            "updated_at": "2026-06-20T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "efd2b251-dee2-579a-b46c-039234fd0add",
+          "attr": {
+            "id": "efd2b251-dee2-579a-b46c-039234fd0add",
+            "order_id": "81e8f858-512c-5387-a082-12e24f55547c",
+            "product_id": "f2e984e0-7a5b-54e0-93da-0b2e04d14b61",
+            "product_name": "SYNTHETIC Vanity Assembly 2",
+            "sku": "H60-SYN-P006",
+            "quantity": 1,
+            "unit_price": "2250.00",
+            "unit_cost": "1500.00",
+            "subtotal": "2250.00",
+            "tax": "0.00",
+            "total": "2250.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-06-24T09:00:00Z",
+            "updated_at": "2026-06-24T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "50669274-0699-5be3-9cd9-999f1dd1c9d2",
+          "attr": {
+            "id": "50669274-0699-5be3-9cd9-999f1dd1c9d2",
+            "order_id": "c3b4fd4e-242b-515c-975b-db2e2ed5550d",
+            "product_id": "3b609029-5b0a-57c4-95de-cdf2df54b94f",
+            "product_name": "SYNTHETIC Calacatta Galena Slab",
+            "sku": "H60-SYN-P003",
+            "quantity": 2,
+            "unit_price": "1500.00",
+            "unit_cost": "900.00",
+            "subtotal": "3000.00",
+            "tax": "0.00",
+            "total": "3000.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-07-14T09:00:00Z",
+            "updated_at": "2026-07-14T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "1477568d-2e49-56bd-b854-c8ffab264fa3",
+          "attr": {
+            "id": "1477568d-2e49-56bd-b854-c8ffab264fa3",
+            "order_id": "892ff933-e878-5e9a-8380-9ac5978ea7f7",
+            "product_id": "f949147a-8c25-5ce2-a9c6-5db6a1b8ebd7",
+            "product_name": "SYNTHETIC Bianco Carrara Slab",
+            "sku": "H60-SYN-P004",
+            "quantity": 3,
+            "unit_price": "1750.00",
+            "unit_cost": "1050.00",
+            "subtotal": "5250.00",
+            "tax": "0.00",
+            "total": "5250.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-07-20T09:00:00Z",
+            "updated_at": "2026-07-20T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "2c505d9d-9645-5596-9c23-d7f78aa6c873",
+          "attr": {
+            "id": "2c505d9d-9645-5596-9c23-d7f78aa6c873",
+            "order_id": "a326d7a7-c63d-54b6-bdb6-bcac7a578b10",
+            "product_id": "99a10c63-b0a1-5fdd-916f-da4eacf788a0",
+            "product_name": "SYNTHETIC Vanity Assembly 1",
+            "sku": "H60-SYN-P005",
+            "quantity": 1,
+            "unit_price": "2000.00",
+            "unit_cost": "1200.00",
+            "subtotal": "2000.00",
+            "tax": "0.00",
+            "total": "2000.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-07-24T09:00:00Z",
+            "updated_at": "2026-07-24T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "3b2062e5-2d1d-5f3c-8159-d4282d2379ef",
+          "attr": {
+            "id": "3b2062e5-2d1d-5f3c-8159-d4282d2379ef",
+            "order_id": "72316de7-3137-51fa-818a-5a34e49cd328",
+            "product_id": "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+            "product_name": "SYNTHETIC Golden Eagle Slab",
+            "sku": "H60-SYN-P002",
+            "quantity": 3,
+            "unit_price": "1250.00",
+            "unit_cost": "750.00",
+            "subtotal": "3750.00",
+            "tax": "0.00",
+            "total": "3750.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-08-14T09:00:00Z",
+            "updated_at": "2026-08-14T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "4ad5ba80-a71f-56c3-86cc-fa9e7d3fe5d9",
+          "attr": {
+            "id": "4ad5ba80-a71f-56c3-86cc-fa9e7d3fe5d9",
+            "order_id": "cc348e4a-11f7-51ee-95a6-100523b64d57",
+            "product_id": "3b609029-5b0a-57c4-95de-cdf2df54b94f",
+            "product_name": "SYNTHETIC Calacatta Galena Slab",
+            "sku": "H60-SYN-P003",
+            "quantity": 2,
+            "unit_price": "1500.00",
+            "unit_cost": "900.00",
+            "subtotal": "3000.00",
+            "tax": "0.00",
+            "total": "3000.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-08-20T09:00:00Z",
+            "updated_at": "2026-08-20T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "cb62bd5d-e5a8-597b-b1a1-48181ab4d18a",
+          "attr": {
+            "id": "cb62bd5d-e5a8-597b-b1a1-48181ab4d18a",
+            "order_id": "d09c92ee-b102-5ac1-aae1-18b6964ce89f",
+            "product_id": "f2e984e0-7a5b-54e0-93da-0b2e04d14b61",
+            "product_name": "SYNTHETIC Vanity Assembly 2",
+            "sku": "H60-SYN-P006",
+            "quantity": 1,
+            "unit_price": "2250.00",
+            "unit_cost": "1500.00",
+            "subtotal": "2250.00",
+            "tax": "0.00",
+            "total": "2250.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-08-24T09:00:00Z",
+            "updated_at": "2026-08-24T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "59ebcb95-4c5c-5622-bca7-053e56f9fd47",
+          "attr": {
+            "id": "59ebcb95-4c5c-5622-bca7-053e56f9fd47",
+            "order_id": "e4e04ce1-413a-5657-9e1a-0d2ad9dc9478",
+            "product_id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+            "product_name": "SYNTHETIC Silver Grey Slab",
+            "sku": "H60-SYN-P001",
+            "quantity": 2,
+            "unit_price": "1000.00",
+            "unit_cost": "600.00",
+            "subtotal": "2000.00",
+            "tax": "0.00",
+            "total": "2000.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-09-14T09:00:00Z",
+            "updated_at": "2026-09-14T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "cc314523-b262-5db9-a1e9-7d097cb81f70",
+          "attr": {
+            "id": "cc314523-b262-5db9-a1e9-7d097cb81f70",
+            "order_id": "35f61deb-f567-502a-82ad-79f669627fb7",
+            "product_id": "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+            "product_name": "SYNTHETIC Golden Eagle Slab",
+            "sku": "H60-SYN-P002",
+            "quantity": 3,
+            "unit_price": "1250.00",
+            "unit_cost": "750.00",
+            "subtotal": "3750.00",
+            "tax": "0.00",
+            "total": "3750.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-09-20T09:00:00Z",
+            "updated_at": "2026-09-20T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "eef2a55a-a11c-5233-9fd6-d052052af783",
+          "attr": {
+            "id": "eef2a55a-a11c-5233-9fd6-d052052af783",
+            "order_id": "9cf711c5-106a-5307-86ae-215b4cc84949",
+            "product_id": "3b609029-5b0a-57c4-95de-cdf2df54b94f",
+            "product_name": "SYNTHETIC Calacatta Galena Slab",
+            "sku": "H60-SYN-P003",
+            "quantity": 2,
+            "unit_price": "1500.00",
+            "unit_cost": "900.00",
+            "subtotal": "3000.00",
+            "tax": "0.00",
+            "total": "3000.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-10-14T09:00:00Z",
+            "updated_at": "2026-10-14T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "91c2526e-8df4-507c-8a81-1602a3da90a3",
+          "attr": {
+            "id": "91c2526e-8df4-507c-8a81-1602a3da90a3",
+            "order_id": "fabed0f2-341a-5cc0-a061-9c5252c3afbc",
+            "product_id": "f2e984e0-7a5b-54e0-93da-0b2e04d14b61",
+            "product_name": "SYNTHETIC Vanity Assembly 2",
+            "sku": "H60-SYN-P006",
+            "quantity": 1,
+            "unit_price": "2250.00",
+            "unit_cost": "1500.00",
+            "subtotal": "2250.00",
+            "tax": "0.00",
+            "total": "2250.00",
+            "discount_amount": "0.00",
+            "created_at": "2026-10-20T09:00:00Z",
+            "updated_at": "2026-10-20T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "00000000-0000-0000-0000-000000000000",
+          "attr": {
+            "id": "00000000-0000-0000-0000-000000000000"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:order_items",
+          "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+          "attr": {
+            "id": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:purchase_order_items",
+          "id": "ec705a90-b756-5794-bd5f-e40f23785705",
+          "attr": {
+            "id": "ec705a90-b756-5794-bd5f-e40f23785705",
+            "purchase_order_id": "ca27e290-1c29-51b5-845f-a29a023e9e73",
+            "product_id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+            "product_name": "SYNTHETIC Silver Grey Slab",
+            "sku": "H60-SYN-P001",
+            "quantity_ordered": 10,
+            "quantity_received": 10,
+            "unit_cost": "600.00",
+            "subtotal": "6000.00",
+            "tax": "0.00",
+            "total": "6000.00",
+            "receiving_location_id": "8ef60f84-c37d-5855-a14d-5ba0731fceab",
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "updated_at": "2026-05-05T09:00:00Z",
+            "created_at": "2026-05-03T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:purchase_order_items",
+          "id": "be259ea5-2c3c-5f61-90f7-dd8848da6eaf",
+          "attr": {
+            "id": "be259ea5-2c3c-5f61-90f7-dd8848da6eaf",
+            "purchase_order_id": "d1816bed-326f-5808-92a7-83c99b3a980e",
+            "product_id": "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+            "product_name": "SYNTHETIC Golden Eagle Slab",
+            "sku": "H60-SYN-P002",
+            "quantity_ordered": 12,
+            "quantity_received": 12,
+            "unit_cost": "750.00",
+            "subtotal": "9000.00",
+            "tax": "0.00",
+            "total": "9000.00",
+            "receiving_location_id": "8ef60f84-c37d-5855-a14d-5ba0731fceab",
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "updated_at": "2026-05-10T09:00:00Z",
+            "created_at": "2026-05-08T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:purchase_order_items",
+          "id": "62fb00b0-8e09-5d02-bf17-758f79f02ddd",
+          "attr": {
+            "id": "62fb00b0-8e09-5d02-bf17-758f79f02ddd",
+            "purchase_order_id": "e1cf2b67-e220-5412-9fa5-b151f1983b1a",
+            "product_id": "3b609029-5b0a-57c4-95de-cdf2df54b94f",
+            "product_name": "SYNTHETIC Calacatta Galena Slab",
+            "sku": "H60-SYN-P003",
+            "quantity_ordered": 10,
+            "quantity_received": 10,
+            "unit_cost": "900.00",
+            "subtotal": "9000.00",
+            "tax": "0.00",
+            "total": "9000.00",
+            "receiving_location_id": "8ef60f84-c37d-5855-a14d-5ba0731fceab",
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "updated_at": "2026-06-05T09:00:00Z",
+            "created_at": "2026-06-03T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:purchase_order_items",
+          "id": "542c9c0c-f8d3-51b1-a270-6940142ccb0e",
+          "attr": {
+            "id": "542c9c0c-f8d3-51b1-a270-6940142ccb0e",
+            "purchase_order_id": "4528bbbd-b439-532a-8db5-4069a2fb7e38",
+            "product_id": "f949147a-8c25-5ce2-a9c6-5db6a1b8ebd7",
+            "product_name": "SYNTHETIC Bianco Carrara Slab",
+            "sku": "H60-SYN-P004",
+            "quantity_ordered": 12,
+            "quantity_received": 12,
+            "unit_cost": "1050.00",
+            "subtotal": "12600.00",
+            "tax": "0.00",
+            "total": "12600.00",
+            "receiving_location_id": "8ef60f84-c37d-5855-a14d-5ba0731fceab",
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "updated_at": "2026-06-10T09:00:00Z",
+            "created_at": "2026-06-08T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:purchase_order_items",
+          "id": "031802a3-a328-5e56-93fc-2b2b9e838660",
+          "attr": {
+            "id": "031802a3-a328-5e56-93fc-2b2b9e838660",
+            "purchase_order_id": "60fc553a-f120-5db7-81f8-14c1468f6e24",
+            "product_id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+            "product_name": "SYNTHETIC Silver Grey Slab",
+            "sku": "H60-SYN-P001",
+            "quantity_ordered": 10,
+            "quantity_received": 10,
+            "unit_cost": "600.00",
+            "subtotal": "6000.00",
+            "tax": "0.00",
+            "total": "6000.00",
+            "receiving_location_id": "8ef60f84-c37d-5855-a14d-5ba0731fceab",
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "updated_at": "2026-07-05T09:00:00Z",
+            "created_at": "2026-07-03T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:purchase_order_items",
+          "id": "c0fc045c-592c-551e-a22b-4bfd85130b58",
+          "attr": {
+            "id": "c0fc045c-592c-551e-a22b-4bfd85130b58",
+            "purchase_order_id": "30fab3b4-26c5-5f3b-affc-bb9bca30e0c5",
+            "product_id": "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+            "product_name": "SYNTHETIC Golden Eagle Slab",
+            "sku": "H60-SYN-P002",
+            "quantity_ordered": 12,
+            "quantity_received": 12,
+            "unit_cost": "750.00",
+            "subtotal": "9000.00",
+            "tax": "0.00",
+            "total": "9000.00",
+            "receiving_location_id": "8ef60f84-c37d-5855-a14d-5ba0731fceab",
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "updated_at": "2026-07-10T09:00:00Z",
+            "created_at": "2026-07-08T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:purchase_order_items",
+          "id": "0dda700e-1f95-52e3-9769-d1696e860108",
+          "attr": {
+            "id": "0dda700e-1f95-52e3-9769-d1696e860108",
+            "purchase_order_id": "d362ea3f-bb62-5509-8a7f-99d3e84f0dfe",
+            "product_id": "3b609029-5b0a-57c4-95de-cdf2df54b94f",
+            "product_name": "SYNTHETIC Calacatta Galena Slab",
+            "sku": "H60-SYN-P003",
+            "quantity_ordered": 10,
+            "quantity_received": 10,
+            "unit_cost": "900.00",
+            "subtotal": "9000.00",
+            "tax": "0.00",
+            "total": "9000.00",
+            "receiving_location_id": "8ef60f84-c37d-5855-a14d-5ba0731fceab",
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "updated_at": "2026-08-05T09:00:00Z",
+            "created_at": "2026-08-03T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:purchase_order_items",
+          "id": "8ce94019-bbbc-5d28-9803-21083377f4be",
+          "attr": {
+            "id": "8ce94019-bbbc-5d28-9803-21083377f4be",
+            "purchase_order_id": "e7e84139-6617-5767-b150-0985cf0fe742",
+            "product_id": "f949147a-8c25-5ce2-a9c6-5db6a1b8ebd7",
+            "product_name": "SYNTHETIC Bianco Carrara Slab",
+            "sku": "H60-SYN-P004",
+            "quantity_ordered": 12,
+            "quantity_received": 12,
+            "unit_cost": "1050.00",
+            "subtotal": "12600.00",
+            "tax": "0.00",
+            "total": "12600.00",
+            "receiving_location_id": "8ef60f84-c37d-5855-a14d-5ba0731fceab",
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "updated_at": "2026-09-10T09:00:00Z",
+            "created_at": "2026-09-08T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:purchase_order_items",
+          "id": "c23b585a-8cd2-5bc1-8900-b7b6a300c23d",
+          "attr": {
+            "id": "c23b585a-8cd2-5bc1-8900-b7b6a300c23d",
+            "purchase_order_id": "ab586e08-9e02-5be6-a878-ff454c7260a1",
+            "product_id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+            "product_name": "SYNTHETIC Silver Grey Slab",
+            "sku": "H60-SYN-P001",
+            "quantity_ordered": 10,
+            "quantity_received": 10,
+            "unit_cost": "600.00",
+            "subtotal": "6000.00",
+            "tax": "0.00",
+            "total": "6000.00",
+            "receiving_location_id": "8ef60f84-c37d-5855-a14d-5ba0731fceab",
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "updated_at": "2026-10-05T09:00:00Z",
+            "created_at": "2026-10-03T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:purchase_order_items",
+          "id": "ab6d7831-7b53-52a1-aa15-cf7a3f5af99e",
+          "attr": {
+            "id": "ab6d7831-7b53-52a1-aa15-cf7a3f5af99e",
+            "purchase_order_id": "81a79649-3070-5f29-9e8d-3bcf93e16cee",
+            "product_id": "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+            "product_name": "SYNTHETIC Golden Eagle Slab",
+            "sku": "H60-SYN-P002",
+            "quantity_ordered": 12,
+            "quantity_received": 12,
+            "unit_cost": "750.00",
+            "subtotal": "9000.00",
+            "tax": "0.00",
+            "total": "9000.00",
+            "receiving_location_id": "8ef60f84-c37d-5855-a14d-5ba0731fceab",
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "updated_at": "2026-10-10T09:00:00Z",
+            "created_at": "2026-10-08T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:purchase_order_items",
+          "id": "00000000-0000-0000-0000-000000000000",
+          "attr": {
+            "id": "00000000-0000-0000-0000-000000000000"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:purchase_order_items",
+          "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+          "attr": {
+            "id": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:return_order_items",
+          "id": "f6166560-5cbc-539a-949c-9e425760c650",
+          "attr": {
+            "id": "f6166560-5cbc-539a-949c-9e425760c650",
+            "return_order_id": "c7b0e430-941f-52b5-9ec8-1d984e8985cc",
+            "order_item_id": "c374e5d0-f792-5295-8c86-a18ff7bd0f5c",
+            "product_id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+            "quantity": 1,
+            "condition": "new",
+            "restock": true,
+            "refund_amount": "1000.00",
+            "created_at": "2026-05-21T09:00:00Z",
+            "updated_at": "2026-05-21T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:return_order_items",
+          "id": "1229f261-c83a-5c1f-965f-beec8b0c7f16",
+          "attr": {
+            "id": "1229f261-c83a-5c1f-965f-beec8b0c7f16",
+            "return_order_id": "15ca800e-8dcb-5609-a974-d6bf287efd18",
+            "order_item_id": "1b18de37-0279-594d-85c9-89aed22b4c3d",
+            "product_id": "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+            "quantity": 1,
+            "condition": "new",
+            "restock": true,
+            "refund_amount": "1250.00",
+            "created_at": "2026-05-27T09:00:00Z",
+            "updated_at": "2026-05-27T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:return_order_items",
+          "id": "cc79111c-f803-51e6-8b34-ea985b0f5cfa",
+          "attr": {
+            "id": "cc79111c-f803-51e6-8b34-ea985b0f5cfa",
+            "return_order_id": "323db391-54f5-5ab3-8f09-666e8e419b4c",
+            "order_item_id": "663eba69-fcf8-5631-a41a-b40aab98aa89",
+            "product_id": "3b609029-5b0a-57c4-95de-cdf2df54b94f",
+            "quantity": 1,
+            "condition": "new",
+            "restock": true,
+            "refund_amount": "1500.00",
+            "created_at": "2026-05-31T09:00:00Z",
+            "updated_at": "2026-05-31T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:return_order_items",
+          "id": "2aac2517-5f8b-5992-9cbd-890cb1218317",
+          "attr": {
+            "id": "2aac2517-5f8b-5992-9cbd-890cb1218317",
+            "return_order_id": "87843db8-60c4-55fb-8c77-b196b2c18dce",
+            "order_item_id": "c0fc13ce-404d-5e4f-be9b-2b8961f45951",
+            "product_id": "f949147a-8c25-5ce2-a9c6-5db6a1b8ebd7",
+            "quantity": 1,
+            "condition": "new",
+            "restock": true,
+            "refund_amount": "1750.00",
+            "created_at": "2026-06-21T09:00:00Z",
+            "updated_at": "2026-06-21T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:return_order_items",
+          "id": "00000000-0000-0000-0000-000000000000",
+          "attr": {
+            "id": "00000000-0000-0000-0000-000000000000"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:return_order_items",
+          "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+          "attr": {
+            "id": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:stock_transfer_items",
+          "id": "e4178ed2-d150-56e0-8a63-af95b22e2ee8",
+          "attr": {
+            "id": "e4178ed2-d150-56e0-8a63-af95b22e2ee8",
+            "stock_transfer_id": "68571077-bd11-5a69-877f-a385e7f23b30",
+            "product_id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+            "quantity": 3,
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "created_at": "2026-05-11T09:00:00Z",
+            "updated_at": "2026-05-11T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:stock_transfer_items",
+          "id": "f424ad80-08a3-5ef0-923b-a9f1e3e80ba3",
+          "attr": {
+            "id": "f424ad80-08a3-5ef0-923b-a9f1e3e80ba3",
+            "stock_transfer_id": "f589f4a6-1b30-5ad3-9804-f6a9b4dd0d3e",
+            "product_id": "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+            "quantity": 3,
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "created_at": "2026-06-11T09:00:00Z",
+            "updated_at": "2026-06-11T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:stock_transfer_items",
+          "id": "a745df18-b7e3-5921-936d-444c4875f250",
+          "attr": {
+            "id": "a745df18-b7e3-5921-936d-444c4875f250",
+            "stock_transfer_id": "51dd9f88-e936-5578-afcb-c20a95319321",
+            "product_id": "3b609029-5b0a-57c4-95de-cdf2df54b94f",
+            "quantity": 3,
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "created_at": "2026-08-11T09:00:00Z",
+            "updated_at": "2026-08-11T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:stock_transfer_items",
+          "id": "cc94e915-d0e8-5995-8e28-556cea0c4640",
+          "attr": {
+            "id": "cc94e915-d0e8-5995-8e28-556cea0c4640",
+            "stock_transfer_id": "bea046a2-3894-51ef-9477-76bf5bd9c35f",
+            "product_id": "f949147a-8c25-5ce2-a9c6-5db6a1b8ebd7",
+            "quantity": 3,
+            "notes": "SYNTHETIC HISTORICAL FIXTURE - not a real transaction or executed workflow.",
+            "created_at": "2026-10-11T09:00:00Z",
+            "updated_at": "2026-10-11T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:stock_transfer_items",
+          "id": "00000000-0000-0000-0000-000000000000",
+          "attr": {
+            "id": "00000000-0000-0000-0000-000000000000"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:stock_transfer_items",
+          "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+          "attr": {
+            "id": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:work_order_items",
+          "id": "90980f1c-c8ba-59a6-9e6a-93f80a69cbff",
+          "attr": {
+            "id": "90980f1c-c8ba-59a6-9e6a-93f80a69cbff",
+            "work_order_id": "b5bfbb0a-88c8-5950-ac5e-36939ab2917c",
+            "product_id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+            "quantity_required": "6",
+            "quantity_consumed": "6",
+            "created_at": "2026-05-09T09:00:00Z",
+            "updated_at": "2026-05-09T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:work_order_items",
+          "id": "92eaea75-90ee-58e3-a677-edb30e09cf34",
+          "attr": {
+            "id": "92eaea75-90ee-58e3-a677-edb30e09cf34",
+            "work_order_id": "c6a3820f-30dc-5346-a628-fd5b9b81a8c8",
+            "product_id": "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+            "quantity_required": "6",
+            "quantity_consumed": "6",
+            "created_at": "2026-06-09T09:00:00Z",
+            "updated_at": "2026-06-09T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:work_order_items",
+          "id": "7134f691-d3b5-56af-8d76-478865874ec5",
+          "attr": {
+            "id": "7134f691-d3b5-56af-8d76-478865874ec5",
+            "work_order_id": "b6f5b469-7008-51fa-94f5-2902b1b839c7",
+            "product_id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+            "quantity_required": "6",
+            "quantity_consumed": "6",
+            "created_at": "2026-08-09T09:00:00Z",
+            "updated_at": "2026-08-09T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:work_order_items",
+          "id": "95a1de6b-36fb-5096-98db-4152472650d2",
+          "attr": {
+            "id": "95a1de6b-36fb-5096-98db-4152472650d2",
+            "work_order_id": "6b8c335a-f51b-5351-9fb7-3e82bbf95155",
+            "product_id": "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+            "quantity_required": "6",
+            "quantity_consumed": "6",
+            "created_at": "2026-10-09T09:00:00Z",
+            "updated_at": "2026-10-09T09:00:00Z"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:work_order_items",
+          "id": "00000000-0000-0000-0000-000000000000",
+          "attr": {
+            "id": "00000000-0000-0000-0000-000000000000"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      },
+      {
+        "resource": {
+          "kind": "datatable:work_order_items",
+          "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+          "attr": {
+            "id": "ffffffff-ffff-ffff-ffff-ffffffffffff"
+          }
+        },
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ]
+      }
+    ]
+  },
+  "expectations": [
+    {
+      "table": "product_supplier",
+      "id": "cb21aa4f-b2ab-590b-b7e0-7a288d18ed85",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "product_supplier",
+      "id": "2751b366-6330-5fcc-9368-5e8f635ba265",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "product_supplier",
+      "id": "f0eaf954-1178-5a6e-9349-ed391db4d9ec",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "product_supplier",
+      "id": "f9be6377-98ea-501e-874b-9c504cfc3034",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "product_supplier",
+      "id": "00000000-0000-0000-0000-000000000000",
+      "read": "EFFECT_DENY",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "product_supplier",
+      "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "read": "EFFECT_DENY",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "product_components",
+      "id": "79c9d3fa-cb19-5583-95ee-307643052f0e",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "product_components",
+      "id": "1b792a9c-4c3e-58c1-85eb-b26b8edf6f72",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "product_components",
+      "id": "00000000-0000-0000-0000-000000000000",
+      "read": "EFFECT_DENY",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "product_components",
+      "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "read": "EFFECT_DENY",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "c374e5d0-f792-5295-8c86-a18ff7bd0f5c",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "1b18de37-0279-594d-85c9-89aed22b4c3d",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "663eba69-fcf8-5631-a41a-b40aab98aa89",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "c0fc13ce-404d-5e4f-be9b-2b8961f45951",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "8121c04c-35c9-582c-8128-fe51e2fa4e09",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "efd2b251-dee2-579a-b46c-039234fd0add",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "50669274-0699-5be3-9cd9-999f1dd1c9d2",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "1477568d-2e49-56bd-b854-c8ffab264fa3",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "2c505d9d-9645-5596-9c23-d7f78aa6c873",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "3b2062e5-2d1d-5f3c-8159-d4282d2379ef",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "4ad5ba80-a71f-56c3-86cc-fa9e7d3fe5d9",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "cb62bd5d-e5a8-597b-b1a1-48181ab4d18a",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "59ebcb95-4c5c-5622-bca7-053e56f9fd47",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "cc314523-b262-5db9-a1e9-7d097cb81f70",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "eef2a55a-a11c-5233-9fd6-d052052af783",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "91c2526e-8df4-507c-8a81-1602a3da90a3",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "00000000-0000-0000-0000-000000000000",
+      "read": "EFFECT_DENY",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "order_items",
+      "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "read": "EFFECT_DENY",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "ec705a90-b756-5794-bd5f-e40f23785705",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "be259ea5-2c3c-5f61-90f7-dd8848da6eaf",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "62fb00b0-8e09-5d02-bf17-758f79f02ddd",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "542c9c0c-f8d3-51b1-a270-6940142ccb0e",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "031802a3-a328-5e56-93fc-2b2b9e838660",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "c0fc045c-592c-551e-a22b-4bfd85130b58",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "0dda700e-1f95-52e3-9769-d1696e860108",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "8ce94019-bbbc-5d28-9803-21083377f4be",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "c23b585a-8cd2-5bc1-8900-b7b6a300c23d",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "ab6d7831-7b53-52a1-aa15-cf7a3f5af99e",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "00000000-0000-0000-0000-000000000000",
+      "read": "EFFECT_DENY",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "read": "EFFECT_DENY",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "return_order_items",
+      "id": "f6166560-5cbc-539a-949c-9e425760c650",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "return_order_items",
+      "id": "1229f261-c83a-5c1f-965f-beec8b0c7f16",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "return_order_items",
+      "id": "cc79111c-f803-51e6-8b34-ea985b0f5cfa",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "return_order_items",
+      "id": "2aac2517-5f8b-5992-9cbd-890cb1218317",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "return_order_items",
+      "id": "00000000-0000-0000-0000-000000000000",
+      "read": "EFFECT_DENY",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "return_order_items",
+      "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "read": "EFFECT_DENY",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "e4178ed2-d150-56e0-8a63-af95b22e2ee8",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "f424ad80-08a3-5ef0-923b-a9f1e3e80ba3",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "a745df18-b7e3-5921-936d-444c4875f250",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "cc94e915-d0e8-5995-8e28-556cea0c4640",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "00000000-0000-0000-0000-000000000000",
+      "read": "EFFECT_DENY",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "read": "EFFECT_DENY",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "work_order_items",
+      "id": "90980f1c-c8ba-59a6-9e6a-93f80a69cbff",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "work_order_items",
+      "id": "92eaea75-90ee-58e3-a677-edb30e09cf34",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "work_order_items",
+      "id": "7134f691-d3b5-56af-8d76-478865874ec5",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "work_order_items",
+      "id": "95a1de6b-36fb-5096-98db-4152472650d2",
+      "read": "EFFECT_ALLOW",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "work_order_items",
+      "id": "00000000-0000-0000-0000-000000000000",
+      "read": "EFFECT_DENY",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    },
+    {
+      "table": "work_order_items",
+      "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "read": "EFFECT_DENY",
+      "create": "EFFECT_DENY",
+      "update": "EFFECT_DENY",
+      "delete": "EFFECT_DENY"
+    }
+  ],
+  "principal_override": "Unsupported: installed SDK policy/types.d.ts documents explicit principal rejected HTTP400. Uses signed-in user only.",
+  "proof_scope": "Advisory compiled policy checks; ordinary row reads must be checked separately."
+}

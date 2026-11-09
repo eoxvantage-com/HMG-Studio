@@ -1,0 +1,981 @@
+{
+  "checked_at": "2026-11-06T18:19:30.717228+00:00",
+  "app": "hmg-studio",
+  "read_only": true,
+  "tables": {
+    "saved_reports": {
+      "mcp": {
+        "success": true,
+        "data": {
+          "name": "saved_reports",
+          "physical_table_name": "hmg_studio_saved_reports",
+          "provider_type": "flat_table",
+          "schema_format": "frictionless",
+          "json_schema": {
+            "fields": [
+              {
+                "name": "id",
+                "type": "string",
+                "format": "uuid",
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "organization_id",
+                "type": "string",
+                "format": "uuid",
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "created_by",
+                "type": "string",
+                "format": "uuid",
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "constraints": {
+                  "required": true,
+                  "maxLength": 255
+                }
+              },
+              {
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "name": "data_source",
+                "type": "string",
+                "constraints": {
+                  "required": true,
+                  "maxLength": 255
+                }
+              },
+              {
+                "name": "columns",
+                "type": "any",
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "filters",
+                "type": "any"
+              },
+              {
+                "name": "sort",
+                "type": "any"
+              },
+              {
+                "name": "chart_type",
+                "type": "string",
+                "constraints": {
+                  "maxLength": 255
+                }
+              },
+              {
+                "name": "chart_field",
+                "type": "string",
+                "constraints": {
+                  "maxLength": 255
+                }
+              },
+              {
+                "name": "is_shared",
+                "type": "boolean",
+                "default": false,
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "created_at",
+                "type": "datetime"
+              },
+              {
+                "name": "updated_at",
+                "type": "datetime"
+              }
+            ],
+            "indexes": [
+              {
+                "name": "erp_85519270e8beae6fd896",
+                "fields": [
+                  "organization_id",
+                  "created_by"
+                ],
+                "unique": false
+              },
+              {
+                "name": "erp_0daa7fb2ec41445d7d15",
+                "fields": [
+                  "organization_id",
+                  "is_shared"
+                ],
+                "unique": false
+              },
+              {
+                "name": "erp_e3437a322b7616652cea",
+                "fields": [
+                  "organization_id"
+                ]
+              },
+              {
+                "name": "erp_9605993299601e3d39ad",
+                "fields": [
+                  "created_by"
+                ]
+              }
+            ],
+            "primaryKey": [
+              "id"
+            ],
+            "foreignKeys": [
+              {
+                "fields": [
+                  "organization_id"
+                ],
+                "reference": {
+                  "fields": [
+                    "id"
+                  ],
+                  "resource": "hmg_studio_organizations"
+                },
+                "x-actions": {
+                  "onDelete": "RESTRICT"
+                }
+              },
+              {
+                "fields": [
+                  "created_by"
+                ],
+                "reference": {
+                  "fields": [
+                    "id"
+                  ],
+                  "resource": "auth_user"
+                },
+                "x-actions": {
+                  "onDelete": "RESTRICT"
+                }
+              }
+            ],
+            "reverseRelationships": [
+              {
+                "name": "report_schedules",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "saved_report_id",
+                "foreignTable": "hmg_studio_report_schedules"
+              }
+            ],
+            "manyToManyRelationships": []
+          },
+          "is_materialized": true,
+          "is_active": true,
+          "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
+          "created_at": "2026-11-06T12:54:40.700639+00:00",
+          "updated_at": "2026-11-06T13:25:42.483077+00:00"
+        }
+      },
+      "native_metadata": {
+        "status": 200,
+        "body": {
+          "id": 2454,
+          "name": "saved_reports",
+          "app_name": "HMG-Studio",
+          "app_slug": "hmg-studio",
+          "provider_type": "flat_table",
+          "schema_format": "frictionless",
+          "physical_table_name": "hmg_studio_saved_reports",
+          "is_materialized": true,
+          "is_active": true,
+          "audit_enabled": false,
+          "field_count": 14,
+          "is_reference": false,
+          "source_info": null,
+          "created_at": "2026-11-06T12:54:40.700639Z",
+          "updated_at": "2026-11-06T13:25:42.483077Z"
+        }
+      }
+    },
+    "activity_logs": {
+      "mcp": {
+        "success": true,
+        "data": {
+          "name": "activity_logs",
+          "physical_table_name": "hmg_studio_activity_logs",
+          "provider_type": "flat_table",
+          "schema_format": "frictionless",
+          "json_schema": {
+            "fields": [
+              {
+                "name": "id",
+                "type": "string",
+                "format": "uuid",
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "organization_id",
+                "type": "string",
+                "format": "uuid",
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "user_id",
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "name": "subject_type",
+                "type": "string",
+                "constraints": {
+                  "required": true,
+                  "maxLength": 255
+                }
+              },
+              {
+                "name": "subject_id",
+                "type": "string",
+                "format": "uuid",
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "action",
+                "type": "string",
+                "constraints": {
+                  "required": true,
+                  "maxLength": 255
+                }
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "constraints": {
+                  "maxLength": 255
+                }
+              },
+              {
+                "name": "properties",
+                "type": "any"
+              },
+              {
+                "name": "ip_address",
+                "type": "string",
+                "constraints": {
+                  "maxLength": 45
+                }
+              },
+              {
+                "name": "user_agent",
+                "type": "string"
+              },
+              {
+                "name": "created_at",
+                "type": "datetime"
+              },
+              {
+                "name": "updated_at",
+                "type": "datetime"
+              },
+              {
+                "name": "category",
+                "type": "string",
+                "default": "audit",
+                "constraints": {
+                  "required": true,
+                  "maxLength": 32
+                }
+              }
+            ],
+            "indexes": [
+              {
+                "name": "erp_7324920cf59ebf15cc58",
+                "fields": [
+                  "subject_type",
+                  "subject_id"
+                ],
+                "unique": false
+              },
+              {
+                "name": "erp_fa84829f2cd860742cae",
+                "fields": [
+                  "organization_id",
+                  "created_at"
+                ],
+                "unique": false
+              },
+              {
+                "name": "erp_17906f103b472a6c8a7e",
+                "fields": [
+                  "user_id",
+                  "created_at"
+                ],
+                "unique": false
+              },
+              {
+                "name": "erp_0283c2268d201883e8c4",
+                "fields": [
+                  "organization_id",
+                  "category",
+                  "created_at"
+                ],
+                "unique": false
+              },
+              {
+                "name": "erp_ec8ee064e8662babb156",
+                "fields": [
+                  "organization_id"
+                ]
+              },
+              {
+                "name": "erp_02f0c04bbe308facd7a0",
+                "fields": [
+                  "user_id"
+                ]
+              }
+            ],
+            "primaryKey": [
+              "id"
+            ],
+            "foreignKeys": [
+              {
+                "fields": [
+                  "organization_id"
+                ],
+                "reference": {
+                  "fields": [
+                    "id"
+                  ],
+                  "resource": "hmg_studio_organizations"
+                },
+                "x-actions": {
+                  "onDelete": "RESTRICT"
+                }
+              },
+              {
+                "fields": [
+                  "user_id"
+                ],
+                "reference": {
+                  "fields": [
+                    "id"
+                  ],
+                  "resource": "auth_user"
+                },
+                "x-actions": {
+                  "onDelete": "SET NULL"
+                }
+              }
+            ],
+            "reverseRelationships": [],
+            "manyToManyRelationships": []
+          },
+          "is_materialized": true,
+          "is_active": true,
+          "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
+          "created_at": "2026-11-06T12:48:41.575875+00:00",
+          "updated_at": "2026-11-06T12:48:42.174054+00:00"
+        }
+      },
+      "native_metadata": {
+        "status": 200,
+        "body": {
+          "id": 2443,
+          "name": "activity_logs",
+          "app_name": "HMG-Studio",
+          "app_slug": "hmg-studio",
+          "provider_type": "flat_table",
+          "schema_format": "frictionless",
+          "physical_table_name": "hmg_studio_activity_logs",
+          "is_materialized": true,
+          "is_active": true,
+          "audit_enabled": false,
+          "field_count": 13,
+          "is_reference": false,
+          "source_info": null,
+          "created_at": "2026-11-06T12:48:41.575875Z",
+          "updated_at": "2026-11-06T12:48:42.174054Z"
+        }
+      }
+    },
+    "products": {
+      "mcp": {
+        "success": true,
+        "data": {
+          "name": "products",
+          "physical_table_name": "hmg_studio_products",
+          "provider_type": "flat_table",
+          "schema_format": "frictionless",
+          "json_schema": {
+            "fields": [
+              {
+                "name": "id",
+                "type": "string",
+                "format": "uuid",
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "organization_id",
+                "type": "string",
+                "format": "uuid",
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "sku",
+                "type": "string",
+                "constraints": {
+                  "required": true,
+                  "maxLength": 255
+                }
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "constraints": {
+                  "required": true,
+                  "maxLength": 255
+                }
+              },
+              {
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "name": "price",
+                "type": "number",
+                "default": 0,
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "stock",
+                "type": "integer",
+                "default": 0,
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "min_stock",
+                "type": "integer",
+                "default": 0,
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "max_stock",
+                "type": "integer"
+              },
+              {
+                "name": "barcode",
+                "type": "string",
+                "constraints": {
+                  "maxLength": 255
+                }
+              },
+              {
+                "name": "image",
+                "type": "string",
+                "constraints": {
+                  "maxLength": 255
+                }
+              },
+              {
+                "name": "category_id",
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "name": "location_id",
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "name": "is_active",
+                "type": "boolean",
+                "default": true,
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "metadata",
+                "type": "any"
+              },
+              {
+                "name": "created_at",
+                "type": "datetime"
+              },
+              {
+                "name": "updated_at",
+                "type": "datetime"
+              },
+              {
+                "name": "deleted_at",
+                "type": "datetime"
+              },
+              {
+                "name": "currency",
+                "type": "string",
+                "default": "USD",
+                "constraints": {
+                  "required": true,
+                  "maxLength": 3
+                }
+              },
+              {
+                "name": "price_in_currencies",
+                "type": "any"
+              },
+              {
+                "name": "notes",
+                "type": "string"
+              },
+              {
+                "name": "purchase_price",
+                "type": "number"
+              },
+              {
+                "name": "selling_price",
+                "type": "number"
+              },
+              {
+                "name": "images",
+                "type": "any"
+              },
+              {
+                "name": "thumbnail",
+                "type": "string"
+              },
+              {
+                "name": "has_variants",
+                "type": "boolean",
+                "default": false,
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "reorder_point",
+                "type": "integer",
+                "constraints": {
+                  "minimum": 0
+                }
+              },
+              {
+                "name": "reorder_quantity",
+                "type": "integer",
+                "constraints": {
+                  "minimum": 0
+                }
+              },
+              {
+                "name": "tracking_type",
+                "type": "string",
+                "default": "none",
+                "constraints": {
+                  "required": true,
+                  "maxLength": 10
+                }
+              },
+              {
+                "name": "type",
+                "type": "string",
+                "default": "standard",
+                "constraints": {
+                  "required": true,
+                  "maxLength": 20
+                }
+              },
+              {
+                "name": "barcode_type",
+                "type": "string",
+                "constraints": {
+                  "maxLength": 16
+                }
+              },
+              {
+                "name": "image_disks",
+                "type": "any"
+              }
+            ],
+            "indexes": [
+              {
+                "name": "erp_ff9bee1e5538f7c95772",
+                "fields": [
+                  "organization_id",
+                  "sku"
+                ],
+                "unique": false
+              },
+              {
+                "name": "erp_f7d896a2aa725d68269b",
+                "fields": [
+                  "category_id"
+                ]
+              },
+              {
+                "name": "erp_a6cc0ab9d24cd8f08c6e",
+                "fields": [
+                  "location_id"
+                ]
+              },
+              {
+                "name": "erp_4a2869816b54e5aa1c7e",
+                "fields": [
+                  "is_active"
+                ],
+                "unique": false
+              },
+              {
+                "name": "erp_ca68d24b8799e8b2a19b",
+                "fields": [
+                  "barcode"
+                ],
+                "unique": false
+              },
+              {
+                "name": "erp_602e1b4f195725ff92f1",
+                "fields": [
+                  "organization_id",
+                  "type"
+                ],
+                "unique": false
+              },
+              {
+                "name": "erp_1072ee0a9c112fc8bdbe",
+                "fields": [
+                  "organization_id",
+                  "sku"
+                ],
+                "unique": true
+              },
+              {
+                "name": "erp_3de3bc6f659ce0846ea4",
+                "fields": [
+                  "organization_id",
+                  "is_active",
+                  "created_at"
+                ],
+                "unique": false
+              },
+              {
+                "name": "erp_e6aa482c2f3b5d18abd8",
+                "fields": [
+                  "organization_id",
+                  "category_id"
+                ],
+                "unique": false
+              },
+              {
+                "name": "erp_5b974acf47ee9b2ec1b9",
+                "fields": [
+                  "organization_id",
+                  "location_id"
+                ],
+                "unique": false
+              },
+              {
+                "name": "erp_6ff2a1f9db2efb00404c",
+                "fields": [
+                  "organization_id"
+                ]
+              },
+              {
+                "name": "erp_products_org_live_created",
+                "fields": [
+                  "organization_id",
+                  "created_at",
+                  "deleted_at"
+                ]
+              }
+            ],
+            "primaryKey": [
+              "id"
+            ],
+            "foreignKeys": [
+              {
+                "fields": [
+                  "organization_id"
+                ],
+                "reference": {
+                  "fields": [
+                    "id"
+                  ],
+                  "resource": "hmg_studio_organizations"
+                },
+                "x-actions": {
+                  "onDelete": "RESTRICT"
+                }
+              },
+              {
+                "fields": [
+                  "category_id"
+                ],
+                "reference": {
+                  "fields": [
+                    "id"
+                  ],
+                  "resource": "hmg_studio_product_categories"
+                },
+                "x-actions": {
+                  "onDelete": "SET NULL"
+                }
+              },
+              {
+                "fields": [
+                  "location_id"
+                ],
+                "reference": {
+                  "fields": [
+                    "id"
+                  ],
+                  "resource": "hmg_studio_product_locations"
+                },
+                "x-actions": {
+                  "onDelete": "SET NULL"
+                }
+              }
+            ],
+            "reverseRelationships": [
+              {
+                "name": "order_items",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_order_items"
+              },
+              {
+                "name": "product_batches",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_product_batches"
+              },
+              {
+                "name": "product_components",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "parent_product_id",
+                "foreignTable": "hmg_studio_product_components"
+              },
+              {
+                "name": "product_components!component_product_id",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "component_product_id",
+                "foreignTable": "hmg_studio_product_components"
+              },
+              {
+                "name": "product_location_stocks",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_product_location_stocks"
+              },
+              {
+                "name": "product_options",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_product_options"
+              },
+              {
+                "name": "product_serials",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_product_serials"
+              },
+              {
+                "name": "product_supplier",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_product_supplier"
+              },
+              {
+                "name": "product_variants",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_product_variants"
+              },
+              {
+                "name": "purchase_order_items",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_purchase_order_items"
+              },
+              {
+                "name": "return_order_items",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_return_order_items"
+              },
+              {
+                "name": "stock_adjustment_requests",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_stock_adjustment_requests"
+              },
+              {
+                "name": "stock_adjustments",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_stock_adjustments"
+              },
+              {
+                "name": "stock_audit_items",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_stock_audit_items"
+              },
+              {
+                "name": "stock_reservations",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_stock_reservations"
+              },
+              {
+                "name": "stock_transfer_items",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_stock_transfer_items"
+              },
+              {
+                "name": "supplier_price_history",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_supplier_price_history"
+              },
+              {
+                "name": "warehouse_reorder_points",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_warehouse_reorder_points"
+              },
+              {
+                "name": "work_order_allocations",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_work_order_allocations"
+              },
+              {
+                "name": "work_order_items",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_work_order_items"
+              },
+              {
+                "name": "work_order_items!kit_product_id",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "kit_product_id",
+                "foreignTable": "hmg_studio_work_order_items"
+              },
+              {
+                "name": "work_order_outputs",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_work_order_outputs"
+              },
+              {
+                "name": "work_orders",
+                "type": "hasMany",
+                "localKey": "id",
+                "foreignKey": "product_id",
+                "foreignTable": "hmg_studio_work_orders"
+              }
+            ],
+            "manyToManyRelationships": [
+              {
+                "name": "organizations",
+                "localKey": "id",
+                "foreignKey": "id",
+                "foreignTable": "hmg_studio_organizations",
+                "junctionTable": "hmg_studio_product_batches",
+                "junctionLocalKey": "product_id",
+                "junctionForeignKey": "organization_id"
+              },
+              {
+                "name": "suppliers",
+                "localKey": "id",
+                "foreignKey": "id",
+                "foreignTable": "hmg_studio_suppliers",
+                "junctionTable": "hmg_studio_product_supplier",
+                "junctionLocalKey": "product_id",
+                "junctionForeignKey": "supplier_id"
+              },
+              {
+                "name": "organizations_2",
+                "localKey": "id",
+                "foreignKey": "id",
+                "foreignTable": "hmg_studio_organizations",
+                "junctionTable": "hmg_studio_product_variants",
+                "junctionLocalKey": "product_id",
+                "junctionForeignKey": "organization_id"
+              }
+            ]
+          },
+          "is_materialized": true,
+          "is_active": true,
+          "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
+          "created_at": "2026-11-06T12:54:05.717195+00:00",
+          "updated_at": "2026-11-06T13:25:42.336307+00:00"
+        }
+      },
+      "native_metadata": {
+        "status": 200,
+        "body": {
+          "id": 2453,
+          "name": "products",
+          "app_name": "HMG-Studio",
+          "app_slug": "hmg-studio",
+          "provider_type": "flat_table",
+          "schema_format": "frictionless",
+          "physical_table_name": "hmg_studio_products",
+          "is_materialized": true,
+          "is_active": true,
+          "audit_enabled": false,
+          "field_count": 32,
+          "is_reference": false,
+          "source_info": null,
+          "created_at": "2026-11-06T12:54:05.717195Z",
+          "updated_at": "2026-11-06T13:25:42.336307Z"
+        }
+      }
+    }
+  }
+}

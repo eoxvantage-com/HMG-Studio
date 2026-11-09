@@ -1,0 +1,69 @@
+{
+  "at": "2026-11-07T06:18:04.135993+00:00",
+  "app": "hmg-studio",
+  "scope": "Dashboard display-only FX and native username/team-directory follow-up",
+  "independent_review_cleared": true,
+  "frontend": {
+    "command": "npm.cmd test -- --maxWorkers=1",
+    "passed": 251,
+    "failed": 0,
+    "files": 32,
+    "seconds": 352.03,
+    "exit_code": 0,
+    "unhandled_errors": 0,
+    "log": ".cache/currency-users-full.log"
+  },
+  "typecheck": {
+    "command": "npm.cmd run typecheck",
+    "expanded_command": "tsc --noEmit && tsc --noEmit -p tsconfig.node.json",
+    "configurations": [
+      "tsconfig.json",
+      "tsconfig.node.json"
+    ],
+    "exit_code": 0,
+    "log": ".cache/currency-users-typecheck-final.log"
+  },
+  "focused_overlapping_subsets": [
+    {
+      "scope": "FX service18 + dashboard13",
+      "passed": 31,
+      "files": 2,
+      "seconds": 22.19,
+      "exit_code": 0,
+      "log": ".cache/currency-display-focused.log"
+    },
+    {
+      "scope": "Native user platform",
+      "passed": 7,
+      "files": 1,
+      "seconds": 30.04,
+      "exit_code": 0,
+      "log": ".cache/currency-users-platform-focused.log"
+    }
+  ],
+  "log_sha256": {
+    ".cache/currency-users-full.log": "ab519e34ffcdb7ebe8623863402d174c4a44e2a7478e0dc8841b6161f5c1c979",
+    ".cache/currency-users-typecheck-final.log": "a504d75e4ec1ad87428cb1886e7c6ebc598b7abdf210b02c8514d3a8a82afb96",
+    ".cache/currency-display-focused.log": "c82745ea3f3aab9037440eaba131bb46ad422ed419a2626efc6103ebec91dd7e",
+    ".cache/currency-users-platform-focused.log": "c44ea5fafc1c7964c4446fc191c3316cc924fb51f4afd51d57227561f96a3915"
+  },
+  "separate_live_evidence": [
+    "currency-display-live-rates.json",
+    "native-user-ordinary-contract.json",
+    "hmg-team-provisioning.json",
+    "hmg-team-ordinary-verification.json",
+    "native-user-metadata-contract-preflight.json"
+  ],
+  "browser_verified": false,
+  "visual_verified": false,
+  "build_verified_by_this_evidence": false,
+  "deployment_verified_by_this_evidence": false,
+  "all_crud_verified": false,
+  "metadata_update_authority_enabled": false,
+  "limits": [
+    "INR source ledger only; display conversion never changes recorded values or accounting currency.",
+    "Public FX is indicative reference data, not accounting or executable market rates.",
+    "Role-filtered directory is native membership grouping, not replacement authorization.",
+    "No invitation emails, stock/money workflow execution or full-module acceptance inferred."
+  ]
+}

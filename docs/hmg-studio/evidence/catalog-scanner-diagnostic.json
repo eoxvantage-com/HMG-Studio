@@ -1,0 +1,9 @@
+{
+  "status": 400,
+  "message": "Function code failed the security scan",
+  "errors": {
+    "code": [
+      "Import not allowed in sandbox: 'unicodedata'"
+    ]
+  }
+}

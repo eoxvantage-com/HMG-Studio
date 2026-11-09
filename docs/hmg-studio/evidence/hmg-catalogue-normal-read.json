@@ -1,0 +1,42 @@
+{
+  "actor": "qa_hmg_inbox_20261106",
+  "http": 200,
+  "total": 263,
+  "sample": [
+    {
+      "id": "0ddcc7fd-234f-509b-975a-762f640bd262",
+      "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+      "sku": "HMG-WEB-0DDCC7FD234F509B975A762F640BD262",
+      "name": "Aspro European Cut",
+      "description": "Public HMG catalogue reference. Source category: counterbasin. Source: https://www.hmgstones.com/product-details.php?product_id=1&product_name=counterbasin",
+      "price": "0",
+      "stock": 0,
+      "min_stock": 0,
+      "max_stock": null,
+      "barcode": null,
+      "image": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/1-Aspro-European-Cut.jpg",
+      "category_id": null,
+      "location_id": null,
+      "is_active": false,
+      "metadata": null,
+      "created_at": null,
+      "updated_at": null,
+      "deleted_at": null,
+      "currency": "INR",
+      "price_in_currencies": null,
+      "notes": "HMG WEBSITE CATALOGUE REFERENCE \u2014 no physical stock or commercial price verified; required legacy price=0 is a placeholder, not a quotation. REFERENCE ONLY. Source: https://www.hmgstones.com/product-details.php?product_id=1&product_name=counterbasin",
+      "purchase_price": null,
+      "selling_price": null,
+      "images": null,
+      "thumbnail": null,
+      "has_variants": false,
+      "reorder_point": null,
+      "reorder_quantity": null,
+      "tracking_type": "none",
+      "type": "standard",
+      "barcode_type": null,
+      "image_disks": null
+    }
+  ],
+  "read_only": true
+}

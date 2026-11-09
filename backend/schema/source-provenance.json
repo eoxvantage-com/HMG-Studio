@@ -1,0 +1,419 @@
+{
+  "purpose": "Declarative schema facts only; no source application code copied or executed.",
+  "source_root": "C:/Users/proj/Inventoros",
+  "source_revision": "1f78e818d9aee025020fe7489955f4f0c448c53a",
+  "files": [
+    {
+      "path": "database/migrations/2025_10_12_033828_create_organizations_table.php",
+      "sha256": "47643934570605bb4b92aee6416166edc3e5171aec971b8a206012b8d216fa51"
+    },
+    {
+      "path": "database/migrations/2025_10_12_034201_create_products_table.php",
+      "sha256": "b8adb71b9c57487d1f921bb1d15f2de3d228377dd999ea56a4798e2b93fede4a"
+    },
+    {
+      "path": "database/migrations/2025_10_12_034229_create_product_categories_table.php",
+      "sha256": "864c1a31c9db6c4f8faec83eea3b6ecfac77c849d17aa668e34cd85968c87e42"
+    },
+    {
+      "path": "database/migrations/2025_10_12_034229_create_product_locations_table.php",
+      "sha256": "c2e83d8a36c5ee173cc8a976c4093ab77437c5ffd9be483a909efd23fb429946"
+    },
+    {
+      "path": "database/migrations/2025_10_12_035106_create_system_settings_table.php",
+      "sha256": "648dacbc85e50b89b910fd9d9f1a982fbe5df1519fd5378cd7ff317973857f1f"
+    },
+    {
+      "path": "database/migrations/2025_10_13_015319_add_currency_support_to_products_and_organizations.php",
+      "sha256": "477ca6d3caf6f1fddb39107048281d71c2555597bd1f2f2c51781bf49308eebc"
+    },
+    {
+      "path": "database/migrations/2025_10_13_020934_add_notes_to_products_table.php",
+      "sha256": "79eda7b0e7bd7c9c7551fab19588505300a65fa3792f0abf5a5bb7e8a867da08"
+    },
+    {
+      "path": "database/migrations/2025_10_13_021232_create_orders_table.php",
+      "sha256": "4f91cdc782c7e6c5f03f11cb151649c382ef855d03aa10e58254ec9937f8a543"
+    },
+    {
+      "path": "database/migrations/2025_10_13_021238_create_order_items_table.php",
+      "sha256": "fc9bdedafd6d7e2c94c6151034d73fa03c7d90d126881b86f88f3252e6fb4232"
+    },
+    {
+      "path": "database/migrations/2025_10_13_023000_add_purchase_price_to_products_table.php",
+      "sha256": "605666f219093372f0e363aec6d9d80bfc82e36ae1582a87ecc35edf292a75f8"
+    },
+    {
+      "path": "database/migrations/2025_10_13_213255_create_activity_logs_table.php",
+      "sha256": "9120356df6501815a895a0209f0334367e94a87249af3c0f2dbebfc9e27bcbc6"
+    },
+    {
+      "path": "database/migrations/2025_10_13_213427_create_stock_adjustments_table.php",
+      "sha256": "63cab2155bc72c522ac2d9d9c3eaf9c4560b6895b10ebd3275458fd00e94c7af"
+    },
+    {
+      "path": "database/migrations/2025_10_13_213806_add_images_to_products_table.php",
+      "sha256": "f1c644791353b697b3943c7526e1707276c6b0bc5da3b3c19781bfeab785a666"
+    },
+    {
+      "path": "database/migrations/2025_10_14_004205_create_plugins_table.php",
+      "sha256": "f01ab9b53b42341c9835e56b07b4f36e2bf10563cd943fe2e5ef6a684dee81a9"
+    },
+    {
+      "path": "database/migrations/2025_10_14_011753_add_address_fields_to_organizations_table.php",
+      "sha256": "4393caaa8b7973a4684dd984bdad7ff29c27b8a1febdf44a17cc3d4f330a1275"
+    },
+    {
+      "path": "database/migrations/2025_10_14_014012_create_notifications_table.php",
+      "sha256": "2e17e9dd0eec922724ab44a4c520f47a3674e095d20f0bec08fe49e0bba2e53b"
+    },
+    {
+      "path": "database/migrations/2025_10_14_025138_add_additional_fields_to_organizations_table.php",
+      "sha256": "8c25263c9bd68383af9e76d82e388dd11480cc94a642b3c4a86cb5f080cb9769"
+    },
+    {
+      "path": "database/migrations/2025_12_18_000001_create_suppliers_table.php",
+      "sha256": "71bf8ffd210f231952874d693395e0a1c1725eef7ea0e891280fca1d8c25ef1f"
+    },
+    {
+      "path": "database/migrations/2025_12_18_000002_create_product_supplier_table.php",
+      "sha256": "ba8aeb214feda7ad3a59062dd7d56e69ef6aa65af7dec54473e576d633c0026f"
+    },
+    {
+      "path": "database/migrations/2025_12_18_000003_create_purchase_orders_table.php",
+      "sha256": "dfe36560c55c51aef953d9fbb2bff030178d1284b66714f5c1cf757f5a4c863b"
+    },
+    {
+      "path": "database/migrations/2025_12_18_000004_create_purchase_order_items_table.php",
+      "sha256": "2322c0b9e3d59335220f3120465f1dd921fd3e84b8a6ba7af1b7882e0b806dcc"
+    },
+    {
+      "path": "database/migrations/2025_12_28_000001_create_product_options_table.php",
+      "sha256": "011095d3e6f540b353f38c8c0ec5d61845d9d2ddb8ea499c3316ab0884f9ec58"
+    },
+    {
+      "path": "database/migrations/2025_12_28_000002_create_product_variants_table.php",
+      "sha256": "74a6346b86ff939702284e475ec67ed55f0c435b803f26646e15903e662e7c24"
+    },
+    {
+      "path": "database/migrations/2025_12_28_000003_add_has_variants_to_products_table.php",
+      "sha256": "1f4e201e845ca5bd82cf9cffb475d7c9d44d1fc1ade9eb45cb3860779bd8c6b1"
+    },
+    {
+      "path": "database/migrations/2025_12_28_000004_add_variant_support_to_stock_adjustments.php",
+      "sha256": "ece5798de56194e5f9244abeeb52b913a08c918e782340f34d92b54a0643a7f1"
+    },
+    {
+      "path": "database/migrations/2026_01_09_000001_add_approval_to_orders_table.php",
+      "sha256": "b406f1367252b15d798a31a2da53fca36d05a5c6ee11d7597e948e8178638abf"
+    },
+    {
+      "path": "database/migrations/2026_01_10_000001_create_customers_table.php",
+      "sha256": "45f10fe06153b1448afd8310b145cae8de4f3cb5549657db30c2a511079a4360"
+    },
+    {
+      "path": "database/migrations/2026_02_05_062954_create_settings_table.php",
+      "sha256": "89391cb6f42ed0002feae5461489085689a15fa981dc7463f06aab10435d5e9e"
+    },
+    {
+      "path": "database/migrations/2026_02_05_062958_create_email_logs_table.php",
+      "sha256": "675a86c129c939fb3d926f153dcde57e70503984e77cf7e6ea53004e65787b44"
+    },
+    {
+      "path": "database/migrations/2026_02_05_100000_create_webhooks_table.php",
+      "sha256": "3eb9278d4d32194a531a5a7cf40db8ce2ab09d7bab960ad3ac47ad71364c1c78"
+    },
+    {
+      "path": "database/migrations/2026_02_05_100001_create_webhook_deliveries_table.php",
+      "sha256": "e464f233b76d1b919da64229de6a56978d6611c292c667c9771ec72504a28960"
+    },
+    {
+      "path": "database/migrations/2026_03_12_000001_add_organization_id_to_webhook_deliveries_table.php",
+      "sha256": "4a3dc8709efece68ae3212324710b170590fe3cbad5a5d930b74e54c1402a92c"
+    },
+    {
+      "path": "database/migrations/2026_03_12_000001_add_reorder_columns_to_products_table.php",
+      "sha256": "b765f1c36d00edc99add35be83e4855cf292386b891058e602ee65c8456514e5"
+    },
+    {
+      "path": "database/migrations/2026_03_12_000001_add_tracking_type_to_products_table.php",
+      "sha256": "0afb75efba2121fe2c306f479dec940be64f573eb5366644023f319b11c29991"
+    },
+    {
+      "path": "database/migrations/2026_03_12_000001_create_return_orders_table.php",
+      "sha256": "96ae5df76159978443460f3cbcf87921c462334be65efd3a42adfe63d1d38c13"
+    },
+    {
+      "path": "database/migrations/2026_03_12_000002_create_product_batches_table.php",
+      "sha256": "3c92b2d07f685545b2caf8240c0c68907bb04f84cd87cf8f456e73788b9c619e"
+    },
+    {
+      "path": "database/migrations/2026_03_12_000002_make_order_number_unique_per_organization.php",
+      "sha256": "c0dc39cd29e0c51f18237f3db3a80bb8771f3ffb9589a904cadf70a814240aa8"
+    },
+    {
+      "path": "database/migrations/2026_03_12_000003_create_product_serials_table.php",
+      "sha256": "89a632e611b6e1e4f62d71d638cbdc44cdc94f4b0c7ab37b35219beca2834c44"
+    },
+    {
+      "path": "database/migrations/2026_03_12_100000_create_stock_transfers_table.php",
+      "sha256": "c915a3d6664e4c692e95bbd2c2883b88191842b26efd4c92ecce86b3c0517590"
+    },
+    {
+      "path": "database/migrations/2026_03_20_000001_create_stock_audits_table.php",
+      "sha256": "8884a03cb89610afa2eeeedd80436e0ace0fd8ea9ee913880122d2ecb8651115"
+    },
+    {
+      "path": "database/migrations/2026_04_01_104424_add_customer_id_to_orders_table.php",
+      "sha256": "0520b8edc679433e175519107d4fd9b68c21df6481ac42c4a9457fde27c475fd"
+    },
+    {
+      "path": "database/migrations/2026_04_04_024204_create_warehouses_table.php",
+      "sha256": "2fba97dc8773267cedeedd1ac3d43dd09f1970c8e770d298a7720390a18f38e1"
+    },
+    {
+      "path": "database/migrations/2026_04_04_030000_add_kitting_and_assembly_support.php",
+      "sha256": "02c3de34099f883fb72e8d20a94b1d152242b0c65795ddb2863d832477e09e83"
+    },
+    {
+      "path": "database/migrations/2026_04_04_040000_create_saved_reports_table.php",
+      "sha256": "77d94a5b8c016a67274337a5da923f876487983a923f9a01a49c66812501acd9"
+    },
+    {
+      "path": "database/migrations/2026_05_18_000001_make_inventory_numbers_unique_per_organization.php",
+      "sha256": "fe97f3df2595af8a907e7a3333a6a025923ad4962dd2aef45dd7942ff16d71b9"
+    },
+    {
+      "path": "database/migrations/2026_05_18_000002_add_composite_indexes_for_hot_query_paths.php",
+      "sha256": "3a57fe8fd6d3c24ac2fec678c4827b80134ccd1e0f400c6366dcb40f6d1dd61a"
+    },
+    {
+      "path": "database/migrations/2026_05_28_000001_add_product_variant_id_to_order_items_table.php",
+      "sha256": "314f4fa26128f197bc3cb833669af50a73ab36c1309cdfc60f83f9e4f0356239"
+    },
+    {
+      "path": "database/migrations/2026_05_29_000001_create_data_exports_table.php",
+      "sha256": "f07df129384739d98962275416b9b1659833c5cbd78dc93b0c9801fa604f9d7b"
+    },
+    {
+      "path": "database/migrations/2026_07_25_000001_create_product_location_stocks_table.php",
+      "sha256": "ed7ad5a5292594f04cf110b1e88f4b06e3b4834450a446afaec818999dda7510"
+    },
+    {
+      "path": "database/migrations/2026_07_25_000002_add_order_item_id_to_product_serials.php",
+      "sha256": "02835e5f5a09c1f0fd00349b460e720718461b68904939735f5f1df4ff361daf"
+    },
+    {
+      "path": "database/migrations/2026_07_26_000001_create_order_item_batch_allocations_table.php",
+      "sha256": "f940880c818d94f8c1e401cc8132ac3f38d44a229cdb71d91393d5f29fcb0689"
+    },
+    {
+      "path": "database/migrations/2026_07_26_000002_make_product_location_stocks_quantity_unsigned.php",
+      "sha256": "10f8fee203d2063b7e3fbddbca51a370279271047796e686c1b4c7d658c99933"
+    },
+    {
+      "path": "database/migrations/2026_09_27_000001_add_category_to_activity_logs_table.php",
+      "sha256": "29749599ec4d2ce58c15a489bbc46bcae9e39e817a14d89f6e11d27fdfb38e66"
+    },
+    {
+      "path": "database/migrations/2026_09_27_000001_add_product_variant_id_to_purchase_order_items_table.php",
+      "sha256": "e7d5f7809e3a49c1752b037221c9b9a1a8fa3646f5b3a1f90cebe1afae5327b5"
+    },
+    {
+      "path": "database/migrations/2026_09_27_000001_add_sent_tracking_to_purchase_orders.php",
+      "sha256": "ee49e23d8beac60b3c0cfffb44bf3a7a7c4b25ddff14ef05dbcb4ba50b17543d"
+    },
+    {
+      "path": "database/migrations/2026_09_27_000001_widen_columns_rejected_by_mysql_and_postgres.php",
+      "sha256": "21653601f383c45c40e767694e4a2469339d90b72f9bff9af5009b94431d72b0"
+    },
+    {
+      "path": "database/migrations/2026_09_27_000002_add_barcode_type_to_products_table.php",
+      "sha256": "9754a1ec4420032d7b684bd665475286b417c33a21792d6810f39986c37f12f5"
+    },
+    {
+      "path": "database/migrations/2026_09_27_000002_add_invoice_fields_to_orders.php",
+      "sha256": "65c0dce2f0e339f713171d3bb7b8caafe15ee99037b56a80ab1062ae1c92cbe3"
+    },
+    {
+      "path": "database/migrations/2026_09_27_000003_create_supplier_price_history_table.php",
+      "sha256": "4b710573c7bb739af8f25355b79749a43a90dd9203cc3c8fad76fcf2ac903989"
+    },
+    {
+      "path": "database/migrations/2026_09_27_000004_add_rating_to_suppliers_table.php",
+      "sha256": "860b0025f9dcc653b63af2010bbe92dc27b11e0b6ac12cd82ea0b4352216bb6b"
+    },
+    {
+      "path": "database/migrations/2026_09_27_144009_add_external_reference_to_orders_table.php",
+      "sha256": "7b2c1ea04acbbbab71d523983c2f3b1bb99c8bb6ca4c11f2c794bbaf3bc5c3d6"
+    },
+    {
+      "path": "database/migrations/2026_09_27_150600_create_shipments_table.php",
+      "sha256": "8d85d095bd50b973137cd5394bfba413b84cc5153681a5d7d0f91dd9939f6a28"
+    },
+    {
+      "path": "database/migrations/2026_09_27_150601_create_shipment_items_table.php",
+      "sha256": "e67ef169ca159bf3e85442e7b329bd0928f0faee9388e4def70ef1d4730f455e"
+    },
+    {
+      "path": "database/migrations/2026_09_27_150602_create_shipping_settings_table.php",
+      "sha256": "3908446f61f622a1b13df660585ef9ce4504e4f4861ee2e1242f803b703c8b90"
+    },
+    {
+      "path": "database/migrations/2026_09_27_151218_add_portal_enabled_to_organizations_table.php",
+      "sha256": "9b31c4e6177d70bd494fa56a0d5e4339db7b118897bc33a42a7f55a9d8a0b536"
+    },
+    {
+      "path": "database/migrations/2026_09_27_151219_create_customer_contacts_table.php",
+      "sha256": "af26efddb9dfab91065321f51e9855cdb4282647cb9ed4d7af7a7608180417f2"
+    },
+    {
+      "path": "database/migrations/2026_09_27_155613_add_marketplace_connection_to_organizations_table.php",
+      "sha256": "614a5b54aa5d67bfdeda7fc8ef27383b9179839244b2d540ed7353eefa91e4fd"
+    },
+    {
+      "path": "database/migrations/2026_09_28_000002_add_location_id_to_stock_adjustments.php",
+      "sha256": "24a685fc558951259182b59a2ea46553a4a78219556c70488f857ee13dcf27bb"
+    },
+    {
+      "path": "database/migrations/2026_09_28_000003_create_warehouse_reorder_points_table.php",
+      "sha256": "1750ac8d5bd3d793bc95e8f97bff30af2bc4dbc55368b66ceecf20bf35cdad4a"
+    },
+    {
+      "path": "database/migrations/2026_09_28_000004_add_capacity_to_warehouses_and_locations.php",
+      "sha256": "778d99439756aa43e159612be50aee5ab06ef7d7e21f1785c141d18ba005de50"
+    },
+    {
+      "path": "database/migrations/2026_09_28_092144_add_stock_committed_to_orders_table.php",
+      "sha256": "0ca333378bbb25a12d88b9a88fb4e1a6bd7279016357492bca40d4ee32464fe8"
+    },
+    {
+      "path": "database/migrations/2026_09_28_092145_stop_order_item_deletes_cascading_to_return_lines.php",
+      "sha256": "5650e8488e876b33d318a10fc8ed2c06637da1924ea6d78680ff7c0dcbd29d19"
+    },
+    {
+      "path": "database/migrations/2026_09_28_092357_add_product_variant_id_to_return_order_items_table.php",
+      "sha256": "85c26c4ead7723d2830a63f563de31c3007b08a48ad5e4e79a689c9f767a24d8"
+    },
+    {
+      "path": "database/migrations/2026_09_28_095422_add_source_to_plugins_table.php",
+      "sha256": "c8788e416b00fab2804b6197d5c5a0000b7f3a76374ebe86c7758afe23315c3d"
+    },
+    {
+      "path": "database/migrations/2026_09_28_100530_add_email_queued_at_to_documents.php",
+      "sha256": "cd4b8ca78eb10a9fd1664970dfa1499544fed0403255311c1915a2849a1ef497"
+    },
+    {
+      "path": "database/migrations/2026_09_28_101349_add_product_variant_id_to_supplier_price_history.php",
+      "sha256": "902fd54c7cbe0d2b9a8d0d679026a1216bcdbcae9087645d8c79a3d82904347a"
+    },
+    {
+      "path": "database/migrations/2026_09_28_103101_allow_not_required_order_approval_status.php",
+      "sha256": "cc11aa0b34601e67ca0a88fec6f4c4bdce8976a8f321c5b38876e5ec3fdbc83a"
+    },
+    {
+      "path": "database/migrations/2026_09_29_000001_add_approval_to_purchase_orders_and_stock_transfers.php",
+      "sha256": "71cd461010e80e0c116f572c6ed609e598c11fd47f6b3fe11f75210454574313"
+    },
+    {
+      "path": "database/migrations/2026_09_29_000002_create_stock_adjustment_requests_table.php",
+      "sha256": "ea3073977cd4ae089ac5bad95778d51edb601fe9f38342a7cad7196dc7059fa6"
+    },
+    {
+      "path": "database/migrations/2026_09_29_000003_create_cycle_count_schedules_table.php",
+      "sha256": "1ce8b147adf9edd7cfa334f816c4d6220e9e262457aa3808d4cb329e11841108"
+    },
+    {
+      "path": "database/migrations/2026_09_29_100001_create_report_schedules_table.php",
+      "sha256": "1ad36963e41e6c758a03d5498fd3584b62eb27317493df9e9563c150f12b84c8"
+    },
+    {
+      "path": "database/migrations/2026_09_29_100002_add_unit_cost_to_order_items_table.php",
+      "sha256": "5cf13da6666d1b3c3da42de0ea4e30af268d41c47144b381f079f814c04dd881"
+    },
+    {
+      "path": "database/migrations/2026_09_30_000001_add_discounts_to_orders_and_order_items.php",
+      "sha256": "a4616317b1e37e1b5985affb6ae99cdb98bdfac578e4e2477687f7d9fa553e27"
+    },
+    {
+      "path": "database/migrations/2026_09_30_000002_create_order_payments_table.php",
+      "sha256": "a75ecea1b742701b33655c8d8facdb7e1b74328efe2005949e9264d1856e64df"
+    },
+    {
+      "path": "database/migrations/2026_09_30_142347_add_completed_by_to_stock_transfers_table.php",
+      "sha256": "e6fe47d5cbf000b979a6fdc746e8cc72b6a8c04c1f79a06e7cbc89e3c898817c"
+    },
+    {
+      "path": "database/migrations/2026_10_05_014951_create_marketplace_entitlements_table.php",
+      "sha256": "788ef62dcee85518e131f9c7f412ac377deb1668f4c09e656e355ed90742e30e"
+    },
+    {
+      "path": "database/migrations/2026_10_05_055529_create_inter_company_transfers_table.php",
+      "sha256": "27a66f2977cd5e8a1c583a9ead5654838f8a9ca6afb5064d66f36188b459591c"
+    },
+    {
+      "path": "database/migrations/2026_10_12_000001_add_tracked_units_to_inter_company_transfers.php",
+      "sha256": "fffccd0a0ec5a021147abee77a38257c0a8beac505b910ece00ac94e03e691af"
+    },
+    {
+      "path": "database/migrations/2026_10_12_000001_create_stock_reservations_table.php",
+      "sha256": "7af782f19c7020b79a1d321b22ebc9ef798a7ae7de1791bd53422e80146d1a89"
+    },
+    {
+      "path": "database/migrations/2026_10_12_000002_add_tracked_production_to_work_orders.php",
+      "sha256": "46b4af32e0e61969aaa8d7b85d7477f3aab74a91a333e74ac075bab7482a89c6"
+    },
+    {
+      "path": "database/migrations/2026_10_13_000000_add_logo_path_to_organizations.php",
+      "sha256": "0dfea793cb800cc9ca71b481af98b23adef0d53f187ff52abfee68fa551eebdf"
+    },
+    {
+      "path": "database/migrations/2026_10_17_040000_record_return_line_refund_amounts.php",
+      "sha256": "5ba31b592b3bc44b42cca0df4f19df31f00f41aef98a71f5e57c920d93b5ae37"
+    },
+    {
+      "path": "database/migrations/2026_10_21_000001_create_variant_location_stocks.php",
+      "sha256": "1953169d921b0a4e4663310bc9d61df45e66356f56bbdd4670722f50eca03e71"
+    },
+    {
+      "path": "database/migrations/2026_10_21_000002_add_stock_audit_warehouse_scope.php",
+      "sha256": "d5483d80aad16d806981b824f9319b24ed34adc8397955e9bd14f76a9baa1e75"
+    },
+    {
+      "path": "database/migrations/2026_10_21_000003_add_prepared_variant_transfers.php",
+      "sha256": "428e7e17a625aa4de70a766d7a3024f535f228c038b1aab690fd3278dd9215f5"
+    },
+    {
+      "path": "database/migrations/2026_10_21_230000_record_upload_storage_disks.php",
+      "sha256": "d1f47fa4bb90e1e369714c4b69f921bff0c5db2049aad5d06918ffe90fd16fdf"
+    },
+    {
+      "path": "database/migrations/2026_10_24_000001_index_batch_expiry_by_organization.php",
+      "sha256": "9ff4c3151bde46c2f934e021d59c90391b7b28161cf857c586a86d00b314ee98"
+    },
+    {
+      "path": "database/migrations/2026_10_26_000001_create_inventory_reset_runs.php",
+      "sha256": "44ad67f9edcf3857086b555557c21d73268cb76594843e463abafbcc3c247e7a"
+    },
+    {
+      "path": "database/migrations/2026_10_26_000002_create_stock_audit_counts.php",
+      "sha256": "1d2fa71ba6dd1d9f41e32ed75851027e162e1ea907c5eb1b7271febaa3ab9e58"
+    },
+    {
+      "path": "database/migrations/2026_10_27_000001_add_stock_audit_variance_reviews.php",
+      "sha256": "f20f31e8ae1751f6887a258b0dfa931d60609d69331e9aabdbcc7913a029e9e5"
+    },
+    {
+      "path": "database/migrations/2026_10_27_000002_index_stock_audit_item_pages.php",
+      "sha256": "d3d10582825a0f620875ca5cb81a20a8c1ca580e221569fae3f3fbf0959236b3"
+    },
+    {
+      "path": "database/migrations/2026_10_27_000003_create_variant_replenishment_policies.php",
+      "sha256": "4d1657956832c5e1371865159add710132883bd32d217170959e20730b8e1f82"
+    },
+    {
+      "path": "database/migrations/2026_11_01_000001_index_tenant_lists_and_transfer_relationships.php",
+      "sha256": "60792aba01846c53cdbf1dbc0f7caeca8641b37d790428a0a2b19e1775a50e1f"
+    }
+  ]
+}

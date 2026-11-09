@@ -1,0 +1,119 @@
+{
+  "at": "2026-11-06T18:26:10.213825+00:00",
+  "app": "hmg-studio",
+  "status": "PROPOSAL_ONLY",
+  "table": "qa_json_types_20261106",
+  "resource": {
+    "name": "qa_json_types_20261106",
+    "description": "Isolated SYNTHETIC QA type/migration probe. Not business data.",
+    "provider_type": "flat_table",
+    "schema_format": "frictionless",
+    "schema": {
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "format": "uuid",
+          "constraints": {
+            "required": true
+          }
+        },
+        {
+          "name": "organization_id",
+          "type": "string",
+          "format": "uuid",
+          "constraints": {
+            "required": true
+          }
+        },
+        {
+          "name": "object_value",
+          "type": "object"
+        },
+        {
+          "name": "array_value",
+          "type": "array",
+          "arrayItem": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "legacy_object",
+          "type": "any"
+        },
+        {
+          "name": "legacy_array",
+          "type": "any"
+        }
+      ],
+      "primaryKey": [
+        "id"
+      ],
+      "foreignKeys": []
+    }
+  },
+  "policy_after_create": {
+    "name": "qa_json_types_20261106",
+    "policy_type": "resource",
+    "entity_type": "datatable",
+    "version": "default",
+    "rules": [
+      {
+        "actions": [
+          "read",
+          "create",
+          "update",
+          "delete"
+        ],
+        "roles": [
+          "*"
+        ],
+        "effect": "EFFECT_DENY"
+      }
+    ]
+  },
+  "synthetic_row": {
+    "id": "af3bd90c-ee30-576a-8307-3c87e511f986",
+    "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+    "object_value": {
+      "items": [
+        {
+          "field": "stock",
+          "operator": "gte",
+          "value": 0
+        }
+      ],
+      "label": "SYNTHETIC QA JSON probe",
+      "nested": {
+        "enabled": true,
+        "number": 2,
+        "nullable": null
+      }
+    },
+    "array_value": [
+      "name",
+      "sku"
+    ],
+    "legacy_object": "{\"items\": [{\"field\": \"stock\", \"operator\": \"gte\", \"value\": 0}], \"label\": \"SYNTHETIC QA JSON probe\", \"nested\": {\"enabled\": true, \"number\": 2, \"nullable\": null}}",
+    "legacy_array": "[\"name\", \"sku\"]"
+  },
+  "gates": [
+    "Verify explicit app scope and no existing table of this name; never replace an existing table.",
+    "Create empty table once then restrict its auto policy to DENY all; fresh compare and exact readback BEFORE inserting synthetic row.",
+    "Insert one synthetic row using control-plane only; readback must preserve native object/array shapes exactly.",
+    "Reuse existing closed diagnostic query, update to bounded pg_typeof of probe fields filtering exact id and org.",
+    "Propose separate full-schema legacy_object any?object test and legacy_array any?array/string test only after initial results. No forcecasts, allow_data_loss, drop/recreate, replay, or existing-table writes.",
+    "Leave isolated table denied and evidence intact; deletion requires separate confirmation."
+  ],
+  "not_supported_targets": {
+    "any_x_pg_type_jsonb": "Not documented; x-pg-type only range families. Excluded.",
+    "arrayItem_object": "Documented unrecognized type fallback to text. Excluded as a JSON array solution."
+  },
+  "business_target_candidate_after_proof": {
+    "saved_reports.columns": "array with arrayItem string (native text[])",
+    "saved_reports.filters": "object with {items:[...]} wrapper requires frontend adapter and semantic migration of existing [] string; not same wire shape",
+    "saved_reports.sort": "object (native JSONB)",
+    "activity_logs.properties": "object (native JSONB)"
+  },
+  "source": "https://docs.taruvibase.com/docs/products/database/concepts/schema-reference"
+}

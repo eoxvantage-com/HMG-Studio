@@ -1,0 +1,109 @@
+[
+  {
+    "case": "positive",
+    "status": 200,
+    "result": {
+      "ok": true,
+      "code": "PREVIEW_ONLY",
+      "stock_posted": false,
+      "request_created": false,
+      "authorizes_commit": false,
+      "snapshot_at": "2026-11-06T21:08:41.625160+00:00",
+      "preview": {
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "product_id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+        "location_id": "8ef60f84-c37d-5855-a14d-5ba0731fceab",
+        "warehouse_id": "b37974a1-0e52-5b70-a5b0-e65031d950ee",
+        "type": "manual",
+        "adjustment_quantity": 1,
+        "product_before": 51,
+        "product_after": 52,
+        "location_before": 48,
+        "location_after": 49,
+        "reserved_quantity_conservative": 0,
+        "available_quantity_conservative": 48,
+        "active_reservation_count": 0
+      },
+      "limitations": [
+        "Caller-visible read-only snapshot, not atomic; no stock, request, reservation or approval was written.",
+        "Global reservations are fully charged against this bin; other-location and tracked active reservations are refused.",
+        "Reservation visibility depends on caller read policies; this preview never authorizes a commit.",
+        "Concurrent changes can stale this preview. Posting requires revalidation and verified atomic provider primitives."
+      ]
+    },
+    "invocation_id": 1504824
+  },
+  {
+    "case": "zero",
+    "status": 200,
+    "result": {
+      "ok": false,
+      "code": "VALIDATION_ERROR",
+      "stock_posted": false,
+      "request_created": false,
+      "authorizes_commit": false
+    },
+    "invocation_id": 1504825
+  },
+  {
+    "case": "foreign_org",
+    "status": 200,
+    "result": {
+      "ok": false,
+      "code": "VALIDATION_ERROR",
+      "stock_posted": false,
+      "request_created": false,
+      "authorizes_commit": false
+    },
+    "invocation_id": 1504826
+  },
+  {
+    "case": "commit",
+    "status": 200,
+    "result": {
+      "ok": false,
+      "code": "VALIDATION_ERROR",
+      "stock_posted": false,
+      "request_created": false,
+      "authorizes_commit": false
+    },
+    "invocation_id": 1504827
+  },
+  {
+    "case": "repeat_no_write",
+    "status": 200,
+    "result": {
+      "ok": true,
+      "code": "PREVIEW_ONLY",
+      "stock_posted": false,
+      "request_created": false,
+      "authorizes_commit": false,
+      "snapshot_at": "2026-11-06T21:14:57.375501+00:00",
+      "preview": {
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "product_id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+        "location_id": "8ef60f84-c37d-5855-a14d-5ba0731fceab",
+        "warehouse_id": "b37974a1-0e52-5b70-a5b0-e65031d950ee",
+        "type": "manual",
+        "adjustment_quantity": 1,
+        "product_before": 51,
+        "product_after": 52,
+        "location_before": 48,
+        "location_after": 49,
+        "reserved_quantity_conservative": 0,
+        "available_quantity_conservative": 48,
+        "active_reservation_count": 0
+      },
+      "limitations": [
+        "Caller-visible read-only snapshot, not atomic; no stock, request, reservation or approval was written.",
+        "Global reservations are fully charged against this bin; other-location and tracked active reservations are refused.",
+        "Reservation visibility depends on caller read policies; this preview never authorizes a commit.",
+        "Concurrent changes can stale this preview. Posting requires revalidation and verified atomic provider primitives."
+      ]
+    },
+    "product_stock_before": 51,
+    "product_stock_after": 51,
+    "unchanged": true,
+    "anonymous_status": 403
+  }
+]

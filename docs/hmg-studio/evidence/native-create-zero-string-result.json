@@ -1,0 +1,134 @@
+{
+  "payload": {
+    "id": "ac82036c-7f82-574e-8606-de36246d010f",
+    "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+    "name": "Synthetic zero-string diagnostic customer",
+    "code": "SYN-CRUD-004",
+    "email": "crud4@example.invalid",
+    "currency": "INR",
+    "credit_limit": 0,
+    "is_active": true,
+    "deleted_at": null,
+    "notes": "SYNTHETIC HMG TEST DATA - normal-user create probe only."
+  },
+  "case_labels": [
+    "numeric",
+    "string",
+    "foreign",
+    "blank",
+    "negative"
+  ],
+  "check_http": 200,
+  "check": {
+    "request_id": "4f56b22c-6b51-4d7d-890d-4e01aead502b",
+    "results": [
+      {
+        "resource": {
+          "id": "new:0",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "delete": "EFFECT_DENY",
+          "create": "EFFECT_ALLOW",
+          "update": "EFFECT_DENY"
+        }
+      },
+      {
+        "resource": {
+          "id": "new:1",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "delete": "EFFECT_DENY",
+          "create": "EFFECT_ALLOW",
+          "update": "EFFECT_DENY"
+        }
+      },
+      {
+        "resource": {
+          "id": "new:2",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "delete": "EFFECT_DENY",
+          "create": "EFFECT_DENY",
+          "update": "EFFECT_DENY"
+        }
+      },
+      {
+        "resource": {
+          "id": "new:3",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "delete": "EFFECT_DENY",
+          "create": "EFFECT_DENY",
+          "update": "EFFECT_DENY"
+        }
+      },
+      {
+        "resource": {
+          "id": "new:4",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "delete": "EFFECT_DENY",
+          "create": "EFFECT_DENY",
+          "update": "EFFECT_DENY"
+        }
+      }
+    ],
+    "cerbos_call_id": "01M6S2NH6Q2A33R7XW5ZV88XA4"
+  },
+  "create_http": 403,
+  "response": {
+    "status": "error",
+    "message": "Permission denied: 1 record(s) not authorized for creation",
+    "code": "FORBIDDEN"
+  },
+  "readback_http": 200,
+  "readback": {
+    "status": "success",
+    "message": "Data retrieved successfully",
+    "data": [],
+    "total": 0,
+    "debug": {
+      "authorization": {
+        "provider": "cerbos",
+        "principal_id": "qa_hmg_inbox_20261106",
+        "resource_kind": "datatable:customers",
+        "action": "read",
+        "scope": "insurance_hmg-studio",
+        "filter_kind": "CONDITIONAL",
+        "cerbos_cache_hit": true,
+        "cerbos_source": "cache",
+        "auth_filters": {
+          "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6"
+        },
+        "user_filters": {
+          "id": "ac82036c-7f82-574e-8606-de36246d010f"
+        },
+        "combined_filters": {
+          "and": [
+            {
+              "id": "ac82036c-7f82-574e-8606-de36246d010f"
+            },
+            {
+              "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6"
+            }
+          ]
+        },
+        "metadata": {
+          "query_plan_filter_debug": null,
+          "tenant_id": "insurance",
+          "app_slug": "hmg-studio"
+        }
+      }
+    }
+  }
+}

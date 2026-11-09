@@ -1,0 +1,144 @@
+{
+  "recorded_at": "2026-11-06T20:18:37.960163+00:00",
+  "app": "hmg-studio",
+  "proof": "ordinary synthetic role native reads",
+  "tables": [
+    {
+      "table": "customers",
+      "expected": 6,
+      "status": 200,
+      "received": 6,
+      "verified": true
+    },
+    {
+      "table": "suppliers",
+      "expected": 3,
+      "status": 200,
+      "received": 3,
+      "verified": true
+    },
+    {
+      "table": "products",
+      "expected": 6,
+      "status": 200,
+      "received": 6,
+      "verified": true,
+      "all_active": true
+    },
+    {
+      "table": "product_supplier",
+      "expected": 4,
+      "status": 200,
+      "received": 4,
+      "verified": true
+    },
+    {
+      "table": "product_components",
+      "expected": 2,
+      "status": 200,
+      "received": 2,
+      "verified": true
+    },
+    {
+      "table": "stock_adjustments",
+      "expected": 8,
+      "status": 200,
+      "received": 8,
+      "verified": true
+    },
+    {
+      "table": "purchase_orders",
+      "expected": 10,
+      "status": 200,
+      "received": 10,
+      "verified": true
+    },
+    {
+      "table": "purchase_order_items",
+      "expected": 10,
+      "status": 200,
+      "received": 10,
+      "verified": true
+    },
+    {
+      "table": "work_orders",
+      "expected": 4,
+      "status": 200,
+      "received": 4,
+      "verified": true
+    },
+    {
+      "table": "work_order_items",
+      "expected": 4,
+      "status": 200,
+      "received": 4,
+      "verified": true
+    },
+    {
+      "table": "work_order_outputs",
+      "expected": 4,
+      "status": 200,
+      "received": 4,
+      "verified": true
+    },
+    {
+      "table": "stock_transfers",
+      "expected": 4,
+      "status": 200,
+      "received": 4,
+      "verified": true
+    },
+    {
+      "table": "stock_transfer_items",
+      "expected": 4,
+      "status": 200,
+      "received": 4,
+      "verified": true
+    },
+    {
+      "table": "orders",
+      "expected": 16,
+      "status": 200,
+      "received": 16,
+      "verified": true
+    },
+    {
+      "table": "order_items",
+      "expected": 16,
+      "status": 200,
+      "received": 16,
+      "verified": true
+    },
+    {
+      "table": "order_payments",
+      "expected": 14,
+      "status": 200,
+      "received": 14,
+      "verified": true
+    },
+    {
+      "table": "return_orders",
+      "expected": 4,
+      "status": 200,
+      "received": 4,
+      "verified": true
+    },
+    {
+      "table": "return_order_items",
+      "expected": 4,
+      "status": 200,
+      "received": 4,
+      "verified": true
+    },
+    {
+      "table": "product_location_stocks",
+      "expected": 12,
+      "status": 200,
+      "received": 12,
+      "verified": true
+    }
+  ],
+  "business_mutations": 0,
+  "verified": true,
+  "verified_rows": 135
+}

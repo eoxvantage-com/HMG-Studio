@@ -1,0 +1,268 @@
+{
+  "at": "2026-11-06T18:33:23.736811+00:00",
+  "status": "PROPOSAL_USER_CONFIRMATION_PENDING",
+  "app": "hmg-studio",
+  "before": {
+    "api_version": "api.cerbos.dev/v1",
+    "metadata": {
+      "hash": "7943560649221349503",
+      "store_identifer": "resource.datatable_customers.vdefault/insurance_hmg-studio",
+      "store_identifier": "resource.datatable_customers.vdefault/insurance_hmg-studio",
+      "source_attributes": {
+        "attributes": {
+          "update_ts": "2026-11-06T13:02:46Z",
+          "driver": "postgres"
+        }
+      },
+      "source_file": "",
+      "annotations": {}
+    },
+    "resource_policy": {
+      "resource": "datatable:customers",
+      "version": "default",
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "condition": {
+            "match": {
+              "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\""
+            }
+          },
+          "effect": "EFFECT_ALLOW",
+          "derived_roles": [],
+          "name": ""
+        },
+        {
+          "actions": [
+            "create"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "condition": {
+            "match": {
+              "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\" && R.attr.name.matches('.*[^[:space:]].*') && size(R.attr.name) <= 255 && (!has(R.attr.deleted_at) || R.attr.deleted_at == null) && (!has(R.attr.credit_limit) || R.attr.credit_limit == null || R.attr.credit_limit >= 0)"
+            }
+          },
+          "effect": "EFFECT_ALLOW",
+          "derived_roles": [],
+          "name": ""
+        },
+        {
+          "actions": [
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "derived_roles": [],
+          "name": ""
+        }
+      ],
+      "scope": "insurance_hmg-studio",
+      "import_derived_roles": [],
+      "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+    },
+    "disabled": false,
+    "description": "",
+    "variables": {},
+    "json_schema": ""
+  },
+  "expected": {
+    "resource": "datatable:customers",
+    "version": "default",
+    "rules": [
+      {
+        "actions": [
+          "read"
+        ],
+        "roles": [
+          "HMG Synthetic Operator"
+        ],
+        "condition": {
+          "match": {
+            "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\""
+          }
+        },
+        "effect": "EFFECT_ALLOW",
+        "derived_roles": [],
+        "name": ""
+      },
+      {
+        "actions": [
+          "create"
+        ],
+        "roles": [
+          "HMG Synthetic Operator"
+        ],
+        "condition": {
+          "match": {
+            "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\" && R.attr.name.matches('.*[^[:space:]].*') && size(R.attr.name) <= 255 && (!has(R.attr.deleted_at) || R.attr.deleted_at == null) && (!has(R.attr.credit_limit) || R.attr.credit_limit == null || (type(R.attr.credit_limit) == string && size(R.attr.credit_limit) <= 64 && R.attr.credit_limit.matches('^0([.]0+)?$')) || R.attr.credit_limit >= 0)"
+          }
+        },
+        "effect": "EFFECT_ALLOW",
+        "derived_roles": [],
+        "name": ""
+      },
+      {
+        "actions": [
+          "update",
+          "delete"
+        ],
+        "roles": [
+          "*"
+        ],
+        "effect": "EFFECT_DENY",
+        "derived_roles": [],
+        "name": ""
+      }
+    ],
+    "scope": "insurance_hmg-studio",
+    "import_derived_roles": [],
+    "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+  },
+  "payload": {
+    "name": "customers",
+    "policy_type": "resource",
+    "entity_type": "datatable",
+    "version": "default",
+    "rules": [
+      {
+        "actions": [
+          "read"
+        ],
+        "roles": [
+          "HMG Synthetic Operator"
+        ],
+        "condition": {
+          "match": {
+            "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\""
+          }
+        },
+        "effect": "EFFECT_ALLOW",
+        "derived_roles": [],
+        "name": ""
+      },
+      {
+        "actions": [
+          "create"
+        ],
+        "roles": [
+          "HMG Synthetic Operator"
+        ],
+        "condition": {
+          "match": {
+            "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\" && R.attr.name.matches('.*[^[:space:]].*') && size(R.attr.name) <= 255 && (!has(R.attr.deleted_at) || R.attr.deleted_at == null) && (!has(R.attr.credit_limit) || R.attr.credit_limit == null || (type(R.attr.credit_limit) == string && size(R.attr.credit_limit) <= 64 && R.attr.credit_limit.matches('^0([.]0+)?$')) || R.attr.credit_limit >= 0)"
+          }
+        },
+        "effect": "EFFECT_ALLOW",
+        "derived_roles": [],
+        "name": ""
+      },
+      {
+        "actions": [
+          "update",
+          "delete"
+        ],
+        "roles": [
+          "*"
+        ],
+        "effect": "EFFECT_DENY",
+        "derived_roles": [],
+        "name": ""
+      }
+    ]
+  },
+  "rollback_payload": {
+    "name": "customers",
+    "policy_type": "resource",
+    "entity_type": "datatable",
+    "version": "default",
+    "rules": [
+      {
+        "actions": [
+          "read"
+        ],
+        "roles": [
+          "HMG Synthetic Operator"
+        ],
+        "condition": {
+          "match": {
+            "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\""
+          }
+        },
+        "effect": "EFFECT_ALLOW",
+        "derived_roles": [],
+        "name": ""
+      },
+      {
+        "actions": [
+          "create"
+        ],
+        "roles": [
+          "HMG Synthetic Operator"
+        ],
+        "condition": {
+          "match": {
+            "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\" && R.attr.name.matches('.*[^[:space:]].*') && size(R.attr.name) <= 255 && (!has(R.attr.deleted_at) || R.attr.deleted_at == null) && (!has(R.attr.credit_limit) || R.attr.credit_limit == null || R.attr.credit_limit >= 0)"
+          }
+        },
+        "effect": "EFFECT_ALLOW",
+        "derived_roles": [],
+        "name": ""
+      },
+      {
+        "actions": [
+          "update",
+          "delete"
+        ],
+        "roles": [
+          "*"
+        ],
+        "effect": "EFFECT_DENY",
+        "derived_roles": [],
+        "name": ""
+      }
+    ]
+  },
+  "delta": "Only add finite canonical zero-string equivalent as alternative in credit_limit predicate. Existing roles/org/name/deleted/read/U-D unchanged. No nonzero or arbitrary strings accepted.",
+  "normalization_hypothesis": "Decimal zero serializes as string after native validation; not proven. Stored customer credit_limit descriptor has NO default.",
+  "advisory_tests": {
+    "allow": [
+      0,
+      0.0,
+      null,
+      "0",
+      "0.0",
+      "0.00"
+    ],
+    "deny": [
+      -1,
+      "-1",
+      "1",
+      "",
+      "NaN",
+      "Infinity",
+      "1e3",
+      "00",
+      "0foo",
+      " 0",
+      "0 000000000000000000000000000000000000000000000000000000000000000"
+    ]
+  },
+  "gates": [
+    "User confirmation then root review before apply.",
+    "Compare entire fresh policy to before; no retries and no other resource writes.",
+    "Exact full native policy readback required.",
+    "Normal-session advisory zero strings allow and nonzero/negative/invalid strings deny; org/deleted/name negative tests remain deny.",
+    "One fresh native credit_limit numeric0 customer create/readback by root. If native403 persists, rollback EXACT original policy using fresh expected compare, then exact readback.",
+    "A successful native create proves this condition contributes but does not authorize general numeric string support. Any created synthetic row remains identified for cleanup only under separate approval."
+  ]
+}

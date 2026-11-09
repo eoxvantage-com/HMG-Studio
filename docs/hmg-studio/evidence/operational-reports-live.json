@@ -1,0 +1,55 @@
+{
+  "app": "hmg-studio",
+  "principal": "qa_hmg_sales_20261106",
+  "admin_fallback": false,
+  "reads": 8,
+  "reports": [
+    {
+      "kind": "orders",
+      "ok": true,
+      "count": 16,
+      "summaries": [
+        {
+          "label": "Recorded order totals",
+          "value": "48500.00 INR"
+        },
+        {
+          "label": "Recorded amounts paid",
+          "value": "40375.00 INR"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "kind": "purchase_orders",
+      "ok": true,
+      "count": 10,
+      "summaries": [
+        {
+          "label": "Recorded purchase totals",
+          "value": "88200.00 INR"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "kind": "order_payments",
+      "ok": true,
+      "count": 14,
+      "summaries": [
+        {
+          "label": "Recorded non-voided payment amounts",
+          "value": "40375.00 INR"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "kind": "stock_adjustments",
+      "ok": true,
+      "count": 8,
+      "summaries": [],
+      "warnings": []
+    }
+  ]
+}

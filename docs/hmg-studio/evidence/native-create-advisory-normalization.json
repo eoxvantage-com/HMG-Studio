@@ -1,0 +1,287 @@
+{
+  "at": "2026-11-06T18:15:58.862193+00:00",
+  "app": "hmg-studio",
+  "read_only": true,
+  "cases": [
+    {
+      "label": "documented_new_raw",
+      "resource_id": "new",
+      "attributes": {
+        "id": "f15e3497-390d-5287-ac10-d8653cad1823",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "name": "Synthetic normal-role customer",
+        "code": "SYN-CRUD-002",
+        "email": "crud2@example.invalid",
+        "currency": "INR",
+        "is_active": true,
+        "notes": "SYNTHETIC HMG TEST DATA - not a real transaction or contact."
+      }
+    },
+    {
+      "label": "documented_batch_new_raw",
+      "resource_id": "new:0",
+      "attributes": {
+        "id": "f15e3497-390d-5287-ac10-d8653cad1823",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "name": "Synthetic normal-role customer",
+        "code": "SYN-CRUD-002",
+        "email": "crud2@example.invalid",
+        "currency": "INR",
+        "is_active": true,
+        "notes": "SYNTHETIC HMG TEST DATA - not a real transaction or contact."
+      }
+    },
+    {
+      "label": "previous_concrete_uuid_raw",
+      "resource_id": "f15e3497-390d-5287-ac10-d8653cad1823",
+      "attributes": {
+        "id": "f15e3497-390d-5287-ac10-d8653cad1823",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "name": "Synthetic normal-role customer",
+        "code": "SYN-CRUD-002",
+        "email": "crud2@example.invalid",
+        "currency": "INR",
+        "is_active": true,
+        "notes": "SYNTHETIC HMG TEST DATA - not a real transaction or contact."
+      }
+    },
+    {
+      "label": "explicit_null_optional",
+      "resource_id": "new:1",
+      "attributes": {
+        "id": "f15e3497-390d-5287-ac10-d8653cad1823",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "name": "Synthetic normal-role customer",
+        "code": "SYN-CRUD-002",
+        "email": "crud2@example.invalid",
+        "currency": "INR",
+        "is_active": true,
+        "notes": "SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+        "credit_limit": null,
+        "deleted_at": null
+      }
+    },
+    {
+      "label": "explicit_numeric_zero",
+      "resource_id": "new:2",
+      "attributes": {
+        "id": "f15e3497-390d-5287-ac10-d8653cad1823",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "name": "Synthetic normal-role customer",
+        "code": "SYN-CRUD-002",
+        "email": "crud2@example.invalid",
+        "currency": "INR",
+        "is_active": true,
+        "notes": "SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+        "credit_limit": 0,
+        "deleted_at": null
+      }
+    },
+    {
+      "label": "numeric_string_zero",
+      "resource_id": "new:3",
+      "attributes": {
+        "id": "f15e3497-390d-5287-ac10-d8653cad1823",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "name": "Synthetic normal-role customer",
+        "code": "SYN-CRUD-002",
+        "email": "crud2@example.invalid",
+        "currency": "INR",
+        "is_active": true,
+        "notes": "SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+        "credit_limit": "0",
+        "deleted_at": null
+      }
+    },
+    {
+      "label": "empty_string_numeric",
+      "resource_id": "new:4",
+      "attributes": {
+        "id": "f15e3497-390d-5287-ac10-d8653cad1823",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "name": "Synthetic normal-role customer",
+        "code": "SYN-CRUD-002",
+        "email": "crud2@example.invalid",
+        "currency": "INR",
+        "is_active": true,
+        "notes": "SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+        "credit_limit": "",
+        "deleted_at": null
+      }
+    },
+    {
+      "label": "blank_name_denial",
+      "resource_id": "new:5",
+      "attributes": {
+        "id": "f15e3497-390d-5287-ac10-d8653cad1823",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "name": "   ",
+        "code": "SYN-CRUD-002",
+        "email": "crud2@example.invalid",
+        "currency": "INR",
+        "is_active": true,
+        "notes": "SYNTHETIC HMG TEST DATA - not a real transaction or contact."
+      }
+    },
+    {
+      "label": "foreign_org_denial",
+      "resource_id": "new:6",
+      "attributes": {
+        "id": "f15e3497-390d-5287-ac10-d8653cad1823",
+        "organization_id": "00000000-0000-0000-0000-000000000001",
+        "name": "Synthetic normal-role customer",
+        "code": "SYN-CRUD-002",
+        "email": "crud2@example.invalid",
+        "currency": "INR",
+        "is_active": true,
+        "notes": "SYNTHETIC HMG TEST DATA - not a real transaction or contact."
+      }
+    },
+    {
+      "label": "soft_deleted_denial",
+      "resource_id": "new:7",
+      "attributes": {
+        "id": "f15e3497-390d-5287-ac10-d8653cad1823",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "name": "Synthetic normal-role customer",
+        "code": "SYN-CRUD-002",
+        "email": "crud2@example.invalid",
+        "currency": "INR",
+        "is_active": true,
+        "notes": "SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+        "deleted_at": "2026-11-06T00:00:00Z"
+      }
+    },
+    {
+      "label": "missing_name_denial",
+      "resource_id": "new:8",
+      "attributes": {
+        "id": "f15e3497-390d-5287-ac10-d8653cad1823",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "code": "SYN-CRUD-002",
+        "email": "crud2@example.invalid",
+        "currency": "INR",
+        "is_active": true,
+        "notes": "SYNTHETIC HMG TEST DATA - not a real transaction or contact."
+      }
+    }
+  ],
+  "http": 200,
+  "response": {
+    "request_id": "9677912f-65b6-44c4-9a6a-5b71b110f017",
+    "results": [
+      {
+        "resource": {
+          "id": "new",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_ALLOW"
+        }
+      },
+      {
+        "resource": {
+          "id": "new:0",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_ALLOW"
+        }
+      },
+      {
+        "resource": {
+          "id": "f15e3497-390d-5287-ac10-d8653cad1823",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_ALLOW"
+        }
+      },
+      {
+        "resource": {
+          "id": "new:1",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_ALLOW"
+        }
+      },
+      {
+        "resource": {
+          "id": "new:2",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_ALLOW"
+        }
+      },
+      {
+        "resource": {
+          "id": "new:3",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_DENY"
+        }
+      },
+      {
+        "resource": {
+          "id": "new:4",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_DENY"
+        }
+      },
+      {
+        "resource": {
+          "id": "new:5",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_DENY"
+        }
+      },
+      {
+        "resource": {
+          "id": "new:6",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_DENY"
+        }
+      },
+      {
+        "resource": {
+          "id": "new:7",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_DENY"
+        }
+      },
+      {
+        "resource": {
+          "id": "new:8",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_DENY"
+        }
+      }
+    ],
+    "cerbos_call_id": "01M6S163WSVRZ1MF483EJPB07C"
+  },
+  "no_datatable_mutation": true
+}

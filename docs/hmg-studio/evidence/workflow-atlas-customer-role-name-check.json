@@ -1,0 +1,60 @@
+{
+  "observed_at": "2026-11-07T07:03:33.079306+00:00",
+  "app": "hmg-studio",
+  "scope": "insurance_hmg-studio",
+  "read_only": true,
+  "mutations": 0,
+  "native_create_probes": 0,
+  "policy_disabled": false,
+  "resource": "datatable:customers",
+  "rules": [
+    {
+      "actions": [
+        "read"
+      ],
+      "roles": [
+        "HMG Synthetic Operator"
+      ],
+      "effect": "EFFECT_ALLOW",
+      "condition": {
+        "match": {
+          "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\""
+        }
+      }
+    },
+    {
+      "actions": [
+        "create"
+      ],
+      "roles": [
+        "HMG Synthetic Operator"
+      ],
+      "effect": "EFFECT_ALLOW",
+      "condition": {
+        "match": {
+          "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\" && R.attr.name.matches('.*[^[:space:]].*') && size(R.attr.name) <= 255 && (!has(R.attr.deleted_at) || R.attr.deleted_at == null) && (!has(R.attr.credit_limit) || R.attr.credit_limit == null || R.attr.credit_limit >= 0)"
+        }
+      }
+    },
+    {
+      "actions": [
+        "update",
+        "delete"
+      ],
+      "roles": [
+        "*"
+      ],
+      "effect": "EFFECT_DENY"
+    }
+  ],
+  "matching_roles": [
+    {
+      "id": 1156,
+      "name": "HMG Synthetic Operator",
+      "slug": null
+    }
+  ],
+  "all_policy_identifiers_match_actual_role_names": true,
+  "policy_identifiers_using_slug": [],
+  "conclusion": "Customer policy already uses actual role name, not role slug. Name-vs-slug mismatch does not explain recorded ordinary-session create divergence. Metadata is not a new native write proof."
+}

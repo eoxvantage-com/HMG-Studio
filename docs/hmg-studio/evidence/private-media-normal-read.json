@@ -1,0 +1,10 @@
+{
+  "app": "hmg-studio",
+  "bucket": "products",
+  "object": "hmg-catalogue/00e9e0c10f598ecb093043c5ff168a69219a775eb87ef6f7e95f7c2091f0492d.jpg",
+  "ordinary_session_http": 200,
+  "mime": "image/jpeg",
+  "bytes": 53083,
+  "sha256_matches": true,
+  "anonymous_http": 401
+}

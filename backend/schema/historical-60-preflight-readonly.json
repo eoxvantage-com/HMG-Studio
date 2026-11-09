@@ -1,0 +1,167 @@
+{
+  "at": "2026-11-06T19:44:08.414257+00:00",
+  "app": "hmg-studio",
+  "read_only": true,
+  "external_rows": {
+    "organizations": [
+      {
+        "id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "name": "HMG Stones - Synthetic Workspace",
+        "slug": "hmg-synthetic-20261106",
+        "description": "SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+        "email": null,
+        "phone": null,
+        "address": null,
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": "IN",
+        "timezone": "Asia/Kolkata",
+        "default_currency": "INR",
+        "supported_currencies": null,
+        "currency": "INR",
+        "date_format": null,
+        "time_format": null,
+        "is_active": true,
+        "settings": null,
+        "created_at": "2026-11-06T09:00:00",
+        "updated_at": "2026-11-06T09:00:00",
+        "deleted_at": null,
+        "portal_enabled": false,
+        "marketplace_account": null,
+        "logo_path": null,
+        "logo_disk": null
+      }
+    ],
+    "product_categories": [
+      {
+        "id": "22db937f-4836-50eb-a2c5-b0593d77776b",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "name": "Marble",
+        "slug": "synthetic-marble",
+        "description": "SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+        "parent_id": null,
+        "is_active": true,
+        "created_at": "2026-11-06T09:00:00",
+        "updated_at": "2026-11-06T09:00:00",
+        "deleted_at": null
+      },
+      {
+        "id": "327205bc-a55b-5a48-a078-dd23829fd1b3",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "name": "Granite",
+        "slug": "synthetic-granite",
+        "description": "SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+        "parent_id": null,
+        "is_active": true,
+        "created_at": "2026-11-06T09:00:00",
+        "updated_at": "2026-11-06T09:00:00",
+        "deleted_at": null
+      }
+    ],
+    "warehouses": [
+      {
+        "id": "b37974a1-0e52-5b70-a5b0-e65031d950ee",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "name": "Factory Stone Yard - Test",
+        "code": "SYN-FACTORY",
+        "description": "SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+        "address_line_1": null,
+        "address_line_2": null,
+        "city": "Bengaluru",
+        "province": "Karnataka",
+        "postal_code": null,
+        "country": "IN",
+        "phone": null,
+        "email": null,
+        "manager_name": null,
+        "timezone": "Asia/Kolkata",
+        "currency": "INR",
+        "is_default": true,
+        "is_active": true,
+        "priority": 0,
+        "capacity": null,
+        "created_at": "2026-11-06T09:00:00",
+        "updated_at": "2026-11-06T09:00:00",
+        "deleted_at": null
+      },
+      {
+        "id": "549fdb6a-67e9-5234-b093-1750b3b47ec5",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "name": "Experience Centre - Test",
+        "code": "SYN-SHOWROOM",
+        "description": "SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+        "address_line_1": null,
+        "address_line_2": null,
+        "city": "Bengaluru",
+        "province": "Karnataka",
+        "postal_code": null,
+        "country": "IN",
+        "phone": null,
+        "email": null,
+        "manager_name": null,
+        "timezone": "Asia/Kolkata",
+        "currency": "INR",
+        "is_default": false,
+        "is_active": true,
+        "priority": 1,
+        "capacity": null,
+        "created_at": "2026-11-06T09:00:00",
+        "updated_at": "2026-11-06T09:00:00",
+        "deleted_at": null
+      }
+    ],
+    "product_locations": [
+      {
+        "id": "8ef60f84-c37d-5855-a14d-5ba0731fceab",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "warehouse_id": "b37974a1-0e52-5b70-a5b0-e65031d950ee",
+        "name": "Factory Stone Yard Rack A",
+        "code": "SYN-FACTORY-A",
+        "description": "SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+        "aisle": "A",
+        "shelf": "01",
+        "bin": null,
+        "capacity": null,
+        "is_active": true,
+        "created_at": "2026-11-06T09:00:00",
+        "updated_at": "2026-11-06T09:00:00",
+        "deleted_at": null
+      },
+      {
+        "id": "fe8df783-41fc-5905-ae9a-f3311669c0f0",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "warehouse_id": "549fdb6a-67e9-5234-b093-1750b3b47ec5",
+        "name": "Experience Centre Rack A",
+        "code": "SYN-SHOWROOM-A",
+        "description": "SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+        "aisle": "A",
+        "shelf": "01",
+        "bin": null,
+        "capacity": null,
+        "is_active": true,
+        "created_at": "2026-11-06T09:00:00",
+        "updated_at": "2026-11-06T09:00:00",
+        "deleted_at": null
+      }
+    ]
+  },
+  "subscriptions": {
+    "RECORD_CREATE": {
+      "success": true,
+      "data": [],
+      "total": 0
+    },
+    "RECORD_UPDATE": {
+      "success": true,
+      "data": [],
+      "total": 0
+    },
+    "RECORD_DELETE": {
+      "success": true,
+      "data": [],
+      "total": 0
+    }
+  },
+  "scope": "Platform event subscribers only; not proof of absent physical database triggers."
+}

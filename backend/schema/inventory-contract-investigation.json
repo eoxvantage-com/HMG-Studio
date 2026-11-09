@@ -1,0 +1,121 @@
+{
+  "checked_at": "2026-11-06T18:20:10.713732+00:00",
+  "app": "hmg-studio",
+  "remote_mutations": "Approved synthetic diagnostic query and denied QA table/row; safe-failed isolated type migration; approved additive4nullablefields on saved_reports/activity_logs with one synthetic savedreport backfill and one labelled syntheticactivity row; customer zero-string diagnostic policy was restored exactly after native403. No production business records changed.",
+  "native_create": {
+    "evidence": "docs/hmg-studio/evidence/native-create-advisory-normalization.json",
+    "allowed": [
+      "raw new",
+      "raw new:0",
+      "raw concrete UUID",
+      "explicit null optional",
+      "numeric zero"
+    ],
+    "denied": [
+      "numeric string zero",
+      "numeric empty string",
+      "blank name",
+      "foreign organization",
+      "soft deleted",
+      "missing name"
+    ],
+    "conclusion": "Request ID spelling and missing/null numeric values do not explain native customer POST403. SDK raw-object payload agrees with deployed OpenAPI. Create authorization context divergence remains a hypothesis, not a proven root cause.",
+    "next_gate": "Provider-side trace comparing exact advisory and native POST authorization inputs; do not broaden policies.",
+    "diagnostic": "Zero-string-only credit-limit rule tested with user approval; advisoryALLOW but native403 persisted; exact original customer policy restored.",
+    "escalation": "docs/hmg-studio/evidence/native-create-provider-escalation.md"
+  },
+  "json": {
+    "physical_any_type_confirmed": true,
+    "existing_probe_preserved": true,
+    "old_proposal_status": "NOT APPROVED: array mapping conflict. Do not apply continuation-proposal.json as a migration.",
+    "documented_object": "JSONB",
+    "documented_array": "TEXT[] by default; typed arrayItem controls element type",
+    "stale_source": "Local taruvi-platform commit fdd74930022bce4a2e140ae8a11557bbf9c36368 dated2025-11-17 maps unknown any to sa.Text. Not deployed proof.",
+    "reflection": "Both deployed reflect POST routes update DataTable metadata; not invoked. GET schemas returns stored JSON metadata, not physical types.",
+    "safe_next_option": "Separately approved isolated synthetic probe table using object, typed string array, and any; deny all normal access; preserve existing business tables and existing saved_reports fixture.",
+    "physical_any_types": {
+      "saved_reports.columns": "text",
+      "saved_reports.filters": "text",
+      "saved_reports.sort": "text"
+    },
+    "physical_type_evidence": "docs/hmg-studio/evidence/json-types-query-probe.json",
+    "activity_logs_properties_physical_type": "not yet directly probed",
+    "next_option": "Frontend adapter uses confirmed typed fields; no original type conversions needed.",
+    "isolated_probe": {
+      "table": "qa_json_types_20261106",
+      "policy": "DENY read/create/update/delete role*",
+      "native_object": "jsonb",
+      "native_array_string": "text[]",
+      "legacy_any": "text",
+      "roundtrip": "exact semantic match",
+      "evidence": "docs/hmg-studio/evidence/json-isolated-probe.json"
+    },
+    "migration_rehearsal": {
+      "result": "HTTP400 TEXT cannot automatically cast to JSONB",
+      "schema_row_policy_preserved": true,
+      "array_migration_attempted": false,
+      "evidence": "docs/hmg-studio/evidence/json-isolated-migration.json",
+      "next_options": "Additive typed shadow fields with compatibility adapter, or provider-operated reviewed conversion. No business-table migration applied."
+    },
+    "additive_migration": {
+      "verified": true,
+      "evidence": "docs/hmg-studio/evidence/structured-json-20261106T184314271383Z.json",
+      "new_fields": {
+        "saved_reports": {
+          "columns_json": "array/string",
+          "filters_json": "object with items array",
+          "sort_json": "object"
+        },
+        "activity_logs": {
+          "properties_json": "object"
+        }
+      },
+      "legacy_fields": "All preserved without alteration",
+      "backfill": "One existing synthetic saved report only",
+      "new_row": "One explicitly labelled synthetic activity fixture only",
+      "policies": "Unchanged"
+    }
+  },
+  "transactions": {
+    "single_request": "Official reliability contract states one record/bulk request transactional; separate requests independent.",
+    "cross_table_runtime_transaction_found": false,
+    "cas_or_if_match_found": false,
+    "raw_sql_mcp_tool_found": false,
+    "restriction": "Keep stock-changing/financial posting disabled until atomicity, concurrency, rollback, idempotency, authorization and direct-write-bypass are proven."
+  },
+  "products": {
+    "schema_evidence": "backend/schema/inventory-native-readonly.json",
+    "price": "Required number default0. Root catalogue plan will label technical placeholder0 as unpriced; no constraint change requested.",
+    "purchase_price": "Nullable number",
+    "selling_price": "Nullable number",
+    "stock": "Required integer default0; catalogue reference0 must not be represented as physical stock confirmation.",
+    "image": "Nullable string max255; private image requires authenticated SDK blob download, not bare img URL with absent session header.",
+    "product_supplier_org": "No organization_id field; never invent an org filter on this table."
+  },
+  "storage": {
+    "evidence": "backend/schema/inventory-storage-readonly.json",
+    "products": {
+      "slug": "products",
+      "id": 662
+    },
+    "Images": {
+      "slug": "images",
+      "id": 661
+    },
+    "private": true,
+    "file_size_limit": 26214400,
+    "policies": "storage:products and storage:images have authenticated_read role*; no write grant.",
+    "download": "GET /api/apps/hmg-studio/storage/buckets/{slug}/objects/{key}/ using X-Session-Token via SDK download().execute(), then Blob objectURL lifecycle.",
+    "upload": "SDK multipart batch-upload; do not overwrite existing path; no authorization change approved."
+  },
+  "sources": [
+    "https://insurance.taruvi.cloud/api/schema/",
+    "https://docs.taruvibase.com/docs/products/database/concepts/schema-reference",
+    "https://docs.taruvibase.com/docs/products/database/operations/reliability",
+    "https://docs.taruvibase.com/docs/products/authorization/guides/runtime-checks",
+    "https://docs.taruvibase.com/docs/products/storage/reference",
+    "https://docs.taruvibase.com/docs/build/refine-reference",
+    "https://docs.taruvibase.com/docs/products/analytics/security-limits",
+    "https://docs.taruvibase.com/docs/products/analytics/reference"
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "at": "2026-11-06T18:32:42.426713+00:00",
+  "app": "hmg-studio",
+  "table": "qa_json_types_20261106",
+  "steps": [
+    {
+      "stage": "object",
+      "requested_schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "organization_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "object_value",
+            "type": "object"
+          },
+          {
+            "name": "array_value",
+            "type": "array",
+            "arrayItem": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "legacy_object",
+            "type": "object"
+          },
+          {
+            "name": "legacy_array",
+            "type": "any"
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [],
+        "reverseRelationships": [],
+        "manyToManyRelationships": []
+      },
+      "response": {
+        "http": 400,
+        "body": {
+          "status": "error",
+          "message": "Schema update failed: Schema update failed for 'hmg_studio_qa_json_types_20261106': SQL syntax error: (psycopg2.errors.DatatypeMismatch) column \"legacy_object\" cannot be cast automatically to type jsonb\nHINT:  You might need to specify \"USING legacy_object::jsonb\".\n\n[SQL: ALTER TABLE hmg_studio_qa_json_types_20261106 ALTER COLUMN legacy_object TYPE JSONB ]\n(Background on this error at: https://sqlalche.me/e/21/f405)",
+          "code": "VALIDATION_ERROR",
+          "errors": {
+            "detail": [
+              "Schema update failed: Schema update failed for 'hmg_studio_qa_json_types_20261106': SQL syntax error: (psycopg2.errors.DatatypeMismatch) column \"legacy_object\" cannot be cast automatically to type jsonb\nHINT:  You might need to specify \"USING legacy_object::jsonb\".\n\n[SQL: ALTER TABLE hmg_studio_qa_json_types_20261106 ALTER COLUMN legacy_object TYPE JSONB ]\n(Background on this error at: https://sqlalche.me/e/21/f405)"
+            ]
+          }
+        }
+      },
+      "schema_after": {
+        "success": true,
+        "data": {
+          "name": "qa_json_types_20261106",
+          "physical_table_name": "hmg_studio_qa_json_types_20261106",
+          "provider_type": "flat_table",
+          "schema_format": "frictionless",
+          "json_schema": {
+            "fields": [
+              {
+                "name": "id",
+                "type": "string",
+                "format": "uuid",
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "organization_id",
+                "type": "string",
+                "format": "uuid",
+                "constraints": {
+                  "required": true
+                }
+              },
+              {
+                "name": "object_value",
+                "type": "object"
+              },
+              {
+                "name": "array_value",
+                "type": "array",
+                "arrayItem": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "legacy_object",
+                "type": "any"
+              },
+              {
+                "name": "legacy_array",
+                "type": "any"
+              }
+            ],
+            "primaryKey": [
+              "id"
+            ],
+            "foreignKeys": [],
+            "reverseRelationships": [],
+            "manyToManyRelationships": []
+          },
+          "is_materialized": true,
+          "is_active": true,
+          "description": "Isolated SYNTHETIC QA type/migration probe. Not business data.",
+          "created_at": "2026-11-06T18:28:53.789770+00:00",
+          "updated_at": "2026-11-06T18:28:54.190601+00:00"
+        }
+      },
+      "row_after": {
+        "http": 200,
+        "body": {
+          "status": "success",
+          "message": "Record retrieved successfully",
+          "data": {
+            "id": "af3bd90c-ee30-576a-8307-3c87e511f986",
+            "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+            "object_value": {
+              "items": [
+                {
+                  "field": "stock",
+                  "value": 0,
+                  "operator": "gte"
+                }
+              ],
+              "label": "SYNTHETIC QA JSON probe",
+              "nested": {
+                "number": 2,
+                "enabled": true,
+                "nullable": null
+              }
+            },
+            "array_value": [
+              "name",
+              "sku"
+            ],
+            "legacy_object": "{\"items\": [{\"field\": \"stock\", \"operator\": \"gte\", \"value\": 0}], \"label\": \"SYNTHETIC QA JSON probe\", \"nested\": {\"enabled\": true, \"number\": 2, \"nullable\": null}}",
+            "legacy_array": "[\"name\", \"sku\"]"
+          }
+        }
+      },
+      "types_after": {
+        "http": 200,
+        "body": {
+          "status": "success",
+          "message": "Query executed successfully",
+          "data": [
+            {
+              "object_type": "jsonb",
+              "array_type": "text[]",
+              "legacy_object_type": "text",
+              "legacy_array_type": "text"
+            }
+          ],
+          "total": 1,
+          "execution_key": "907c6440-9f1d-4b0f-b710-05d125d1bcd6"
+        }
+      },
+      "policy_after": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "14198175994008181136",
+          "store_identifer": "resource.datatable_qa_json_types_20261106.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_qa_json_types_20261106.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "update_ts": "2026-11-06T18:29:27Z",
+              "driver": "postgres"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:qa_json_types_20261106",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read",
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      }
+    }
+  ],
+  "before_row": {
+    "http": 200,
+    "body": {
+      "status": "success",
+      "message": "Record retrieved successfully",
+      "data": {
+        "id": "af3bd90c-ee30-576a-8307-3c87e511f986",
+        "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+        "object_value": {
+          "items": [
+            {
+              "field": "stock",
+              "value": 0,
+              "operator": "gte"
+            }
+          ],
+          "label": "SYNTHETIC QA JSON probe",
+          "nested": {
+            "number": 2,
+            "enabled": true,
+            "nullable": null
+          }
+        },
+        "array_value": [
+          "name",
+          "sku"
+        ],
+        "legacy_object": "{\"items\": [{\"field\": \"stock\", \"operator\": \"gte\", \"value\": 0}], \"label\": \"SYNTHETIC QA JSON probe\", \"nested\": {\"enabled\": true, \"number\": 2, \"nullable\": null}}",
+        "legacy_array": "[\"name\", \"sku\"]"
+      }
+    }
+  },
+  "before_schema": {
+    "name": "qa_json_types_20261106",
+    "physical_table_name": "hmg_studio_qa_json_types_20261106",
+    "provider_type": "flat_table",
+    "schema_format": "frictionless",
+    "json_schema": {
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "format": "uuid",
+          "constraints": {
+            "required": true
+          }
+        },
+        {
+          "name": "organization_id",
+          "type": "string",
+          "format": "uuid",
+          "constraints": {
+            "required": true
+          }
+        },
+        {
+          "name": "object_value",
+          "type": "object"
+        },
+        {
+          "name": "array_value",
+          "type": "array",
+          "arrayItem": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "legacy_object",
+          "type": "any"
+        },
+        {
+          "name": "legacy_array",
+          "type": "any"
+        }
+      ],
+      "primaryKey": [
+        "id"
+      ],
+      "foreignKeys": [],
+      "reverseRelationships": [],
+      "manyToManyRelationships": []
+    },
+    "is_materialized": true,
+    "is_active": true,
+    "description": "Isolated SYNTHETIC QA type/migration probe. Not business data.",
+    "created_at": "2026-11-06T18:28:53.789770+00:00",
+    "updated_at": "2026-11-06T18:28:54.190601+00:00"
+  },
+  "before_policy": {
+    "api_version": "api.cerbos.dev/v1",
+    "metadata": {
+      "hash": "14198175994008181136",
+      "store_identifer": "resource.datatable_qa_json_types_20261106.vdefault/insurance_hmg-studio",
+      "store_identifier": "resource.datatable_qa_json_types_20261106.vdefault/insurance_hmg-studio",
+      "source_attributes": {
+        "attributes": {
+          "update_ts": "2026-11-06T18:29:27Z",
+          "driver": "postgres"
+        }
+      },
+      "source_file": "",
+      "annotations": {}
+    },
+    "resource_policy": {
+      "resource": "datatable:qa_json_types_20261106",
+      "version": "default",
+      "rules": [
+        {
+          "actions": [
+            "read",
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "derived_roles": [],
+          "name": ""
+        }
+      ],
+      "scope": "insurance_hmg-studio",
+      "import_derived_roles": [],
+      "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+    },
+    "disabled": false,
+    "description": "",
+    "variables": {},
+    "json_schema": ""
+  },
+  "stopped": "Non-success schema migration; no retry/flags/casts",
+  "failure_preservation": {
+    "schema_unchanged": true,
+    "row_unchanged": true,
+    "policy_unchanged": true
+  }
+}

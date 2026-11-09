@@ -1,0 +1,10 @@
+{
+  "shipments": {
+    "verified": true,
+    "count": 1
+  },
+  "shipment_items": {
+    "verified": true,
+    "count": 1
+  }
+}

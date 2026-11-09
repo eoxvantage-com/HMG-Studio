@@ -1,0 +1,59 @@
+{
+  "at": "2026-11-06T20:41:52.181075+00:00",
+  "app": "hmg-studio",
+  "username": "qa_hmg_sales_20261106",
+  "api_key_used": false,
+  "identity_http": 200,
+  "identity": {
+    "id": "d657e05d-e357-45f5-a12a-dc9636016c6d",
+    "username": "qa_hmg_sales_20261106",
+    "is_superuser": false,
+    "roles": [
+      {
+        "name": "HMG Synthetic Operator",
+        "slug": "hmg-studio-hmg-synthetic-operator",
+        "type": "app_role",
+        "app_slug": "hmg-studio",
+        "source": "direct"
+      }
+    ]
+  },
+  "synthetic_product_read": {
+    "http": 200,
+    "total": 278,
+    "received": 1
+  },
+  "advisory_http": 200,
+  "advisory": {
+    "request_id": "a0c2e87e-4dba-4c9d-a0b6-3aec75573fa4",
+    "results": [
+      {
+        "resource": {
+          "id": "new",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_ALLOW"
+        }
+      },
+      {
+        "resource": {
+          "id": "new:foreign",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_DENY"
+        }
+      }
+    ],
+    "cerbos_call_id": "01M6S9H9J4XT9KNEVYNQX91SMA"
+  },
+  "native_create_http": 403,
+  "native_create_error": null,
+  "readback_http": 200,
+  "readback_count": 0,
+  "probe_id": "eb33a6b4-3d15-5a8c-ae51-610ff29352aa",
+  "write_replays": 0
+}

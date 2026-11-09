@@ -1,0 +1,2098 @@
+{
+  "app_slug": "hmg-studio",
+  "bucket": "products",
+  "uploaded": [
+    "hmg-catalogue/066ba1ffbd3b97ca91b259bf638d97dfab7f3232defd78aebf4ccc059fbfb66d.jpg",
+    "hmg-catalogue/0772b87abc387b6eadc2b77eccb80a12a74d3fb1e475568dfcfcca407130f7ea.jpg",
+    "hmg-catalogue/07b54fbc64ca4c086918c7970ff2074c21f8e8f1cc76c62a0b369c77c01fabc9.jpg",
+    "hmg-catalogue/089e442ea11e300d0d0b41c4d8c8922acfa1701995fc476e90a92ee758e8306d.jpg",
+    "hmg-catalogue/08a8129938d5a6c9f4fccfb8d97d7ee6fdd3a2bc10b9cdaf3072fe0296e85902.jpg",
+    "hmg-catalogue/0949bcba8625f6ee5f9047075f7db3b80b1b414d1b7a3ed472dfed0b74d9ab3b.jpg",
+    "hmg-catalogue/0a91fb74c2e72adeabe4d49196235a40788276e18cfb6dd60eb4c584429d44c1.jpg",
+    "hmg-catalogue/0b2518449ff64f874699501b2185bdba2ba01196a174d57db8442ed36204d56b.jpg",
+    "hmg-catalogue/0c71f5ff05124513e3e97189df909f7cfdb05e6c7d554e461360b959a3701f2d.jpg",
+    "hmg-catalogue/0c89fb17156a806e22adb7b8a8fab7e6bac8a2356d920b0f23f98647ad9af077.jpg",
+    "hmg-catalogue/0cc7b771c01a02706fcafdf583cbab5102fd2ba6ca9a5e297d57504a75252ba6.jpg",
+    "hmg-catalogue/0fba430c9f50d019e17cbb0819182427db1c62ce1592a34ae187a8c23aabe6e9.jpg",
+    "hmg-catalogue/10874a96b570e0ee056a80a1d71355bd8b4e75ce5cc64a2dddd6a9c7595efa2d.jpg",
+    "hmg-catalogue/10fa5c3e0d366f7aaf268a8f7e44c6e2e1323c18b642edd3f2b9a82631a5de27.jpg",
+    "hmg-catalogue/112f439f3757707590c73afad9a73f29ca240a161f7832e327ba472c50dd1d70.jpg",
+    "hmg-catalogue/1189390505ca844915c205a54af054e9a91d0085d9d7570ee42cf371dace0128.jpg",
+    "hmg-catalogue/11cc88161c0d35aa1d9593eda1d75b1767b94e2016d90004dee39c2580ff4e4a.jpg",
+    "hmg-catalogue/1397d77172f4c914bda0ae940afcf16fd7955dc6de57f8899e89f17c345f999c.jpg",
+    "hmg-catalogue/13ae7c37dfaafe6878f5acd197c1a20cae4e24f3b9950eb3e4a23018abca41af.jpg",
+    "hmg-catalogue/152b0c8fe403bbf2ca5d227a1853738d41bbbfcdb0c0151cca8fa19a349460ba.jpg",
+    "hmg-catalogue/15eaa8ece22e2166cbe1af3ced2ea8e0a273aebec6eda87ad1bb60c2ffa25096.jpg",
+    "hmg-catalogue/167f313babdf2b53517cd4ee07502c975634eaab568c0f6e1ca84900432d9db8.jpg",
+    "hmg-catalogue/169c1b1e94519ddc397590f119c295be9fd75abadb5b705754682b63f5b7142d.jpg",
+    "hmg-catalogue/1777cc26e82f26e7f717351044ced1d70186d49eed1a1626afd5c40815039abd.jpg",
+    "hmg-catalogue/1821586b3b4eaa7aebb333fc72e5e9944780d228536c68fe38ce2bbb2e853716.jpg",
+    "hmg-catalogue/18391fad3a44800c9ffbc61b11c89c214739f49037f05c41450e2facf5ad8c9a.jpg",
+    "hmg-catalogue/18b3ad90d29785f92e3ee7158555b94d48f001c3be2985d6a97390b1d650912c.jpg",
+    "hmg-catalogue/18e659958b81e179d5d84bcea5159aefbcf8aa2e4c5ebd07886b71d4917109ce.jpg",
+    "hmg-catalogue/19b9d5f1f106f33d480a975ca2adcbb903d3f7fc2265fc5eef4f557870511578.jpg",
+    "hmg-catalogue/1ad8de91cb59ab84eeee17ba60fc9562df3159bbfa5d0f375f5d038f6b5bf29d.jpg",
+    "hmg-catalogue/1b896083aeaf6aca47a5c9fa4a89ca40357707cef6cc71ed2fa73730e77ad07e.jpg",
+    "hmg-catalogue/1c812d0afa7dc973a43ddf2f9530ec0c86c55a8ff545333df1916e618b95b940.jpg",
+    "hmg-catalogue/1cba1ae2d63fab8d42d9f150802f700f569a860f07b9912f52d90ae08cde70a8.jpg",
+    "hmg-catalogue/1d8018da2352f5e6268535e8b2d89117f2074e20d1e6407b01b9bad690d236a1.jpg",
+    "hmg-catalogue/1da44484f38688954efdcabe0a70e2b7ae90621cda5c05e76326932ced4e78f6.jpg",
+    "hmg-catalogue/1e0de6f8461d1b02d0b76f13b2debbacd051d6bbb3836fef42c9ce0055b859a3.jpg",
+    "hmg-catalogue/1e3659c98dbbe96ecafbd05a67e72e076c31fdd0182862817234fd550ffa5875.jpg",
+    "hmg-catalogue/1ee5a21a1a7e39c3d6e523dbf2df7e2fa11c82a6a50fedc31689387395746600.jpg",
+    "hmg-catalogue/201cdb5330f53e7937cab8cef5a90a7e2dd04b310aeb2884ba1b2afcc51177a2.jpg",
+    "hmg-catalogue/20bad6234897da2acff277d1863d29781787ebd02b294ec81e32139caf8b56ec.jpg",
+    "hmg-catalogue/227fcf10a4a1c8dcc002a6cd9c8a19582147c0288303f8f0a0ece24ab05abdba.jpg",
+    "hmg-catalogue/228719df84818a54114ef16648b46bdaf87f0f25624fae4e9e9dcb01bd06e037.jpg",
+    "hmg-catalogue/2479d25102953e7b6d2984a02c3b879af859d4963a2646f4532b893966b5fdbe.jpg",
+    "hmg-catalogue/24e6f0cdef3ef0ddc51bb6932bbdbc0c2080e7049faa4032cf20542957e90695.jpg",
+    "hmg-catalogue/272d6eda044bba8ee74d57a79c73d805953ce4679409e43456f2033a8ede6b10.jpg",
+    "hmg-catalogue/28cb8173056eea3f501f39622f1bf598d211989a0d51cd944dcc9ed6d202cb72.jpg",
+    "hmg-catalogue/2b9087ba821d05dda80062be39850fe2bed755826c4467a4dca4e9d8912ea9ab.jpg",
+    "hmg-catalogue/2d0f4436164a206ef777c9be686b0d337a5bf1bdb79a70e165908e1d0fd090d2.jpg",
+    "hmg-catalogue/2fe40120c1ddfdc7368a40fa0e1a15d1e0f8df7f14d8f87a0fad8a3e4cd7ed78.jpg",
+    "hmg-catalogue/31b331080ad75d3307f8d5f861c3bc206e283e82a2d8d4d5357eca3797b7e4ee.jpg",
+    "hmg-catalogue/32609b02c54347c57bf9f624a62e1deea19118e5d2144f986ace786a8fca89e9.jpg",
+    "hmg-catalogue/337329a87e01e322bd915491087fbd7c9a3de676176cadb21f6d23c910ed3241.jpg",
+    "hmg-catalogue/33cb5bac770bdbecb3135723d8571fb91cc9a6f42daed8a105a03572dd6f3948.jpg",
+    "hmg-catalogue/33d74a31ed4b7de4c360ceddfb4d25e74dc20011aa60db896fae1558b2f0c12e.jpg",
+    "hmg-catalogue/348e1c9702b59741a5b26aaf1bc8f024bdb9752a2d3eb4397f6165a0b528d421.jpg",
+    "hmg-catalogue/35e9e15bc76211243b091d01ae7b4c437ec6c69f1018598fe7c770eb73f2c3fa.jpg",
+    "hmg-catalogue/36f07ebc5a3918dafc507d15438c2f3f0dff49ba1de29477d0fa476a5a3a4840.jpg",
+    "hmg-catalogue/3835a964d7f6143cafa19812ff8481a1e5ee0afac5a01dd900f4989c138d6962.jpg",
+    "hmg-catalogue/3a3c479d691026ef7b7e88f654a593db904ff736f8c4cd4cb6e33faa58e8e59e.jpg",
+    "hmg-catalogue/3a637e0d20d0ed378ef9d9a7faa8ae70d564bb386e6404954355a7f261cd6ee3.jpg",
+    "hmg-catalogue/3e1aa91014d5e301f1ecba4dcf359f513aeaa642e1fa4b8345a89b74f0b19dd8.jpg",
+    "hmg-catalogue/3ee98aea0f1eadebe8af02a88b69335bb1a560666f8fa12cf1255975af0d0201.jpg",
+    "hmg-catalogue/3f09a68ed7788cb7bfec537e41088fb3b0168a77c1f67fa4043a8193c0340609.jpg",
+    "hmg-catalogue/3f4c70d45c695b88d115f73a2e930946c9191084b8eee5fa44b24908de12ed11.jpg",
+    "hmg-catalogue/3fb5054e2955ddc88ade047e05ad88142594eded92efd2db40364094ca8d7d41.jpg",
+    "hmg-catalogue/402ececb927178c8ac7b582f51de648e9e7e7104dd184938bf84551beb98a08c.jpg",
+    "hmg-catalogue/41016a0d91b9b79b0b22d7574bd51a740b752855ae5f5eadf60fa07166b4aa5f.jpg",
+    "hmg-catalogue/41191171f33d8471f647eb3e7c0bcace7ed686c33d838ac756e4bb8a5af101e8.jpg",
+    "hmg-catalogue/41255c8ba7209b049237ab3edd75249e9a989cf69b40746e4bc99a746c220018.jpg",
+    "hmg-catalogue/41bf62ee4a29fce0eb7cb7f2ad5dfceb3f019b5e8436a29468005d23a115d096.jpg",
+    "hmg-catalogue/43614cc1545ae24d307bdb8ff05d4206dbf08e0e8b1893299c88f0f5980ffabb.jpg",
+    "hmg-catalogue/43badbecb4e086f7beb6fdb4caf27e7b5f909e43bf6d2588dd1da9fca73dd108.jpg",
+    "hmg-catalogue/4605ca3ddfed9c2d3f4a081f899f6a2ce09d01956ea2e506e93f8e96b4393b99.jpg",
+    "hmg-catalogue/46ba6e11ca46235ebea6756236996f38c393aab9844d7759a0578ff9d72bda56.jpg",
+    "hmg-catalogue/46ef5544dd20239bfe24497785706c7c5054b91b596166b2c82687e5ceeaf487.jpg",
+    "hmg-catalogue/474163a6a1dab6f245109ea307bb6db807f5043496ffda6bab9fdc8586b66421.jpg",
+    "hmg-catalogue/481260bd485ff6dc1a2c5c73120afd1320cf7f94a6d8a9b95b53e54402da8a80.jpg",
+    "hmg-catalogue/4c26ece541d062c7311daf9f400667256d6679297e267f977b9e53136a8fb317.jpg",
+    "hmg-catalogue/4cc984b9578f4a153c0f43efe655d717bb4c91c0f5eb1500eafcf0b0b0938748.jpg",
+    "hmg-catalogue/4ed314c494c863cd9b08cc4184439a184453f3483cba48c5733fec65a28598af.jpg",
+    "hmg-catalogue/4f74f7901a995ae4b16c5774ffa0d9aa1f1f46a47106728ae090f5ce36e26569.jpg",
+    "hmg-catalogue/4f7938ba0943bcaf1cee256d7d111e934f5457b0fe08a82d062596f23c627f59.jpg",
+    "hmg-catalogue/53045fe96eb56a7f6c4b576487820c0eeb1695907075cd4a88ecb72ba9f7d055.jpg",
+    "hmg-catalogue/5416369bd6627b487464180ace5f37c52878e432bab09051045ec734f3b54413.jpg",
+    "hmg-catalogue/542919fdb22861be90f36244ffab3f1b06e2720bb2dc38d57933200d1a6ed441.jpg",
+    "hmg-catalogue/54d386dede398b01518a8b51e425196beb6d9a8d423a0af7708933849ba0b972.jpg",
+    "hmg-catalogue/556e76d54065515849fb2837a84d7d531798af473607759ed3ba44a5ff8c42dd.jpg",
+    "hmg-catalogue/55ec23b733f70ac5661cd86f3ed8e192564316aa8f3649445f3acc7c951ae02d.jpg",
+    "hmg-catalogue/5976d72f848167a91c7ae3683ab15fe63ede30c271565aeed3b521b767f68e7b.jpg",
+    "hmg-catalogue/59b6399075a53f6e0bc1bd31eb1c54fb9f3ef3443c5ef57b0293cf94235ca87e.jpg",
+    "hmg-catalogue/5d9e994a0c9a0d93a20d61f093641c7db047919e8e429b5d8af58368e7cbbfb4.jpg",
+    "hmg-catalogue/5f1d8bd8cc2066594393cced614a4459d9638d6048a8584498364e2f4ca91a34.jpg",
+    "hmg-catalogue/5f8c77edd2341f1f7b2a4f0c95e63ea42a6012181eed0bf45937b9c43b8b84fd.jpg",
+    "hmg-catalogue/605c1c09e280f66ca9c5e7e77997e42a1dd93a3c377fdb51db350c9d46309f85.jpg",
+    "hmg-catalogue/6240b8778c458c871949cef9520280598c8fe4f22060b269a1d2d97754b3313b.jpg",
+    "hmg-catalogue/62f142c0219e150e805beba95aa0b629a067010252c0d8dbf2d0025be0074a67.jpg",
+    "hmg-catalogue/637100870c8685d0f6455c00f87b67525bcf6ee3ddbae884c262d0a3477d375d.jpg",
+    "hmg-catalogue/6721070aa420f9e8656812fb32d55b5e55d9a53c0fdf2db7aba796bd2ee02fba.jpg",
+    "hmg-catalogue/67cf85cd753e3637020d37fe968737417a2b514eb13b37dd3aa43d81e7cc2b0e.jpg",
+    "hmg-catalogue/68c549a5ca7eba5f520f1267cf054710975c847d8981382aabeec5f319821785.jpg",
+    "hmg-catalogue/696f405aad4740a8275ce3a835e22e09428240ad3b1c9313593704816597390c.jpg",
+    "hmg-catalogue/6b0eb78cffe3777caa064158438cab481e6ef0ef826588cb27e69af40ee0fd40.jpg",
+    "hmg-catalogue/6cd240efb2fd5d80b694e85a0361fd93dd5e4fd1e14b409c0aa44d3b9c8efd96.jpg",
+    "hmg-catalogue/6cf6bb3f4eb218684f9afb06c469f0dbebe2cbb263759d0f9e5e628b8933b5f9.jpg",
+    "hmg-catalogue/6d45e90ac583f490c0c3a5fc21e0996715b3bacc5251b0f11699e50e7078542c.jpg",
+    "hmg-catalogue/6da792dfca82326964d8632d149c1f4118b8674d3a454c578396382439f7d5f7.jpg",
+    "hmg-catalogue/6f0b35b5097f87708adfc7eaec6dcee4f2b64753892184ba372f7f619ef1e4c0.jpg",
+    "hmg-catalogue/7104510957686c8ef56a24bd7836dfd57e251811700d6371cca6cb396171323f.jpg",
+    "hmg-catalogue/7175317915842fe6edf74cb2289bfe62e0dde057aac17ff0ae909a4c1e8e740a.jpg",
+    "hmg-catalogue/71f02c3f9de2b4878bdd149475995ea8bd9861a95a118f1aeecb3df99fda5bd7.jpg",
+    "hmg-catalogue/727278f5a2aa711476ac0968f94beec4fb796c34a9773c8ec9191aaea9522685.jpg",
+    "hmg-catalogue/727e31733d3ba73c6a73d2df1e479e3ba24c17f1329db34a13283296f2a3fd58.jpg",
+    "hmg-catalogue/73f76a0918896288b2c0a9f0c50c27c7f7862d937eb0c6df88cc2e276b5a97c0.jpg",
+    "hmg-catalogue/759f365030fdacc7b8825a7e247d27e20df7d7078b67ab61153a4515f81ba4d0.jpg",
+    "hmg-catalogue/75bf9cb64b16f0322dd215cb774874eb734b2099c706678319f0cb7d470b3afc.jpg",
+    "hmg-catalogue/75eece74f34f774e950771234e5b08099f16d173bce8acb63e8498faedebb575.jpg",
+    "hmg-catalogue/7643b21a818ac920d2d2154157a8cb85b63ba904494360aaf634f63d472de702.jpg",
+    "hmg-catalogue/7a81e4a872f7dd638c3048c2654ae47d0bbb6f5e0c198cd22c09e3f95018bc92.jpg",
+    "hmg-catalogue/7b69f3fde6582d35078f69278677c9c2d1765a335191f4ab92ae4d808845cc98.jpg",
+    "hmg-catalogue/7cfc019e6b319f631f74b30f8d019d3c6245fbfae827cb4c45c5b9537bc47e2f.jpg",
+    "hmg-catalogue/7d7d6826db02cbf61c2ac1c01f2eaed74fa055ea854b9707c01329067f55a3db.jpg",
+    "hmg-catalogue/7dd10934bf9bca57bab11e1619ff49dbe8a53122479023f6767508b873ebc137.jpg",
+    "hmg-catalogue/7e8e9a83962f57da37b73884d9273d14a8096190af00470b6fd36577e9ac52fb.jpg",
+    "hmg-catalogue/7eb2cafa1c82e0605bb5bbec83275017fbf38fbd18c5c9384620b4e6766f31f9.jpg",
+    "hmg-catalogue/7f4ae457dd35d2a62bd575c1cdec631575c71b7be027900f15eb68711ef5ed94.jpg",
+    "hmg-catalogue/8083326bab4c46c26d22b687d46c09b44d72a5dd1c552024b72da6e93f971a99.jpg",
+    "hmg-catalogue/8161fa76f16d5a6f5a0c39198a5200cb07c8fe0277136d81b3efc963be4b0438.jpg",
+    "hmg-catalogue/81647efc3ea03d7b0d8ed08ec6dfc4b60c6525d4b5173e03d1981894a72d1215.jpg",
+    "hmg-catalogue/817e65a35b10bf774096f4a1bca9bb50d90027cff0859227add17cfbb01c185f.jpg",
+    "hmg-catalogue/8626d13f8796d89fb7e307ea1dd0670ad797e336e79d6bfe26d3e145e8b40136.jpg",
+    "hmg-catalogue/877f26be2dfc4b0303b112d6b80608f4a11b2d3357199788a7cd935cda380d99.jpg",
+    "hmg-catalogue/88844302653d80595cd98d0f952db88cc22c3b10fbb417b0f32e293ce5fa1691.jpg",
+    "hmg-catalogue/8896c13b36b477bd973a061aa61ae39a0f0cd6f90375cc8969dbcc0779376e9a.jpg",
+    "hmg-catalogue/8aa7499a7b34f50b0ef7e039d835af0bcb4ab140779611b5c41b327d1a71103a.jpg",
+    "hmg-catalogue/8add898ec0c0b8bf6b456fd176d41e42f5376ad743bf948b8e890f514639a4e6.jpg",
+    "hmg-catalogue/8b4af019d0cb90211f0906c8276de7648568fe4c4f4453ee4f0f67a6d9da7205.jpg",
+    "hmg-catalogue/8cc8f514275ee3e68ababbf012637f08a6dce20f4dae7e132702c26f4fd02964.jpg",
+    "hmg-catalogue/8f801f7c9ede0b2faaefaf65ebde31764ea2ab205d70543d42d919cf9de281f3.jpg",
+    "hmg-catalogue/8f8b33d84e666473a94c4b8d038bf5dee04e4f2a32019f250603118403b58593.jpg",
+    "hmg-catalogue/90c7e6e14f4f51386a84aedc8f77cc698e4aef43d409cb29589f7d5cbae990f3.jpg",
+    "hmg-catalogue/90e7b725b85eeba08029499b2f7a6098efc8a2abf0c14bb25334a28f07e8745c.jpg",
+    "hmg-catalogue/915890ba7fd546ca651f0ba6a7e1ffad3098f5d9b6a82bffd407613c6f611cab.jpg",
+    "hmg-catalogue/91846c55aa79c9a47f9159f39db1f4d5791b53d32ce65d2527144a231572b670.jpg",
+    "hmg-catalogue/920fa98e3d319dc69cfd258385749c244402c44373c71550c38c45e2a7b557cd.jpg",
+    "hmg-catalogue/929d145a369fcf2d3dc6b0ec1700ec70e5ed92b37c5b20f3a00d9013f12f53af.jpg",
+    "hmg-catalogue/932a6457d8eb57aa3ff8013a118e7a0165c26a3a09e7a79521e4fd809e3a791a.jpg",
+    "hmg-catalogue/935b01a151f08bb97207d4a65820e86d6e90e1b87a43b56ef93547c80b13aef5.jpg",
+    "hmg-catalogue/939f8b9d73e743af9775a863c9b86df78879ffa0bf10391965079d94e1f0d906.jpg",
+    "hmg-catalogue/94a19c7563f3a0bab0e1a4648b5f0ececb870e5e958e2f16557f99a6aecb2485.jpg",
+    "hmg-catalogue/96aba9660ac16044943607d272486dbc36343cbc4f6947df8ecb6526c2a167b2.jpg",
+    "hmg-catalogue/98e22efa177622458ead46e140821deb37c7ac0ac67feac95ecc8f017ed7d3d2.jpg",
+    "hmg-catalogue/9ae312ca170cfda1050151f3169dbad4778a0e981154ea801fcb41f0bc1cad92.jpg",
+    "hmg-catalogue/9d3a9a4e2cce3a599be6889420a775d75a4ac6ae3389f28d5d8b53c285192819.jpg",
+    "hmg-catalogue/9e3cbfc65d4b137848702418d982b88f6bc7185b9ffafe794176e14eaa4cca04.png",
+    "hmg-catalogue/9ee5ce01b79f6cbf0c089b70c381d6c82a03062f2ad67e07c498d882133f234c.jpg",
+    "hmg-catalogue/9f169596bdf8b0b26eb8b07bc91f6754cc72b1aec6de84e66681a93234290699.jpg",
+    "hmg-catalogue/9f64c7cc7f8c8046665fdbd87d84ace956877fcc8b2d11c88d68c9bc2d468aba.jpg",
+    "hmg-catalogue/9f7999f214fee084b662bb9951b2ef929d6ffc4460c5cbcc8972177fdecf8a03.jpg",
+    "hmg-catalogue/9fb7127fa785a99d85f561c35a4cd1d762e62950434265fa29fdcc73696e8cd5.jpg",
+    "hmg-catalogue/a013797244499246f3ce42f11cd3844a8d485997b643ad2a74e1a1355e42ea2c.jpg",
+    "hmg-catalogue/a0d1184c956d9fbbc69830681b69914e69bb71b4bda001c2f3edd0afffd9627a.jpg",
+    "hmg-catalogue/a102308371ab6b4f70b0830e990caf80d9f648fc4275b6ef80615da8858cfad4.jpg",
+    "hmg-catalogue/a15ca4e11a6223f3e65826e2721bca83f2c6ce740808b1e9b4fc3f7d9bd5b90a.jpg",
+    "hmg-catalogue/a1d98e66b5274738126fb92d81965998f580bb7cdcbc7b583c6cd08158ca9ac5.jpg",
+    "hmg-catalogue/a376d7718fe26e9ecc849e10ec47d0c948413d95eefb53605f0e2649ffdfc78a.jpg",
+    "hmg-catalogue/a56450f4c23862acfe9bd1d10c63d2f245ce3529421e11d49330a04c6e664ace.jpg",
+    "hmg-catalogue/a5b097540e20f38c5632cb674b55966416f8c54a4a3453da9d2a80c30eb9ada2.jpg",
+    "hmg-catalogue/a6e3140499351bceb1b721dcf9b946f7b9c7ff43b1b848e67df97203f79ac9bb.jpg",
+    "hmg-catalogue/a88d6dd0eb26c8389d6b6d24aaf4cd8ea9dce740d6b1894da5ea830159d4b027.jpg",
+    "hmg-catalogue/aa869addfab63d12857e4266aac8042830a907332cbdf74dd8ac2622947b54cf.jpg",
+    "hmg-catalogue/aab19a0721c1f747830dc27e3c5fa2f6eda46dab6bdcbcd62123988e4df9be9e.jpg",
+    "hmg-catalogue/ab80fdb0e3727ccce3adf25097b33d6118db55e2a423e73a1c8fdfb4573fb529.jpg",
+    "hmg-catalogue/acf10f3dc2a712820cec5f1957fb15cce9460226f79d42a3e35431ddde7d465a.jpg",
+    "hmg-catalogue/ad9f8d593dd462142078db9cd044a16bfd6f8fd754afc6e4c3702079229f5feb.jpg",
+    "hmg-catalogue/afbdf0d0c78c64de39ae81f33fbdde072fe0bc586ecf1dc66d801f56e5bc099d.jpg",
+    "hmg-catalogue/b181c1c982fbb5392a339b340847e071ee1e157e9f809a8a80edc375052e4030.jpg",
+    "hmg-catalogue/b272a16780aca393d76ce3e33e88a099def35edf455961b0312f6c667415bcc1.jpg",
+    "hmg-catalogue/b2b126bb37104b3f5a9db42704e28bc05027601eb537b8b230cdf68470751313.jpg",
+    "hmg-catalogue/b3089befa5f4460bd439d67847863fae973e105d2a2c5020fa7c543be60a8bcf.jpg",
+    "hmg-catalogue/b3e26547d26fba7836f75ea7802518caadd001bc01e6b253e149977baccf47af.jpg",
+    "hmg-catalogue/b6398a3ce8f5a3c864b296b09b98c3c57769d7a028352b13ad02ae12fb061282.jpg",
+    "hmg-catalogue/b65602710eb13e57d960e4a12e9f183ac68af6ec8654025d0c42e613bc73c014.jpg",
+    "hmg-catalogue/b78f8fed44629ed8c11d7faf4060de75762274ba26e71b1e599620be1ffbac72.jpg",
+    "hmg-catalogue/b937f2e80a4307ed3143205098a270484614f4042bc70cceea4c5fa8e0817657.jpg",
+    "hmg-catalogue/b9a1919d1be259c7d75f78bd5e43e9ecb01a3ce133c75f6575679637448d3a55.jpg",
+    "hmg-catalogue/bc42bc2b4146970abca1bdf3ff8156d41a8f4d81911be2c4f3600f9078553fc5.jpg",
+    "hmg-catalogue/bc493d5ffb686d3e5ef5f060468c1878505dbaa60d0fba3cec494424397885f6.jpg",
+    "hmg-catalogue/bd3feebf19cd85fc463b265ab18b610af1800454ab5246bce8ee8875158a30fd.jpg",
+    "hmg-catalogue/bea57812d09d3054200886d79d310e75a552857cd1771e970e1e1dd81d6c0842.jpg",
+    "hmg-catalogue/bf29a5ec465148dae20149f4bd0b63db1d5574d7f35196e4f6eace0c5740f61a.jpg",
+    "hmg-catalogue/bf5986a77284b760dbd2e729468e1a64831984717e45e5ca8e7e9f4e708784bf.jpg",
+    "hmg-catalogue/bf81e56420da41b5ef6d973d1b6f1ac17bd820441b74a5822ebecdbf6cf47d6f.jpg",
+    "hmg-catalogue/c14144d8f659b9f6e45a8d13ef2283f020307d4ea768e7c49f32fa99a43624d6.jpg",
+    "hmg-catalogue/c2cb6adc4cbdd5516737b693fcfc64c84fe89808d3dd89b1b6b17350d9dff475.jpg",
+    "hmg-catalogue/c3327a4948ef34641230a0611afea869a40472fec47604229e6fd57f53a1c92f.jpg",
+    "hmg-catalogue/c4fa818b0c9c79f865e3dc80f74b25284072e97bc46e09f8c5c524d8d90c1b3d.jpg",
+    "hmg-catalogue/c582078ddc3b33de7c316b492ba5f167a135d9f1fc98781155831d2e931a7eb0.jpg",
+    "hmg-catalogue/c6311d88b994e055ca209828b4526d061773cbf838d52a6b30cc05e3f0066666.jpg",
+    "hmg-catalogue/c7768d8e93801cee38df1bca8c1dd817c6155cd7387e05312a1ca49606dc01d3.jpg",
+    "hmg-catalogue/c80de9a53516f7752df25fe25218424e04cd8c05bedd819b2229ce9b2e379512.jpg",
+    "hmg-catalogue/c821653b881c847cd136fd4f23b93ec91b7f35ac8f98bb0cae8c6b365c4afd7e.jpg",
+    "hmg-catalogue/c91908b3d032cee1dc60fb128d2e3e8105d1ebe75cbf6db83ada1db656fb749f.jpg",
+    "hmg-catalogue/caa156fabfca6ea9fb9afaaf799aa23005ef4ea00b34978ffa05a136e9040f09.jpg",
+    "hmg-catalogue/cac463b9bf5accf3930828d505c19724f936bde7a896ec129bda457dab741002.jpg",
+    "hmg-catalogue/caf3ac6f39972e6e84141ef0e11397d83ccdc924163a67010df477cf60867fbf.jpg",
+    "hmg-catalogue/cbb836ce623145e2d8b9a87acbdd0acbea24b42771a83534848f66c003f01a12.jpg",
+    "hmg-catalogue/cbe708898b9fc7403db85a6922d84b1914868480150ac62d58399e5f48308181.jpg",
+    "hmg-catalogue/ccd38c4e46bfad520fb4afad9178ee2acf13175c41d8c073bb4e620e385ff521.jpg",
+    "hmg-catalogue/cddd155d16a1ff128235e1e776c55127aca5971ba682a111ba49d108ce812d8f.jpg",
+    "hmg-catalogue/ceb6683d59ed9879867a80e66323bb1410f93104e2808b08e586e49d9704ba67.jpg",
+    "hmg-catalogue/d0e9fa0c0ac116afef1883a785b5063664472f3ae28c1e4fcf9c0c1e6985bae0.jpg",
+    "hmg-catalogue/d0ef2575981c5e94cb0f39b41c90d9604d349a827ab2cd4797dfc53ce8fc7997.jpg",
+    "hmg-catalogue/d1370e6691301e8353ae3d10aa5fe6d1149b34b54cfc5eb833612f5a7bff11c7.jpg",
+    "hmg-catalogue/d32809bdf60aff5ecc24598c2cf0d1764d4773177cc522cb8f42e7e5dd6e67df.jpg",
+    "hmg-catalogue/d3bfa399136b45f72ed45079f0cb69e2147baf0b761e4590c8b0e7c70842f9d7.jpg",
+    "hmg-catalogue/d8cd108ea30dfeb476200e1857e6dc5fc61c1b36eae1f3756fe88ff54ec5d3b4.jpg",
+    "hmg-catalogue/d8dff728e2f889352f4d7e5c89a31b3c545a1622438af17c5fa66cd05ec75f04.jpg",
+    "hmg-catalogue/d8e56e25d238edaefda2c351ba17c340488fcd8929136ad4fe4e8f542761d014.jpg",
+    "hmg-catalogue/da4fcd59bb9120fef0427c1d72d6574480e4d6a96c49bcf82111d5af60c5f257.jpg",
+    "hmg-catalogue/db02bcdf94448754854b9551a1cd98beade2e42b8fb1d972b0a4659995a6b97b.jpg",
+    "hmg-catalogue/db9396c85207d4f99c919f565dc36a56c64627fdba8a34b73d83ea240f544af9.jpg",
+    "hmg-catalogue/dbbbef415d58416a8e08d339ba72ca910d35d8334c3b0a02fcd1efdd4de54650.jpg",
+    "hmg-catalogue/dcc91a5bd27a8109460251d84b497664fee0fd26f21317548d847edaec37ee94.jpg",
+    "hmg-catalogue/df5081bade221a9e2c6ba32523ef8edca14ffe50e3037b2ceb8da043681a6a07.jpg",
+    "hmg-catalogue/df70eca62e6f1918e103ef83a7d44b2a58db1c312df3e11a3270c996a3470747.jpg",
+    "hmg-catalogue/e02e6b168e906b823985273ed8c948886bd0df88d1a9000c644bc640152cbc49.jpg",
+    "hmg-catalogue/e0a48a8dd514bc2a0ddde37eb3ca4a8932e78ba3943c48a5a1fabdc8cec03e97.jpg",
+    "hmg-catalogue/e257adf04c6bfa72ec2fad15eb1e7d7bc0fe64e2c5d82b31dd972134dea9287a.jpg",
+    "hmg-catalogue/e2ee17c7f0d97672f87fdfdd7ad2a6ef02e397cfb9b723bf0e011964fdfbafb0.jpg",
+    "hmg-catalogue/e4c6ee2d3a2cfcd6a8f46430f4a50e7f44191cb7fa951c7fd7662288b27d90fc.jpg",
+    "hmg-catalogue/e4d075456f41e455673c88b4c696d3499712c97d09a3d6168b4bb81d339ba5e8.jpg",
+    "hmg-catalogue/e69467b9eeeacde73cb0c23a386a6a01052831a0b8d0ab182c48860913c37c4a.jpg",
+    "hmg-catalogue/e7f01ea5e921e488e39577bcccff2a29f8b20efed29baba2ee6a0cd84f67a6b7.jpg",
+    "hmg-catalogue/e8a3865e71445e00f2e0ac8426147600f35226277a0a7d77fcd76aac1f70c3d0.jpg",
+    "hmg-catalogue/ea585a257d05e9dce11b2ec32c576a74d3437bd10b114ed8cb3a257e020d6f18.jpg",
+    "hmg-catalogue/eaa69704add780b596e9d53d9b6721a1b30e56ef275aef0688c26be0f7059878.jpg",
+    "hmg-catalogue/ed62687c2e018f93ca0a9d9b96b131e42887e4ffd8529630d7002e70869d7a2d.jpg",
+    "hmg-catalogue/ee22a32ac4968a448dad3dd65857594a40d016d584da8daf25d35301fe7a4905.jpg",
+    "hmg-catalogue/ef194abe24632f7aa90ba2eefcfd221be12ed2021c126fe810bb4c80bec2363f.jpg",
+    "hmg-catalogue/ef5bb838371d6dd287b2d746bcc74c96c263cecc31ec0cd5dee91a9de9d4fad1.jpg",
+    "hmg-catalogue/f0aead6b8ca4bbc33b66c0b11055a996c3a4c979599c77b4ac43ed9bef332f7d.jpg",
+    "hmg-catalogue/f1e59d8e801a2bf6ce47452f3b60a86665e3cd37e49720b1ab38763f0f145a55.jpg",
+    "hmg-catalogue/f313cc6a90f77cc34e8925f6f3a1d18baa25bceecc94bf47609cab220b587312.jpg",
+    "hmg-catalogue/f6be60289fa117300917385ef6e2ec17a3177ed5f723bbf2e8b1858f25a12355.jpg",
+    "hmg-catalogue/f920188e075b1387b6cca04eb52147590ac9f38305d412ddb4d7b04e3fb49ec0.jpg",
+    "hmg-catalogue/fcf0919b36e5ec5bc79d8a4e22f642150b08a3a1858f87a6203eb9de702805c7.jpg",
+    "hmg-catalogue/fe954d092ddb01ac73898671a6147e00cf46698e2cefd9f45a014796cc2fbe99.jpg"
+  ],
+  "skipped": [
+    "hmg-catalogue/00e9e0c10f598ecb093043c5ff168a69219a775eb87ef6f7e95f7c2091f0492d.jpg",
+    "hmg-catalogue/026c118a40e0f0c524139a65ad02adad6bc1c85c79f9e26eeb4c700b61030bbe.jpg",
+    "hmg-catalogue/026caffac3c6fb1e86d4d22de97cfb708972b592b07c068fef78b53c34ae1627.jpg",
+    "hmg-catalogue/03b1093e7cd3c97aa3f72afc331b4d6b3a0042343645e5b7c4b1614269e2c9d6.jpg",
+    "hmg-catalogue/04301c4a2447bfc75763ee54db042cf5a2870a7896dba1822e936b6824ae678f.jpg"
+  ],
+  "verified_paths": [
+    "hmg-catalogue/00e9e0c10f598ecb093043c5ff168a69219a775eb87ef6f7e95f7c2091f0492d.jpg",
+    "hmg-catalogue/026c118a40e0f0c524139a65ad02adad6bc1c85c79f9e26eeb4c700b61030bbe.jpg",
+    "hmg-catalogue/026caffac3c6fb1e86d4d22de97cfb708972b592b07c068fef78b53c34ae1627.jpg",
+    "hmg-catalogue/03b1093e7cd3c97aa3f72afc331b4d6b3a0042343645e5b7c4b1614269e2c9d6.jpg",
+    "hmg-catalogue/04301c4a2447bfc75763ee54db042cf5a2870a7896dba1822e936b6824ae678f.jpg",
+    "hmg-catalogue/066ba1ffbd3b97ca91b259bf638d97dfab7f3232defd78aebf4ccc059fbfb66d.jpg",
+    "hmg-catalogue/0772b87abc387b6eadc2b77eccb80a12a74d3fb1e475568dfcfcca407130f7ea.jpg",
+    "hmg-catalogue/07b54fbc64ca4c086918c7970ff2074c21f8e8f1cc76c62a0b369c77c01fabc9.jpg",
+    "hmg-catalogue/089e442ea11e300d0d0b41c4d8c8922acfa1701995fc476e90a92ee758e8306d.jpg",
+    "hmg-catalogue/08a8129938d5a6c9f4fccfb8d97d7ee6fdd3a2bc10b9cdaf3072fe0296e85902.jpg",
+    "hmg-catalogue/0949bcba8625f6ee5f9047075f7db3b80b1b414d1b7a3ed472dfed0b74d9ab3b.jpg",
+    "hmg-catalogue/0a91fb74c2e72adeabe4d49196235a40788276e18cfb6dd60eb4c584429d44c1.jpg",
+    "hmg-catalogue/0b2518449ff64f874699501b2185bdba2ba01196a174d57db8442ed36204d56b.jpg",
+    "hmg-catalogue/0c71f5ff05124513e3e97189df909f7cfdb05e6c7d554e461360b959a3701f2d.jpg",
+    "hmg-catalogue/0c89fb17156a806e22adb7b8a8fab7e6bac8a2356d920b0f23f98647ad9af077.jpg",
+    "hmg-catalogue/0cc7b771c01a02706fcafdf583cbab5102fd2ba6ca9a5e297d57504a75252ba6.jpg",
+    "hmg-catalogue/0fba430c9f50d019e17cbb0819182427db1c62ce1592a34ae187a8c23aabe6e9.jpg",
+    "hmg-catalogue/10874a96b570e0ee056a80a1d71355bd8b4e75ce5cc64a2dddd6a9c7595efa2d.jpg",
+    "hmg-catalogue/10fa5c3e0d366f7aaf268a8f7e44c6e2e1323c18b642edd3f2b9a82631a5de27.jpg",
+    "hmg-catalogue/112f439f3757707590c73afad9a73f29ca240a161f7832e327ba472c50dd1d70.jpg",
+    "hmg-catalogue/1189390505ca844915c205a54af054e9a91d0085d9d7570ee42cf371dace0128.jpg",
+    "hmg-catalogue/11cc88161c0d35aa1d9593eda1d75b1767b94e2016d90004dee39c2580ff4e4a.jpg",
+    "hmg-catalogue/1397d77172f4c914bda0ae940afcf16fd7955dc6de57f8899e89f17c345f999c.jpg",
+    "hmg-catalogue/13ae7c37dfaafe6878f5acd197c1a20cae4e24f3b9950eb3e4a23018abca41af.jpg",
+    "hmg-catalogue/152b0c8fe403bbf2ca5d227a1853738d41bbbfcdb0c0151cca8fa19a349460ba.jpg",
+    "hmg-catalogue/15eaa8ece22e2166cbe1af3ced2ea8e0a273aebec6eda87ad1bb60c2ffa25096.jpg",
+    "hmg-catalogue/167f313babdf2b53517cd4ee07502c975634eaab568c0f6e1ca84900432d9db8.jpg",
+    "hmg-catalogue/169c1b1e94519ddc397590f119c295be9fd75abadb5b705754682b63f5b7142d.jpg",
+    "hmg-catalogue/1777cc26e82f26e7f717351044ced1d70186d49eed1a1626afd5c40815039abd.jpg",
+    "hmg-catalogue/1821586b3b4eaa7aebb333fc72e5e9944780d228536c68fe38ce2bbb2e853716.jpg",
+    "hmg-catalogue/18391fad3a44800c9ffbc61b11c89c214739f49037f05c41450e2facf5ad8c9a.jpg",
+    "hmg-catalogue/18b3ad90d29785f92e3ee7158555b94d48f001c3be2985d6a97390b1d650912c.jpg",
+    "hmg-catalogue/18e659958b81e179d5d84bcea5159aefbcf8aa2e4c5ebd07886b71d4917109ce.jpg",
+    "hmg-catalogue/19b9d5f1f106f33d480a975ca2adcbb903d3f7fc2265fc5eef4f557870511578.jpg",
+    "hmg-catalogue/1ad8de91cb59ab84eeee17ba60fc9562df3159bbfa5d0f375f5d038f6b5bf29d.jpg",
+    "hmg-catalogue/1b896083aeaf6aca47a5c9fa4a89ca40357707cef6cc71ed2fa73730e77ad07e.jpg",
+    "hmg-catalogue/1c812d0afa7dc973a43ddf2f9530ec0c86c55a8ff545333df1916e618b95b940.jpg",
+    "hmg-catalogue/1cba1ae2d63fab8d42d9f150802f700f569a860f07b9912f52d90ae08cde70a8.jpg",
+    "hmg-catalogue/1d8018da2352f5e6268535e8b2d89117f2074e20d1e6407b01b9bad690d236a1.jpg",
+    "hmg-catalogue/1da44484f38688954efdcabe0a70e2b7ae90621cda5c05e76326932ced4e78f6.jpg",
+    "hmg-catalogue/1e0de6f8461d1b02d0b76f13b2debbacd051d6bbb3836fef42c9ce0055b859a3.jpg",
+    "hmg-catalogue/1e3659c98dbbe96ecafbd05a67e72e076c31fdd0182862817234fd550ffa5875.jpg",
+    "hmg-catalogue/1ee5a21a1a7e39c3d6e523dbf2df7e2fa11c82a6a50fedc31689387395746600.jpg",
+    "hmg-catalogue/201cdb5330f53e7937cab8cef5a90a7e2dd04b310aeb2884ba1b2afcc51177a2.jpg",
+    "hmg-catalogue/20bad6234897da2acff277d1863d29781787ebd02b294ec81e32139caf8b56ec.jpg",
+    "hmg-catalogue/227fcf10a4a1c8dcc002a6cd9c8a19582147c0288303f8f0a0ece24ab05abdba.jpg",
+    "hmg-catalogue/228719df84818a54114ef16648b46bdaf87f0f25624fae4e9e9dcb01bd06e037.jpg",
+    "hmg-catalogue/2479d25102953e7b6d2984a02c3b879af859d4963a2646f4532b893966b5fdbe.jpg",
+    "hmg-catalogue/24e6f0cdef3ef0ddc51bb6932bbdbc0c2080e7049faa4032cf20542957e90695.jpg",
+    "hmg-catalogue/272d6eda044bba8ee74d57a79c73d805953ce4679409e43456f2033a8ede6b10.jpg",
+    "hmg-catalogue/28cb8173056eea3f501f39622f1bf598d211989a0d51cd944dcc9ed6d202cb72.jpg",
+    "hmg-catalogue/2b9087ba821d05dda80062be39850fe2bed755826c4467a4dca4e9d8912ea9ab.jpg",
+    "hmg-catalogue/2d0f4436164a206ef777c9be686b0d337a5bf1bdb79a70e165908e1d0fd090d2.jpg",
+    "hmg-catalogue/2fe40120c1ddfdc7368a40fa0e1a15d1e0f8df7f14d8f87a0fad8a3e4cd7ed78.jpg",
+    "hmg-catalogue/31b331080ad75d3307f8d5f861c3bc206e283e82a2d8d4d5357eca3797b7e4ee.jpg",
+    "hmg-catalogue/32609b02c54347c57bf9f624a62e1deea19118e5d2144f986ace786a8fca89e9.jpg",
+    "hmg-catalogue/337329a87e01e322bd915491087fbd7c9a3de676176cadb21f6d23c910ed3241.jpg",
+    "hmg-catalogue/33cb5bac770bdbecb3135723d8571fb91cc9a6f42daed8a105a03572dd6f3948.jpg",
+    "hmg-catalogue/33d74a31ed4b7de4c360ceddfb4d25e74dc20011aa60db896fae1558b2f0c12e.jpg",
+    "hmg-catalogue/348e1c9702b59741a5b26aaf1bc8f024bdb9752a2d3eb4397f6165a0b528d421.jpg",
+    "hmg-catalogue/35e9e15bc76211243b091d01ae7b4c437ec6c69f1018598fe7c770eb73f2c3fa.jpg",
+    "hmg-catalogue/36f07ebc5a3918dafc507d15438c2f3f0dff49ba1de29477d0fa476a5a3a4840.jpg",
+    "hmg-catalogue/3835a964d7f6143cafa19812ff8481a1e5ee0afac5a01dd900f4989c138d6962.jpg",
+    "hmg-catalogue/3a3c479d691026ef7b7e88f654a593db904ff736f8c4cd4cb6e33faa58e8e59e.jpg",
+    "hmg-catalogue/3a637e0d20d0ed378ef9d9a7faa8ae70d564bb386e6404954355a7f261cd6ee3.jpg",
+    "hmg-catalogue/3e1aa91014d5e301f1ecba4dcf359f513aeaa642e1fa4b8345a89b74f0b19dd8.jpg",
+    "hmg-catalogue/3ee98aea0f1eadebe8af02a88b69335bb1a560666f8fa12cf1255975af0d0201.jpg",
+    "hmg-catalogue/3f09a68ed7788cb7bfec537e41088fb3b0168a77c1f67fa4043a8193c0340609.jpg",
+    "hmg-catalogue/3f4c70d45c695b88d115f73a2e930946c9191084b8eee5fa44b24908de12ed11.jpg",
+    "hmg-catalogue/3fb5054e2955ddc88ade047e05ad88142594eded92efd2db40364094ca8d7d41.jpg",
+    "hmg-catalogue/402ececb927178c8ac7b582f51de648e9e7e7104dd184938bf84551beb98a08c.jpg",
+    "hmg-catalogue/41016a0d91b9b79b0b22d7574bd51a740b752855ae5f5eadf60fa07166b4aa5f.jpg",
+    "hmg-catalogue/41191171f33d8471f647eb3e7c0bcace7ed686c33d838ac756e4bb8a5af101e8.jpg",
+    "hmg-catalogue/41255c8ba7209b049237ab3edd75249e9a989cf69b40746e4bc99a746c220018.jpg",
+    "hmg-catalogue/41bf62ee4a29fce0eb7cb7f2ad5dfceb3f019b5e8436a29468005d23a115d096.jpg",
+    "hmg-catalogue/43614cc1545ae24d307bdb8ff05d4206dbf08e0e8b1893299c88f0f5980ffabb.jpg",
+    "hmg-catalogue/43badbecb4e086f7beb6fdb4caf27e7b5f909e43bf6d2588dd1da9fca73dd108.jpg",
+    "hmg-catalogue/4605ca3ddfed9c2d3f4a081f899f6a2ce09d01956ea2e506e93f8e96b4393b99.jpg",
+    "hmg-catalogue/46ba6e11ca46235ebea6756236996f38c393aab9844d7759a0578ff9d72bda56.jpg",
+    "hmg-catalogue/46ef5544dd20239bfe24497785706c7c5054b91b596166b2c82687e5ceeaf487.jpg",
+    "hmg-catalogue/474163a6a1dab6f245109ea307bb6db807f5043496ffda6bab9fdc8586b66421.jpg",
+    "hmg-catalogue/481260bd485ff6dc1a2c5c73120afd1320cf7f94a6d8a9b95b53e54402da8a80.jpg",
+    "hmg-catalogue/4c26ece541d062c7311daf9f400667256d6679297e267f977b9e53136a8fb317.jpg",
+    "hmg-catalogue/4cc984b9578f4a153c0f43efe655d717bb4c91c0f5eb1500eafcf0b0b0938748.jpg",
+    "hmg-catalogue/4ed314c494c863cd9b08cc4184439a184453f3483cba48c5733fec65a28598af.jpg",
+    "hmg-catalogue/4f74f7901a995ae4b16c5774ffa0d9aa1f1f46a47106728ae090f5ce36e26569.jpg",
+    "hmg-catalogue/4f7938ba0943bcaf1cee256d7d111e934f5457b0fe08a82d062596f23c627f59.jpg",
+    "hmg-catalogue/53045fe96eb56a7f6c4b576487820c0eeb1695907075cd4a88ecb72ba9f7d055.jpg",
+    "hmg-catalogue/5416369bd6627b487464180ace5f37c52878e432bab09051045ec734f3b54413.jpg",
+    "hmg-catalogue/542919fdb22861be90f36244ffab3f1b06e2720bb2dc38d57933200d1a6ed441.jpg",
+    "hmg-catalogue/54d386dede398b01518a8b51e425196beb6d9a8d423a0af7708933849ba0b972.jpg",
+    "hmg-catalogue/556e76d54065515849fb2837a84d7d531798af473607759ed3ba44a5ff8c42dd.jpg",
+    "hmg-catalogue/55ec23b733f70ac5661cd86f3ed8e192564316aa8f3649445f3acc7c951ae02d.jpg",
+    "hmg-catalogue/5976d72f848167a91c7ae3683ab15fe63ede30c271565aeed3b521b767f68e7b.jpg",
+    "hmg-catalogue/59b6399075a53f6e0bc1bd31eb1c54fb9f3ef3443c5ef57b0293cf94235ca87e.jpg",
+    "hmg-catalogue/5d9e994a0c9a0d93a20d61f093641c7db047919e8e429b5d8af58368e7cbbfb4.jpg",
+    "hmg-catalogue/5f1d8bd8cc2066594393cced614a4459d9638d6048a8584498364e2f4ca91a34.jpg",
+    "hmg-catalogue/5f8c77edd2341f1f7b2a4f0c95e63ea42a6012181eed0bf45937b9c43b8b84fd.jpg",
+    "hmg-catalogue/605c1c09e280f66ca9c5e7e77997e42a1dd93a3c377fdb51db350c9d46309f85.jpg",
+    "hmg-catalogue/6240b8778c458c871949cef9520280598c8fe4f22060b269a1d2d97754b3313b.jpg",
+    "hmg-catalogue/62f142c0219e150e805beba95aa0b629a067010252c0d8dbf2d0025be0074a67.jpg",
+    "hmg-catalogue/637100870c8685d0f6455c00f87b67525bcf6ee3ddbae884c262d0a3477d375d.jpg",
+    "hmg-catalogue/6721070aa420f9e8656812fb32d55b5e55d9a53c0fdf2db7aba796bd2ee02fba.jpg",
+    "hmg-catalogue/67cf85cd753e3637020d37fe968737417a2b514eb13b37dd3aa43d81e7cc2b0e.jpg",
+    "hmg-catalogue/68c549a5ca7eba5f520f1267cf054710975c847d8981382aabeec5f319821785.jpg",
+    "hmg-catalogue/696f405aad4740a8275ce3a835e22e09428240ad3b1c9313593704816597390c.jpg",
+    "hmg-catalogue/6b0eb78cffe3777caa064158438cab481e6ef0ef826588cb27e69af40ee0fd40.jpg",
+    "hmg-catalogue/6cd240efb2fd5d80b694e85a0361fd93dd5e4fd1e14b409c0aa44d3b9c8efd96.jpg",
+    "hmg-catalogue/6cf6bb3f4eb218684f9afb06c469f0dbebe2cbb263759d0f9e5e628b8933b5f9.jpg",
+    "hmg-catalogue/6d45e90ac583f490c0c3a5fc21e0996715b3bacc5251b0f11699e50e7078542c.jpg",
+    "hmg-catalogue/6da792dfca82326964d8632d149c1f4118b8674d3a454c578396382439f7d5f7.jpg",
+    "hmg-catalogue/6f0b35b5097f87708adfc7eaec6dcee4f2b64753892184ba372f7f619ef1e4c0.jpg",
+    "hmg-catalogue/7104510957686c8ef56a24bd7836dfd57e251811700d6371cca6cb396171323f.jpg",
+    "hmg-catalogue/7175317915842fe6edf74cb2289bfe62e0dde057aac17ff0ae909a4c1e8e740a.jpg",
+    "hmg-catalogue/71f02c3f9de2b4878bdd149475995ea8bd9861a95a118f1aeecb3df99fda5bd7.jpg",
+    "hmg-catalogue/727278f5a2aa711476ac0968f94beec4fb796c34a9773c8ec9191aaea9522685.jpg",
+    "hmg-catalogue/727e31733d3ba73c6a73d2df1e479e3ba24c17f1329db34a13283296f2a3fd58.jpg",
+    "hmg-catalogue/73f76a0918896288b2c0a9f0c50c27c7f7862d937eb0c6df88cc2e276b5a97c0.jpg",
+    "hmg-catalogue/759f365030fdacc7b8825a7e247d27e20df7d7078b67ab61153a4515f81ba4d0.jpg",
+    "hmg-catalogue/75bf9cb64b16f0322dd215cb774874eb734b2099c706678319f0cb7d470b3afc.jpg",
+    "hmg-catalogue/75eece74f34f774e950771234e5b08099f16d173bce8acb63e8498faedebb575.jpg",
+    "hmg-catalogue/7643b21a818ac920d2d2154157a8cb85b63ba904494360aaf634f63d472de702.jpg",
+    "hmg-catalogue/7a81e4a872f7dd638c3048c2654ae47d0bbb6f5e0c198cd22c09e3f95018bc92.jpg",
+    "hmg-catalogue/7b69f3fde6582d35078f69278677c9c2d1765a335191f4ab92ae4d808845cc98.jpg",
+    "hmg-catalogue/7cfc019e6b319f631f74b30f8d019d3c6245fbfae827cb4c45c5b9537bc47e2f.jpg",
+    "hmg-catalogue/7d7d6826db02cbf61c2ac1c01f2eaed74fa055ea854b9707c01329067f55a3db.jpg",
+    "hmg-catalogue/7dd10934bf9bca57bab11e1619ff49dbe8a53122479023f6767508b873ebc137.jpg",
+    "hmg-catalogue/7e8e9a83962f57da37b73884d9273d14a8096190af00470b6fd36577e9ac52fb.jpg",
+    "hmg-catalogue/7eb2cafa1c82e0605bb5bbec83275017fbf38fbd18c5c9384620b4e6766f31f9.jpg",
+    "hmg-catalogue/7f4ae457dd35d2a62bd575c1cdec631575c71b7be027900f15eb68711ef5ed94.jpg",
+    "hmg-catalogue/8083326bab4c46c26d22b687d46c09b44d72a5dd1c552024b72da6e93f971a99.jpg",
+    "hmg-catalogue/8161fa76f16d5a6f5a0c39198a5200cb07c8fe0277136d81b3efc963be4b0438.jpg",
+    "hmg-catalogue/81647efc3ea03d7b0d8ed08ec6dfc4b60c6525d4b5173e03d1981894a72d1215.jpg",
+    "hmg-catalogue/817e65a35b10bf774096f4a1bca9bb50d90027cff0859227add17cfbb01c185f.jpg",
+    "hmg-catalogue/8626d13f8796d89fb7e307ea1dd0670ad797e336e79d6bfe26d3e145e8b40136.jpg",
+    "hmg-catalogue/877f26be2dfc4b0303b112d6b80608f4a11b2d3357199788a7cd935cda380d99.jpg",
+    "hmg-catalogue/88844302653d80595cd98d0f952db88cc22c3b10fbb417b0f32e293ce5fa1691.jpg",
+    "hmg-catalogue/8896c13b36b477bd973a061aa61ae39a0f0cd6f90375cc8969dbcc0779376e9a.jpg",
+    "hmg-catalogue/8aa7499a7b34f50b0ef7e039d835af0bcb4ab140779611b5c41b327d1a71103a.jpg",
+    "hmg-catalogue/8add898ec0c0b8bf6b456fd176d41e42f5376ad743bf948b8e890f514639a4e6.jpg",
+    "hmg-catalogue/8b4af019d0cb90211f0906c8276de7648568fe4c4f4453ee4f0f67a6d9da7205.jpg",
+    "hmg-catalogue/8cc8f514275ee3e68ababbf012637f08a6dce20f4dae7e132702c26f4fd02964.jpg",
+    "hmg-catalogue/8f801f7c9ede0b2faaefaf65ebde31764ea2ab205d70543d42d919cf9de281f3.jpg",
+    "hmg-catalogue/8f8b33d84e666473a94c4b8d038bf5dee04e4f2a32019f250603118403b58593.jpg",
+    "hmg-catalogue/90c7e6e14f4f51386a84aedc8f77cc698e4aef43d409cb29589f7d5cbae990f3.jpg",
+    "hmg-catalogue/90e7b725b85eeba08029499b2f7a6098efc8a2abf0c14bb25334a28f07e8745c.jpg",
+    "hmg-catalogue/915890ba7fd546ca651f0ba6a7e1ffad3098f5d9b6a82bffd407613c6f611cab.jpg",
+    "hmg-catalogue/91846c55aa79c9a47f9159f39db1f4d5791b53d32ce65d2527144a231572b670.jpg",
+    "hmg-catalogue/920fa98e3d319dc69cfd258385749c244402c44373c71550c38c45e2a7b557cd.jpg",
+    "hmg-catalogue/929d145a369fcf2d3dc6b0ec1700ec70e5ed92b37c5b20f3a00d9013f12f53af.jpg",
+    "hmg-catalogue/932a6457d8eb57aa3ff8013a118e7a0165c26a3a09e7a79521e4fd809e3a791a.jpg",
+    "hmg-catalogue/935b01a151f08bb97207d4a65820e86d6e90e1b87a43b56ef93547c80b13aef5.jpg",
+    "hmg-catalogue/939f8b9d73e743af9775a863c9b86df78879ffa0bf10391965079d94e1f0d906.jpg",
+    "hmg-catalogue/94a19c7563f3a0bab0e1a4648b5f0ececb870e5e958e2f16557f99a6aecb2485.jpg",
+    "hmg-catalogue/96aba9660ac16044943607d272486dbc36343cbc4f6947df8ecb6526c2a167b2.jpg",
+    "hmg-catalogue/98e22efa177622458ead46e140821deb37c7ac0ac67feac95ecc8f017ed7d3d2.jpg",
+    "hmg-catalogue/9ae312ca170cfda1050151f3169dbad4778a0e981154ea801fcb41f0bc1cad92.jpg",
+    "hmg-catalogue/9d3a9a4e2cce3a599be6889420a775d75a4ac6ae3389f28d5d8b53c285192819.jpg",
+    "hmg-catalogue/9e3cbfc65d4b137848702418d982b88f6bc7185b9ffafe794176e14eaa4cca04.png",
+    "hmg-catalogue/9ee5ce01b79f6cbf0c089b70c381d6c82a03062f2ad67e07c498d882133f234c.jpg",
+    "hmg-catalogue/9f169596bdf8b0b26eb8b07bc91f6754cc72b1aec6de84e66681a93234290699.jpg",
+    "hmg-catalogue/9f64c7cc7f8c8046665fdbd87d84ace956877fcc8b2d11c88d68c9bc2d468aba.jpg",
+    "hmg-catalogue/9f7999f214fee084b662bb9951b2ef929d6ffc4460c5cbcc8972177fdecf8a03.jpg",
+    "hmg-catalogue/9fb7127fa785a99d85f561c35a4cd1d762e62950434265fa29fdcc73696e8cd5.jpg",
+    "hmg-catalogue/a013797244499246f3ce42f11cd3844a8d485997b643ad2a74e1a1355e42ea2c.jpg",
+    "hmg-catalogue/a0d1184c956d9fbbc69830681b69914e69bb71b4bda001c2f3edd0afffd9627a.jpg",
+    "hmg-catalogue/a102308371ab6b4f70b0830e990caf80d9f648fc4275b6ef80615da8858cfad4.jpg",
+    "hmg-catalogue/a15ca4e11a6223f3e65826e2721bca83f2c6ce740808b1e9b4fc3f7d9bd5b90a.jpg",
+    "hmg-catalogue/a1d98e66b5274738126fb92d81965998f580bb7cdcbc7b583c6cd08158ca9ac5.jpg",
+    "hmg-catalogue/a376d7718fe26e9ecc849e10ec47d0c948413d95eefb53605f0e2649ffdfc78a.jpg",
+    "hmg-catalogue/a56450f4c23862acfe9bd1d10c63d2f245ce3529421e11d49330a04c6e664ace.jpg",
+    "hmg-catalogue/a5b097540e20f38c5632cb674b55966416f8c54a4a3453da9d2a80c30eb9ada2.jpg",
+    "hmg-catalogue/a6e3140499351bceb1b721dcf9b946f7b9c7ff43b1b848e67df97203f79ac9bb.jpg",
+    "hmg-catalogue/a88d6dd0eb26c8389d6b6d24aaf4cd8ea9dce740d6b1894da5ea830159d4b027.jpg",
+    "hmg-catalogue/aa869addfab63d12857e4266aac8042830a907332cbdf74dd8ac2622947b54cf.jpg",
+    "hmg-catalogue/aab19a0721c1f747830dc27e3c5fa2f6eda46dab6bdcbcd62123988e4df9be9e.jpg",
+    "hmg-catalogue/ab80fdb0e3727ccce3adf25097b33d6118db55e2a423e73a1c8fdfb4573fb529.jpg",
+    "hmg-catalogue/acf10f3dc2a712820cec5f1957fb15cce9460226f79d42a3e35431ddde7d465a.jpg",
+    "hmg-catalogue/ad9f8d593dd462142078db9cd044a16bfd6f8fd754afc6e4c3702079229f5feb.jpg",
+    "hmg-catalogue/afbdf0d0c78c64de39ae81f33fbdde072fe0bc586ecf1dc66d801f56e5bc099d.jpg",
+    "hmg-catalogue/b181c1c982fbb5392a339b340847e071ee1e157e9f809a8a80edc375052e4030.jpg",
+    "hmg-catalogue/b272a16780aca393d76ce3e33e88a099def35edf455961b0312f6c667415bcc1.jpg",
+    "hmg-catalogue/b2b126bb37104b3f5a9db42704e28bc05027601eb537b8b230cdf68470751313.jpg",
+    "hmg-catalogue/b3089befa5f4460bd439d67847863fae973e105d2a2c5020fa7c543be60a8bcf.jpg",
+    "hmg-catalogue/b3e26547d26fba7836f75ea7802518caadd001bc01e6b253e149977baccf47af.jpg",
+    "hmg-catalogue/b6398a3ce8f5a3c864b296b09b98c3c57769d7a028352b13ad02ae12fb061282.jpg",
+    "hmg-catalogue/b65602710eb13e57d960e4a12e9f183ac68af6ec8654025d0c42e613bc73c014.jpg",
+    "hmg-catalogue/b78f8fed44629ed8c11d7faf4060de75762274ba26e71b1e599620be1ffbac72.jpg",
+    "hmg-catalogue/b937f2e80a4307ed3143205098a270484614f4042bc70cceea4c5fa8e0817657.jpg",
+    "hmg-catalogue/b9a1919d1be259c7d75f78bd5e43e9ecb01a3ce133c75f6575679637448d3a55.jpg",
+    "hmg-catalogue/bc42bc2b4146970abca1bdf3ff8156d41a8f4d81911be2c4f3600f9078553fc5.jpg",
+    "hmg-catalogue/bc493d5ffb686d3e5ef5f060468c1878505dbaa60d0fba3cec494424397885f6.jpg",
+    "hmg-catalogue/bd3feebf19cd85fc463b265ab18b610af1800454ab5246bce8ee8875158a30fd.jpg",
+    "hmg-catalogue/bea57812d09d3054200886d79d310e75a552857cd1771e970e1e1dd81d6c0842.jpg",
+    "hmg-catalogue/bf29a5ec465148dae20149f4bd0b63db1d5574d7f35196e4f6eace0c5740f61a.jpg",
+    "hmg-catalogue/bf5986a77284b760dbd2e729468e1a64831984717e45e5ca8e7e9f4e708784bf.jpg",
+    "hmg-catalogue/bf81e56420da41b5ef6d973d1b6f1ac17bd820441b74a5822ebecdbf6cf47d6f.jpg",
+    "hmg-catalogue/c14144d8f659b9f6e45a8d13ef2283f020307d4ea768e7c49f32fa99a43624d6.jpg",
+    "hmg-catalogue/c2cb6adc4cbdd5516737b693fcfc64c84fe89808d3dd89b1b6b17350d9dff475.jpg",
+    "hmg-catalogue/c3327a4948ef34641230a0611afea869a40472fec47604229e6fd57f53a1c92f.jpg",
+    "hmg-catalogue/c4fa818b0c9c79f865e3dc80f74b25284072e97bc46e09f8c5c524d8d90c1b3d.jpg",
+    "hmg-catalogue/c582078ddc3b33de7c316b492ba5f167a135d9f1fc98781155831d2e931a7eb0.jpg",
+    "hmg-catalogue/c6311d88b994e055ca209828b4526d061773cbf838d52a6b30cc05e3f0066666.jpg",
+    "hmg-catalogue/c7768d8e93801cee38df1bca8c1dd817c6155cd7387e05312a1ca49606dc01d3.jpg",
+    "hmg-catalogue/c80de9a53516f7752df25fe25218424e04cd8c05bedd819b2229ce9b2e379512.jpg",
+    "hmg-catalogue/c821653b881c847cd136fd4f23b93ec91b7f35ac8f98bb0cae8c6b365c4afd7e.jpg",
+    "hmg-catalogue/c91908b3d032cee1dc60fb128d2e3e8105d1ebe75cbf6db83ada1db656fb749f.jpg",
+    "hmg-catalogue/caa156fabfca6ea9fb9afaaf799aa23005ef4ea00b34978ffa05a136e9040f09.jpg",
+    "hmg-catalogue/cac463b9bf5accf3930828d505c19724f936bde7a896ec129bda457dab741002.jpg",
+    "hmg-catalogue/caf3ac6f39972e6e84141ef0e11397d83ccdc924163a67010df477cf60867fbf.jpg",
+    "hmg-catalogue/cbb836ce623145e2d8b9a87acbdd0acbea24b42771a83534848f66c003f01a12.jpg",
+    "hmg-catalogue/cbe708898b9fc7403db85a6922d84b1914868480150ac62d58399e5f48308181.jpg",
+    "hmg-catalogue/ccd38c4e46bfad520fb4afad9178ee2acf13175c41d8c073bb4e620e385ff521.jpg",
+    "hmg-catalogue/cddd155d16a1ff128235e1e776c55127aca5971ba682a111ba49d108ce812d8f.jpg",
+    "hmg-catalogue/ceb6683d59ed9879867a80e66323bb1410f93104e2808b08e586e49d9704ba67.jpg",
+    "hmg-catalogue/d0e9fa0c0ac116afef1883a785b5063664472f3ae28c1e4fcf9c0c1e6985bae0.jpg",
+    "hmg-catalogue/d0ef2575981c5e94cb0f39b41c90d9604d349a827ab2cd4797dfc53ce8fc7997.jpg",
+    "hmg-catalogue/d1370e6691301e8353ae3d10aa5fe6d1149b34b54cfc5eb833612f5a7bff11c7.jpg",
+    "hmg-catalogue/d32809bdf60aff5ecc24598c2cf0d1764d4773177cc522cb8f42e7e5dd6e67df.jpg",
+    "hmg-catalogue/d3bfa399136b45f72ed45079f0cb69e2147baf0b761e4590c8b0e7c70842f9d7.jpg",
+    "hmg-catalogue/d8cd108ea30dfeb476200e1857e6dc5fc61c1b36eae1f3756fe88ff54ec5d3b4.jpg",
+    "hmg-catalogue/d8dff728e2f889352f4d7e5c89a31b3c545a1622438af17c5fa66cd05ec75f04.jpg",
+    "hmg-catalogue/d8e56e25d238edaefda2c351ba17c340488fcd8929136ad4fe4e8f542761d014.jpg",
+    "hmg-catalogue/da4fcd59bb9120fef0427c1d72d6574480e4d6a96c49bcf82111d5af60c5f257.jpg",
+    "hmg-catalogue/db02bcdf94448754854b9551a1cd98beade2e42b8fb1d972b0a4659995a6b97b.jpg",
+    "hmg-catalogue/db9396c85207d4f99c919f565dc36a56c64627fdba8a34b73d83ea240f544af9.jpg",
+    "hmg-catalogue/dbbbef415d58416a8e08d339ba72ca910d35d8334c3b0a02fcd1efdd4de54650.jpg",
+    "hmg-catalogue/dcc91a5bd27a8109460251d84b497664fee0fd26f21317548d847edaec37ee94.jpg",
+    "hmg-catalogue/df5081bade221a9e2c6ba32523ef8edca14ffe50e3037b2ceb8da043681a6a07.jpg",
+    "hmg-catalogue/df70eca62e6f1918e103ef83a7d44b2a58db1c312df3e11a3270c996a3470747.jpg",
+    "hmg-catalogue/e02e6b168e906b823985273ed8c948886bd0df88d1a9000c644bc640152cbc49.jpg",
+    "hmg-catalogue/e0a48a8dd514bc2a0ddde37eb3ca4a8932e78ba3943c48a5a1fabdc8cec03e97.jpg",
+    "hmg-catalogue/e257adf04c6bfa72ec2fad15eb1e7d7bc0fe64e2c5d82b31dd972134dea9287a.jpg",
+    "hmg-catalogue/e2ee17c7f0d97672f87fdfdd7ad2a6ef02e397cfb9b723bf0e011964fdfbafb0.jpg",
+    "hmg-catalogue/e4c6ee2d3a2cfcd6a8f46430f4a50e7f44191cb7fa951c7fd7662288b27d90fc.jpg",
+    "hmg-catalogue/e4d075456f41e455673c88b4c696d3499712c97d09a3d6168b4bb81d339ba5e8.jpg",
+    "hmg-catalogue/e69467b9eeeacde73cb0c23a386a6a01052831a0b8d0ab182c48860913c37c4a.jpg",
+    "hmg-catalogue/e7f01ea5e921e488e39577bcccff2a29f8b20efed29baba2ee6a0cd84f67a6b7.jpg",
+    "hmg-catalogue/e8a3865e71445e00f2e0ac8426147600f35226277a0a7d77fcd76aac1f70c3d0.jpg",
+    "hmg-catalogue/ea585a257d05e9dce11b2ec32c576a74d3437bd10b114ed8cb3a257e020d6f18.jpg",
+    "hmg-catalogue/eaa69704add780b596e9d53d9b6721a1b30e56ef275aef0688c26be0f7059878.jpg",
+    "hmg-catalogue/ed62687c2e018f93ca0a9d9b96b131e42887e4ffd8529630d7002e70869d7a2d.jpg",
+    "hmg-catalogue/ee22a32ac4968a448dad3dd65857594a40d016d584da8daf25d35301fe7a4905.jpg",
+    "hmg-catalogue/ef194abe24632f7aa90ba2eefcfd221be12ed2021c126fe810bb4c80bec2363f.jpg",
+    "hmg-catalogue/ef5bb838371d6dd287b2d746bcc74c96c263cecc31ec0cd5dee91a9de9d4fad1.jpg",
+    "hmg-catalogue/f0aead6b8ca4bbc33b66c0b11055a996c3a4c979599c77b4ac43ed9bef332f7d.jpg",
+    "hmg-catalogue/f1e59d8e801a2bf6ce47452f3b60a86665e3cd37e49720b1ab38763f0f145a55.jpg",
+    "hmg-catalogue/f313cc6a90f77cc34e8925f6f3a1d18baa25bceecc94bf47609cab220b587312.jpg",
+    "hmg-catalogue/f6be60289fa117300917385ef6e2ec17a3177ed5f723bbf2e8b1858f25a12355.jpg",
+    "hmg-catalogue/f920188e075b1387b6cca04eb52147590ac9f38305d412ddb4d7b04e3fb49ec0.jpg",
+    "hmg-catalogue/fcf0919b36e5ec5bc79d8a4e22f642150b08a3a1858f87a6203eb9de702805c7.jpg",
+    "hmg-catalogue/fe954d092ddb01ac73898671a6147e00cf46698e2cefd9f45a014796cc2fbe99.jpg"
+  ],
+  "verified_mappings": [
+    {
+      "product_id": "0ddcc7fd-234f-509b-975a-762f640bd262",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/1-Aspro-European-Cut.jpg",
+      "path": "hmg-catalogue/a0d1184c956d9fbbc69830681b69914e69bb71b4bda001c2f3edd0afffd9627a.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/a0d1184c956d9fbbc69830681b69914e69bb71b4bda001c2f3edd0afffd9627a.jpg"
+    },
+    {
+      "product_id": "e8a1c338-b135-52c8-b2cb-d6ce858ade61",
+      "source_url": "https://www.hmgstones.com/assets/images/products/dolomite/1-Albino-Betta-Dolomite.jpg",
+      "path": "hmg-catalogue/75eece74f34f774e950771234e5b08099f16d173bce8acb63e8498faedebb575.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/75eece74f34f774e950771234e5b08099f16d173bce8acb63e8498faedebb575.jpg"
+    },
+    {
+      "product_id": "106e6587-5cf8-5210-a6d1-f5e76666552b",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/1-silver-grey-granite.jpg",
+      "path": "hmg-catalogue/94a19c7563f3a0bab0e1a4648b5f0ececb870e5e958e2f16557f99a6aecb2485.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/94a19c7563f3a0bab0e1a4648b5f0ececb870e5e958e2f16557f99a6aecb2485.jpg"
+    },
+    {
+      "product_id": "f3858f82-4e42-502b-b435-2a6b8226c6c5",
+      "source_url": "https://www.hmgstones.com/assets/images/products/limestone/1-Classic.jpg",
+      "path": "hmg-catalogue/481260bd485ff6dc1a2c5c73120afd1320cf7f94a6d8a9b95b53e54402da8a80.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/481260bd485ff6dc1a2c5c73120afd1320cf7f94a6d8a9b95b53e54402da8a80.jpg"
+    },
+    {
+      "product_id": "43436bd8-76b6-5595-ad46-c3589a2276bf",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/1-Adamas-Onyx.jpg",
+      "path": "hmg-catalogue/f1e59d8e801a2bf6ce47452f3b60a86665e3cd37e49720b1ab38763f0f145a55.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/f1e59d8e801a2bf6ce47452f3b60a86665e3cd37e49720b1ab38763f0f145a55.jpg"
+    },
+    {
+      "product_id": "593e09d0-9094-53bf-aac1-333d6393dc7f",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/pedestal-basin/1-Aspro-Diamond-Cylindro.jpg",
+      "path": "hmg-catalogue/7f4ae457dd35d2a62bd575c1cdec631575c71b7be027900f15eb68711ef5ed94.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/7f4ae457dd35d2a62bd575c1cdec631575c71b7be027900f15eb68711ef5ed94.jpg"
+    },
+    {
+      "product_id": "347b965c-2d9f-50b6-a2bb-17652242bb8a",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/1-rockefeller-emerald.jpg",
+      "path": "hmg-catalogue/46ba6e11ca46235ebea6756236996f38c393aab9844d7759a0578ff9d72bda56.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/46ba6e11ca46235ebea6756236996f38c393aab9844d7759a0578ff9d72bda56.jpg"
+    },
+    {
+      "product_id": "ea85ee55-ab22-5da4-b2a0-db328edf8c04",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/1-mint-sand-stone-hydro-finish.jpg",
+      "path": "hmg-catalogue/acf10f3dc2a712820cec5f1957fb15cce9460226f79d42a3e35431ddde7d465a.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/acf10f3dc2a712820cec5f1957fb15cce9460226f79d42a3e35431ddde7d465a.jpg"
+    },
+    {
+      "product_id": "9e4335c5-d590-5879-8268-c7665c5ec5c7",
+      "source_url": "https://www.hmgstones.com/assets/images/products/shellstone/Bronze-Zucania.jpg",
+      "path": "hmg-catalogue/7643b21a818ac920d2d2154157a8cb85b63ba904494360aaf634f63d472de702.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/7643b21a818ac920d2d2154157a8cb85b63ba904494360aaf634f63d472de702.jpg"
+    },
+    {
+      "product_id": "bc63ac66-11e8-5d14-9edb-a14bece0026e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/textures/1-hydro-finish.jpg",
+      "path": "hmg-catalogue/acf10f3dc2a712820cec5f1957fb15cce9460226f79d42a3e35431ddde7d465a.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/acf10f3dc2a712820cec5f1957fb15cce9460226f79d42a3e35431ddde7d465a.jpg"
+    },
+    {
+      "product_id": "1863f923-ab39-5567-9cdf-9cd240cef4e3",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/1-bone-travertine.jpg",
+      "path": "hmg-catalogue/73f76a0918896288b2c0a9f0c50c27c7f7862d937eb0c6df88cc2e276b5a97c0.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/73f76a0918896288b2c0a9f0c50c27c7f7862d937eb0c6df88cc2e276b5a97c0.jpg"
+    },
+    {
+      "product_id": "11be8821-23c7-5a2c-8a12-300e23acef76",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/10-Giallo-Lavabo.jpg",
+      "path": "hmg-catalogue/201cdb5330f53e7937cab8cef5a90a7e2dd04b310aeb2884ba1b2afcc51177a2.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/201cdb5330f53e7937cab8cef5a90a7e2dd04b310aeb2884ba1b2afcc51177a2.jpg"
+    },
+    {
+      "product_id": "ce75bdf5-4265-5e0c-92dc-3e5fd64b78bc",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/10-pigeon-eye-granite.jpg",
+      "path": "hmg-catalogue/00e9e0c10f598ecb093043c5ff168a69219a775eb87ef6f7e95f7c2091f0492d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/00e9e0c10f598ecb093043c5ff168a69219a775eb87ef6f7e95f7c2091f0492d.jpg"
+    },
+    {
+      "product_id": "6d3a7a4d-6232-56a0-a7f9-df6fcba7ffc3",
+      "source_url": "https://www.hmgstones.com/assets/images/products/limestone/10-Sand-Beige-Lime-Stone-Shot-Blast-FH.jpg",
+      "path": "hmg-catalogue/41191171f33d8471f647eb3e7c0bcace7ed686c33d838ac756e4bb8a5af101e8.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/41191171f33d8471f647eb3e7c0bcace7ed686c33d838ac756e4bb8a5af101e8.jpg"
+    },
+    {
+      "product_id": "56e1e5c6-6893-5086-b997-1bd2b20c11ed",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/diamond-white-hydro.jpg",
+      "path": "hmg-catalogue/41bf62ee4a29fce0eb7cb7f2ad5dfceb3f019b5e8436a29468005d23a115d096.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/41bf62ee4a29fce0eb7cb7f2ad5dfceb3f019b5e8436a29468005d23a115d096.jpg"
+    },
+    {
+      "product_id": "51c35790-a8a0-522c-9eb0-b0f5c5a7d699",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/10-Bianco-Lupine.jpg",
+      "path": "hmg-catalogue/62f142c0219e150e805beba95aa0b629a067010252c0d8dbf2d0025be0074a67.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/62f142c0219e150e805beba95aa0b629a067010252c0d8dbf2d0025be0074a67.jpg"
+    },
+    {
+      "product_id": "065f4fbf-b893-56df-93a4-2e6fa2fe194a",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/10-pied-kingfisher.jpg",
+      "path": "hmg-catalogue/6721070aa420f9e8656812fb32d55b5e55d9a53c0fdf2db7aba796bd2ee02fba.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/6721070aa420f9e8656812fb32d55b5e55d9a53c0fdf2db7aba796bd2ee02fba.jpg"
+    },
+    {
+      "product_id": "d44ac54c-7046-5648-9c46-e4a00173aa4d",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/10-Teak-Wood-Sand-Stone-Aqua-Jet-Finish.jpg",
+      "path": "hmg-catalogue/bf29a5ec465148dae20149f4bd0b63db1d5574d7f35196e4f6eace0c5740f61a.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/bf29a5ec465148dae20149f4bd0b63db1d5574d7f35196e4f6eace0c5740f61a.jpg"
+    },
+    {
+      "product_id": "d2800699-bdfe-5bb3-b062-94a04704f601",
+      "source_url": "https://www.hmgstones.com/assets/images/products/textures/10-Sand-Stone-Scratch-Finish.jpg",
+      "path": "hmg-catalogue/167f313babdf2b53517cd4ee07502c975634eaab568c0f6e1ca84900432d9db8.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/167f313babdf2b53517cd4ee07502c975634eaab568c0f6e1ca84900432d9db8.jpg"
+    },
+    {
+      "product_id": "5c1476ab-8d6f-56f6-814e-9cc5b072f9fc",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/10-grey-silver-travertine.jpg",
+      "path": "hmg-catalogue/b3089befa5f4460bd439d67847863fae973e105d2a2c5020fa7c543be60a8bcf.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/b3089befa5f4460bd439d67847863fae973e105d2a2c5020fa7c543be60a8bcf.jpg"
+    },
+    {
+      "product_id": "a37b6a7e-56ec-5666-a5a9-3fd2a7450ce6",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/11-Golden-Ocra-Oval.jpg",
+      "path": "hmg-catalogue/7dd10934bf9bca57bab11e1619ff49dbe8a53122479023f6767508b873ebc137.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/7dd10934bf9bca57bab11e1619ff49dbe8a53122479023f6767508b873ebc137.jpg"
+    },
+    {
+      "product_id": "20139035-1687-5c77-8498-c8649c31df6f",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/11-golden-eagle-granite.jpg",
+      "path": "hmg-catalogue/59b6399075a53f6e0bc1bd31eb1c54fb9f3ef3443c5ef57b0293cf94235ca87e.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/59b6399075a53f6e0bc1bd31eb1c54fb9f3ef3443c5ef57b0293cf94235ca87e.jpg"
+    },
+    {
+      "product_id": "12bba759-1e70-533b-848e-432c17f45721",
+      "source_url": "https://www.hmgstones.com/assets/images/products/limestone/11-Portugal-Lime-Stone.jpg",
+      "path": "hmg-catalogue/fcf0919b36e5ec5bc79d8a4e22f642150b08a3a1858f87a6203eb9de702805c7.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/fcf0919b36e5ec5bc79d8a4e22f642150b08a3a1858f87a6203eb9de702805c7.jpg"
+    },
+    {
+      "product_id": "140263bc-8967-5fca-a7d9-e9fcbca2560d",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/CALACATTA-80.jpg",
+      "path": "hmg-catalogue/1e0de6f8461d1b02d0b76f13b2debbacd051d6bbb3836fef42c9ce0055b859a3.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/1e0de6f8461d1b02d0b76f13b2debbacd051d6bbb3836fef42c9ce0055b859a3.jpg"
+    },
+    {
+      "product_id": "7573bfd9-ceef-5c32-9165-d2348ebfe217",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/11-Bleu-Dore.jpg",
+      "path": "hmg-catalogue/bc42bc2b4146970abca1bdf3ff8156d41a8f4d81911be2c4f3600f9078553fc5.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/bc42bc2b4146970abca1bdf3ff8156d41a8f4d81911be2c4f3600f9078553fc5.jpg"
+    },
+    {
+      "product_id": "e07d68f0-5930-5154-a41a-72f3de0bdead",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/11-Bianco-Corella.jpg",
+      "path": "hmg-catalogue/98e22efa177622458ead46e140821deb37c7ac0ac67feac95ecc8f017ed7d3d2.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/98e22efa177622458ead46e140821deb37c7ac0ac67feac95ecc8f017ed7d3d2.jpg"
+    },
+    {
+      "product_id": "db2b3473-27de-5f5e-92bd-ce8437153711",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/11-Teakwood-Sand-Stone-Baby-Bamboo-Finish.jpg",
+      "path": "hmg-catalogue/bf5986a77284b760dbd2e729468e1a64831984717e45e5ca8e7e9f4e708784bf.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/bf5986a77284b760dbd2e729468e1a64831984717e45e5ca8e7e9f4e708784bf.jpg"
+    },
+    {
+      "product_id": "8fd52bd7-15f2-57b3-8b21-bdbd709ab9d7",
+      "source_url": "https://www.hmgstones.com/assets/images/products/textures/11-Sand-Stone-Scratch-Roller-Finish.jpg",
+      "path": "hmg-catalogue/5f8c77edd2341f1f7b2a4f0c95e63ea42a6012181eed0bf45937b9c43b8b84fd.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/5f8c77edd2341f1f7b2a4f0c95e63ea42a6012181eed0bf45937b9c43b8b84fd.jpg"
+    },
+    {
+      "product_id": "4287b2e2-9a7e-557d-bd43-2d8d93ee97f8",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/11-grey-travertine.jpg",
+      "path": "hmg-catalogue/9f64c7cc7f8c8046665fdbd87d84ace956877fcc8b2d11c88d68c9bc2d468aba.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/9f64c7cc7f8c8046665fdbd87d84ace956877fcc8b2d11c88d68c9bc2d468aba.jpg"
+    },
+    {
+      "product_id": "ca44c0ba-b501-5522-b28b-028719320710",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/12-Golden-Ocra-Round.jpg",
+      "path": "hmg-catalogue/6d45e90ac583f490c0c3a5fc21e0996715b3bacc5251b0f11699e50e7078542c.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/6d45e90ac583f490c0c3a5fc21e0996715b3bacc5251b0f11699e50e7078542c.jpg"
+    },
+    {
+      "product_id": "16776b6f-47a8-5258-8aed-8e3bd5b299c3",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/12-colombo-juprana-granite.jpg",
+      "path": "hmg-catalogue/e8a3865e71445e00f2e0ac8426147600f35226277a0a7d77fcd76aac1f70c3d0.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/e8a3865e71445e00f2e0ac8426147600f35226277a0a7d77fcd76aac1f70c3d0.jpg"
+    },
+    {
+      "product_id": "dacdb975-198b-5a50-8e61-638800cf9e73",
+      "source_url": "https://www.hmgstones.com/assets/images/products/limestone/12-Portugal-Lime-Stone-Shot-Blast-FH.jpg",
+      "path": "hmg-catalogue/18391fad3a44800c9ffbc61b11c89c214739f49037f05c41450e2facf5ad8c9a.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/18391fad3a44800c9ffbc61b11c89c214739f49037f05c41450e2facf5ad8c9a.jpg"
+    },
+    {
+      "product_id": "e63cbffb-5ca9-5be9-b705-746e64becd4e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/Statuario%203.jpg",
+      "path": "hmg-catalogue/cbb836ce623145e2d8b9a87acbdd0acbea24b42771a83534848f66c003f01a12.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/cbb836ce623145e2d8b9a87acbdd0acbea24b42771a83534848f66c003f01a12.jpg"
+    },
+    {
+      "product_id": "48f2bdb6-0230-589c-a9a1-76a90440def0",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/12-Blu-Tramonto.jpg",
+      "path": "hmg-catalogue/8083326bab4c46c26d22b687d46c09b44d72a5dd1c552024b72da6e93f971a99.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/8083326bab4c46c26d22b687d46c09b44d72a5dd1c552024b72da6e93f971a99.jpg"
+    },
+    {
+      "product_id": "eab9ff2f-98be-5819-a1a6-93fd27937513",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/12-Teakwood-Sand-Stone-Combo-Finish.jpg",
+      "path": "hmg-catalogue/ea585a257d05e9dce11b2ec32c576a74d3437bd10b114ed8cb3a257e020d6f18.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/ea585a257d05e9dce11b2ec32c576a74d3437bd10b114ed8cb3a257e020d6f18.jpg"
+    },
+    {
+      "product_id": "eb173987-53a1-5add-ba5f-eb9036b445d0",
+      "source_url": "https://www.hmgstones.com/assets/images/products/textures/12-Sand-Stone-Liner-Finish.jpg",
+      "path": "hmg-catalogue/7eb2cafa1c82e0605bb5bbec83275017fbf38fbd18c5c9384620b4e6766f31f9.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/7eb2cafa1c82e0605bb5bbec83275017fbf38fbd18c5c9384620b4e6766f31f9.jpg"
+    },
+    {
+      "product_id": "3ae3ed28-7558-5f3a-bd65-32077d4f7b0e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/12-trionyx-travertine.jpg",
+      "path": "hmg-catalogue/07b54fbc64ca4c086918c7970ff2074c21f8e8f1cc76c62a0b369c77c01fabc9.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/07b54fbc64ca4c086918c7970ff2074c21f8e8f1cc76c62a0b369c77c01fabc9.jpg"
+    },
+    {
+      "product_id": "d6b09593-7d4b-5fc6-b487-1cc4e77af39e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/13-Golden-Rain-Forest-Lavabo.jpg",
+      "path": "hmg-catalogue/5f1d8bd8cc2066594393cced614a4459d9638d6048a8584498364e2f4ca91a34.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/5f1d8bd8cc2066594393cced614a4459d9638d6048a8584498364e2f4ca91a34.jpg"
+    },
+    {
+      "product_id": "57f12ccd-804b-5c4a-9164-3476764b5633",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/13-antarctic-wild-forest-grantie.jpg",
+      "path": "hmg-catalogue/9ee5ce01b79f6cbf0c089b70c381d6c82a03062f2ad67e07c498d882133f234c.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/9ee5ce01b79f6cbf0c089b70c381d6c82a03062f2ad67e07c498d882133f234c.jpg"
+    },
+    {
+      "product_id": "975d74d2-62cb-5560-b817-d722e74c6bf9",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/Statuario%205.jpg",
+      "path": "hmg-catalogue/c2cb6adc4cbdd5516737b693fcfc64c84fe89808d3dd89b1b6b17350d9dff475.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/c2cb6adc4cbdd5516737b693fcfc64c84fe89808d3dd89b1b6b17350d9dff475.jpg"
+    },
+    {
+      "product_id": "d9b88eb1-f7bf-58e4-aad9-6c74c565c8af",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/13-Fluorite.jpg",
+      "path": "hmg-catalogue/8aa7499a7b34f50b0ef7e039d835af0bcb4ab140779611b5c41b327d1a71103a.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/8aa7499a7b34f50b0ef7e039d835af0bcb4ab140779611b5c41b327d1a71103a.jpg"
+    },
+    {
+      "product_id": "e1770a74-171b-519d-a958-805f23d28c2e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/13-Kiwano.jpg",
+      "path": "hmg-catalogue/0b2518449ff64f874699501b2185bdba2ba01196a174d57db8442ed36204d56b.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/0b2518449ff64f874699501b2185bdba2ba01196a174d57db8442ed36204d56b.jpg"
+    },
+    {
+      "product_id": "3ba7fb49-8b5d-5c20-806d-4ba37a240e2d",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/13-Rainbow-Teak-Sand-Stone-Cypess-Finish.jpg",
+      "path": "hmg-catalogue/5416369bd6627b487464180ace5f37c52878e432bab09051045ec734f3b54413.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/5416369bd6627b487464180ace5f37c52878e432bab09051045ec734f3b54413.jpg"
+    },
+    {
+      "product_id": "d05503b2-3732-5a14-9bf9-e11af92696b5",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/13-silver-dark-travertine.jpg",
+      "path": "hmg-catalogue/cddd155d16a1ff128235e1e776c55127aca5971ba682a111ba49d108ce812d8f.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/cddd155d16a1ff128235e1e776c55127aca5971ba682a111ba49d108ce812d8f.jpg"
+    },
+    {
+      "product_id": "0dee5744-3cf2-58e8-9224-ac10dfe88557",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/14-Inchiastro-Lavabo.jpg",
+      "path": "hmg-catalogue/fe954d092ddb01ac73898671a6147e00cf46698e2cefd9f45a014796cc2fbe99.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/fe954d092ddb01ac73898671a6147e00cf46698e2cefd9f45a014796cc2fbe99.jpg"
+    },
+    {
+      "product_id": "1f422acd-5857-5fb0-8b3b-5273e57265f1",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/14-monarch-butter-flies-granite.jpg",
+      "path": "hmg-catalogue/5d9e994a0c9a0d93a20d61f093641c7db047919e8e429b5d8af58368e7cbbfb4.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/5d9e994a0c9a0d93a20d61f093641c7db047919e8e429b5d8af58368e7cbbfb4.jpg"
+    },
+    {
+      "product_id": "d38ce091-8732-5b16-b79d-01255d1c0758",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/Statuario%207.jpg",
+      "path": "hmg-catalogue/8b4af019d0cb90211f0906c8276de7648568fe4c4f4453ee4f0f67a6d9da7205.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/8b4af019d0cb90211f0906c8276de7648568fe4c4f4453ee4f0f67a6d9da7205.jpg"
+    },
+    {
+      "product_id": "8cf761fb-fec8-5891-95ed-be57ee738cb1",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/14-brown-sugar.jpg",
+      "path": "hmg-catalogue/8f8b33d84e666473a94c4b8d038bf5dee04e4f2a32019f250603118403b58593.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/8f8b33d84e666473a94c4b8d038bf5dee04e4f2a32019f250603118403b58593.jpg"
+    },
+    {
+      "product_id": "84b7f73a-d476-58d7-9b7d-de82e71d553c",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/14-Blu-Tramonto.jpg",
+      "path": "hmg-catalogue/272d6eda044bba8ee74d57a79c73d805953ce4679409e43456f2033a8ede6b10.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/272d6eda044bba8ee74d57a79c73d805953ce4679409e43456f2033a8ede6b10.jpg"
+    },
+    {
+      "product_id": "99722a91-f1c3-56ea-969b-df8e55933294",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/14-Teakwood-Sand-Stone-Cypress-Finish.jpg",
+      "path": "hmg-catalogue/4f74f7901a995ae4b16c5774ffa0d9aa1f1f46a47106728ae090f5ce36e26569.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/4f74f7901a995ae4b16c5774ffa0d9aa1f1f46a47106728ae090f5ce36e26569.jpg"
+    },
+    {
+      "product_id": "c2ab12a5-672e-50a5-b9bf-905880534b78",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/14-marrone-zucchero-travertine.jpg",
+      "path": "hmg-catalogue/0c89fb17156a806e22adb7b8a8fab7e6bac8a2356d920b0f23f98647ad9af077.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/0c89fb17156a806e22adb7b8a8fab7e6bac8a2356d920b0f23f98647ad9af077.jpg"
+    },
+    {
+      "product_id": "fef1a3d4-a9eb-56e1-89c5-722a75ea64cd",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/15-Nero-Sea-Bass-Lavabo.jpg",
+      "path": "hmg-catalogue/6b0eb78cffe3777caa064158438cab481e6ef0ef826588cb27e69af40ee0fd40.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/6b0eb78cffe3777caa064158438cab481e6ef0ef826588cb27e69af40ee0fd40.jpg"
+    },
+    {
+      "product_id": "f6152cf0-bd95-570e-83ba-d1a01df9faaa",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/15-coasta-esmarald-granite.jpg",
+      "path": "hmg-catalogue/929d145a369fcf2d3dc6b0ec1700ec70e5ed92b37c5b20f3a00d9013f12f53af.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/929d145a369fcf2d3dc6b0ec1700ec70e5ed92b37c5b20f3a00d9013f12f53af.jpg"
+    },
+    {
+      "product_id": "0d77fc5c-3ffd-58ff-93e7-4a08fa985235",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/126-Foam-white.jpg",
+      "path": "hmg-catalogue/1189390505ca844915c205a54af054e9a91d0085d9d7570ee42cf371dace0128.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/1189390505ca844915c205a54af054e9a91d0085d9d7570ee42cf371dace0128.jpg"
+    },
+    {
+      "product_id": "93763d1a-29ae-56ee-9ed3-35055fa310b1",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/diamon-cut.jpg",
+      "path": "hmg-catalogue/0a91fb74c2e72adeabe4d49196235a40788276e18cfb6dd60eb4c584429d44c1.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/0a91fb74c2e72adeabe4d49196235a40788276e18cfb6dd60eb4c584429d44c1.jpg"
+    },
+    {
+      "product_id": "9498ea6f-17cc-50b3-84b9-a3ef33d8badf",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/15-Panthera-Pardus.jpg",
+      "path": "hmg-catalogue/d3bfa399136b45f72ed45079f0cb69e2147baf0b761e4590c8b0e7c70842f9d7.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/d3bfa399136b45f72ed45079f0cb69e2147baf0b761e4590c8b0e7c70842f9d7.jpg"
+    },
+    {
+      "product_id": "4392b6df-cbdd-5aa0-b4d5-b72847cf0d17",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/15-Teakwood-Sand-Stone-Ribbon-Finish.jpg",
+      "path": "hmg-catalogue/55ec23b733f70ac5661cd86f3ed8e192564316aa8f3649445f3acc7c951ae02d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/55ec23b733f70ac5661cd86f3ed8e192564316aa8f3649445f3acc7c951ae02d.jpg"
+    },
+    {
+      "product_id": "e730c119-e901-5d5a-8c0c-060ecce014ad",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/15-silver-dark-travertine.jpg",
+      "path": "hmg-catalogue/1821586b3b4eaa7aebb333fc72e5e9944780d228536c68fe38ce2bbb2e853716.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/1821586b3b4eaa7aebb333fc72e5e9944780d228536c68fe38ce2bbb2e853716.jpg"
+    },
+    {
+      "product_id": "4eacca6c-8996-5ba1-8722-7e2e108d9a6e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/16-Bez-Lavabo.jpg",
+      "path": "hmg-catalogue/b65602710eb13e57d960e4a12e9f183ac68af6ec8654025d0c42e613bc73c014.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/b65602710eb13e57d960e4a12e9f183ac68af6ec8654025d0c42e613bc73c014.jpg"
+    },
+    {
+      "product_id": "21363557-67a2-53ba-aa5a-b72e080f813b",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/16-copenhagen-granite.jpg",
+      "path": "hmg-catalogue/f6be60289fa117300917385ef6e2ec17a3177ed5f723bbf2e8b1858f25a12355.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/f6be60289fa117300917385ef6e2ec17a3177ed5f723bbf2e8b1858f25a12355.jpg"
+    },
+    {
+      "product_id": "6917e6e2-4509-520f-b509-e2faff3773d8",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/Foam%20White2.jpg",
+      "path": "hmg-catalogue/3e1aa91014d5e301f1ecba4dcf359f513aeaa642e1fa4b8345a89b74f0b19dd8.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/3e1aa91014d5e301f1ecba4dcf359f513aeaa642e1fa4b8345a89b74f0b19dd8.jpg"
+    },
+    {
+      "product_id": "8d7aabc4-08bd-52d6-a5a1-3562e95b03f5",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/adamas-1.jpg",
+      "path": "hmg-catalogue/10874a96b570e0ee056a80a1d71355bd8b4e75ce5cc64a2dddd6a9c7595efa2d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/10874a96b570e0ee056a80a1d71355bd8b4e75ce5cc64a2dddd6a9c7595efa2d.jpg"
+    },
+    {
+      "product_id": "1ab0ee04-7735-507c-8595-4c9f9892cfd6",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/16-Polar-Ice-Berg.jpg",
+      "path": "hmg-catalogue/b937f2e80a4307ed3143205098a270484614f4042bc70cceea4c5fa8e0817657.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/b937f2e80a4307ed3143205098a270484614f4042bc70cceea4c5fa8e0817657.jpg"
+    },
+    {
+      "product_id": "7190b54d-cd07-579b-b44f-0b13fbe6e5bc",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/16-Teakwood-Sand-Stone-Ribbon-Finish.jpg",
+      "path": "hmg-catalogue/7104510957686c8ef56a24bd7836dfd57e251811700d6371cca6cb396171323f.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/7104510957686c8ef56a24bd7836dfd57e251811700d6371cca6cb396171323f.jpg"
+    },
+    {
+      "product_id": "cd78e2e8-91d3-506d-a629-85861b4fd1fc",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/16-cork-travertine.jpg",
+      "path": "hmg-catalogue/e2ee17c7f0d97672f87fdfdd7ad2a6ef02e397cfb9b723bf0e011964fdfbafb0.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/e2ee17c7f0d97672f87fdfdd7ad2a6ef02e397cfb9b723bf0e011964fdfbafb0.jpg"
+    },
+    {
+      "product_id": "81e6a744-ce77-5979-99fd-f2aa2abbbf36",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/17-Diaspro-Lavabo.jpg",
+      "path": "hmg-catalogue/2479d25102953e7b6d2984a02c3b879af859d4963a2646f4532b893966b5fdbe.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/2479d25102953e7b6d2984a02c3b879af859d4963a2646f4532b893966b5fdbe.jpg"
+    },
+    {
+      "product_id": "8f226eaf-5016-56e4-9ec3-16540049909c",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/17-igneous-gold-granite.jpg",
+      "path": "hmg-catalogue/6da792dfca82326964d8632d149c1f4118b8674d3a454c578396382439f7d5f7.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/6da792dfca82326964d8632d149c1f4118b8674d3a454c578396382439f7d5f7.jpg"
+    },
+    {
+      "product_id": "89ed4bda-d662-545b-aaf1-0c22a9c8a1da",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/134-WHOOPHER-OLOR-2815.jpg",
+      "path": "hmg-catalogue/68c549a5ca7eba5f520f1267cf054710975c847d8981382aabeec5f319821785.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/68c549a5ca7eba5f520f1267cf054710975c847d8981382aabeec5f319821785.jpg"
+    },
+    {
+      "product_id": "35356d35-f0bc-56ad-855c-b0b3edee137f",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/bianco-allium-cepa.jpg",
+      "path": "hmg-catalogue/474163a6a1dab6f245109ea307bb6db807f5043496ffda6bab9fdc8586b66421.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/474163a6a1dab6f245109ea307bb6db807f5043496ffda6bab9fdc8586b66421.jpg"
+    },
+    {
+      "product_id": "af30edad-887b-5919-98b3-8935b25d39b6",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/17-Azul-Bahia.jpg",
+      "path": "hmg-catalogue/f313cc6a90f77cc34e8925f6f3a1d18baa25bceecc94bf47609cab220b587312.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/f313cc6a90f77cc34e8925f6f3a1d18baa25bceecc94bf47609cab220b587312.jpg"
+    },
+    {
+      "product_id": "eea0d4ba-623f-5c25-8ae9-1453892b7087",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/17-Rainbow-Teak-Sand-Stone-Scratch-Finish.jpg",
+      "path": "hmg-catalogue/4c26ece541d062c7311daf9f400667256d6679297e267f977b9e53136a8fb317.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/4c26ece541d062c7311daf9f400667256d6679297e267f977b9e53136a8fb317.jpg"
+    },
+    {
+      "product_id": "a8795242-4637-512e-aff4-491122eae04b",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/17-kona-gold-travertine1.jpg",
+      "path": "hmg-catalogue/ef5bb838371d6dd287b2d746bcc74c96c263cecc31ec0cd5dee91a9de9d4fad1.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/ef5bb838371d6dd287b2d746bcc74c96c263cecc31ec0cd5dee91a9de9d4fad1.jpg"
+    },
+    {
+      "product_id": "5a4e6f2e-5816-5395-adec-8ffaa331e7d3",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/18-Indus-lava.jpg",
+      "path": "hmg-catalogue/75bf9cb64b16f0322dd215cb774874eb734b2099c706678319f0cb7d470b3afc.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/75bf9cb64b16f0322dd215cb774874eb734b2099c706678319f0cb7d470b3afc.jpg"
+    },
+    {
+      "product_id": "068d9f36-bd32-520c-8e36-fa99c51bcb54",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/18-tigrato-granite.jpg",
+      "path": "hmg-catalogue/18b3ad90d29785f92e3ee7158555b94d48f001c3be2985d6a97390b1d650912c.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/18b3ad90d29785f92e3ee7158555b94d48f001c3be2985d6a97390b1d650912c.jpg"
+    },
+    {
+      "product_id": "b59a4a93-a14b-5f4b-aef7-c7382f1d4460",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/ARTIC-WHITE_W.jpg",
+      "path": "hmg-catalogue/727e31733d3ba73c6a73d2df1e479e3ba24c17f1329db34a13283296f2a3fd58.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/727e31733d3ba73c6a73d2df1e479e3ba24c17f1329db34a13283296f2a3fd58.jpg"
+    },
+    {
+      "product_id": "83561933-b074-52b5-bcaf-ecf3ebf99881",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/frozen-sea.jpg",
+      "path": "hmg-catalogue/026c118a40e0f0c524139a65ad02adad6bc1c85c79f9e26eeb4c700b61030bbe.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/026c118a40e0f0c524139a65ad02adad6bc1c85c79f9e26eeb4c700b61030bbe.jpg"
+    },
+    {
+      "product_id": "45c1755f-0f2b-53be-99cc-1bb7c739cea3",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/18-Bleu-Damesfly.jpg",
+      "path": "hmg-catalogue/d8cd108ea30dfeb476200e1857e6dc5fc61c1b36eae1f3756fe88ff54ec5d3b4.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/d8cd108ea30dfeb476200e1857e6dc5fc61c1b36eae1f3756fe88ff54ec5d3b4.jpg"
+    },
+    {
+      "product_id": "b7fb0dcf-ba76-5c0c-8b93-124aba8060e7",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/18-Teakwood-Sand-Stone-Scratch-Finish.jpg",
+      "path": "hmg-catalogue/167f313babdf2b53517cd4ee07502c975634eaab568c0f6e1ca84900432d9db8.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/167f313babdf2b53517cd4ee07502c975634eaab568c0f6e1ca84900432d9db8.jpg"
+    },
+    {
+      "product_id": "345644d1-629c-598f-9626-994070f93ab5",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/18-kona-gold-travertine2.jpg",
+      "path": "hmg-catalogue/727278f5a2aa711476ac0968f94beec4fb796c34a9773c8ec9191aaea9522685.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/727278f5a2aa711476ac0968f94beec4fb796c34a9773c8ec9191aaea9522685.jpg"
+    },
+    {
+      "product_id": "cdc9920f-6b46-5337-bf48-e33d7788aa44",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/19-White-on-White-WOW-LAVABO.jpg",
+      "path": "hmg-catalogue/11cc88161c0d35aa1d9593eda1d75b1767b94e2016d90004dee39c2580ff4e4a.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/11cc88161c0d35aa1d9593eda1d75b1767b94e2016d90004dee39c2580ff4e4a.jpg"
+    },
+    {
+      "product_id": "4c7dcbdc-7060-557d-91ee-3e9744cef077",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/19-crystal-yellow.jpg",
+      "path": "hmg-catalogue/dbbbef415d58416a8e08d339ba72ca910d35d8334c3b0a02fcd1efdd4de54650.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/dbbbef415d58416a8e08d339ba72ca910d35d8334c3b0a02fcd1efdd4de54650.jpg"
+    },
+    {
+      "product_id": "da934762-6f97-5e82-83ac-50482ab4e5f5",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/yellow-river.jpg",
+      "path": "hmg-catalogue/a376d7718fe26e9ecc849e10ec47d0c948413d95eefb53605f0e2649ffdfc78a.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/a376d7718fe26e9ecc849e10ec47d0c948413d95eefb53605f0e2649ffdfc78a.jpg"
+    },
+    {
+      "product_id": "59a33b0d-266c-5548-8172-112b0d72cffa",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/19-Soda-Light.jpg",
+      "path": "hmg-catalogue/6240b8778c458c871949cef9520280598c8fe4f22060b269a1d2d97754b3313b.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/6240b8778c458c871949cef9520280598c8fe4f22060b269a1d2d97754b3313b.jpg"
+    },
+    {
+      "product_id": "42478069-c5a8-5c29-ba30-fe9337068d9f",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/19-Teakwood-Sand-Stone-Scratch-Roller-Finish.jpg",
+      "path": "hmg-catalogue/5f8c77edd2341f1f7b2a4f0c95e63ea42a6012181eed0bf45937b9c43b8b84fd.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/5f8c77edd2341f1f7b2a4f0c95e63ea42a6012181eed0bf45937b9c43b8b84fd.jpg"
+    },
+    {
+      "product_id": "af6f8e81-ed3f-538a-8e31-41f894afd2b5",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/2-Aspro-Lavabo-Extra.jpg",
+      "path": "hmg-catalogue/1d8018da2352f5e6268535e8b2d89117f2074e20d1e6407b01b9bad690d236a1.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/1d8018da2352f5e6268535e8b2d89117f2074e20d1e6407b01b9bad690d236a1.jpg"
+    },
+    {
+      "product_id": "dc0d32d8-f1b8-5047-97dc-f55df59ad701",
+      "source_url": "https://www.hmgstones.com/assets/images/products/dolomite/dove-white-dolomite.jpg",
+      "path": "hmg-catalogue/7d7d6826db02cbf61c2ac1c01f2eaed74fa055ea854b9707c01329067f55a3db.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/7d7d6826db02cbf61c2ac1c01f2eaed74fa055ea854b9707c01329067f55a3db.jpg"
+    },
+    {
+      "product_id": "bc3dc7cf-649d-5db6-be4e-503edbd91589",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/2-cotton-white-granite.jpg",
+      "path": "hmg-catalogue/20bad6234897da2acff277d1863d29781787ebd02b294ec81e32139caf8b56ec.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/20bad6234897da2acff277d1863d29781787ebd02b294ec81e32139caf8b56ec.jpg"
+    },
+    {
+      "product_id": "4d149ca9-4b53-52da-ac68-232e0a590a3f",
+      "source_url": "https://www.hmgstones.com/assets/images/products/limestone/2-NS-Lime-Stone.jpg",
+      "path": "hmg-catalogue/c14144d8f659b9f6e45a8d13ef2283f020307d4ea768e7c49f32fa99a43624d6.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/c14144d8f659b9f6e45a8d13ef2283f020307d4ea768e7c49f32fa99a43624d6.jpg"
+    },
+    {
+      "product_id": "69f269fc-e910-5ac3-86ed-5816c9430005",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/pedestal-basin/2-Creme-Brulee-Cylindro.jpg",
+      "path": "hmg-catalogue/ed62687c2e018f93ca0a9d9b96b131e42887e4ffd8529630d7002e70869d7a2d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/ed62687c2e018f93ca0a9d9b96b131e42887e4ffd8529630d7002e70869d7a2d.jpg"
+    },
+    {
+      "product_id": "76286fd2-1602-5aba-87fd-6bac3038c2aa",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/2-alpinus.jpg",
+      "path": "hmg-catalogue/7e8e9a83962f57da37b73884d9273d14a8096190af00470b6fd36577e9ac52fb.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/7e8e9a83962f57da37b73884d9273d14a8096190af00470b6fd36577e9ac52fb.jpg"
+    },
+    {
+      "product_id": "5dce0d4e-3df6-52c7-ad6c-af80bc1e2f1d",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/2-mint-sand-stone-ribbed-finish.jpg",
+      "path": "hmg-catalogue/db02bcdf94448754854b9551a1cd98beade2e42b8fb1d972b0a4659995a6b97b.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/db02bcdf94448754854b9551a1cd98beade2e42b8fb1d972b0a4659995a6b97b.jpg"
+    },
+    {
+      "product_id": "12d74eca-b53e-5fd4-8f81-be08fe0a3c8d",
+      "source_url": "https://www.hmgstones.com/assets/images/products/shellstone/brown%20fosil.jpg",
+      "path": "hmg-catalogue/a1d98e66b5274738126fb92d81965998f580bb7cdcbc7b583c6cd08158ca9ac5.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/a1d98e66b5274738126fb92d81965998f580bb7cdcbc7b583c6cd08158ca9ac5.jpg"
+    },
+    {
+      "product_id": "3c6f4890-a562-56d2-a40f-99f3eca2e2cc",
+      "source_url": "https://www.hmgstones.com/assets/images/products/textures/2-ribbed-finish.jpg",
+      "path": "hmg-catalogue/db02bcdf94448754854b9551a1cd98beade2e42b8fb1d972b0a4659995a6b97b.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/db02bcdf94448754854b9551a1cd98beade2e42b8fb1d972b0a4659995a6b97b.jpg"
+    },
+    {
+      "product_id": "f15b6b8e-1b32-5ecd-8975-bc7c5fe5ec8e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/2-cream-travertine.jpg",
+      "path": "hmg-catalogue/b272a16780aca393d76ce3e33e88a099def35edf455961b0312f6c667415bcc1.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/b272a16780aca393d76ce3e33e88a099def35edf455961b0312f6c667415bcc1.jpg"
+    },
+    {
+      "product_id": "79468a1f-7bca-5c44-9afb-4664b2e3a884",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/20-brass-blue-grantie.jpg",
+      "path": "hmg-catalogue/920fa98e3d319dc69cfd258385749c244402c44373c71550c38c45e2a7b557cd.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/920fa98e3d319dc69cfd258385749c244402c44373c71550c38c45e2a7b557cd.jpg"
+    },
+    {
+      "product_id": "35847d34-c358-5882-9dae-70c928a2a691",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/Crested-1.jpg",
+      "path": "hmg-catalogue/8626d13f8796d89fb7e307ea1dd0670ad797e336e79d6bfe26d3e145e8b40136.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/8626d13f8796d89fb7e307ea1dd0670ad797e336e79d6bfe26d3e145e8b40136.jpg"
+    },
+    {
+      "product_id": "94a70983-78d0-5179-a48a-5cdb15aae356",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/20-Soda-Light2.jpg",
+      "path": "hmg-catalogue/8f801f7c9ede0b2faaefaf65ebde31764ea2ab205d70543d42d919cf9de281f3.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/8f801f7c9ede0b2faaefaf65ebde31764ea2ab205d70543d42d919cf9de281f3.jpg"
+    },
+    {
+      "product_id": "c4b10ffd-e584-5355-b3ea-5bb01c8b378a",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/20-Rainbow-Teak-Sand-Stone-Scratch-Roller.jpg",
+      "path": "hmg-catalogue/637100870c8685d0f6455c00f87b67525bcf6ee3ddbae884c262d0a3477d375d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/637100870c8685d0f6455c00f87b67525bcf6ee3ddbae884c262d0a3477d375d.jpg"
+    },
+    {
+      "product_id": "a0724144-3b5a-5835-8fbe-58dc72cbf3e8",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/20-nocha-travertine.jpg",
+      "path": "hmg-catalogue/b181c1c982fbb5392a339b340847e071ee1e157e9f809a8a80edc375052e4030.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/b181c1c982fbb5392a339b340847e071ee1e157e9f809a8a80edc375052e4030.jpg"
+    },
+    {
+      "product_id": "df3e2247-ef13-5d53-8101-24f16452ea3f",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/21-blue-pearl-granite.jpg",
+      "path": "hmg-catalogue/f0aead6b8ca4bbc33b66c0b11055a996c3a4c979599c77b4ac43ed9bef332f7d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/f0aead6b8ca4bbc33b66c0b11055a996c3a4c979599c77b4ac43ed9bef332f7d.jpg"
+    },
+    {
+      "product_id": "28725abf-6c65-5dd1-b14c-dac764778c28",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/caparaya-af.jpg",
+      "path": "hmg-catalogue/0cc7b771c01a02706fcafdf583cbab5102fd2ba6ca9a5e297d57504a75252ba6.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/0cc7b771c01a02706fcafdf583cbab5102fd2ba6ca9a5e297d57504a75252ba6.jpg"
+    },
+    {
+      "product_id": "cd011fbf-5f76-5fb6-9936-778471e2a6f7",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/Agouti.jpg",
+      "path": "hmg-catalogue/d0ef2575981c5e94cb0f39b41c90d9604d349a827ab2cd4797dfc53ce8fc7997.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/d0ef2575981c5e94cb0f39b41c90d9604d349a827ab2cd4797dfc53ce8fc7997.jpg"
+    },
+    {
+      "product_id": "178f42dc-43ce-5e2c-aee5-bc35cb4744e2",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/21-Fusion.jpg",
+      "path": "hmg-catalogue/e7f01ea5e921e488e39577bcccff2a29f8b20efed29baba2ee6a0cd84f67a6b7.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/e7f01ea5e921e488e39577bcccff2a29f8b20efed29baba2ee6a0cd84f67a6b7.jpg"
+    },
+    {
+      "product_id": "e4624a00-07a1-5572-9f5a-25c24bafad94",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/21-Teakwood-Sand-Stone-Liner-Finish.jpg",
+      "path": "hmg-catalogue/542919fdb22861be90f36244ffab3f1b06e2720bb2dc38d57933200d1a6ed441.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/542919fdb22861be90f36244ffab3f1b06e2720bb2dc38d57933200d1a6ed441.jpg"
+    },
+    {
+      "product_id": "eb6397ea-2d3c-5259-a700-da4ac6b6395d",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/21-Rapalano-Iron-Travertine.jpg",
+      "path": "hmg-catalogue/3a637e0d20d0ed378ef9d9a7faa8ae70d564bb386e6404954355a7f261cd6ee3.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/3a637e0d20d0ed378ef9d9a7faa8ae70d564bb386e6404954355a7f261cd6ee3.jpg"
+    },
+    {
+      "product_id": "b97e787c-21c1-5b7b-a0c2-8d3456728193",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/22-nero-foxtail-2-grantie.jpg",
+      "path": "hmg-catalogue/9ae312ca170cfda1050151f3169dbad4778a0e981154ea801fcb41f0bc1cad92.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/9ae312ca170cfda1050151f3169dbad4778a0e981154ea801fcb41f0bc1cad92.jpg"
+    },
+    {
+      "product_id": "841e55b4-85d8-58e8-9414-2ee5522733f8",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/thosis-white-af.jpg",
+      "path": "hmg-catalogue/08a8129938d5a6c9f4fccfb8d97d7ee6fdd3a2bc10b9cdaf3072fe0296e85902.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/08a8129938d5a6c9f4fccfb8d97d7ee6fdd3a2bc10b9cdaf3072fe0296e85902.jpg"
+    },
+    {
+      "product_id": "ba3a506e-f2c4-5f0b-86c0-d90548ebcde2",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/yellow-river-1.jpg",
+      "path": "hmg-catalogue/877f26be2dfc4b0303b112d6b80608f4a11b2d3357199788a7cd935cda380d99.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/877f26be2dfc4b0303b112d6b80608f4a11b2d3357199788a7cd935cda380d99.jpg"
+    },
+    {
+      "product_id": "ec0cb392-1eb0-5cb6-92a0-883b6f784cdd",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/22-copper-travertine.jpg",
+      "path": "hmg-catalogue/3a3c479d691026ef7b7e88f654a593db904ff736f8c4cd4cb6e33faa58e8e59e.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/3a3c479d691026ef7b7e88f654a593db904ff736f8c4cd4cb6e33faa58e8e59e.jpg"
+    },
+    {
+      "product_id": "02fa0c10-ccee-5382-8314-f74bf52c643e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/23-nero-foxtail.jpg",
+      "path": "hmg-catalogue/53045fe96eb56a7f6c4b576487820c0eeb1695907075cd4a88ecb72ba9f7d055.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/53045fe96eb56a7f6c4b576487820c0eeb1695907075cd4a88ecb72ba9f7d055.jpg"
+    },
+    {
+      "product_id": "117084d2-64f8-50de-b399-7e7304ded27a",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/bianco-lasa-marble.jpg",
+      "path": "hmg-catalogue/caa156fabfca6ea9fb9afaaf799aa23005ef4ea00b34978ffa05a136e9040f09.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/caa156fabfca6ea9fb9afaaf799aa23005ef4ea00b34978ffa05a136e9040f09.jpg"
+    },
+    {
+      "product_id": "dce1a326-8ee6-54ea-b627-4d132689b31c",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/Bassent-VC.jpg",
+      "path": "hmg-catalogue/a15ca4e11a6223f3e65826e2721bca83f2c6ce740808b1e9b4fc3f7d9bd5b90a.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/a15ca4e11a6223f3e65826e2721bca83f2c6ce740808b1e9b4fc3f7d9bd5b90a.jpg"
+    },
+    {
+      "product_id": "2bcbcf97-59b0-5e21-8c66-9e67f65ef39a",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/23-Giada-Super-Exotica.jpg",
+      "path": "hmg-catalogue/9fb7127fa785a99d85f561c35a4cd1d762e62950434265fa29fdcc73696e8cd5.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/9fb7127fa785a99d85f561c35a4cd1d762e62950434265fa29fdcc73696e8cd5.jpg"
+    },
+    {
+      "product_id": "0f141671-1da4-58ff-a6ce-a04c69e60eb9",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/23-saint-andriao-travertine.jpg",
+      "path": "hmg-catalogue/ceb6683d59ed9879867a80e66323bb1410f93104e2808b08e586e49d9704ba67.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/ceb6683d59ed9879867a80e66323bb1410f93104e2808b08e586e49d9704ba67.jpg"
+    },
+    {
+      "product_id": "81ef0df4-ff98-583f-9729-ae91ccfa88ed",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/124-BIANCO-MONTE-ROSA.jpg",
+      "path": "hmg-catalogue/cbe708898b9fc7403db85a6922d84b1914868480150ac62d58399e5f48308181.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/cbe708898b9fc7403db85a6922d84b1914868480150ac62d58399e5f48308181.jpg"
+    },
+    {
+      "product_id": "61ec9e78-5316-570f-9dae-42586105ff63",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/Arco-Baleno-2.jpg",
+      "path": "hmg-catalogue/cac463b9bf5accf3930828d505c19724f936bde7a896ec129bda457dab741002.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/cac463b9bf5accf3930828d505c19724f936bde7a896ec129bda457dab741002.jpg"
+    },
+    {
+      "product_id": "6dd4318a-deed-55b1-83f6-c49a862755d3",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/24-Verde-Scapularis.jpg",
+      "path": "hmg-catalogue/d8dff728e2f889352f4d7e5c89a31b3c545a1622438af17c5fa66cd05ec75f04.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/d8dff728e2f889352f4d7e5c89a31b3c545a1622438af17c5fa66cd05ec75f04.jpg"
+    },
+    {
+      "product_id": "f612a8b4-5441-519c-ad3b-0b838626c4c4",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/24-Yellow-Travertine.jpg",
+      "path": "hmg-catalogue/a102308371ab6b4f70b0830e990caf80d9f648fc4275b6ef80615da8858cfad4.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/a102308371ab6b4f70b0830e990caf80d9f648fc4275b6ef80615da8858cfad4.jpg"
+    },
+    {
+      "product_id": "ddefd10f-2c0c-58a6-afc1-d1a4b942039a",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/25-titanium-gold-granite.jpg",
+      "path": "hmg-catalogue/0fba430c9f50d019e17cbb0819182427db1c62ce1592a34ae187a8c23aabe6e9.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/0fba430c9f50d019e17cbb0819182427db1c62ce1592a34ae187a8c23aabe6e9.jpg"
+    },
+    {
+      "product_id": "2918e34d-c3b3-5fed-bc97-f8a9098413a2",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/125-BIANCO-RHINO.jpg",
+      "path": "hmg-catalogue/759f365030fdacc7b8825a7e247d27e20df7d7078b67ab61153a4515f81ba4d0.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/759f365030fdacc7b8825a7e247d27e20df7d7078b67ab61153a4515f81ba4d0.jpg"
+    },
+    {
+      "product_id": "8158d14d-8319-51bf-8fe1-ec4261f04319",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/Horn-Wiper.jpg",
+      "path": "hmg-catalogue/bf81e56420da41b5ef6d973d1b6f1ac17bd820441b74a5822ebecdbf6cf47d6f.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/bf81e56420da41b5ef6d973d1b6f1ac17bd820441b74a5822ebecdbf6cf47d6f.jpg"
+    },
+    {
+      "product_id": "0f83ed40-5a64-554e-be71-1551e8979f5e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/25-Verde-Lapponinia.jpg",
+      "path": "hmg-catalogue/bc493d5ffb686d3e5ef5f060468c1878505dbaa60d0fba3cec494424397885f6.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/bc493d5ffb686d3e5ef5f060468c1878505dbaa60d0fba3cec494424397885f6.jpg"
+    },
+    {
+      "product_id": "507e5b50-ba14-57c7-a3ce-939ebaa7d657",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/25-Titanium-Travertine.jpg",
+      "path": "hmg-catalogue/41016a0d91b9b79b0b22d7574bd51a740b752855ae5f5eadf60fa07166b4aa5f.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/41016a0d91b9b79b0b22d7574bd51a740b752855ae5f5eadf60fa07166b4aa5f.jpg"
+    },
+    {
+      "product_id": "41d3cd07-8b4e-5441-9858-0c0ea0418035",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/122-BIANCO-HUSKY.jpg",
+      "path": "hmg-catalogue/089e442ea11e300d0d0b41c4d8c8922acfa1701995fc476e90a92ee758e8306d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/089e442ea11e300d0d0b41c4d8c8922acfa1701995fc476e90a92ee758e8306d.jpg"
+    },
+    {
+      "product_id": "c06dd4a7-03d8-5d20-8d9c-df58169aa0fd",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/Golden-Adams.jpg",
+      "path": "hmg-catalogue/6cf6bb3f4eb218684f9afb06c469f0dbebe2cbb263759d0f9e5e628b8933b5f9.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/6cf6bb3f4eb218684f9afb06c469f0dbebe2cbb263759d0f9e5e628b8933b5f9.jpg"
+    },
+    {
+      "product_id": "093ca1fd-3ee2-52ac-8ca9-93c655a66728",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/26-GoldenBotanica.jpg",
+      "path": "hmg-catalogue/935b01a151f08bb97207d4a65820e86d6e90e1b87a43b56ef93547c80b13aef5.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/935b01a151f08bb97207d4a65820e86d6e90e1b87a43b56ef93547c80b13aef5.jpg"
+    },
+    {
+      "product_id": "ca2a8696-4a13-58e4-9a02-9f40cb6a4879",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/45-gun-metal-se.jpg",
+      "path": "hmg-catalogue/aab19a0721c1f747830dc27e3c5fa2f6eda46dab6bdcbcd62123988e4df9be9e.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/aab19a0721c1f747830dc27e3c5fa2f6eda46dab6bdcbcd62123988e4df9be9e.jpg"
+    },
+    {
+      "product_id": "16937673-2a31-5adc-854e-afeb9d4f8115",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/Crested-2.jpg",
+      "path": "hmg-catalogue/aa869addfab63d12857e4266aac8042830a907332cbdf74dd8ac2622947b54cf.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/aa869addfab63d12857e4266aac8042830a907332cbdf74dd8ac2622947b54cf.jpg"
+    },
+    {
+      "product_id": "7acd38b5-4675-5129-ab41-83be6c418a5a",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/27-Botanica.jpg",
+      "path": "hmg-catalogue/8896c13b36b477bd973a061aa61ae39a0f0cd6f90375cc8969dbcc0779376e9a.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/8896c13b36b477bd973a061aa61ae39a0f0cd6f90375cc8969dbcc0779376e9a.jpg"
+    },
+    {
+      "product_id": "d79d7efc-096a-56a0-b42c-df01372178be",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/28-cizglex-granite.jpg",
+      "path": "hmg-catalogue/c3327a4948ef34641230a0611afea869a40472fec47604229e6fd57f53a1c92f.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/c3327a4948ef34641230a0611afea869a40472fec47604229e6fd57f53a1c92f.jpg"
+    },
+    {
+      "product_id": "fbe4d1d9-bc93-5d0e-8cde-e52537a096cb",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/54-gun-metal-se2.jpg",
+      "path": "hmg-catalogue/5976d72f848167a91c7ae3683ab15fe63ede30c271565aeed3b521b767f68e7b.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/5976d72f848167a91c7ae3683ab15fe63ede30c271565aeed3b521b767f68e7b.jpg"
+    },
+    {
+      "product_id": "664371e1-9e2e-5e68-ad23-2da1f60a3d70",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/Verde-Tettigonia.jpg",
+      "path": "hmg-catalogue/c4fa818b0c9c79f865e3dc80f74b25284072e97bc46e09f8c5c524d8d90c1b3d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/c4fa818b0c9c79f865e3dc80f74b25284072e97bc46e09f8c5c524d8d90c1b3d.jpg"
+    },
+    {
+      "product_id": "8701fd4b-5527-5508-b74f-8456c310942b",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/28-Treron.jpg",
+      "path": "hmg-catalogue/f920188e075b1387b6cca04eb52147590ac9f38305d412ddb4d7b04e3fb49ec0.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/f920188e075b1387b6cca04eb52147590ac9f38305d412ddb4d7b04e3fb49ec0.jpg"
+    },
+    {
+      "product_id": "0a1ba0ce-1ea9-5a17-ae78-60f623f135ea",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/29-cizglex-hydro-finish.jpg",
+      "path": "hmg-catalogue/9f169596bdf8b0b26eb8b07bc91f6754cc72b1aec6de84e66681a93234290699.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/9f169596bdf8b0b26eb8b07bc91f6754cc72b1aec6de84e66681a93234290699.jpg"
+    },
+    {
+      "product_id": "cda97839-71cc-5daf-b838-d86b2367bb3c",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/127-GREGO_POZZOLANA_2818.jpg",
+      "path": "hmg-catalogue/afbdf0d0c78c64de39ae81f33fbdde072fe0bc586ecf1dc66d801f56e5bc099d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/afbdf0d0c78c64de39ae81f33fbdde072fe0bc586ecf1dc66d801f56e5bc099d.jpg"
+    },
+    {
+      "product_id": "f5ca5989-5841-59e7-9291-b87ea89483fe",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/Misty-Rose.jpg",
+      "path": "hmg-catalogue/9f7999f214fee084b662bb9951b2ef929d6ffc4460c5cbcc8972177fdecf8a03.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/9f7999f214fee084b662bb9951b2ef929d6ffc4460c5cbcc8972177fdecf8a03.jpg"
+    },
+    {
+      "product_id": "27c602ee-1da2-5b31-8dec-b746330fc596",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/29-Oleander-Hawk.jpg",
+      "path": "hmg-catalogue/a013797244499246f3ce42f11cd3844a8d485997b643ad2a74e1a1355e42ea2c.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/a013797244499246f3ce42f11cd3844a8d485997b643ad2a74e1a1355e42ea2c.jpg"
+    },
+    {
+      "product_id": "0c0dfa90-75cd-55a6-8f2d-543df5a3397e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/3-Aspro-Trumpeter-Lavabo.jpg",
+      "path": "hmg-catalogue/43614cc1545ae24d307bdb8ff05d4206dbf08e0e8b1893299c88f0f5980ffabb.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/43614cc1545ae24d307bdb8ff05d4206dbf08e0e8b1893299c88f0f5980ffabb.jpg"
+    },
+    {
+      "product_id": "438d9f3d-0eb2-56db-9ab7-b787548ee767",
+      "source_url": "https://www.hmgstones.com/assets/images/products/dolomite/jasmine-dolomite.jpg",
+      "path": "hmg-catalogue/939f8b9d73e743af9775a863c9b86df78879ffa0bf10391965079d94e1f0d906.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/939f8b9d73e743af9775a863c9b86df78879ffa0bf10391965079d94e1f0d906.jpg"
+    },
+    {
+      "product_id": "c9ef8c55-0c88-5342-a9ea-fe5cfa7a690a",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/3-ALP-Granite.jpg",
+      "path": "hmg-catalogue/41255c8ba7209b049237ab3edd75249e9a989cf69b40746e4bc99a746c220018.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/41255c8ba7209b049237ab3edd75249e9a989cf69b40746e4bc99a746c220018.jpg"
+    },
+    {
+      "product_id": "44e6a7ad-b89b-5a18-b940-a4447e61956d",
+      "source_url": "https://www.hmgstones.com/assets/images/products/limestone/3-french-lime-stone.jpg",
+      "path": "hmg-catalogue/e02e6b168e906b823985273ed8c948886bd0df88d1a9000c644bc640152cbc49.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/e02e6b168e906b823985273ed8c948886bd0df88d1a9000c644bc640152cbc49.jpg"
+    },
+    {
+      "product_id": "426e21fd-7145-5540-b40c-f3eef213ffd3",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/2-alaska-snow-sea-new.jpg",
+      "path": "hmg-catalogue/46ef5544dd20239bfe24497785706c7c5054b91b596166b2c82687e5ceeaf487.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/46ef5544dd20239bfe24497785706c7c5054b91b596166b2c82687e5ceeaf487.jpg"
+    },
+    {
+      "product_id": "52cae961-a140-5293-95ea-697b483f80a6",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/3-Ambigonite1.jpg",
+      "path": "hmg-catalogue/7cfc019e6b319f631f74b30f8d019d3c6245fbfae827cb4c45c5b9537bc47e2f.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/7cfc019e6b319f631f74b30f8d019d3c6245fbfae827cb4c45c5b9537bc47e2f.jpg"
+    },
+    {
+      "product_id": "5d1bedd7-d16f-59ef-9b28-5ff545c52d0d",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/pedestal-basin/3-Creme-Brulee-Cylindro.jpg",
+      "path": "hmg-catalogue/4ed314c494c863cd9b08cc4184439a184453f3483cba48c5733fec65a28598af.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/4ed314c494c863cd9b08cc4184439a184453f3483cba48c5733fec65a28598af.jpg"
+    },
+    {
+      "product_id": "ae3c7b32-6e28-5f0a-9bf3-26dc38f6799e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/3-columbian-emerald.jpg",
+      "path": "hmg-catalogue/03b1093e7cd3c97aa3f72afc331b4d6b3a0042343645e5b7c4b1614269e2c9d6.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/03b1093e7cd3c97aa3f72afc331b4d6b3a0042343645e5b7c4b1614269e2c9d6.jpg"
+    },
+    {
+      "product_id": "14594de7-4790-55ba-87f0-ab8c7f91e472",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/3-Mint-Sand-Stone-Scratch-Finish.jpg",
+      "path": "hmg-catalogue/db9396c85207d4f99c919f565dc36a56c64627fdba8a34b73d83ea240f544af9.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/db9396c85207d4f99c919f565dc36a56c64627fdba8a34b73d83ea240f544af9.jpg"
+    },
+    {
+      "product_id": "8f132f8b-6f91-53ee-ac19-2d0aa39a433e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/shellstone/bronze-zukanya-ark.jpg",
+      "path": "hmg-catalogue/90e7b725b85eeba08029499b2f7a6098efc8a2abf0c14bb25334a28f07e8745c.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/90e7b725b85eeba08029499b2f7a6098efc8a2abf0c14bb25334a28f07e8745c.jpg"
+    },
+    {
+      "product_id": "1d98f6be-a654-54f6-a4ba-d7c7e1205dca",
+      "source_url": "https://www.hmgstones.com/assets/images/products/textures/3-Cypress-Finish.jpg",
+      "path": "hmg-catalogue/3f4c70d45c695b88d115f73a2e930946c9191084b8eee5fa44b24908de12ed11.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/3f4c70d45c695b88d115f73a2e930946c9191084b8eee5fa44b24908de12ed11.jpg"
+    },
+    {
+      "product_id": "28580661-667d-58ab-9bcb-59d7c06c8a89",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/3-romano-classic-silver-travertine.jpg",
+      "path": "hmg-catalogue/0949bcba8625f6ee5f9047075f7db3b80b1b414d1b7a3ed472dfed0b74d9ab3b.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/0949bcba8625f6ee5f9047075f7db3b80b1b414d1b7a3ed472dfed0b74d9ab3b.jpg"
+    },
+    {
+      "product_id": "2a54acdb-ebcf-56e3-8a5f-d6032b5fca8c",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/Fuego-Narange.jpg",
+      "path": "hmg-catalogue/1b896083aeaf6aca47a5c9fa4a89ca40357707cef6cc71ed2fa73730e77ad07e.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/1b896083aeaf6aca47a5c9fa4a89ca40357707cef6cc71ed2fa73730e77ad07e.jpg"
+    },
+    {
+      "product_id": "64a40ba8-a8f8-5b27-9520-09c83640dbe6",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/30-Verde-Lapponia.jpg",
+      "path": "hmg-catalogue/eaa69704add780b596e9d53d9b6721a1b30e56ef275aef0688c26be0f7059878.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/eaa69704add780b596e9d53d9b6721a1b30e56ef275aef0688c26be0f7059878.jpg"
+    },
+    {
+      "product_id": "8b950c3e-ebd2-5089-bd5c-e69d35577441",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/creama-eva.jpg",
+      "path": "hmg-catalogue/9d3a9a4e2cce3a599be6889420a775d75a4ac6ae3389f28d5d8b53c285192819.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/9d3a9a4e2cce3a599be6889420a775d75a4ac6ae3389f28d5d8b53c285192819.jpg"
+    },
+    {
+      "product_id": "cf5da4ca-600c-5dbc-80e7-27d0b385ac73",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/Miyazaki.jpg",
+      "path": "hmg-catalogue/ad9f8d593dd462142078db9cd044a16bfd6f8fd754afc6e4c3702079229f5feb.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/ad9f8d593dd462142078db9cd044a16bfd6f8fd754afc6e4c3702079229f5feb.jpg"
+    },
+    {
+      "product_id": "2994f753-b804-51cd-99e9-5cfdb89189ed",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/31-Verde-Murina.jpg",
+      "path": "hmg-catalogue/a88d6dd0eb26c8389d6b6d24aaf4cd8ea9dce740d6b1894da5ea830159d4b027.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/a88d6dd0eb26c8389d6b6d24aaf4cd8ea9dce740d6b1894da5ea830159d4b027.jpg"
+    },
+    {
+      "product_id": "3d89f1e8-d769-57dc-a239-71644c2fdefd",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/Maroon-Tree-Rainbow.jpg",
+      "path": "hmg-catalogue/112f439f3757707590c73afad9a73f29ca240a161f7832e327ba472c50dd1d70.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/112f439f3757707590c73afad9a73f29ca240a161f7832e327ba472c50dd1d70.jpg"
+    },
+    {
+      "product_id": "904be243-6195-5115-bc67-105aa561285b",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/32-Colacasia.jpg",
+      "path": "hmg-catalogue/24e6f0cdef3ef0ddc51bb6932bbdbc0c2080e7049faa4032cf20542957e90695.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/24e6f0cdef3ef0ddc51bb6932bbdbc0c2080e7049faa4032cf20542957e90695.jpg"
+    },
+    {
+      "product_id": "d7c5103c-dff3-5d3b-a436-bca7617f0fc2",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/34-crema-luna.jpg",
+      "path": "hmg-catalogue/71f02c3f9de2b4878bdd149475995ea8bd9861a95a118f1aeecb3df99fda5bd7.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/71f02c3f9de2b4878bdd149475995ea8bd9861a95a118f1aeecb3df99fda5bd7.jpg"
+    },
+    {
+      "product_id": "9636d265-5d2a-52cd-b1d6-f919a7debc43",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/33-Ferro-Corroso.jpg",
+      "path": "hmg-catalogue/228719df84818a54114ef16648b46bdaf87f0f25624fae4e9e9dcb01bd06e037.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/228719df84818a54114ef16648b46bdaf87f0f25624fae4e9e9dcb01bd06e037.jpg"
+    },
+    {
+      "product_id": "317c31b2-0b60-5126-bc2f-b77eb498e148",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/28-picture-stone.jpg",
+      "path": "hmg-catalogue/b9a1919d1be259c7d75f78bd5e43e9ecb01a3ce133c75f6575679637448d3a55.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/b9a1919d1be259c7d75f78bd5e43e9ecb01a3ce133c75f6575679637448d3a55.jpg"
+    },
+    {
+      "product_id": "c0507d7e-4cba-5730-9dd3-2048513e9b27",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/34-Badger.jpg",
+      "path": "hmg-catalogue/df70eca62e6f1918e103ef83a7d44b2a58db1c312df3e11a3270c996a3470747.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/df70eca62e6f1918e103ef83a7d44b2a58db1c312df3e11a3270c996a3470747.jpg"
+    },
+    {
+      "product_id": "898beb42-5248-516f-9309-c1b35d1ae6b3",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/30-EURO-STELLA.jpg",
+      "path": "hmg-catalogue/b78f8fed44629ed8c11d7faf4060de75762274ba26e71b1e599620be1ffbac72.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/b78f8fed44629ed8c11d7faf4060de75762274ba26e71b1e599620be1ffbac72.jpg"
+    },
+    {
+      "product_id": "96201696-eaee-5355-b4ae-aa16029414ab",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/35-Badger2.jpg",
+      "path": "hmg-catalogue/18e659958b81e179d5d84bcea5159aefbcf8aa2e4c5ebd07886b71d4917109ce.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/18e659958b81e179d5d84bcea5159aefbcf8aa2e4c5ebd07886b71d4917109ce.jpg"
+    },
+    {
+      "product_id": "bd0f54fd-160b-5faf-b726-0dc388ce15b4",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/31-BTC-Classico.jpg",
+      "path": "hmg-catalogue/df5081bade221a9e2c6ba32523ef8edca14ffe50e3037b2ceb8da043681a6a07.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/df5081bade221a9e2c6ba32523ef8edca14ffe50e3037b2ceb8da043681a6a07.jpg"
+    },
+    {
+      "product_id": "20418540-ada6-5459-a2b8-796298f4f310",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/36-Legno-Arco-Baleno.jpg",
+      "path": "hmg-catalogue/dcc91a5bd27a8109460251d84b497664fee0fd26f21317548d847edaec37ee94.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/dcc91a5bd27a8109460251d84b497664fee0fd26f21317548d847edaec37ee94.jpg"
+    },
+    {
+      "product_id": "fe8394cd-29e5-5870-8475-e1180973441e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/33-MANDROLA.jpg",
+      "path": "hmg-catalogue/b2b126bb37104b3f5a9db42704e28bc05027601eb537b8b230cdf68470751313.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/b2b126bb37104b3f5a9db42704e28bc05027601eb537b8b230cdf68470751313.jpg"
+    },
+    {
+      "product_id": "c82db314-6156-51e3-a4c3-1709423ebaa2",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/37-Magma-Gold.jpg",
+      "path": "hmg-catalogue/b6398a3ce8f5a3c864b296b09b98c3c57769d7a028352b13ad02ae12fb061282.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/b6398a3ce8f5a3c864b296b09b98c3c57769d7a028352b13ad02ae12fb061282.jpg"
+    },
+    {
+      "product_id": "8f1f340f-00f3-504d-aa27-a9c6dec32087",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/120-ALBINO-AROWANA.jpg",
+      "path": "hmg-catalogue/67cf85cd753e3637020d37fe968737417a2b514eb13b37dd3aa43d81e7cc2b0e.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/67cf85cd753e3637020d37fe968737417a2b514eb13b37dd3aa43d81e7cc2b0e.jpg"
+    },
+    {
+      "product_id": "4c49e1a4-1947-587f-aea8-c70eea912aad",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/38-Marron-Checkerpost.jpg",
+      "path": "hmg-catalogue/a6e3140499351bceb1b721dcf9b946f7b9c7ff43b1b848e67df97203f79ac9bb.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/a6e3140499351bceb1b721dcf9b946f7b9c7ff43b1b848e67df97203f79ac9bb.jpg"
+    },
+    {
+      "product_id": "21e8690f-409c-52f9-9814-cd93b08c9c59",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/23-oyster-white.jpg",
+      "path": "hmg-catalogue/caf3ac6f39972e6e84141ef0e11397d83ccdc924163a67010df477cf60867fbf.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/caf3ac6f39972e6e84141ef0e11397d83ccdc924163a67010df477cf60867fbf.jpg"
+    },
+    {
+      "product_id": "869676d3-0b8a-508e-bd25-e999d1bbe5bf",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/39-Mauna-Lao.jpg",
+      "path": "hmg-catalogue/8161fa76f16d5a6f5a0c39198a5200cb07c8fe0277136d81b3efc963be4b0438.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/8161fa76f16d5a6f5a0c39198a5200cb07c8fe0277136d81b3efc963be4b0438.jpg"
+    },
+    {
+      "product_id": "3526f89f-4c53-534b-a92e-4f97c4a7f60e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/4-Bez-Lavabo.jpg",
+      "path": "hmg-catalogue/88844302653d80595cd98d0f952db88cc22c3b10fbb417b0f32e293ce5fa1691.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/88844302653d80595cd98d0f952db88cc22c3b10fbb417b0f32e293ce5fa1691.jpg"
+    },
+    {
+      "product_id": "a9e7ebb9-4f24-5f1b-af3e-50462d680b03",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/4-butter-fruit-granite.jpg",
+      "path": "hmg-catalogue/1da44484f38688954efdcabe0a70e2b7ae90621cda5c05e76326932ced4e78f6.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/1da44484f38688954efdcabe0a70e2b7ae90621cda5c05e76326932ced4e78f6.jpg"
+    },
+    {
+      "product_id": "ef1b04bd-a6a6-5652-aa94-de92be72547c",
+      "source_url": "https://www.hmgstones.com/assets/images/products/limestone/4-french-Lime-Stone-Hond-FH.jpg",
+      "path": "hmg-catalogue/15eaa8ece22e2166cbe1af3ced2ea8e0a273aebec6eda87ad1bb60c2ffa25096.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/15eaa8ece22e2166cbe1af3ced2ea8e0a273aebec6eda87ad1bb60c2ffa25096.jpg"
+    },
+    {
+      "product_id": "9ae9dafc-78c6-5b31-b90f-5573fd61f86d",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/pedestal-basin/4-Aspro-Ocra.jpg",
+      "path": "hmg-catalogue/a56450f4c23862acfe9bd1d10c63d2f245ce3529421e11d49330a04c6e664ace.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/a56450f4c23862acfe9bd1d10c63d2f245ce3529421e11d49330a04c6e664ace.jpg"
+    },
+    {
+      "product_id": "1cba7c85-86e6-574f-9591-2e4b0a722265",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/4-Vitreum.jpg",
+      "path": "hmg-catalogue/348e1c9702b59741a5b26aaf1bc8f024bdb9752a2d3eb4397f6165a0b528d421.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/348e1c9702b59741a5b26aaf1bc8f024bdb9752a2d3eb4397f6165a0b528d421.jpg"
+    },
+    {
+      "product_id": "4b31cad1-2992-5eb9-ac32-8c690333d0cb",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/4-Mint-Sand-Stone-Cypress-Finish.jpg",
+      "path": "hmg-catalogue/3f4c70d45c695b88d115f73a2e930946c9191084b8eee5fa44b24908de12ed11.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/3f4c70d45c695b88d115f73a2e930946c9191084b8eee5fa44b24908de12ed11.jpg"
+    },
+    {
+      "product_id": "ac1c50fe-a26a-5a96-9fd9-dd67df1ca2b2",
+      "source_url": "https://www.hmgstones.com/assets/images/products/shellstone/bronze-zukanya-pol.jpg",
+      "path": "hmg-catalogue/3835a964d7f6143cafa19812ff8481a1e5ee0afac5a01dd900f4989c138d6962.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/3835a964d7f6143cafa19812ff8481a1e5ee0afac5a01dd900f4989c138d6962.jpg"
+    },
+    {
+      "product_id": "12e0ddc8-d020-51d9-9687-e4197755bbef",
+      "source_url": "https://www.hmgstones.com/assets/images/products/textures/4-Hydro-With-Cypress-Finish.jpg",
+      "path": "hmg-catalogue/556e76d54065515849fb2837a84d7d531798af473607759ed3ba44a5ff8c42dd.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/556e76d54065515849fb2837a84d7d531798af473607759ed3ba44a5ff8c42dd.jpg"
+    },
+    {
+      "product_id": "d005cdae-ea52-5bd2-ac46-86046a78588f",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/4-crema-fabulous-travertine.jpg",
+      "path": "hmg-catalogue/402ececb927178c8ac7b582f51de648e9e7e7104dd184938bf84551beb98a08c.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/402ececb927178c8ac7b582f51de648e9e7e7104dd184938bf84551beb98a08c.jpg"
+    },
+    {
+      "product_id": "618f8a75-b4c7-5b12-87a6-2ebbbe56b261",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/24-white-heraon.jpg",
+      "path": "hmg-catalogue/0772b87abc387b6eadc2b77eccb80a12a74d3fb1e475568dfcfcca407130f7ea.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/0772b87abc387b6eadc2b77eccb80a12a74d3fb1e475568dfcfcca407130f7ea.jpg"
+    },
+    {
+      "product_id": "cd01ede6-a8ae-538b-b8a0-ef7ccabd89d7",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/40-Nero-Swan.jpg",
+      "path": "hmg-catalogue/36f07ebc5a3918dafc507d15438c2f3f0dff49ba1de29477d0fa476a5a3a4840.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/36f07ebc5a3918dafc507d15438c2f3f0dff49ba1de29477d0fa476a5a3a4840.jpg"
+    },
+    {
+      "product_id": "4ece2c11-04cf-51bc-ae85-7221866e8f2d",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/6-Crema-barite.jpg",
+      "path": "hmg-catalogue/28cb8173056eea3f501f39622f1bf598d211989a0d51cd944dcc9ed6d202cb72.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/28cb8173056eea3f501f39622f1bf598d211989a0d51cd944dcc9ed6d202cb72.jpg"
+    },
+    {
+      "product_id": "9a063ff9-9f26-57cf-9be2-4c7e68f58eac",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/25-bracia-caparya.png",
+      "path": "hmg-catalogue/9e3cbfc65d4b137848702418d982b88f6bc7185b9ffafe794176e14eaa4cca04.png",
+      "storage_uri": "storage://products/hmg-catalogue/9e3cbfc65d4b137848702418d982b88f6bc7185b9ffafe794176e14eaa4cca04.png"
+    },
+    {
+      "product_id": "7982f107-a686-51b6-a195-b5f3ac13eb5b",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/yanke-beige.jpg",
+      "path": "hmg-catalogue/33cb5bac770bdbecb3135723d8571fb91cc9a6f42daed8a105a03572dd6f3948.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/33cb5bac770bdbecb3135723d8571fb91cc9a6f42daed8a105a03572dd6f3948.jpg"
+    },
+    {
+      "product_id": "fca2cbb3-faec-59cd-b63e-7f1207d4c246",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/italian-beige.jpg",
+      "path": "hmg-catalogue/e69467b9eeeacde73cb0c23a386a6a01052831a0b8d0ab182c48860913c37c4a.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/e69467b9eeeacde73cb0c23a386a6a01052831a0b8d0ab182c48860913c37c4a.jpg"
+    },
+    {
+      "product_id": "aff4ecd6-2dce-5a35-a372-1a04f7efac85",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/mond-af.jpg",
+      "path": "hmg-catalogue/227fcf10a4a1c8dcc002a6cd9c8a19582147c0288303f8f0a0ece24ab05abdba.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/227fcf10a4a1c8dcc002a6cd9c8a19582147c0288303f8f0a0ece24ab05abdba.jpg"
+    },
+    {
+      "product_id": "a3219177-9441-5a62-b4cc-534f481e5982",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/mond.jpg",
+      "path": "hmg-catalogue/19b9d5f1f106f33d480a975ca2adcbb903d3f7fc2265fc5eef4f557870511578.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/19b9d5f1f106f33d480a975ca2adcbb903d3f7fc2265fc5eef4f557870511578.jpg"
+    },
+    {
+      "product_id": "13193368-eb20-5904-afdb-46332c37ffb8",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/btc-250.jpg",
+      "path": "hmg-catalogue/1397d77172f4c914bda0ae940afcf16fd7955dc6de57f8899e89f17c345f999c.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/1397d77172f4c914bda0ae940afcf16fd7955dc6de57f8899e89f17c345f999c.jpg"
+    },
+    {
+      "product_id": "08c5dc21-8f50-5219-8430-94579b29f8d7",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/largrey-af.jpg",
+      "path": "hmg-catalogue/bd3feebf19cd85fc463b265ab18b610af1800454ab5246bce8ee8875158a30fd.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/bd3feebf19cd85fc463b265ab18b610af1800454ab5246bce8ee8875158a30fd.jpg"
+    },
+    {
+      "product_id": "ee66fa17-c1bd-5ca1-8200-bcdd60cdd2d6",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/luminous-cloud-af.jpg",
+      "path": "hmg-catalogue/43badbecb4e086f7beb6fdb4caf27e7b5f909e43bf6d2588dd1da9fca73dd108.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/43badbecb4e086f7beb6fdb4caf27e7b5f909e43bf6d2588dd1da9fca73dd108.jpg"
+    },
+    {
+      "product_id": "9bea8b1f-a33c-5946-a691-1cb5112280ea",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/5-Brown-Shrike-Lavabo.jpg",
+      "path": "hmg-catalogue/915890ba7fd546ca651f0ba6a7e1ffad3098f5d9b6a82bffd407613c6f611cab.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/915890ba7fd546ca651f0ba6a7e1ffad3098f5d9b6a82bffd407613c6f611cab.jpg"
+    },
+    {
+      "product_id": "8336f1b3-60d3-58dd-afc5-257e072c078b",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/5-lemon-ice-granite.jpg",
+      "path": "hmg-catalogue/026caffac3c6fb1e86d4d22de97cfb708972b592b07c068fef78b53c34ae1627.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/026caffac3c6fb1e86d4d22de97cfb708972b592b07c068fef78b53c34ae1627.jpg"
+    },
+    {
+      "product_id": "ef84e301-f2cf-5b49-8e70-1eb828fa423c",
+      "source_url": "https://www.hmgstones.com/assets/images/products/limestone/5-Leo-Mocca-Lime-Stone-Areka-FH.jpg",
+      "path": "hmg-catalogue/3fb5054e2955ddc88ade047e05ad88142594eded92efd2db40364094ca8d7d41.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/3fb5054e2955ddc88ade047e05ad88142594eded92efd2db40364094ca8d7d41.jpg"
+    },
+    {
+      "product_id": "ce5ca2c3-e08d-5a06-9908-2f73eb0e85be",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/4-dimond-white.jpg",
+      "path": "hmg-catalogue/d1370e6691301e8353ae3d10aa5fe6d1149b34b54cfc5eb833612f5a7bff11c7.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/d1370e6691301e8353ae3d10aa5fe6d1149b34b54cfc5eb833612f5a7bff11c7.jpg"
+    },
+    {
+      "product_id": "f1643956-3a9f-582a-9a45-533f8e3a48e9",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/5-Aurum-onyx.jpg",
+      "path": "hmg-catalogue/2b9087ba821d05dda80062be39850fe2bed755826c4467a4dca4e9d8912ea9ab.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/2b9087ba821d05dda80062be39850fe2bed755826c4467a4dca4e9d8912ea9ab.jpg"
+    },
+    {
+      "product_id": "799e05e3-8953-5215-bbf2-b9494a40eb70",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/pedestal-basin/5-Amarone-Lavabo-Dark.jpg",
+      "path": "hmg-catalogue/bea57812d09d3054200886d79d310e75a552857cd1771e970e1e1dd81d6c0842.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/bea57812d09d3054200886d79d310e75a552857cd1771e970e1e1dd81d6c0842.jpg"
+    },
+    {
+      "product_id": "76cb50d6-2de7-532c-a9ca-e0329a275fe8",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/5-Bacauraojo.jpg",
+      "path": "hmg-catalogue/1777cc26e82f26e7f717351044ced1d70186d49eed1a1626afd5c40815039abd.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/1777cc26e82f26e7f717351044ced1d70186d49eed1a1626afd5c40815039abd.jpg"
+    },
+    {
+      "product_id": "2019162b-209d-5713-8618-9db4431bf0fc",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/5-Mint-Sand-Stone-Hydro-With-Cypress-Finish.jpg",
+      "path": "hmg-catalogue/556e76d54065515849fb2837a84d7d531798af473607759ed3ba44a5ff8c42dd.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/556e76d54065515849fb2837a84d7d531798af473607759ed3ba44a5ff8c42dd.jpg"
+    },
+    {
+      "product_id": "5efcd9a7-2805-57f3-8033-7ae2f5fde69c",
+      "source_url": "https://www.hmgstones.com/assets/images/products/textures/5-Areka-Finish.jpg",
+      "path": "hmg-catalogue/e257adf04c6bfa72ec2fad15eb1e7d7bc0fe64e2c5d82b31dd972134dea9287a.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/e257adf04c6bfa72ec2fad15eb1e7d7bc0fe64e2c5d82b31dd972134dea9287a.jpg"
+    },
+    {
+      "product_id": "b31ae98b-3b3c-5afe-9bba-d73568b337ff",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/5-bianco-bone-travertine.jpg",
+      "path": "hmg-catalogue/337329a87e01e322bd915491087fbd7c9a3de676176cadb21f6d23c910ed3241.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/337329a87e01e322bd915491087fbd7c9a3de676176cadb21f6d23c910ed3241.jpg"
+    },
+    {
+      "product_id": "158ec896-0d1b-5e5e-b268-f673fbc9da1a",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/Lavamar.jpg",
+      "path": "hmg-catalogue/605c1c09e280f66ca9c5e7e77997e42a1dd93a3c377fdb51db350c9d46309f85.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/605c1c09e280f66ca9c5e7e77997e42a1dd93a3c377fdb51db350c9d46309f85.jpg"
+    },
+    {
+      "product_id": "72d05f54-bfab-5142-9f8c-6c97032b46c8",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/53-Frill-Back-Light.jpg",
+      "path": "hmg-catalogue/c91908b3d032cee1dc60fb128d2e3e8105d1ebe75cbf6db83ada1db656fb749f.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/c91908b3d032cee1dc60fb128d2e3e8105d1ebe75cbf6db83ada1db656fb749f.jpg"
+    },
+    {
+      "product_id": "c1d84a06-68a8-500b-9475-956120adf3b0",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/110-BIANCO-NEBBIA-2732.jpg",
+      "path": "hmg-catalogue/96aba9660ac16044943607d272486dbc36343cbc4f6947df8ecb6526c2a167b2.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/96aba9660ac16044943607d272486dbc36343cbc4f6947df8ecb6526c2a167b2.jpg"
+    },
+    {
+      "product_id": "9fc69a3d-8c7e-59e2-879e-16eb0dfc439d",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/130-MILLEFOGLIE.jpg",
+      "path": "hmg-catalogue/33d74a31ed4b7de4c360ceddfb4d25e74dc20011aa60db896fae1558b2f0c12e.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/33d74a31ed4b7de4c360ceddfb4d25e74dc20011aa60db896fae1558b2f0c12e.jpg"
+    },
+    {
+      "product_id": "41d4ba90-788f-5dca-a3b9-99e33ba751dd",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/75-Green-Tortoise.jpg",
+      "path": "hmg-catalogue/3f09a68ed7788cb7bfec537e41088fb3b0168a77c1f67fa4043a8193c0340609.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/3f09a68ed7788cb7bfec537e41088fb3b0168a77c1f67fa4043a8193c0340609.jpg"
+    },
+    {
+      "product_id": "0dd59c2e-e263-5fca-ac33-7ac34603b9d6",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/silver-root-af.jpg",
+      "path": "hmg-catalogue/e4c6ee2d3a2cfcd6a8f46430f4a50e7f44191cb7fa951c7fd7662288b27d90fc.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/e4c6ee2d3a2cfcd6a8f46430f4a50e7f44191cb7fa951c7fd7662288b27d90fc.jpg"
+    },
+    {
+      "product_id": "9c3638fd-2aa1-50d9-a916-5e91a7f22786",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/58-marlin.jpg",
+      "path": "hmg-catalogue/35e9e15bc76211243b091d01ae7b4c437ec6c69f1018598fe7c770eb73f2c3fa.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/35e9e15bc76211243b091d01ae7b4c437ec6c69f1018598fe7c770eb73f2c3fa.jpg"
+    },
+    {
+      "product_id": "e1ca6ba2-16a8-5a0e-a6ba-a38d0e9e4793",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/119-WHOOPER-OLOR-2772.jpg",
+      "path": "hmg-catalogue/1ad8de91cb59ab84eeee17ba60fc9562df3159bbfa5d0f375f5d038f6b5bf29d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/1ad8de91cb59ab84eeee17ba60fc9562df3159bbfa5d0f375f5d038f6b5bf29d.jpg"
+    },
+    {
+      "product_id": "aaf4d1d0-cbe6-5d2f-ac4d-cf51254232f0",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/116-RINGTAIL-POSSUM-2739.jpg",
+      "path": "hmg-catalogue/2d0f4436164a206ef777c9be686b0d337a5bf1bdb79a70e165908e1d0fd090d2.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/2d0f4436164a206ef777c9be686b0d337a5bf1bdb79a70e165908e1d0fd090d2.jpg"
+    },
+    {
+      "product_id": "d1635eb8-64f2-56f0-be4a-f8cf0c83ac2b",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/6-Brown-Sugar-Onyx-Lavabo.jpg",
+      "path": "hmg-catalogue/c582078ddc3b33de7c316b492ba5f167a135d9f1fc98781155831d2e931a7eb0.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/c582078ddc3b33de7c316b492ba5f167a135d9f1fc98781155831d2e931a7eb0.jpg"
+    },
+    {
+      "product_id": "be7f64fc-9d63-5cb8-b92f-1637a771ce0e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/6-white-petal-granite.jpg",
+      "path": "hmg-catalogue/32609b02c54347c57bf9f624a62e1deea19118e5d2144f986ace786a8fca89e9.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/32609b02c54347c57bf9f624a62e1deea19118e5d2144f986ace786a8fca89e9.jpg"
+    },
+    {
+      "product_id": "bf689c6f-8cbf-5bef-a277-00109056d115",
+      "source_url": "https://www.hmgstones.com/assets/images/products/limestone/6-Sunny-LIME-STONE.jpg",
+      "path": "hmg-catalogue/b3e26547d26fba7836f75ea7802518caadd001bc01e6b253e149977baccf47af.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/b3e26547d26fba7836f75ea7802518caadd001bc01e6b253e149977baccf47af.jpg"
+    },
+    {
+      "product_id": "6dab7c4c-8f90-51d7-9a97-13e0d781c752",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/5-BIANCO-AJO-PELADO.jpg",
+      "path": "hmg-catalogue/c6311d88b994e055ca209828b4526d061773cbf838d52a6b30cc05e3f0066666.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/c6311d88b994e055ca209828b4526d061773cbf838d52a6b30cc05e3f0066666.jpg"
+    },
+    {
+      "product_id": "9044545c-0ae4-52bc-9afb-b4c630deafc3",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/6-Aventurine.jpg",
+      "path": "hmg-catalogue/d0e9fa0c0ac116afef1883a785b5063664472f3ae28c1e4fcf9c0c1e6985bae0.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/d0e9fa0c0ac116afef1883a785b5063664472f3ae28c1e4fcf9c0c1e6985bae0.jpg"
+    },
+    {
+      "product_id": "dc6db8e9-804e-511b-a0cb-641cb3ea8ee6",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/pedestal-basin/6-Mildew-Algae.jpg",
+      "path": "hmg-catalogue/90c7e6e14f4f51386a84aedc8f77cc698e4aef43d409cb29589f7d5cbae990f3.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/90c7e6e14f4f51386a84aedc8f77cc698e4aef43d409cb29589f7d5cbae990f3.jpg"
+    },
+    {
+      "product_id": "76540b27-7267-5295-bfe8-c33586834d5f",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/6-cattle-egret.jpg",
+      "path": "hmg-catalogue/4605ca3ddfed9c2d3f4a081f899f6a2ce09d01956ea2e506e93f8e96b4393b99.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/4605ca3ddfed9c2d3f4a081f899f6a2ce09d01956ea2e506e93f8e96b4393b99.jpg"
+    },
+    {
+      "product_id": "0ba22fe0-0a35-5ec6-ab57-6ebdfc44a592",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/6-Mint-Sand-Stone-Areka-Finish.jpg",
+      "path": "hmg-catalogue/e257adf04c6bfa72ec2fad15eb1e7d7bc0fe64e2c5d82b31dd972134dea9287a.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/e257adf04c6bfa72ec2fad15eb1e7d7bc0fe64e2c5d82b31dd972134dea9287a.jpg"
+    },
+    {
+      "product_id": "b0874827-544c-5e9c-9076-0a2fb3bffb97",
+      "source_url": "https://www.hmgstones.com/assets/images/products/textures/6-Aqua-Jet-Finish.jpg",
+      "path": "hmg-catalogue/817e65a35b10bf774096f4a1bca9bb50d90027cff0859227add17cfbb01c185f.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/817e65a35b10bf774096f4a1bca9bb50d90027cff0859227add17cfbb01c185f.jpg"
+    },
+    {
+      "product_id": "19536a47-0f3d-566a-8ecf-49d0995e54ce",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/6-saint-andriao-travertine.jpg",
+      "path": "hmg-catalogue/c80de9a53516f7752df25fe25218424e04cd8c05bedd819b2229ce9b2e379512.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/c80de9a53516f7752df25fe25218424e04cd8c05bedd819b2229ce9b2e379512.jpg"
+    },
+    {
+      "product_id": "3e1b9b54-84cb-5e7f-9ccd-1d5d35496372",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/117-SAN-PEDRO-2728.jpg",
+      "path": "hmg-catalogue/8add898ec0c0b8bf6b456fd176d41e42f5376ad743bf948b8e890f514639a4e6.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/8add898ec0c0b8bf6b456fd176d41e42f5376ad743bf948b8e890f514639a4e6.jpg"
+    },
+    {
+      "product_id": "15cc9442-51cd-56d5-ba4b-0d972219c277",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/112-GREGIO-AURORA-2726.jpg",
+      "path": "hmg-catalogue/066ba1ffbd3b97ca91b259bf638d97dfab7f3232defd78aebf4ccc059fbfb66d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/066ba1ffbd3b97ca91b259bf638d97dfab7f3232defd78aebf4ccc059fbfb66d.jpg"
+    },
+    {
+      "product_id": "b48e3c8a-0312-5d6a-91fe-0027749404e9",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/59-Couger.jpg",
+      "path": "hmg-catalogue/2fe40120c1ddfdc7368a40fa0e1a15d1e0f8df7f14d8f87a0fad8a3e4cd7ed78.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/2fe40120c1ddfdc7368a40fa0e1a15d1e0f8df7f14d8f87a0fad8a3e4cd7ed78.jpg"
+    },
+    {
+      "product_id": "4cd8d4b1-5ed1-5376-b798-0bfc6edfad49",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/crystal-light-emproder.jpg",
+      "path": "hmg-catalogue/0c71f5ff05124513e3e97189df909f7cfdb05e6c7d554e461360b959a3701f2d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/0c71f5ff05124513e3e97189df909f7cfdb05e6c7d554e461360b959a3701f2d.jpg"
+    },
+    {
+      "product_id": "d5c5599d-1267-56b2-bf1f-7f87eb5cd052",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/128-GRIGO-AURORA.jpg",
+      "path": "hmg-catalogue/6f0b35b5097f87708adfc7eaec6dcee4f2b64753892184ba372f7f619ef1e4c0.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/6f0b35b5097f87708adfc7eaec6dcee4f2b64753892184ba372f7f619ef1e4c0.jpg"
+    },
+    {
+      "product_id": "d8a2d8f3-f8a2-5dfc-9cec-41b6cd9a48c0",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/129-Light-empredor-brown.jpg",
+      "path": "hmg-catalogue/10fa5c3e0d366f7aaf268a8f7e44c6e2e1323c18b642edd3f2b9a82631a5de27.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/10fa5c3e0d366f7aaf268a8f7e44c6e2e1323c18b642edd3f2b9a82631a5de27.jpg"
+    },
+    {
+      "product_id": "e6f904b6-3806-5a24-b54e-d57dc418a421",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/bronze-amani-ark.jpg",
+      "path": "hmg-catalogue/ab80fdb0e3727ccce3adf25097b33d6118db55e2a423e73a1c8fdfb4573fb529.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/ab80fdb0e3727ccce3adf25097b33d6118db55e2a423e73a1c8fdfb4573fb529.jpg"
+    },
+    {
+      "product_id": "dafc0cf5-2791-5224-9045-605dc5e05200",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/dark-emproder-250.jpg",
+      "path": "hmg-catalogue/91846c55aa79c9a47f9159f39db1f4d5791b53d32ce65d2527144a231572b670.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/91846c55aa79c9a47f9159f39db1f4d5791b53d32ce65d2527144a231572b670.jpg"
+    },
+    {
+      "product_id": "157db577-48a1-542f-a80a-8241fbc95977",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/114-MARRON-KETUPA-2758.jpg",
+      "path": "hmg-catalogue/ee22a32ac4968a448dad3dd65857594a40d016d584da8daf25d35301fe7a4905.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/ee22a32ac4968a448dad3dd65857594a40d016d584da8daf25d35301fe7a4905.jpg"
+    },
+    {
+      "product_id": "918bd8b9-aff1-505a-b7c0-9d789a15db2f",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/115-PANDA-WHITE-2735.jpg",
+      "path": "hmg-catalogue/1ee5a21a1a7e39c3d6e523dbf2df7e2fa11c82a6a50fedc31689387395746600.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/1ee5a21a1a7e39c3d6e523dbf2df7e2fa11c82a6a50fedc31689387395746600.jpg"
+    },
+    {
+      "product_id": "b2be74af-b752-57e6-98fc-4fbe0ad93e66",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/7-Catamaran.jpg",
+      "path": "hmg-catalogue/932a6457d8eb57aa3ff8013a118e7a0165c26a3a09e7a79521e4fd809e3a791a.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/932a6457d8eb57aa3ff8013a118e7a0165c26a3a09e7a79521e4fd809e3a791a.jpg"
+    },
+    {
+      "product_id": "894d9f1c-d035-5e4c-9f1f-7a9d3c5ea93c",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/7-newton-gold-granite.jpg",
+      "path": "hmg-catalogue/7a81e4a872f7dd638c3048c2654ae47d0bbb6f5e0c198cd22c09e3f95018bc92.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/7a81e4a872f7dd638c3048c2654ae47d0bbb6f5e0c198cd22c09e3f95018bc92.jpg"
+    },
+    {
+      "product_id": "e841aa4f-6aac-57a8-a670-a6cc12558cc4",
+      "source_url": "https://www.hmgstones.com/assets/images/products/limestone/7-sunny-LIME-STONE-AREKA-FH.jpg",
+      "path": "hmg-catalogue/7175317915842fe6edf74cb2289bfe62e0dde057aac17ff0ae909a4c1e8e740a.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/7175317915842fe6edf74cb2289bfe62e0dde057aac17ff0ae909a4c1e8e740a.jpg"
+    },
+    {
+      "product_id": "df3689a8-f108-5159-8530-b121d2c606e3",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/123-BIANCO-ICEBERG.jpg",
+      "path": "hmg-catalogue/ccd38c4e46bfad520fb4afad9178ee2acf13175c41d8c073bb4e620e385ff521.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/ccd38c4e46bfad520fb4afad9178ee2acf13175c41d8c073bb4e620e385ff521.jpg"
+    },
+    {
+      "product_id": "26bca180-bf1e-5636-8568-091035ddbdaf",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/7-Azul-Aurum.jpg",
+      "path": "hmg-catalogue/04301c4a2447bfc75763ee54db042cf5a2870a7896dba1822e936b6824ae678f.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/04301c4a2447bfc75763ee54db042cf5a2870a7896dba1822e936b6824ae678f.jpg"
+    },
+    {
+      "product_id": "53297d29-9c11-5d29-9ce7-b2c878fdb3a3",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/pedestal-basin/7-Verde-Antique-Lavabo.jpg",
+      "path": "hmg-catalogue/ef194abe24632f7aa90ba2eefcfd221be12ed2021c126fe810bb4c80bec2363f.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/ef194abe24632f7aa90ba2eefcfd221be12ed2021c126fe810bb4c80bec2363f.jpg"
+    },
+    {
+      "product_id": "9e2245ef-77ee-5c6d-aee6-7a2ecbab1051",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/7-Kardia.jpg",
+      "path": "hmg-catalogue/6cd240efb2fd5d80b694e85a0361fd93dd5e4fd1e14b409c0aa44d3b9c8efd96.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/6cd240efb2fd5d80b694e85a0361fd93dd5e4fd1e14b409c0aa44d3b9c8efd96.jpg"
+    },
+    {
+      "product_id": "5d34e1c2-aa09-5920-bad4-144f4e05ea6f",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/7-Algerian-Gold-Sand-Stone.jpg",
+      "path": "hmg-catalogue/54d386dede398b01518a8b51e425196beb6d9a8d423a0af7708933849ba0b972.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/54d386dede398b01518a8b51e425196beb6d9a8d423a0af7708933849ba0b972.jpg"
+    },
+    {
+      "product_id": "25fceea2-f090-544b-a322-0d08529c04f6",
+      "source_url": "https://www.hmgstones.com/assets/images/products/textures/7-Sand-Stone-Baby-Bamboo-Finish.jpg",
+      "path": "hmg-catalogue/bf5986a77284b760dbd2e729468e1a64831984717e45e5ca8e7e9f4e708784bf.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/bf5986a77284b760dbd2e729468e1a64831984717e45e5ca8e7e9f4e708784bf.jpg"
+    },
+    {
+      "product_id": "030c1fda-7fd6-51cd-92d7-e2f8b05e8605",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/7-dark-silver-travertine.jpg",
+      "path": "hmg-catalogue/13ae7c37dfaafe6878f5acd197c1a20cae4e24f3b9950eb3e4a23018abca41af.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/13ae7c37dfaafe6878f5acd197c1a20cae4e24f3b9950eb3e4a23018abca41af.jpg"
+    },
+    {
+      "product_id": "1b106c64-ed51-5e16-807f-ef7baa3f2c87",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/111-GRECRIO-PICASO-2766.jpg",
+      "path": "hmg-catalogue/4cc984b9578f4a153c0f43efe655d717bb4c91c0f5eb1500eafcf0b0b0938748.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/4cc984b9578f4a153c0f43efe655d717bb4c91c0f5eb1500eafcf0b0b0938748.jpg"
+    },
+    {
+      "product_id": "91731399-ac04-5012-b0a0-24d617a59adc",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/black-diamond-af.jpg",
+      "path": "hmg-catalogue/1cba1ae2d63fab8d42d9f150802f700f569a860f07b9912f52d90ae08cde70a8.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/1cba1ae2d63fab8d42d9f150802f700f569a860f07b9912f52d90ae08cde70a8.jpg"
+    },
+    {
+      "product_id": "9421a0fc-e692-56fa-b9e5-a6382a0c7be7",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/106-SILVER-CLOUD.jpg",
+      "path": "hmg-catalogue/e0a48a8dd514bc2a0ddde37eb3ca4a8932e78ba3943c48a5a1fabdc8cec03e97.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/e0a48a8dd514bc2a0ddde37eb3ca4a8932e78ba3943c48a5a1fabdc8cec03e97.jpg"
+    },
+    {
+      "product_id": "b195ead6-40e5-5d58-91a8-15fbaee737af",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/109-Nuro-Saint-Laurent.jpg",
+      "path": "hmg-catalogue/d32809bdf60aff5ecc24598c2cf0d1764d4773177cc522cb8f42e7e5dd6e67df.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/d32809bdf60aff5ecc24598c2cf0d1764d4773177cc522cb8f42e7e5dd6e67df.jpg"
+    },
+    {
+      "product_id": "8599a9f1-9f27-5bc9-8d7a-4ca03c1f3cfc",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/110-Belgium-Black.jpg",
+      "path": "hmg-catalogue/e4d075456f41e455673c88b4c696d3499712c97d09a3d6168b4bb81d339ba5e8.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/e4d075456f41e455673c88b4c696d3499712c97d09a3d6168b4bb81d339ba5e8.jpg"
+    },
+    {
+      "product_id": "1c2c5882-1b4e-58ba-ac16-cbc2068b9057",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/BIANCO-CARRARA.jpg",
+      "path": "hmg-catalogue/8cc8f514275ee3e68ababbf012637f08a6dce20f4dae7e132702c26f4fd02964.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/8cc8f514275ee3e68ababbf012637f08a6dce20f4dae7e132702c26f4fd02964.jpg"
+    },
+    {
+      "product_id": "5cf13681-2585-5120-93d4-7070981579f9",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/creama-eva-areka-finish.jpg",
+      "path": "hmg-catalogue/3ee98aea0f1eadebe8af02a88b69335bb1a560666f8fa12cf1255975af0d0201.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/3ee98aea0f1eadebe8af02a88b69335bb1a560666f8fa12cf1255975af0d0201.jpg"
+    },
+    {
+      "product_id": "8872e358-4ced-5810-b92a-5229fff96c47",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/22-Mildew-Algae.jpg",
+      "path": "hmg-catalogue/d8e56e25d238edaefda2c351ba17c340488fcd8929136ad4fe4e8f542761d014.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/d8e56e25d238edaefda2c351ba17c340488fcd8929136ad4fe4e8f542761d014.jpg"
+    },
+    {
+      "product_id": "a3832b9c-bdc5-541e-a162-ec42e355be5e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/8-Coloumbian-Noir-II.jpg",
+      "path": "hmg-catalogue/da4fcd59bb9120fef0427c1d72d6574480e4d6a96c49bcf82111d5af60c5f257.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/da4fcd59bb9120fef0427c1d72d6574480e4d6a96c49bcf82111d5af60c5f257.jpg"
+    },
+    {
+      "product_id": "4314b770-9e09-5987-8342-e51426f827fb",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/8-dry-leap-granite.jpg",
+      "path": "hmg-catalogue/152b0c8fe403bbf2ca5d227a1853738d41bbbfcdb0c0151cca8fa19a349460ba.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/152b0c8fe403bbf2ca5d227a1853738d41bbbfcdb0c0151cca8fa19a349460ba.jpg"
+    },
+    {
+      "product_id": "f5dab625-16ef-5cf0-9b64-eea752067424",
+      "source_url": "https://www.hmgstones.com/assets/images/products/limestone/8-sunny-lime-stone-shot-blast-FH.jpg",
+      "path": "hmg-catalogue/1c812d0afa7dc973a43ddf2f9530ec0c86c55a8ff545333df1916e618b95b940.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/1c812d0afa7dc973a43ddf2f9530ec0c86c55a8ff545333df1916e618b95b940.jpg"
+    },
+    {
+      "product_id": "923ffeff-2e63-55ed-990f-a6e341ebd707",
+      "source_url": "https://www.hmgstones.com/assets/images/products/marble/133-STATUARIO_SGR_2820.jpg",
+      "path": "hmg-catalogue/696f405aad4740a8275ce3a835e22e09428240ad3b1c9313593704816597390c.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/696f405aad4740a8275ce3a835e22e09428240ad3b1c9313593704816597390c.jpg"
+    },
+    {
+      "product_id": "af25cf10-6a57-57cc-8d9b-72dd748b7cbe",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/8-Bianco-hellebore1.jpg",
+      "path": "hmg-catalogue/81647efc3ea03d7b0d8ed08ec6dfc4b60c6525d4b5173e03d1981894a72d1215.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/81647efc3ea03d7b0d8ed08ec6dfc4b60c6525d4b5173e03d1981894a72d1215.jpg"
+    },
+    {
+      "product_id": "c813fecf-5554-5049-b014-fab4dd8409ae",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/8-Golden-Aalba.jpg",
+      "path": "hmg-catalogue/c821653b881c847cd136fd4f23b93ec91b7f35ac8f98bb0cae8c6b365c4afd7e.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/c821653b881c847cd136fd4f23b93ec91b7f35ac8f98bb0cae8c6b365c4afd7e.jpg"
+    },
+    {
+      "product_id": "e2effde5-8aa3-5859-a32c-6dea014d798a",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/8-Teakwood-Sand-Stone-Cypress-Finish.jpg",
+      "path": "hmg-catalogue/31b331080ad75d3307f8d5f861c3bc206e283e82a2d8d4d5357eca3797b7e4ee.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/31b331080ad75d3307f8d5f861c3bc206e283e82a2d8d4d5357eca3797b7e4ee.jpg"
+    },
+    {
+      "product_id": "175ec78a-7fe8-5c18-b704-b2244b38d9b1",
+      "source_url": "https://www.hmgstones.com/assets/images/products/textures/8-Sand-Stone-Combo-Finish.jpg",
+      "path": "hmg-catalogue/ea585a257d05e9dce11b2ec32c576a74d3437bd10b114ed8cb3a257e020d6f18.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/ea585a257d05e9dce11b2ec32c576a74d3437bd10b114ed8cb3a257e020d6f18.jpg"
+    },
+    {
+      "product_id": "3e09b19a-fcf3-5641-a640-84988f4900df",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/8-beige-travertine.jpg",
+      "path": "hmg-catalogue/c7768d8e93801cee38df1bca8c1dd817c6155cd7387e05312a1ca49606dc01d3.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/c7768d8e93801cee38df1bca8c1dd817c6155cd7387e05312a1ca49606dc01d3.jpg"
+    },
+    {
+      "product_id": "e4d05bec-cc16-56c6-acaf-bcc212c30cb3",
+      "source_url": "https://www.hmgstones.com/assets/images/products/basin/counter-basin/9-Foglia-Secca-Lavabo.jpg",
+      "path": "hmg-catalogue/4f7938ba0943bcaf1cee256d7d111e934f5457b0fe08a82d062596f23c627f59.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/4f7938ba0943bcaf1cee256d7d111e934f5457b0fe08a82d062596f23c627f59.jpg"
+    },
+    {
+      "product_id": "9b3c3d8a-ab77-5cb4-92e6-44329a382258",
+      "source_url": "https://www.hmgstones.com/assets/images/products/limestone/9-sand-beige-lime-stone.jpg",
+      "path": "hmg-catalogue/169c1b1e94519ddc397590f119c295be9fd75abadb5b705754682b63f5b7142d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/169c1b1e94519ddc397590f119c295be9fd75abadb5b705754682b63f5b7142d.jpg"
+    },
+    {
+      "product_id": "31819002-d6a7-5bec-9ae6-b2d877cc907a",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/staturio-af.jpg",
+      "path": "hmg-catalogue/1e3659c98dbbe96ecafbd05a67e72e076c31fdd0182862817234fd550ffa5875.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/1e3659c98dbbe96ecafbd05a67e72e076c31fdd0182862817234fd550ffa5875.jpg"
+    },
+    {
+      "product_id": "a0fd9345-be0e-5f29-bdaa-6a3720b1d71b",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/9-Summer-Tanager.jpg",
+      "path": "hmg-catalogue/a5b097540e20f38c5632cb674b55966416f8c54a4a3453da9d2a80c30eb9ada2.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/a5b097540e20f38c5632cb674b55966416f8c54a4a3453da9d2a80c30eb9ada2.jpg"
+    },
+    {
+      "product_id": "defe3036-33a5-52e7-a1a2-bb7948a0e8ad",
+      "source_url": "https://www.hmgstones.com/assets/images/products/sandstone/9-Rainbow-Teak-Sand-Stone-Aqua-Jet-Finish.jpg",
+      "path": "hmg-catalogue/817e65a35b10bf774096f4a1bca9bb50d90027cff0859227add17cfbb01c185f.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/817e65a35b10bf774096f4a1bca9bb50d90027cff0859227add17cfbb01c185f.jpg"
+    },
+    {
+      "product_id": "3584c4cb-3073-57e6-bdad-760f8bcbe614",
+      "source_url": "https://www.hmgstones.com/assets/images/products/textures/9-Sand-Stone-Ribbon-Finish.jpg",
+      "path": "hmg-catalogue/55ec23b733f70ac5661cd86f3ed8e192564316aa8f3649445f3acc7c951ae02d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/55ec23b733f70ac5661cd86f3ed8e192564316aa8f3649445f3acc7c951ae02d.jpg"
+    },
+    {
+      "product_id": "10b1ce7e-a126-56b0-8e71-3205eca835c2",
+      "source_url": "https://www.hmgstones.com/assets/images/products/travertine/9-silver-cork-travertine.jpg",
+      "path": "hmg-catalogue/7b69f3fde6582d35078f69278677c9c2d1765a335191f4ab92ae4d808845cc98.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/7b69f3fde6582d35078f69278677c9c2d1765a335191f4ab92ae4d808845cc98.jpg"
+    }
+  ],
+  "failures": [],
+  "aborted": false,
+  "database_updates": 0,
+  "plan_sha256": "626b2c4df56c16d738bd36589cb92008fc6a14b235b2f780d82031c09cfcf7b1"
+}

@@ -1,0 +1,1436 @@
+{
+  "app": "hmg-studio",
+  "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+  "business_count": 60,
+  "support_count": 75,
+  "atomic": false,
+  "workflow_execution_verified": false,
+  "attempts": [
+    {
+      "table": "customers",
+      "id": "f2ad4025-eb9e-5170-a8bd-2612f1537e49",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "customers",
+      "id": "072c1bb2-cdc9-5510-8bab-88b8e8b4d2b5",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "customers",
+      "id": "08140a22-2652-5132-9f35-36cab181820c",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "customers",
+      "id": "92b836f2-a37a-57e7-b5ed-31b80e1fe63c",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "customers",
+      "id": "d3c91b26-f87e-553e-8baf-e70e058cbd9d",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "customers",
+      "id": "3b678dd5-7885-5dbe-8a82-e5bbfad88715",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "suppliers",
+      "id": "3cbfe2a1-9ff3-5714-b3d4-33b624990a0f",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "suppliers",
+      "id": "badd9e98-0fa5-5def-8c9b-08b8a5a4e752",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "suppliers",
+      "id": "8ad2b991-1813-5165-a61c-817984cf5c0b",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "products",
+      "id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "products",
+      "id": "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "products",
+      "id": "3b609029-5b0a-57c4-95de-cdf2df54b94f",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "products",
+      "id": "f949147a-8c25-5ce2-a9c6-5db6a1b8ebd7",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "products",
+      "id": "99a10c63-b0a1-5fdd-916f-da4eacf788a0",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "products",
+      "id": "f2e984e0-7a5b-54e0-93da-0b2e04d14b61",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_supplier",
+      "id": "cb21aa4f-b2ab-590b-b7e0-7a288d18ed85",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_supplier",
+      "id": "2751b366-6330-5fcc-9368-5e8f635ba265",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_supplier",
+      "id": "f0eaf954-1178-5a6e-9349-ed391db4d9ec",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_supplier",
+      "id": "f9be6377-98ea-501e-874b-9c504cfc3034",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_components",
+      "id": "79c9d3fa-cb19-5583-95ee-307643052f0e",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_components",
+      "id": "1b792a9c-4c3e-58c1-85eb-b26b8edf6f72",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_adjustments",
+      "id": "bf22955a-9cdc-5073-8661-1232553b02cf",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_adjustments",
+      "id": "c05de03d-0e1d-57a2-90d9-66f0c09f19d7",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_adjustments",
+      "id": "37f5b605-dd07-571d-899a-8d8460973ce4",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_adjustments",
+      "id": "adbff13b-44f0-5879-b5c5-3858b87b7d9b",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_adjustments",
+      "id": "f65ee9c9-d742-5da0-967f-fc2b8e2d87d7",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_adjustments",
+      "id": "c1af5769-9e4f-5f6d-8896-c641951919a0",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_adjustments",
+      "id": "0b78fb24-3ffd-5583-970a-600215120a5c",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_adjustments",
+      "id": "23a423aa-6edf-5f08-8048-27312d5fc47d",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_orders",
+      "id": "ca27e290-1c29-51b5-845f-a29a023e9e73",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_orders",
+      "id": "d1816bed-326f-5808-92a7-83c99b3a980e",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_orders",
+      "id": "e1cf2b67-e220-5412-9fa5-b151f1983b1a",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_orders",
+      "id": "4528bbbd-b439-532a-8db5-4069a2fb7e38",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_orders",
+      "id": "60fc553a-f120-5db7-81f8-14c1468f6e24",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_orders",
+      "id": "30fab3b4-26c5-5f3b-affc-bb9bca30e0c5",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_orders",
+      "id": "d362ea3f-bb62-5509-8a7f-99d3e84f0dfe",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_orders",
+      "id": "e7e84139-6617-5767-b150-0985cf0fe742",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_orders",
+      "id": "ab586e08-9e02-5be6-a878-ff454c7260a1",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_orders",
+      "id": "81a79649-3070-5f29-9e8d-3bcf93e16cee",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "ec705a90-b756-5794-bd5f-e40f23785705",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "be259ea5-2c3c-5f61-90f7-dd8848da6eaf",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "62fb00b0-8e09-5d02-bf17-758f79f02ddd",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "542c9c0c-f8d3-51b1-a270-6940142ccb0e",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "031802a3-a328-5e56-93fc-2b2b9e838660",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "c0fc045c-592c-551e-a22b-4bfd85130b58",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "0dda700e-1f95-52e3-9769-d1696e860108",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "8ce94019-bbbc-5d28-9803-21083377f4be",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "c23b585a-8cd2-5bc1-8900-b7b6a300c23d",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "ab6d7831-7b53-52a1-aa15-cf7a3f5af99e",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "work_orders",
+      "id": "b5bfbb0a-88c8-5950-ac5e-36939ab2917c",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "work_orders",
+      "id": "c6a3820f-30dc-5346-a628-fd5b9b81a8c8",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "work_orders",
+      "id": "b6f5b469-7008-51fa-94f5-2902b1b839c7",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "work_orders",
+      "id": "6b8c335a-f51b-5351-9fb7-3e82bbf95155",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "work_order_items",
+      "id": "90980f1c-c8ba-59a6-9e6a-93f80a69cbff",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "work_order_items",
+      "id": "92eaea75-90ee-58e3-a677-edb30e09cf34",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "work_order_items",
+      "id": "7134f691-d3b5-56af-8d76-478865874ec5",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "work_order_items",
+      "id": "95a1de6b-36fb-5096-98db-4152472650d2",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "work_order_outputs",
+      "id": "643c0626-da38-50ea-ba5e-eb80eb271f80",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "work_order_outputs",
+      "id": "32a5494f-d97d-5cb3-828a-5cc203715a06",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "work_order_outputs",
+      "id": "06027910-00bd-57c2-864c-a61dd91152c8",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "work_order_outputs",
+      "id": "7593c6b2-a8d9-5ce3-883e-ceae162a3e03",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_transfers",
+      "id": "68571077-bd11-5a69-877f-a385e7f23b30",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_transfers",
+      "id": "f589f4a6-1b30-5ad3-9804-f6a9b4dd0d3e",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_transfers",
+      "id": "51dd9f88-e936-5578-afcb-c20a95319321",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_transfers",
+      "id": "bea046a2-3894-51ef-9477-76bf5bd9c35f",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "e4178ed2-d150-56e0-8a63-af95b22e2ee8",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "f424ad80-08a3-5ef0-923b-a9f1e3e80ba3",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "a745df18-b7e3-5921-936d-444c4875f250",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "cc94e915-d0e8-5995-8e28-556cea0c4640",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "a3ea2917-e149-59ae-888a-a6fdf0717b8c",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "86bfed33-12bc-5796-bb7a-df729cd3a042",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "9e609829-9779-55fe-880c-1c5fc6388bfb",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "f979c608-b8df-5153-8ad6-fa990de5afe5",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "be74d20b-88a0-50c8-b892-5bf4f25b3f19",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "81e8f858-512c-5387-a082-12e24f55547c",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "c3b4fd4e-242b-515c-975b-db2e2ed5550d",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "892ff933-e878-5e9a-8380-9ac5978ea7f7",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "a326d7a7-c63d-54b6-bdb6-bcac7a578b10",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "72316de7-3137-51fa-818a-5a34e49cd328",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "cc348e4a-11f7-51ee-95a6-100523b64d57",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "d09c92ee-b102-5ac1-aae1-18b6964ce89f",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "e4e04ce1-413a-5657-9e1a-0d2ad9dc9478",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "35f61deb-f567-502a-82ad-79f669627fb7",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "9cf711c5-106a-5307-86ae-215b4cc84949",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "orders",
+      "id": "fabed0f2-341a-5cc0-a061-9c5252c3afbc",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "c374e5d0-f792-5295-8c86-a18ff7bd0f5c",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "1b18de37-0279-594d-85c9-89aed22b4c3d",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "663eba69-fcf8-5631-a41a-b40aab98aa89",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "c0fc13ce-404d-5e4f-be9b-2b8961f45951",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "8121c04c-35c9-582c-8128-fe51e2fa4e09",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "efd2b251-dee2-579a-b46c-039234fd0add",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "50669274-0699-5be3-9cd9-999f1dd1c9d2",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "1477568d-2e49-56bd-b854-c8ffab264fa3",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "2c505d9d-9645-5596-9c23-d7f78aa6c873",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "3b2062e5-2d1d-5f3c-8159-d4282d2379ef",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "4ad5ba80-a71f-56c3-86cc-fa9e7d3fe5d9",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "cb62bd5d-e5a8-597b-b1a1-48181ab4d18a",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "59ebcb95-4c5c-5622-bca7-053e56f9fd47",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "cc314523-b262-5db9-a1e9-7d097cb81f70",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "eef2a55a-a11c-5233-9fd6-d052052af783",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_items",
+      "id": "91c2526e-8df4-507c-8a81-1602a3da90a3",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_payments",
+      "id": "34ddf32b-c0dc-55aa-b5c2-2475ad7b0f93",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_payments",
+      "id": "51c58a3a-e367-5b8f-bf8e-6c55095d6171",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_payments",
+      "id": "af33668b-e13f-544b-89d7-51d75c4993a6",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_payments",
+      "id": "5f992c93-ebcf-5601-a2b5-5d696d6bd659",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_payments",
+      "id": "395edc8d-2bf6-5cb8-b621-6bbfe7634154",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_payments",
+      "id": "862f4891-f7ac-55d7-9492-7938a081f136",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_payments",
+      "id": "f7502fe2-1b96-5843-8ac8-738c8544846c",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_payments",
+      "id": "7671e1b8-e28d-5aca-bc92-3af299bddd23",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_payments",
+      "id": "473f65c7-d71d-5ade-9f97-5bb2ecf91d8f",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_payments",
+      "id": "5b35d4ef-8339-5adc-b18e-519106a8cd57",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_payments",
+      "id": "ab69d867-8f96-5806-b751-49738c5d047b",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_payments",
+      "id": "64078dd7-19ed-55b8-97f3-2c1f543a0009",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_payments",
+      "id": "bee7f8c3-683b-547e-85c9-c7baec41c893",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "order_payments",
+      "id": "f0876657-1b56-587f-8764-8f53c0b58db9",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "return_orders",
+      "id": "c7b0e430-941f-52b5-9ec8-1d984e8985cc",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "return_orders",
+      "id": "15ca800e-8dcb-5609-a974-d6bf287efd18",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "return_orders",
+      "id": "323db391-54f5-5ab3-8f09-666e8e419b4c",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "return_orders",
+      "id": "87843db8-60c4-55fb-8c77-b196b2c18dce",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "return_order_items",
+      "id": "f6166560-5cbc-539a-949c-9e425760c650",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "return_order_items",
+      "id": "1229f261-c83a-5c1f-965f-beec8b0c7f16",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "return_order_items",
+      "id": "cc79111c-f803-51e6-8b34-ea985b0f5cfa",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "return_order_items",
+      "id": "2aac2517-5f8b-5992-9cbd-890cb1218317",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_location_stocks",
+      "id": "c618f169-3fae-559d-b1f2-43c2bc804737",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_location_stocks",
+      "id": "17848f8e-3f10-5582-94d7-36f1d35b41ad",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_location_stocks",
+      "id": "0335a75a-cbf3-5361-9a39-4dea4c4eb3c3",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_location_stocks",
+      "id": "9607cab6-378d-5088-92a5-dd3ba2993569",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_location_stocks",
+      "id": "ba1e312c-762d-5220-a5a5-b4e57517816a",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_location_stocks",
+      "id": "2c5b7d67-e69a-5882-9763-f638b2a90ad5",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_location_stocks",
+      "id": "8b7bc88f-a967-5213-a9ec-2643b30b90cd",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_location_stocks",
+      "id": "98af1133-1aa7-5422-9136-08e37f5d9226",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_location_stocks",
+      "id": "3bc2dd47-d02f-59e3-908a-74c7a9c2856e",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_location_stocks",
+      "id": "c7355c31-f444-568c-847d-d4d61330ccef",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_location_stocks",
+      "id": "e51a3170-32cb-5426-92d6-23acaeeaa1f7",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "product_location_stocks",
+      "id": "3a10a380-35c0-5c34-944c-23d39da80340",
+      "operation": "create",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "http_status": 201
+    },
+    {
+      "table": "products",
+      "id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+      "operation": "publish_is_active_only",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "preservation_sha256": "45bd9936993ef3500f876714e4db6bf659923e82303002fd75d5d0d6d8ba5991",
+      "http_status": 200
+    },
+    {
+      "table": "products",
+      "id": "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+      "operation": "publish_is_active_only",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "preservation_sha256": "9d84021e6510efa54a7767b973d5d52a112fd49244e7ef33113b8231bac448a1",
+      "http_status": 200
+    },
+    {
+      "table": "products",
+      "id": "3b609029-5b0a-57c4-95de-cdf2df54b94f",
+      "operation": "publish_is_active_only",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "preservation_sha256": "d0cbdb0c2e09c58e1c433ea041178782995b6a2642aee4cb899f2bd72cf15bfa",
+      "http_status": 200
+    },
+    {
+      "table": "products",
+      "id": "f949147a-8c25-5ce2-a9c6-5db6a1b8ebd7",
+      "operation": "publish_is_active_only",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "preservation_sha256": "719d1a6e83a560023062eacbcce8b6a29b2b66a7ddd748d69172791135815e27",
+      "http_status": 200
+    },
+    {
+      "table": "products",
+      "id": "99a10c63-b0a1-5fdd-916f-da4eacf788a0",
+      "operation": "publish_is_active_only",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "preservation_sha256": "70e63d67af2dd901b3ddfeef15356091ec7e8b009f52b8b45255963d1e82ae01",
+      "http_status": 200
+    },
+    {
+      "table": "products",
+      "id": "f2e984e0-7a5b-54e0-93da-0b2e04d14b61",
+      "operation": "publish_is_active_only",
+      "attempted": true,
+      "uncertain": false,
+      "retry_sent": false,
+      "preservation_sha256": "06ba9afd6f0ec4dd0c379100a1bda4d95498c0587b40f7d243c73fbd0d30c842",
+      "http_status": 200
+    }
+  ],
+  "verified": [
+    "customers/f2ad4025-eb9e-5170-a8bd-2612f1537e49",
+    "customers/072c1bb2-cdc9-5510-8bab-88b8e8b4d2b5",
+    "customers/08140a22-2652-5132-9f35-36cab181820c",
+    "customers/92b836f2-a37a-57e7-b5ed-31b80e1fe63c",
+    "customers/d3c91b26-f87e-553e-8baf-e70e058cbd9d",
+    "customers/3b678dd5-7885-5dbe-8a82-e5bbfad88715",
+    "suppliers/3cbfe2a1-9ff3-5714-b3d4-33b624990a0f",
+    "suppliers/badd9e98-0fa5-5def-8c9b-08b8a5a4e752",
+    "suppliers/8ad2b991-1813-5165-a61c-817984cf5c0b",
+    "products/674791b7-19c6-5098-be9a-5154e7a8a421",
+    "products/a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+    "products/3b609029-5b0a-57c4-95de-cdf2df54b94f",
+    "products/f949147a-8c25-5ce2-a9c6-5db6a1b8ebd7",
+    "products/99a10c63-b0a1-5fdd-916f-da4eacf788a0",
+    "products/f2e984e0-7a5b-54e0-93da-0b2e04d14b61",
+    "product_supplier/cb21aa4f-b2ab-590b-b7e0-7a288d18ed85",
+    "product_supplier/2751b366-6330-5fcc-9368-5e8f635ba265",
+    "product_supplier/f0eaf954-1178-5a6e-9349-ed391db4d9ec",
+    "product_supplier/f9be6377-98ea-501e-874b-9c504cfc3034",
+    "product_components/79c9d3fa-cb19-5583-95ee-307643052f0e",
+    "product_components/1b792a9c-4c3e-58c1-85eb-b26b8edf6f72",
+    "stock_adjustments/bf22955a-9cdc-5073-8661-1232553b02cf",
+    "stock_adjustments/c05de03d-0e1d-57a2-90d9-66f0c09f19d7",
+    "stock_adjustments/37f5b605-dd07-571d-899a-8d8460973ce4",
+    "stock_adjustments/adbff13b-44f0-5879-b5c5-3858b87b7d9b",
+    "stock_adjustments/f65ee9c9-d742-5da0-967f-fc2b8e2d87d7",
+    "stock_adjustments/c1af5769-9e4f-5f6d-8896-c641951919a0",
+    "stock_adjustments/0b78fb24-3ffd-5583-970a-600215120a5c",
+    "stock_adjustments/23a423aa-6edf-5f08-8048-27312d5fc47d",
+    "purchase_orders/ca27e290-1c29-51b5-845f-a29a023e9e73",
+    "purchase_orders/d1816bed-326f-5808-92a7-83c99b3a980e",
+    "purchase_orders/e1cf2b67-e220-5412-9fa5-b151f1983b1a",
+    "purchase_orders/4528bbbd-b439-532a-8db5-4069a2fb7e38",
+    "purchase_orders/60fc553a-f120-5db7-81f8-14c1468f6e24",
+    "purchase_orders/30fab3b4-26c5-5f3b-affc-bb9bca30e0c5",
+    "purchase_orders/d362ea3f-bb62-5509-8a7f-99d3e84f0dfe",
+    "purchase_orders/e7e84139-6617-5767-b150-0985cf0fe742",
+    "purchase_orders/ab586e08-9e02-5be6-a878-ff454c7260a1",
+    "purchase_orders/81a79649-3070-5f29-9e8d-3bcf93e16cee",
+    "purchase_order_items/ec705a90-b756-5794-bd5f-e40f23785705",
+    "purchase_order_items/be259ea5-2c3c-5f61-90f7-dd8848da6eaf",
+    "purchase_order_items/62fb00b0-8e09-5d02-bf17-758f79f02ddd",
+    "purchase_order_items/542c9c0c-f8d3-51b1-a270-6940142ccb0e",
+    "purchase_order_items/031802a3-a328-5e56-93fc-2b2b9e838660",
+    "purchase_order_items/c0fc045c-592c-551e-a22b-4bfd85130b58",
+    "purchase_order_items/0dda700e-1f95-52e3-9769-d1696e860108",
+    "purchase_order_items/8ce94019-bbbc-5d28-9803-21083377f4be",
+    "purchase_order_items/c23b585a-8cd2-5bc1-8900-b7b6a300c23d",
+    "purchase_order_items/ab6d7831-7b53-52a1-aa15-cf7a3f5af99e",
+    "work_orders/b5bfbb0a-88c8-5950-ac5e-36939ab2917c",
+    "work_orders/c6a3820f-30dc-5346-a628-fd5b9b81a8c8",
+    "work_orders/b6f5b469-7008-51fa-94f5-2902b1b839c7",
+    "work_orders/6b8c335a-f51b-5351-9fb7-3e82bbf95155",
+    "work_order_items/90980f1c-c8ba-59a6-9e6a-93f80a69cbff",
+    "work_order_items/92eaea75-90ee-58e3-a677-edb30e09cf34",
+    "work_order_items/7134f691-d3b5-56af-8d76-478865874ec5",
+    "work_order_items/95a1de6b-36fb-5096-98db-4152472650d2",
+    "work_order_outputs/643c0626-da38-50ea-ba5e-eb80eb271f80",
+    "work_order_outputs/32a5494f-d97d-5cb3-828a-5cc203715a06",
+    "work_order_outputs/06027910-00bd-57c2-864c-a61dd91152c8",
+    "work_order_outputs/7593c6b2-a8d9-5ce3-883e-ceae162a3e03",
+    "stock_transfers/68571077-bd11-5a69-877f-a385e7f23b30",
+    "stock_transfers/f589f4a6-1b30-5ad3-9804-f6a9b4dd0d3e",
+    "stock_transfers/51dd9f88-e936-5578-afcb-c20a95319321",
+    "stock_transfers/bea046a2-3894-51ef-9477-76bf5bd9c35f",
+    "stock_transfer_items/e4178ed2-d150-56e0-8a63-af95b22e2ee8",
+    "stock_transfer_items/f424ad80-08a3-5ef0-923b-a9f1e3e80ba3",
+    "stock_transfer_items/a745df18-b7e3-5921-936d-444c4875f250",
+    "stock_transfer_items/cc94e915-d0e8-5995-8e28-556cea0c4640",
+    "orders/a3ea2917-e149-59ae-888a-a6fdf0717b8c",
+    "orders/86bfed33-12bc-5796-bb7a-df729cd3a042",
+    "orders/9e609829-9779-55fe-880c-1c5fc6388bfb",
+    "orders/f979c608-b8df-5153-8ad6-fa990de5afe5",
+    "orders/be74d20b-88a0-50c8-b892-5bf4f25b3f19",
+    "orders/81e8f858-512c-5387-a082-12e24f55547c",
+    "orders/c3b4fd4e-242b-515c-975b-db2e2ed5550d",
+    "orders/892ff933-e878-5e9a-8380-9ac5978ea7f7",
+    "orders/a326d7a7-c63d-54b6-bdb6-bcac7a578b10",
+    "orders/72316de7-3137-51fa-818a-5a34e49cd328",
+    "orders/cc348e4a-11f7-51ee-95a6-100523b64d57",
+    "orders/d09c92ee-b102-5ac1-aae1-18b6964ce89f",
+    "orders/e4e04ce1-413a-5657-9e1a-0d2ad9dc9478",
+    "orders/35f61deb-f567-502a-82ad-79f669627fb7",
+    "orders/9cf711c5-106a-5307-86ae-215b4cc84949",
+    "orders/fabed0f2-341a-5cc0-a061-9c5252c3afbc",
+    "order_items/c374e5d0-f792-5295-8c86-a18ff7bd0f5c",
+    "order_items/1b18de37-0279-594d-85c9-89aed22b4c3d",
+    "order_items/663eba69-fcf8-5631-a41a-b40aab98aa89",
+    "order_items/c0fc13ce-404d-5e4f-be9b-2b8961f45951",
+    "order_items/8121c04c-35c9-582c-8128-fe51e2fa4e09",
+    "order_items/efd2b251-dee2-579a-b46c-039234fd0add",
+    "order_items/50669274-0699-5be3-9cd9-999f1dd1c9d2",
+    "order_items/1477568d-2e49-56bd-b854-c8ffab264fa3",
+    "order_items/2c505d9d-9645-5596-9c23-d7f78aa6c873",
+    "order_items/3b2062e5-2d1d-5f3c-8159-d4282d2379ef",
+    "order_items/4ad5ba80-a71f-56c3-86cc-fa9e7d3fe5d9",
+    "order_items/cb62bd5d-e5a8-597b-b1a1-48181ab4d18a",
+    "order_items/59ebcb95-4c5c-5622-bca7-053e56f9fd47",
+    "order_items/cc314523-b262-5db9-a1e9-7d097cb81f70",
+    "order_items/eef2a55a-a11c-5233-9fd6-d052052af783",
+    "order_items/91c2526e-8df4-507c-8a81-1602a3da90a3",
+    "order_payments/34ddf32b-c0dc-55aa-b5c2-2475ad7b0f93",
+    "order_payments/51c58a3a-e367-5b8f-bf8e-6c55095d6171",
+    "order_payments/af33668b-e13f-544b-89d7-51d75c4993a6",
+    "order_payments/5f992c93-ebcf-5601-a2b5-5d696d6bd659",
+    "order_payments/395edc8d-2bf6-5cb8-b621-6bbfe7634154",
+    "order_payments/862f4891-f7ac-55d7-9492-7938a081f136",
+    "order_payments/f7502fe2-1b96-5843-8ac8-738c8544846c",
+    "order_payments/7671e1b8-e28d-5aca-bc92-3af299bddd23",
+    "order_payments/473f65c7-d71d-5ade-9f97-5bb2ecf91d8f",
+    "order_payments/5b35d4ef-8339-5adc-b18e-519106a8cd57",
+    "order_payments/ab69d867-8f96-5806-b751-49738c5d047b",
+    "order_payments/64078dd7-19ed-55b8-97f3-2c1f543a0009",
+    "order_payments/bee7f8c3-683b-547e-85c9-c7baec41c893",
+    "order_payments/f0876657-1b56-587f-8764-8f53c0b58db9",
+    "return_orders/c7b0e430-941f-52b5-9ec8-1d984e8985cc",
+    "return_orders/15ca800e-8dcb-5609-a974-d6bf287efd18",
+    "return_orders/323db391-54f5-5ab3-8f09-666e8e419b4c",
+    "return_orders/87843db8-60c4-55fb-8c77-b196b2c18dce",
+    "return_order_items/f6166560-5cbc-539a-949c-9e425760c650",
+    "return_order_items/1229f261-c83a-5c1f-965f-beec8b0c7f16",
+    "return_order_items/cc79111c-f803-51e6-8b34-ea985b0f5cfa",
+    "return_order_items/2aac2517-5f8b-5992-9cbd-890cb1218317",
+    "product_location_stocks/c618f169-3fae-559d-b1f2-43c2bc804737",
+    "product_location_stocks/17848f8e-3f10-5582-94d7-36f1d35b41ad",
+    "product_location_stocks/0335a75a-cbf3-5361-9a39-4dea4c4eb3c3",
+    "product_location_stocks/9607cab6-378d-5088-92a5-dd3ba2993569",
+    "product_location_stocks/ba1e312c-762d-5220-a5a5-b4e57517816a",
+    "product_location_stocks/2c5b7d67-e69a-5882-9763-f638b2a90ad5",
+    "product_location_stocks/8b7bc88f-a967-5213-a9ec-2643b30b90cd",
+    "product_location_stocks/98af1133-1aa7-5422-9136-08e37f5d9226",
+    "product_location_stocks/3bc2dd47-d02f-59e3-908a-74c7a9c2856e",
+    "product_location_stocks/c7355c31-f444-568c-847d-d4d61330ccef",
+    "product_location_stocks/e51a3170-32cb-5426-92d6-23acaeeaa1f7",
+    "product_location_stocks/3a10a380-35c0-5c34-944c-23d39da80340"
+  ],
+  "skipped": [],
+  "published": [
+    "674791b7-19c6-5098-be9a-5154e7a8a421",
+    "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+    "3b609029-5b0a-57c4-95de-cdf2df54b94f",
+    "f949147a-8c25-5ce2-a9c6-5db6a1b8ebd7",
+    "99a10c63-b0a1-5fdd-916f-da4eacf788a0",
+    "f2e984e0-7a5b-54e0-93da-0b2e04d14b61"
+  ],
+  "failures": [],
+  "aborted": false,
+  "complete": true,
+  "all_rows_verified_before_publication": true,
+  "final_all_rows_verified": true
+}

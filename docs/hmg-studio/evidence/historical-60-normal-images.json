@@ -1,0 +1,37 @@
+{
+  "recorded_at": "2026-11-06T20:20:54.503802+00:00",
+  "app": "hmg-studio",
+  "ordinary_session": true,
+  "images": [
+    {
+      "product_id": "674791b7-19c6-5098-be9a-5154e7a8a421",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 92023,
+      "verified": true
+    },
+    {
+      "product_id": "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 143372,
+      "verified": true
+    },
+    {
+      "product_id": "3b609029-5b0a-57c4-95de-cdf2df54b94f",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 148187,
+      "verified": true
+    },
+    {
+      "product_id": "f949147a-8c25-5ce2-a9c6-5db6a1b8ebd7",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 107421,
+      "verified": true
+    }
+  ],
+  "verified": true,
+  "note": "Verified catalogue photographs used as illustrative images for fictional sample slabs."
+}

@@ -1,0 +1,19 @@
+{
+  "hmg-studio-super-admin": {
+    "total": 1,
+    "users": [
+      {
+        "id": "4f7ff492-8af6-4059-ae61-ce13fe3d4b20",
+        "username": "pradeep+taruvi",
+        "email": "pradeep+taruvi@eoxvantage.com",
+        "is_active": true,
+        "is_staff": true
+      }
+    ]
+  },
+  "hmg-studio-hmg-synthetic-operator": {
+    "total": 0,
+    "users": []
+  },
+  "create_user_instructions": "Create new tenant user with role assignment.\n\n\u26a0\ufe0f AI INSTRUCTIONS (MUST FOLLOW):\n\n1. PASSWORD HANDLING:\n   - If the user does NOT provide a password, you MUST generate a secure random password\n     (12+ chars, mix of uppercase, lowercase, digits, special chars like !@#$%^&*).\n   - Always include the credentials (username + password) in your response to the user\n     so they can share it with the new user.\n   - Advise the user to have the new user change their password on first login.\n\n2. ROLE ASSIGNMENT (REQUIRED):\n   - Every user MUST have at least one role assigned.\n   - If role_slugs is NOT provided in the prompt:\n     a) First call manage_roles(action=\"list\") to get available roles.\n     b) Auto-select an appropriate role based on context:\n        - For admin/manager users \u2192 pick an admin-level role\n        - For regular users \u2192 pick a standard user role (e.g., \"user\", \"member\", \"viewer\")\n        - If unclear, default to the most basic/least-privileged role available.\n     c) Then call create_user with the selected role_slugs.\n   - Do NOT prompt the user to select roles \u2014 make the decision automatically.\n\n3. RESPONSE FORMAT:\n   - Always report back the created user's credentials (username + password).\n   - Mention which role(s) were assigned.\n   - If password was auto-generated, note that it should be changed on first login."
+}

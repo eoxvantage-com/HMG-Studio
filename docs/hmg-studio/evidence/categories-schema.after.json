@@ -1,0 +1,201 @@
+{
+  "success": true,
+  "data": {
+    "name": "product_categories",
+    "physical_table_name": "hmg_studio_product_categories",
+    "provider_type": "flat_table",
+    "schema_format": "frictionless",
+    "json_schema": {
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "format": "uuid",
+          "constraints": {
+            "required": true
+          }
+        },
+        {
+          "name": "organization_id",
+          "type": "string",
+          "format": "uuid",
+          "constraints": {
+            "required": true
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "constraints": {
+            "required": true
+          }
+        },
+        {
+          "name": "slug",
+          "type": "string",
+          "constraints": {
+            "required": true
+          }
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "parent_id",
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "name": "is_active",
+          "type": "boolean",
+          "default": true,
+          "constraints": {
+            "required": true
+          }
+        },
+        {
+          "name": "created_at",
+          "type": "datetime"
+        },
+        {
+          "name": "updated_at",
+          "type": "datetime"
+        },
+        {
+          "name": "deleted_at",
+          "type": "datetime"
+        },
+        {
+          "name": "search_vector",
+          "type": "object",
+          "constraints": {
+            "required": false
+          },
+          "description": "Auto-generated full-text search vector (GENERATED column)",
+          "x-search-field": true,
+          "x-auto-generated": true,
+          "x-search-metadata": {
+            "fields": [
+              {
+                "field": "name",
+                "weight": "A"
+              },
+              {
+                "field": "slug",
+                "weight": "B"
+              },
+              {
+                "field": "description",
+                "weight": "C"
+              }
+            ],
+            "language": "english",
+            "table_name": "product_categories"
+          }
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_1",
+          "fields": [
+            "organization_id",
+            "slug"
+          ]
+        },
+        {
+          "name": "idx_2",
+          "fields": [
+            "parent_id"
+          ]
+        },
+        {
+          "name": "idx_3",
+          "fields": [
+            "is_active"
+          ]
+        },
+        {
+          "name": "uq_hmg_category_org_slug",
+          "fields": [
+            "organization_id",
+            "slug"
+          ],
+          "unique": true
+        },
+        {
+          "name": "idx_product_categories_search_vector",
+          "type": "gin",
+          "columns": [
+            "search_vector"
+          ],
+          "comment": "Full-text search index (auto-generated)",
+          "x-auto-generated": true
+        }
+      ],
+      "primaryKey": [
+        "id"
+      ],
+      "foreignKeys": [
+        {
+          "fields": [
+            "organization_id"
+          ],
+          "reference": {
+            "fields": [
+              "id"
+            ],
+            "resource": "hmg_studio_organizations"
+          },
+          "x-actions": {
+            "onDelete": "CASCADE"
+          }
+        },
+        {
+          "fields": [
+            "parent_id"
+          ],
+          "reference": {
+            "fields": [
+              "id"
+            ],
+            "resource": "hmg_studio_product_categories"
+          },
+          "x-actions": {
+            "onDelete": "SET NULL"
+          }
+        }
+      ],
+      "search_fields": [
+        "name",
+        "slug",
+        "description"
+      ],
+      "reverseRelationships": [
+        {
+          "name": "product_categories",
+          "type": "hasMany",
+          "localKey": "id",
+          "foreignKey": "parent_id",
+          "foreignTable": "hmg_studio_product_categories"
+        }
+      ],
+      "manyToManyRelationships": [
+        {
+          "name": "organizations",
+          "localKey": "id",
+          "foreignKey": "id",
+          "foreignTable": "hmg_studio_organizations",
+          "junctionTable": "hmg_studio_product_categories",
+          "junctionLocalKey": "parent_id",
+          "junctionForeignKey": "organization_id"
+        }
+      ]
+    },
+    "is_materialized": true,
+    "is_active": true,
+    "description": "",
+    "created_at": "2026-11-05T15:14:50.182815+00:00",
+    "updated_at": "2026-11-06T11:32:31.757168+00:00"
+  }
+}

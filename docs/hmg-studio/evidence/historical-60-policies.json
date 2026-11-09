@@ -1,0 +1,1554 @@
+{
+  "app": "hmg-studio",
+  "policy_changes": {
+    "product_supplier": {
+      "before": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "6039464108555120525",
+          "store_identifer": "resource.datatable_product_supplier.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_product_supplier.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "driver": "postgres",
+              "update_ts": "2026-11-06T13:03:48Z"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:product_supplier",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"83401ddc-5bfc-5bce-9e1d-5924d1c74dc0\", \"eced81f7-16b6-5c3c-a971-1136e42c52d3\", \"e4e44f3f-2e27-52f0-8c73-5da1f54712b2\", \"0f0ec82d-93be-5d77-8899-3c9d94513c6b\", \"3a5a1a5b-e790-556c-8c24-c126fa1becdc\", \"fdd86ce7-ae12-559d-848e-55c3a794eb99\", \"0656596b-09bd-5c42-a526-e4848bfc3528\", \"5768b22e-78d9-53bd-8db5-ecaf911ade8a\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      },
+      "expected": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "6039464108555120525",
+          "store_identifer": "resource.datatable_product_supplier.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_product_supplier.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "update_ts": "2026-11-06T13:03:48Z",
+              "driver": "postgres"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:product_supplier",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"83401ddc-5bfc-5bce-9e1d-5924d1c74dc0\", \"eced81f7-16b6-5c3c-a971-1136e42c52d3\", \"e4e44f3f-2e27-52f0-8c73-5da1f54712b2\", \"0f0ec82d-93be-5d77-8899-3c9d94513c6b\", \"3a5a1a5b-e790-556c-8c24-c126fa1becdc\", \"fdd86ce7-ae12-559d-848e-55c3a794eb99\", \"0656596b-09bd-5c42-a526-e4848bfc3528\", \"5768b22e-78d9-53bd-8db5-ecaf911ade8a\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": "synthetic_history_60_read",
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"cb21aa4f-b2ab-590b-b7e0-7a288d18ed85\", \"2751b366-6330-5fcc-9368-5e8f635ba265\", \"f0eaf954-1178-5a6e-9349-ed391db4d9ec\", \"f9be6377-98ea-501e-874b-9c504cfc3034\"]"
+                }
+              }
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      },
+      "retry_sent": false,
+      "attempted": true,
+      "result": {
+        "success": true,
+        "data": {
+          "success": true,
+          "policy_type": "resource",
+          "policy_id": "datatable:product_supplier.default/insurance_hmg-studio",
+          "identifier": "datatable:product_supplier",
+          "scope": "insurance_hmg-studio",
+          "warning": "Policy was REPLACED (not merged). Existing rules overwritten if not included.",
+          "entity_actions": [
+            "read",
+            "update",
+            "create",
+            "delete"
+          ]
+        }
+      },
+      "rejected": false,
+      "after": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "4210937926639309600",
+          "store_identifer": "resource.datatable_product_supplier.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_product_supplier.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "driver": "postgres",
+              "update_ts": "2026-11-06T20:08:59Z"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:product_supplier",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"83401ddc-5bfc-5bce-9e1d-5924d1c74dc0\", \"eced81f7-16b6-5c3c-a971-1136e42c52d3\", \"e4e44f3f-2e27-52f0-8c73-5da1f54712b2\", \"0f0ec82d-93be-5d77-8899-3c9d94513c6b\", \"3a5a1a5b-e790-556c-8c24-c126fa1becdc\", \"fdd86ce7-ae12-559d-848e-55c3a794eb99\", \"0656596b-09bd-5c42-a526-e4848bfc3528\", \"5768b22e-78d9-53bd-8db5-ecaf911ade8a\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"cb21aa4f-b2ab-590b-b7e0-7a288d18ed85\", \"2751b366-6330-5fcc-9368-5e8f635ba265\", \"f0eaf954-1178-5a6e-9349-ed391db4d9ec\", \"f9be6377-98ea-501e-874b-9c504cfc3034\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "name": "synthetic_history_60_read",
+              "derived_roles": []
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      }
+    },
+    "product_components": {
+      "before": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "8850214473319057388",
+          "store_identifer": "resource.datatable_product_components.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_product_components.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "update_ts": "2026-11-06T13:28:57Z",
+              "driver": "postgres"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:product_components",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"452490b1-5aea-53d7-a0d2-bf192b3230e3\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      },
+      "expected": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "8850214473319057388",
+          "store_identifer": "resource.datatable_product_components.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_product_components.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "update_ts": "2026-11-06T13:28:57Z",
+              "driver": "postgres"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:product_components",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"452490b1-5aea-53d7-a0d2-bf192b3230e3\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": "synthetic_history_60_read",
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"79c9d3fa-cb19-5583-95ee-307643052f0e\", \"1b792a9c-4c3e-58c1-85eb-b26b8edf6f72\"]"
+                }
+              }
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      },
+      "retry_sent": false,
+      "attempted": true,
+      "result": {
+        "success": true,
+        "data": {
+          "success": true,
+          "policy_type": "resource",
+          "policy_id": "datatable:product_components.default/insurance_hmg-studio",
+          "identifier": "datatable:product_components",
+          "scope": "insurance_hmg-studio",
+          "warning": "Policy was REPLACED (not merged). Existing rules overwritten if not included.",
+          "entity_actions": [
+            "read",
+            "update",
+            "create",
+            "delete"
+          ]
+        }
+      },
+      "rejected": false,
+      "after": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "15914774439377037908",
+          "store_identifer": "resource.datatable_product_components.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_product_components.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "update_ts": "2026-11-06T20:09:00Z",
+              "driver": "postgres"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:product_components",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"452490b1-5aea-53d7-a0d2-bf192b3230e3\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"79c9d3fa-cb19-5583-95ee-307643052f0e\", \"1b792a9c-4c3e-58c1-85eb-b26b8edf6f72\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "name": "synthetic_history_60_read",
+              "derived_roles": []
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      }
+    },
+    "order_items": {
+      "before": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "14684918189856364746",
+          "store_identifer": "resource.datatable_order_items.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_order_items.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "update_ts": "2026-11-06T13:22:31Z",
+              "driver": "postgres"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:order_items",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"b3656627-cd6e-50d5-81ed-a6600351619f\", \"a18c5e6f-364c-54a1-8955-b08e293b25d9\", \"7e1a5302-ae99-59f6-9cea-ab29df82b359\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      },
+      "expected": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "14684918189856364746",
+          "store_identifer": "resource.datatable_order_items.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_order_items.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "driver": "postgres",
+              "update_ts": "2026-11-06T13:22:31Z"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:order_items",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"b3656627-cd6e-50d5-81ed-a6600351619f\", \"a18c5e6f-364c-54a1-8955-b08e293b25d9\", \"7e1a5302-ae99-59f6-9cea-ab29df82b359\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": "synthetic_history_60_read",
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"c374e5d0-f792-5295-8c86-a18ff7bd0f5c\", \"1b18de37-0279-594d-85c9-89aed22b4c3d\", \"663eba69-fcf8-5631-a41a-b40aab98aa89\", \"c0fc13ce-404d-5e4f-be9b-2b8961f45951\", \"8121c04c-35c9-582c-8128-fe51e2fa4e09\", \"efd2b251-dee2-579a-b46c-039234fd0add\", \"50669274-0699-5be3-9cd9-999f1dd1c9d2\", \"1477568d-2e49-56bd-b854-c8ffab264fa3\", \"2c505d9d-9645-5596-9c23-d7f78aa6c873\", \"3b2062e5-2d1d-5f3c-8159-d4282d2379ef\", \"4ad5ba80-a71f-56c3-86cc-fa9e7d3fe5d9\", \"cb62bd5d-e5a8-597b-b1a1-48181ab4d18a\", \"59ebcb95-4c5c-5622-bca7-053e56f9fd47\", \"cc314523-b262-5db9-a1e9-7d097cb81f70\", \"eef2a55a-a11c-5233-9fd6-d052052af783\", \"91c2526e-8df4-507c-8a81-1602a3da90a3\"]"
+                }
+              }
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      },
+      "retry_sent": false,
+      "attempted": true,
+      "result": {
+        "success": true,
+        "data": {
+          "success": true,
+          "policy_type": "resource",
+          "policy_id": "datatable:order_items.default/insurance_hmg-studio",
+          "identifier": "datatable:order_items",
+          "scope": "insurance_hmg-studio",
+          "warning": "Policy was REPLACED (not merged). Existing rules overwritten if not included.",
+          "entity_actions": [
+            "read",
+            "update",
+            "create",
+            "delete"
+          ]
+        }
+      },
+      "rejected": false,
+      "after": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "4142609367929400693",
+          "store_identifer": "resource.datatable_order_items.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_order_items.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "driver": "postgres",
+              "update_ts": "2026-11-06T20:09:02Z"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:order_items",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"b3656627-cd6e-50d5-81ed-a6600351619f\", \"a18c5e6f-364c-54a1-8955-b08e293b25d9\", \"7e1a5302-ae99-59f6-9cea-ab29df82b359\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"c374e5d0-f792-5295-8c86-a18ff7bd0f5c\", \"1b18de37-0279-594d-85c9-89aed22b4c3d\", \"663eba69-fcf8-5631-a41a-b40aab98aa89\", \"c0fc13ce-404d-5e4f-be9b-2b8961f45951\", \"8121c04c-35c9-582c-8128-fe51e2fa4e09\", \"efd2b251-dee2-579a-b46c-039234fd0add\", \"50669274-0699-5be3-9cd9-999f1dd1c9d2\", \"1477568d-2e49-56bd-b854-c8ffab264fa3\", \"2c505d9d-9645-5596-9c23-d7f78aa6c873\", \"3b2062e5-2d1d-5f3c-8159-d4282d2379ef\", \"4ad5ba80-a71f-56c3-86cc-fa9e7d3fe5d9\", \"cb62bd5d-e5a8-597b-b1a1-48181ab4d18a\", \"59ebcb95-4c5c-5622-bca7-053e56f9fd47\", \"cc314523-b262-5db9-a1e9-7d097cb81f70\", \"eef2a55a-a11c-5233-9fd6-d052052af783\", \"91c2526e-8df4-507c-8a81-1602a3da90a3\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "name": "synthetic_history_60_read",
+              "derived_roles": []
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      }
+    },
+    "purchase_order_items": {
+      "before": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "1377491695631404440",
+          "store_identifer": "resource.datatable_purchase_order_items.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_purchase_order_items.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "driver": "postgres",
+              "update_ts": "2026-11-06T13:23:14Z"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:purchase_order_items",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"bbbd883f-0daa-5b29-b4d5-d444a8b4da08\", \"7558a119-d9f6-5a0b-b885-b44b3f486d99\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      },
+      "expected": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "1377491695631404440",
+          "store_identifer": "resource.datatable_purchase_order_items.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_purchase_order_items.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "driver": "postgres",
+              "update_ts": "2026-11-06T13:23:14Z"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:purchase_order_items",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"bbbd883f-0daa-5b29-b4d5-d444a8b4da08\", \"7558a119-d9f6-5a0b-b885-b44b3f486d99\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": "synthetic_history_60_read",
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"ec705a90-b756-5794-bd5f-e40f23785705\", \"be259ea5-2c3c-5f61-90f7-dd8848da6eaf\", \"62fb00b0-8e09-5d02-bf17-758f79f02ddd\", \"542c9c0c-f8d3-51b1-a270-6940142ccb0e\", \"031802a3-a328-5e56-93fc-2b2b9e838660\", \"c0fc045c-592c-551e-a22b-4bfd85130b58\", \"0dda700e-1f95-52e3-9769-d1696e860108\", \"8ce94019-bbbc-5d28-9803-21083377f4be\", \"c23b585a-8cd2-5bc1-8900-b7b6a300c23d\", \"ab6d7831-7b53-52a1-aa15-cf7a3f5af99e\"]"
+                }
+              }
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      },
+      "retry_sent": false,
+      "attempted": true,
+      "result": {
+        "success": true,
+        "data": {
+          "success": true,
+          "policy_type": "resource",
+          "policy_id": "datatable:purchase_order_items.default/insurance_hmg-studio",
+          "identifier": "datatable:purchase_order_items",
+          "scope": "insurance_hmg-studio",
+          "warning": "Policy was REPLACED (not merged). Existing rules overwritten if not included.",
+          "entity_actions": [
+            "read",
+            "update",
+            "create",
+            "delete"
+          ]
+        }
+      },
+      "rejected": false,
+      "after": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "14055716209021603774",
+          "store_identifer": "resource.datatable_purchase_order_items.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_purchase_order_items.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "driver": "postgres",
+              "update_ts": "2026-11-06T20:09:03Z"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:purchase_order_items",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"bbbd883f-0daa-5b29-b4d5-d444a8b4da08\", \"7558a119-d9f6-5a0b-b885-b44b3f486d99\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"ec705a90-b756-5794-bd5f-e40f23785705\", \"be259ea5-2c3c-5f61-90f7-dd8848da6eaf\", \"62fb00b0-8e09-5d02-bf17-758f79f02ddd\", \"542c9c0c-f8d3-51b1-a270-6940142ccb0e\", \"031802a3-a328-5e56-93fc-2b2b9e838660\", \"c0fc045c-592c-551e-a22b-4bfd85130b58\", \"0dda700e-1f95-52e3-9769-d1696e860108\", \"8ce94019-bbbc-5d28-9803-21083377f4be\", \"c23b585a-8cd2-5bc1-8900-b7b6a300c23d\", \"ab6d7831-7b53-52a1-aa15-cf7a3f5af99e\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "name": "synthetic_history_60_read",
+              "derived_roles": []
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      }
+    },
+    "return_order_items": {
+      "before": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "3657153116697912600",
+          "store_identifer": "resource.datatable_return_order_items.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_return_order_items.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "update_ts": "2026-11-06T13:23:27Z",
+              "driver": "postgres"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:return_order_items",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "*"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      },
+      "expected": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "3657153116697912600",
+          "store_identifer": "resource.datatable_return_order_items.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_return_order_items.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "update_ts": "2026-11-06T13:23:27Z",
+              "driver": "postgres"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:return_order_items",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": "synthetic_history_60_read",
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"f6166560-5cbc-539a-949c-9e425760c650\", \"1229f261-c83a-5c1f-965f-beec8b0c7f16\", \"cc79111c-f803-51e6-8b34-ea985b0f5cfa\", \"2aac2517-5f8b-5992-9cbd-890cb1218317\"]"
+                }
+              }
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      },
+      "retry_sent": false,
+      "attempted": true,
+      "result": {
+        "success": true,
+        "data": {
+          "success": true,
+          "policy_type": "resource",
+          "policy_id": "datatable:return_order_items.default/insurance_hmg-studio",
+          "identifier": "datatable:return_order_items",
+          "scope": "insurance_hmg-studio",
+          "warning": "Policy was REPLACED (not merged). Existing rules overwritten if not included.",
+          "entity_actions": [
+            "read",
+            "update",
+            "create",
+            "delete"
+          ]
+        }
+      },
+      "rejected": false,
+      "after": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "8919819198366509979",
+          "store_identifer": "resource.datatable_return_order_items.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_return_order_items.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "driver": "postgres",
+              "update_ts": "2026-11-06T20:09:05Z"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:return_order_items",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"f6166560-5cbc-539a-949c-9e425760c650\", \"1229f261-c83a-5c1f-965f-beec8b0c7f16\", \"cc79111c-f803-51e6-8b34-ea985b0f5cfa\", \"2aac2517-5f8b-5992-9cbd-890cb1218317\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "name": "synthetic_history_60_read",
+              "derived_roles": []
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      }
+    },
+    "stock_transfer_items": {
+      "before": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "16300201715751812389",
+          "store_identifer": "resource.datatable_stock_transfer_items.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_stock_transfer_items.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "driver": "postgres",
+              "update_ts": "2026-11-06T13:43:14Z"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:stock_transfer_items",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"4c36821e-86f6-52eb-8ff2-2d7e33839097\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      },
+      "expected": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "16300201715751812389",
+          "store_identifer": "resource.datatable_stock_transfer_items.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_stock_transfer_items.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "driver": "postgres",
+              "update_ts": "2026-11-06T13:43:14Z"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:stock_transfer_items",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"4c36821e-86f6-52eb-8ff2-2d7e33839097\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": "synthetic_history_60_read",
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"e4178ed2-d150-56e0-8a63-af95b22e2ee8\", \"f424ad80-08a3-5ef0-923b-a9f1e3e80ba3\", \"a745df18-b7e3-5921-936d-444c4875f250\", \"cc94e915-d0e8-5995-8e28-556cea0c4640\"]"
+                }
+              }
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      },
+      "retry_sent": false,
+      "attempted": true,
+      "result": {
+        "success": true,
+        "data": {
+          "success": true,
+          "policy_type": "resource",
+          "policy_id": "datatable:stock_transfer_items.default/insurance_hmg-studio",
+          "identifier": "datatable:stock_transfer_items",
+          "scope": "insurance_hmg-studio",
+          "warning": "Policy was REPLACED (not merged). Existing rules overwritten if not included.",
+          "entity_actions": [
+            "read",
+            "update",
+            "create",
+            "delete"
+          ]
+        }
+      },
+      "rejected": false,
+      "after": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "457325629034424533",
+          "store_identifer": "resource.datatable_stock_transfer_items.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_stock_transfer_items.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "driver": "postgres",
+              "update_ts": "2026-11-06T20:09:06Z"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:stock_transfer_items",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"4c36821e-86f6-52eb-8ff2-2d7e33839097\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"e4178ed2-d150-56e0-8a63-af95b22e2ee8\", \"f424ad80-08a3-5ef0-923b-a9f1e3e80ba3\", \"a745df18-b7e3-5921-936d-444c4875f250\", \"cc94e915-d0e8-5995-8e28-556cea0c4640\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "name": "synthetic_history_60_read",
+              "derived_roles": []
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      }
+    },
+    "work_order_items": {
+      "before": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "15436530006601719408",
+          "store_identifer": "resource.datatable_work_order_items.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_work_order_items.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "driver": "postgres",
+              "update_ts": "2026-11-06T13:47:44Z"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:work_order_items",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"d5ec6df3-18bb-54cd-84f3-f61df9b6eff4\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      },
+      "expected": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "15436530006601719408",
+          "store_identifer": "resource.datatable_work_order_items.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_work_order_items.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "driver": "postgres",
+              "update_ts": "2026-11-06T13:47:44Z"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:work_order_items",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"d5ec6df3-18bb-54cd-84f3-f61df9b6eff4\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": "synthetic_history_60_read",
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"90980f1c-c8ba-59a6-9e6a-93f80a69cbff\", \"92eaea75-90ee-58e3-a677-edb30e09cf34\", \"7134f691-d3b5-56af-8d76-478865874ec5\", \"95a1de6b-36fb-5096-98db-4152472650d2\"]"
+                }
+              }
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      },
+      "retry_sent": false,
+      "attempted": true,
+      "result": {
+        "success": true,
+        "data": {
+          "success": true,
+          "policy_type": "resource",
+          "policy_id": "datatable:work_order_items.default/insurance_hmg-studio",
+          "identifier": "datatable:work_order_items",
+          "scope": "insurance_hmg-studio",
+          "warning": "Policy was REPLACED (not merged). Existing rules overwritten if not included.",
+          "entity_actions": [
+            "read",
+            "update",
+            "create",
+            "delete"
+          ]
+        }
+      },
+      "rejected": false,
+      "after": {
+        "api_version": "api.cerbos.dev/v1",
+        "metadata": {
+          "hash": "1707163705945647831",
+          "store_identifer": "resource.datatable_work_order_items.vdefault/insurance_hmg-studio",
+          "store_identifier": "resource.datatable_work_order_items.vdefault/insurance_hmg-studio",
+          "source_attributes": {
+            "attributes": {
+              "driver": "postgres",
+              "update_ts": "2026-11-06T20:09:08Z"
+            }
+          },
+          "source_file": "",
+          "annotations": {}
+        },
+        "resource_policy": {
+          "resource": "datatable:work_order_items",
+          "version": "default",
+          "rules": [
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"d5ec6df3-18bb-54cd-84f3-f61df9b6eff4\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "create",
+                "update",
+                "delete"
+              ],
+              "roles": [
+                "*"
+              ],
+              "effect": "EFFECT_DENY",
+              "derived_roles": [],
+              "name": ""
+            },
+            {
+              "actions": [
+                "read"
+              ],
+              "roles": [
+                "HMG Synthetic Operator"
+              ],
+              "condition": {
+                "match": {
+                  "expr": "R.attr.id in [\"90980f1c-c8ba-59a6-9e6a-93f80a69cbff\", \"92eaea75-90ee-58e3-a677-edb30e09cf34\", \"7134f691-d3b5-56af-8d76-478865874ec5\", \"95a1de6b-36fb-5096-98db-4152472650d2\"]"
+                }
+              },
+              "effect": "EFFECT_ALLOW",
+              "name": "synthetic_history_60_read",
+              "derived_roles": []
+            }
+          ],
+          "scope": "insurance_hmg-studio",
+          "import_derived_roles": [],
+          "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+        },
+        "disabled": false,
+        "description": "",
+        "variables": {},
+        "json_schema": ""
+      }
+    }
+  },
+  "writes_granted": false,
+  "aborted": false,
+  "complete": true
+}

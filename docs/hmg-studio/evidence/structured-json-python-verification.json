@@ -1,0 +1,46 @@
+{
+  "command": "$env:PYTEST_DISABLE_PLUGIN_AUTOLOAD='1'; python -m pytest backend -q",
+  "exit_code": 0,
+  "passed": 181,
+  "pytest_duration_seconds": 6.65,
+  "observed_tool_chunk": "bd3b14",
+  "focused": {
+    "command": "python -m pytest backend/tests/test_structured_json_migration.py -q",
+    "exit_code": 0,
+    "passed": 23,
+    "pytest_duration_seconds": 0.81,
+    "observed_tool_chunk": "610024"
+  },
+  "scope": "Local Python tests, not browser or ordinary-user write authorization proof.",
+  "post_manifest_full_run": {
+    "command": "$env:PYTEST_DISABLE_PLUGIN_AUTOLOAD='1'; python -m pytest backend -q",
+    "exit_code": 1,
+    "passed": 197,
+    "failed": 1,
+    "pytest_duration_seconds": 4.04,
+    "observed_tool_chunk": "3733c3",
+    "failure": "backend/tests/test_hmg_catalogue_media_links.py::test_incomplete_copy_cannot_generate_full_link_plan",
+    "owner_notified": "catalogue_import"
+  },
+  "final_run": {
+    "command": "$env:PYTEST_DISABLE_PLUGIN_AUTOLOAD='1'; python -m pytest backend -q",
+    "exit_code": 0,
+    "passed": 207,
+    "pytest_duration_seconds": 7.18,
+    "observed_tool_chunk": "46943a",
+    "review": "Independent security review cleared additive helper and typed-wire adapter before final tests"
+  },
+  "final_focused": {
+    "command": "python -m pytest backend/tests/test_seed_erp.py backend/tests/test_structured_json_migration.py -q",
+    "exit_code": 0,
+    "passed": 34,
+    "pytest_duration_seconds": 0.97,
+    "observed_tool_chunk": "91063c"
+  },
+  "strict_activity_type_reverification": {
+    "source": "structured-json-20261106T184314271383Z.json",
+    "synthetic_is_boolean_true": true,
+    "strict_can_skip_fixture": true,
+    "no_remote_write": true
+  }
+}

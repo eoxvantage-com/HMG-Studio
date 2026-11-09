@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-07T06:01:36.873991+00:00",
+  "transport": "ordinary session",
+  "app": "hmg-studio",
+  "probes": [
+    {
+      "lookup": "uuid",
+      "status": 404,
+      "identity_matches": false
+    },
+    {
+      "lookup": "username",
+      "status": 200,
+      "identity_matches": true
+    },
+    {
+      "role": "hmg-studio-hmg-synthetic-operator",
+      "status": 200,
+      "count": 4,
+      "rows": 4
+    },
+    {
+      "role": "hmg-studio-hmg-qa-catalog-a",
+      "status": 200,
+      "count": 1,
+      "rows": 1
+    }
+  ]
+}

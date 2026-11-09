@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-07T07:01:58.607994+00:00",
+  "app": "hmg-studio",
+  "principal": "hmg.john",
+  "admin_fallback": false,
+  "read_only_function": true,
+  "cases": [
+    {
+      "case": "unauthenticated",
+      "http": 403,
+      "denied": true
+    },
+    {
+      "case": "malformed_currency",
+      "http": 200,
+      "result_code": "VALIDATION_ERROR",
+      "denied": true
+    },
+    {
+      "case": "forged_organization",
+      "http": 200,
+      "result_code": "VALIDATION_ERROR",
+      "denied": true
+    }
+  ],
+  "all_passed": true
+}

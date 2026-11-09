@@ -1,0 +1,75 @@
+{
+  "at": "2026-11-07T06:07:30.599258+00:00",
+  "app": "hmg-studio",
+  "users": [
+    {
+      "id": "d5e5fcee-26c3-4694-aa54-e590c3e758b3",
+      "username": "hmg.john",
+      "email": "john@hmg.com",
+      "is_staff": false,
+      "is_superuser": false,
+      "login_verified": true,
+      "native_username_detail_status": 200,
+      "team_directory_count": 3,
+      "product_read_status": 200,
+      "roles": [
+        {
+          "name": "HMG Synthetic Operator",
+          "slug": "hmg-studio-hmg-synthetic-operator",
+          "app_slug": "hmg-studio"
+        },
+        {
+          "name": "HMG Team",
+          "slug": "hmg-studio-hmg-team",
+          "app_slug": "hmg-studio"
+        }
+      ]
+    },
+    {
+      "id": "db15bf0d-b72e-4325-ae8f-4c0aa46f7eb3",
+      "username": "hmg.kevin",
+      "email": "kevin@hmg.com",
+      "is_staff": false,
+      "is_superuser": false,
+      "login_verified": true,
+      "native_username_detail_status": 200,
+      "team_directory_count": 3,
+      "product_read_status": 200,
+      "roles": [
+        {
+          "name": "HMG Synthetic Operator",
+          "slug": "hmg-studio-hmg-synthetic-operator",
+          "app_slug": "hmg-studio"
+        },
+        {
+          "name": "HMG Team",
+          "slug": "hmg-studio-hmg-team",
+          "app_slug": "hmg-studio"
+        }
+      ]
+    },
+    {
+      "id": "748d13ed-62ba-4c8f-a90d-18c722260f46",
+      "username": "hmg.peeter",
+      "email": "peeter@hmg.com",
+      "is_staff": false,
+      "is_superuser": false,
+      "login_verified": true,
+      "native_username_detail_status": 200,
+      "team_directory_count": 3,
+      "product_read_status": 200,
+      "roles": [
+        {
+          "name": "HMG Synthetic Operator",
+          "slug": "hmg-studio-hmg-synthetic-operator",
+          "app_slug": "hmg-studio"
+        },
+        {
+          "name": "HMG Team",
+          "slug": "hmg-studio-hmg-team",
+          "app_slug": "hmg-studio"
+        }
+      ]
+    }
+  ]
+}

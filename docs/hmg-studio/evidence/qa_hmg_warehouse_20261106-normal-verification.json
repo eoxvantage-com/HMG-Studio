@@ -1,0 +1,53 @@
+{
+  "at": "2026-11-06T20:42:01.347769+00:00",
+  "app": "hmg-studio",
+  "username": "qa_hmg_warehouse_20261106",
+  "api_key_used": false,
+  "identity_http": 200,
+  "identity": {
+    "id": "73923a59-5291-4575-9501-dd2fc0b7ac98",
+    "username": "qa_hmg_warehouse_20261106",
+    "is_superuser": false,
+    "roles": [
+      {
+        "name": "HMG Synthetic Operator",
+        "slug": "hmg-studio-hmg-synthetic-operator",
+        "type": "app_role",
+        "app_slug": "hmg-studio",
+        "source": "direct"
+      }
+    ]
+  },
+  "synthetic_product_read": {
+    "http": 200,
+    "total": 278,
+    "received": 1
+  },
+  "advisory_http": 200,
+  "advisory": {
+    "request_id": "b4baa94c-bd1f-4a7e-9839-9ddf70fde5ff",
+    "results": [
+      {
+        "resource": {
+          "id": "new",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_ALLOW"
+        }
+      },
+      {
+        "resource": {
+          "id": "new:foreign",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_DENY"
+        }
+      }
+    ],
+    "cerbos_call_id": "01M6S9HJA9F3YHV80CZ6JKSJ0N"
+  }
+}

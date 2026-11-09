@@ -1,0 +1,30 @@
+{
+  "app_slug": "hmg-studio",
+  "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+  "create_only": true,
+  "created": [
+    "e8a1c338-b135-52c8-b2cb-d6ce858ade61",
+    "106e6587-5cf8-5210-a6d1-f5e76666552b",
+    "f3858f82-4e42-502b-b435-2a6b8226c6c5",
+    "43436bd8-76b6-5595-ad46-c3589a2276bf"
+  ],
+  "verified": [
+    "e8a1c338-b135-52c8-b2cb-d6ce858ade61",
+    "106e6587-5cf8-5210-a6d1-f5e76666552b",
+    "f3858f82-4e42-502b-b435-2a6b8226c6c5",
+    "43436bd8-76b6-5595-ad46-c3589a2276bf"
+  ],
+  "skipped": [
+    "0ddcc7fd-234f-509b-975a-762f640bd262"
+  ],
+  "failures": [
+    {
+      "id": "593e09d0-9094-53bf-aac1-333d6393dc7f",
+      "phase": "preflight_read",
+      "error_type": "RuntimeError",
+      "reason": "MCP Table products not found",
+      "retry_sent": false
+    }
+  ],
+  "aborted": true
+}

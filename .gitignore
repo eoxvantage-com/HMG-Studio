@@ -36,3 +36,11 @@ auth.json
 
 # Codespace setup marker (runtime state, not source)
 .codespace/.setup-complete
+
+# Local Python test/runtime caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local dependency caches, diagnostic captures and release archives
+.cache/

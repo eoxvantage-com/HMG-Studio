@@ -1,0 +1,15 @@
+{
+  "source_files_unchanged": 46,
+  "working_specifications_equal_excluding_two_working_ledgers": 44,
+  "modules": 32,
+  "pages": 123,
+  "unique_source_sections": 509,
+  "source_clauses": 4029,
+  "specification_gates": 2057,
+  "overlapping_or_omitted_substantive_source_lines": 0,
+  "cross_module_chains": 12,
+  "completed_app_modules_claimed": 0,
+  "result": "PASS - checklist traceability only; application acceptance is not inferred",
+  "validated_local_links": 6687,
+  "immutable_original_ledger_snapshots": 2
+}

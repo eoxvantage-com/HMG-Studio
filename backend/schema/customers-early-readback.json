@@ -1,0 +1,241 @@
+{
+  "success": true,
+  "data": {
+    "name": "customers",
+    "physical_table_name": "hmg_studio_customers",
+    "provider_type": "flat_table",
+    "schema_format": "frictionless",
+    "json_schema": {
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "format": "uuid",
+          "constraints": {
+            "required": true
+          }
+        },
+        {
+          "name": "organization_id",
+          "type": "string",
+          "format": "uuid",
+          "constraints": {
+            "required": true
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "constraints": {
+            "required": true,
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "constraints": {
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "company_name",
+          "type": "string",
+          "constraints": {
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "contact_name",
+          "type": "string",
+          "constraints": {
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "constraints": {
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "phone",
+          "type": "string",
+          "constraints": {
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "billing_address",
+          "type": "string"
+        },
+        {
+          "name": "billing_city",
+          "type": "string",
+          "constraints": {
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "billing_state",
+          "type": "string",
+          "constraints": {
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "billing_zip_code",
+          "type": "string",
+          "constraints": {
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "billing_country",
+          "type": "string",
+          "constraints": {
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "shipping_address",
+          "type": "string"
+        },
+        {
+          "name": "shipping_city",
+          "type": "string",
+          "constraints": {
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "shipping_state",
+          "type": "string",
+          "constraints": {
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "shipping_zip_code",
+          "type": "string",
+          "constraints": {
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "shipping_country",
+          "type": "string",
+          "constraints": {
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "tax_id",
+          "type": "string",
+          "constraints": {
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "payment_terms",
+          "type": "string",
+          "constraints": {
+            "maxLength": 255
+          }
+        },
+        {
+          "name": "credit_limit",
+          "type": "number"
+        },
+        {
+          "name": "currency",
+          "type": "string",
+          "default": "USD",
+          "constraints": {
+            "required": true,
+            "maxLength": 3
+          }
+        },
+        {
+          "name": "notes",
+          "type": "string"
+        },
+        {
+          "name": "metadata",
+          "type": "any"
+        },
+        {
+          "name": "is_active",
+          "type": "boolean",
+          "default": true,
+          "constraints": {
+            "required": true
+          }
+        },
+        {
+          "name": "created_at",
+          "type": "datetime"
+        },
+        {
+          "name": "updated_at",
+          "type": "datetime"
+        },
+        {
+          "name": "deleted_at",
+          "type": "datetime"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "erp_a6632e998d87fe1a4956",
+          "fields": [
+            "organization_id",
+            "is_active"
+          ],
+          "unique": false
+        },
+        {
+          "name": "erp_d57e0bf94975108fb9a0",
+          "fields": [
+            "organization_id",
+            "code"
+          ],
+          "unique": true
+        },
+        {
+          "name": "erp_218ecf4a585b27afcf06",
+          "fields": [
+            "organization_id"
+          ]
+        }
+      ],
+      "primaryKey": [
+        "id"
+      ],
+      "foreignKeys": [
+        {
+          "fields": [
+            "organization_id"
+          ],
+          "reference": {
+            "fields": [
+              "id"
+            ],
+            "resource": "hmg_studio_organizations"
+          },
+          "x-actions": {
+            "onDelete": "RESTRICT"
+          }
+        }
+      ],
+      "reverseRelationships": [],
+      "manyToManyRelationships": []
+    },
+    "is_materialized": true,
+    "is_active": true,
+    "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
+    "created_at": "2026-11-06T12:49:07.883811+00:00",
+    "updated_at": "2026-11-06T12:49:08.244644+00:00"
+  }
+}

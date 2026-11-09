@@ -1,0 +1,21 @@
+{
+  "record_id": "41fe0f35-4569-513f-8c19-5c508ba1977e",
+  "check_http": 200,
+  "decisions": [
+    {
+      "resource": {
+        "id": "41fe0f35-4569-513f-8c19-5c508ba1977e",
+        "kind": "datatable:customers",
+        "scope": "insurance_hmg-studio"
+      },
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "create": "EFFECT_ALLOW"
+      }
+    }
+  ],
+  "before_http": 403,
+  "create_http": 403,
+  "readback_http": 403
+}

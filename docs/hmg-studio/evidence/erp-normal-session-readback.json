@@ -1,0 +1,195 @@
+{
+  "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+  "normal_session": true,
+  "tables": {
+    "organizations": {
+      "http": 200,
+      "expected": 1,
+      "found": 1,
+      "all_visible": true,
+      "values_match": true
+    },
+    "product_categories": {
+      "http": 200,
+      "expected": 5,
+      "found": 5,
+      "all_visible": true,
+      "values_match": true
+    },
+    "warehouses": {
+      "http": 200,
+      "expected": 3,
+      "found": 3,
+      "all_visible": true,
+      "values_match": true
+    },
+    "product_locations": {
+      "http": 200,
+      "expected": 3,
+      "found": 3,
+      "all_visible": true,
+      "values_match": true
+    },
+    "customers": {
+      "http": 200,
+      "expected": 3,
+      "found": 3,
+      "all_visible": true,
+      "values_match": true
+    },
+    "suppliers": {
+      "http": 200,
+      "expected": 3,
+      "found": 3,
+      "all_visible": true,
+      "values_match": true
+    },
+    "products": {
+      "http": 200,
+      "expected": 9,
+      "found": 9,
+      "all_visible": true,
+      "values_match": true
+    },
+    "product_location_stocks": {
+      "http": 200,
+      "expected": 8,
+      "found": 8,
+      "all_visible": true,
+      "values_match": true
+    },
+    "stock_adjustments": {
+      "http": 200,
+      "expected": 8,
+      "found": 8,
+      "all_visible": true,
+      "values_match": true
+    },
+    "product_supplier": {
+      "http": 200,
+      "expected": 8,
+      "found": 8,
+      "all_visible": true,
+      "values_match": true
+    },
+    "orders": {
+      "http": 200,
+      "expected": 3,
+      "found": 3,
+      "all_visible": true,
+      "values_match": true
+    },
+    "order_items": {
+      "http": 200,
+      "expected": 3,
+      "found": 3,
+      "all_visible": true,
+      "values_match": true
+    },
+    "purchase_orders": {
+      "http": 200,
+      "expected": 2,
+      "found": 2,
+      "all_visible": true,
+      "values_match": true
+    },
+    "purchase_order_items": {
+      "http": 200,
+      "expected": 2,
+      "found": 2,
+      "all_visible": true,
+      "values_match": true
+    },
+    "stock_transfers": {
+      "http": 200,
+      "expected": 1,
+      "found": 1,
+      "all_visible": true,
+      "values_match": true
+    },
+    "stock_audits": {
+      "http": 200,
+      "expected": 1,
+      "found": 1,
+      "all_visible": true,
+      "values_match": true
+    },
+    "notifications": {
+      "http": 200,
+      "expected": 1,
+      "found": 1,
+      "all_visible": true,
+      "values_match": true
+    },
+    "stock_transfer_items": {
+      "http": 200,
+      "expected": 1,
+      "found": 1,
+      "all_visible": true,
+      "values_match": true
+    },
+    "stock_audit_items": {
+      "http": 200,
+      "expected": 1,
+      "found": 1,
+      "all_visible": true,
+      "values_match": true
+    },
+    "product_components": {
+      "http": 200,
+      "expected": 1,
+      "found": 1,
+      "all_visible": true,
+      "values_match": true
+    },
+    "work_orders": {
+      "http": 200,
+      "expected": 1,
+      "found": 1,
+      "all_visible": true,
+      "values_match": true
+    },
+    "work_order_items": {
+      "http": 200,
+      "expected": 1,
+      "found": 1,
+      "all_visible": true,
+      "values_match": true
+    },
+    "warehouse_reorder_points": {
+      "http": 200,
+      "expected": 2,
+      "found": 2,
+      "all_visible": true,
+      "values_match": true
+    },
+    "saved_reports": {
+      "http": 200,
+      "expected": 1,
+      "found": 1,
+      "all_visible": true,
+      "values_match": false
+    },
+    "activity_logs": {
+      "http": 200,
+      "expected": 1,
+      "found": 0,
+      "all_visible": false,
+      "values_match": false
+    },
+    "shipments": {
+      "http": 200,
+      "expected": 1,
+      "found": 1,
+      "all_visible": true,
+      "values_match": true
+    },
+    "shipment_items": {
+      "http": 200,
+      "expected": 1,
+      "found": 1,
+      "all_visible": true,
+      "values_match": true
+    }
+  }
+}

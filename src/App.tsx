@@ -5,148 +5,135 @@ import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 import {
   ErrorComponent,
   RefineSnackbarProvider,
-  ThemedLayout,
   useNotificationProvider,
 } from "@refinedev/mui";
-import Navkit from '@taruvi/navkit';
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import GlobalStyles from "@mui/material/GlobalStyles";
+import Skeleton from "@mui/material/Skeleton";
+import Typography from "@mui/material/Typography";
 import routerProvider, { DocumentTitleHandler } from "@refinedev/react-router";
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router";
-import { taruviClient } from "./taruviClient";
 import {
   taruviDataProvider,
   taruviAuthProvider,
   taruviStorageProvider,
   taruviAppProvider,
   taruviUserProvider,
-  // taruviAccessControlProvider, // Uncomment to enable Cerbos-based access control
+  taruviAccessControlProvider,
 } from "./providers/refineProviders";
 import { CustomSider, ErrorBoundary, UnsavedChangesDialog } from "./components";
 import { LoginRedirect } from "./components/auth/LoginRedirect";
-import { ColorModeContextProvider, ColorModeContext } from "./contexts/color-mode";
+import { ColorModeContextProvider } from "./contexts/color-mode";
 import {AppSettingsProvider, useAppSettings} from "./contexts/app-settings";
-import { useContext, useRef, useEffect } from "react";
 import { Home } from "./pages/home";
+import { AccountPreferences } from "./pages/account";
+import { Categories } from "./pages/categories";
+import CategoryRoundedIcon from "@mui/icons-material/CategoryRounded";
 import { Login } from "./pages/login";
-import { useNavkitProfileMenuItems } from "./navkit/useNavkitProfileMenuItems";
+import { ErpWorkspaceHeader } from "./components/ErpWorkspaceHeader";
+import { ERP_SIDEBAR_WIDTH } from "./components/sidenav/MuiSidenav";
+import { ERP_MODULES, buildErpResources } from "./erp/modules";
+import { ErpModulePage } from "./pages/erp";
 
-const AppContent = () => {
-  const { setMode } = useContext(ColorModeContext);
-  const navRef = useRef<HTMLDivElement>(null);
+// Mount only after the existing auth provider has validated the session.
+const AuthenticatedLayout = () => {
   const { settings } = useAppSettings();
-  const profileMenuItems = useNavkitProfileMenuItems();
-
-  useEffect(() => {
-    if (navRef.current) {
-      const height = navRef.current.offsetHeight;
-      document.documentElement.style.setProperty('--nav-height', `${height}px`);
-    }
-  }, []);
-
   return (
     <>
-      <div
-        ref={navRef}
-        data-nav-container
-        style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 1300,
-          width: '100%',
-        }}
-      >
-        <Navkit
-          client={taruviClient}
-          getTheme={(theme) => setMode(theme)}
-          profileMenuItems={profileMenuItems}
-        />
-      </div>
-      <RefineSnackbarProvider>
-            <DevtoolsProvider>
-              <Refine
-                dataProvider={{
-                  default: taruviDataProvider,
-                  storage: taruviStorageProvider,
-                  app: taruviAppProvider,
-                  user: taruviUserProvider,
-                }}
-                notificationProvider={useNotificationProvider}
-                routerProvider={routerProvider}
-                authProvider={taruviAuthProvider}
-                // accessControlProvider={taruviAccessControlProvider} // Uncomment to enable Cerbos-based access control
-                resources={[
-                  // Add your resources here
-                ]}
-                options={{
-                  syncWithLocation: true,
-                  warnWhenUnsavedChanges: true,
-                  projectId: "obEpHJ-M7JimA-31GF1J",
-                }}
-              >
-                <Routes>
-                  <Route
-                    element={
-                      <Authenticated
-                        key="login-route"
-                        fallback={<Outlet />}
-                      >
-                        <Navigate to="/" replace />
-                      </Authenticated>
-                    }
-                  >
-                    <Route path="/login" element={<Login />} />
-                  </Route>
-                  <Route
-                    element={
-                      <Authenticated
-                        key="authenticated-inner"
-                        fallback={<LoginRedirect />}
-                      >
-                        <ThemedLayout
-                          Header={() => null}
-                          Sider={CustomSider}
-                          initialSiderCollapsed={true}
-                          childrenBoxProps={{ sx: { p: 0 } }}
-                        >
-                          <Box sx={{ ml: { xs: 0, md: '72px' }, transition: 'margin-left 0.2s ease-in-out' }}>
-                            <ErrorBoundary>
-                              <Outlet />
-                            </ErrorBoundary>
-                          </Box>
-                        </ThemedLayout>
-                      </Authenticated>
-                    }
-                  >
-                    <Route index element={<Home />} />
-                    <Route path="*" element={<ErrorComponent />} />
-                  </Route>
-                </Routes>
-
-                <RefineKbar />
-                <UnsavedChangesDialog />
-                <DocumentTitleHandler handler={() => settings?.displayName || ""}/>
-              </Refine>
-              <DevtoolsPanel />
-            </DevtoolsProvider>
-          </RefineSnackbarProvider>
+      <CustomSider />
+      <Box sx={{ ml: { xs: 0, md: `${ERP_SIDEBAR_WIDTH}px` }, minWidth: 0 }}>
+        <ErpWorkspaceHeader />
+        <ErrorBoundary><Outlet /></ErrorBoundary>
+      </Box>
+      <RefineKbar />
+      <UnsavedChangesDialog />
+      <DocumentTitleHandler handler={() => settings?.displayName || ""} />
     </>
   );
 };
+
+const SessionLoading = () => (
+  <Box role="status" aria-label="Checking session" sx={{ p: 3 }}>
+    <Skeleton variant="rounded" height={56} />
+    <Typography variant="body2" sx={{ mt: 2 }}>Checking session...</Typography>
+  </Box>
+);
+
+const AppContent = () => (
+  <RefineSnackbarProvider>
+    <DevtoolsProvider>
+      <Refine
+        dataProvider={{
+          default: taruviDataProvider,
+          storage: taruviStorageProvider,
+          app: taruviAppProvider,
+          user: taruviUserProvider,
+        }}
+        notificationProvider={useNotificationProvider}
+        routerProvider={routerProvider}
+        authProvider={taruviAuthProvider}
+        accessControlProvider={taruviAccessControlProvider}
+        resources={buildErpResources()}
+        options={{
+          syncWithLocation: true,
+          warnWhenUnsavedChanges: true,
+          projectId: "obEpHJ-M7JimA-31GF1J",
+        }}
+      >
+        <Routes>
+          <Route
+            element={
+              <Authenticated key="login-route" fallback={<Outlet />} loading={<SessionLoading />}>
+                <Navigate to="/" replace />
+              </Authenticated>
+            }
+          >
+            <Route path="/login" element={<Login />} />
+          </Route>
+          <Route
+            element={
+              <Authenticated
+                key="authenticated-inner"
+                fallback={<LoginRedirect />}
+                loading={<SessionLoading />}
+              >
+                <AppSettingsProvider>
+                  <AuthenticatedLayout />
+                </AppSettingsProvider>
+              </Authenticated>
+            }
+          >
+            <Route index element={<Home />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/settings/account" element={<AccountPreferences />} />
+            {ERP_MODULES.filter(module => !["dashboard","categories","account"].includes(module.key)).map(module => (
+              <Route key={module.key}>
+                <Route path={module.path} element={<ErpModulePage moduleKey={module.key} action="list" />} />
+                <Route path={`${module.path}/create`} element={<ErpModulePage moduleKey={module.key} action="create" />} />
+                <Route path={`${module.path}/show/:id`} element={<ErpModulePage moduleKey={module.key} action="show" />} />
+                <Route path={`${module.path}/edit/:id`} element={<ErpModulePage moduleKey={module.key} action="edit" />} />
+              </Route>
+            ))}
+            <Route path="*" element={<ErrorComponent />} />
+          </Route>
+        </Routes>
+      </Refine>
+      <DevtoolsPanel />
+    </DevtoolsProvider>
+  </RefineSnackbarProvider>
+);
 
 function App() {
   return (
     <BrowserRouter>
       <RefineKbarProvider>
         <ColorModeContextProvider>
-          <AppSettingsProvider>
             <CssBaseline />
             <GlobalStyles
               styles={{
                 html: { WebkitFontSmoothing: 'antialiased' },
                 body: { fontFamily: "'Open Sans', sans-serif" },
-                'h1, h2, h3, h4, h5, h6': { fontFamily: "'Quicksand', sans-serif" },
                 '*::-webkit-scrollbar': { width: 8, height: 8 },
                 '*::-webkit-scrollbar-track': { background: 'transparent' },
                 '*::-webkit-scrollbar-thumb': {
@@ -160,7 +147,6 @@ function App() {
               }}
             />
             <AppContent />
-          </AppSettingsProvider>
         </ColorModeContextProvider>
       </RefineKbarProvider>
     </BrowserRouter>

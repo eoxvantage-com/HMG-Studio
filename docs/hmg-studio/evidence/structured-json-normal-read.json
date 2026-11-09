@@ -1,0 +1,36 @@
+{
+  "saved_reports": {
+    "http": 200,
+    "id": "00bff3cd-654c-5330-95c5-10728e7fbf4c",
+    "typed_values": {
+      "columns_json": [
+        "name",
+        "sku",
+        "stock",
+        "type"
+      ],
+      "filters_json": {
+        "items": []
+      },
+      "sort_json": {
+        "field": "name",
+        "direction": "asc"
+      }
+    },
+    "all_payload_fields_equal_without_normalization": true,
+    "typed_values_match": true
+  },
+  "activity_logs": {
+    "http": 200,
+    "id": "4c58cf88-ba30-531a-ad21-c2fe5de13805",
+    "typed_values": {
+      "properties_json": {
+        "purpose": "Read-only sample activity; not a business event.",
+        "synthetic": true
+      }
+    },
+    "all_payload_fields_equal_without_normalization": false,
+    "typed_values_match": true,
+    "raw_comparison_note": "Native created_at/updated_at timestamp strings use a different serialization from input; typed JSON values match exactly."
+  }
+}

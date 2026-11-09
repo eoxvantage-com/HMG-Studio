@@ -1,0 +1,65 @@
+{
+  "recorded_at": "2026-11-06T20:14:18.657902+00:00",
+  "app": "hmg-studio",
+  "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+  "plan_sha256": "13250048933896f8cf3e97211b24fa9e1d242ad919d0f7493e1589a5da9efdc4",
+  "policy_sha256": "27327cc1ea8e133d88af2354cd1c98ba95428bb36143eff1998ecfd067940f5e",
+  "business_counts": {
+    "orders": 16,
+    "purchase_orders": 10,
+    "return_orders": 4,
+    "stock_adjustments": 8,
+    "stock_transfers": 4,
+    "work_orders": 4,
+    "order_payments": 14
+  },
+  "business_count": 60,
+  "support_counts": {
+    "customers": 6,
+    "suppliers": 3,
+    "products": 6,
+    "product_components": 2,
+    "product_supplier": 4,
+    "order_items": 16,
+    "purchase_order_items": 10,
+    "return_order_items": 4,
+    "stock_transfer_items": 4,
+    "work_order_items": 4,
+    "work_order_outputs": 4,
+    "product_location_stocks": 12
+  },
+  "support_count": 75,
+  "create_attempts": 135,
+  "publication_attempts": 6,
+  "verified_rows": 135,
+  "published_product_ids": [
+    "674791b7-19c6-5098-be9a-5154e7a8a421",
+    "a4c9848d-b4e0-5710-8a84-8153599ce0fc",
+    "3b609029-5b0a-57c4-95de-cdf2df54b94f",
+    "f949147a-8c25-5ce2-a9c6-5db6a1b8ebd7",
+    "99a10c63-b0a1-5fdd-916f-da4eacf788a0",
+    "f2e984e0-7a5b-54e0-93da-0b2e04d14b61"
+  ],
+  "policy_tables": [
+    "product_supplier",
+    "product_components",
+    "order_items",
+    "purchase_order_items",
+    "return_order_items",
+    "stock_transfer_items",
+    "work_order_items"
+  ],
+  "write_replays": 0,
+  "failures": [],
+  "exit_code": 0,
+  "synthetic_historical_snapshots": true,
+  "workflow_execution_verified": false,
+  "ordinary_session_verification": "Parent orchestration owns separate proof",
+  "physical_database_triggers": "Unverified; fresh platform event subscriptions empty before staging and before publication",
+  "evidence": [
+    "historical-60-import.json",
+    "historical-60-policies.json",
+    "historical-60-python-verification.json",
+    "historical-60-trigger-audit.json"
+  ]
+}

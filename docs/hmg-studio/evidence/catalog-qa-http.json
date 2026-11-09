@@ -1,0 +1,82 @@
+[
+  {
+    "check": "unfiltered_organizations",
+    "status": 200,
+    "envelope_keys": [
+      "status",
+      "message",
+      "data",
+      "total",
+      "debug"
+    ]
+  },
+  {
+    "check": "unfiltered_categories_before",
+    "status": 200,
+    "envelope_keys": [
+      "status",
+      "message",
+      "data",
+      "total",
+      "debug"
+    ]
+  },
+  {
+    "check": "create_A",
+    "status": 201,
+    "envelope_keys": [
+      "status",
+      "message",
+      "data",
+      "total"
+    ]
+  },
+  {
+    "check": "read_A",
+    "status": 200,
+    "envelope_keys": [
+      "status",
+      "message",
+      "data"
+    ]
+  },
+  {
+    "check": "edit_A",
+    "status": 200,
+    "envelope_keys": [
+      "status",
+      "message",
+      "data"
+    ]
+  },
+  {
+    "check": "read_B",
+    "status": 403,
+    "envelope_keys": [
+      "status",
+      "message",
+      "code"
+    ],
+    "error": "{'status': 'error', 'message': 'You do not have permission to access this record', 'code': 'FORBIDDEN'}"
+  },
+  {
+    "check": "edit_B",
+    "status": 403,
+    "envelope_keys": [
+      "status",
+      "message",
+      "code",
+      "detail"
+    ],
+    "error": "{'status': 'error', 'message': 'Update denied', 'code': 'FORBIDDEN', 'detail': 'You do not have permission to update this record'}"
+  },
+  {
+    "check": "move_A_to_B",
+    "status": 200,
+    "envelope_keys": [
+      "status",
+      "message",
+      "data"
+    ]
+  }
+]

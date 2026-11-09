@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "async": false,
+  "result": {
+    "ok": true,
+    "currency": "INR",
+    "generated_at": "2026-11-06T13:22:58.716753+00:00",
+    "product_count": 0,
+    "category_count": 2,
+    "location_count": 0,
+    "inventory_value": "0.00",
+    "pending_orders": 0,
+    "order_count": 0,
+    "revenue_month": "0.00",
+    "receivables": "0.00",
+    "stock_by_category": [],
+    "low_stock": [],
+    "low_stock_count": 0,
+    "recent_orders": [],
+    "recent_products": [],
+    "scope": "Caller-visible records; selected currency; non-deleted active products. Revenue uses shipped/delivered orders in the current UTC month.",
+    "limitations": [
+      "Warehouse-specific projection and widget preferences are not yet implemented.",
+      "Projection refuses datasets over 2000 rows rather than returning partial totals.",
+      "Naive native timestamps are interpreted as UTC; products without creation dates sort last."
+    ]
+  }
+}

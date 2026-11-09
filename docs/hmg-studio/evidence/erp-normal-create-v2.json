@@ -1,0 +1,49 @@
+{
+  "actor": "qa_hmg_inbox_20261106",
+  "payload": {
+    "id": "f15e3497-390d-5287-ac10-d8653cad1823",
+    "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+    "name": "Synthetic normal-role customer",
+    "code": "SYN-CRUD-002",
+    "email": "crud2@example.invalid",
+    "currency": "INR",
+    "is_active": true,
+    "notes": "SYNTHETIC HMG TEST DATA - not a real transaction or contact."
+  },
+  "check_http": 200,
+  "check": {
+    "request_id": "c315d0a4-7083-42e9-a6dd-265681df0c45",
+    "results": [
+      {
+        "resource": {
+          "id": "f15e3497-390d-5287-ac10-d8653cad1823",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "update": "EFFECT_DENY",
+          "delete": "EFFECT_DENY",
+          "read": "EFFECT_DENY",
+          "create": "EFFECT_DENY"
+        }
+      }
+    ],
+    "cerbos_call_id": "01M6RXK6YP4T0JZV6R4MNVYRDB"
+  },
+  "create_http": 403,
+  "response": {
+    "status": "error",
+    "message": "Permission denied: not authorized to create records",
+    "code": "FORBIDDEN"
+  },
+  "request_id": null,
+  "readback": {
+    "http": 403,
+    "body": {
+      "status": "error",
+      "message": "Forbidden",
+      "code": "FORBIDDEN",
+      "detail": "You do not have permission to access this resource"
+    }
+  }
+}

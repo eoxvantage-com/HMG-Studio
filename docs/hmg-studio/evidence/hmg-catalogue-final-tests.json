@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-11-06T18:56:07.855447+00:00",
+  "command": "python -m pytest backend/tests/test_hmg_catalogue.py backend/tests/test_hmg_catalogue_media.py backend/tests/test_hmg_catalogue_media_links.py -q",
+  "passed": 73,
+  "exit_code": 0,
+  "duration_seconds": 0.33,
+  "catalogue_tests": 34,
+  "media_copy_tests": 19,
+  "image_link_tests": 20,
+  "independent_code_review": "visual_revamp cleared media and image-link helpers",
+  "normal_user_crud_proven": false,
+  "atomic_storage_collision_protection_proven": false,
+  "atomic_image_patch_compare_and_swap_proven": false
+}

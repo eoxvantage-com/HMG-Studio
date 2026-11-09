@@ -1,0 +1,106 @@
+{
+  "app": "hmg-studio",
+  "site": "insurance",
+  "started_at": "2026-11-07T05:36:17.740298+00:00",
+  "archive_sha256": "3e48fb804d199a58e93d53502c7d82866ec23878c228715417d09fe396d3b594",
+  "uploaded": true,
+  "activated": true,
+  "verified": true,
+  "preflight_workers": 32,
+  "existing_studio_worker": false,
+  "excluded_customer_worker": [
+    {
+      "uuid": "916ee02e-4943-4ce6-9a6f-4f2049bfda4b",
+      "name": "HMG Stones",
+      "slug": "hmgstones",
+      "app": "hmg_stones",
+      "active_build_uuid": "664ceedb-d98c-43a0-88ef-62dbee774630"
+    }
+  ],
+  "phase": "verified",
+  "upload_status": 201,
+  "response_keys": [
+    "uuid",
+    "name",
+    "slug",
+    "subdomain",
+    "web_url",
+    "app",
+    "app_name",
+    "latest_build",
+    "active_build_info",
+    "active_build_uuid",
+    "created_by",
+    "modified_by",
+    "created_at",
+    "updated_at"
+  ],
+  "worker": {
+    "uuid": "8ecb3cf2-01bd-4383-b034-afc1fb279889",
+    "name": "hmg-studio",
+    "slug": "hmg-studio",
+    "app": "hmg-studio",
+    "subdomain": "hmg-studio",
+    "web_url": "https://hmg-studio.taruvibase.app/",
+    "active_build_uuid": "38068a60-226a-4658-8e08-8591fa18bde4",
+    "latest_build": {
+      "uuid": "38068a60-226a-4658-8e08-8591fa18bde4",
+      "title": "HMG Studio operational workspace",
+      "status": "completed",
+      "uploaded_at": "2026-11-07T05:36:24.382512Z"
+    },
+    "active_build_info": {
+      "uuid": "38068a60-226a-4658-8e08-8591fa18bde4",
+      "title": "HMG Studio operational workspace",
+      "status": "completed",
+      "uploaded_at": "2026-11-07T05:36:24.382512Z"
+    }
+  },
+  "active_build_uuid": "38068a60-226a-4658-8e08-8591fa18bde4",
+  "url": "https://hmg-studio.taruvibase.app/",
+  "activation_note": "Create endpoint auto-activated despite set_active=false; exact active build verified by slug GET. UUID detail URL returned404; no activation mutation or upload replay.",
+  "customer_app_unchanged": true,
+  "http_checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "index_hash_matches": true
+    },
+    {
+      "path": "orders",
+      "status": 200,
+      "index_hash_matches": true
+    },
+    {
+      "path": "inventory",
+      "status": 200,
+      "index_hash_matches": true
+    },
+    {
+      "path": "reports",
+      "status": 200,
+      "index_hash_matches": true
+    },
+    {
+      "path": "users",
+      "status": 200,
+      "index_hash_matches": true
+    },
+    {
+      "path": "assets/index-BxLdldLr.css",
+      "status": 200,
+      "asset_hash_matches": true
+    },
+    {
+      "path": "assets/index-LRarUnbZ.js",
+      "status": 200,
+      "asset_hash_matches": true
+    },
+    {
+      "path": "brand/hmg-stones-logo.webp",
+      "status": 200,
+      "asset_hash_matches": true
+    }
+  ],
+  "browser_verified": false
+}

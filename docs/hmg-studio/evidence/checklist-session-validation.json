@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-06",
+  "scope": "Current local worktree; not deployment or full app acceptance",
+  "commands": [
+    {
+      "command": "npm.cmd test -- --reporter=dot",
+      "exit_code": 1,
+      "passed": 39,
+      "failed": 9,
+      "note": "Known RED scaffolds: src/services/catalog.test.ts (4), src/pages/categories/index.test.tsx (5). Not ignored or skipped."
+    },
+    {
+      "command": "python -X utf8 -m pytest backend/tests -q",
+      "exit_code": 0,
+      "passed": 35,
+      "failed": 0
+    },
+    {
+      "command": "npm.cmd run typecheck",
+      "exit_code": 0,
+      "note": "Frontend and Vite configuration typechecks."
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "note": "No whitespace errors; Windows line-ending warnings only."
+    }
+  ],
+  "shipping_status": "BLOCKED: catalog not implemented/registered; security gates unresolved; browser acceptance not run"
+}

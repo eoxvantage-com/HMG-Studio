@@ -176,11 +176,17 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
   return {
+    // Expose only the explicit public settings below. Legacy VITE_* variables
+    // may contain server credentials and must not enter import.meta.env.
+    envPrefix: [],
     define: {
       __TARUVI_SITE_URL__: JSON.stringify(env.TARUVI_SITE_URL ?? ""),
       __TARUVI_APP_SLUG__: JSON.stringify(env.TARUVI_APP_SLUG ?? ""),
-      __TARUVI_API_KEY__: JSON.stringify(env.TARUVI_API_KEY ?? ""),
       __TARUVI_APP_TITLE__: JSON.stringify(env.TARUVI_APP_TITLE ?? ""),
+      // Preserve the existing non-secret, opt-in browser error capture flag.
+      "import.meta.env.VITE_ENABLE_CLIENT_LOGGER": JSON.stringify(
+        env.VITE_ENABLE_CLIENT_LOGGER === "true" ? "true" : "false",
+      ),
     },
     plugins: [react(), createClientLogPlugin()],
     optimizeDeps: {

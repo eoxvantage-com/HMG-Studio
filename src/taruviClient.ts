@@ -3,7 +3,6 @@ import { Client } from "@taruvi/sdk";
 // Validate required environment variables
 const requiredEnvVars = {
   TARUVI_SITE_URL: __TARUVI_SITE_URL__,
-  TARUVI_API_KEY: __TARUVI_API_KEY__,
   TARUVI_APP_SLUG: __TARUVI_APP_SLUG__,
 };
 
@@ -18,8 +17,8 @@ Object.entries(requiredEnvVars).forEach(([key, value]) => {
 
 /**
  * Taruvi Client instance configured with environment variables.
- * Participant-facing setup uses TARUVI_* variables injected into the client
- * build through Vite configuration.
+ * Only public site/app settings are injected through Vite. Browser requests
+ * authenticate as the signed-in user; privileged API keys stay server-side.
  * Used for Navkit, DataProviders, and direct SDK operations.
  *
  * @example
@@ -36,7 +35,7 @@ Object.entries(requiredEnvVars).forEach(([key, value]) => {
 export const taruviClient = (() => {
   try {
     return new Client({
-      apiKey: __TARUVI_API_KEY__,
+      authMode: "session",
       appSlug: __TARUVI_APP_SLUG__,
       apiUrl: __TARUVI_SITE_URL__,
     });

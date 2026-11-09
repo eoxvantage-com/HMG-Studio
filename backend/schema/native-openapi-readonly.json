@@ -1,0 +1,2938 @@
+{
+  "checked_at": "2026-11-06T18:17:34.420507+00:00",
+  "source": "https://insurance.taruvi.cloud/api/schema/",
+  "info": {
+    "title": "Taruvi API",
+    "version": "1.0.0",
+    "description": "Unified API documentation combining Django REST Framework and Django Ninja endpoints.\n\nEnterprise Django SaaS Platform API"
+  },
+  "paths": {
+    "/api/apps/{slug}/reflect/": {
+      "post": {
+        "operationId": "apps_reflect_create",
+        "description": "Comprehensively reflect database tables with ALL Taruvi features.\n\nPOST /api/apps/{slug}/reflect/\n\nDiscovers existing physical tables by prefix pattern ({app_name}_{table_name})\nand reverse-engineers their complete Frictionless schemas including:\n\n**Detected Features**:\n- Hierarchy/graph relationships (edges tables with edge types)\n- Custom indexes (GIN, GiST, partial, expression indexes, operator classes)\n- Foreign key relationships (from table structure)\n- Reverse relationships (hasMany - scans all tables)\n- Many-to-many relationships (detects junction tables)\n- Constraints (CHECK for enums, UNIQUE)\n- Metadata (PostgreSQL column comments as field descriptions)\n\n**Query Parameters**:\n- `replace_existing` (bool): Replace existing DataTable schemas (default: true)\n- `preserve_metadata` (bool): Preserve custom x-* properties from existing schemas (default: true)\n\n**Returns**:\n{\n    \"success\": true,\n    \"data\": {\n        \"discovered\": 5,\n        \"tables_created\": 2,\n        \"tables_updated\": 3,\n        \"details\": [\n            {\n                \"table\": \"myapp_users\",\n                \"action\": \"updated\",\n                \"datatable_id\": 123,\n                \"field_count\": 12\n            }\n        ]\n    },\n    \"message\": \"Comprehensively reflected 5 tables for app 'My App'\"\n}\n\n**Example**:\n    POST /api/apps/myapp/reflect/\n    POST /api/apps/myapp/reflect/?replace_existing=true&preserve_metadata=true",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "schema": {
+              "type": "string",
+              "description": "URL-safe identifier (auto-generated from name)"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          "apps"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppRequest"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/AppRequest"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/AppRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "security": [
+          {
+            "jwtAuth": []
+          },
+          {
+            "knoxApiToken": []
+          },
+          {
+            "cookieAuth": []
+          },
+          {
+            "tokenAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/App"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/apps/{app_slug}/datatables/": {
+      "get": {
+        "operationId": "apps_datatables_list",
+        "description": "List all datatables for an app",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "ordering",
+            "required": false,
+            "in": "query",
+            "description": "Which field to use when ordering the results.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "A page number within the paginated result set.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page_size",
+            "required": false,
+            "in": "query",
+            "description": "Number of results to return per page.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "search",
+            "required": false,
+            "in": "query",
+            "description": "A search term.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "apps"
+        ],
+        "security": [
+          {
+            "jwtAuth": []
+          },
+          {
+            "knoxApiToken": []
+          },
+          {
+            "cookieAuth": []
+          },
+          {
+            "tokenAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedDataTableListList"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "operationId": "apps_datatables_create",
+        "description": "ViewSet for datatables across all datasources for an app\nEndpoint: /api/apps/{app_slug}/datatables/\n\nAll schema/metadata operations on this viewset require cloud or org-admin access.\nRow data CRUD lives on the Ninja ``/data/`` routes and is authorized separately.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          "apps"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTableRequest"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTableRequest"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTableRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "security": [
+          {
+            "jwtAuth": []
+          },
+          {
+            "knoxApiToken": []
+          },
+          {
+            "cookieAuth": []
+          },
+          {
+            "tokenAuth": []
+          }
+        ],
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataTable"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/apps/{app_slug}/datatables/import-reference/": {
+      "post": {
+        "operationId": "apps_datatables_import_reference_create",
+        "description": "Create reference(s) to datatable(s) from another app.\n\nSupports both single and bulk operations.\n\n**Single reference:**\nPOST /api/apps/{target_app}/datatables/import-reference/\n{\n    \"source_app_slug\": \"app1\",\n    \"source_table_name\": \"customers\",\n    \"reference_name\": \"customers\"  // Optional\n}\n\n**Bulk references:**\nPOST /api/apps/{target_app}/datatables/import-reference/\n[\n    {\n        \"source_app_slug\": \"app1\",\n        \"source_table_name\": \"customers\",\n        \"reference_name\": \"customers\"\n    },\n    {\n        \"source_app_slug\": \"app1\",\n        \"source_table_name\": \"products\"\n    }\n]\n\nSource table info stored in:\n- Database: source_datatable FK field\n- JSON schema markers:\n  - x-reference-table: true\n  - x-source-app: \"app1\"\n  - x-source-table: \"customers\"",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          "apps"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTableListRequest"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTableListRequest"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTableListRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "security": [
+          {
+            "jwtAuth": []
+          },
+          {
+            "knoxApiToken": []
+          },
+          {
+            "cookieAuth": []
+          },
+          {
+            "tokenAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataTableList"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/apps/{app_slug}/datatables/create_schema/": {
+      "post": {
+        "operationId": "apps_datatables_create_schema_create",
+        "description": "Create or update multiple DataTables from a Frictionless Data Package (UPSERT).\n\nThis endpoint is idempotent - it can be called multiple times with the same schema.\n- If table doesn't exist: Creates new DataTable with auto-materialization\n- If table exists: Updates schema using incremental migrations (ADD/DROP/ALTER columns)\n\nAccepts a Data Package with multiple table resources. Defaults to 'flat_table'\nprovider type unless specified in each resource.\n\nUses Alembic Operations API with topological sorting to handle foreign key\ndependencies intelligently. Tables are created/updated in dependency order.\n\nPOST /api/apps/{app_slug}/datatables/create_schema/\nPOST /api/apps/{app_slug}/datatables/create_schema/?materialize=true\n\nRequest Body (Frictionless Data Package format):\n{\n    \"name\": \"my_package\",\n    \"title\": \"My Package\",\n    \"description\": \"Package description\",\n    \"resources\": [\n        {\n            \"name\": \"users\",\n            \"schema\": {\n                \"fields\": [\n                    {\"name\": \"id\", \"type\": \"integer\"},\n                    {\"name\": \"name\", \"type\": \"string\"}\n                ],\n                \"primaryKey\": [\"id\"]\n            },\n            \"provider_type\": \"flat_table\"  # Optional, defaults to flat_table\n        },\n        {\n            \"name\": \"posts\",\n            \"schema\": {\n                \"fields\": [\n                    {\"name\": \"id\", \"type\": \"integer\"},\n                    {\"name\": \"user_id\", \"type\": \"integer\"},\n                    {\"name\": \"content\", \"type\": \"string\"}\n                ],\n                \"primaryKey\": [\"id\"],\n                \"foreignKeys\": [\n                    {\n                        \"fields\": [\"user_id\"],\n                        \"reference\": {\n                            \"resource\": \"users\",\n                            \"fields\": [\"id\"]\n                        }\n                    }\n                ]\n            }\n        }\n    ]\n}\n\nResponse:\n{\n    \"created_count\": 1,\n    \"updated_count\": 1,\n    \"error_count\": 0,\n    \"created_tables\": [\n        {\n            \"id\": 1,\n            \"name\": \"users\",\n            \"physical_table_name\": \"myapp_users\",\n            \"provider_type\": \"flat_table\",\n            \"is_materialized\": true,\n            \"field_count\": 2\n        }\n    ],\n    \"updated_tables\": [\n        {\n            \"id\": 2,\n            \"name\": \"posts\",\n            \"physical_table_name\": \"myapp_posts\",\n            \"provider_type\": \"flat_table\",\n            \"is_materialized\": true,\n            \"field_count\": 3\n        }\n    ],\n    \"errors\": []\n}\n\nNote: Tables are processed in dependency order, so parent tables are always\ncreated/updated before child tables with foreign keys.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          "apps"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTableListRequest"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTableListRequest"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTableListRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "security": [
+          {
+            "jwtAuth": []
+          },
+          {
+            "knoxApiToken": []
+          },
+          {
+            "cookieAuth": []
+          },
+          {
+            "tokenAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataTableList"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/apps/{app_slug}/datatables/schemas/": {
+      "get": {
+        "operationId": "apps_datatables_schemas_retrieve",
+        "description": "Get database schemas for all tables in the app as a Data Package.\n\nReturns stored schemas from DataTable.json_schema for all tables\nbelonging to this app. This ensures:\n- No duplicates (only tables for current app)\n- No cross-app pollution (system tables from other apps excluded)\n- Better performance (no full database introspection)\n- Accurate representation of app's tables including references\n\nReturns:\n    Frictionless Data Package with metadata",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          "apps"
+        ],
+        "security": [
+          {
+            "jwtAuth": []
+          },
+          {
+            "knoxApiToken": []
+          },
+          {
+            "cookieAuth": []
+          },
+          {
+            "tokenAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataTableList"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/apps/{app_slug}/datatables/stats/": {
+      "get": {
+        "operationId": "apps_datatables_stats_retrieve",
+        "description": "Get aggregate statistics for all datatables in the app",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          "apps"
+        ],
+        "security": [
+          {
+            "jwtAuth": []
+          },
+          {
+            "knoxApiToken": []
+          },
+          {
+            "cookieAuth": []
+          },
+          {
+            "tokenAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataTableList"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/apps/{app_slug}/datatables/{name}/": {
+      "patch": {
+        "operationId": "apps_datatables_partial_update",
+        "description": "Prevent schema edits on system tables.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string",
+              "description": "Table/collection name (used in API URLs)"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          "apps"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatchedDataTableRequest"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/PatchedDataTableRequest"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/PatchedDataTableRequest"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwtAuth": []
+          },
+          {
+            "knoxApiToken": []
+          },
+          {
+            "cookieAuth": []
+          },
+          {
+            "tokenAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataTable"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "operationId": "apps_datatables_destroy",
+        "description": "Delete a datatable - prevents deletion of system tables",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string",
+              "description": "Table/collection name (used in API URLs)"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          "apps"
+        ],
+        "security": [
+          {
+            "jwtAuth": []
+          },
+          {
+            "knoxApiToken": []
+          },
+          {
+            "cookieAuth": []
+          },
+          {
+            "tokenAuth": []
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No response body"
+          }
+        }
+      },
+      "put": {
+        "operationId": "apps_datatables_update",
+        "description": "Prevent schema edits on system tables.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string",
+              "description": "Table/collection name (used in API URLs)"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          "apps"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTableRequest"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTableRequest"
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTableRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "security": [
+          {
+            "jwtAuth": []
+          },
+          {
+            "knoxApiToken": []
+          },
+          {
+            "cookieAuth": []
+          },
+          {
+            "tokenAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataTable"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "get": {
+        "operationId": "apps_datatables_retrieve",
+        "description": "ViewSet for datatables across all datasources for an app\nEndpoint: /api/apps/{app_slug}/datatables/\n\nAll schema/metadata operations on this viewset require cloud or org-admin access.\nRow data CRUD lives on the Ninja ``/data/`` routes and is authorized separately.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string",
+              "description": "Table/collection name (used in API URLs)"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          "apps"
+        ],
+        "security": [
+          {
+            "jwtAuth": []
+          },
+          {
+            "knoxApiToken": []
+          },
+          {
+            "cookieAuth": []
+          },
+          {
+            "tokenAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataTableList"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/apps/{app_slug}/datatables/{name}/operation-history/": {
+      "get": {
+        "operationId": "apps_datatables_operation_history_retrieve",
+        "description": "Get operation history for a table.\n\nReturns list of schema operations (CREATE TABLE, ALTER TABLE)\nperformed on this table, including:\n- Operation details and status\n- Executed SQL and rollback SQL\n- Timing information\n- Error messages if failed\n\nQuery Parameters:\n- status: Filter by status (pending, in_progress, success, failed, rolled_back)\n- limit: Max number of operations to return (default: 20)\n- offset: Pagination offset (default: 0)\n\nReturns:\n{\n    \"count\": 15,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"revision_id\": \"abc123...\",\n            \"operation_type\": \"alter_table\",\n            \"status\": \"success\",\n            \"alembic_operations\": [...],\n            \"executed_sql\": \"...\",\n            \"rollback_sql\": \"...\",\n            \"started_at\": \"2025-01-15T10:30:00Z\",\n            \"completed_at\": \"2025-01-15T10:30:02Z\",\n            \"duration_seconds\": 2.1,\n            \"error_message\": null,\n            \"can_rollback\": true\n        },\n        ...\n    ]\n}\n\nExample:\n    GET /api/apps/myapp/datatables/users/operation-history/?status=success&limit=10",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "type": "string",
+              "description": "Table/collection name (used in API URLs)"
+            },
+            "required": true
+          }
+        ],
+        "tags": [
+          "apps"
+        ],
+        "security": [
+          {
+            "jwtAuth": []
+          },
+          {
+            "knoxApiToken": []
+          },
+          {
+            "cookieAuth": []
+          },
+          {
+            "tokenAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataTableList"
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/apps/{app_slug}/datatables/reflect": {
+      "post": {
+        "operationId": "cloud_site_data_api_routers_data_reflect_datatables",
+        "summary": "Reflect Datatables",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "title": "App Slug",
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReflectSchemaResponse"
+                }
+              }
+            }
+          }
+        },
+        "description": "Reflect schema changes from the database into DataTable records.\n\nScopes:\n- app: reflect all tables in the app (default)\n- table: reflect a single table (requires table_name)",
+        "tags": [
+          "Data Tables"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReflectSchemaRequest"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/api/apps/{app_slug}/datatables/{name}/data/": {
+      "get": {
+        "operationId": "cloud_site_data_api_routers_data_list_data",
+        "summary": "List table data",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "title": "App Slug",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "format",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Response format: 'flat' (default), 'tree', or 'graph'",
+              "title": "Format"
+            },
+            "required": false,
+            "description": "Response format: 'flat' (default), 'tree', or 'graph'"
+          },
+          {
+            "in": "query",
+            "name": "relationship_type",
+            "schema": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Relationship types to filter by (OR logic). Works with tree/graph formats and include parameter. Examples: ['manager'], ['manager', 'dotted_line']",
+              "title": "Relationship Type"
+            },
+            "required": false,
+            "description": "Relationship types to filter by (OR logic). Works with tree/graph formats and include parameter. Examples: ['manager'], ['manager', 'dotted_line']"
+          },
+          {
+            "in": "query",
+            "name": "graph_types",
+            "schema": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "deprecated": true,
+              "description": "DEPRECATED: Use 'relationship_type' instead. Relationship types for graph format.",
+              "title": "Graph Types"
+            },
+            "required": false,
+            "description": "DEPRECATED: Use 'relationship_type' instead. Relationship types for graph format.",
+            "deprecated": true
+          },
+          {
+            "in": "query",
+            "name": "include",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include related nodes: 'descendants', 'ancestors', 'both'",
+              "title": "Include"
+            },
+            "required": false,
+            "description": "Include related nodes: 'descendants', 'ancestors', 'both'"
+          },
+          {
+            "in": "query",
+            "name": "depth",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Traversal depth (for descendants/ancestors)",
+              "title": "Depth"
+            },
+            "required": false,
+            "description": "Traversal depth (for descendants/ancestors)"
+          },
+          {
+            "in": "query",
+            "name": "max_depth",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Maximum traversal depth (alias for depth)",
+              "title": "Max Depth"
+            },
+            "required": false,
+            "description": "Maximum traversal depth (alias for depth)"
+          },
+          {
+            "in": "query",
+            "name": "allowed_actions",
+            "schema": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Row-level actions to evaluate per record. Response includes '_allowed_actions' on each row with the subset of requested actions",
+              "title": "Allowed Actions"
+            },
+            "required": false,
+            "description": "Row-level actions to evaluate per record. Response includes '_allowed_actions' on each row with the subset of requested actions"
+          },
+          {
+            "in": "query",
+            "name": "record_id",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Record Id"
+            },
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessDataResponse"
+                }
+              }
+            }
+          }
+        },
+        "description": "\n    Query table data with rich filtering, sorting, and population.\n\n    **Authorization**: Requires Cerbos permission check. Returns 403 if unauthorized.\n\n    Query Parameters:\n    - `page`: Page number (1-indexed, defaults to 1)\n    - `page_size`: Number of records per page\n    - `ordering`: Comma-separated fields (prefix with '-' for descending)\n        Example: ordering=-created_at,name\n    - `populate`: Foreign keys to populate (* for all)\n    - `fields`: Comma-separated column names to return (default: all fields)\n        Example: fields=id,title,status\n    - `format`: Response format ('flat' default, 'tree' for hierarchical tables)\n    - `field__op=value`: Filters with double underscore\n        Examples: age__gte=18, name__contains=john\n\n    Supported filter operators:\n    - Comparison: eq, ne, gt, gte, lt, lte\n    - IN: in, nin, ina (case-insensitive), nina\n    - String: contains, ncontains, containss, ncontainss\n    - Starts/Ends: startswith, endswith (add 's' for case-sensitive)\n    - Range: between, nbetween\n    - Null: null, nnull\n\n    Example requests:\n        ?page=1&page_size=20\n        ?page=4&page_size=20&ordering=-created_at\n        ?age__gte=18&status=active&ordering=name\n    ",
+        "tags": [
+          "Data Tables"
+        ]
+      },
+      "post": {
+        "operationId": "cloud_site_data_api_routers_data_create_data",
+        "summary": "Create table record(s)",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "title": "App Slug",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessDataResponse"
+                }
+              }
+            }
+          }
+        },
+        "description": "\n    Create single record or bulk insert multiple records.\n\n    Auto-detects single vs bulk based on request body:\n    - Single: `{\"name\": \"John\", \"age\": 30}` returns `{\"data\": [{...}], \"total\": 1}`\n    - Bulk: `[{\"name\": \"John\"}, {\"name\": \"Jane\"}]` returns `{\"data\": [...], \"total\": 2}`\n    ",
+        "tags": [
+          "Data Tables"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "additionalProperties": true,
+                    "type": "object"
+                  },
+                  {
+                    "items": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "type": "array"
+                  }
+                ],
+                "title": "Payload"
+              }
+            }
+          },
+          "required": true
+        }
+      },
+      "patch": {
+        "operationId": "cloud_site_data_api_routers_data_partial_update_many_records",
+        "summary": "Partial update multiple records (updatemany)",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "title": "App Slug",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessDataResponse"
+                }
+              }
+            }
+          }
+        },
+        "description": "\n    Batch partial update multiple records. Each record must include its ID.\n    Only specified fields will be updated.\n\n    **Request Body:**\n    Array of objects with 'id' field:\n    ```json\n    [\n        {\"id\": 1, \"status\": \"active\"},\n        {\"id\": 2, \"status\": \"inactive\"},\n        {\"id\": 3, \"age\": 25}\n    ]\n    ```\n\n    **Returns:**\n    ```json\n    {\n        \"data\": [...],  // Array of updated records\n        \"count\": 3,\n        \"message\": \"Successfully updated 3 record(s)\"\n    }\n    ```\n    ",
+        "tags": [
+          "Data Tables"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "title": "Payload",
+                "type": "array"
+              }
+            }
+          },
+          "required": true
+        }
+      },
+      "delete": {
+        "operationId": "cloud_site_data_api_routers_data_delete_many_records",
+        "summary": "Delete multiple records (deletemany)",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "title": "App Slug",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "ids",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Comma-separated IDs: 1,2,3",
+              "title": "Ids"
+            },
+            "required": false,
+            "description": "Comma-separated IDs: 1,2,3"
+          },
+          {
+            "in": "query",
+            "name": "filter",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter JSON: {\"status\":\"inactive\"}",
+              "title": "Filter"
+            },
+            "required": false,
+            "description": "Filter JSON: {\"status\":\"inactive\"}"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "title": "Response",
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "description": "\n    Batch delete multiple records by IDs or filters using query parameters.\n\n    **Query Parameters:**\n\n    1. **Delete by IDs** (comma-separated): `?ids=1,2,3,4,5`\n    2. **Delete by filter** (JSON-encoded): `?filter={\"status\":\"inactive\",\"age_gte\":65}`\n\n    **Examples:**\n\n    Delete by IDs:\n    ```\n    DELETE /apps/myapp/datatables/users/data/?ids=1,2,3\n    ```\n\n    Delete by filters:\n    ```\n    DELETE /apps/myapp/datatables/users/data/?filter={\"status\":\"inactive\"}\n    ```\n\n    **Returns:**\n    ```json\n    {\n        \"deleted_count\": 42,\n        \"message\": \"Successfully deleted 42 record(s)\"\n    }\n    ```\n\n    **Note:** Using query parameters instead of request body follows HTTP semantics\n    (DELETE with body has undefined semantics per RFC 7231).\n    ",
+        "tags": [
+          "Data Tables"
+        ]
+      }
+    },
+    "/api/apps/{app_slug}/datatables/{name}/data/upsert/": {
+      "post": {
+        "operationId": "cloud_site_data_api_routers_data_upsert_records",
+        "summary": "Upsert records (insert or update)",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "title": "App Slug",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "unique_fields",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Comma-separated unique fields for conflict detection",
+              "title": "Unique Fields"
+            },
+            "required": false,
+            "description": "Comma-separated unique fields for conflict detection"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessDataResponse"
+                }
+              }
+            }
+          }
+        },
+        "description": "\n    Insert or update records based on unique field(s).\n\n    Automatically detects single vs bulk based on request body:\n    - Single object: `{\"email\": \"john@example.com\", \"name\": \"John\"}`\n    - Array: `[{\"id\": 1, \"status\": \"active\"}, {\"id\": 2, \"status\": \"inactive\"}]`\n\n    **Query Parameters:**\n    - `unique_fields`: Comma-separated fields for conflict detection (default: primary key)\n\n    **Examples:**\n\n    Single upsert by email:\n    ```\n    POST /apps/myapp/datatables/users/data/upsert/?unique_fields=email\n    {\"email\": \"john@example.com\", \"name\": \"John Updated\"}\n    ```\n\n    Bulk upsert by primary key (id):\n    ```\n    POST /apps/myapp/datatables/users/data/upsert/\n    [\n        {\"id\": 1, \"status\": \"active\"},\n        {\"id\": 2, \"status\": \"inactive\"}\n    ]\n    ```\n\n    Bulk upsert by composite key:\n    ```\n    POST /apps/myapp/datatables/orders/data/upsert/?unique_fields=user_id,product_id\n    [\n        {\"user_id\": 1, \"product_id\": 10, \"quantity\": 5},\n        {\"user_id\": 2, \"product_id\": 20, \"quantity\": 3}\n    ]\n    ```\n\n    **Returns:**\n    ```json\n    {\n        \"data\": [...],\n        \"count\": 42,\n        \"message\": \"Successfully upserted 42 record(s)\"\n    }\n    ```\n    ",
+        "tags": [
+          "Data Tables"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "additionalProperties": true,
+                    "type": "object"
+                  },
+                  {
+                    "items": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "type": "array"
+                  }
+                ],
+                "title": "Payload"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/api/apps/{app_slug}/datatables/{name}/data/{record_id}/": {
+      "get": {
+        "operationId": "cloud_site_data_api_routers_data_get_single_record",
+        "summary": "Get single record by ID (with graph traversal)",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "title": "App Slug",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "record_id",
+            "schema": {
+              "title": "Record Id",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "format",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Response format: 'flat' (default), 'tree', or 'graph'",
+              "title": "Format"
+            },
+            "required": false,
+            "description": "Response format: 'flat' (default), 'tree', or 'graph'"
+          },
+          {
+            "in": "query",
+            "name": "relationship_type",
+            "schema": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Relationship types to filter by (OR logic). Works with tree/graph formats and include parameter.",
+              "title": "Relationship Type"
+            },
+            "required": false,
+            "description": "Relationship types to filter by (OR logic). Works with tree/graph formats and include parameter."
+          },
+          {
+            "in": "query",
+            "name": "graph_types",
+            "schema": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Relationship types for graph format",
+              "title": "Graph Types"
+            },
+            "required": false,
+            "description": "Relationship types for graph format"
+          },
+          {
+            "in": "query",
+            "name": "include",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Include related nodes: 'descendants', 'ancestors', 'both'",
+              "title": "Include"
+            },
+            "required": false,
+            "description": "Include related nodes: 'descendants', 'ancestors', 'both'"
+          },
+          {
+            "in": "query",
+            "name": "depth",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Traversal depth",
+              "title": "Depth"
+            },
+            "required": false,
+            "description": "Traversal depth"
+          },
+          {
+            "in": "query",
+            "name": "max_depth",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Maximum traversal depth (alias for depth)",
+              "title": "Max Depth"
+            },
+            "required": false,
+            "description": "Maximum traversal depth (alias for depth)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessDataResponse"
+                }
+              }
+            }
+          }
+        },
+        "description": "\n    Retrieve a single record by ID with full graph traversal support.\n\n    All query parameters work: include, depth, format, populate, etc.\n\n    Examples:\n    - `/data/1?include=descendants&depth=2` - Get record with descendants\n    - `/data/1?include=ancestors` - Get record with ancestors\n    - `/data/1?format=tree` - Get record in tree format\n    - `/data/1?format=graph&graph_types=manager` - Get record as graph\n\n    Returns:\n    - Basic: `{\"data\": {...}}`\n    - With include: `{\"data\": {...}, \"reports\": [...], \"manager\": [...]}`\n    - Tree format: `{\"data\": [{...}], \"total\": 1}`\n    - Graph format: `{\"data\": {\"nodes\": [...], \"edges\": [...]}, \"total\": 1}`\n    ",
+        "tags": [
+          "Data Tables"
+        ]
+      },
+      "patch": {
+        "operationId": "cloud_site_data_api_routers_data_partial_update_record",
+        "summary": "Partial update single record",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "title": "App Slug",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "record_id",
+            "schema": {
+              "title": "Record Id",
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessDataResponse"
+                }
+              }
+            }
+          }
+        },
+        "description": "Partially update a single record (only specified fields updated). Returns: `{\"data\": {...}}`",
+        "tags": [
+          "Data Tables"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "title": "Payload",
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        }
+      },
+      "delete": {
+        "operationId": "cloud_site_data_api_routers_data_delete_record",
+        "summary": "Delete single record",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "title": "App Slug",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "record_id",
+            "schema": {
+              "title": "Record Id",
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "description": "Delete a single record by ID",
+        "tags": [
+          "Data Tables"
+        ]
+      }
+    },
+    "/api/apps/{app_slug}/datatables/{name}/edges/": {
+      "get": {
+        "operationId": "cloud_site_data_api_routers_data_list_edges",
+        "summary": "List edges (relationships)",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "title": "App Slug",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "from_id",
+            "schema": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "integer"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "From Id"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "to_id",
+            "schema": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "integer"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "To Id"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "types",
+            "schema": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Types"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Page"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Page Size"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Limit"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Offset"
+            },
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessDataResponse"
+                }
+              }
+            }
+          }
+        },
+        "description": "\n    Query edges (relationships) with filters.\n\n    **Query Parameters**:\n    - `from_id`: Filter by source node ID(s) - can pass multiple values\n    - `to_id`: Filter by target node ID(s) - can pass multiple values\n    - `types`: Filter by relationship types (e.g., ['manager', 'dotted_line'])\n    - `page`: Page number (1-indexed, optional)\n    - `page_size`: Records per page (required when using `page`)\n    - `limit`: Maximum number of edges to return (legacy)\n    - `offset`: Offset for pagination (legacy)\n\n    **Example**:\n        GET /api/apps/hr/datatables/employees/edges/?types=manager&types=dotted_line&from_id=5\n\n    **Response**:\n    ```json\n    {\n      \"status\": \"success\",\n      \"message\": \"Edges retrieved successfully\",\n      \"data\": [...],\n      \"total\": 42\n    }\n    ```\n    ",
+        "tags": [
+          "Data Tables"
+        ]
+      },
+      "post": {
+        "operationId": "cloud_site_data_api_routers_data_create_edges",
+        "summary": "Bulk create edges",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "title": "App Slug",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessDataResponse"
+                }
+              }
+            }
+          }
+        },
+        "description": "\n    Create multiple edges (relationships) at once.\n\n    **Request Body**:\n    ```json\n    [\n      {\"from\": 1, \"to\": 2, \"type\": \"manager\", \"metadata\": {\"primary\": true}},\n      {\"from\": 1, \"to\": 3, \"type\": \"manager\"},\n      {\"from\": 5, \"to\": 2, \"type\": \"dotted_line\", \"metadata\": {\"project\": \"AI\"}}\n    ]\n    ```\n\n    **Response**:\n    ```json\n    {\n      \"status\": \"success\",\n      \"message\": \"Edges created successfully\",\n      \"data\": [...],\n      \"total\": 3\n    }\n    ```\n    ",
+        "tags": [
+          "Data Tables"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": {
+                  "$ref": "#/components/schemas/EdgeData"
+                },
+                "title": "Edges Data",
+                "type": "array"
+              }
+            }
+          },
+          "required": true
+        }
+      },
+      "delete": {
+        "operationId": "cloud_site_data_api_routers_data_delete_edges",
+        "summary": "Bulk delete edges",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "title": "App Slug",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessDataResponse"
+                }
+              }
+            }
+          }
+        },
+        "description": "\n    Delete multiple edges by IDs.\n\n    **Request Body**:\n    ```json\n    {\n      \"edge_ids\": [1, 2, 3, 4, 5]\n    }\n    ```\n\n    **Response**:\n    ```json\n    {\n      \"status\": \"success\",\n      \"message\": \"Successfully deleted 5 record(s)\",\n      \"data\": {\"deleted_count\": 5}\n    }\n    ```\n    ",
+        "tags": [
+          "Data Tables"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EdgeBulkDeleteRequest"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/api/apps/{app_slug}/datatables/{name}/edges/{edge_id}/": {
+      "patch": {
+        "operationId": "cloud_site_data_api_routers_data_update_edge",
+        "summary": "Update edge by ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "title": "App Slug",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "name",
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "edge_id",
+            "schema": {
+              "title": "Edge Id",
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessDataResponse"
+                }
+              }
+            }
+          }
+        },
+        "description": "Partially update an edge by ID. Returns: `{\"data\": {...}}`",
+        "tags": [
+          "Data Tables"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "title": "Payload",
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    },
+    "/api/apps/{app_slug}/datatables/{datatable_name}/audit-logs/": {
+      "get": {
+        "operationId": "cloud_site_audit_api_list_audit_logs",
+        "summary": "List audit logs for a datatable",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "title": "App Slug",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "datatable_name",
+            "schema": {
+              "title": "Datatable Name",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "record_id",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by record ID",
+              "title": "Record Id"
+            },
+            "required": false,
+            "description": "Filter by record ID"
+          },
+          {
+            "in": "query",
+            "name": "user_id",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by user ID (UUID)",
+              "title": "User Id"
+            },
+            "required": false,
+            "description": "Filter by user ID (UUID)"
+          },
+          {
+            "in": "query",
+            "name": "event_type",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by event type",
+              "title": "Event Type"
+            },
+            "required": false,
+            "description": "Filter by event type"
+          },
+          {
+            "in": "query",
+            "name": "field",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by changed field name",
+              "title": "Field"
+            },
+            "required": false,
+            "description": "Filter by changed field name"
+          },
+          {
+            "in": "query",
+            "name": "version",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by version number",
+              "title": "Version"
+            },
+            "required": false,
+            "description": "Filter by version number"
+          },
+          {
+            "in": "query",
+            "name": "start_date",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter logs after this date (ISO format)",
+              "title": "Start Date"
+            },
+            "required": false,
+            "description": "Filter logs after this date (ISO format)"
+          },
+          {
+            "in": "query",
+            "name": "end_date",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter logs before this date (ISO format)",
+              "title": "End Date"
+            },
+            "required": false,
+            "description": "Filter logs before this date (ISO format)"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "default": 1,
+              "description": "Page number",
+              "minimum": 1,
+              "title": "Page",
+              "type": "integer"
+            },
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "schema": {
+              "default": 20,
+              "description": "Records per page",
+              "maximum": 100,
+              "minimum": 1,
+              "title": "Page Size",
+              "type": "integer"
+            },
+            "required": false,
+            "description": "Records per page"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessDataResponse"
+                }
+              }
+            }
+          }
+        },
+        "description": "\n    Query audit logs for a specific datatable with optional filters.\n    \n    **Filters:**\n    - `record_id`: Filter by specific record ID\n    - `user_id`: Filter by user who made the change\n    - `event_type`: Filter by event type (RECORD_CREATE, RECORD_UPDATE, RECORD_DELETE)\n    - `field`: Filter by changed field name\n    - `version`: Filter by specific version number\n    - `start_date`: Filter logs after this date (ISO format: 2024-01-01T00:00:00Z)\n    - `end_date`: Filter logs before this date (ISO format)\n    - `page`: Page number (default: 1)\n    - `page_size`: Records per page (default: 20, max: 100)\n    ",
+        "tags": [
+          "Audit Logs"
+        ]
+      }
+    },
+    "/api/apps/{app_slug}/datatables/{datatable_name}/records/{record_id}/audit-logs/": {
+      "get": {
+        "operationId": "cloud_site_audit_api_list_record_audit_logs",
+        "summary": "List audit logs for a specific record",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "app_slug",
+            "schema": {
+              "title": "App Slug",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "datatable_name",
+            "schema": {
+              "title": "Datatable Name",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "record_id",
+            "schema": {
+              "title": "Record Id",
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "user_id",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by user ID (UUID)",
+              "title": "User Id"
+            },
+            "required": false,
+            "description": "Filter by user ID (UUID)"
+          },
+          {
+            "in": "query",
+            "name": "event_type",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by event type",
+              "title": "Event Type"
+            },
+            "required": false,
+            "description": "Filter by event type"
+          },
+          {
+            "in": "query",
+            "name": "field",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by changed field name",
+              "title": "Field"
+            },
+            "required": false,
+            "description": "Filter by changed field name"
+          },
+          {
+            "in": "query",
+            "name": "version",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by version number",
+              "title": "Version"
+            },
+            "required": false,
+            "description": "Filter by version number"
+          },
+          {
+            "in": "query",
+            "name": "start_date",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter logs after this date (ISO format)",
+              "title": "Start Date"
+            },
+            "required": false,
+            "description": "Filter logs after this date (ISO format)"
+          },
+          {
+            "in": "query",
+            "name": "end_date",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter logs before this date (ISO format)",
+              "title": "End Date"
+            },
+            "required": false,
+            "description": "Filter logs before this date (ISO format)"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "default": 1,
+              "description": "Page number",
+              "minimum": 1,
+              "title": "Page",
+              "type": "integer"
+            },
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "schema": {
+              "default": 20,
+              "description": "Records per page",
+              "maximum": 100,
+              "minimum": 1,
+              "title": "Page Size",
+              "type": "integer"
+            },
+            "required": false,
+            "description": "Records per page"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessDataResponse"
+                }
+              }
+            }
+          }
+        },
+        "description": "\n    Query audit logs for a specific record in a datatable.\n    \n    **Filters:**\n    - `user_id`: Filter by user who made the change\n    - `event_type`: Filter by event type (RECORD_CREATE, RECORD_UPDATE, RECORD_DELETE)\n    - `field`: Filter by changed field name\n    - `version`: Filter by specific version number\n    - `start_date`: Filter logs after this date (ISO format: 2024-01-01T00:00:00Z)\n    - `end_date`: Filter logs before this date (ISO format)\n    - `page`: Page number (default: 1)\n    - `page_size`: Records per page (default: 20, max: 100)\n    ",
+        "tags": [
+          "Audit Logs"
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "App": {
+        "type": "object",
+        "description": "Full serializer for app CRUD operations",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Application name",
+            "maxLength": 255
+          },
+          "slug": {
+            "type": "string",
+            "readOnly": true,
+            "description": "URL-safe identifier (auto-generated from name)",
+            "pattern": "^[-a-zA-Z0-9_]+$"
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional description of the application"
+          },
+          "is_active": {
+            "type": "boolean",
+            "readOnly": true,
+            "description": "Whether this app is active"
+          },
+          "table_count": {
+            "type": "string",
+            "readOnly": true
+          },
+          "tables": {
+            "type": "string",
+            "readOnly": true
+          },
+          "settings": {
+            "type": "string",
+            "readOnly": true
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "nullable": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "nullable": true
+          },
+          "created_by": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true,
+            "nullable": true
+          },
+          "modified_by": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true,
+            "nullable": true
+          }
+        },
+        "required": [
+          "created_at",
+          "created_by",
+          "is_active",
+          "modified_by",
+          "name",
+          "settings",
+          "slug",
+          "table_count",
+          "tables",
+          "updated_at"
+        ]
+      },
+      "AppRequest": {
+        "type": "object",
+        "description": "Full serializer for app CRUD operations",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Application name",
+            "maxLength": 255
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional description of the application"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "DataTable": {
+        "type": "object",
+        "description": "Full serializer for datatable CRUD operations with Frictionless validation",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "app": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "app_name": {
+            "type": "string",
+            "readOnly": true
+          },
+          "app_slug": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "provider_type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderTypeEnum"
+              }
+            ],
+            "description": "Storage provider type\n\n* `flat_table` - Flat PostgreSQL Tables\n* `jsonb` - PostgreSQL JSONB\n* `mongodb` - MongoDB Collections"
+          },
+          "schema_format": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SchemaFormatEnum"
+              }
+            ],
+            "description": "Schema format type (frictionless, native, etc.)\n\n* `frictionless` - Frictionless Table Schema\n* `native` - Native SQLAlchemy Schema\n* `sql` - Raw SQL"
+          },
+          "provider_config": {
+            "description": "Provider-specific settings (connection, options, etc.)"
+          },
+          "json_schema": {
+            "description": "Table schema in the specified schema_format (fields, constraints, etc.)"
+          },
+          "physical_table_name": {
+            "type": "string",
+            "readOnly": true,
+            "description": "Actual database table/collection name (auto-generated with app prefix)"
+          },
+          "is_materialized": {
+            "type": "boolean",
+            "description": "Whether physical table has been created"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "audit_enabled": {
+            "type": "boolean",
+            "description": "Enable audit logging for CRUD operations on this table"
+          },
+          "description": {
+            "type": "string"
+          },
+          "schema_hash": {
+            "type": "string",
+            "readOnly": true,
+            "description": "SHA256 hash of json_schema for cache invalidation"
+          },
+          "field_count": {
+            "type": "string",
+            "readOnly": true
+          },
+          "field_names": {
+            "type": "string",
+            "readOnly": true
+          },
+          "primary_key": {
+            "type": "string",
+            "readOnly": true
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "nullable": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "nullable": true
+          },
+          "created_by": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true,
+            "nullable": true
+          },
+          "modified_by": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true,
+            "nullable": true
+          }
+        },
+        "required": [
+          "app",
+          "app_name",
+          "app_slug",
+          "created_at",
+          "created_by",
+          "field_count",
+          "field_names",
+          "id",
+          "json_schema",
+          "modified_by",
+          "physical_table_name",
+          "primary_key",
+          "schema_hash",
+          "updated_at"
+        ]
+      },
+      "DataTableList": {
+        "type": "object",
+        "description": "Lightweight serializer for datatable lists",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Table/collection name (used in API URLs)",
+            "maxLength": 255
+          },
+          "app_name": {
+            "type": "string",
+            "readOnly": true
+          },
+          "app_slug": {
+            "type": "string",
+            "readOnly": true
+          },
+          "provider_type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderTypeEnum"
+              }
+            ],
+            "description": "Storage provider type\n\n* `flat_table` - Flat PostgreSQL Tables\n* `jsonb` - PostgreSQL JSONB\n* `mongodb` - MongoDB Collections"
+          },
+          "schema_format": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SchemaFormatEnum"
+              }
+            ],
+            "description": "Schema format type (frictionless, native, etc.)\n\n* `frictionless` - Frictionless Table Schema\n* `native` - Native SQLAlchemy Schema\n* `sql` - Raw SQL"
+          },
+          "physical_table_name": {
+            "type": "string",
+            "readOnly": true,
+            "description": "Actual database table/collection name (auto-generated with app prefix)"
+          },
+          "is_materialized": {
+            "type": "boolean",
+            "description": "Whether physical table has been created"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "audit_enabled": {
+            "type": "boolean",
+            "description": "Enable audit logging for CRUD operations on this table"
+          },
+          "field_count": {
+            "type": "string",
+            "readOnly": true
+          },
+          "is_reference": {
+            "type": "string",
+            "readOnly": true
+          },
+          "source_info": {
+            "type": "string",
+            "readOnly": true
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "nullable": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true,
+            "nullable": true
+          }
+        },
+        "required": [
+          "app_name",
+          "app_slug",
+          "created_at",
+          "field_count",
+          "id",
+          "is_reference",
+          "name",
+          "physical_table_name",
+          "source_info",
+          "updated_at"
+        ]
+      },
+      "DataTableListRequest": {
+        "type": "object",
+        "description": "Lightweight serializer for datatable lists",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Table/collection name (used in API URLs)",
+            "maxLength": 255
+          },
+          "provider_type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderTypeEnum"
+              }
+            ],
+            "description": "Storage provider type\n\n* `flat_table` - Flat PostgreSQL Tables\n* `jsonb` - PostgreSQL JSONB\n* `mongodb` - MongoDB Collections"
+          },
+          "schema_format": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SchemaFormatEnum"
+              }
+            ],
+            "description": "Schema format type (frictionless, native, etc.)\n\n* `frictionless` - Frictionless Table Schema\n* `native` - Native SQLAlchemy Schema\n* `sql` - Raw SQL"
+          },
+          "is_materialized": {
+            "type": "boolean",
+            "description": "Whether physical table has been created"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "audit_enabled": {
+            "type": "boolean",
+            "description": "Enable audit logging for CRUD operations on this table"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "DataTableRequest": {
+        "type": "object",
+        "description": "Full serializer for datatable CRUD operations with Frictionless validation",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "provider_type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderTypeEnum"
+              }
+            ],
+            "description": "Storage provider type\n\n* `flat_table` - Flat PostgreSQL Tables\n* `jsonb` - PostgreSQL JSONB\n* `mongodb` - MongoDB Collections"
+          },
+          "schema_format": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SchemaFormatEnum"
+              }
+            ],
+            "description": "Schema format type (frictionless, native, etc.)\n\n* `frictionless` - Frictionless Table Schema\n* `native` - Native SQLAlchemy Schema\n* `sql` - Raw SQL"
+          },
+          "provider_config": {
+            "description": "Provider-specific settings (connection, options, etc.)"
+          },
+          "json_schema": {
+            "description": "Table schema in the specified schema_format (fields, constraints, etc.)"
+          },
+          "is_materialized": {
+            "type": "boolean",
+            "description": "Whether physical table has been created"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "audit_enabled": {
+            "type": "boolean",
+            "description": "Enable audit logging for CRUD operations on this table"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "json_schema"
+        ]
+      },
+      "EdgeBulkDeleteRequest": {
+        "additionalProperties": false,
+        "description": "Bulk edge deletion request.\n\nExample:\n    {\n        \"edge_ids\": [\"uuid-1\", \"uuid-2\", \"uuid-3\"]\n    }",
+        "properties": {
+          "edge_ids": {
+            "description": "Array of edge IDs to delete",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "minItems": 1,
+            "title": "Edge Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "edge_ids"
+        ],
+        "title": "EdgeBulkDeleteRequest",
+        "type": "object"
+      },
+      "EdgeData": {
+        "additionalProperties": true,
+        "description": "Single edge (relationship) data.\n\nExample:\n    {\n        \"id\": 1,\n        \"from_id\": 5,\n        \"to_id\": 10,\n        \"type\": \"manager\",\n        \"metadata\": {\"primary\": true, \"effective_date\": \"2024-01-01\"}\n    }",
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Edge ID (auto-generated)",
+            "title": "Id"
+          },
+          "from": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "description": "Source node ID",
+            "title": "From"
+          },
+          "to": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "description": "Target node ID",
+            "title": "To"
+          },
+          "type": {
+            "description": "Relationship type (e.g., 'manager', 'dotted_line')",
+            "title": "Type",
+            "type": "string"
+          },
+          "metadata": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Edge metadata (JSONB)",
+            "title": "Metadata"
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "type"
+        ],
+        "title": "EdgeData",
+        "type": "object"
+      },
+      "PaginatedDataTableListList": {
+        "type": "object",
+        "required": [
+          "count",
+          "results"
+        ],
+        "properties": {
+          "count": {
+            "type": "integer",
+            "example": 123
+          },
+          "next": {
+            "type": "string",
+            "nullable": true,
+            "format": "uri",
+            "example": "http://api.example.org/accounts/?page=4"
+          },
+          "previous": {
+            "type": "string",
+            "nullable": true,
+            "format": "uri",
+            "example": "http://api.example.org/accounts/?page=2"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataTableList"
+            }
+          }
+        }
+      },
+      "PatchedDataTableRequest": {
+        "type": "object",
+        "description": "Full serializer for datatable CRUD operations with Frictionless validation",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "provider_type": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProviderTypeEnum"
+              }
+            ],
+            "description": "Storage provider type\n\n* `flat_table` - Flat PostgreSQL Tables\n* `jsonb` - PostgreSQL JSONB\n* `mongodb` - MongoDB Collections"
+          },
+          "schema_format": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SchemaFormatEnum"
+              }
+            ],
+            "description": "Schema format type (frictionless, native, etc.)\n\n* `frictionless` - Frictionless Table Schema\n* `native` - Native SQLAlchemy Schema\n* `sql` - Raw SQL"
+          },
+          "provider_config": {
+            "description": "Provider-specific settings (connection, options, etc.)"
+          },
+          "json_schema": {
+            "description": "Table schema in the specified schema_format (fields, constraints, etc.)"
+          },
+          "is_materialized": {
+            "type": "boolean",
+            "description": "Whether physical table has been created"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "audit_enabled": {
+            "type": "boolean",
+            "description": "Enable audit logging for CRUD operations on this table"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "ProviderTypeEnum": {
+        "enum": [
+          "flat_table",
+          "jsonb",
+          "mongodb"
+        ],
+        "type": "string",
+        "description": "* `flat_table` - Flat PostgreSQL Tables\n* `jsonb` - PostgreSQL JSONB\n* `mongodb` - MongoDB Collections"
+      },
+      "ReflectSchemaRequest": {
+        "additionalProperties": true,
+        "description": "Request body for schema reflection.\n\nscope: \"app\" (default) or \"table\"\ntable_name: required when scope=\"table\"\npreserve_custom_metadata: whether to merge stored x-* metadata into reflected schema",
+        "properties": {
+          "scope": {
+            "default": "app",
+            "description": "Reflection scope: 'app' or 'table'",
+            "title": "Scope",
+            "type": "string"
+          },
+          "table_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Table name (required when scope='table')",
+            "title": "Table Name"
+          },
+          "preserve_custom_metadata": {
+            "default": true,
+            "description": "Preserve custom metadata from stored schema",
+            "title": "Preserve Custom Metadata",
+            "type": "boolean"
+          }
+        },
+        "title": "ReflectSchemaRequest",
+        "type": "object"
+      },
+      "ReflectSchemaResponse": {
+        "additionalProperties": true,
+        "description": "Response for schema reflection operations.",
+        "properties": {
+          "tables_created": {
+            "default": 0,
+            "description": "Number of tables created",
+            "title": "Tables Created",
+            "type": "integer"
+          },
+          "tables_updated": {
+            "default": 0,
+            "description": "Number of tables updated",
+            "title": "Tables Updated",
+            "type": "integer"
+          },
+          "details": {
+            "description": "Per-table reflection results",
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Details",
+            "type": "array"
+          }
+        },
+        "title": "ReflectSchemaResponse",
+        "type": "object"
+      },
+      "SchemaFormatEnum": {
+        "enum": [
+          "frictionless",
+          "native",
+          "sql"
+        ],
+        "type": "string",
+        "description": "* `frictionless` - Frictionless Table Schema\n* `native` - Native SQLAlchemy Schema\n* `sql` - Raw SQL"
+      },
+      "SuccessDataResponse": {
+        "additionalProperties": true,
+        "description": "Standardized data response format for Django Ninja APIs.\n\nHandles both single items and lists. Use optional `total` for paginated lists.\n\nExample (single item):\n    {\n        \"status\": \"success\",\n        \"message\": \"Resource retrieved successfully\",\n        \"data\": {...}\n    }\n\nExample (list with total):\n    {\n        \"status\": \"success\",\n        \"message\": \"Data retrieved successfully\",\n        \"data\": [...],\n        \"total\": 100\n    }",
+        "properties": {
+          "status": {
+            "default": "success",
+            "description": "Response status: 'success' or 'error'",
+            "title": "Status",
+            "type": "string"
+          },
+          "message": {
+            "default": "",
+            "description": "Response message",
+            "title": "Message",
+            "type": "string"
+          },
+          "data": {
+            "description": "Response data (single item or list)",
+            "title": "Data"
+          },
+          "total": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Total count for paginated lists",
+            "title": "Total"
+          },
+          "pagination": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Pagination metadata (offset, limit, has_next, etc.)",
+            "title": "Pagination"
+          }
+        },
+        "title": "SuccessDataResponse",
+        "type": "object"
+      }
+    }
+  }
+}

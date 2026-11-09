@@ -1,0 +1,157 @@
+{
+  "status": "PROPOSAL_ONLY",
+  "app": "hmg-studio",
+  "table": "qa_json_types_20261106",
+  "before": {
+    "fields": [
+      {
+        "name": "id",
+        "type": "string",
+        "format": "uuid",
+        "constraints": {
+          "required": true
+        }
+      },
+      {
+        "name": "organization_id",
+        "type": "string",
+        "format": "uuid",
+        "constraints": {
+          "required": true
+        }
+      },
+      {
+        "name": "object_value",
+        "type": "object"
+      },
+      {
+        "name": "array_value",
+        "type": "array",
+        "arrayItem": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "legacy_object",
+        "type": "any"
+      },
+      {
+        "name": "legacy_array",
+        "type": "any"
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "foreignKeys": [],
+    "reverseRelationships": [],
+    "manyToManyRelationships": []
+  },
+  "step1_full_schema": {
+    "fields": [
+      {
+        "name": "id",
+        "type": "string",
+        "format": "uuid",
+        "constraints": {
+          "required": true
+        }
+      },
+      {
+        "name": "organization_id",
+        "type": "string",
+        "format": "uuid",
+        "constraints": {
+          "required": true
+        }
+      },
+      {
+        "name": "object_value",
+        "type": "object"
+      },
+      {
+        "name": "array_value",
+        "type": "array",
+        "arrayItem": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "legacy_object",
+        "type": "object"
+      },
+      {
+        "name": "legacy_array",
+        "type": "any"
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "foreignKeys": [],
+    "reverseRelationships": [],
+    "manyToManyRelationships": []
+  },
+  "step1_change": "legacy_object.type:any?object only",
+  "step2_full_schema_if_step1_succeeds": {
+    "fields": [
+      {
+        "name": "id",
+        "type": "string",
+        "format": "uuid",
+        "constraints": {
+          "required": true
+        }
+      },
+      {
+        "name": "organization_id",
+        "type": "string",
+        "format": "uuid",
+        "constraints": {
+          "required": true
+        }
+      },
+      {
+        "name": "object_value",
+        "type": "object"
+      },
+      {
+        "name": "array_value",
+        "type": "array",
+        "arrayItem": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "legacy_object",
+        "type": "object"
+      },
+      {
+        "name": "legacy_array",
+        "type": "array",
+        "arrayItem": {
+          "type": "string"
+        }
+      }
+    ],
+    "primaryKey": [
+      "id"
+    ],
+    "foreignKeys": [],
+    "reverseRelationships": [],
+    "manyToManyRelationships": []
+  },
+  "step2_change": "legacy_array.type:any?array; add arrayItem:string only",
+  "method": "PATCH /api/apps/hmg-studio/datatables/qa_json_types_20261106/ body {json_schema:<full_schema>}",
+  "no_flags": [
+    "allow_data_loss",
+    "force",
+    "cast SQL",
+    "drop",
+    "delete"
+  ],
+  "preflight": "Fresh full schema equal before and own table/policy IDs; one existing synthetic row equals approved baseline.",
+  "postflight_each": "Save status/body then re-read fullschema, same row, physicaltypes using already-closed fixedquery even on error. No automatic retry or restoration.",
+  "stop": "Any schema drift, unsafe-operation requirement, type-conversion failure, or semantic data loss: stop and report; do not touch saved_reports/activity_logs.",
+  "preserve": "No business tables or policy changes. All extra schema metadata retained. Table remains allDENY."
+}

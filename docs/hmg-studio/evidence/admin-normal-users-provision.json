@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-06T20:40:44.750225+00:00",
+  "app": "hmg-studio",
+  "users": [
+    {
+      "username": "qa_hmg_sales_20261106",
+      "attempted": true,
+      "id": "d657e05d-e357-45f5-a12a-dc9636016c6d",
+      "email": "qa_hmg_sales_20261106@example.invalid",
+      "is_active": true,
+      "is_staff": false,
+      "normal_role_verified": true,
+      "admin_member": false
+    },
+    {
+      "username": "qa_hmg_warehouse_20261106",
+      "attempted": true,
+      "id": "73923a59-5291-4575-9501-dd2fc0b7ac98",
+      "email": "qa_hmg_warehouse_20261106@example.invalid",
+      "is_active": true,
+      "is_staff": false,
+      "normal_role_verified": true,
+      "admin_member": false
+    }
+  ],
+  "role": "hmg-studio-hmg-synthetic-operator",
+  "policy_changes": 0,
+  "write_replays": 0,
+  "pradeep_before": {
+    "id": "4f7ff492-8af6-4059-ae61-ce13fe3d4b20",
+    "username": "pradeep+taruvi",
+    "email": "pradeep+taruvi@eoxvantage.com",
+    "is_active": true,
+    "is_staff": true
+  },
+  "pradeep_assignment_attempted": true,
+  "pradeep_admin_retained": true,
+  "pradeep_operator_verified": true,
+  "verified": true
+}

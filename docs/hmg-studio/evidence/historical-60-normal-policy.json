@@ -1,0 +1,655 @@
+{
+  "app": "hmg-studio",
+  "actor": "ordinary synthetic operator",
+  "http_batches": [
+    200,
+    200,
+    200
+  ],
+  "initial_58_resource_request_http": 400,
+  "expected_count": 58,
+  "returned_count": 58,
+  "no_business_mutation": true,
+  "checks": [
+    {
+      "table": "product_supplier",
+      "id": "cb21aa4f-b2ab-590b-b7e0-7a288d18ed85",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "product_supplier",
+      "id": "2751b366-6330-5fcc-9368-5e8f635ba265",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "product_supplier",
+      "id": "f0eaf954-1178-5a6e-9349-ed391db4d9ec",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "create": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "product_supplier",
+      "id": "f9be6377-98ea-501e-874b-9c504cfc3034",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "product_supplier",
+      "id": "00000000-0000-0000-0000-000000000000",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_DENY",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "product_supplier",
+      "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_DENY",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "product_components",
+      "id": "79c9d3fa-cb19-5583-95ee-307643052f0e",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "product_components",
+      "id": "1b792a9c-4c3e-58c1-85eb-b26b8edf6f72",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "create": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "product_components",
+      "id": "00000000-0000-0000-0000-000000000000",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_DENY",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "product_components",
+      "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_DENY",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "c374e5d0-f792-5295-8c86-a18ff7bd0f5c",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "1b18de37-0279-594d-85c9-89aed22b4c3d",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "663eba69-fcf8-5631-a41a-b40aab98aa89",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "c0fc13ce-404d-5e4f-be9b-2b8961f45951",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "8121c04c-35c9-582c-8128-fe51e2fa4e09",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "efd2b251-dee2-579a-b46c-039234fd0add",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "50669274-0699-5be3-9cd9-999f1dd1c9d2",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "1477568d-2e49-56bd-b854-c8ffab264fa3",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "2c505d9d-9645-5596-9c23-d7f78aa6c873",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "create": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "3b2062e5-2d1d-5f3c-8159-d4282d2379ef",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "4ad5ba80-a71f-56c3-86cc-fa9e7d3fe5d9",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "cb62bd5d-e5a8-597b-b1a1-48181ab4d18a",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "59ebcb95-4c5c-5622-bca7-053e56f9fd47",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "cc314523-b262-5db9-a1e9-7d097cb81f70",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "eef2a55a-a11c-5233-9fd6-d052052af783",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "91c2526e-8df4-507c-8a81-1602a3da90a3",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "00000000-0000-0000-0000-000000000000",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_DENY",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "order_items",
+      "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_DENY",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "ec705a90-b756-5794-bd5f-e40f23785705",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "be259ea5-2c3c-5f61-90f7-dd8848da6eaf",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "62fb00b0-8e09-5d02-bf17-758f79f02ddd",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "542c9c0c-f8d3-51b1-a270-6940142ccb0e",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "031802a3-a328-5e56-93fc-2b2b9e838660",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "c0fc045c-592c-551e-a22b-4bfd85130b58",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "0dda700e-1f95-52e3-9769-d1696e860108",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "8ce94019-bbbc-5d28-9803-21083377f4be",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "c23b585a-8cd2-5bc1-8900-b7b6a300c23d",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "ab6d7831-7b53-52a1-aa15-cf7a3f5af99e",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "00000000-0000-0000-0000-000000000000",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_DENY",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "purchase_order_items",
+      "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "actions": {
+        "delete": "EFFECT_DENY",
+        "read": "EFFECT_DENY",
+        "create": "EFFECT_DENY",
+        "update": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "return_order_items",
+      "id": "f6166560-5cbc-539a-949c-9e425760c650",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "delete": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "return_order_items",
+      "id": "1229f261-c83a-5c1f-965f-beec8b0c7f16",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "delete": "EFFECT_DENY",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "return_order_items",
+      "id": "cc79111c-f803-51e6-8b34-ea985b0f5cfa",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "delete": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "return_order_items",
+      "id": "2aac2517-5f8b-5992-9cbd-890cb1218317",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "delete": "EFFECT_DENY",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "return_order_items",
+      "id": "00000000-0000-0000-0000-000000000000",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_DENY",
+        "delete": "EFFECT_DENY",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "return_order_items",
+      "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_DENY",
+        "create": "EFFECT_DENY",
+        "delete": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "e4178ed2-d150-56e0-8a63-af95b22e2ee8",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "delete": "EFFECT_DENY",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "f424ad80-08a3-5ef0-923b-a9f1e3e80ba3",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "delete": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "a745df18-b7e3-5921-936d-444c4875f250",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "delete": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "cc94e915-d0e8-5995-8e28-556cea0c4640",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "delete": "EFFECT_DENY",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "00000000-0000-0000-0000-000000000000",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_DENY",
+        "create": "EFFECT_DENY",
+        "delete": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "stock_transfer_items",
+      "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_DENY",
+        "delete": "EFFECT_DENY",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "work_order_items",
+      "id": "90980f1c-c8ba-59a6-9e6a-93f80a69cbff",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "delete": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "work_order_items",
+      "id": "92eaea75-90ee-58e3-a677-edb30e09cf34",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "delete": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "work_order_items",
+      "id": "7134f691-d3b5-56af-8d76-478865874ec5",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "create": "EFFECT_DENY",
+        "delete": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "work_order_items",
+      "id": "95a1de6b-36fb-5096-98db-4152472650d2",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_ALLOW",
+        "delete": "EFFECT_DENY",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "work_order_items",
+      "id": "00000000-0000-0000-0000-000000000000",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_DENY",
+        "create": "EFFECT_DENY",
+        "delete": "EFFECT_DENY"
+      },
+      "matches": true
+    },
+    {
+      "table": "work_order_items",
+      "id": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "actions": {
+        "update": "EFFECT_DENY",
+        "read": "EFFECT_DENY",
+        "delete": "EFFECT_DENY",
+        "create": "EFFECT_DENY"
+      },
+      "matches": true
+    }
+  ],
+  "errors": [],
+  "verified": true
+}

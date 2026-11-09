@@ -1,0 +1,64 @@
+{
+  "app_slug": "hmg-studio",
+  "bucket": "products",
+  "uploaded": [
+    "hmg-catalogue/026c118a40e0f0c524139a65ad02adad6bc1c85c79f9e26eeb4c700b61030bbe.jpg",
+    "hmg-catalogue/026caffac3c6fb1e86d4d22de97cfb708972b592b07c068fef78b53c34ae1627.jpg",
+    "hmg-catalogue/03b1093e7cd3c97aa3f72afc331b4d6b3a0042343645e5b7c4b1614269e2c9d6.jpg",
+    "hmg-catalogue/04301c4a2447bfc75763ee54db042cf5a2870a7896dba1822e936b6824ae678f.jpg"
+  ],
+  "skipped": [
+    "hmg-catalogue/00e9e0c10f598ecb093043c5ff168a69219a775eb87ef6f7e95f7c2091f0492d.jpg"
+  ],
+  "verified_paths": [
+    "hmg-catalogue/00e9e0c10f598ecb093043c5ff168a69219a775eb87ef6f7e95f7c2091f0492d.jpg",
+    "hmg-catalogue/026c118a40e0f0c524139a65ad02adad6bc1c85c79f9e26eeb4c700b61030bbe.jpg",
+    "hmg-catalogue/026caffac3c6fb1e86d4d22de97cfb708972b592b07c068fef78b53c34ae1627.jpg",
+    "hmg-catalogue/03b1093e7cd3c97aa3f72afc331b4d6b3a0042343645e5b7c4b1614269e2c9d6.jpg",
+    "hmg-catalogue/04301c4a2447bfc75763ee54db042cf5a2870a7896dba1822e936b6824ae678f.jpg"
+  ],
+  "verified_mappings": [
+    {
+      "product_id": "ce75bdf5-4265-5e0c-92dc-3e5fd64b78bc",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/10-pigeon-eye-granite.jpg",
+      "path": "hmg-catalogue/00e9e0c10f598ecb093043c5ff168a69219a775eb87ef6f7e95f7c2091f0492d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/00e9e0c10f598ecb093043c5ff168a69219a775eb87ef6f7e95f7c2091f0492d.jpg"
+    },
+    {
+      "product_id": "83561933-b074-52b5-bcaf-ecf3ebf99881",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/frozen-sea.jpg",
+      "path": "hmg-catalogue/026c118a40e0f0c524139a65ad02adad6bc1c85c79f9e26eeb4c700b61030bbe.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/026c118a40e0f0c524139a65ad02adad6bc1c85c79f9e26eeb4c700b61030bbe.jpg"
+    },
+    {
+      "product_id": "ae3c7b32-6e28-5f0a-9bf3-26dc38f6799e",
+      "source_url": "https://www.hmgstones.com/assets/images/products/quartzite/3-columbian-emerald.jpg",
+      "path": "hmg-catalogue/03b1093e7cd3c97aa3f72afc331b4d6b3a0042343645e5b7c4b1614269e2c9d6.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/03b1093e7cd3c97aa3f72afc331b4d6b3a0042343645e5b7c4b1614269e2c9d6.jpg"
+    },
+    {
+      "product_id": "8336f1b3-60d3-58dd-afc5-257e072c078b",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/5-lemon-ice-granite.jpg",
+      "path": "hmg-catalogue/026caffac3c6fb1e86d4d22de97cfb708972b592b07c068fef78b53c34ae1627.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/026caffac3c6fb1e86d4d22de97cfb708972b592b07c068fef78b53c34ae1627.jpg"
+    },
+    {
+      "product_id": "26bca180-bf1e-5636-8568-091035ddbdaf",
+      "source_url": "https://www.hmgstones.com/assets/images/products/onyx/7-Azul-Aurum.jpg",
+      "path": "hmg-catalogue/04301c4a2447bfc75763ee54db042cf5a2870a7896dba1822e936b6824ae678f.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/04301c4a2447bfc75763ee54db042cf5a2870a7896dba1822e936b6824ae678f.jpg"
+    }
+  ],
+  "failures": [
+    {
+      "path": "hmg-catalogue/066ba1ffbd3b97ca91b259bf638d97dfab7f3232defd78aebf4ccc059fbfb66d.jpg",
+      "http_status": null,
+      "error_type": "RemoteProtocolError",
+      "upload_attempted": false,
+      "retry_sent": false
+    }
+  ],
+  "aborted": true,
+  "database_updates": 0,
+  "plan_sha256": "626b2c4df56c16d738bd36589cb92008fc6a14b235b2f780d82031c09cfcf7b1"
+}

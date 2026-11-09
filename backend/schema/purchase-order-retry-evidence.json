@@ -1,0 +1,397 @@
+{
+  "hypothesis": "Fresh app-scoped schema session can resolve a recently created supplier dependency",
+  "reads": {
+    "suppliers": {
+      "success": true,
+      "data": {
+        "name": "suppliers",
+        "physical_table_name": "hmg_studio_suppliers",
+        "provider_type": "flat_table",
+        "schema_format": "frictionless",
+        "json_schema": {
+          "fields": [
+            {
+              "name": "id",
+              "type": "string",
+              "format": "uuid",
+              "constraints": {
+                "required": true
+              }
+            },
+            {
+              "name": "organization_id",
+              "type": "string",
+              "format": "uuid",
+              "constraints": {
+                "required": true
+              }
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "constraints": {
+                "required": true,
+                "maxLength": 255
+              }
+            },
+            {
+              "name": "code",
+              "type": "string",
+              "constraints": {
+                "maxLength": 255
+              }
+            },
+            {
+              "name": "contact_name",
+              "type": "string",
+              "constraints": {
+                "maxLength": 255
+              }
+            },
+            {
+              "name": "email",
+              "type": "string",
+              "constraints": {
+                "maxLength": 255
+              }
+            },
+            {
+              "name": "phone",
+              "type": "string",
+              "constraints": {
+                "maxLength": 255
+              }
+            },
+            {
+              "name": "address",
+              "type": "string"
+            },
+            {
+              "name": "city",
+              "type": "string",
+              "constraints": {
+                "maxLength": 255
+              }
+            },
+            {
+              "name": "state",
+              "type": "string",
+              "constraints": {
+                "maxLength": 255
+              }
+            },
+            {
+              "name": "zip_code",
+              "type": "string",
+              "constraints": {
+                "maxLength": 255
+              }
+            },
+            {
+              "name": "country",
+              "type": "string",
+              "constraints": {
+                "maxLength": 255
+              }
+            },
+            {
+              "name": "website",
+              "type": "string",
+              "constraints": {
+                "maxLength": 255
+              }
+            },
+            {
+              "name": "payment_terms",
+              "type": "string",
+              "constraints": {
+                "maxLength": 255
+              }
+            },
+            {
+              "name": "currency",
+              "type": "string",
+              "default": "USD",
+              "constraints": {
+                "required": true,
+                "maxLength": 3
+              }
+            },
+            {
+              "name": "notes",
+              "type": "string"
+            },
+            {
+              "name": "metadata",
+              "type": "any"
+            },
+            {
+              "name": "is_active",
+              "type": "boolean",
+              "default": true,
+              "constraints": {
+                "required": true
+              }
+            },
+            {
+              "name": "created_at",
+              "type": "datetime"
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime"
+            },
+            {
+              "name": "deleted_at",
+              "type": "datetime"
+            },
+            {
+              "name": "rating",
+              "type": "integer",
+              "constraints": {
+                "minimum": 0
+              }
+            }
+          ],
+          "indexes": [
+            {
+              "name": "erp_13135e1747babff2b0ae",
+              "fields": [
+                "organization_id",
+                "is_active"
+              ],
+              "unique": false
+            },
+            {
+              "name": "erp_710b3a87c320f3421c62",
+              "fields": [
+                "organization_id",
+                "code"
+              ],
+              "unique": true
+            },
+            {
+              "name": "erp_bdbadff517dbb389940d",
+              "fields": [
+                "organization_id"
+              ]
+            }
+          ],
+          "primaryKey": [
+            "id"
+          ],
+          "foreignKeys": [
+            {
+              "fields": [
+                "organization_id"
+              ],
+              "reference": {
+                "fields": [
+                  "id"
+                ],
+                "resource": "hmg_studio_organizations"
+              },
+              "x-actions": {
+                "onDelete": "RESTRICT"
+              }
+            }
+          ],
+          "reverseRelationships": [
+            {
+              "name": "product_supplier",
+              "type": "hasMany",
+              "localKey": "id",
+              "foreignKey": "supplier_id",
+              "foreignTable": "hmg_studio_product_supplier"
+            },
+            {
+              "name": "variant_replenishment_policies",
+              "type": "hasMany",
+              "localKey": "id",
+              "foreignKey": "supplier_id",
+              "foreignTable": "hmg_studio_variant_replenishment_policies"
+            }
+          ],
+          "manyToManyRelationships": [
+            {
+              "name": "products",
+              "localKey": "id",
+              "foreignKey": "id",
+              "foreignTable": "hmg_studio_products",
+              "junctionTable": "hmg_studio_product_supplier",
+              "junctionLocalKey": "supplier_id",
+              "junctionForeignKey": "product_id"
+            }
+          ]
+        },
+        "is_materialized": true,
+        "is_active": true,
+        "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
+        "created_at": "2026-11-06T12:57:11.793533+00:00",
+        "updated_at": "2026-11-06T13:09:06.058027+00:00"
+      }
+    },
+    "product_supplier": {
+      "success": true,
+      "data": {
+        "name": "product_supplier",
+        "physical_table_name": "hmg_studio_product_supplier",
+        "provider_type": "flat_table",
+        "schema_format": "frictionless",
+        "json_schema": {
+          "fields": [
+            {
+              "name": "id",
+              "type": "string",
+              "format": "uuid",
+              "constraints": {
+                "required": true
+              }
+            },
+            {
+              "name": "product_id",
+              "type": "string",
+              "format": "uuid",
+              "constraints": {
+                "required": true
+              }
+            },
+            {
+              "name": "supplier_id",
+              "type": "string",
+              "format": "uuid",
+              "constraints": {
+                "required": true
+              }
+            },
+            {
+              "name": "cost_price",
+              "type": "number"
+            },
+            {
+              "name": "supplier_sku",
+              "type": "string",
+              "constraints": {
+                "maxLength": 255
+              }
+            },
+            {
+              "name": "lead_time_days",
+              "type": "integer"
+            },
+            {
+              "name": "minimum_order_quantity",
+              "type": "integer"
+            },
+            {
+              "name": "is_primary",
+              "type": "boolean",
+              "default": false,
+              "constraints": {
+                "required": true
+              }
+            },
+            {
+              "name": "created_at",
+              "type": "datetime"
+            },
+            {
+              "name": "updated_at",
+              "type": "datetime"
+            }
+          ],
+          "indexes": [
+            {
+              "name": "erp_60052d9635d8766c550e",
+              "fields": [
+                "product_id",
+                "supplier_id"
+              ],
+              "unique": true
+            },
+            {
+              "name": "erp_be5aedbc5c36f8c4e738",
+              "fields": [
+                "supplier_id"
+              ]
+            },
+            {
+              "name": "erp_975ab463fb2cc8b1940a",
+              "fields": [
+                "product_id"
+              ]
+            }
+          ],
+          "primaryKey": [
+            "id"
+          ],
+          "foreignKeys": [
+            {
+              "fields": [
+                "product_id"
+              ],
+              "reference": {
+                "fields": [
+                  "id"
+                ],
+                "resource": "hmg_studio_products"
+              },
+              "x-actions": {
+                "onDelete": "RESTRICT"
+              }
+            },
+            {
+              "fields": [
+                "supplier_id"
+              ],
+              "reference": {
+                "fields": [
+                  "id"
+                ],
+                "resource": "hmg_studio_suppliers"
+              },
+              "x-actions": {
+                "onDelete": "RESTRICT"
+              }
+            }
+          ],
+          "reverseRelationships": [],
+          "manyToManyRelationships": []
+        },
+        "is_materialized": true,
+        "is_active": true,
+        "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
+        "created_at": "2026-11-06T13:02:17.026777+00:00",
+        "updated_at": "2026-11-06T13:02:17.380865+00:00"
+      }
+    },
+    "purchase_orders": {
+      "error": "{\"success\": false, \"error\": \"Table 'purchase_orders' not found\"}"
+    }
+  },
+  "retry": {
+    "created_count": 1,
+    "updated_count": 0,
+    "error_count": 0,
+    "created_tables": [
+      {
+        "id": 2482,
+        "name": "purchase_orders",
+        "physical_table_name": "hmg_studio_purchase_orders",
+        "is_materialized": true
+      }
+    ],
+    "updated_tables": [],
+    "errors": [],
+    "warnings": [],
+    "primary_keys": {
+      "purchase_orders": {
+        "field": "id",
+        "type": "uuid",
+        "generated": true
+      }
+    },
+    "materialized": true,
+    "success": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "source_evidence": [
+    "2026_10_05_055529_create_inter_company_transfers_table.php",
+    "2026_11_01_000001_index_tenant_lists_and_transfer_relationships.php"
+  ],
+  "description": "Reviewed declarative index facts from dynamic/inline source declarations; additive only, never remove existing indexes.",
+  "indexes": {
+    "products": [{"name": "erp_products_org_live_created", "fields": ["organization_id", "created_at", "deleted_at"]}],
+    "orders": [{"name": "erp_orders_org_live_created", "fields": ["organization_id", "created_at", "id", "deleted_at"]}],
+    "purchase_orders": [{"name": "erp_purchase_org_live_date", "fields": ["organization_id", "order_date", "id", "deleted_at"]}],
+    "inter_company_transfer_lines": [
+      {"name": "erp_ict_lines_from_product", "fields": ["from_product_id"]},
+      {"name": "erp_ict_lines_to_product", "fields": ["to_product_id"]}
+    ]
+  }
+}

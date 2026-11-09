@@ -1,0 +1,139 @@
+{
+  "proposal_only": true,
+  "reason": "Data-plane principal_id is username; UUID comparison produces invalid UUID read error",
+  "evidence": "docs/hmg-studio/evidence/notification-owner-probe-before-correction.json",
+  "before": {
+    "api_version": "api.cerbos.dev/v1",
+    "metadata": {
+      "hash": "10479184851755633284",
+      "store_identifer": "resource.datatable_notifications.vdefault/insurance_hmg-studio",
+      "store_identifier": "resource.datatable_notifications.vdefault/insurance_hmg-studio",
+      "source_attributes": {
+        "attributes": {
+          "update_ts": "2026-11-06T17:11:19Z",
+          "driver": "postgres"
+        }
+      },
+      "source_file": "",
+      "annotations": {}
+    },
+    "resource_policy": {
+      "resource": "datatable:notifications",
+      "version": "default",
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "condition": {
+            "match": {
+              "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\" && R.attr.user_id == P.id"
+            }
+          },
+          "effect": "EFFECT_ALLOW",
+          "derived_roles": [],
+          "name": ""
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "derived_roles": [],
+          "name": ""
+        }
+      ],
+      "scope": "insurance_hmg-studio",
+      "import_derived_roles": [],
+      "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+    },
+    "disabled": false,
+    "description": "",
+    "variables": {},
+    "json_schema": ""
+  },
+  "payload": {
+    "name": "notifications",
+    "policy_type": "resource",
+    "entity_type": "datatable",
+    "version": "default",
+    "rules": [
+      {
+        "actions": [
+          "read"
+        ],
+        "roles": [
+          "HMG Synthetic Operator"
+        ],
+        "effect": "EFFECT_ALLOW",
+        "condition": {
+          "match": {
+            "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\" && ((P.id == \"qa_hmg_preferences_20261106\" && R.attr.user_id == \"bb17fd27-1f5e-4691-b2c7-e9745883e54f\") || (P.id == \"qa_hmg_inbox_20261106\" && R.attr.user_id == \"1bbbcad2-46c3-480f-92d6-acdf566b510a\"))"
+          }
+        },
+        "derived_roles": [],
+        "name": ""
+      },
+      {
+        "actions": [
+          "create",
+          "update",
+          "delete"
+        ],
+        "roles": [
+          "*"
+        ],
+        "effect": "EFFECT_DENY",
+        "derived_roles": [],
+        "name": ""
+      }
+    ]
+  },
+  "expected": {
+    "resource": "datatable:notifications",
+    "version": "default",
+    "rules": [
+      {
+        "actions": [
+          "read"
+        ],
+        "roles": [
+          "HMG Synthetic Operator"
+        ],
+        "effect": "EFFECT_ALLOW",
+        "condition": {
+          "match": {
+            "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\" && ((P.id == \"qa_hmg_preferences_20261106\" && R.attr.user_id == \"bb17fd27-1f5e-4691-b2c7-e9745883e54f\") || (P.id == \"qa_hmg_inbox_20261106\" && R.attr.user_id == \"1bbbcad2-46c3-480f-92d6-acdf566b510a\"))"
+          }
+        },
+        "derived_roles": [],
+        "name": ""
+      },
+      {
+        "actions": [
+          "create",
+          "update",
+          "delete"
+        ],
+        "roles": [
+          "*"
+        ],
+        "effect": "EFFECT_DENY",
+        "derived_roles": [],
+        "name": ""
+      }
+    ],
+    "scope": "insurance_hmg-studio",
+    "import_derived_roles": [],
+    "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+  },
+  "schema_or_rows_changed": false
+}

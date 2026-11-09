@@ -1,0 +1,2389 @@
+{
+  "items": [
+    {
+      "stone": "marble",
+      "name": "Bianco Lava",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/marble/1-Bianco-Lava-new.jpg",
+      "url": "product-details.php?product_name=marble&product_id=1",
+      "thumb": "assets/images/products/marble/1-Bianco-Lava-new.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Dimond White",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/marble/4-dimond-white.jpg",
+      "url": "product-details.php?product_name=marble&product_id=5",
+      "thumb": "assets/images/products/marble/4-dimond-white.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Diamond white Shot Blast Finish",
+      "color": "white",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/diamond-white-hydro.jpg",
+      "url": "product-details.php?product_name=marble&product_id=10",
+      "thumb": "assets/images/products/granite/thumb/diamond-white-hydro.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "White On White (WOW)",
+      "color": "white",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/white-on-white-WOW-marble.jpg",
+      "url": "product-details.php?product_name=marble&product_id=1",
+      "thumb": "assets/images/products/marble/white-on-white-WOW-marble.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Alaska Snow Sea",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/marble/2-alaska-snow-sea-new.jpg",
+      "url": "product-details.php?product_name=marble&product_id=3",
+      "thumb": "assets/images/products/marble/2-alaska-snow-sea-new.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Statuario SGR",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/marble/133-STATUARIO_SGR_2820.jpg",
+      "url": "product-details.php?product_name=marble&product_id=8",
+      "thumb": "assets/images/products/marble/133-STATUARIO_SGR_2820.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Statuario 1 Areka Finish",
+      "color": "white",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/staturio-af.jpg",
+      "url": "product-details.php?product_name=marble&product_id=9",
+      "thumb": "assets/images/products/granite/thumb/staturio-af.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Statuario 2 ",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/marble/Statuario 3.jpg",
+      "url": "product-details.php?product_name=marble&product_id=12",
+      "thumb": "assets/images/products/marble/thumb/Statuario 3.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Statuario 3 ",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/marble/Statuario 5.jpg",
+      "url": "product-details.php?product_name=marble&product_id=13",
+      "thumb": "assets/images/products/marble/thumb/Statuario 5.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Statuario 4 ",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/marble/Statuario 7.jpg",
+      "url": "product-details.php?product_name=marble&product_id=14",
+      "thumb": "assets/images/products/marble/thumb/Statuario 7.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Bianco Iceberg",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/marble/123-BIANCO-ICEBERG.jpg",
+      "url": "product-details.php?product_name=marble&product_id=7",
+      "thumb": "assets/images/products/marble/123-BIANCO-ICEBERG.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Bianco Ajo Pelado",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/marble/5-BIANCO-AJO-PELADO.jpg",
+      "url": "product-details.php?product_name=marble&product_id=6",
+      "thumb": "assets/images/products/marble/5-BIANCO-AJO-PELADO.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Calacatta Galena",
+      "color": "white",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/CALACATTA-80.jpg",
+      "url": "product-details.php?product_name=marble&product_id=11",
+      "thumb": "assets/images/products/marble/CALACATTA-80.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Foam White ",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/marble/126-Foam-white.jpg",
+      "url": "product-details.php?product_name=marble&product_id=15",
+      "thumb": "assets/images/products/marble/126-Foam-white.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Foam White 2",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/marble/Foam White2.jpg",
+      "url": "product-details.php?product_name=marble&product_id=16",
+      "thumb": "assets/images/products/marble/thumb/Foam White2.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Whoopher Olar",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/marble/134-WHOOPHER-OLOR-2815.jpg",
+      "url": "product-details.php?product_name=marble&product_id=17",
+      "thumb": "assets/images/products/marble/134-WHOOPHER-OLOR-2815.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Luminous Cloud",
+      "color": "grey",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/luminous-cloud-af.jpg",
+      "url": "product-details.php?product_name=marble&product_id=49",
+      "thumb": "assets/images/products/granite/thumb/luminous-cloud-af.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Bianco Carrara",
+      "color": "beige",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/BIANCO-CARRARA.jpg",
+      "url": "product-details.php?product_name=marble&product_id=75",
+      "thumb": "assets/images/products/marble/BIANCO-CARRARA.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Thassos White",
+      "color": "white",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/thosis-white-af.jpg",
+      "url": "product-details.php?product_name=marble&product_id=22",
+      "thumb": "assets/images/products/granite/thumb/thosis-white-af.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Artic white",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/marble/ARTIC-WHITE_W.jpg",
+      "url": "product-details.php?product_name=marble&product_id=18",
+      "thumb": "assets/images/products/marble/thumb/ARTIC-WHITE_W.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Bianco Lasa",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/bianco-lasa-marble.jpg",
+      "url": "product-details.php?product_name=marble&product_id=23",
+      "thumb": "assets/images/products/marble/bianco-lasa-marble.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Bianco Monte Rosa",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/124-BIANCO-MONTE-ROSA.jpg",
+      "url": "product-details.php?product_name=marble&product_id=24",
+      "thumb": "assets/images/products/marble/124-BIANCO-MONTE-ROSA.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Bianco Rhino",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/125-BIANCO-RHINO.jpg",
+      "url": "product-details.php?product_name=marble&product_id=25",
+      "thumb": "assets/images/products/marble/125-BIANCO-RHINO.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Breccia Capraia",
+      "color": "beige",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/25-bracia-caparya.png",
+      "url": "product-details.php?product_name=marble&product_id=42",
+      "thumb": "assets/images/products/marble/25-bracia-caparya.png"
+    },
+    {
+      "stone": "marble",
+      "name": "Albino Arowana",
+      "color": "beige",
+      "range": "essential",
+      "src": "assets/images/products/marble/120-ALBINO-AROWANA.jpg",
+      "url": "product-details.php?product_name=marble&product_id=38",
+      "thumb": "assets/images/products/marble/120-ALBINO-AROWANA.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Bianco Husky",
+      "color": "cream",
+      "range": "essential",
+      "src": "assets/images/products/marble/122-BIANCO-HUSKY.jpg",
+      "url": "product-details.php?product_name=marble&product_id=26",
+      "thumb": "assets/images/products/marble/122-BIANCO-HUSKY.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Capraia Areka Finish",
+      "color": "white",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/caparaya-af.jpg",
+      "url": "product-details.php?product_name=marble&product_id=21",
+      "thumb": "assets/images/products/granite/thumb/caparaya-af.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Oyster white",
+      "color": "beige",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/23-oyster-white.jpg",
+      "url": "product-details.php?product_name=marble&product_id=39",
+      "thumb": "assets/images/products/marble/23-oyster-white.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "White Heron",
+      "color": "beige",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/24-white-heraon.jpg",
+      "url": "product-details.php?product_name=marble&product_id=40",
+      "thumb": "assets/images/products/marble/24-white-heraon.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Crema Luna",
+      "color": "cream",
+      "range": "essential",
+      "src": "assets/images/products/marble/34-crema-luna.jpg",
+      "url": "product-details.php?product_name=marble&product_id=33",
+      "thumb": "assets/images/products/marble/34-crema-luna.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "BTC Classico",
+      "color": "beige",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/31-BTC-Classico.jpg",
+      "url": "product-details.php?product_name=marble&product_id=36",
+      "thumb": "assets/images/products/marble/31-BTC-Classico.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Euro Stella",
+      "color": "beige",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/30-EURO-STELLA.jpg",
+      "url": "product-details.php?product_name=marble&product_id=35",
+      "thumb": "assets/images/products/marble/30-EURO-STELLA.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Mandorla",
+      "color": "beige",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/33-MANDROLA.jpg",
+      "url": "product-details.php?product_name=marble&product_id=37",
+      "thumb": "assets/images/products/marble/33-MANDROLA.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Crema Barita",
+      "color": "beige",
+      "range": "essential",
+      "src": "assets/images/products/marble/6-Crema-barite.jpg",
+      "url": "product-details.php?product_name=marble&product_id=41",
+      "thumb": "assets/images/products/marble/6-Crema-barite.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Italian Beige",
+      "color": "beige",
+      "range": "essential",
+      "src": "assets/images/products/marble/italian-beige.jpg",
+      "url": "product-details.php?product_name=marble&product_id=44",
+      "thumb": "assets/images/products/marble/thumb/italian-beige.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Crema Eve",
+      "color": "cream",
+      "range": "essential",
+      "src": "assets/images/products/marble/creama-eva.jpg",
+      "url": "product-details.php?product_name=marble&product_id=31",
+      "thumb": "assets/images/products/marble/creama-eva.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Crema Eve Areka Finish",
+      "color": "cream",
+      "range": "essential",
+      "src": "assets/images/products/marble/creama-eva-areka-finish.jpg",
+      "url": "product-details.php?product_name=marble&product_id=76",
+      "thumb": "assets/images/products/marble/creama-eva-areka-finish.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Image Stone",
+      "color": "biege",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/28-picture-stone.jpg",
+      "url": "product-details.php?product_name=marble&product_id=34",
+      "thumb": "assets/images/products/marble/28-picture-stone.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Indus Cream",
+      "color": "beige",
+      "range": "essential",
+      "src": "assets/images/products/marble/yanke-beige.jpg",
+      "url": "product-details.php?product_name=marble&product_id=43",
+      "thumb": "assets/images/products/marble/thumb/yanke-beige.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Mond Areka Finish",
+      "color": "beige",
+      "range": "essential",
+      "src": "assets/images/products/granite/mond-af.jpg",
+      "url": "product-details.php?product_name=marble&product_id=45",
+      "thumb": "assets/images/products/granite/thumb/mond-af.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Mond",
+      "color": "beige",
+      "range": "essential",
+      "src": "assets/images/products/marble/mond.jpg",
+      "url": "product-details.php?product_name=marble&product_id=46",
+      "thumb": "assets/images/products/marble/thumb/mond.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "BTC",
+      "color": "cream",
+      "range": "essential",
+      "src": "assets/images/products/marble/btc-250.jpg",
+      "url": "product-details.php?product_name=marble&product_id=47",
+      "thumb": "assets/images/products/marble/thumb/btc-250.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Whooper Olar",
+      "color": "green",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/119-WHOOPER-OLOR-2772.jpg",
+      "url": "product-details.php?product_name=marble&product_id=58",
+      "thumb": "assets/images/products/marble/119-WHOOPER-OLOR-2772.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Millefoglie",
+      "color": "grey",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/130-MILLEFOGLIE.jpg",
+      "url": "product-details.php?product_name=marble&product_id=53",
+      "thumb": "assets/images/products/marble/130-MILLEFOGLIE.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Green Tortoise",
+      "color": "green",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/75-Green-Tortoise.jpg",
+      "url": "product-details.php?product_name=marble&product_id=54",
+      "thumb": "assets/images/products/marble/75-Green-Tortoise.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Ringtail Possum",
+      "color": "green",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/116-RINGTAIL-POSSUM-2739.jpg",
+      "url": "product-details.php?product_name=marble&product_id=59",
+      "thumb": "assets/images/products/marble/116-RINGTAIL-POSSUM-2739.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "San Pedro",
+      "color": "green",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/117-SAN-PEDRO-2728.jpg",
+      "url": "product-details.php?product_name=marble&product_id=60",
+      "thumb": "assets/images/products/marble/117-SAN-PEDRO-2728.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Lavamar ",
+      "color": "grey",
+      "range": "exclusive",
+      "src": "assets/images/products/marble/Lavamar.jpg",
+      "url": "product-details.php?product_name=marble&product_id=50",
+      "thumb": "assets/images/products/marble/thumb/Lavamar.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Gun Metal Super Extra",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/45-gun-metal-se.jpg",
+      "url": "product-details.php?product_name=marble&product_id=27",
+      "thumb": "assets/images/products/marble/45-gun-metal-se.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Grego Pozzolana",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/127-GREGO_POZZOLANA_2818.jpg",
+      "url": "product-details.php?product_name=marble&product_id=29",
+      "thumb": "assets/images/products/marble/127-GREGO_POZZOLANA_2818.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Frill Back Light",
+      "color": "grey",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/53-Frill-Back-Light.jpg",
+      "url": "product-details.php?product_name=marble&product_id=51",
+      "thumb": "assets/images/products/marble/53-Frill-Back-Light.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Bianco Nebbia",
+      "color": "grey",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/110-BIANCO-NEBBIA-2732.jpg",
+      "url": "product-details.php?product_name=marble&product_id=52",
+      "thumb": "assets/images/products/marble/110-BIANCO-NEBBIA-2732.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Gun Metal SE",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/54-gun-metal-se2.jpg",
+      "url": "product-details.php?product_name=marble&product_id=28",
+      "thumb": "assets/images/products/marble/54-gun-metal-se2.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Lar grey Areka Finish",
+      "color": "grey",
+      "range": "essential",
+      "src": "assets/images/products/granite/largrey-af.jpg",
+      "url": "product-details.php?product_name=marble&product_id=48",
+      "thumb": "assets/images/products/granite/thumb/largrey-af.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Couger",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/59-Couger.jpg",
+      "url": "product-details.php?product_name=marble&product_id=62",
+      "thumb": "assets/images/products/marble/59-Couger.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Marlin",
+      "color": "silver",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/58-marlin.jpg",
+      "url": "product-details.php?product_name=marble&product_id=57",
+      "thumb": "assets/images/products/marble/58-marlin.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Silver Root",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/silver-root-af.jpg",
+      "url": "product-details.php?product_name=marble&product_id=56",
+      "thumb": "assets/images/products/granite/thumb/silver-root-af.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Gregio Pozzolano",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/112-GREGIO-AURORA-2726.jpg",
+      "url": "product-details.php?product_name=marble&product_id=61",
+      "thumb": "assets/images/products/marble/112-GREGIO-AURORA-2726.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Grigio Aurora",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/marble/128-GRIGO-AURORA.jpg",
+      "url": "product-details.php?product_name=marble&product_id=64",
+      "thumb": "assets/images/products/marble/128-GRIGO-AURORA.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Crystal Light",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/marble/crystal-light-emproder.jpg",
+      "url": "product-details.php?product_name=marble&product_id=63",
+      "thumb": "assets/images/products/marble/thumb/crystal-light-emproder.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Light Emperador Brown",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/marble/129-Light-empredor-brown.jpg",
+      "url": "product-details.php?product_name=marble&product_id=65",
+      "thumb": "assets/images/products/marble/129-Light-empredor-brown.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Dark Emperador",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/marble/dark-emproder-250.jpg",
+      "url": "product-details.php?product_name=marble&product_id=67",
+      "thumb": "assets/images/products/marble/thumb/dark-emproder-250.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Marron Ketupa",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/marble/114-MARRON-KETUPA-2758.jpg",
+      "url": "product-details.php?product_name=marble&product_id=68",
+      "thumb": "assets/images/products/marble/114-MARRON-KETUPA-2758.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Bronze Amani (ARK)",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/bronze-amani-ark.jpg",
+      "url": "product-details.php?product_name=marble&product_id=66",
+      "thumb": "assets/images/products/marble/thumb/bronze-amani-ark.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Black Diamond",
+      "color": "black",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/black-diamond-af.jpg",
+      "url": "product-details.php?product_name=marble&product_id=71",
+      "thumb": "assets/images/products/granite/thumb/black-diamond-af.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Panda White",
+      "color": "black",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/115-PANDA-WHITE-2735.jpg",
+      "url": "product-details.php?product_name=marble&product_id=69",
+      "thumb": "assets/images/products/marble/115-PANDA-WHITE-2735.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Gregio Picaso",
+      "color": "black",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/111-GRECRIO-PICASO-2766.jpg",
+      "url": "product-details.php?product_name=marble&product_id=70",
+      "thumb": "assets/images/products/marble/111-GRECRIO-PICASO-2766.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Silver Cloud",
+      "color": "black",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/106-SILVER-CLOUD.jpg",
+      "url": "product-details.php?product_name=marble&product_id=72",
+      "thumb": "assets/images/products/marble/106-SILVER-CLOUD.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Nero St Laurent",
+      "color": "black",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/109-Nuro-Saint-Laurent.jpg",
+      "url": "product-details.php?product_name=marble&product_id=73",
+      "thumb": "assets/images/products/marble/109-Nuro-Saint-Laurent.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Belgium Black",
+      "color": "black",
+      "range": "exquisite",
+      "src": "assets/images/products/marble/110-Belgium-Black.jpg",
+      "url": "product-details.php?product_name=marble&product_id=74",
+      "thumb": "assets/images/products/marble/110-Belgium-Black.jpg"
+    },
+    {
+      "stone": "marble",
+      "name": "Mildew Algae",
+      "color": "green",
+      "range": "exquisite",
+      "src": "assets/images/products/quartzite/22-Mildew-Algae.jpg",
+      "url": "product-details.php?product_name=marble&product_id=77",
+      "thumb": "assets/images/products/quartzite/22-Mildew-Algae.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Silver Grey",
+      "color": "grey",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/1-silver-grey-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=1",
+      "thumb": "assets/images/products/granite/1-silver-grey-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Cotton White",
+      "color": "grey",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/2-cotton-white-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=2",
+      "thumb": "assets/images/products/granite/2-cotton-white-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "ALP",
+      "color": "grey",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/3-ALP-Granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=3",
+      "thumb": "assets/images/products/granite/3-ALP-Granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Butter Fruit",
+      "color": "grey",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/4-butter-fruit-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=4",
+      "thumb": "assets/images/products/granite/4-butter-fruit-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Lemon Ice",
+      "color": "grey",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/5-lemon-ice-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=5",
+      "thumb": "assets/images/products/granite/5-lemon-ice-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "White Petal",
+      "color": "grey",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/6-white-petal-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=6",
+      "thumb": "assets/images/products/granite/6-white-petal-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Newton Gold",
+      "color": "grey",
+      "range": "essential",
+      "src": "assets/images/products/granite/7-newton-gold-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=7",
+      "thumb": "assets/images/products/granite/7-newton-gold-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Dry Leap",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/8-dry-leap-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=8",
+      "thumb": "assets/images/products/granite/8-dry-leap-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Golden Eagle",
+      "color": "red",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/11-golden-eagle-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=11",
+      "thumb": "assets/images/products/granite/11-golden-eagle-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Pigeon Eye",
+      "color": "red",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/10-pigeon-eye-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=10",
+      "thumb": "assets/images/products/granite/10-pigeon-eye-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Colombo Juprana",
+      "color": "brown",
+      "range": "exclusive",
+      "src": "assets/images/products/granite/12-colombo-juprana-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=12",
+      "thumb": "assets/images/products/granite/12-colombo-juprana-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Antarctic Wild Forest",
+      "color": "grey",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/13-antarctic-wild-forest-grantie.jpg",
+      "url": "product-details.php?product_name=granite&product_id=13",
+      "thumb": "assets/images/products/granite/13-antarctic-wild-forest-grantie.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Monarch Butter Flies",
+      "color": "green",
+      "range": "Elegance",
+      "src": "assets/images/products/granite/14-monarch-butter-flies-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=14",
+      "thumb": "assets/images/products/granite/14-monarch-butter-flies-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Coasta Esmarald",
+      "color": "green",
+      "range": "Elegance",
+      "src": "assets/images/products/granite/15-coasta-esmarald-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=15",
+      "thumb": "assets/images/products/granite/15-coasta-esmarald-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Copenhagen",
+      "color": "gold",
+      "range": "Exclusives",
+      "src": "assets/images/products/granite/16-copenhagen-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=16",
+      "thumb": "assets/images/products/granite/16-copenhagen-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Igneous Gold",
+      "color": "brown",
+      "range": "Exquisites",
+      "src": "assets/images/products/granite/17-igneous-gold-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=17",
+      "thumb": "assets/images/products/granite/17-igneous-gold-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Tigrato",
+      "color": "silver",
+      "range": "Exquisites",
+      "src": "assets/images/products/granite/18-tigrato-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=18",
+      "thumb": "assets/images/products/granite/18-tigrato-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Crystal Yellow",
+      "color": "grey",
+      "range": "Exquisites",
+      "src": "assets/images/products/granite/19-crystal-yellow.jpg",
+      "url": "product-details.php?product_name=granite&product_id=19",
+      "thumb": "assets/images/products/granite/19-crystal-yellow.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Brass Blue",
+      "color": "green",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/20-brass-blue-grantie.jpg",
+      "url": "product-details.php?product_name=granite&product_id=20",
+      "thumb": "assets/images/products/granite/20-brass-blue-grantie.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Blue Star",
+      "color": "green",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/21-blue-pearl-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=21",
+      "thumb": "assets/images/products/granite/21-blue-pearl-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Nero Foxtail 2",
+      "color": "black",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/22-nero-foxtail-2-grantie.jpg",
+      "url": "product-details.php?product_name=granite&product_id=22",
+      "thumb": "assets/images/products/granite/22-nero-foxtail-2-grantie.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Nero Foxtail",
+      "color": "black",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/23-nero-foxtail.jpg",
+      "url": "product-details.php?product_name=granite&product_id=23",
+      "thumb": "assets/images/products/granite/23-nero-foxtail.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Titanium Gold",
+      "color": "black",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/25-titanium-gold-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=25",
+      "thumb": "assets/images/products/granite/25-titanium-gold-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Cizglex",
+      "color": "black",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/28-cizglex-granite.jpg",
+      "url": "product-details.php?product_name=granite&product_id=28",
+      "thumb": "assets/images/products/granite/28-cizglex-granite.jpg"
+    },
+    {
+      "stone": "granite",
+      "name": "Cizglex Hydro Finish",
+      "color": "black",
+      "range": "exquisite",
+      "src": "assets/images/products/granite/29-cizglex-hydro-finish.jpg",
+      "url": "product-details.php?product_name=granite&product_id=29",
+      "thumb": "assets/images/products/granite/29-cizglex-hydro-finish.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Diamon Cut",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/diamon-cut.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=15",
+      "thumb": "assets/images/products/onyx/diamon-cut.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Adamas",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/1-Adamas-Onyx.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=1",
+      "thumb": "assets/images/products/onyx/1-Adamas-Onyx.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Adamas 1",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/adamas-1.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=16",
+      "thumb": "assets/images/products/onyx/adamas-1.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Bianco Allium Cepa",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/bianco-allium-cepa.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=17",
+      "thumb": "assets/images/products/onyx/bianco-allium-cepa.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Frozen Sea",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/frozen-sea.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=18",
+      "thumb": "assets/images/products/onyx/frozen-sea.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Yellow River",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/yellow-river.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=19",
+      "thumb": "assets/images/products/onyx/yellow-river.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Bianco Lupine",
+      "color": "brown",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/10-Bianco-Lupine.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=10",
+      "thumb": "assets/images/products/onyx/10-Bianco-Lupine.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Bianco Hellebore",
+      "color": "white",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/8-Bianco-hellebore1.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=8",
+      "thumb": "assets/images/products/onyx/8-Bianco-hellebore1.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Aurum",
+      "color": "brown",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/5-Aurum-onyx.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=5",
+      "thumb": "assets/images/products/onyx/5-Aurum-onyx.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Crested 1",
+      "color": "brown",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/Crested-1.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=20",
+      "thumb": "assets/images/products/onyx/Crested-1.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Agouti",
+      "color": "brown",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/Agouti.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=21",
+      "thumb": "assets/images/products/onyx/Agouti.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Yellow River 1",
+      "color": "brown",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/yellow-river-1.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=22",
+      "thumb": "assets/images/products/onyx/yellow-river-1.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Bassent VC",
+      "color": "brown",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/Bassent-VC.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=23",
+      "thumb": "assets/images/products/onyx/Bassent-VC.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Arco Baleno 2",
+      "color": "brown",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/Arco-Baleno-2.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=24",
+      "thumb": "assets/images/products/onyx/Arco-Baleno-2.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Horn Wiper",
+      "color": "brown",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/Horn-Wiper.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=25",
+      "thumb": "assets/images/products/onyx/Horn-Wiper.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Golden Adams",
+      "color": "brown",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/Golden-Adams.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=26",
+      "thumb": "assets/images/products/onyx/Golden-Adams.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Crested 2",
+      "color": "brown",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/Crested-2.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=27",
+      "thumb": "assets/images/products/onyx/Crested-2.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Aventurine",
+      "color": "brown",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/6-Aventurine.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=6",
+      "thumb": "assets/images/products/onyx/6-Aventurine.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Ambigonite",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/3-Ambigonite1.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=3",
+      "thumb": "assets/images/products/onyx/3-Ambigonite1.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Azul Aurum",
+      "color": "Silver",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/7-Azul-Aurum.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=7",
+      "thumb": "assets/images/products/onyx/7-Azul-Aurum.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Bleu Dore",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/11-Bleu-Dore.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=11",
+      "thumb": "assets/images/products/onyx/11-Bleu-Dore.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Verde Tettigonia",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/Verde-Tettigonia.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=28",
+      "thumb": "assets/images/products/onyx/Verde-Tettigonia.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Fluorite",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/13-Fluorite.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=13",
+      "thumb": "assets/images/products/onyx/13-Fluorite.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Misty Rose",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/Misty-Rose.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=29",
+      "thumb": "assets/images/products/onyx/Misty-Rose.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Fuego Narange",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/Fuego-Narange.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=30",
+      "thumb": "assets/images/products/onyx/Fuego-Narange.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Miyazaki",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/Miyazaki.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=31",
+      "thumb": "assets/images/products/onyx/Miyazaki.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Maroon Tree Rainbow",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/Maroon-Tree-Rainbow.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=32",
+      "thumb": "assets/images/products/onyx/Maroon-Tree-Rainbow.jpg"
+    },
+    {
+      "stone": "onyx",
+      "name": "Brown Sugar",
+      "color": "gold",
+      "range": "exclusive",
+      "src": "assets/images/products/onyx/14-brown-sugar.jpg",
+      "url": "product-details.php?product_name=onyx&product_id=14",
+      "thumb": "assets/images/products/onyx/14-brown-sugar.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Bone",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/1-bone-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=1",
+      "thumb": "assets/images/products/travertine/1-bone-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Cream",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/2-cream-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=2",
+      "thumb": "assets/images/products/travertine/2-cream-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Romano Classic Silver",
+      "color": "cream",
+      "range": "essential",
+      "src": "assets/images/products/travertine/3-romano-classic-silver-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=3",
+      "thumb": "assets/images/products/travertine/3-romano-classic-silver-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Crema Fabulous",
+      "color": "cream",
+      "range": "essential",
+      "src": "assets/images/products/travertine/4-crema-fabulous-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=4",
+      "thumb": "assets/images/products/travertine/4-crema-fabulous-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Bianco Bone",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/5-bianco-bone-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=5",
+      "thumb": "assets/images/products/travertine/5-bianco-bone-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "St Andrea",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/6-saint-andriao-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=6",
+      "thumb": "assets/images/products/travertine/6-saint-andriao-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Dark Silver",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/7-dark-silver-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=7",
+      "thumb": "assets/images/products/travertine/7-dark-silver-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Beige",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/8-beige-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=8",
+      "thumb": "assets/images/products/travertine/8-beige-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Silver Cork",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/9-silver-cork-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=9",
+      "thumb": "assets/images/products/travertine/9-silver-cork-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Grey Silver",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/10-grey-silver-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=10",
+      "thumb": "assets/images/products/travertine/10-grey-silver-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Grey",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/11-grey-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=11",
+      "thumb": "assets/images/products/travertine/11-grey-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Trionyx",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/12-trionyx-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=12",
+      "thumb": "assets/images/products/travertine/12-trionyx-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Silver Dark",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/13-silver-dark-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=13",
+      "thumb": "assets/images/products/travertine/13-silver-dark-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Marrone Zucchero",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/14-marrone-zucchero-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=14",
+      "thumb": "assets/images/products/travertine/14-marrone-zucchero-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Silver Dark",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/travertine/15-silver-dark-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=15",
+      "thumb": "assets/images/products/travertine/15-silver-dark-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Cork",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/16-cork-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=16",
+      "thumb": "assets/images/products/travertine/16-cork-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Kona Gold 1",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/17-kona-gold-travertine1.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=17",
+      "thumb": "assets/images/products/travertine/17-kona-gold-travertine1.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Kona Gold 2",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/travertine/18-kona-gold-travertine2.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=18",
+      "thumb": "assets/images/products/travertine/18-kona-gold-travertine2.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Noche",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/20-nocha-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=20",
+      "thumb": "assets/images/products/travertine/20-nocha-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Rapalano Iron",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/21-Rapalano-Iron-Travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=21",
+      "thumb": "assets/images/products/travertine/21-Rapalano-Iron-Travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Copper",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/22-copper-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=22",
+      "thumb": "assets/images/products/travertine/22-copper-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Saint Andriao",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/23-saint-andriao-travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=23",
+      "thumb": "assets/images/products/travertine/23-saint-andriao-travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Titanium",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/25-Titanium-Travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=25",
+      "thumb": "assets/images/products/travertine/25-Titanium-Travertine.jpg"
+    },
+    {
+      "stone": "travertine",
+      "name": "Yellow",
+      "color": "yellow",
+      "range": "exquisite",
+      "src": "assets/images/products/travertine/24-Yellow-Travertine.jpg",
+      "url": "product-details.php?product_name=travertine&product_id=24",
+      "thumb": "assets/images/products/travertine/24-Yellow-Travertine.jpg"
+    },
+    {
+      "stone": "shellstone",
+      "name": "Bronze Zuccaria",
+      "color": "brown",
+      "range": "Exclusives",
+      "src": "assets/images/products/shellstone/Bronze-Zucania.jpg",
+      "url": "product-details.php?product_name=shellstone&product_id=1",
+      "thumb": "assets/images/products/shellstone/thumb/Bronze-Zucania.jpg"
+    },
+    {
+      "stone": "shellstone",
+      "name": "Brown fossil",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/shellstone/brown fosil.jpg",
+      "url": "product-details.php?product_name=shellstone&product_id=2",
+      "thumb": "assets/images/products/shellstone/thumb/brown fosil.jpg"
+    },
+    {
+      "stone": "shellstone",
+      "name": "Bronze Zuccaria Areka Finish",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/shellstone/bronze-zukanya-ark.jpg",
+      "url": "product-details.php?product_name=shellstone&product_id=3",
+      "thumb": "assets/images/products/shellstone/thumb/bronze-zukanya-ark.jpg"
+    },
+    {
+      "stone": "shellstone",
+      "name": "Bronze Zuccaria",
+      "color": "brown",
+      "range": "exquisite",
+      "src": "assets/images/products/shellstone/bronze-zukanya-pol.jpg",
+      "url": "product-details.php?product_name=shellstone&product_id=4",
+      "thumb": "assets/images/products/shellstone/thumb/bronze-zukanya-pol.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Mint Hydro Finish",
+      "color": "white",
+      "range": "exquisite",
+      "src": "assets/images/products/sandstone/1-mint-sand-stone-hydro-finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=1",
+      "thumb": "assets/images/products/sandstone/1-mint-sand-stone-hydro-finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Mint Ribbed Finish",
+      "color": "white",
+      "range": "exquisite",
+      "src": "assets/images/products/sandstone/2-mint-sand-stone-ribbed-finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=2",
+      "thumb": "assets/images/products/sandstone/2-mint-sand-stone-ribbed-finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Mint Scratch Finish",
+      "color": "white",
+      "range": "exquisite",
+      "src": "assets/images/products/sandstone/3-Mint-Sand-Stone-Scratch-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=3",
+      "thumb": "assets/images/products/sandstone/3-Mint-Sand-Stone-Scratch-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Mint Cypress Finish",
+      "color": "white",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/4-Mint-Sand-Stone-Cypress-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=4",
+      "thumb": "assets/images/products/sandstone/4-Mint-Sand-Stone-Cypress-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Mint Hydro With Cypress Finish",
+      "color": "white",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/5-Mint-Sand-Stone-Hydro-With-Cypress-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=5",
+      "thumb": "assets/images/products/sandstone/5-Mint-Sand-Stone-Hydro-With-Cypress-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Mint Areka Finish",
+      "color": "white",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/6-Mint-Sand-Stone-Areka-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=6",
+      "thumb": "assets/images/products/sandstone/6-Mint-Sand-Stone-Areka-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Algerian Gold",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/7-Algerian-Gold-Sand-Stone.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=7",
+      "thumb": "assets/images/products/sandstone/7-Algerian-Gold-Sand-Stone.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Teakwood Cypress Finish",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/8-Teakwood-Sand-Stone-Cypress-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=8",
+      "thumb": "assets/images/products/sandstone/8-Teakwood-Sand-Stone-Cypress-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Rainbow Teak Aqua Jet Finish",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/9-Rainbow-Teak-Sand-Stone-Aqua-Jet-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=9",
+      "thumb": "assets/images/products/sandstone/9-Rainbow-Teak-Sand-Stone-Aqua-Jet-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Teak Wood Aqua Jet Finish",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/10-Teak-Wood-Sand-Stone-Aqua-Jet-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=10",
+      "thumb": "assets/images/products/sandstone/10-Teak-Wood-Sand-Stone-Aqua-Jet-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Teakwood Baby Bamboo Finish",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/11-Teakwood-Sand-Stone-Baby-Bamboo-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=11",
+      "thumb": "assets/images/products/sandstone/11-Teakwood-Sand-Stone-Baby-Bamboo-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Teakwood Combo Finish",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/12-Teakwood-Sand-Stone-Combo-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=12",
+      "thumb": "assets/images/products/sandstone/12-Teakwood-Sand-Stone-Combo-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Rainbow Teak Cypess Finish",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/13-Rainbow-Teak-Sand-Stone-Cypess-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=13",
+      "thumb": "assets/images/products/sandstone/13-Rainbow-Teak-Sand-Stone-Cypess-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Teakwood Cypress Finish",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/14-Teakwood-Sand-Stone-Cypress-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=14",
+      "thumb": "assets/images/products/sandstone/14-Teakwood-Sand-Stone-Cypress-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Teakwood Ribbon Finish",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/15-Teakwood-Sand-Stone-Ribbon-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=15",
+      "thumb": "assets/images/products/sandstone/15-Teakwood-Sand-Stone-Ribbon-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Teakwood Ribbon Finish 2",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/16-Teakwood-Sand-Stone-Ribbon-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=16",
+      "thumb": "assets/images/products/sandstone/16-Teakwood-Sand-Stone-Ribbon-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Rainbow Teak Scratch Finish",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/17-Rainbow-Teak-Sand-Stone-Scratch-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=17",
+      "thumb": "assets/images/products/sandstone/17-Rainbow-Teak-Sand-Stone-Scratch-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Teakwood Scratch Finish",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/18-Teakwood-Sand-Stone-Scratch-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=18",
+      "thumb": "assets/images/products/sandstone/18-Teakwood-Sand-Stone-Scratch-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Teakwood Scratch Roller Finish",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/19-Teakwood-Sand-Stone-Scratch-Roller-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=19",
+      "thumb": "assets/images/products/sandstone/19-Teakwood-Sand-Stone-Scratch-Roller-Finish.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Rainbow Teak Scratch Roller Finish",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/20-Rainbow-Teak-Sand-Stone-Scratch-Roller.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=20",
+      "thumb": "assets/images/products/sandstone/20-Rainbow-Teak-Sand-Stone-Scratch-Roller.jpg"
+    },
+    {
+      "stone": "sandstone",
+      "name": "Teakwood Liner Finish",
+      "color": "brown",
+      "range": "essential",
+      "src": "assets/images/products/sandstone/21-Teakwood-Sand-Stone-Liner-Finish.jpg",
+      "url": "product-details.php?product_name=sandstone&product_id=21",
+      "thumb": "assets/images/products/sandstone/21-Teakwood-Sand-Stone-Liner-Finish.jpg"
+    },
+    {
+      "stone": "limestone",
+      "name": "French",
+      "color": "grey",
+      "range": "essential",
+      "src": "assets/images/products/limestone/3-french-lime-stone.jpg",
+      "url": "product-details.php?product_name=limestone&product_id=3",
+      "thumb": "assets/images/products/limestone/3-french-lime-stone.jpg"
+    },
+    {
+      "stone": "limestone",
+      "name": "NS",
+      "color": "grey",
+      "range": "essential",
+      "src": "assets/images/products/limestone/2-NS-Lime-Stone.jpg",
+      "url": "product-details.php?product_name=limestone&product_id=2",
+      "thumb": "assets/images/products/limestone/2-NS-Lime-Stone.jpg"
+    },
+    {
+      "stone": "limestone",
+      "name": "Classic",
+      "color": "grey",
+      "range": "essential",
+      "src": "assets/images/products/limestone/1-Classic.jpg",
+      "url": "product-details.php?product_name=limestone&product_id=1",
+      "thumb": "assets/images/products/limestone/1-Classic.jpg"
+    },
+    {
+      "stone": "limestone",
+      "name": "French Hond Finish",
+      "color": "grey",
+      "range": "essential",
+      "src": "assets/images/products/limestone/4-french-Lime-Stone-Hond-FH.jpg",
+      "url": "product-details.php?product_name=limestone&product_id=4",
+      "thumb": "assets/images/products/limestone/4-french-Lime-Stone-Hond-FH.jpg"
+    },
+    {
+      "stone": "limestone",
+      "name": "Leo Mocca Areka Finish",
+      "color": "grey",
+      "range": "essential",
+      "src": "assets/images/products/limestone/5-Leo-Mocca-Lime-Stone-Areka-FH.jpg",
+      "url": "product-details.php?product_name=limestone&product_id=5",
+      "thumb": "assets/images/products/limestone/5-Leo-Mocca-Lime-Stone-Areka-FH.jpg"
+    },
+    {
+      "stone": "limestone",
+      "name": "Sunny",
+      "color": "cream",
+      "range": "essential",
+      "src": "assets/images/products/limestone/6-Sunny-LIME-STONE.jpg",
+      "url": "product-details.php?product_name=limestone&product_id=6",
+      "thumb": "assets/images/products/limestone/6-Sunny-LIME-STONE.jpg"
+    },
+    {
+      "stone": "limestone",
+      "name": "Sunny - Areka Finish",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/limestone/7-sunny-LIME-STONE-AREKA-FH.jpg",
+      "url": "product-details.php?product_name=limestone&product_id=7",
+      "thumb": "assets/images/products/limestone/7-sunny-LIME-STONE-AREKA-FH.jpg"
+    },
+    {
+      "stone": "limestone",
+      "name": "Sunny Shot Blast Finish",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/limestone/8-sunny-lime-stone-shot-blast-FH.jpg",
+      "url": "product-details.php?product_name=limestone&product_id=8",
+      "thumb": "assets/images/products/limestone/8-sunny-lime-stone-shot-blast-FH.jpg"
+    },
+    {
+      "stone": "limestone",
+      "name": "Sand Beige",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/limestone/9-sand-beige-lime-stone.jpg",
+      "url": "product-details.php?product_name=limestone&product_id=9",
+      "thumb": "assets/images/products/limestone/9-sand-beige-lime-stone.jpg"
+    },
+    {
+      "stone": "limestone",
+      "name": "Sand Beige Shot Blast Finish",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/limestone/10-Sand-Beige-Lime-Stone-Shot-Blast-FH.jpg",
+      "url": "product-details.php?product_name=limestone&product_id=10",
+      "thumb": "assets/images/products/limestone/10-Sand-Beige-Lime-Stone-Shot-Blast-FH.jpg"
+    },
+    {
+      "stone": "limestone",
+      "name": "Portugal",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/limestone/11-Portugal-Lime-Stone.jpg",
+      "url": "product-details.php?product_name=limestone&product_id=11",
+      "thumb": "assets/images/products/limestone/11-Portugal-Lime-Stone.jpg"
+    },
+    {
+      "stone": "limestone",
+      "name": "Portugal Shot Blast Finish",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/limestone/12-Portugal-Lime-Stone-Shot-Blast-FH.jpg",
+      "url": "product-details.php?product_name=limestone&product_id=12",
+      "thumb": "assets/images/products/limestone/12-Portugal-Lime-Stone-Shot-Blast-FH.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Rockefeller Emerald",
+      "color": "green",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/1-rockefeller-emerald.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=1",
+      "thumb": "assets/images/products/quartzite/1-rockefeller-emerald.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Alpinus",
+      "color": "grey",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/2-alpinus.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=2",
+      "thumb": "assets/images/products/quartzite/2-alpinus.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Columbian Emerald",
+      "color": "brown",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/3-columbian-emerald.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=3",
+      "thumb": "assets/images/products/quartzite/3-columbian-emerald.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Vitreum",
+      "color": "green",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/4-Vitreum.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=4",
+      "thumb": "assets/images/products/quartzite/4-Vitreum.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Bacauraojo",
+      "color": "gold",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/5-Bacauraojo.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=5",
+      "thumb": "assets/images/products/quartzite/5-Bacauraojo.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Cattle Egret",
+      "color": "gold",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/6-cattle-egret.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=6",
+      "thumb": "assets/images/products/quartzite/6-cattle-egret.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Kardia",
+      "color": "red",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/7-Kardia.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=7",
+      "thumb": "assets/images/products/quartzite/7-Kardia.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Golden Alba",
+      "color": "gold",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/8-Golden-Aalba.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=8",
+      "thumb": "assets/images/products/quartzite/8-Golden-Aalba.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Summer Tanager",
+      "color": "red",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/9-Summer-Tanager.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=9",
+      "thumb": "assets/images/products/quartzite/9-Summer-Tanager.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Pied Kingfisher",
+      "color": "brown",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/10-pied-kingfisher.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=10",
+      "thumb": "assets/images/products/quartzite/10-pied-kingfisher.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Bianco Corella",
+      "color": "yellow",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/11-Bianco-Corella.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=11",
+      "thumb": "assets/images/products/quartzite/11-Bianco-Corella.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Blu Tramonto",
+      "color": "gold",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/12-Blu-Tramonto.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=12",
+      "thumb": "assets/images/products/quartzite/12-Blu-Tramonto.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Kiwano",
+      "color": "gold",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/13-Kiwano.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=13",
+      "thumb": "assets/images/products/quartzite/13-Kiwano.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Blu Tramonto",
+      "color": "gold",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/14-Blu-Tramonto.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=14",
+      "thumb": "assets/images/products/quartzite/14-Blu-Tramonto.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Panthera Pardus",
+      "color": "yellow",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/15-Panthera-Pardus.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=15",
+      "thumb": "assets/images/products/quartzite/15-Panthera-Pardus.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Polar Ice Berg",
+      "color": "grey",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/16-Polar-Ice-Berg.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=16",
+      "thumb": "assets/images/products/quartzite/16-Polar-Ice-Berg.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Azul Bahia",
+      "color": "grey",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/17-Azul-Bahia.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=17",
+      "thumb": "assets/images/products/quartzite/17-Azul-Bahia.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Bleu Damesfly",
+      "color": "blue",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/18-Bleu-Damesfly.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=18",
+      "thumb": "assets/images/products/quartzite/18-Bleu-Damesfly.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Soda Light",
+      "color": "blue",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/19-Soda-Light.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=19",
+      "thumb": "assets/images/products/quartzite/19-Soda-Light.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Soda Light 2",
+      "color": "blue",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/20-Soda-Light2.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=20",
+      "thumb": "assets/images/products/quartzite/20-Soda-Light2.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Fusion",
+      "color": "gold",
+      "range": "Exclusives",
+      "src": "assets/images/products/quartzite/21-Fusion.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=21",
+      "thumb": "assets/images/products/quartzite/21-Fusion.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Giada Super Exotica",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/quartzite/23-Giada-Super-Exotica.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=23",
+      "thumb": "assets/images/products/quartzite/23-Giada-Super-Exotica.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Verde Scapularis",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/quartzite/24-Verde-Scapularis.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=24",
+      "thumb": "assets/images/products/quartzite/24-Verde-Scapularis.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Verde Lapponia",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/quartzite/25-Verde-Lapponinia.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=25",
+      "thumb": "assets/images/products/quartzite/25-Verde-Lapponinia.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Golden Botanica",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/quartzite/26-GoldenBotanica.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=26",
+      "thumb": "assets/images/products/quartzite/26-GoldenBotanica.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Botanica",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/quartzite/27-Botanica.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=27",
+      "thumb": "assets/images/products/quartzite/27-Botanica.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Treron",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/quartzite/28-Treron.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=28",
+      "thumb": "assets/images/products/quartzite/28-Treron.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Oleander Hawk",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/quartzite/29-Oleander-Hawk.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=29",
+      "thumb": "assets/images/products/quartzite/29-Oleander-Hawk.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Verde Lapponia",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/quartzite/30-Verde-Lapponia.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=30",
+      "thumb": "assets/images/products/quartzite/30-Verde-Lapponia.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Verde Murina",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/quartzite/31-Verde-Murina.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=31",
+      "thumb": "assets/images/products/quartzite/31-Verde-Murina.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Colacasia",
+      "color": "green",
+      "range": "exclusive",
+      "src": "assets/images/products/quartzite/32-Colacasia.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=32",
+      "thumb": "assets/images/products/quartzite/32-Colacasia.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Ferro Corroso",
+      "color": "brown",
+      "range": "exclusive",
+      "src": "assets/images/products/quartzite/33-Ferro-Corroso.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=33",
+      "thumb": "assets/images/products/quartzite/33-Ferro-Corroso.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Badger",
+      "color": "grey",
+      "range": "exclusive",
+      "src": "assets/images/products/quartzite/34-Badger.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=34",
+      "thumb": "assets/images/products/quartzite/34-Badger.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Badger 2",
+      "color": "brown",
+      "range": "exclusive",
+      "src": "assets/images/products/quartzite/35-Badger2.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=35",
+      "thumb": "assets/images/products/quartzite/35-Badger2.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Legno Arco Baleno",
+      "color": "gold",
+      "range": "exquisite",
+      "src": "assets/images/products/quartzite/36-Legno-Arco-Baleno.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=36",
+      "thumb": "assets/images/products/quartzite/36-Legno-Arco-Baleno.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Magma Gold",
+      "color": "gold",
+      "range": "exquisite",
+      "src": "assets/images/products/quartzite/37-Magma-Gold.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=37",
+      "thumb": "assets/images/products/quartzite/37-Magma-Gold.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Marron Checkerspot",
+      "color": "gold",
+      "range": "exclusive",
+      "src": "assets/images/products/quartzite/38-Marron-Checkerpost.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=38",
+      "thumb": "assets/images/products/quartzite/38-Marron-Checkerpost.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Mauna Lao",
+      "color": "gold",
+      "range": "exclusive",
+      "src": "assets/images/products/quartzite/39-Mauna-Lao.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=39",
+      "thumb": "assets/images/products/quartzite/39-Mauna-Lao.jpg"
+    },
+    {
+      "stone": "quartzite",
+      "name": "Nero Swan",
+      "color": "grey",
+      "range": "exquisite",
+      "src": "assets/images/products/quartzite/40-Nero-Swan.jpg",
+      "url": "product-details.php?product_name=quartzite&product_id=40",
+      "thumb": "assets/images/products/quartzite/40-Nero-Swan.jpg"
+    },
+    {
+      "stone": "dolomite",
+      "name": "Albino Betta Dolomite",
+      "color": "cream",
+      "range": "exquisite",
+      "src": "assets/images/products/dolomite/1-Albino-Betta-Dolomite.jpg",
+      "url": "product-details.php?product_name=dolomite&product_id=1",
+      "thumb": "assets/images/products/dolomite/1-Albino-Betta-Dolomite.jpg"
+    },
+    {
+      "stone": "dolomite",
+      "name": "Dove White Dolomite",
+      "color": "White",
+      "range": "exquisite",
+      "src": "assets/images/products/dolomite/dove-white-dolomite.jpg",
+      "url": "product-details.php?product_name=dolomite&product_id=2",
+      "thumb": "assets/images/products/dolomite/dove-white-dolomite.jpg"
+    },
+    {
+      "stone": "dolomite",
+      "name": "Jasmine Dolomite",
+      "color": "Jasmine",
+      "range": "exquisite",
+      "src": "assets/images/products/dolomite/jasmine-dolomite.jpg",
+      "url": "product-details.php?product_name=dolomite&product_id=3",
+      "thumb": "assets/images/products/dolomite/jasmine-dolomite.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "White on White Lavabo",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/19-White-on-White-WOW-LAVABO.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=19",
+      "thumb": "assets/images/products/basin/counter-basin/19-White-on-White-WOW-LAVABO.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Aspro European Cut",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/1-Aspro-European-Cut.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=1",
+      "thumb": "assets/images/products/basin/counter-basin/1-Aspro-European-Cut.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Aspro Lavabo Extra",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/2-Aspro-Lavabo-Extra.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=2",
+      "thumb": "assets/images/products/basin/counter-basin/2-Aspro-Lavabo-Extra.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Aspro Trumpeter Lavabo",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/3-Aspro-Trumpeter-Lavabo.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=3",
+      "thumb": "assets/images/products/basin/counter-basin/3-Aspro-Trumpeter-Lavabo.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Catamaran",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/7-Catamaran.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=7",
+      "thumb": "assets/images/products/basin/counter-basin/7-Catamaran.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Indus Lava",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/18-Indus-lava.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=18",
+      "thumb": "assets/images/products/basin/counter-basin/18-Indus-lava.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Bez Lavabo",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/4-Bez-Lavabo.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=4",
+      "thumb": "assets/images/products/basin/counter-basin/4-Bez-Lavabo.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Bez Lavabo",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/16-Bez-Lavabo.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=16",
+      "thumb": "assets/images/products/basin/counter-basin/16-Bez-Lavabo.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Brown Shrike Lavabo",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/5-Brown-Shrike-Lavabo.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=5",
+      "thumb": "assets/images/products/basin/counter-basin/5-Brown-Shrike-Lavabo.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Foglia Secca Lavabo",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/9-Foglia-Secca-Lavabo.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=9",
+      "thumb": "assets/images/products/basin/counter-basin/9-Foglia-Secca-Lavabo.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Inchiastro Lavabo",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/14-Inchiastro-Lavabo.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=14",
+      "thumb": "assets/images/products/basin/counter-basin/14-Inchiastro-Lavabo.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Diaspro Lavabo",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/17-Diaspro-Lavabo.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=17",
+      "thumb": "assets/images/products/basin/counter-basin/17-Diaspro-Lavabo.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Golden Ocra Round",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/12-Golden-Ocra-Round.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=12",
+      "thumb": "assets/images/products/basin/counter-basin/12-Golden-Ocra-Round.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Giallo Lavabo",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/10-Giallo-Lavabo.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=10",
+      "thumb": "assets/images/products/basin/counter-basin/10-Giallo-Lavabo.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Brown Sugar Onyx Lavabo",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/6-Brown-Sugar-Onyx-Lavabo.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=6",
+      "thumb": "assets/images/products/basin/counter-basin/6-Brown-Sugar-Onyx-Lavabo.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Golden Ocra Oval",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/11-Golden-Ocra-Oval.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=11",
+      "thumb": "assets/images/products/basin/counter-basin/11-Golden-Ocra-Oval.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Golden Rain Forest Lavabo",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/13-Golden-Rain-Forest-Lavabo.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=13",
+      "thumb": "assets/images/products/basin/counter-basin/13-Golden-Rain-Forest-Lavabo.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Nero Sea Bass Lavabo",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/15-Nero-Sea-Bass-Lavabo.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=15",
+      "thumb": "assets/images/products/basin/counter-basin/15-Nero-Sea-Bass-Lavabo.jpg"
+    },
+    {
+      "basin": "counterbasin",
+      "name": "Coloumbian Noir II",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/counter-basin/8-Coloumbian-Noir-II.jpg",
+      "url": "product-details.php?product_name=counterbasin&product_id=8",
+      "thumb": "assets/images/products/basin/counter-basin/8-Coloumbian-Noir-II.jpg"
+    },
+    {
+      "basin": "pedestalbasin",
+      "name": "Aspro Diamond Cylindro",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/pedestal-basin/1-Aspro-Diamond-Cylindro.jpg",
+      "url": "product-details.php?product_name=pedestalbasin&product_id=1",
+      "thumb": "assets/images/products/basin/pedestal-basin/1-Aspro-Diamond-Cylindro.jpg"
+    },
+    {
+      "basin": "pedestalbasin",
+      "name": "Creme Brulee Cylindro",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/pedestal-basin/3-Creme-Brulee-Cylindro.jpg",
+      "url": "product-details.php?product_name=pedestalbasin&product_id=3",
+      "thumb": "assets/images/products/basin/pedestal-basin/3-Creme-Brulee-Cylindro.jpg"
+    },
+    {
+      "basin": "pedestalbasin",
+      "name": "Creme Brulee Cylindro",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/pedestal-basin/2-Creme-Brulee-Cylindro.jpg",
+      "url": "product-details.php?product_name=pedestalbasin&product_id=2",
+      "thumb": "assets/images/products/basin/pedestal-basin/2-Creme-Brulee-Cylindro.jpg"
+    },
+    {
+      "basin": "pedestalbasin",
+      "name": "Mildew Algae",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/pedestal-basin/6-Mildew-Algae.jpg",
+      "url": "product-details.php?product_name=pedestalbasin&product_id=6",
+      "thumb": "assets/images/products/basin/pedestal-basin/6-Mildew-Algae.jpg"
+    },
+    {
+      "basin": "pedestalbasin",
+      "name": "Verde Antique Lavabo",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/pedestal-basin/7-Verde-Antique-Lavabo.jpg",
+      "url": "product-details.php?product_name=pedestalbasin&product_id=7",
+      "thumb": "assets/images/products/basin/pedestal-basin/7-Verde-Antique-Lavabo.jpg"
+    },
+    {
+      "basin": "pedestalbasin",
+      "name": "Amarone Lavabo Dark",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/pedestal-basin/5-Amarone-Lavabo-Dark.jpg",
+      "url": "product-details.php?product_name=pedestalbasin&product_id=5",
+      "thumb": "assets/images/products/basin/pedestal-basin/5-Amarone-Lavabo-Dark.jpg"
+    },
+    {
+      "basin": "pedestalbasin",
+      "name": "Aspro Ocra",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/basin/pedestal-basin/4-Aspro-Ocra.jpg",
+      "url": "product-details.php?product_name=pedestalbasin&product_id=4",
+      "thumb": "assets/images/products/basin/pedestal-basin/4-Aspro-Ocra.jpg"
+    },
+    {
+      "textures": "texture",
+      "name": "Hydro Finish",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/textures/1-hydro-finish.jpg",
+      "url": "product-details.php?product_name=texture&product_id=1",
+      "thumb": "assets/images/products/textures/1-hydro-finish.jpg"
+    },
+    {
+      "textures": "texture",
+      "name": "Ribbed Finish",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/textures/2-ribbed-finish.jpg",
+      "url": "product-details.php?product_name=texture&product_id=2",
+      "thumb": "assets/images/products/textures/2-ribbed-finish.jpg"
+    },
+    {
+      "textures": "texture",
+      "name": "Cypress Finish",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/textures/3-Cypress-Finish.jpg",
+      "url": "product-details.php?product_name=texture&product_id=3",
+      "thumb": "assets/images/products/textures/3-Cypress-Finish.jpg"
+    },
+    {
+      "textures": "texture",
+      "name": "Hydro with Cypress Finish",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/textures/4-Hydro-With-Cypress-Finish.jpg",
+      "url": "product-details.php?product_name=texture&product_id=4",
+      "thumb": "assets/images/products/textures/4-Hydro-With-Cypress-Finish.jpg"
+    },
+    {
+      "textures": "texture",
+      "name": "Areka Finish",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/textures/5-Areka-Finish.jpg",
+      "url": "product-details.php?product_name=texture&product_id=5",
+      "thumb": "assets/images/products/textures/5-Areka-Finish.jpg"
+    },
+    {
+      "textures": "texture",
+      "name": "Aqua Jet Finish",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/textures/6-Aqua-Jet-Finish.jpg",
+      "url": "product-details.php?product_name=texture&product_id=6",
+      "thumb": "assets/images/products/textures/6-Aqua-Jet-Finish.jpg"
+    },
+    {
+      "textures": "texture",
+      "name": "Baby Bamboo Finish",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/textures/7-Sand-Stone-Baby-Bamboo-Finish.jpg",
+      "url": "product-details.php?product_name=texture&product_id=7",
+      "thumb": "assets/images/products/textures/7-Sand-Stone-Baby-Bamboo-Finish.jpg"
+    },
+    {
+      "textures": "texture",
+      "name": "Combo Finish",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/textures/8-Sand-Stone-Combo-Finish.jpg",
+      "url": "product-details.php?product_name=texture&product_id=8",
+      "thumb": "assets/images/products/textures/8-Sand-Stone-Combo-Finish.jpg"
+    },
+    {
+      "textures": "texture",
+      "name": "Ribbon Finish",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/textures/9-Sand-Stone-Ribbon-Finish.jpg",
+      "url": "product-details.php?product_name=texture&product_id=9",
+      "thumb": "assets/images/products/textures/9-Sand-Stone-Ribbon-Finish.jpg"
+    },
+    {
+      "textures": "texture",
+      "name": "Scratch Finish",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/textures/10-Sand-Stone-Scratch-Finish.jpg",
+      "url": "product-details.php?product_name=texture&product_id=10",
+      "thumb": "assets/images/products/textures/10-Sand-Stone-Scratch-Finish.jpg"
+    },
+    {
+      "textures": "texture",
+      "name": "Scratch Roller Finish",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/textures/11-Sand-Stone-Scratch-Roller-Finish.jpg",
+      "url": "product-details.php?product_name=texture&product_id=11",
+      "thumb": "assets/images/products/textures/11-Sand-Stone-Scratch-Roller-Finish.jpg"
+    },
+    {
+      "textures": "texture",
+      "name": "Liner Finish",
+      "color": "",
+      "range": "",
+      "src": "assets/images/products/textures/12-Sand-Stone-Liner-Finish.jpg",
+      "url": "product-details.php?product_name=texture&product_id=12",
+      "thumb": "assets/images/products/textures/12-Sand-Stone-Liner-Finish.jpg"
+    }
+  ]
+}

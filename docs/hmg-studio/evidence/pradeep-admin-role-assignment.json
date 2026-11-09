@@ -1,0 +1,28 @@
+{
+  "app": "hmg-studio",
+  "role_slug": "hmg-studio-admin",
+  "username": "pradeep+taruvi",
+  "result": {
+    "success": true,
+    "data": {
+      "success_count": 1,
+      "failed_count": 0,
+      "failures": []
+    },
+    "is_bulk": true
+  },
+  "verified_memberships": [
+    {
+      "role": "hmg-studio-admin",
+      "matched": true
+    },
+    {
+      "role": "hmg-studio-super-admin",
+      "matched": true
+    },
+    {
+      "role": "hmg-studio-hmg-synthetic-operator",
+      "matched": true
+    }
+  ]
+}

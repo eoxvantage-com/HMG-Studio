@@ -1,0 +1,127 @@
+{
+  "at": "2026-11-06T20:58:09.347167+00:00",
+  "app": "hmg-studio",
+  "slug": "hmg-stock-preview-v1",
+  "code_sha256": "faa85db350d1c173c59f9f67685b6d842d9503373a13e0b3ffd6a737e15ea457",
+  "business_writes": 0,
+  "write_replays": 0,
+  "previous_name_validation_failure": "30 character name limit; previous function was not created",
+  "creation_attempted": true,
+  "inactive_list_readback": {
+    "name": "hmg-stock-preview-v1",
+    "slug": "hmg-stock-preview-v1",
+    "execution_mode": "app",
+    "environment": "python",
+    "is_active": false,
+    "is_public": false,
+    "async_mode": false,
+    "description": "Caller-scoped read-only stock preview. No posting or commit authorization."
+  },
+  "inactive_get_caveat": "MCP get returned not found for inactive function; list verified inactive resource",
+  "new_default_policy": {
+    "api_version": "api.cerbos.dev/v1",
+    "metadata": {
+      "hash": "7732819600740970259",
+      "store_identifer": "resource.function_hmg_stock_preview_v1.vdefault/insurance_hmg-studio",
+      "store_identifier": "resource.function_hmg_stock_preview_v1.vdefault/insurance_hmg-studio",
+      "source_attributes": {
+        "attributes": {
+          "driver": "postgres",
+          "update_ts": "2026-11-06T20:58:12Z"
+        }
+      },
+      "source_file": "",
+      "annotations": {}
+    },
+    "resource_policy": {
+      "resource": "function:hmg-stock-preview-v1",
+      "version": "default",
+      "rules": [
+        {
+          "actions": [
+            "execute"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "name": "allow_execute",
+          "derived_roles": []
+        }
+      ],
+      "scope": "insurance_hmg-studio",
+      "import_derived_roles": [],
+      "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+    },
+    "disabled": false,
+    "description": "",
+    "variables": {},
+    "json_schema": ""
+  },
+  "restricted_policy": {
+    "api_version": "api.cerbos.dev/v1",
+    "metadata": {
+      "hash": "7435702509198108003",
+      "store_identifer": "resource.function_hmg_stock_preview_v1.vdefault/insurance_hmg-studio",
+      "store_identifier": "resource.function_hmg_stock_preview_v1.vdefault/insurance_hmg-studio",
+      "source_attributes": {
+        "attributes": {
+          "driver": "postgres",
+          "update_ts": "2026-11-06T21:00:42Z"
+        }
+      },
+      "source_file": "",
+      "annotations": {}
+    },
+    "resource_policy": {
+      "resource": "function:hmg-stock-preview-v1",
+      "version": "default",
+      "rules": [
+        {
+          "actions": [
+            "execute"
+          ],
+          "roles": [
+            "HMG Synthetic Operator",
+            "Super Admin"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "derived_roles": [],
+          "name": ""
+        }
+      ],
+      "scope": "insurance_hmg-studio",
+      "import_derived_roles": [],
+      "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+    },
+    "disabled": false,
+    "description": "",
+    "variables": {},
+    "json_schema": ""
+  },
+  "activation_attempted": true,
+  "verified": true,
+  "normalized_code_match": true,
+  "remote_code_sha256": "e102e19b04cf9cec30ca00c8e6aeba3a4da9cb9a6202cc56c571b10c048a7b90",
+  "final_policy": {
+    "resource": "function:hmg-stock-preview-v1",
+    "version": "default",
+    "rules": [
+      {
+        "actions": [
+          "execute"
+        ],
+        "roles": [
+          "HMG Synthetic Operator",
+          "Super Admin"
+        ],
+        "effect": "EFFECT_ALLOW",
+        "derived_roles": [],
+        "name": ""
+      }
+    ],
+    "scope": "insurance_hmg-studio",
+    "import_derived_roles": [],
+    "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+  }
+}

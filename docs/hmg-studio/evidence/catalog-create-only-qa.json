@@ -1,0 +1,12 @@
+[
+  {
+    "check": "ordinary_update_denied",
+    "status": 403,
+    "denied": true
+  },
+  {
+    "check": "upsert_existing_denied",
+    "status": 403,
+    "denied": true
+  }
+]

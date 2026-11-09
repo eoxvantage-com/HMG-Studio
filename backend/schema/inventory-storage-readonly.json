@@ -1,0 +1,199 @@
+{
+  "app": "hmg-studio",
+  "read_only": true,
+  "buckets": {
+    "success": true,
+    "data": [
+      {
+        "name": "products",
+        "slug": "products",
+        "visibility": "private",
+        "app_category": "assets",
+        "storage_provider": "s3",
+        "max_size_bytes": null,
+        "max_objects": null,
+        "quota_exceeded": false,
+        "current_total_size": 0,
+        "current_total_objects": 0
+      },
+      {
+        "name": "Images",
+        "slug": "images",
+        "visibility": "private",
+        "app_category": "assets",
+        "storage_provider": "s3",
+        "max_size_bytes": null,
+        "max_objects": null,
+        "quota_exceeded": false,
+        "current_total_size": 0,
+        "current_total_objects": 0
+      }
+    ],
+    "total": 2
+  },
+  "policies": [
+    {
+      "success": true,
+      "data": {
+        "policy": {
+          "api_version": "api.cerbos.dev/v1",
+          "metadata": {
+            "hash": "4812942148441827746",
+            "store_identifer": "resource.storage_products.vdefault/insurance_hmg-studio",
+            "store_identifier": "resource.storage_products.vdefault/insurance_hmg-studio",
+            "source_attributes": {
+              "attributes": {
+                "driver": "postgres",
+                "update_ts": "2026-11-06T18:11:28Z"
+              }
+            },
+            "source_file": "",
+            "annotations": {}
+          },
+          "resource_policy": {
+            "resource": "storage:products",
+            "version": "default",
+            "rules": [
+              {
+                "actions": [
+                  "read"
+                ],
+                "roles": [
+                  "*"
+                ],
+                "effect": "EFFECT_ALLOW",
+                "name": "authenticated_read",
+                "derived_roles": []
+              }
+            ],
+            "scope": "insurance_hmg-studio",
+            "import_derived_roles": [],
+            "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+          },
+          "disabled": false,
+          "description": "",
+          "variables": {},
+          "json_schema": ""
+        }
+      }
+    },
+    {
+      "success": true,
+      "data": {
+        "policy": {
+          "api_version": "api.cerbos.dev/v1",
+          "metadata": {
+            "hash": "4077208971526924917",
+            "store_identifer": "resource.storage_images.vdefault/insurance_hmg-studio",
+            "store_identifier": "resource.storage_images.vdefault/insurance_hmg-studio",
+            "source_attributes": {
+              "attributes": {
+                "driver": "postgres",
+                "update_ts": "2026-11-06T18:11:11Z"
+              }
+            },
+            "source_file": "",
+            "annotations": {}
+          },
+          "resource_policy": {
+            "resource": "storage:images",
+            "version": "default",
+            "rules": [
+              {
+                "actions": [
+                  "read"
+                ],
+                "roles": [
+                  "*"
+                ],
+                "effect": "EFFECT_ALLOW",
+                "name": "authenticated_read",
+                "derived_roles": []
+              }
+            ],
+            "scope": "insurance_hmg-studio",
+            "import_derived_roles": [],
+            "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+          },
+          "disabled": false,
+          "description": "",
+          "variables": {},
+          "json_schema": ""
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-06T18:17:23.060678+00:00",
+  "bucket_details": {
+    "products": {
+      "status": 200,
+      "body": {
+        "id": 662,
+        "uuid": "4f7997e0-8f70-4538-a0ea-d979520af71c",
+        "name": "products",
+        "slug": "products",
+        "visibility": "private",
+        "file_size_limit": 26214400,
+        "allowed_mime_types": [],
+        "app_category": "assets",
+        "storage_provider": "s3",
+        "app": 694,
+        "tags": [],
+        "tag_names": [],
+        "object_count": 0,
+        "max_size_bytes": null,
+        "max_size_mb": null,
+        "max_size_gb": null,
+        "max_objects": null,
+        "quota_exceeded": false,
+        "usage": {
+          "total_size": 0,
+          "total_objects": 0,
+          "size_mb": 0.0,
+          "size_gb": 0.0,
+          "last_updated": "2026-11-06T18:12:08.888413Z"
+        },
+        "quota_status": null,
+        "created_at": "2026-11-06T18:11:28.393017Z",
+        "updated_at": "2026-11-06T18:11:28.393031Z",
+        "created_by": "4f7ff492-8af6-4059-ae61-ce13fe3d4b20",
+        "modified_by": null
+      }
+    },
+    "images": {
+      "status": 200,
+      "body": {
+        "id": 661,
+        "uuid": "5e4dee07-d5d5-43aa-8b81-c111ff73d8ed",
+        "name": "Images",
+        "slug": "images",
+        "visibility": "private",
+        "file_size_limit": 26214400,
+        "allowed_mime_types": [],
+        "app_category": "assets",
+        "storage_provider": "s3",
+        "app": 694,
+        "tags": [],
+        "tag_names": [],
+        "object_count": 0,
+        "max_size_bytes": null,
+        "max_size_mb": null,
+        "max_size_gb": null,
+        "max_objects": null,
+        "quota_exceeded": false,
+        "usage": {
+          "total_size": 0,
+          "total_objects": 0,
+          "size_mb": 0.0,
+          "size_gb": 0.0,
+          "last_updated": "2026-11-06T18:12:08.898698Z"
+        },
+        "quota_status": null,
+        "created_at": "2026-11-06T18:11:10.640421Z",
+        "updated_at": "2026-11-06T18:11:10.640437Z",
+        "created_by": "4f7ff492-8af6-4059-ae61-ce13fe3d4b20",
+        "modified_by": null
+      }
+    }
+  }
+}

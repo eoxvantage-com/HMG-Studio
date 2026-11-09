@@ -1,0 +1,16 @@
+{
+  "app": "hmg-studio",
+  "build_exit_code": 0,
+  "files": 6,
+  "bytes": 4006989,
+  "secret_setting_values_checked": 3,
+  "secret_matches": [],
+  "archive": ".cache\\hmg-studio-operational-release.zip",
+  "archive_sha256": "3e48fb804d199a58e93d53502c7d82866ec23878c228715417d09fe396d3b594",
+  "index_sha256": "9ed7c4bf407f48ddebd37e452675ef253b9c4b2298f4642f407b9c549a248359",
+  "asset_hashes": {
+    "assets/index-BxLdldLr.css": "7e8c52cb6af0122a9805ace2e1bd78b50006dfb48c2b137782c69a3f0ead30c5",
+    "assets/index-LRarUnbZ.js": "a68e724b3327fa39e955876bda5104274d806c07edb8c31d30493594b1faedd8"
+  },
+  "warning": "Main JS chunk approximately3.99MB uncompressed; code splitting/performance acceptance remains pending."
+}

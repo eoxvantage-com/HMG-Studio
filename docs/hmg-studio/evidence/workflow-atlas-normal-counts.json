@@ -1,0 +1,45 @@
+{
+  "at": "2026-11-07T06:37:54.975321+00:00",
+  "app": "hmg-studio",
+  "principal": "hmg.john",
+  "admin_fallback": false,
+  "counts": {
+    "read_only": true,
+    "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+    "complete": true,
+    "products_total": 278,
+    "products_nondeleted": 278,
+    "products_active_INR": 15,
+    "products_missing_currency": 0,
+    "products_missing_is_active": 0,
+    "products_invalid_is_active": 0,
+    "active_INR_missing": {
+      "stock": 0,
+      "selling_price": 0,
+      "min_stock": 0
+    },
+    "active_INR_invalid_numeric": {
+      "stock": 0,
+      "selling_price": 0,
+      "min_stock": 0
+    },
+    "active_INR_legacy_price_fallback_cases": 0,
+    "active_INR_missing_created_at": 0,
+    "inactive_HMG_WEB_count": 263,
+    "orders_total": 19,
+    "orders_nondeleted": 19,
+    "orders_missing_currency": 0,
+    "orders_INR_noncancelled": 19,
+    "orders_INR_noncancelled_missing": {
+      "total": 0,
+      "amount_paid": 0,
+      "currency": 0,
+      "status": 0,
+      "order_date": 0
+    },
+    "orders_INR_noncancelled_invalid_numeric": {
+      "total": 0,
+      "amount_paid": 0
+    }
+  }
+}

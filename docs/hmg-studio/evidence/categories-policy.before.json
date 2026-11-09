@@ -1,0 +1,48 @@
+{
+  "success": true,
+  "data": {
+    "policy": {
+      "api_version": "api.cerbos.dev/v1",
+      "metadata": {
+        "hash": "8316541311732357342",
+        "store_identifer": "resource.datatable_product_categories.vdefault/insurance_hmg-studio",
+        "store_identifier": "resource.datatable_product_categories.vdefault/insurance_hmg-studio",
+        "source_attributes": {
+          "attributes": {
+            "driver": "postgres",
+            "update_ts": "2026-11-05T14:57:06Z"
+          }
+        },
+        "source_file": "",
+        "annotations": {}
+      },
+      "resource_policy": {
+        "resource": "datatable:product_categories",
+        "version": "default",
+        "rules": [
+          {
+            "actions": [
+              "read",
+              "create",
+              "update",
+              "delete"
+            ],
+            "roles": [
+              "*"
+            ],
+            "effect": "EFFECT_DENY",
+            "derived_roles": [],
+            "name": ""
+          }
+        ],
+        "scope": "insurance_hmg-studio",
+        "import_derived_roles": [],
+        "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+      },
+      "disabled": false,
+      "description": "",
+      "variables": {},
+      "json_schema": ""
+    }
+  }
+}

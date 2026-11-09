@@ -1,0 +1,78 @@
+{
+  "at": "2026-11-07T06:19:36.949724+00:00",
+  "app": "hmg-studio",
+  "site": "insurance",
+  "phase": "verified",
+  "secret_scan_passed": true,
+  "archive_sha256": "99b01e574f39ba04c3a126c0c0a9aee34f026f002da77bb5896dab6dc8f45838",
+  "assets": {
+    "favicon.ico": "f3faf88d1b29fb976e87efeebe135b7ec4dd08d4eadc756ff7c31ed83340986a",
+    "index.html": "e784fb912c434bac4f4f273812de811b6dc0d380ca076764e58dac61da33ff97",
+    "assets/index-BxLdldLr.css": "7e8c52cb6af0122a9805ace2e1bd78b50006dfb48c2b137782c69a3f0ead30c5",
+    "assets/index-CKAOPjTt.js": "70aa6a43ce8f6dd560ac32799dfb57dba2046a789a82d5da3540a9a933f007ca",
+    "brand/hmg-stones-logo.webp": "0ef3f1c3ea6da147e5a5496060cb3bb3354217152de11008467fe7b8d9ab559c",
+    "brand/PROVENANCE.md": "24776f83ff2db3a8aad1fb706404a5962371b5339c455583714b855b452c99c4"
+  },
+  "browser_verified": false,
+  "previous_active_build": "38068a60-226a-4658-8e08-8591fa18bde4",
+  "excluded_worker_before": {
+    "uuid": "916ee02e-4943-4ce6-9a6f-4f2049bfda4b",
+    "slug": "hmgstones",
+    "app": "hmg_stones",
+    "active_build_uuid": "664ceedb-d98c-43a0-88ef-62dbee774630"
+  },
+  "upload_status": 200,
+  "build_uuid": "d4bb237c-f3fe-4e76-b01a-631a8863c24f",
+  "activation_status": 200,
+  "activation_method": "PATCH",
+  "activation_note": "POST returned405 without mutation; liveOPTIONS confirmed PATCH. No upload replay.",
+  "customer_app_unchanged": true,
+  "http_checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "hash_matches": true
+    },
+    {
+      "path": "orders",
+      "status": 200,
+      "hash_matches": true
+    },
+    {
+      "path": "inventory",
+      "status": 200,
+      "hash_matches": true
+    },
+    {
+      "path": "reports",
+      "status": 200,
+      "hash_matches": true
+    },
+    {
+      "path": "users",
+      "status": 200,
+      "hash_matches": true
+    },
+    {
+      "path": "favicon.ico",
+      "status": 200,
+      "hash_matches": true
+    },
+    {
+      "path": "assets/index-BxLdldLr.css",
+      "status": 200,
+      "hash_matches": true
+    },
+    {
+      "path": "assets/index-CKAOPjTt.js",
+      "status": 200,
+      "hash_matches": true
+    },
+    {
+      "path": "brand/hmg-stones-logo.webp",
+      "status": 200,
+      "hash_matches": true
+    }
+  ],
+  "verified": true
+}

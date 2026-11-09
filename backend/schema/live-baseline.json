@@ -1,0 +1,883 @@
+{
+  "success": true,
+  "data": [
+    {
+      "name": "organizations",
+      "json_schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "slug",
+            "type": "string",
+            "constraints": {
+              "unique": true,
+              "required": true
+            }
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "type": "string"
+          },
+          {
+            "name": "phone",
+            "type": "string"
+          },
+          {
+            "name": "address",
+            "type": "string"
+          },
+          {
+            "name": "city",
+            "type": "string"
+          },
+          {
+            "name": "state",
+            "type": "string"
+          },
+          {
+            "name": "zip",
+            "type": "string"
+          },
+          {
+            "name": "country",
+            "type": "string"
+          },
+          {
+            "name": "timezone",
+            "type": "string",
+            "default": "UTC",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "default_currency",
+            "type": "string",
+            "default": "USD",
+            "constraints": {
+              "required": true,
+              "maxLength": 3
+            }
+          },
+          {
+            "name": "supported_currencies",
+            "type": "any"
+          },
+          {
+            "name": "currency",
+            "type": "string",
+            "default": "USD",
+            "constraints": {
+              "maxLength": 3
+            }
+          },
+          {
+            "name": "date_format",
+            "type": "string",
+            "constraints": {
+              "maxLength": 50
+            }
+          },
+          {
+            "name": "time_format",
+            "type": "string",
+            "constraints": {
+              "maxLength": 50
+            }
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "default": true,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "settings",
+            "type": "object"
+          },
+          {
+            "name": "created_at",
+            "type": "datetime"
+          },
+          {
+            "name": "updated_at",
+            "type": "datetime"
+          },
+          {
+            "name": "deleted_at",
+            "type": "datetime"
+          },
+          {
+            "name": "search_vector",
+            "type": "object",
+            "constraints": {
+              "required": false
+            },
+            "description": "Auto-generated full-text search vector (GENERATED column)",
+            "x-search-field": true,
+            "x-auto-generated": true,
+            "x-search-metadata": {
+              "fields": [
+                {
+                  "field": "name",
+                  "weight": "A"
+                },
+                {
+                  "field": "slug",
+                  "weight": "B"
+                }
+              ],
+              "language": "english",
+              "table_name": "organizations"
+            }
+          }
+        ],
+        "indexes": [
+          {
+            "name": "idx_1",
+            "fields": [
+              "is_active"
+            ]
+          },
+          {
+            "name": "idx_organizations_search_vector",
+            "type": "gin",
+            "columns": [
+              "search_vector"
+            ],
+            "comment": "Full-text search index (auto-generated)",
+            "x-auto-generated": true
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [],
+        "search_fields": [
+          "name",
+          "slug"
+        ],
+        "reverseRelationships": [
+          {
+            "name": "product_categories",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "organization_id",
+            "foreignTable": "hmg_studio_product_categories"
+          },
+          {
+            "name": "product_locations",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "organization_id",
+            "foreignTable": "hmg_studio_product_locations"
+          },
+          {
+            "name": "warehouses",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "organization_id",
+            "foreignTable": "hmg_studio_warehouses"
+          }
+        ],
+        "manyToManyRelationships": [
+          {
+            "name": "categories",
+            "localKey": "id",
+            "foreignKey": "id",
+            "foreignTable": "hmg_studio_product_categories",
+            "junctionTable": "hmg_studio_product_categories",
+            "junctionLocalKey": "organization_id",
+            "junctionForeignKey": "parent_id"
+          },
+          {
+            "name": "warehouses",
+            "localKey": "id",
+            "foreignKey": "id",
+            "foreignTable": "hmg_studio_warehouses",
+            "junctionTable": "hmg_studio_product_locations",
+            "junctionLocalKey": "organization_id",
+            "junctionForeignKey": "warehouse_id"
+          }
+        ]
+      },
+      "schema_format": "frictionless",
+      "provider_type": "flat_table",
+      "is_materialized": true,
+      "physical_table_name": "hmg_studio_organizations",
+      "description": "",
+      "is_active": true,
+      "created_at": "2026-11-05T15:13:40.152774+00:00",
+      "updated_at": "2026-11-06T11:32:31.730714+00:00"
+    },
+    {
+      "name": "product_categories",
+      "json_schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "organization_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "slug",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "parent_id",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "default": true,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "datetime"
+          },
+          {
+            "name": "updated_at",
+            "type": "datetime"
+          },
+          {
+            "name": "deleted_at",
+            "type": "datetime"
+          },
+          {
+            "name": "search_vector",
+            "type": "object",
+            "constraints": {
+              "required": false
+            },
+            "description": "Auto-generated full-text search vector (GENERATED column)",
+            "x-search-field": true,
+            "x-auto-generated": true,
+            "x-search-metadata": {
+              "fields": [
+                {
+                  "field": "name",
+                  "weight": "A"
+                },
+                {
+                  "field": "slug",
+                  "weight": "B"
+                },
+                {
+                  "field": "description",
+                  "weight": "C"
+                }
+              ],
+              "language": "english",
+              "table_name": "product_categories"
+            }
+          }
+        ],
+        "indexes": [
+          {
+            "name": "idx_1",
+            "fields": [
+              "organization_id",
+              "slug"
+            ]
+          },
+          {
+            "name": "idx_2",
+            "fields": [
+              "parent_id"
+            ]
+          },
+          {
+            "name": "idx_3",
+            "fields": [
+              "is_active"
+            ]
+          },
+          {
+            "name": "uq_hmg_category_org_slug",
+            "fields": [
+              "organization_id",
+              "slug"
+            ],
+            "unique": true
+          },
+          {
+            "name": "idx_product_categories_search_vector",
+            "type": "gin",
+            "columns": [
+              "search_vector"
+            ],
+            "comment": "Full-text search index (auto-generated)",
+            "x-auto-generated": true
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "organization_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_organizations"
+            },
+            "x-actions": {
+              "onDelete": "CASCADE"
+            }
+          },
+          {
+            "fields": [
+              "parent_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_product_categories"
+            },
+            "x-actions": {
+              "onDelete": "SET NULL"
+            }
+          }
+        ],
+        "search_fields": [
+          "name",
+          "slug",
+          "description"
+        ],
+        "reverseRelationships": [
+          {
+            "name": "product_categories",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "parent_id",
+            "foreignTable": "hmg_studio_product_categories"
+          }
+        ],
+        "manyToManyRelationships": [
+          {
+            "name": "organizations",
+            "localKey": "id",
+            "foreignKey": "id",
+            "foreignTable": "hmg_studio_organizations",
+            "junctionTable": "hmg_studio_product_categories",
+            "junctionLocalKey": "parent_id",
+            "junctionForeignKey": "organization_id"
+          }
+        ]
+      },
+      "schema_format": "frictionless",
+      "provider_type": "flat_table",
+      "is_materialized": true,
+      "physical_table_name": "hmg_studio_product_categories",
+      "description": "",
+      "is_active": true,
+      "created_at": "2026-11-05T15:14:50.182815+00:00",
+      "updated_at": "2026-11-06T11:32:31.757168+00:00"
+    },
+    {
+      "name": "product_locations",
+      "json_schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "organization_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "warehouse_id",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "code",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "aisle",
+            "type": "string"
+          },
+          {
+            "name": "shelf",
+            "type": "string"
+          },
+          {
+            "name": "bin",
+            "type": "string"
+          },
+          {
+            "name": "capacity",
+            "type": "integer",
+            "constraints": {
+              "maximum": 2147483647,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "default": true,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "datetime"
+          },
+          {
+            "name": "updated_at",
+            "type": "datetime"
+          },
+          {
+            "name": "deleted_at",
+            "type": "datetime"
+          },
+          {
+            "name": "search_vector",
+            "type": "object",
+            "constraints": {
+              "required": false
+            },
+            "description": "Auto-generated full-text search vector (GENERATED column)",
+            "x-search-field": true,
+            "x-auto-generated": true,
+            "x-search-metadata": {
+              "fields": [
+                {
+                  "field": "name",
+                  "weight": "A"
+                },
+                {
+                  "field": "code",
+                  "weight": "B"
+                },
+                {
+                  "field": "description",
+                  "weight": "C"
+                }
+              ],
+              "language": "english",
+              "table_name": "product_locations"
+            }
+          }
+        ],
+        "indexes": [
+          {
+            "name": "idx_1",
+            "fields": [
+              "organization_id",
+              "code"
+            ]
+          },
+          {
+            "name": "idx_2",
+            "fields": [
+              "is_active"
+            ]
+          },
+          {
+            "name": "idx_3",
+            "fields": [
+              "warehouse_id",
+              "is_active"
+            ]
+          },
+          {
+            "name": "idx_product_locations_search_vector",
+            "type": "gin",
+            "columns": [
+              "search_vector"
+            ],
+            "comment": "Full-text search index (auto-generated)",
+            "x-auto-generated": true
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "organization_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_organizations"
+            },
+            "x-actions": {
+              "onDelete": "CASCADE"
+            }
+          },
+          {
+            "fields": [
+              "warehouse_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_warehouses"
+            },
+            "x-actions": {
+              "onDelete": "SET NULL"
+            }
+          }
+        ],
+        "search_fields": [
+          "name",
+          "code",
+          "description"
+        ],
+        "reverseRelationships": [],
+        "manyToManyRelationships": []
+      },
+      "schema_format": "frictionless",
+      "provider_type": "flat_table",
+      "is_materialized": true,
+      "physical_table_name": "hmg_studio_product_locations",
+      "description": "",
+      "is_active": true,
+      "created_at": "2026-11-05T15:16:20.306133+00:00",
+      "updated_at": "2026-11-05T15:16:20.923239+00:00"
+    },
+    {
+      "name": "warehouses",
+      "json_schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "organization_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "code",
+            "type": "string",
+            "constraints": {
+              "maxLength": 50
+            }
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "address_line_1",
+            "type": "string"
+          },
+          {
+            "name": "address_line_2",
+            "type": "string"
+          },
+          {
+            "name": "city",
+            "type": "string"
+          },
+          {
+            "name": "province",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "postal_code",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "country",
+            "type": "string",
+            "default": "CA",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "phone",
+            "type": "string",
+            "constraints": {
+              "maxLength": 30
+            }
+          },
+          {
+            "name": "email",
+            "type": "string"
+          },
+          {
+            "name": "manager_name",
+            "type": "string"
+          },
+          {
+            "name": "timezone",
+            "type": "string",
+            "constraints": {
+              "maxLength": 50
+            }
+          },
+          {
+            "name": "currency",
+            "type": "string",
+            "constraints": {
+              "maxLength": 3
+            }
+          },
+          {
+            "name": "is_default",
+            "type": "boolean",
+            "default": false,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "default": true,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "priority",
+            "type": "integer",
+            "default": 0,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "capacity",
+            "type": "integer",
+            "constraints": {
+              "maximum": 2147483647,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "datetime"
+          },
+          {
+            "name": "updated_at",
+            "type": "datetime"
+          },
+          {
+            "name": "deleted_at",
+            "type": "datetime"
+          },
+          {
+            "name": "search_vector",
+            "type": "object",
+            "constraints": {
+              "required": false
+            },
+            "description": "Auto-generated full-text search vector (GENERATED column)",
+            "x-search-field": true,
+            "x-auto-generated": true,
+            "x-search-metadata": {
+              "fields": [
+                {
+                  "field": "name",
+                  "weight": "A"
+                },
+                {
+                  "field": "code",
+                  "weight": "B"
+                },
+                {
+                  "field": "description",
+                  "weight": "C"
+                }
+              ],
+              "language": "english",
+              "table_name": "warehouses"
+            }
+          }
+        ],
+        "indexes": [
+          {
+            "name": "idx_1",
+            "fields": [
+              "organization_id",
+              "is_active"
+            ]
+          },
+          {
+            "name": "idx_2",
+            "fields": [
+              "organization_id",
+              "code"
+            ]
+          },
+          {
+            "name": "idx_3",
+            "fields": [
+              "organization_id",
+              "is_default"
+            ]
+          },
+          {
+            "name": "idx_warehouses_search_vector",
+            "type": "gin",
+            "columns": [
+              "search_vector"
+            ],
+            "comment": "Full-text search index (auto-generated)",
+            "x-auto-generated": true
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "organization_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_organizations"
+            },
+            "x-actions": {
+              "onDelete": "CASCADE"
+            }
+          }
+        ],
+        "search_fields": [
+          "name",
+          "code",
+          "description"
+        ],
+        "reverseRelationships": [
+          {
+            "name": "product_locations",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "warehouse_id",
+            "foreignTable": "hmg_studio_product_locations"
+          }
+        ],
+        "manyToManyRelationships": [
+          {
+            "name": "organizations",
+            "localKey": "id",
+            "foreignKey": "id",
+            "foreignTable": "hmg_studio_organizations",
+            "junctionTable": "hmg_studio_product_locations",
+            "junctionLocalKey": "warehouse_id",
+            "junctionForeignKey": "organization_id"
+          }
+        ]
+      },
+      "schema_format": "frictionless",
+      "provider_type": "flat_table",
+      "is_materialized": true,
+      "physical_table_name": "hmg_studio_warehouses",
+      "description": "",
+      "is_active": true,
+      "created_at": "2026-11-05T15:15:31.987643+00:00",
+      "updated_at": "2026-11-06T11:32:31.784312+00:00"
+    }
+  ],
+  "total": 6
+}

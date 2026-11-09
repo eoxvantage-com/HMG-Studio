@@ -1,0 +1,7 @@
+{
+  "command": "python -m pytest backend/tests/test_historical_60.py backend/tests/test_apply_historical_60.py -q",
+  "passed": 42,
+  "pytest_reported_duration_seconds": 4.81,
+  "scope": "focused local tests; not provider or browser proof",
+  "exit_code": 0
+}

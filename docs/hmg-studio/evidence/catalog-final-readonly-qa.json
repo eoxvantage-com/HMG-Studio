@@ -1,0 +1,22 @@
+[
+  {
+    "check": "scoped_list",
+    "status": 200,
+    "passed": true
+  },
+  {
+    "check": "create_denied",
+    "status": 403,
+    "passed": true
+  },
+  {
+    "check": "update_denied",
+    "status": 403,
+    "passed": true
+  },
+  {
+    "check": "foreign_read_denied",
+    "status": 403,
+    "passed": true
+  }
+]

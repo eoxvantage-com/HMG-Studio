@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-06T13:28:42.618607+00:00",
+  "unit_test_command": "python -m unittest discover -s backend/schema -p 'test_*.py' -v",
+  "unit_tests_passed": 8,
+  "python_compilation": "passed",
+  "offline_dry_run_missing_tables": 0,
+  "fk_delete_actions_match": 190,
+  "credential_value_scan_passed": true,
+  "credential_scan_files": 17
+}

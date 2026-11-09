@@ -1,0 +1,144 @@
+{
+  "name": "hmg-studio-catalog-constraints",
+  "resources": [
+    {
+      "name": "product_categories",
+      "provider_type": "flat_table",
+      "schema_format": "frictionless",
+      "schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "organization_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "minLength": 1,
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "slug",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "minLength": 1,
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "parent_id",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "default": true,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "datetime"
+          },
+          {
+            "name": "updated_at",
+            "type": "datetime"
+          },
+          {
+            "name": "deleted_at",
+            "type": "datetime"
+          }
+        ],
+        "indexes": [
+          {
+            "name": "idx_1",
+            "fields": [
+              "organization_id",
+              "slug"
+            ]
+          },
+          {
+            "name": "idx_2",
+            "fields": [
+              "parent_id"
+            ]
+          },
+          {
+            "name": "idx_3",
+            "fields": [
+              "is_active"
+            ]
+          },
+          {
+            "name": "uq_hmg_category_org_slug",
+            "fields": [
+              "organization_id",
+              "slug"
+            ],
+            "unique": true
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "organization_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "organizations"
+            },
+            "x-actions": {
+              "onDelete": "CASCADE"
+            }
+          },
+          {
+            "fields": [
+              "parent_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "product_categories"
+            },
+            "x-actions": {
+              "onDelete": "SET NULL"
+            }
+          }
+        ],
+        "search_fields": [
+          "name",
+          "slug",
+          "description"
+        ]
+      }
+    }
+  ]
+}

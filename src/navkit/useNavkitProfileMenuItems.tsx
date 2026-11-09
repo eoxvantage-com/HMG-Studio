@@ -1,5 +1,7 @@
 import { useMemo } from "react";
 import type { ProfileMenuItem } from "@taruvi/navkit";
+import ManageAccountsRoundedIcon from "@mui/icons-material/ManageAccountsRounded";
+import { useNavigate } from "react-router";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -10,17 +12,11 @@ import type { ProfileMenuItem } from "@taruvi/navkit";
  * @see docs/GETTING_STARTED.md#custom-profile-menu-items
  */
 export function useNavkitProfileMenuItems(): ProfileMenuItem[] {
+  const navigate = useNavigate();
   return useMemo(
     () => [
-      // Example:
-      // {
-      //   title: "Report an issue",
-      //   icon: <FontAwesomeIcon icon={["fas", "comments"]} />,
-      //   callBackFunc: () => {
-      //     window.open("https://support.example.com", "_blank", "noopener,noreferrer");
-      //   },
-      // },
+      { title: "Account preferences", icon: <ManageAccountsRoundedIcon />, callBackFunc: () => navigate("/settings/account") },
     ],
-    [],
+    [navigate],
   );
 }

@@ -1,0 +1,953 @@
+{
+  "at": "2026-11-06T16:58:36.652683+00:00",
+  "read_only": true,
+  "app": "hmg-studio",
+  "site": "insurance.taruvi.cloud",
+  "business_tables": 62,
+  "schemas": {
+    "activity_logs": {
+      "name": "activity_logs",
+      "json_schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "organization_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "user_id",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "subject_type",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "subject_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "action",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "properties",
+            "type": "any"
+          },
+          {
+            "name": "ip_address",
+            "type": "string",
+            "constraints": {
+              "maxLength": 45
+            }
+          },
+          {
+            "name": "user_agent",
+            "type": "string"
+          },
+          {
+            "name": "created_at",
+            "type": "datetime"
+          },
+          {
+            "name": "updated_at",
+            "type": "datetime"
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "default": "audit",
+            "constraints": {
+              "required": true,
+              "maxLength": 32
+            }
+          }
+        ],
+        "indexes": [
+          {
+            "name": "erp_7324920cf59ebf15cc58",
+            "fields": [
+              "subject_type",
+              "subject_id"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_fa84829f2cd860742cae",
+            "fields": [
+              "organization_id",
+              "created_at"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_17906f103b472a6c8a7e",
+            "fields": [
+              "user_id",
+              "created_at"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_0283c2268d201883e8c4",
+            "fields": [
+              "organization_id",
+              "category",
+              "created_at"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_ec8ee064e8662babb156",
+            "fields": [
+              "organization_id"
+            ]
+          },
+          {
+            "name": "erp_02f0c04bbe308facd7a0",
+            "fields": [
+              "user_id"
+            ]
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "organization_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_organizations"
+            },
+            "x-actions": {
+              "onDelete": "RESTRICT"
+            }
+          },
+          {
+            "fields": [
+              "user_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "auth_user"
+            },
+            "x-actions": {
+              "onDelete": "SET NULL"
+            }
+          }
+        ],
+        "reverseRelationships": [],
+        "manyToManyRelationships": []
+      },
+      "schema_format": "frictionless",
+      "provider_type": "flat_table",
+      "is_materialized": true,
+      "physical_table_name": "hmg_studio_activity_logs",
+      "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
+      "is_active": true,
+      "created_at": "2026-11-06T12:48:41.575875+00:00",
+      "updated_at": "2026-11-06T12:48:42.174054+00:00"
+    },
+    "customers": {
+      "name": "customers",
+      "json_schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "organization_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "code",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "company_name",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "contact_name",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "email",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "phone",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "billing_address",
+            "type": "string"
+          },
+          {
+            "name": "billing_city",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "billing_state",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "billing_zip_code",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "billing_country",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "shipping_address",
+            "type": "string"
+          },
+          {
+            "name": "shipping_city",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "shipping_state",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "shipping_zip_code",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "shipping_country",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "tax_id",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "payment_terms",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "credit_limit",
+            "type": "number"
+          },
+          {
+            "name": "currency",
+            "type": "string",
+            "default": "USD",
+            "constraints": {
+              "required": true,
+              "maxLength": 3
+            }
+          },
+          {
+            "name": "notes",
+            "type": "string"
+          },
+          {
+            "name": "metadata",
+            "type": "any"
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "default": true,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "datetime"
+          },
+          {
+            "name": "updated_at",
+            "type": "datetime"
+          },
+          {
+            "name": "deleted_at",
+            "type": "datetime"
+          }
+        ],
+        "indexes": [
+          {
+            "name": "erp_a6632e998d87fe1a4956",
+            "fields": [
+              "organization_id",
+              "is_active"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_d57e0bf94975108fb9a0",
+            "fields": [
+              "organization_id",
+              "code"
+            ],
+            "unique": true
+          },
+          {
+            "name": "erp_218ecf4a585b27afcf06",
+            "fields": [
+              "organization_id"
+            ]
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "organization_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_organizations"
+            },
+            "x-actions": {
+              "onDelete": "RESTRICT"
+            }
+          }
+        ],
+        "reverseRelationships": [
+          {
+            "name": "customer_contacts",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "customer_id",
+            "foreignTable": "hmg_studio_customer_contacts"
+          },
+          {
+            "name": "orders",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "customer_id",
+            "foreignTable": "hmg_studio_orders"
+          }
+        ],
+        "manyToManyRelationships": []
+      },
+      "schema_format": "frictionless",
+      "provider_type": "flat_table",
+      "is_materialized": true,
+      "physical_table_name": "hmg_studio_customers",
+      "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
+      "is_active": true,
+      "created_at": "2026-11-06T12:49:07.883811+00:00",
+      "updated_at": "2026-11-06T13:25:42.040181+00:00"
+    },
+    "notifications": {
+      "name": "notifications",
+      "json_schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "organization_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "user_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "message",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "data",
+            "type": "any"
+          },
+          {
+            "name": "action_url",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "read_at",
+            "type": "datetime"
+          },
+          {
+            "name": "priority",
+            "type": "string",
+            "default": "normal",
+            "constraints": {
+              "required": true,
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "datetime"
+          },
+          {
+            "name": "updated_at",
+            "type": "datetime"
+          }
+        ],
+        "indexes": [
+          {
+            "name": "erp_605a50a164ba36139d93",
+            "fields": [
+              "user_id",
+              "read_at"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_6a603d4cc682ae4bdaa7",
+            "fields": [
+              "organization_id",
+              "created_at"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_f2adc303b136cd0a6d51",
+            "fields": [
+              "organization_id"
+            ]
+          },
+          {
+            "name": "erp_57bf841ac602adffb4b7",
+            "fields": [
+              "user_id"
+            ]
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "organization_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_organizations"
+            },
+            "x-actions": {
+              "onDelete": "RESTRICT"
+            }
+          },
+          {
+            "fields": [
+              "user_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "auth_user"
+            },
+            "x-actions": {
+              "onDelete": "RESTRICT"
+            }
+          }
+        ],
+        "reverseRelationships": [],
+        "manyToManyRelationships": []
+      },
+      "schema_format": "frictionless",
+      "provider_type": "flat_table",
+      "is_materialized": true,
+      "physical_table_name": "hmg_studio_notifications",
+      "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
+      "is_active": true,
+      "created_at": "2026-11-06T12:52:56.410523+00:00",
+      "updated_at": "2026-11-06T12:52:56.781608+00:00"
+    },
+    "saved_reports": {
+      "name": "saved_reports",
+      "json_schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "organization_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "created_by",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "data_source",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "columns",
+            "type": "any",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "filters",
+            "type": "any"
+          },
+          {
+            "name": "sort",
+            "type": "any"
+          },
+          {
+            "name": "chart_type",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "chart_field",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "is_shared",
+            "type": "boolean",
+            "default": false,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "datetime"
+          },
+          {
+            "name": "updated_at",
+            "type": "datetime"
+          }
+        ],
+        "indexes": [
+          {
+            "name": "erp_85519270e8beae6fd896",
+            "fields": [
+              "organization_id",
+              "created_by"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_0daa7fb2ec41445d7d15",
+            "fields": [
+              "organization_id",
+              "is_shared"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_e3437a322b7616652cea",
+            "fields": [
+              "organization_id"
+            ]
+          },
+          {
+            "name": "erp_9605993299601e3d39ad",
+            "fields": [
+              "created_by"
+            ]
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "organization_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_organizations"
+            },
+            "x-actions": {
+              "onDelete": "RESTRICT"
+            }
+          },
+          {
+            "fields": [
+              "created_by"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "auth_user"
+            },
+            "x-actions": {
+              "onDelete": "RESTRICT"
+            }
+          }
+        ],
+        "reverseRelationships": [
+          {
+            "name": "report_schedules",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "saved_report_id",
+            "foreignTable": "hmg_studio_report_schedules"
+          }
+        ],
+        "manyToManyRelationships": []
+      },
+      "schema_format": "frictionless",
+      "provider_type": "flat_table",
+      "is_materialized": true,
+      "physical_table_name": "hmg_studio_saved_reports",
+      "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
+      "is_active": true,
+      "created_at": "2026-11-06T12:54:40.700639+00:00",
+      "updated_at": "2026-11-06T13:25:42.483077+00:00"
+    }
+  },
+  "policies": {
+    "datatable:customers": {
+      "api_version": "api.cerbos.dev/v1",
+      "metadata": {
+        "hash": "7943560649221349503",
+        "store_identifer": "resource.datatable_customers.vdefault/insurance_hmg-studio",
+        "store_identifier": "resource.datatable_customers.vdefault/insurance_hmg-studio",
+        "source_attributes": {
+          "attributes": {
+            "update_ts": "2026-11-06T13:02:46Z",
+            "driver": "postgres"
+          }
+        },
+        "source_file": "",
+        "annotations": {}
+      },
+      "resource_policy": {
+        "resource": "datatable:customers",
+        "version": "default",
+        "rules": [
+          {
+            "actions": [
+              "read"
+            ],
+            "roles": [
+              "HMG Synthetic Operator"
+            ],
+            "condition": {
+              "match": {
+                "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\""
+              }
+            },
+            "effect": "EFFECT_ALLOW",
+            "derived_roles": [],
+            "name": ""
+          },
+          {
+            "actions": [
+              "create"
+            ],
+            "roles": [
+              "HMG Synthetic Operator"
+            ],
+            "condition": {
+              "match": {
+                "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\" && R.attr.name.matches('.*[^[:space:]].*') && size(R.attr.name) <= 255 && (!has(R.attr.deleted_at) || R.attr.deleted_at == null) && (!has(R.attr.credit_limit) || R.attr.credit_limit == null || R.attr.credit_limit >= 0)"
+              }
+            },
+            "effect": "EFFECT_ALLOW",
+            "derived_roles": [],
+            "name": ""
+          },
+          {
+            "actions": [
+              "update",
+              "delete"
+            ],
+            "roles": [
+              "*"
+            ],
+            "effect": "EFFECT_DENY",
+            "derived_roles": [],
+            "name": ""
+          }
+        ],
+        "scope": "insurance_hmg-studio",
+        "import_derived_roles": [],
+        "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+      },
+      "disabled": false,
+      "description": "",
+      "variables": {},
+      "json_schema": ""
+    },
+    "datatable:notifications": {
+      "api_version": "api.cerbos.dev/v1",
+      "metadata": {
+        "hash": "344418694201410157",
+        "store_identifer": "resource.datatable_notifications.vdefault/insurance_hmg-studio",
+        "store_identifier": "resource.datatable_notifications.vdefault/insurance_hmg-studio",
+        "source_attributes": {
+          "attributes": {
+            "update_ts": "2026-11-06T13:03:17Z",
+            "driver": "postgres"
+          }
+        },
+        "source_file": "",
+        "annotations": {}
+      },
+      "resource_policy": {
+        "resource": "datatable:notifications",
+        "version": "default",
+        "rules": [
+          {
+            "actions": [
+              "read"
+            ],
+            "roles": [
+              "HMG Synthetic Operator"
+            ],
+            "condition": {
+              "match": {
+                "expr": "R.attr.organization_id == \"913d46eb-585d-5a5c-b1d4-b9d22052a8d6\""
+              }
+            },
+            "effect": "EFFECT_ALLOW",
+            "derived_roles": [],
+            "name": ""
+          },
+          {
+            "actions": [
+              "create",
+              "update",
+              "delete"
+            ],
+            "roles": [
+              "*"
+            ],
+            "effect": "EFFECT_DENY",
+            "derived_roles": [],
+            "name": ""
+          }
+        ],
+        "scope": "insurance_hmg-studio",
+        "import_derived_roles": [],
+        "scope_permissions": "SCOPE_PERMISSIONS_UNSPECIFIED"
+      },
+      "disabled": false,
+      "description": "",
+      "variables": {},
+      "json_schema": ""
+    }
+  },
+  "rows": {
+    "saved_reports": {
+      "success": true,
+      "data": [
+        {
+          "id": "00bff3cd-654c-5330-95c5-10728e7fbf4c",
+          "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+          "created_by": "bb17fd27-1f5e-4691-b2c7-e9745883e54f",
+          "name": "Synthetic stone inventory register",
+          "description": "SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+          "data_source": "products",
+          "columns": "[\"name\", \"sku\", \"stock\", \"type\"]",
+          "filters": "[]",
+          "sort": "{\"field\": \"name\", \"direction\": \"asc\"}",
+          "chart_type": null,
+          "chart_field": null,
+          "is_shared": false,
+          "created_at": "2026-11-06T09:00:00",
+          "updated_at": "2026-11-06T09:00:00"
+        }
+      ],
+      "total": 1,
+      "pagination": {
+        "limit": 1000,
+        "offset": 0,
+        "count": 1,
+        "has_more": false
+      }
+    },
+    "activity_logs": {
+      "success": true,
+      "data": [],
+      "total": 0,
+      "pagination": {
+        "limit": 1000,
+        "offset": 0,
+        "count": 0,
+        "has_more": false
+      }
+    }
+  }
+}

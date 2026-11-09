@@ -1,0 +1,61 @@
+{
+  "recorded_at": "2026-11-06T20:23:30.751616+00:00",
+  "app": "hmg-studio",
+  "frontend": {
+    "command": "npm.cmd test -- --maxWorkers=1",
+    "tests": 187,
+    "files": 29,
+    "passed": true,
+    "duration_seconds": 273.68,
+    "log": ".cache/sectioned-vitest-final-rerun.log"
+  },
+  "python": {
+    "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest backend -q",
+    "tests": 250,
+    "passed": true,
+    "duration_seconds": 5.79,
+    "log": ".cache/sectioned-python-final.log"
+  },
+  "typescript": {
+    "frontend_exit_code": 0,
+    "node_exit_code": 0,
+    "log": ".cache/sectioned-typecheck-final.log"
+  },
+  "independent_review": {
+    "ui_and_export": "cleared after fixes",
+    "historical_generator_and_apply": "cleared after fixes"
+  },
+  "live": {
+    "business_headers": 60,
+    "support_rows": 75,
+    "native_ordinary_readback": 135,
+    "tables": 19,
+    "private_slab_images_sha_verified": 4,
+    "ordinary_advisory_checks_matched": 58,
+    "evidence": [
+      "historical-60-summary.json",
+      "historical-60-normal-readback.json",
+      "historical-60-normal-images.json",
+      "historical-60-normal-policy.json"
+    ]
+  },
+  "scope": {
+    "history_period": "May-October 2026",
+    "history_is_synthetic_snapshot": true,
+    "history_is_executed_workflow": false,
+    "exports": "visible current page or current record only",
+    "printed_document": "branded snapshot; not issued invoice or payment proof"
+  },
+  "remaining": [
+    "ordinary native customer create HTTP403 despite advisory ALLOW",
+    "transaction atomicity, concurrency, idempotency, rollback and direct-write protection unverified",
+    "physical database triggers unverified",
+    "full-filter and issued business document export workflows not implemented",
+    "all-module acceptance incomplete"
+  ],
+  "browser_visual_qa": false,
+  "build": false,
+  "deployment": false,
+  "commit": false,
+  "test_run_note": "Final rerun passed all tests. Earlier full run had one Categories test timeout and one notification export identity-refetch test race; test-only fixes were followed by focused and full green reruns."
+}

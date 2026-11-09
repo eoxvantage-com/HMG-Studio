@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-07T06:42:22.555850+00:00",
+  "app": "hmg-studio",
+  "principal": "hmg.john",
+  "admin_fallback": false,
+  "http": 200,
+  "projection_sha256": "dc07eac63e602440f7e2e2209c5533c7c0c1d02474e809cfb1260d0c952dc8a2",
+  "metrics": {
+    "currency": "INR",
+    "product_count": 15,
+    "order_count": 19,
+    "inventory_value": "3430050.00",
+    "pending_orders": 3,
+    "revenue_month": "0.00",
+    "receivables": "217525.00"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "at": "2026-11-07T06:55:26.556371+00:00",
+  "app": "hmg-studio",
+  "scope": "Workflow atlas audit and isolated dashboard unknown-value correction; not whole-workflow acceptance",
+  "review_sequence": [
+    "Independent tests-only review",
+    "Observed focused RED on prior implementation",
+    "Root production implementation",
+    "Independent production security/correctness review",
+    "Focused GREEN and full local regressions"
+  ],
+  "red": {
+    "command": "python -m pytest backend/tests/test_dashboard.py -q",
+    "environment": {
+      "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"
+    },
+    "failed": 64,
+    "passed": 51,
+    "seconds": 1.66,
+    "exit_code": 1,
+    "log": ".cache/workflow-dashboard-red.log"
+  },
+  "focused_green": {
+    "command": "python -m pytest backend/tests/test_dashboard.py -q",
+    "environment": {
+      "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"
+    },
+    "passed": 115,
+    "failed": 0,
+    "seconds": 0.45,
+    "exit_code": 0,
+    "log": ".cache/workflow-dashboard-green.log"
+  },
+  "backend": {
+    "command": "python -m pytest backend -q",
+    "environment": {
+      "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"
+    },
+    "passed": 459,
+    "failed": 0,
+    "seconds": 11.65,
+    "exit_code": 0,
+    "log": ".cache/workflow-backend-full.log"
+  },
+  "frontend": {
+    "command": "npm.cmd test -- --maxWorkers=1",
+    "passed": 251,
+    "failed": 0,
+    "files": 32,
+    "seconds": 415.29,
+    "exit_code": 0,
+    "unhandled_errors": 0,
+    "log": ".cache/workflow-frontend-full.log"
+  },
+  "typecheck": {
+    "command": "npm.cmd run typecheck",
+    "expanded_command": "tsc --noEmit && tsc --noEmit -p tsconfig.node.json",
+    "configurations": [
+      "tsconfig.json",
+      "tsconfig.node.json"
+    ],
+    "exit_code": 0,
+    "log": ".cache/workflow-typecheck.log"
+  },
+  "log_sha256": {
+    ".cache/workflow-dashboard-red.log": "1dcfa6f097769e507b62235e2782cec93ebf5018837e6a7ac5b516094b85f1b3",
+    ".cache/workflow-dashboard-green.log": "eb2c938de417ec4a48c33b45468a715d12eb2f4aa6a7abe36fed017d136ea074",
+    ".cache/workflow-backend-full.log": "e4eae1c6a02fef93c3533453722ba415ec95a620cd131b2f82099cba81e50a98",
+    ".cache/workflow-frontend-full.log": "b2f58854c07ab233b47ce5c1df4c46c72e12afdabb155554922bd12456d810ab",
+    ".cache/workflow-typecheck.log": "a504d75e4ec1ad87428cb1886e7c6ebc598b7abdf210b02c8514d3a8a82afb96"
+  },
+  "tested_source_sha256": {
+    "backend/functions/dashboard.py": "94a8bd313aa319ee07c84df5dd4deb0ee676719e25123807f85e2d5d7714db7a",
+    "backend/tests/test_dashboard.py": "e55913e7ef2f2ac56ef3c530605fbcaf13a63bca37e28c80d36b9aeecf4bc280"
+  },
+  "diff_check": {
+    "command": "git diff --check",
+    "exit_code": 0,
+    "limit": "Tracked diff only; line-ending warnings are not errors"
+  },
+  "focused_tests_overlap_full_backend": true,
+  "atlas_flows_accounted": 24,
+  "full_e2e_workflows_accepted": 0,
+  "browser_verified": false,
+  "visual_verified": false,
+  "deployed_by_this_verification": false,
+  "live_function_execution_by_this_verification": false,
+  "separate_prior_read_evidence": [
+    "workflow-atlas-live-preflight.json",
+    "workflow-atlas-normal-counts.json"
+  ],
+  "limits": [
+    "Current correction is dashboard validation only; no UI/schema/business-data changes.",
+    "Local tests are not live function deployment or native transaction proof.",
+    "No complete F01-F24 or E01-E12 journey accepted; native stock/money/lifecycle prerequisites remain blocked."
+  ]
+}

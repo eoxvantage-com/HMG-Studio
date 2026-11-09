@@ -1,0 +1,287 @@
+{
+  "actor": "qa_hmg_inbox_20261106",
+  "owner_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a",
+  "own_fixture_id": "275aeb92-a8ae-5021-b639-7a0fc9050631",
+  "foreign_fixture_id": "784db022-6afb-5a85-824a-97550cbb52c3",
+  "checks": {
+    "unfiltered": {
+      "http": 200,
+      "response": {
+        "status": "success",
+        "message": "Data retrieved successfully",
+        "data": [
+          {
+            "id": "275aeb92-a8ae-5021-b639-7a0fc9050631",
+            "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+            "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a",
+            "type": "info",
+            "title": "Synthetic inventory review ready",
+            "message": "Review the sample stone catalog. SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+            "data": null,
+            "action_url": "/inventory",
+            "read_at": null,
+            "priority": "normal",
+            "created_at": "2026-11-06T17:00:00",
+            "updated_at": null
+          }
+        ],
+        "total": 1,
+        "debug": {
+          "authorization": {
+            "provider": "cerbos",
+            "principal_id": "qa_hmg_inbox_20261106",
+            "resource_kind": "datatable:notifications",
+            "action": "read",
+            "scope": "insurance_hmg-studio",
+            "filter_kind": "CONDITIONAL",
+            "cerbos_cache_hit": false,
+            "cerbos_source": "live_grpc",
+            "auth_filters": {
+              "and": [
+                {
+                  "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6"
+                },
+                {
+                  "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a"
+                }
+              ]
+            },
+            "user_filters": {},
+            "combined_filters": {
+              "and": [
+                {
+                  "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6"
+                },
+                {
+                  "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a"
+                }
+              ]
+            },
+            "metadata": {
+              "query_plan_filter_debug": null,
+              "tenant_id": "insurance",
+              "app_slug": "hmg-studio"
+            }
+          }
+        }
+      }
+    },
+    "own_filtered": {
+      "http": 200,
+      "response": {
+        "status": "success",
+        "message": "Data retrieved successfully",
+        "data": [
+          {
+            "id": "275aeb92-a8ae-5021-b639-7a0fc9050631",
+            "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+            "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a",
+            "type": "info",
+            "title": "Synthetic inventory review ready",
+            "message": "Review the sample stone catalog. SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+            "data": null,
+            "action_url": "/inventory",
+            "read_at": null,
+            "priority": "normal",
+            "created_at": "2026-11-06T17:00:00",
+            "updated_at": null
+          }
+        ],
+        "total": 1,
+        "debug": {
+          "authorization": {
+            "provider": "cerbos",
+            "principal_id": "qa_hmg_inbox_20261106",
+            "resource_kind": "datatable:notifications",
+            "action": "read",
+            "scope": "insurance_hmg-studio",
+            "filter_kind": "CONDITIONAL",
+            "cerbos_cache_hit": true,
+            "cerbos_source": "cache",
+            "auth_filters": {
+              "and": [
+                {
+                  "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6"
+                },
+                {
+                  "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a"
+                }
+              ]
+            },
+            "user_filters": {
+              "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a"
+            },
+            "combined_filters": {
+              "and": [
+                {
+                  "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a"
+                },
+                {
+                  "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6"
+                },
+                {
+                  "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a"
+                }
+              ]
+            },
+            "metadata": {
+              "query_plan_filter_debug": null,
+              "tenant_id": "insurance",
+              "app_slug": "hmg-studio"
+            }
+          }
+        }
+      }
+    },
+    "foreign_filtered": {
+      "http": 200,
+      "response": {
+        "status": "success",
+        "message": "Data retrieved successfully",
+        "data": [],
+        "total": 0,
+        "debug": {
+          "authorization": {
+            "provider": "cerbos",
+            "principal_id": "qa_hmg_inbox_20261106",
+            "resource_kind": "datatable:notifications",
+            "action": "read",
+            "scope": "insurance_hmg-studio",
+            "filter_kind": "CONDITIONAL",
+            "cerbos_cache_hit": true,
+            "cerbos_source": "cache",
+            "auth_filters": {
+              "and": [
+                {
+                  "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6"
+                },
+                {
+                  "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a"
+                }
+              ]
+            },
+            "user_filters": {
+              "user_id": "bb17fd27-1f5e-4691-b2c7-e9745883e54f"
+            },
+            "combined_filters": {
+              "and": [
+                {
+                  "user_id": "bb17fd27-1f5e-4691-b2c7-e9745883e54f"
+                },
+                {
+                  "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6"
+                },
+                {
+                  "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a"
+                }
+              ]
+            },
+            "metadata": {
+              "query_plan_filter_debug": null,
+              "tenant_id": "insurance",
+              "app_slug": "hmg-studio"
+            }
+          }
+        }
+      }
+    },
+    "own_detail": {
+      "http": 200,
+      "response": {
+        "status": "success",
+        "message": "Record retrieved successfully",
+        "data": {
+          "id": "275aeb92-a8ae-5021-b639-7a0fc9050631",
+          "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+          "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a",
+          "type": "info",
+          "title": "Synthetic inventory review ready",
+          "message": "Review the sample stone catalog. SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+          "data": null,
+          "action_url": "/inventory",
+          "read_at": null,
+          "priority": "normal",
+          "created_at": "2026-11-06T17:00:00",
+          "updated_at": null
+        }
+      }
+    },
+    "foreign_detail": {
+      "http": 403,
+      "response": {
+        "status": "error",
+        "message": "You do not have permission to access this record",
+        "code": "FORBIDDEN"
+      }
+    },
+    "unread": {
+      "http": 200,
+      "response": {
+        "status": "success",
+        "message": "Data retrieved successfully",
+        "data": [
+          {
+            "id": "275aeb92-a8ae-5021-b639-7a0fc9050631",
+            "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+            "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a",
+            "type": "info",
+            "title": "Synthetic inventory review ready",
+            "message": "Review the sample stone catalog. SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+            "data": null,
+            "action_url": "/inventory",
+            "read_at": null,
+            "priority": "normal",
+            "created_at": "2026-11-06T17:00:00",
+            "updated_at": null
+          }
+        ],
+        "total": 1,
+        "debug": {
+          "authorization": {
+            "provider": "cerbos",
+            "principal_id": "qa_hmg_inbox_20261106",
+            "resource_kind": "datatable:notifications",
+            "action": "read",
+            "scope": "insurance_hmg-studio",
+            "filter_kind": "CONDITIONAL",
+            "cerbos_cache_hit": true,
+            "cerbos_source": "cache",
+            "auth_filters": {
+              "and": [
+                {
+                  "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6"
+                },
+                {
+                  "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a"
+                }
+              ]
+            },
+            "user_filters": {
+              "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a",
+              "read_at__null": true
+            },
+            "combined_filters": {
+              "and": [
+                {
+                  "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a",
+                  "read_at__null": true
+                },
+                {
+                  "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6"
+                },
+                {
+                  "user_id": "1bbbcad2-46c3-480f-92d6-acdf566b510a"
+                }
+              ]
+            },
+            "metadata": {
+              "query_plan_filter_debug": null,
+              "tenant_id": "insurance",
+              "app_slug": "hmg-studio"
+            }
+          }
+        }
+      }
+    }
+  }
+}

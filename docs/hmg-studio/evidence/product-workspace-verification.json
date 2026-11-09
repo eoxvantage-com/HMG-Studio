@@ -1,0 +1,37 @@
+{
+  "at": "2026-11-06T18:59:02.262134+00:00",
+  "frontend": {
+    "command": "npm.cmd test -- --maxWorkers=1",
+    "tests": 152,
+    "files": 25,
+    "exit_code": 0,
+    "log": ".cache/product-workspace-vitest-final.log"
+  },
+  "backend": {
+    "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest backend -q",
+    "tests": 208,
+    "exit_code": 0,
+    "log": ".cache/product-workspace-pytest-final.log"
+  },
+  "types": {
+    "commands": [
+      "npx.cmd tsc --noEmit -p tsconfig.json",
+      "npx.cmd tsc --noEmit -p tsconfig.node.json"
+    ],
+    "exit_codes": [
+      0,
+      0
+    ]
+  },
+  "credential_scan": {
+    "matched_files": 0,
+    "values_printed": false
+  },
+  "git_diff_check": {
+    "exit_code": 0
+  },
+  "browser_tested": false,
+  "build_run": false,
+  "deployed": false,
+  "all_modules_complete": false
+}

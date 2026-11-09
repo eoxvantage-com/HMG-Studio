@@ -1,0 +1,93 @@
+{
+  "checkpoint_date": "2026-11-07",
+  "app": "hmg-studio",
+  "scope": "Local frontend verification after independent security/correctness review; no browser or deployment proof",
+  "frontend": {
+    "command": "npm.cmd test -- --maxWorkers=1",
+    "passed": 228,
+    "failed": 0,
+    "files": 31,
+    "unhandled_errors": 0,
+    "seconds": 552.9,
+    "exit_code": 0,
+    "log": ".cache/operational-workspace-vitest-final-rerun.log"
+  },
+  "typecheck": {
+    "command": "npm.cmd run typecheck",
+    "expanded_command": "tsc --noEmit && tsc --noEmit -p tsconfig.node.json",
+    "configurations": [
+      "tsconfig.json",
+      "tsconfig.node.json"
+    ],
+    "exit_code": 0,
+    "log": ".cache/operational-workspace-typecheck-final.log"
+  },
+  "focused_overlapping_subsets": [
+    {
+      "scope": "compact inventory service/page and generic integration",
+      "passed": 34,
+      "files": 3,
+      "seconds": 230.22,
+      "exit_code": 0,
+      "log": ".cache/compact-inventory-focused.log"
+    },
+    {
+      "scope": "operational reports service/page",
+      "passed": 35,
+      "files": 2,
+      "seconds": 31.77,
+      "exit_code": 0,
+      "log": ".cache/operational-reports-focused.log"
+    },
+    {
+      "scope": "Categories pending debounce cleanup",
+      "passed": 9,
+      "files": 1,
+      "seconds": 45.23,
+      "exit_code": 0,
+      "log": ".cache/operational-categories-debounce-focused.log"
+    }
+  ],
+  "diagnostics": {
+    "initial_full_run": {
+      "passed": 224,
+      "timed_out": 3,
+      "unhandled_errors": 1,
+      "exit_code": 1,
+      "log": ".cache/operational-workspace-vitest-final.log"
+    },
+    "unchanged_timeout_cases_isolated": {
+      "passed": 3,
+      "test_seconds": 9.94,
+      "log": ".cache/operational-index-timeout-diagnostic.log"
+    },
+    "fixes": [
+      "Test-local Emotion cache and owned-sheet cleanup; unchanged test order/assertions/timeouts",
+      "Cancel pending native Refine organization-search debounce on Categories dialog unmount"
+    ],
+    "final_dispatcher_case_seconds": {
+      "search": 2.467,
+      "retry_error": 1.73,
+      "page_reset": 2.16
+    }
+  },
+  "log_sha256": {
+    ".cache/operational-workspace-vitest-final-rerun.log": "6b65e0b0a8372f1b6fe69ab25824822a5d44825275bc6d37e906d1754720445a",
+    ".cache/operational-workspace-typecheck-final.log": "a504d75e4ec1ad87428cb1886e7c6ebc598b7abdf210b02c8514d3a8a82afb96",
+    ".cache/operational-reports-focused.log": "4cab3b6307c80e0f9ecfb53b5bd90d1f4af4fd63451ee6fbd0d2dbfa7031370e",
+    ".cache/compact-inventory-focused.log": "555eee03613886ba427652be89100c9be50027869bc745308dbffbafccca9b0b",
+    ".cache/operational-categories-debounce-focused.log": "587737e2f41d77c1b03038e0afc48ef18df4e1428b34800d25119e24452a9395"
+  },
+  "diff_check": {
+    "command": "git diff --check",
+    "exit_code": 0,
+    "note": "Tracked diff only; line-ending warnings are not errors"
+  },
+  "separate_live_evidence": "operational-reports-live.json",
+  "browser_verified": false,
+  "visual_verified": false,
+  "build_verified_by_this_evidence": false,
+  "deployment_verified_by_this_evidence": false,
+  "all_crud_verified": false,
+  "full_module_acceptance": false
+}

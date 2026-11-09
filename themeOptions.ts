@@ -6,8 +6,8 @@ import type {} from "@mui/x-data-grid/themeAugmentation";
  * Taruvi Design System — MUI Theme
  * Source of truth: taruvi-design-system.html
  *
- * Every numeric value below is taken DIRECTLY from the design system
- * (font sizes, weights, paddings, radii, shadows, letter-spacings).
+ * Shared Taruvi tokens with the user-requested compact HMG ERP visual profile:
+ * navy navigation, readable slate surfaces, title-case controls and dense tables.
  *
  * Note on radii: the `radius.*` block intentionally runs ~50% softer than
  * the raw design-system values (see comments inside the block). Other
@@ -28,7 +28,7 @@ declare module "@mui/material/Chip" {
 
 // ─── Font families ──────────────────────────────────────────────────
 const FONT_BODY = "'Open Sans', sans-serif";
-const FONT_TITLE = "'Quicksand', sans-serif";
+const FONT_TITLE = FONT_BODY; // HMG compact ERP reference: one clean UI typeface.
 
 // ─── Brand tokens (full ramps + every named color from the spec) ────
 export const taruviTokens = {
@@ -118,18 +118,18 @@ export const taruviTokens = {
 
   // Primary button states (filled blue button system)
   button: {
-    primaryDefault: '#1E88E5',
-    primaryHover: '#1565C0',
-    primaryActive: '#0D47A1',
-    primaryDisabled: '#BBDEFB',
+    primaryDefault: '#4B563F',
+    primaryHover: '#3D4833',
+    primaryActive: '#303B28',
+    primaryDisabled: '#D9DDCF',
     primaryDisabledText: '#999999',
   },
 
   // Status / chart colors
   status: {
-    complete: '#388e3c',
+    complete: '#2E7D32',
     inProgress: '#1976d2',
-    review: '#f57c00',
+    review: '#9A5700',
     delayed: '#c2185b',
     onHold: '#7b1fa2',
     todo: '#00acc1',
@@ -161,9 +161,9 @@ export const taruviTokens = {
 
   // Tab / surface tokens
   surface: {
-    bg: '#f3f4f6',
+    bg: '#F6F3ED',
     paper: '#ffffff',
-    inputBg: '#F3F3F5',
+    inputBg: '#FBFAF7',
     borderLight: 'rgba(0,0,0,0.08)',
     borderInput: 'rgba(0,0,0,0.1)',
     borderTableRow: 'rgba(0,0,0,0.04)',
@@ -174,11 +174,24 @@ export const taruviTokens = {
     navWhiteText: '#101828',
   },
 
+  // HMG workspace shell: opaque pairs keep sidebar text legible in both modes.
+  workspace: {
+    sidebar: '#FDFCF9',
+    sidebarHover: '#F0EFE8',
+    sidebarSelected: '#E5E9DC',
+    sidebarText: '#263021',
+    sidebarMuted: '#56604D',
+    sidebarBorder: '#D8DBCF',
+    sidebarAccent: '#4B563F',
+    stone: '#EEE8DF',
+    stoneText: '#66543D',
+  },
+
   // Text colors
   text: {
-    primary: '#121414',
-    secondary: '#596365',
-    muted: '#929C9F',
+    primary: '#283124',
+    secondary: '#56604D',
+    muted: '#626A59',
     onDark: '#ffffff',
   },
 
@@ -207,7 +220,7 @@ export const taruviTokens = {
 
   // Spacing (in px) for explicit lookups
   spacing: {
-    cardPadding: 28,
+    cardPadding: 20,
     cardTitleMb: 16,
     sectionMb: 64,
     containerPaddingY: 48,
@@ -221,25 +234,25 @@ export const taruviTokens = {
     formFieldGap: 16,       // gap between adjacent fields in a stack
     formSectionGap: 32,     // gap between form sections
     // Design spec: input padding 12×16 (pairs with 40px standard input height)
-    inputPaddingY: 12,
+    inputPaddingY: 9,
     inputPaddingX: 16,
     btnSm: '6px 14px',
-    btnMd: '10px 20px',
+    btnMd: '7px 14px',
     btnLg: '14px 28px',
     chip: '4px 12px',
     chipSm: '2px 9px',
-    tableCell: '12px 16px',
+    tableCell: '10px 16px',
     tableCellX: '16px', // horizontal-only variant for DataGrid cells (see MuiDataGrid.cell)
     statusMsg: '14px 18px',
-    sidebarItem: '10px 12px',
+    sidebarItem: '7px 10px',
   },
 
   // Component dimensions
   size: {
-    navHeight: 64,
+    navHeight: 48,
     sidebarCollapsed: 72,
-    sidebarExpanded: 200,
-    sidebarItemMinHeight: 48,
+    sidebarExpanded: 220,
+    sidebarItemMinHeight: 36,
     iconButton: 38,
     iconButtonBorder: 1.5,
     avatarSm: 30,
@@ -294,7 +307,7 @@ export const taruviTokens = {
     p2: '0.875rem',    // 14px
     p3: '0.8125rem',   // 13px
     label: '0.75rem',  // 12px
-    footer: '0.6875rem', // 11px
+    footer: '0.75rem', // 12px
     formLabel: '0.8125rem',  // 13px
     formInput: '1rem',       // 16px — design spec (also prevents iOS Safari from zooming on focus)
     formHelper: '0.6875rem', // 11px
@@ -302,11 +315,11 @@ export const taruviTokens = {
     btnMd: '0.8125rem',  // 13px
     btnLg: '0.9375rem',  // 15px
     chip: '0.6875rem',   // 11px
-    chipSm: '0.625rem',  // 10px
+    chipSm: '0.6875rem',  // 11px
     tableHead: '0.6875rem', // 11px
     tableCell: '0.8125rem', // 13px
-    breadcrumb: '0.875rem', // 14px
-    breadcrumbCurrent: '1rem', // 16px
+    breadcrumb: '0.75rem', // 12px
+    breadcrumbCurrent: '0.75rem', // 12px
   },
 } as const;
 
@@ -381,7 +394,7 @@ const typography: ThemeOptions['typography'] = {
     fontWeight: 500,
     lineHeight: 1.4,
     letterSpacing: taruviTokens.letterSpacing.subheading,
-    textTransform: 'uppercase',
+    textTransform: 'none',
   },
 
   // Buttons — Quicksand uppercase 700, 0.04em
@@ -390,7 +403,7 @@ const typography: ThemeOptions['typography'] = {
     fontSize: taruviTokens.fontSize.btnMd,      // 13px
     fontWeight: 700,
     letterSpacing: taruviTokens.letterSpacing.button,
-    textTransform: 'uppercase',
+    textTransform: 'none',
   },
 
   caption: {
@@ -404,7 +417,7 @@ const typography: ThemeOptions['typography'] = {
     fontSize: taruviTokens.fontSize.footer,     // 11px
     fontWeight: 600,
     letterSpacing: taruviTokens.letterSpacing.subheading,
-    textTransform: 'uppercase',
+    textTransform: 'none',
   },
 };
 
@@ -433,6 +446,18 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
         },
         '*, *::before, *::after': { boxSizing: 'border-box' },
         '[id]': { scrollMarginTop: '24px' },
+        'a:focus-visible, button:focus-visible, [tabindex]:focus-visible': {
+          outline: `2px solid ${isLight ? taruviTokens.button.primaryDefault : taruviTokens.primary[300]}`,
+          outlineOffset: 2,
+        },
+        '@media (prefers-reduced-motion: reduce)': {
+          '*, *::before, *::after': {
+            animationDuration: '0.01ms !important',
+            animationIterationCount: '1 !important',
+            transitionDuration: '0.01ms !important',
+            scrollBehavior: 'auto !important',
+          },
+        },
       },
     },
 
@@ -445,7 +470,7 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
           fontFamily: FONT_TITLE,
           fontWeight: 700,
           letterSpacing: taruviTokens.letterSpacing.button,
-          textTransform: 'uppercase',
+          textTransform: 'none',
           boxShadow: 'none',
           transition: taruviTokens.transition.base,
           gap: 6,
@@ -522,6 +547,7 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
           color: isLight ? taruviTokens.text.secondary : taruviTokens.neutral[300],
           transition: taruviTokens.transition.fast,
           padding: 8,
+          '@media (pointer: coarse)': { minWidth: 44, minHeight: 44 },
           '&:hover': {
             backgroundColor: isLight ? taruviTokens.neutral[100] : 'rgba(255,255,255,0.06)',
           },
@@ -545,7 +571,7 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
           fontWeight: 700,
           fontSize: taruviTokens.fontSize.chip,        // 11px
           letterSpacing: taruviTokens.letterSpacing.chip,
-          textTransform: 'uppercase',
+          textTransform: 'none',
           height: taruviTokens.size.chipMd,            // 24px
           paddingLeft: 4,
           paddingRight: 4,
@@ -557,7 +583,7 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
         outlined: { borderWidth: 1.5 },
         label: { paddingLeft: 8, paddingRight: 8 },
         // Color variants line up with MUI's color="success"/etc.
-        colorSuccess: { backgroundColor: '#388e3c', color: '#fff' },
+        colorSuccess: { backgroundColor: taruviTokens.status.complete, color: taruviTokens.text.onDark },
         colorInfo: { backgroundColor: taruviTokens.status.inProgress, color: '#fff' },
         colorWarning: { backgroundColor: taruviTokens.status.review, color: '#fff' },
         colorError: { backgroundColor: taruviTokens.error[600], color: '#fff' },
@@ -583,7 +609,8 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
           // full-bleed child — a DataGrid, a CardMedia image — can sit flush by
           // zeroing CardContent's padding. Putting padding on the Card root
           // insets *every* child, which left a gap around edge-to-edge tables.
-          boxShadow: isLight ? taruviTokens.shadow.card : taruviTokens.shadow.cardDark,
+          boxShadow: 'none',
+          border: `1px solid ${dividerColor}`,
           backgroundImage: 'none',
           backgroundColor: isLight ? taruviTokens.surface.paper : '#11202a',
         },
@@ -596,7 +623,7 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
           fontFamily: FONT_TITLE,
           fontSize: taruviTokens.fontSize.cardTitle,    // 12px
           fontWeight: 600,
-          textTransform: 'uppercase',
+          textTransform: 'none',
           letterSpacing: taruviTokens.letterSpacing.cardTitle,
           color: isLight ? taruviTokens.text.secondary : taruviTokens.neutral[300],
         },
@@ -632,7 +659,8 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
           borderRadius: taruviTokens.radius.lg,        // 10px
           backgroundColor: isLight ? taruviTokens.surface.inputBg : 'rgba(255,255,255,0.04)',
           fontFamily: FONT_BODY,
-          fontSize: taruviTokens.fontSize.formInput,   // 14px
+          fontSize: taruviTokens.fontSize.p3,
+          '@media (pointer: coarse)': { fontSize: taruviTokens.fontSize.formInput },
           '& .MuiOutlinedInput-notchedOutline': {
             borderColor: isLight ? taruviTokens.surface.borderInput : 'rgba(255,255,255,0.12)',
           },
@@ -768,7 +796,7 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
           fontFamily: FONT_TITLE,
           fontSize: taruviTokens.fontSize.tableHead,   // 11px
           fontWeight: 700,
-          textTransform: 'uppercase',
+          textTransform: 'none',
           letterSpacing: taruviTokens.letterSpacing.tableHead,
           color: isLight ? taruviTokens.text.muted : taruviTokens.neutral[400],
         },
@@ -800,6 +828,7 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
     // ─ DataGrid (mirrors MuiTable* styling so DataGrid-based list pages
     //   and hand-rolled <Table> pages look identical — UI_Guidelines §4.7)
     MuiDataGrid: {
+      defaultProps: { rowHeight: 44, columnHeaderHeight: 38 },
       styleOverrides: {
         root: {
           borderRadius: taruviTokens.radius.xl,                          // 8px (toned)
@@ -807,22 +836,22 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
           backgroundColor: isLight ? taruviTokens.surface.paper : '#11202a',
           fontFamily: FONT_BODY,
           fontSize: taruviTokens.fontSize.tableCell,                     // 13px
-          // No focus outlines on cells / rows — design uses subtle hover/selected fills instead
-          '& .MuiDataGrid-cell:focus, & .MuiDataGrid-cell:focus-within': { outline: 'none' },
-          '& .MuiDataGrid-columnHeader:focus, & .MuiDataGrid-columnHeader:focus-within': { outline: 'none' },
+          // Keep visible keyboard focus on the dense ERP grid.
+          '& .MuiDataGrid-cell:focus, & .MuiDataGrid-cell:focus-within': { outline: `2px solid ${taruviTokens.button.primaryDefault}`, outlineOffset: -2 },
+          '& .MuiDataGrid-columnHeader:focus, & .MuiDataGrid-columnHeader:focus-within': { outline: `2px solid ${taruviTokens.button.primaryDefault}`, outlineOffset: -2 },
         },
         columnHeaders: {
           backgroundColor: isLight ? taruviTokens.neutral[50] : 'rgba(255,255,255,0.04)',
           borderBottom: `1px solid ${dividerColor}`,
-          minHeight: 44,
-          maxHeight: 44,
-          lineHeight: '44px',
+          minHeight: 38,
+          maxHeight: 38,
+          lineHeight: '38px',
         },
         columnHeaderTitle: {
           fontFamily: FONT_TITLE,
           fontSize: taruviTokens.fontSize.tableHead,                     // 11px
           fontWeight: 700,
-          textTransform: 'uppercase',
+          textTransform: 'none',
           letterSpacing: taruviTokens.letterSpacing.tableHead,
           color: isLight ? taruviTokens.text.muted : taruviTokens.neutral[400],
         },
@@ -886,7 +915,7 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
         paper: {
           backgroundImage: 'none',
           borderRight: `1px solid ${dividerColor}`,
-          boxShadow: taruviTokens.shadow.sidebar,
+          boxShadow: 'none',
         },
       },
     },
@@ -906,13 +935,15 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
           fontSize: taruviTokens.fontSize.h6,          // 13px
           padding: taruviTokens.spacing.sidebarItem,   // 10px 12px
           minHeight: taruviTokens.size.sidebarItemMinHeight,
+          '@media (pointer: coarse)': { minHeight: 44 },
           color: isLight ? taruviTokens.text.secondary : taruviTokens.neutral[300],
           transition: taruviTokens.transition.fast,
           '&.Mui-selected': {
-            backgroundColor: taruviTokens.status.inProgress, // #1976d2
-            color: '#fff',
-            '& .MuiListItemIcon-root': { color: '#fff' },
-            '&:hover': { backgroundColor: '#1565c0' },
+            backgroundColor: isLight ? taruviTokens.surface.paper : taruviTokens.neutral[800],
+            color: isLight ? taruviTokens.text.primary : taruviTokens.text.onDark,
+            boxShadow: `inset 0 0 0 1px ${dividerColor}`,
+            '& .MuiListItemIcon-root': { color: taruviTokens.button.primaryDefault },
+            '&:hover': { backgroundColor: isLight ? taruviTokens.primary[50] : taruviTokens.neutral[700] },
           },
           '&:hover': {
             backgroundColor: isLight ? taruviTokens.neutral[100] : 'rgba(255,255,255,0.06)',
@@ -945,7 +976,7 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
         root: {
           fontFamily: FONT_BODY,
           fontSize: taruviTokens.fontSize.breadcrumb,  // 14px
-          padding: '10px 0',
+          padding: '4px 0',
         },
         separator: {
           color: isLight ? taruviTokens.text.muted : taruviTokens.neutral[400],
@@ -976,26 +1007,26 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
         message: { padding: 0 },
         standardSuccess: {
           backgroundColor: taruviTokens.success[50],
-          borderLeftColor: '#388e3c',
-          color: isLight ? taruviTokens.text.primary : '#f8fafc',
-          '& .MuiAlert-icon': { color: '#388e3c' },
+          borderLeftColor: taruviTokens.status.complete,
+          color: taruviTokens.text.primary,
+          '& .MuiAlert-icon': { color: taruviTokens.status.complete },
         },
         standardError: {
           backgroundColor: taruviTokens.error[50],
           borderLeftColor: taruviTokens.error[600],
-          color: isLight ? taruviTokens.text.primary : '#f8fafc',
+          color: taruviTokens.text.primary,
           '& .MuiAlert-icon': { color: taruviTokens.error[600] },
         },
         standardInfo: {
           backgroundColor: taruviTokens.primary[100],
           borderLeftColor: taruviTokens.status.inProgress,
-          color: isLight ? taruviTokens.text.primary : '#f8fafc',
+          color: taruviTokens.text.primary,
           '& .MuiAlert-icon': { color: taruviTokens.status.inProgress },
         },
         standardWarning: {
           backgroundColor: taruviTokens.warning[50],
           borderLeftColor: taruviTokens.warning[500],
-          color: isLight ? taruviTokens.text.primary : '#f8fafc',
+          color: taruviTokens.text.primary,
           '& .MuiAlert-icon': { color: taruviTokens.warning[500] },
         },
       },
@@ -1099,7 +1130,8 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
         paper: {
           borderRadius: taruviTokens.radius.xxl,
           padding: taruviTokens.spacing.cardPadding,
-          boxShadow: isLight ? taruviTokens.shadow.card : taruviTokens.shadow.cardDark,
+          boxShadow: 'none',
+          border: `1px solid ${dividerColor}`,
         },
       },
     },
@@ -1155,7 +1187,7 @@ const componentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] 
           fontFamily: FONT_TITLE,
           fontSize: taruviTokens.fontSize.btnMd,       // 13px
           fontWeight: 600,
-          textTransform: 'uppercase',
+          textTransform: 'none',
           letterSpacing: taruviTokens.letterSpacing.button,
           minHeight: 40,
           '&.Mui-selected': { color: taruviTokens.button.primaryDefault },
@@ -1243,7 +1275,7 @@ export const lightThemeOptions: ThemeOptions = {
       contrastText: '#ffffff',
     },
     warning: {
-      main: taruviTokens.warning[500],           // #f57c00
+      main: taruviTokens.status.review,
       light: taruviTokens.warning[200],
       dark: taruviTokens.warning[700],
       contrastText: '#ffffff',
@@ -1255,7 +1287,7 @@ export const lightThemeOptions: ThemeOptions = {
       contrastText: '#ffffff',
     },
     success: {
-      main: taruviTokens.success[500],           // #10B981
+      main: taruviTokens.status.complete,
       light: taruviTokens.success[200],
       dark: taruviTokens.success[700],
       contrastText: '#ffffff',

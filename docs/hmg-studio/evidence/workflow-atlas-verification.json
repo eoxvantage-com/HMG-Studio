@@ -1,0 +1,125 @@
+{
+  "at": "2026-11-07T07:04:32.032650+00:00",
+  "app": "hmg-studio",
+  "source": {
+    "path": "C:\\Users\\pradeepk\\AppData\\Local\\Temp\\Inventoros_E2E_Audit\\Inventoros_Complete_Workflow_Flowcharts.md",
+    "sha256": "4e8d6abd8828992c993130d84b5d402fe7985c25906ab8c682ef974470ff94be",
+    "flows": 24
+  },
+  "coverage": {
+    "flow_ids": [
+      "F01",
+      "F02",
+      "F03",
+      "F04",
+      "F05",
+      "F06",
+      "F07",
+      "F08",
+      "F09",
+      "F10",
+      "F11",
+      "F12",
+      "F13",
+      "F14",
+      "F15",
+      "F16",
+      "F17",
+      "F18",
+      "F19",
+      "F20",
+      "F21",
+      "F22",
+      "F23",
+      "F24"
+    ],
+    "acceptance_journeys": [
+      "E01",
+      "E02",
+      "E03",
+      "E04",
+      "E05",
+      "E06",
+      "E07",
+      "E08",
+      "E09",
+      "E10",
+      "E11",
+      "E12"
+    ],
+    "full_e2e_workflows_accepted": 0
+  },
+  "change": {
+    "file": "backend/functions/dashboard.py",
+    "description": "Reject unknown numeric/scope facts instead of fabricating dashboard amounts or row inclusion; no legacy price fallback.",
+    "business_data_mutations": 0,
+    "schema_policy_role_changes": 0
+  },
+  "local_verification": {
+    "frontend_passed": 251,
+    "backend_passed": 459,
+    "focused_dashboard_passed": 115,
+    "focused_overlaps_backend": true,
+    "typecheck_exit": 0
+  },
+  "deployment": {
+    "function": "hmg-dashboard-v1",
+    "version": 3,
+    "verified_after_reconciliation": true,
+    "exact_upload_bytes_equal": false,
+    "difference": "Provider removed exactly one terminal LF; AST identical. Original strict journal retained.",
+    "policy_unchanged": true,
+    "mutation_attempts": 1,
+    "mutation_replays": 0,
+    "ordinary_principal": "hmg.john",
+    "ordinary_http": 200,
+    "ordinary_before_after_projection_equal": true,
+    "negative_cases_passed": true,
+    "frontend_rebuilt_or_redeployed": false
+  },
+  "user_steer": {
+    "existing_pradeep_for_admin": true,
+    "new_users_created": false,
+    "admin_success_not_row_policy_proof": true,
+    "policy_role_name_check": "Current customer role identifier matches live role NAME; slug mismatch ruled out."
+  },
+  "primary_docs": {
+    "quickstart": "https://test-docs.taruvi.cloud/docs/products/database/quickstart",
+    "lifecycle": "https://test-docs.taruvi.cloud/docs/concepts/request-lifecycle",
+    "security": "https://test-docs.taruvi.cloud/docs/products/database/security-limits",
+    "authorization_testing": "https://test-docs.taruvi.cloud/docs/products/database/operations/authorization-testing"
+  },
+  "docs_read_sha256": {
+    "database/quickstart": "e3f01cca6cd92a5e2e900b386cc659982fce12a48f1e5d0a58e8ebacec624da3",
+    "request-lifecycle": "c617563bfc1ea7000ae578b5cc8be8117c76f2214e68d8143754c232765b0bcf",
+    "authentication-authorization": "0313bf2e613abb25cfea147b622d7e6a8f2fc212354c6ebc285d7decb2d96c65",
+    "database/security-limits": "c6fe3c5459b42af658f03c0ae83859979070e3bc6987c9aa5752e37376791bba",
+    "database/records": "e741b88b925cb0ec3f696996dbd3ec598c6ebbee74168f804d48cfa0b8b89764",
+    "database/authorization-testing": "751446ceac9fae98d7109040691d333969c9a5fc7b8a43d1e7599fbd42984eae"
+  },
+  "evidence_sha256": {
+    "workflow-atlas-live-preflight.json": "5d537824ea622c9febe2df81ff83cc5efe87702b0daf0ec184239a91eca758e2",
+    "workflow-atlas-normal-counts.json": "657a2250dfdfcd5d26d967d9e1fe544f1b8e43f8a3d39f50f6838acddf93580e",
+    "workflow-atlas-regressions.json": "0a31dc0c68af3fcad5df83e7f76788c36cb02b87bd164abe787305f960101bad",
+    "workflow-atlas-dashboard-deploy.json": "c67c5c9b840a1a3794c3bf46356c4c2f72ce415003ce9608f73b9b21e5292ac0",
+    "workflow-atlas-dashboard-reconciliation.json": "b1340f1f89905e59ad9faed59856de63a182522066ebc030253e1079c2b8c480",
+    "workflow-dashboard-before.json": "015f7937b1876cdb4689f21ec3d555d540f248efcb80519ca1257c0c25683256",
+    "workflow-dashboard-after.json": "a41cd3eb2f54972335def0deaec95373b931000bb19732d74ea5a7b091165ca5",
+    "workflow-dashboard-negative-checks.json": "ba6593465316f206df8f58d3f3711a2cf733de923b4ccea734ec05c73eafae32",
+    "workflow-atlas-customer-role-name-check.json": "aeda2f31330f10deda7a639ef1ef85e8165ea5146302dd5d2b1b91eeaaccac25"
+  },
+  "remaining": [
+    "Native ordinary-user create advisory/POST authorization divergence",
+    "Original/proposed scope protection for update/delete",
+    "Atomic multi-resource stock/payment/lifecycle commands with concurrency rollback and idempotency proof",
+    "Missing full workflow actions detailed in F01-F24 crosswalk"
+  ],
+  "limitations": {
+    "browser_verified": false,
+    "visual_verified": false,
+    "all_crud_verified": false,
+    "full_transactions_verified": false,
+    "historical_generated_rows_are_executed_workflows": false,
+    "other_hmg_app_modified": false
+  }
+}

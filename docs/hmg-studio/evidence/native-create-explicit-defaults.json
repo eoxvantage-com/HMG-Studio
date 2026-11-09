@@ -1,0 +1,79 @@
+{
+  "actor": "qa_hmg_inbox_20261106",
+  "payload": {
+    "id": "74b8db6b-5b7e-589c-9a90-ed403d03d1b3",
+    "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+    "name": "Synthetic explicit-default customer",
+    "code": "SYN-CRUD-003",
+    "email": "crud3@example.invalid",
+    "currency": "INR",
+    "credit_limit": 0,
+    "is_active": true,
+    "deleted_at": null,
+    "notes": "SYNTHETIC HMG TEST DATA - normal-user create probe only."
+  },
+  "check_http": 200,
+  "check": {
+    "request_id": "720057a8-c781-4585-a693-a9249657415d",
+    "results": [
+      {
+        "resource": {
+          "id": "new",
+          "kind": "datatable:customers",
+          "scope": "insurance_hmg-studio"
+        },
+        "actions": {
+          "create": "EFFECT_ALLOW"
+        }
+      }
+    ],
+    "cerbos_call_id": "01M6S1K9HK79ES7S32MJK0EWPT"
+  },
+  "post_sent": true,
+  "create_http": 403,
+  "response": {
+    "status": "error",
+    "message": "Permission denied: 1 record(s) not authorized for creation",
+    "code": "FORBIDDEN"
+  },
+  "readback_http": 200,
+  "readback": {
+    "status": "success",
+    "message": "Data retrieved successfully",
+    "data": [],
+    "total": 0,
+    "debug": {
+      "authorization": {
+        "provider": "cerbos",
+        "principal_id": "qa_hmg_inbox_20261106",
+        "resource_kind": "datatable:customers",
+        "action": "read",
+        "scope": "insurance_hmg-studio",
+        "filter_kind": "CONDITIONAL",
+        "cerbos_cache_hit": true,
+        "cerbos_source": "cache",
+        "auth_filters": {
+          "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6"
+        },
+        "user_filters": {
+          "id": "74b8db6b-5b7e-589c-9a90-ed403d03d1b3"
+        },
+        "combined_filters": {
+          "and": [
+            {
+              "id": "74b8db6b-5b7e-589c-9a90-ed403d03d1b3"
+            },
+            {
+              "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6"
+            }
+          ]
+        },
+        "metadata": {
+          "query_plan_filter_debug": null,
+          "tenant_id": "insurance",
+          "app_slug": "hmg-studio"
+        }
+      }
+    }
+  }
+}

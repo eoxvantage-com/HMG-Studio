@@ -1,0 +1,35 @@
+{
+  "observed_at": "2026-11-06T19:12:51.179123+00:00",
+  "app_slug": "hmg-studio",
+  "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+  "public_feed_items": 265,
+  "catalogue_references_created_and_verified": 263,
+  "quarantined_conflicting_names": [
+    {
+      "source": "https://www.hmgstones.com/product-details.php?product_id=1&product_name=marble",
+      "names": [
+        "Bianco Lava",
+        "White On White (WOW)"
+      ],
+      "reason": "Conflicting names for one public product URL"
+    }
+  ],
+  "private_products_bucket_objects_verified": 252,
+  "private_image_links_verified": 263,
+  "bucket_id": 662,
+  "app_id": 694,
+  "copy_last_run_uploaded": 247,
+  "copy_last_run_exact_sha_skipped": 5,
+  "link_last_run_updated": 262,
+  "link_last_run_exact_owned_skipped": 1,
+  "link_patch_fields": [
+    "image"
+  ],
+  "preserved_non_image_fields_except_server_updated_at": true,
+  "normal_user_crud_proven_by_this_import": false,
+  "transactional_stock_or_money_workflows_changed": false,
+  "policy_or_bucket_configuration_changed": false,
+  "atomic_storage_collision_protection_proven": false,
+  "atomic_image_patch_compare_and_swap_proven": false,
+  "remaining_writes": 0
+}

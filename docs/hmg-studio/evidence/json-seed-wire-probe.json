@@ -1,0 +1,23 @@
+{
+  "table": "saved_reports",
+  "id": "00bff3cd-654c-5330-95c5-10728e7fbf4c",
+  "readback": [
+    {
+      "id": "00bff3cd-654c-5330-95c5-10728e7fbf4c",
+      "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+      "created_by": "bb17fd27-1f5e-4691-b2c7-e9745883e54f",
+      "name": "Synthetic stone inventory register",
+      "description": "SYNTHETIC HMG TEST DATA - not a real transaction or contact.",
+      "data_source": "products",
+      "columns": "[\"name\", \"sku\", \"stock\", \"type\"]",
+      "filters": "[]",
+      "sort": "{\"field\": \"name\", \"direction\": \"asc\"}",
+      "chart_type": null,
+      "chart_field": null,
+      "is_shared": false,
+      "created_at": "2026-11-06T09:00:00",
+      "updated_at": "2026-11-06T09:00:00"
+    }
+  ],
+  "semantic_match": false
+}

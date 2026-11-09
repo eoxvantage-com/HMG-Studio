@@ -1,0 +1,133 @@
+{
+  "read_only": true,
+  "observation_source": "Observed GET and OPTIONS responses in this agent conversation; no upload/build/activation performed.",
+  "exact_observation_timestamp_captured": false,
+  "site": "insurance",
+  "target_app": "hmg-studio",
+  "collection": "https://api.taruvi.cloud/sites/insurance/api/cloud/frontend_workers/",
+  "list": {
+    "http_status": 200,
+    "status": "success",
+    "query": {
+      "page": 1,
+      "page_size": 100
+    },
+    "total": 32,
+    "returned_count": 32,
+    "complete": true,
+    "exact_name_slug_or_app_matches": 0,
+    "existing_target_worker": null,
+    "current_target_build": null,
+    "current_target_url": null,
+    "fields": [
+      "uuid",
+      "name",
+      "slug",
+      "subdomain",
+      "web_url",
+      "app",
+      "active_build_uuid",
+      "created_at",
+      "updated_at"
+    ]
+  },
+  "excluded_customer_app": {
+    "uuid": "916ee02e-4943-4ce6-9a6f-4f2049bfda4b",
+    "name": "HMG Stones",
+    "slug": "hmgstones",
+    "app": "hmg_stones",
+    "must_not_modify": true
+  },
+  "options": {
+    "http_status": 200,
+    "allow": [
+      "GET",
+      "POST",
+      "HEAD",
+      "OPTIONS"
+    ],
+    "parses": [
+      "multipart/form-data",
+      "application/x-www-form-urlencoded",
+      "application/json"
+    ],
+    "POST_fields": {
+      "name": {
+        "type": "string",
+        "required": true,
+        "max_length": 255
+      },
+      "app": {
+        "type": "field",
+        "required": false,
+        "meaning": "App slug to associate"
+      },
+      "file": {
+        "type": "file upload",
+        "required": false,
+        "formats": [
+          "zip",
+          "tar.gz"
+        ]
+      },
+      "is_internal": {
+        "type": "boolean",
+        "required": false
+      },
+      "build_title": {
+        "type": "string",
+        "required": false,
+        "max_length": 255
+      },
+      "subdomain_input": {
+        "type": "slug",
+        "required": false,
+        "max_length": 100
+      },
+      "domain": {
+        "type": "string",
+        "required": false,
+        "max_length": 255,
+        "condition": "Required when is_internal=false"
+      },
+      "set_active": {
+        "type": "boolean",
+        "required": false,
+        "meaning": "Immediately redeploy uploaded build and set active"
+      }
+    },
+    "readonly_response_fields": [
+      "uuid",
+      "slug",
+      "subdomain",
+      "web_url",
+      "app_name",
+      "latest_build",
+      "active_build_info",
+      "active_build_uuid",
+      "created_by",
+      "modified_by",
+      "created_at",
+      "updated_at"
+    ]
+  },
+  "documented_endpoints": {
+    "detail_patch": "https://api.taruvi.cloud/sites/insurance/api/cloud/frontend_workers/<worker-id-or-slug>/",
+    "activate": "https://api.taruvi.cloud/sites/insurance/api/cloud/frontend_workers/<worker-id-or-slug>/set-active-build/",
+    "activate_json": {
+      "build_uuid": "<returned-build-uuid>"
+    }
+  },
+  "references": [
+    ".agents/skills/taruvi-app-developer/references/frontend-worker-deploy.md",
+    ".agents/skills/taruvi-app-developer/references/deployment.md"
+  ],
+  "recommendations": [
+    "Refresh complete exact app/name/slug lookup immediately before create.",
+    "Do not use scripts/deploy.mjs unchanged: .env.local/app association/existing-worker resolution/activation/readback are missing.",
+    "After authorized successful build, upload verified archive with name/app=hmg-studio,is_internal=true,set_active=false.",
+    "Resolve returned worker/build identifiers; GET detail and verify app/name before explicit activation.",
+    "Read back active_build_uuid and fetch returned web_url and hashed assets; normal-auth smoke checks remain separate."
+  ],
+  "mutations": 0
+}

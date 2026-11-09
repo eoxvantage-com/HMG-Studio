@@ -1,0 +1,83 @@
+{
+  "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+  "synthetic": true,
+  "created": {
+    "organizations": [],
+    "product_categories": [],
+    "warehouses": [],
+    "product_locations": [],
+    "customers": [],
+    "suppliers": [],
+    "products": [],
+    "product_location_stocks": [],
+    "stock_adjustments": [],
+    "product_supplier": [],
+    "orders": [],
+    "order_items": [
+      "b3656627-cd6e-50d5-81ed-a6600351619f",
+      "a18c5e6f-364c-54a1-8955-b08e293b25d9",
+      "7e1a5302-ae99-59f6-9cea-ab29df82b359"
+    ],
+    "purchase_orders": [
+      "c8d4dfaf-73e2-598f-a2c0-508e2002889a",
+      "3d62c79b-973c-5764-955b-9def0a039410"
+    ],
+    "purchase_order_items": [
+      "bbbd883f-0daa-5b29-b4d5-d444a8b4da08",
+      "7558a119-d9f6-5a0b-b885-b44b3f486d99"
+    ],
+    "stock_transfers": [
+      "bcc19580-b0ab-5399-b8f4-5d8c6e86e4c0"
+    ],
+    "stock_audits": [
+      "9e51aa0e-1627-53b5-9427-9ff6ae484368"
+    ],
+    "notifications": [
+      "784db022-6afb-5a85-824a-97550cbb52c3"
+    ],
+    "stock_transfer_items": [
+      "4c36821e-86f6-52eb-8ff2-2d7e33839097"
+    ],
+    "stock_audit_items": [
+      "fde18ccd-7835-5e3f-9b91-a433fa06a172"
+    ],
+    "product_components": [
+      "452490b1-5aea-53d7-a0d2-bf192b3230e3"
+    ],
+    "work_orders": [
+      "fe862f20-a08d-515c-a870-2b1b9e6de8c7"
+    ],
+    "work_order_items": [
+      "d5ec6df3-18bb-54cd-84f3-f61df9b6eff4"
+    ],
+    "warehouse_reorder_points": [
+      "327e3319-0a21-5402-9cf9-46c8de6ed0b8",
+      "77c14987-73b9-55a3-8082-cd52b3729f4f"
+    ]
+  },
+  "skipped": {
+    "organizations": 1,
+    "product_categories": 5,
+    "warehouses": 3,
+    "product_locations": 3,
+    "customers": 3,
+    "suppliers": 3,
+    "products": 9,
+    "product_location_stocks": 8,
+    "stock_adjustments": 8,
+    "product_supplier": 8,
+    "orders": 3,
+    "order_items": 0,
+    "purchase_orders": 0,
+    "purchase_order_items": 0,
+    "stock_transfers": 0,
+    "stock_audits": 0,
+    "notifications": 0,
+    "stock_transfer_items": 0,
+    "stock_audit_items": 0,
+    "product_components": 0,
+    "work_orders": 0,
+    "work_order_items": 0,
+    "warehouse_reorder_points": 0
+  }
+}

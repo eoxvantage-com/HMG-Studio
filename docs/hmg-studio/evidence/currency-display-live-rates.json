@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-07T06:10:08.149Z",
+  "source": "Frankfurter ECB reference rates",
+  "service": "src/services/dashboardCurrency.ts",
+  "rates": [
+    {
+      "date": "2026-11-06",
+      "base": "INR",
+      "quote": "USD",
+      "rate": 0.010647
+    },
+    {
+      "date": "2026-11-06",
+      "base": "INR",
+      "quote": "EUR",
+      "rate": 0.0095361
+    }
+  ],
+  "browser_verified": false
+}

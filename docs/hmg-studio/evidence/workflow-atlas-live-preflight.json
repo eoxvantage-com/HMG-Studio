@@ -1,0 +1,4855 @@
+{
+  "at": "2026-11-07T06:35:23.539058+00:00",
+  "app": "hmg-studio",
+  "site": "https://insurance.taruvi.cloud",
+  "scope": "insurance_hmg-studio",
+  "read_only": true,
+  "mutations": 0,
+  "function_executions": 0,
+  "identity_calls": 0,
+  "schemas": {
+    "products": {
+      "name": "products",
+      "physical_table_name": "hmg_studio_products",
+      "provider_type": "flat_table",
+      "schema_format": "frictionless",
+      "json_schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "organization_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "sku",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "price",
+            "type": "number",
+            "default": 0,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "stock",
+            "type": "integer",
+            "default": 0,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "min_stock",
+            "type": "integer",
+            "default": 0,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "max_stock",
+            "type": "integer"
+          },
+          {
+            "name": "barcode",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "image",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "category_id",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "location_id",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "default": true,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "metadata",
+            "type": "any"
+          },
+          {
+            "name": "created_at",
+            "type": "datetime"
+          },
+          {
+            "name": "updated_at",
+            "type": "datetime"
+          },
+          {
+            "name": "deleted_at",
+            "type": "datetime"
+          },
+          {
+            "name": "currency",
+            "type": "string",
+            "default": "USD",
+            "constraints": {
+              "required": true,
+              "maxLength": 3
+            }
+          },
+          {
+            "name": "price_in_currencies",
+            "type": "any"
+          },
+          {
+            "name": "notes",
+            "type": "string"
+          },
+          {
+            "name": "purchase_price",
+            "type": "number"
+          },
+          {
+            "name": "selling_price",
+            "type": "number"
+          },
+          {
+            "name": "images",
+            "type": "any"
+          },
+          {
+            "name": "thumbnail",
+            "type": "string"
+          },
+          {
+            "name": "has_variants",
+            "type": "boolean",
+            "default": false,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "reorder_point",
+            "type": "integer",
+            "constraints": {
+              "minimum": 0
+            }
+          },
+          {
+            "name": "reorder_quantity",
+            "type": "integer",
+            "constraints": {
+              "minimum": 0
+            }
+          },
+          {
+            "name": "tracking_type",
+            "type": "string",
+            "default": "none",
+            "constraints": {
+              "required": true,
+              "maxLength": 10
+            }
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "default": "standard",
+            "constraints": {
+              "required": true,
+              "maxLength": 20
+            }
+          },
+          {
+            "name": "barcode_type",
+            "type": "string",
+            "constraints": {
+              "maxLength": 16
+            }
+          },
+          {
+            "name": "image_disks",
+            "type": "any"
+          }
+        ],
+        "indexes": [
+          {
+            "name": "erp_ff9bee1e5538f7c95772",
+            "fields": [
+              "organization_id",
+              "sku"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_f7d896a2aa725d68269b",
+            "fields": [
+              "category_id"
+            ]
+          },
+          {
+            "name": "erp_a6cc0ab9d24cd8f08c6e",
+            "fields": [
+              "location_id"
+            ]
+          },
+          {
+            "name": "erp_4a2869816b54e5aa1c7e",
+            "fields": [
+              "is_active"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_ca68d24b8799e8b2a19b",
+            "fields": [
+              "barcode"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_602e1b4f195725ff92f1",
+            "fields": [
+              "organization_id",
+              "type"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_1072ee0a9c112fc8bdbe",
+            "fields": [
+              "organization_id",
+              "sku"
+            ],
+            "unique": true
+          },
+          {
+            "name": "erp_3de3bc6f659ce0846ea4",
+            "fields": [
+              "organization_id",
+              "is_active",
+              "created_at"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_e6aa482c2f3b5d18abd8",
+            "fields": [
+              "organization_id",
+              "category_id"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_5b974acf47ee9b2ec1b9",
+            "fields": [
+              "organization_id",
+              "location_id"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_6ff2a1f9db2efb00404c",
+            "fields": [
+              "organization_id"
+            ]
+          },
+          {
+            "name": "erp_products_org_live_created",
+            "fields": [
+              "organization_id",
+              "created_at",
+              "deleted_at"
+            ]
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "organization_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_organizations"
+            },
+            "x-actions": {
+              "onDelete": "RESTRICT"
+            }
+          },
+          {
+            "fields": [
+              "category_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_product_categories"
+            },
+            "x-actions": {
+              "onDelete": "SET NULL"
+            }
+          },
+          {
+            "fields": [
+              "location_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_product_locations"
+            },
+            "x-actions": {
+              "onDelete": "SET NULL"
+            }
+          }
+        ],
+        "reverseRelationships": [
+          {
+            "name": "order_items",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_order_items"
+          },
+          {
+            "name": "product_batches",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_product_batches"
+          },
+          {
+            "name": "product_components",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "parent_product_id",
+            "foreignTable": "hmg_studio_product_components"
+          },
+          {
+            "name": "product_components!component_product_id",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "component_product_id",
+            "foreignTable": "hmg_studio_product_components"
+          },
+          {
+            "name": "product_location_stocks",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_product_location_stocks"
+          },
+          {
+            "name": "product_options",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_product_options"
+          },
+          {
+            "name": "product_serials",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_product_serials"
+          },
+          {
+            "name": "product_supplier",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_product_supplier"
+          },
+          {
+            "name": "product_variants",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_product_variants"
+          },
+          {
+            "name": "purchase_order_items",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_purchase_order_items"
+          },
+          {
+            "name": "return_order_items",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_return_order_items"
+          },
+          {
+            "name": "stock_adjustment_requests",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_stock_adjustment_requests"
+          },
+          {
+            "name": "stock_adjustments",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_stock_adjustments"
+          },
+          {
+            "name": "stock_audit_items",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_stock_audit_items"
+          },
+          {
+            "name": "stock_reservations",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_stock_reservations"
+          },
+          {
+            "name": "stock_transfer_items",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_stock_transfer_items"
+          },
+          {
+            "name": "supplier_price_history",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_supplier_price_history"
+          },
+          {
+            "name": "warehouse_reorder_points",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_warehouse_reorder_points"
+          },
+          {
+            "name": "work_order_allocations",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_work_order_allocations"
+          },
+          {
+            "name": "work_order_items",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_work_order_items"
+          },
+          {
+            "name": "work_order_items!kit_product_id",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "kit_product_id",
+            "foreignTable": "hmg_studio_work_order_items"
+          },
+          {
+            "name": "work_order_outputs",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_work_order_outputs"
+          },
+          {
+            "name": "work_orders",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "product_id",
+            "foreignTable": "hmg_studio_work_orders"
+          }
+        ],
+        "manyToManyRelationships": [
+          {
+            "name": "organizations",
+            "localKey": "id",
+            "foreignKey": "id",
+            "foreignTable": "hmg_studio_organizations",
+            "junctionTable": "hmg_studio_product_batches",
+            "junctionLocalKey": "product_id",
+            "junctionForeignKey": "organization_id"
+          },
+          {
+            "name": "suppliers",
+            "localKey": "id",
+            "foreignKey": "id",
+            "foreignTable": "hmg_studio_suppliers",
+            "junctionTable": "hmg_studio_product_supplier",
+            "junctionLocalKey": "product_id",
+            "junctionForeignKey": "supplier_id"
+          },
+          {
+            "name": "organizations_2",
+            "localKey": "id",
+            "foreignKey": "id",
+            "foreignTable": "hmg_studio_organizations",
+            "junctionTable": "hmg_studio_product_variants",
+            "junctionLocalKey": "product_id",
+            "junctionForeignKey": "organization_id"
+          }
+        ]
+      },
+      "is_materialized": true,
+      "is_active": true,
+      "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
+      "created_at": "2026-11-06T12:54:05.717195+00:00",
+      "updated_at": "2026-11-06T18:28:54.819658+00:00"
+    },
+    "orders": {
+      "name": "orders",
+      "physical_table_name": "hmg_studio_orders",
+      "provider_type": "flat_table",
+      "schema_format": "frictionless",
+      "json_schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "organization_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "order_number",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "source",
+            "type": "string",
+            "default": "manual",
+            "constraints": {
+              "required": true,
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "external_id",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "customer_name",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "customer_email",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "customer_address",
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "type": "string",
+            "default": "pending",
+            "constraints": {
+              "enum": [
+                "pending",
+                "processing",
+                "shipped",
+                "delivered",
+                "cancelled"
+              ],
+              "required": true
+            }
+          },
+          {
+            "name": "subtotal",
+            "type": "number",
+            "default": 0,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "tax",
+            "type": "number",
+            "default": 0,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "shipping",
+            "type": "number",
+            "default": 0,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "total",
+            "type": "number",
+            "default": 0,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "currency",
+            "type": "string",
+            "default": "USD",
+            "constraints": {
+              "required": true,
+              "maxLength": 3
+            }
+          },
+          {
+            "name": "order_date",
+            "type": "datetime",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "shipped_at",
+            "type": "datetime"
+          },
+          {
+            "name": "delivered_at",
+            "type": "datetime"
+          },
+          {
+            "name": "notes",
+            "type": "string"
+          },
+          {
+            "name": "metadata",
+            "type": "any"
+          },
+          {
+            "name": "created_at",
+            "type": "datetime"
+          },
+          {
+            "name": "updated_at",
+            "type": "datetime"
+          },
+          {
+            "name": "deleted_at",
+            "type": "datetime"
+          },
+          {
+            "name": "created_by",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "approval_status",
+            "type": "string",
+            "default": "not_required",
+            "constraints": {
+              "required": true,
+              "maxLength": 20
+            }
+          },
+          {
+            "name": "approved_by",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "approved_at",
+            "type": "datetime"
+          },
+          {
+            "name": "approval_notes",
+            "type": "string"
+          },
+          {
+            "name": "customer_id",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "warehouse_id",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "invoice_number",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "invoice_issued_at",
+            "type": "datetime"
+          },
+          {
+            "name": "invoice_sent_at",
+            "type": "datetime"
+          },
+          {
+            "name": "invoice_sent_to",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "external_reference",
+            "type": "string",
+            "constraints": {
+              "maxLength": 255
+            }
+          },
+          {
+            "name": "stock_committed",
+            "type": "boolean",
+            "default": true,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "invoice_queued_at",
+            "type": "datetime"
+          },
+          {
+            "name": "discount_type",
+            "type": "string",
+            "constraints": {
+              "maxLength": 16
+            }
+          },
+          {
+            "name": "discount_value",
+            "type": "number"
+          },
+          {
+            "name": "discount_amount",
+            "type": "number",
+            "default": 0,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "amount_paid",
+            "type": "number",
+            "default": 0,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "payment_status",
+            "type": "string",
+            "default": "unpaid",
+            "constraints": {
+              "required": true,
+              "maxLength": 16
+            }
+          }
+        ],
+        "indexes": [
+          {
+            "name": "erp_bae285083c01b08c1bc5",
+            "fields": [
+              "organization_id",
+              "order_date"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_32df275818bc5358b483",
+            "fields": [
+              "organization_id",
+              "status"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_fbe1b45802ef741c0c0b",
+            "fields": [
+              "order_number"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_d22e5f91ffb85e2484f5",
+            "fields": [
+              "source",
+              "external_id"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_1ac2020408235bc9be4f",
+            "fields": [
+              "organization_id",
+              "approval_status"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_2fb8ab034aecf672d7ac",
+            "fields": [
+              "organization_id",
+              "order_number"
+            ],
+            "unique": true
+          },
+          {
+            "name": "erp_dde795be4a7802ba334b",
+            "fields": [
+              "organization_id",
+              "source",
+              "order_date"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_902f75924c75695bda86",
+            "fields": [
+              "organization_id",
+              "invoice_number"
+            ],
+            "unique": true
+          },
+          {
+            "name": "erp_64e7463a1126b798c653",
+            "fields": [
+              "organization_id",
+              "external_reference"
+            ],
+            "unique": true
+          },
+          {
+            "name": "erp_4d2108c79fddfb9d0e0c",
+            "fields": [
+              "organization_id",
+              "payment_status"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_0da107976227b35bc74f",
+            "fields": [
+              "organization_id"
+            ]
+          },
+          {
+            "name": "erp_e44c697866f1549ffa41",
+            "fields": [
+              "created_by"
+            ]
+          },
+          {
+            "name": "erp_b16e8639a56c9ffe4fe0",
+            "fields": [
+              "approved_by"
+            ]
+          },
+          {
+            "name": "erp_8f5b32bd55872a23946a",
+            "fields": [
+              "customer_id"
+            ]
+          },
+          {
+            "name": "erp_109c6be7938658950101",
+            "fields": [
+              "warehouse_id"
+            ]
+          },
+          {
+            "name": "erp_orders_org_live_created",
+            "fields": [
+              "organization_id",
+              "created_at",
+              "id",
+              "deleted_at"
+            ]
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "organization_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_organizations"
+            },
+            "x-actions": {
+              "onDelete": "RESTRICT"
+            }
+          },
+          {
+            "fields": [
+              "created_by"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "auth_user"
+            },
+            "x-actions": {
+              "onDelete": "SET NULL"
+            }
+          },
+          {
+            "fields": [
+              "approved_by"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "auth_user"
+            },
+            "x-actions": {
+              "onDelete": "SET NULL"
+            }
+          },
+          {
+            "fields": [
+              "customer_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_customers"
+            },
+            "x-actions": {
+              "onDelete": "SET NULL"
+            }
+          },
+          {
+            "fields": [
+              "warehouse_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_warehouses"
+            },
+            "x-actions": {
+              "onDelete": "SET NULL"
+            }
+          }
+        ],
+        "reverseRelationships": [
+          {
+            "name": "order_items",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "order_id",
+            "foreignTable": "hmg_studio_order_items"
+          },
+          {
+            "name": "order_payments",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "order_id",
+            "foreignTable": "hmg_studio_order_payments"
+          },
+          {
+            "name": "return_orders",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "order_id",
+            "foreignTable": "hmg_studio_return_orders"
+          },
+          {
+            "name": "shipments",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "order_id",
+            "foreignTable": "hmg_studio_shipments"
+          }
+        ],
+        "manyToManyRelationships": []
+      },
+      "is_materialized": true,
+      "is_active": true,
+      "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
+      "created_at": "2026-11-06T12:59:15.182601+00:00",
+      "updated_at": "2026-11-06T18:28:54.672957+00:00"
+    },
+    "product_categories": {
+      "name": "product_categories",
+      "physical_table_name": "hmg_studio_product_categories",
+      "provider_type": "flat_table",
+      "schema_format": "frictionless",
+      "json_schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "organization_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "slug",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "parent_id",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "default": true,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "datetime"
+          },
+          {
+            "name": "updated_at",
+            "type": "datetime"
+          },
+          {
+            "name": "deleted_at",
+            "type": "datetime"
+          },
+          {
+            "name": "search_vector",
+            "type": "object",
+            "constraints": {
+              "required": false
+            },
+            "description": "Auto-generated full-text search vector (GENERATED column)",
+            "x-search-field": true,
+            "x-auto-generated": true,
+            "x-search-metadata": {
+              "fields": [
+                {
+                  "field": "name",
+                  "weight": "A"
+                },
+                {
+                  "field": "slug",
+                  "weight": "B"
+                },
+                {
+                  "field": "description",
+                  "weight": "C"
+                }
+              ],
+              "language": "english",
+              "table_name": "product_categories"
+            }
+          }
+        ],
+        "indexes": [
+          {
+            "name": "idx_1",
+            "fields": [
+              "organization_id",
+              "slug"
+            ]
+          },
+          {
+            "name": "idx_2",
+            "fields": [
+              "parent_id"
+            ]
+          },
+          {
+            "name": "idx_3",
+            "fields": [
+              "is_active"
+            ]
+          },
+          {
+            "name": "uq_hmg_category_org_slug",
+            "fields": [
+              "organization_id",
+              "slug"
+            ],
+            "unique": true
+          },
+          {
+            "name": "idx_product_categories_search_vector",
+            "type": "gin",
+            "columns": [
+              "search_vector"
+            ],
+            "comment": "Full-text search index (auto-generated)",
+            "x-auto-generated": true
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "organization_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_organizations"
+            },
+            "x-actions": {
+              "onDelete": "CASCADE"
+            }
+          },
+          {
+            "fields": [
+              "parent_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_product_categories"
+            },
+            "x-actions": {
+              "onDelete": "SET NULL"
+            }
+          }
+        ],
+        "search_fields": [
+          "name",
+          "slug",
+          "description"
+        ],
+        "reverseRelationships": [
+          {
+            "name": "product_categories",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "parent_id",
+            "foreignTable": "hmg_studio_product_categories"
+          },
+          {
+            "name": "products",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "category_id",
+            "foreignTable": "hmg_studio_products"
+          }
+        ],
+        "manyToManyRelationships": [
+          {
+            "name": "organizations",
+            "localKey": "id",
+            "foreignKey": "id",
+            "foreignTable": "hmg_studio_organizations",
+            "junctionTable": "hmg_studio_product_categories",
+            "junctionLocalKey": "parent_id",
+            "junctionForeignKey": "organization_id"
+          }
+        ]
+      },
+      "is_materialized": true,
+      "is_active": true,
+      "description": "",
+      "created_at": "2026-11-05T15:14:50.182815+00:00",
+      "updated_at": "2026-11-06T18:28:54.763274+00:00"
+    },
+    "product_locations": {
+      "name": "product_locations",
+      "physical_table_name": "hmg_studio_product_locations",
+      "provider_type": "flat_table",
+      "schema_format": "frictionless",
+      "json_schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "organization_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "warehouse_id",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "code",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "aisle",
+            "type": "string"
+          },
+          {
+            "name": "shelf",
+            "type": "string"
+          },
+          {
+            "name": "bin",
+            "type": "string"
+          },
+          {
+            "name": "capacity",
+            "type": "integer",
+            "constraints": {
+              "maximum": 2147483647,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "default": true,
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "datetime"
+          },
+          {
+            "name": "updated_at",
+            "type": "datetime"
+          },
+          {
+            "name": "deleted_at",
+            "type": "datetime"
+          },
+          {
+            "name": "search_vector",
+            "type": "object",
+            "constraints": {
+              "required": false
+            },
+            "description": "Auto-generated full-text search vector (GENERATED column)",
+            "x-search-field": true,
+            "x-auto-generated": true,
+            "x-search-metadata": {
+              "fields": [
+                {
+                  "field": "name",
+                  "weight": "A"
+                },
+                {
+                  "field": "code",
+                  "weight": "B"
+                },
+                {
+                  "field": "description",
+                  "weight": "C"
+                }
+              ],
+              "language": "english",
+              "table_name": "product_locations"
+            }
+          }
+        ],
+        "indexes": [
+          {
+            "name": "idx_1",
+            "fields": [
+              "organization_id",
+              "code"
+            ]
+          },
+          {
+            "name": "idx_2",
+            "fields": [
+              "is_active"
+            ]
+          },
+          {
+            "name": "idx_3",
+            "fields": [
+              "warehouse_id",
+              "is_active"
+            ]
+          },
+          {
+            "name": "idx_product_locations_search_vector",
+            "type": "gin",
+            "columns": [
+              "search_vector"
+            ],
+            "comment": "Full-text search index (auto-generated)",
+            "x-auto-generated": true
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "organization_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_organizations"
+            },
+            "x-actions": {
+              "onDelete": "CASCADE"
+            }
+          },
+          {
+            "fields": [
+              "warehouse_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_warehouses"
+            },
+            "x-actions": {
+              "onDelete": "SET NULL"
+            }
+          }
+        ],
+        "search_fields": [
+          "name",
+          "code",
+          "description"
+        ],
+        "reverseRelationships": [
+          {
+            "name": "product_location_stocks",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "location_id",
+            "foreignTable": "hmg_studio_product_location_stocks"
+          },
+          {
+            "name": "products",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "location_id",
+            "foreignTable": "hmg_studio_products"
+          },
+          {
+            "name": "purchase_order_items",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "receiving_location_id",
+            "foreignTable": "hmg_studio_purchase_order_items"
+          },
+          {
+            "name": "stock_adjustment_requests",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "location_id",
+            "foreignTable": "hmg_studio_stock_adjustment_requests"
+          },
+          {
+            "name": "stock_adjustments",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "location_id",
+            "foreignTable": "hmg_studio_stock_adjustments"
+          },
+          {
+            "name": "stock_audit_items",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "location_id",
+            "foreignTable": "hmg_studio_stock_audit_items"
+          },
+          {
+            "name": "stock_audits",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "warehouse_location_id",
+            "foreignTable": "hmg_studio_stock_audits"
+          },
+          {
+            "name": "stock_reservations",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "location_id",
+            "foreignTable": "hmg_studio_stock_reservations"
+          },
+          {
+            "name": "stock_transfers",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "from_location_id",
+            "foreignTable": "hmg_studio_stock_transfers"
+          },
+          {
+            "name": "stock_transfers!to_location_id",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "to_location_id",
+            "foreignTable": "hmg_studio_stock_transfers"
+          },
+          {
+            "name": "variant_location_stocks",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "location_id",
+            "foreignTable": "hmg_studio_variant_location_stocks"
+          },
+          {
+            "name": "variant_replenishment_policies",
+            "type": "hasMany",
+            "localKey": "id",
+            "foreignKey": "location_id",
+            "foreignTable": "hmg_studio_variant_replenishment_policies"
+          }
+        ],
+        "manyToManyRelationships": []
+      },
+      "is_materialized": true,
+      "is_active": true,
+      "description": "",
+      "created_at": "2026-11-05T15:16:20.306133+00:00",
+      "updated_at": "2026-11-06T18:28:54.789919+00:00"
+    }
+  },
+  "functions": {
+    "hmg-stock-preview-v1": {
+      "id": 2047,
+      "name": "hmg-stock-preview-v1",
+      "slug": "hmg-stock-preview-v1",
+      "execution_mode": "app",
+      "environment": "python",
+      "is_active": true,
+      "is_public": false,
+      "async_mode": false,
+      "description": "Caller-scoped read-only stock preview. No posting or commit authorization.",
+      "created_at": "2026-11-06T20:58:12.049314Z",
+      "updated_at": "2026-11-06T21:00:43.761869Z",
+      "code_sha256": "e102e19b04cf9cec30ca00c8e6aeba3a4da9cb9a6202cc56c571b10c048a7b90",
+      "code_bytes": 8494,
+      "static_relevant_calls": [
+        "sdk.database.from_"
+      ],
+      "local_source": "backend/functions/stock_adjustment_preview.py",
+      "matches_local_source": false,
+      "matches_local_after_bom_and_trailing_blank_normalization": true
+    },
+    "hmg-dashboard-v1": {
+      "id": 1981,
+      "name": "hmg-dashboard-v1",
+      "slug": "hmg-dashboard-v1",
+      "execution_mode": "app",
+      "environment": "python",
+      "is_active": true,
+      "is_public": false,
+      "async_mode": false,
+      "description": "Caller-scoped read-only ERP dashboard; currency-separated Decimal projection.",
+      "created_at": "2026-11-06T13:01:45.666285Z",
+      "updated_at": "2026-11-06T13:22:54.663165Z",
+      "code_sha256": "84d79f2d2f461fad76c35393c0320ffd8d935d8e85941a143708a63702d6e79a",
+      "code_bytes": 5794,
+      "static_relevant_calls": [
+        "sdk.database.from_",
+        "sdk.database.from_(table).sort",
+        "sdk.database.from_(table).sort('id', 'asc').page",
+        "sdk.database.from_(table).sort('id', 'asc').page(page).page_size",
+        "sdk.database.from_(table).sort('id', 'asc').page(page).page_size(100).execute"
+      ],
+      "local_source": "backend/functions/dashboard.py",
+      "matches_local_source": false,
+      "matches_local_after_bom_and_trailing_blank_normalization": true
+    },
+    "hmg-categories-v1": {
+      "id": 1948,
+      "name": "hmg-categories-v1",
+      "slug": "hmg-categories-v1",
+      "execution_mode": "app",
+      "environment": "python",
+      "is_active": true,
+      "is_public": false,
+      "async_mode": false,
+      "description": "Caller-scoped category create/readback. No update/delete.",
+      "created_at": "2026-11-06T12:03:07.878333Z",
+      "updated_at": "2026-11-06T13:36:40.001097Z",
+      "code_sha256": "fe4647e9741e976155730f239dcd7054f1ccd5cd12dacf18870c80ced52a4901",
+      "code_bytes": 5244,
+      "static_relevant_calls": [
+        "sdk.database.from_",
+        "sdk_client.database.from_",
+        "sdk_client.database.from_('product_categories').create",
+        "sdk_client.database.from_('product_categories').create(record).execute",
+        "sdk_client.functions.execute"
+      ],
+      "local_source": "backend/functions/catalog.py",
+      "matches_local_source": false,
+      "matches_local_after_bom_and_trailing_blank_normalization": true
+    },
+    "hmg-account-preferences-v1": {
+      "id": 1915,
+      "name": "hmg-account-preferences-v1",
+      "slug": "hmg-account-preferences-v1",
+      "execution_mode": "app",
+      "environment": "python",
+      "is_active": true,
+      "is_public": false,
+      "async_mode": false,
+      "description": "HMG native authenticated-self date/time/timezone preferences; partial update with readback. No caller-selected identity or business writes.",
+      "created_at": "2026-11-06T10:22:36.137811Z",
+      "updated_at": "2026-11-06T10:36:23.198819Z",
+      "code_sha256": "c61f9c61107d71a00fe72dc7c3c7b8d9416477d2dd4b49abed3252becd489677",
+      "code_bytes": 3142,
+      "static_relevant_calls": [
+        "sdk_client.users.get_preferences",
+        "sdk_client.users.update_preferences"
+      ],
+      "local_source": "backend/functions/account_preferences.py",
+      "matches_local_source": false,
+      "matches_local_after_bom_and_trailing_blank_normalization": true
+    },
+    "validate-catalog-profile-v1": {
+      "id": 1882,
+      "name": "validate-catalog-profile-v1",
+      "slug": "validate-catalog-profile-v1",
+      "execution_mode": "app",
+      "environment": "python",
+      "is_active": true,
+      "is_public": false,
+      "async_mode": false,
+      "description": "HMG-Studio Catalog input validation only; no authorization or persistence.",
+      "created_at": "2026-11-06T05:49:44.613413Z",
+      "updated_at": "2026-11-06T11:27:45.017086Z",
+      "code_sha256": "bd4f50ad2ecd1f1710143e63d51785dbbc88d96148cca3bed817f629bf731a9b",
+      "code_bytes": 6522,
+      "static_relevant_calls": []
+    },
+    "validate-contacts-profile-v1": {
+      "id": 1849,
+      "name": "validate-contacts-profile-v1",
+      "slug": "validate-contacts-profile-v1",
+      "execution_mode": "app",
+      "environment": "python",
+      "is_active": true,
+      "is_public": false,
+      "async_mode": false,
+      "description": "Input-only Contacts validation. No persistence, authorization or workflow effects.",
+      "created_at": "2026-11-06T05:22:08.931673Z",
+      "updated_at": "2026-11-06T05:51:23.970195Z",
+      "code_sha256": "4222993d9af000e0077bcb000987316fdd99cded2f0ec59b45423fe37eb5465d",
+      "code_bytes": 7460,
+      "static_relevant_calls": []
+    }
+  },
+  "policy_summary": [
+    {
+      "resource": "datatable:hmg_studio_organizations_build_lock",
+      "version": "default",
+      "disabled": true,
+      "rules": [
+        {
+          "actions": [
+            "*"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "function:validate-contacts-profile-v1",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "execute"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "function:validate-catalog-profile-v1",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "execute"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "function:hmg-account-preferences-v1",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "execute"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "function:hmg-categories-v1",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "execute"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:notifications",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "5be0ad49247794e3fbfcb8743e6f220296f0d5cad485f3dab800f8dab8b23562"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "storage:images",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "storage:products",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:qa_json_types_20261106",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read",
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "query:hmg-qa-json-types-20261106",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "execute"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:plugins",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "*"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "function:hmg-dashboard-v1",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "execute"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:activity_logs",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:customer_contacts",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:data_exports",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:email_logs",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:inter_company_transfers",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "*"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:inventory_reset_runs",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:inventory_workflow_locks",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:marketplace_entitlements",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:orders",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:product_batches",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:product_location_stocks",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:product_options",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "*"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:customers",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "78537d78c028e428d6c03da68a1b5c8452c894fb8a653d9e330ccde1748c4629"
+        },
+        {
+          "actions": [
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:saved_reports",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:settings",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:shipping_settings",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:products",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c829fa24aab7640e9beea72c53bdeeaa4a12ed5c01c56a3d532719b7097ff16a"
+        },
+        {
+          "actions": [
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:stock_transfers",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:suppliers",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "a1f31352806d35e230a201841a4fc5fb9bf0c13b026e8a4e507449a32a5f18d0"
+        },
+        {
+          "actions": [
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:system_settings",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "*"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:webhooks",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:webhook_deliveries",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:order_payments",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:shipments",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:stock_adjustments",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:variant_location_stocks",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:work_orders",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:purchase_orders",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:stock_adjustment_requests",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:supplier_price_history",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:product_serials",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:shipment_items",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "5283179cf8d1c55500567bf4676c198ddd733fe57361f7eb4ec8d86876e27e96"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:inter_company_transfer_serials",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "*"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:work_order_allocations",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:work_order_outputs",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:cycle_count_schedules",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:stock_audits",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:inter_company_transfer_batches",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "*"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:inter_company_transfer_lines",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "*"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:order_item_batch_allocations",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:product_variants",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:report_schedules",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:return_orders",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:stock_audit_counts",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:stock_audit_items",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "ca790de0117081f56cacff7d64af687952bfee851347edcbc2dadb214de86459"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:stock_audit_reviews",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:stock_reservations",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:stock_transfer_items",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "2402366a3a5afd1d83a40dc711179c2981898ef417ccf170e20f322f85a9fa76"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "8572177e243ccde23879aae4f7a2fc4743a284ad492fe2aeac34efee063d66e8"
+        }
+      ]
+    },
+    {
+      "resource": "datatable:variant_replenishment_policies",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:warehouse_reorder_points",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    {
+      "resource": "datatable:product_categories",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG QA Catalog A"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "d4a86c7f9531113321381f7cbd613cb52806ac40eb88a378d92089ac94e7500b"
+        },
+        {
+          "actions": [
+            "create"
+          ],
+          "roles": [
+            "HMG QA Catalog A"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "ab41ffe7b39d54a2dfd3f675b319a7c2b1d0cac2fbc62287cf84508783988469"
+        },
+        {
+          "actions": [
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "d8aa4d294da035461b200b24880d13be55ffcafe38bb0fe447aed7e866b76d33"
+        }
+      ]
+    },
+    {
+      "resource": "datatable:organizations",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG QA Catalog A"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "54c96c08b76a23ed68e6ceb74addea5c79eeaa83fe60490e4c68f11cf7db3cb0"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "97b1deb4eaa63924a955f7a0a24ad4a3e837b25c55c48d11a2cf33251055b432"
+        }
+      ]
+    },
+    {
+      "resource": "datatable:warehouses",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": true,
+          "condition_sha256": "3d2de12b373f6a394172afca8cd5910d9479e6abb65eed7e113bbfd06c4167a6"
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "e368b18fafe8376ae3579c7f9dfcf274b7bf83826a5192af934b2e50f11d9a13"
+        }
+      ]
+    },
+    {
+      "resource": "datatable:product_locations",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": true,
+          "condition_sha256": "460d6926fa40f6ece189a301352916f2f075cbe192b82c2ee6123baf91f22aff"
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "56dd7468738b5d470749cf76db093ee27f9231fa4e2b99cc18b26d1ee11967c7"
+        }
+      ]
+    },
+    {
+      "resource": "datatable:product_supplier",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "44a9c69ee8dff0d9e86cef9b88bf7f57ef6d8e4a246f44f2529b456d00651b9f"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "98e03dd5fd6e080af735c1009c52df2e5dbd5a70eeca9ae4a89f6963557ac757"
+        }
+      ]
+    },
+    {
+      "resource": "datatable:product_components",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c4607b111f2223c32655f92bd25133f3a7f206ee23d0e2937f239a81c00d78c0"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "935ef03e9dd1640091002ba7b5d8d78a6bdfae76fa806c08de007af242bf09b4"
+        }
+      ]
+    },
+    {
+      "resource": "datatable:order_items",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "ff1816ff8e0cc22dcfa67d8e2c11dbaa8d8f6850f427faff37e5b844ccb7dc78"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "7c4898fe7dff8f18122f34571325036f672d9b149b0c327bce1c16fdca0a42f9"
+        }
+      ]
+    },
+    {
+      "resource": "datatable:purchase_order_items",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "f1708ea4495724904b40e3d6a2d73651f05968502f3e9d95574d6d067e6f188e"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "79409ede18646a71356d67c24c2f25aa4275348ee1427bb35fe62cab89b657f9"
+        }
+      ]
+    },
+    {
+      "resource": "datatable:return_order_items",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "62ed68c7a48819b22b3b11ca5c8fa3ed082ef12588f1d5019cf59540b4ff7e32"
+        }
+      ]
+    },
+    {
+      "resource": "datatable:work_order_items",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "1d6ad32c62e0c964a50c0721f924a8d6c3256b819cdca392ec76a14c9c525417"
+        },
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "8937b0ca89b3bce5ce76cf10f76e381125bed9b297cbb318c812c32299047d12"
+        }
+      ]
+    },
+    {
+      "resource": "function:hmg-stock-preview-v1",
+      "version": "default",
+      "disabled": false,
+      "rules": [
+        {
+          "actions": [
+            "execute"
+          ],
+          "roles": [
+            "HMG Synthetic Operator",
+            "Super Admin"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    }
+  ],
+  "capability_metadata": {
+    "tool_count": 25,
+    "tool_names": [
+      "manage_query",
+      "execute_query",
+      "report_bug",
+      "get_datatable_schema",
+      "create_update_schema",
+      "datatable_data",
+      "datatable_edges",
+      "delete_datatable",
+      "manage_event_subscription",
+      "manage_function",
+      "execute_function",
+      "manage_policies",
+      "list_secrets",
+      "get_secret",
+      "create_update_secret",
+      "manage_secret_types",
+      "manage_storage",
+      "list_users",
+      "create_user",
+      "update_user",
+      "user_attributes_schema",
+      "manage_roles",
+      "manage_role_assignments",
+      "manage_tags",
+      "get_ai_docs"
+    ],
+    "execute_raw_sql_exposed": false,
+    "transaction_named_tools": [],
+    "description_contract_mentions": {},
+    "provider_internal_primitives_absence_proven": false,
+    "physical_database_triggers_verified": false,
+    "bulk_sdk_methods_are_not_atomicity_proof": true
+  },
+  "dashboard_source_counts": {
+    "at": "2026-11-07T06:37:54.975321+00:00",
+    "app": "hmg-studio",
+    "principal": "hmg.john",
+    "admin_fallback": false,
+    "counts": {
+      "read_only": true,
+      "organization_id": "913d46eb-585d-5a5c-b1d4-b9d22052a8d6",
+      "complete": true,
+      "products_total": 278,
+      "products_nondeleted": 278,
+      "products_active_INR": 15,
+      "products_missing_currency": 0,
+      "products_missing_is_active": 0,
+      "products_invalid_is_active": 0,
+      "active_INR_missing": {
+        "stock": 0,
+        "selling_price": 0,
+        "min_stock": 0
+      },
+      "active_INR_invalid_numeric": {
+        "stock": 0,
+        "selling_price": 0,
+        "min_stock": 0
+      },
+      "active_INR_legacy_price_fallback_cases": 0,
+      "active_INR_missing_created_at": 0,
+      "inactive_HMG_WEB_count": 263,
+      "orders_total": 19,
+      "orders_nondeleted": 19,
+      "orders_missing_currency": 0,
+      "orders_INR_noncancelled": 19,
+      "orders_INR_noncancelled_missing": {
+        "total": 0,
+        "amount_paid": 0,
+        "currency": 0,
+        "status": 0,
+        "order_date": 0
+      },
+      "orders_INR_noncancelled_invalid_numeric": {
+        "total": 0,
+        "amount_paid": 0
+      }
+    }
+  },
+  "event_subscribers": {
+    "RECORD_CREATE": {
+      "success": true,
+      "total": 0
+    },
+    "RECORD_UPDATE": {
+      "success": true,
+      "total": 0
+    },
+    "RECORD_DELETE": {
+      "success": true,
+      "total": 0
+    }
+  },
+  "dashboard_function_before": {
+    "id": 1981,
+    "name": "hmg-dashboard-v1",
+    "slug": "hmg-dashboard-v1",
+    "execution_mode": "app",
+    "environment": "python",
+    "app": 694,
+    "app_name": "HMG-Studio",
+    "app_slug": "hmg-studio",
+    "is_active": true,
+    "is_public": false,
+    "async_mode": false,
+    "description": "Caller-scoped read-only ERP dashboard; currency-separated Decimal projection.",
+    "created_at": "2026-11-06T13:01:45.666285Z",
+    "updated_at": "2026-11-06T13:22:54.663165Z",
+    "version": 2,
+    "total_versions": 2,
+    "config": {},
+    "auth_config": {},
+    "headers": {},
+    "tags": [],
+    "params": null,
+    "filter_conditions": null,
+    "schedules": [],
+    "webhook_url": "",
+    "code_sha256": "84d79f2d2f461fad76c35393c0320ffd8d935d8e85941a143708a63702d6e79a",
+    "code_bytes": 5794,
+    "record_sha256": "8632686b0111ec67c4fa2ee3da34078ab3783a4583b7cbea0b1f0c838cda3ee8",
+    "code_matches_local_after_bom_line_endings": false,
+    "runtime_wrapper": "None; remote differs from inspected local only by BOM/trailing blank line."
+  },
+  "dashboard_source_diff": [
+    "--- local\n",
+    "+++ live\n",
+    "@@ -1,4 +1,4 @@\n",
+    "-\ufeff\"\"\"Caller-scoped dashboard projection. No writes, credentials or external effects.\"\"\"",
+    "+\"\"\"Caller-scoped dashboard projection. No writes, credentials or external effects.\"\"\"",
+    " from datetime import datetime, timezone",
+    " from decimal import Decimal, InvalidOperation",
+    " import re",
+    "@@ -81,4 +81,3 @@\n",
+    "                 \"limitations\":[\"Warehouse-specific projection and widget preferences are not yet implemented.\",\"Projection refuses datasets over 2000 rows rather than returning partial totals.\",\"Naive native timestamps are interpreted as UTC; products without creation dates sort last.\"]}",
+    "     except (Exception,InvalidOperation):",
+    "         return {\"ok\":False,\"code\":\"DATA_UNAVAILABLE\"}",
+    "-"
+  ],
+  "dashboard_source_counts_evidence": "docs\\hmg-studio\\evidence\\workflow-atlas-normal-counts.json",
+  "completed_at": "2026-11-07T06:39:09.120808+00:00",
+  "read_probe_corrections": [
+    {
+      "request": "native product list with sort=id",
+      "http_status": 400,
+      "correction": "ordering=id confirmed in installed SDK DatabaseClient.js; root ordinary-session probe succeeded separately",
+      "mutations": 0
+    }
+  ],
+  "relevant_datatable_actions": {
+    "orders": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "product_location_stocks": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "customers": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "78537d78c028e428d6c03da68a1b5c8452c894fb8a653d9e330ccde1748c4629"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "products": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c829fa24aab7640e9beea72c53bdeeaa4a12ed5c01c56a3d532719b7097ff16a"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "stock_transfers": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "suppliers": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        },
+        {
+          "actions": [
+            "create"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "a1f31352806d35e230a201841a4fc5fb9bf0c13b026e8a4e507449a32a5f18d0"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "order_payments": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "shipments": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "stock_adjustments": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "work_orders": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "purchase_orders": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "stock_adjustment_requests": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "shipment_items": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "5283179cf8d1c55500567bf4676c198ddd733fe57361f7eb4ec8d86876e27e96"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "work_order_outputs": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "stock_audits": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "return_orders": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "stock_audit_items": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "ca790de0117081f56cacff7d64af687952bfee851347edcbc2dadb214de86459"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "stock_reservations": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "c605f2fad01f48357be81d17a5be8c9c7c76b557042d65c6d177bd7ab6c07d04"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "stock_transfer_items": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "2402366a3a5afd1d83a40dc711179c2981898ef417ccf170e20f322f85a9fa76"
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "8572177e243ccde23879aae4f7a2fc4743a284ad492fe2aeac34efee063d66e8"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "product_categories": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG QA Catalog A"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "d4a86c7f9531113321381f7cbd613cb52806ac40eb88a378d92089ac94e7500b"
+        },
+        {
+          "actions": [
+            "create"
+          ],
+          "roles": [
+            "HMG QA Catalog A"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "ab41ffe7b39d54a2dfd3f675b319a7c2b1d0cac2fbc62287cf84508783988469"
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "d8aa4d294da035461b200b24880d13be55ffcafe38bb0fe447aed7e866b76d33"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "order_items": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "ff1816ff8e0cc22dcfa67d8e2c11dbaa8d8f6850f427faff37e5b844ccb7dc78"
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "7c4898fe7dff8f18122f34571325036f672d9b149b0c327bce1c16fdca0a42f9"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "purchase_order_items": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "f1708ea4495724904b40e3d6a2d73651f05968502f3e9d95574d6d067e6f188e"
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "79409ede18646a71356d67c24c2f25aa4275348ee1427bb35fe62cab89b657f9"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "return_order_items": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "62ed68c7a48819b22b3b11ca5c8fa3ed082ef12588f1d5019cf59540b4ff7e32"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    },
+    "work_order_items": {
+      "disabled": false,
+      "allow": [
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "1d6ad32c62e0c964a50c0721f924a8d6c3256b819cdca392ec76a14c9c525417"
+        },
+        {
+          "actions": [
+            "read"
+          ],
+          "roles": [
+            "HMG Synthetic Operator"
+          ],
+          "effect": "EFFECT_ALLOW",
+          "condition_present": true,
+          "condition_sha256": "8937b0ca89b3bce5ce76cf10f76e381125bed9b297cbb318c812c32299047d12"
+        }
+      ],
+      "deny": [
+        {
+          "actions": [
+            "create",
+            "update",
+            "delete"
+          ],
+          "roles": [
+            "*"
+          ],
+          "effect": "EFFECT_DENY",
+          "condition_present": false,
+          "condition_sha256": null
+        }
+      ]
+    }
+  },
+  "dashboard_assessment": {
+    "diagnosed_defaults": [
+      "amount(None) yields0 instead of unavailable",
+      "Missing record currency becomesINR",
+      "Missing product is_active becomesTrue and nonboolean truthy values pass",
+      "Missing selling_price falls back to legacyprice although UI says at sellingprice"
+    ],
+    "safe_correction": "Keep same success/error response shape. Require explicit valid record currency and boolean product active flag; for selected active products require finite stock/selling_price/min_stock; selected noncancelled orders require finite total/amount_paid plus explicit status/date. No legacyprice fallback, no dropping unknown ledger facts, explicitzero remainsvalid. Inactive website references excluded before valuation. Missing facts return existing DATA_UNAVAILABLE envelope.",
+    "compatibility": "Root ordinary-session counts show15activeINR products and19noncancelledINRorders with0missing/invalid required valuationfacts and0legacyfallback cases;263inactivewebsite references remain excluded.",
+    "tests_not_run": true,
+    "implementation_not_performed": true,
+    "deployment_not_performed": true
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "recorded_at": "2026-11-07T05:39:58.176223+00:00",
+  "app": "hmg-studio",
+  "frontend": {
+    "command": "npm.cmd test -- --maxWorkers=1",
+    "passed": 228,
+    "failed": 0,
+    "files": 31,
+    "unhandled_errors": 0,
+    "seconds": 552.9,
+    "exit_code": 0,
+    "log": ".cache/operational-workspace-vitest-final-rerun.log"
+  },
+  "typecheck": {
+    "command": "npm.cmd run typecheck",
+    "expanded_command": "tsc --noEmit && tsc --noEmit -p tsconfig.node.json",
+    "configurations": [
+      "tsconfig.json",
+      "tsconfig.node.json"
+    ],
+    "exit_code": 0,
+    "log": ".cache/operational-workspace-typecheck-final.log"
+  },
+  "backend": {
+    "passed": 345,
+    "evidence": "sample-enrichment-python-verification.json"
+  },
+  "enrichment": {
+    "patches": 139,
+    "new_report_definitions": 4,
+    "ordinary_readback": 143,
+    "complete": true,
+    "historical_business_transactions_preserved": 60
+  },
+  "reports": {
+    "ordinary_provider_reports_passed": 4,
+    "native_reads": 8,
+    "evidence": "operational-reports-live.json"
+  },
+  "deployment": {
+    "url": "https://hmg-studio.taruvibase.app/",
+    "active_build_uuid": "38068a60-226a-4658-8e08-8591fa18bde4",
+    "verified": true,
+    "http_checks": 8,
+    "customer_app_unchanged": true,
+    "evidence": "operational-deployment.json"
+  },
+  "build_secret_scan": "3 configured credential values checked; zero matches",
+  "browser_visual_qa": false,
+  "all_module_crud_verified": false,
+  "transaction_posting_verified": false,
+  "performance_acceptance": false,
+  "remaining": [
+    "Native ordinary customer create HTTP403 despite advisoryALLOW",
+    "Atomic multi-table workflows, concurrency, idempotency, rollback and direct-write-bypass prevention unverified",
+    "Main JavaScript bundle approximately3.99MB uncompressed; code splitting and browser performance verification pending",
+    "Generated sample data remains demonstration data; unavailable actual business values not fabricated",
+    "Rotate existing credential exposed in native-user attributes earlier; no automatic rotation performed"
+  ],
+  "commit_or_push": false
+}

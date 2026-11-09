@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-11-06T18:29:32.309956+00:00",
+  "command": "python -m pytest backend/tests/test_hmg_catalogue.py -q",
+  "exit_code": 0,
+  "passed": 34,
+  "pytest_duration_seconds": 0.39,
+  "red_green_evidence": [
+    "Initial import failed missing module",
+    "Apply contract failed missing apply_plan",
+    "Untrusted apply image URL regression failed then passed",
+    "MCP preflight failure regression failed then passed",
+    "Native read adapter import failed then passed"
+  ],
+  "limitations": [
+    "Tests do not prove normal-user create or transactional stock workflows",
+    "Image checks prove public raster availability, not stone suitability or physical stock"
+  ]
+}

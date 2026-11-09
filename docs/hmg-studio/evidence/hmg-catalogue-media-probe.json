@@ -1,0 +1,30 @@
+{
+  "app_slug": "hmg-studio",
+  "bucket": "products",
+  "uploaded": [
+    "hmg-catalogue/00e9e0c10f598ecb093043c5ff168a69219a775eb87ef6f7e95f7c2091f0492d.jpg"
+  ],
+  "skipped": [],
+  "verified_paths": [
+    "hmg-catalogue/00e9e0c10f598ecb093043c5ff168a69219a775eb87ef6f7e95f7c2091f0492d.jpg"
+  ],
+  "verified_mappings": [
+    {
+      "product_id": "ce75bdf5-4265-5e0c-92dc-3e5fd64b78bc",
+      "source_url": "https://www.hmgstones.com/assets/images/products/granite/10-pigeon-eye-granite.jpg",
+      "path": "hmg-catalogue/00e9e0c10f598ecb093043c5ff168a69219a775eb87ef6f7e95f7c2091f0492d.jpg",
+      "storage_uri": "storage://products/hmg-catalogue/00e9e0c10f598ecb093043c5ff168a69219a775eb87ef6f7e95f7c2091f0492d.jpg"
+    }
+  ],
+  "failures": [],
+  "aborted": false,
+  "database_updates": 0,
+  "plan_sha256": "626b2c4df56c16d738bd36589cb92008fc6a14b235b2f780d82031c09cfcf7b1",
+  "bucket_identity": {
+    "id": 662,
+    "app": 694,
+    "slug": "products",
+    "visibility": "private",
+    "storage_provider": "s3"
+  }
+}

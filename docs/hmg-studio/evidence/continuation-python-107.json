@@ -1,0 +1,12 @@
+{
+  "verification": "Full backend Python suite after corrected notification policy apply",
+  "command": "$env:PYTEST_DISABLE_PLUGIN_AUTOLOAD='1'; python -m pytest backend -q",
+  "working_directory": "C:\\Users\\proj\\HMG-Studio",
+  "exit_code": 0,
+  "passed": 107,
+  "pytest_duration_seconds": 2.31,
+  "observed_summary": "107 passed in 2.31s",
+  "source": "Observed exec_command output chunk 521344 in continuation_schema agent; no rerun or relabeled older log",
+  "scope": "Local Python tests only; does not establish live authorization or browser acceptance",
+  "associated_policy_evidence": "docs/hmg-studio/evidence/notification-owner-policy-20261106T171755374062Z.json"
+}

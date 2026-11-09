@@ -1,0 +1,270 @@
+{
+  "dependencies_present": true,
+  "retry": {
+    "created_count": 1,
+    "updated_count": 0,
+    "error_count": 0,
+    "created_tables": [
+      {
+        "id": 2484,
+        "name": "supplier_price_history",
+        "physical_table_name": "hmg_studio_supplier_price_history",
+        "is_materialized": true
+      }
+    ],
+    "updated_tables": [],
+    "errors": [],
+    "warnings": [],
+    "primary_keys": {
+      "supplier_price_history": {
+        "field": "id",
+        "type": "uuid",
+        "generated": true
+      }
+    },
+    "materialized": true,
+    "success": true
+  },
+  "readback": {
+    "success": true,
+    "data": {
+      "name": "supplier_price_history",
+      "physical_table_name": "hmg_studio_supplier_price_history",
+      "provider_type": "flat_table",
+      "schema_format": "frictionless",
+      "json_schema": {
+        "fields": [
+          {
+            "name": "id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "organization_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "product_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "supplier_id",
+            "type": "string",
+            "format": "uuid",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "purchase_order_id",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "cost_price",
+            "type": "number",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "source",
+            "type": "string",
+            "default": "supplier_link",
+            "constraints": {
+              "required": true,
+              "maxLength": 32
+            }
+          },
+          {
+            "name": "user_id",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "recorded_at",
+            "type": "datetime",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "created_at",
+            "type": "datetime"
+          },
+          {
+            "name": "updated_at",
+            "type": "datetime"
+          },
+          {
+            "name": "product_variant_id",
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "indexes": [
+          {
+            "name": "erp_665fc4ddb592292c4f84",
+            "fields": [
+              "organization_id",
+              "product_id",
+              "recorded_at"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_7c9cc47f0e280cd4599a",
+            "fields": [
+              "supplier_id",
+              "product_id"
+            ],
+            "unique": false
+          },
+          {
+            "name": "erp_bba8c657345862e63fbb",
+            "fields": [
+              "organization_id"
+            ]
+          },
+          {
+            "name": "erp_e7883a773d2233374507",
+            "fields": [
+              "product_id"
+            ]
+          },
+          {
+            "name": "erp_18da6b5b30c17825f9a1",
+            "fields": [
+              "supplier_id"
+            ]
+          },
+          {
+            "name": "erp_6072900684324dc25042",
+            "fields": [
+              "purchase_order_id"
+            ]
+          },
+          {
+            "name": "erp_f4b5c55414b61cc31da3",
+            "fields": [
+              "user_id"
+            ]
+          },
+          {
+            "name": "erp_1c2f4b959ce2a6c5bbea",
+            "fields": [
+              "product_variant_id"
+            ]
+          }
+        ],
+        "primaryKey": [
+          "id"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "organization_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_organizations"
+            },
+            "x-actions": {
+              "onDelete": "RESTRICT"
+            }
+          },
+          {
+            "fields": [
+              "product_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_products"
+            },
+            "x-actions": {
+              "onDelete": "RESTRICT"
+            }
+          },
+          {
+            "fields": [
+              "supplier_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_suppliers"
+            },
+            "x-actions": {
+              "onDelete": "RESTRICT"
+            }
+          },
+          {
+            "fields": [
+              "purchase_order_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_purchase_orders"
+            },
+            "x-actions": {
+              "onDelete": "SET NULL"
+            }
+          },
+          {
+            "fields": [
+              "user_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "auth_user"
+            },
+            "x-actions": {
+              "onDelete": "SET NULL"
+            }
+          },
+          {
+            "fields": [
+              "product_variant_id"
+            ],
+            "reference": {
+              "fields": [
+                "id"
+              ],
+              "resource": "hmg_studio_product_variants"
+            },
+            "x-actions": {
+              "onDelete": "SET NULL"
+            }
+          }
+        ],
+        "reverseRelationships": [],
+        "manyToManyRelationships": []
+      },
+      "is_materialized": true,
+      "is_active": true,
+      "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
+      "created_at": "2026-11-06T13:10:52.952610+00:00",
+      "updated_at": "2026-11-06T13:10:53.313297+00:00"
+    }
+  }
+}

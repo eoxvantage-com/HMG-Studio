@@ -1,0 +1,44 @@
+{
+  "observed_at": "2026-11-06T21:12:10.616348+00:00",
+  "plan_sha256": "a2206b96376b65cc4680febe4e37a2ab6d6c82ba64a364f908cb44952b93c05b",
+  "environment": {
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"
+  },
+  "results": [
+    {
+      "command": "python -m pytest backend/tests/test_enrich_sample_workspace.py -q",
+      "passed": 29,
+      "seconds": 1.94,
+      "exit_code": 0,
+      "log": ".cache/sample-enrichment-focused.log"
+    },
+    {
+      "command": "python -m pytest backend/tests -q",
+      "passed": 345,
+      "seconds": 12.58,
+      "exit_code": 0,
+      "log": ".cache/sample-enrichment-backend.log"
+    }
+  ],
+  "live_apply": false,
+  "patch_counts": {
+    "customers": 9,
+    "order_items": 16,
+    "order_payments": 14,
+    "orders": 19,
+    "product_components": 3,
+    "product_supplier": 12,
+    "products": 15,
+    "purchase_order_items": 10,
+    "purchase_orders": 10,
+    "return_orders": 4,
+    "saved_reports": 1,
+    "stock_adjustments": 8,
+    "stock_transfer_items": 4,
+    "stock_transfers": 4,
+    "suppliers": 6,
+    "work_orders": 4
+  },
+  "new_saved_reports": 4,
+  "business_headers_added": 0
+}

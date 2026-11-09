@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-11-06T18:40:41.306632+00:00",
+  "command": "python -m pytest backend/tests/test_hmg_catalogue_media.py backend/tests/test_hmg_catalogue.py -q",
+  "passed": 51,
+  "media_tests": 17,
+  "catalogue_tests": 34,
+  "duration_seconds": 0.33,
+  "exit_code": 0,
+  "security_review_findings_addressed": [
+    "Mapping UUID and URI validation",
+    "Unique object and product mapping identity",
+    "Exact allowed source-to-hash correspondence",
+    "Strict bounded object size",
+    "URL tests reach intended branches"
+  ],
+  "atomic_storage_collision_semantics_verified": false,
+  "live_storage_writes": 0
+}

@@ -1,0 +1,9 @@
+{
+  "actor": "ordinary QA session",
+  "app": "hmg-studio",
+  "http": 200,
+  "linked_catalogue_total": 263,
+  "sample_count": 1,
+  "sample_private_uri": "storage://products/hmg-catalogue/935b01a151f08bb97207d4a65820e86d6e90e1b87a43b56ef93547c80b13aef5.jpg",
+  "no_mutation": true
+}

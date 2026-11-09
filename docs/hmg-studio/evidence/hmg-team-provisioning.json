@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-07T06:05:52.356591+00:00",
+  "app": "hmg-studio",
+  "users": [
+    {
+      "username": "hmg.john",
+      "email": "john@hmg.com",
+      "name": "John",
+      "create_success": true
+    },
+    {
+      "username": "hmg.kevin",
+      "email": "kevin@hmg.com",
+      "name": "Kevin",
+      "create_success": true
+    },
+    {
+      "username": "hmg.peeter",
+      "email": "peeter@hmg.com",
+      "name": "Peeter",
+      "create_success": true
+    }
+  ],
+  "role": {
+    "id": 1288,
+    "slug": "hmg-studio-hmg-team",
+    "name": "HMG Team"
+  },
+  "admin_membership_assigned": true,
+  "completed": true,
+  "admin_membership_readback": {
+    "id": "4f7ff492-8af6-4059-ae61-ce13fe3d4b20",
+    "username": "pradeep+taruvi",
+    "email": "pradeep+taruvi@eoxvantage.com",
+    "is_active": true,
+    "is_staff": true
+  }
+}

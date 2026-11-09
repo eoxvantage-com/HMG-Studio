@@ -1,0 +1,44 @@
+{
+  "read_only": true,
+  "raw_sql_tool_available": false,
+  "schema": {
+    "saved_reports": {
+      "physical_table_name": "hmg_studio_saved_reports",
+      "schema_format": "frictionless",
+      "provider_type": "flat_table",
+      "fields": [
+        {
+          "name": "columns",
+          "type": "any",
+          "constraints": {
+            "required": true
+          }
+        },
+        {
+          "name": "filters",
+          "type": "any"
+        },
+        {
+          "name": "sort",
+          "type": "any"
+        }
+      ]
+    },
+    "activity_logs": {
+      "physical_table_name": "hmg_studio_activity_logs",
+      "schema_format": "frictionless",
+      "provider_type": "flat_table",
+      "fields": [
+        {
+          "name": "properties",
+          "type": "any"
+        }
+      ]
+    }
+  },
+  "existing_queries": {
+    "success": true,
+    "data": [],
+    "total": 0
+  }
+}
