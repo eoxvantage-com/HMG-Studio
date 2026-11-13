@@ -1,5 +1,9 @@
+import { parseAnalysis, type Analysis } from "./dashboardAnalysis";
+
 /** Validate the complete read-only projection before formatting or rendering it. */
 export type Dashboard = {
+  /** Server-computed operational analysis; null when the server could not produce it. */
+  analysis?: Analysis | null;
   dataset: "production" | "test" | "all"; unclassified_organizations: number;
   ok: true; currency: string; generated_at: string; product_count: number; category_count: number; location_count: number;
   inventory_value: string; pending_orders: number; order_count: number; revenue_month: string; receivables: string | null; receivables_reason?: string | null; sales_basis?: "fulfilled_order_value" | "shipped_order_value";
@@ -40,5 +44,6 @@ export function parseDashboard(value: unknown): Dashboard | null {
     const q = value.catalogue_quality;
     if (!record(q) || !count(q.total) || !["inactive", "missing_selling_price", "missing_image"].every(k => count(q[k]) && (q[k] as number) <= (q.total as number))) return null;
   }
-  return value as Dashboard;
+  // An invalid analysis never blocks the overview; it is shown as unavailable.
+  return { ...(value as Dashboard), analysis: value.analysis === undefined ? undefined : parseAnalysis(value.analysis) };
 }

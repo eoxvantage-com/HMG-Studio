@@ -1,6 +1,7 @@
 """Caller-scoped dashboard projection. No writes, credentials or external effects."""
 from datetime import datetime, timezone
 from decimal import Decimal, InvalidOperation
+import json
 import re
 
 def read_rows(sdk, table, organization=None):
@@ -77,7 +78,237 @@ def ledger_projection(sdk, organization):
         orders.append({'id':key,'organization_id':organization,'order_number':doc['number'],
                        'currency':draft['currency'],'status':doc['status'],'total':doc['total'],
                        'order_date':draft['order_date'],'customer_name':name,'ledger':True})
-    return totals,orders
+    return totals,orders,state
+
+# Operating targets agreed with the workspace owner (13 Nov 2026).
+DELIVERY_TARGET_DAYS=7
+APPROVAL_WAIT_DAYS=2
+RETURN_WAIT_DAYS=3
+# Delivery time is only measured for orders recorded within this many days of
+# their order date. Backfilled history has no real shipping timestamps.
+LIVE_ENTRY_DAYS=2
+LEDGER_MAX_EVENTS=200
+OPEN_SALES=('approved','partially_fulfilled')
+OPEN_PURCHASES=('pending','approved','partially_received')
+SEVERITY_RANK={'critical':0,'warning':1,'info':2}
+
+def day_of(value):
+    """Calendar day (UTC) of a YYYY-MM-DD order date or an ISO timestamp."""
+    return timestamp(value if 'T' in value else value+'T00:00:00+00:00').date()
+
+def percent(part,whole):
+    return None if not whole else str((Decimal(part)*100/Decimal(whole)).quantize(Decimal('0.1')))
+
+def metric(label,kind,value):
+    return {'label':label,'kind':kind,'value':value if value is None or isinstance(value,str) else str(value)}
+
+def worst(statuses):
+    known=[s for s in statuses if s!='none']
+    return 'risk' if 'risk' in known else 'watch' if 'watch' in known else 'good' if known else 'none'
+
+def doc_name(doc):
+    draft=doc['draft'];customer=draft.get('customer_id');supplier=draft.get('supplier_id')
+    if customer:return doc['snapshots']['customers'][customer]['name']
+    if supplier:return (doc['snapshots'].get('suppliers') or {}).get(supplier,{}).get('name') or 'Supplier'
+    return draft.get('customer_name') or 'Customer'
+
+def build_analysis(now,currency,products,ledgers,deliveries=None):
+    """Operational analysis from verified ledger documents and active products only.
+
+    Nothing is estimated: a figure with no underlying records is None, and the
+    frontend shows it as not available rather than zero. Delivery time uses a
+    recorded order_deliveries date when one exists; otherwise the ledger ship
+    time for orders entered on their order date.
+    """
+    recorded={}
+    for row in deliveries or []:
+        if row.get('deleted_at') or not row.get('document_id') or not row.get('delivered_on'):continue
+        if row['document_id'] in recorded:raise ValueError('Duplicate delivery record')
+        recorded[row['document_id']]=row
+    sources={'recorded':0,'backfill':0,'ledger':0}
+    today=now.date()
+    month_keys=[]
+    for index in range(now.year*12+now.month-6,now.year*12+now.month):
+        year,month=divmod(index,12);month_keys.append(f'{year:04d}-{month+1:02d}')
+    trend={k:{'month':k,'revenue':Decimal('0'),'orders':0,'units_shipped':0,'units_returned':0,'delivery_days':[]} for k in month_keys}
+    alerts=[];late=[];delivery_days=[];excluded=0
+    ordered_units=0;shipped_units=0;open_value=Decimal('0');open_count=0;pending_approval=0;pending_sales=0
+    entitled_units=0;returned_units=0;returns={'pending':0,'posted':0,'rejected':0}
+    po_open=0;po_overdue=0;po_open_value=Decimal('0')
+    product_revenue={};demand={};free={};on_hand_units=0;reserved_units=0;capacity_used=0
+    names={p['id']:p.get('name') or p.get('sku') or 'Product' for p in products}
+    tracked={p['id'] for p in products}
+    for org,state in ledgers:
+        capacity_used=max(capacity_used,state.get('sequence',-1)+1)
+        for row in state['balances']:
+            if row['product_id'] not in tracked:continue
+            free[row['product_id']]=free.get(row['product_id'],0)+row['quantity']-row['reserved']
+            on_hand_units=on_hand_units+row['quantity'];reserved_units=reserved_units+row['reserved']
+        documents=state['documents']
+        for doc in documents.values():
+            draft=doc['draft']
+            if draft['currency']!=currency or doc['status']=='cancelled':continue
+            status=doc['status'];order_day=day_of(draft['order_date']);created=timestamp(doc['created_at']);updated=timestamp(doc['updated_at'])
+            for product_id,snapshot in (doc['snapshots'].get('products') or {}).items():
+                names.setdefault(product_id,snapshot.get('name') or snapshot.get('sku') or 'Product')
+            link_base=('/orders/show/' if doc['kind']=='sales_order' else '/purchase-orders/show/')+doc['id']+'?organization='+org
+            if status=='pending' and (now-created).days>=APPROVAL_WAIT_DAYS:
+                pending_approval=pending_approval+1
+                alerts.append({'severity':'warning','kind':'approval','title':doc['number']+' waiting for approval',
+                               'detail':f"{doc_name(doc)} · entered {(now-created).days} days ago (target {APPROVAL_WAIT_DAYS})",
+                               'link':link_base,'age_days':(now-created).days})
+            if doc['kind']=='purchase_order':
+                if status in OPEN_PURCHASES:
+                    po_open=po_open+1;po_open_value=po_open_value+amount(doc['total'])
+                    expected=draft.get('expected_date')
+                    if expected and status!='pending' and day_of(expected)<today:
+                        po_overdue=po_overdue+1;age=(today-day_of(expected)).days
+                        alerts.append({'severity':'critical','kind':'purchase_overdue','title':doc['number']+' delivery overdue',
+                                       'detail':f"{doc_name(doc)} · expected {expected}, {age} days late",'link':link_base,'age_days':age})
+                continue
+            if doc['kind']!='sales_order':continue
+            quantities={item['line_id']:item['quantity'] for item in draft['items']}
+            prices={item['line_id']:Decimal(item['unit_price']) for item in draft['items']}
+            products_by_line={item['line_id']:item['product_id'] for item in draft['items']}
+            shipped_by_line={}
+            for key,value in doc['fulfilled'].items():
+                line=json.loads(key)[0];shipped_by_line[line]=shipped_by_line.get(line,0)+value
+            shipped=sum(shipped_by_line.values())
+            month=order_day.strftime('%Y-%m')
+            if month in trend and status!='rejected':
+                bucket=trend[month];bucket['orders']=bucket['orders']+1;bucket['units_shipped']=bucket['units_shipped']+shipped
+                if status=='fulfilled':bucket['revenue']=bucket['revenue']+amount(doc['total'])
+            for line,units in shipped_by_line.items():
+                product_id=products_by_line[line];entry=product_revenue.setdefault(product_id,{'units':0,'revenue':Decimal('0')})
+                entry['units']=entry['units']+units;entry['revenue']=entry['revenue']+prices[line]*units
+            if status in ('approved','partially_fulfilled','fulfilled'):
+                ordered_units=ordered_units+sum(quantities.values());shipped_units=shipped_units+shipped
+            if status=='pending':
+                pending_sales=pending_sales+1
+                for line,units in quantities.items():
+                    demand[products_by_line[line]]=demand.get(products_by_line[line],0)+units
+            if status in OPEN_SALES or status=='pending':
+                open_count=open_count+1;open_value=open_value+amount(doc['total'])
+            if status in OPEN_SALES:
+                age=(today-order_day).days
+                if age>DELIVERY_TARGET_DAYS:
+                    late.append({'id':doc['id'],'organization_id':org,'number':doc['number'],'customer':doc_name(doc),'age_days':age,'total':doc['total']})
+                    alerts.append({'severity':'critical' if age>2*DELIVERY_TARGET_DAYS else 'warning','kind':'late_shipment',
+                                   'title':doc['number']+' not shipped','detail':f"{doc_name(doc)} · {age} days since order (target {DELIVERY_TARGET_DAYS})",
+                                   'link':link_base,'age_days':age})
+            if status=='fulfilled':
+                row=recorded.get(doc['id'])
+                if row and row.get('organization_id')==org:
+                    days=(day_of(row['delivered_on'])-order_day).days
+                    if days<0:raise ValueError('Delivery before order date')
+                    delivery_days.append(days);source=row.get('source') if row.get('source') in ('recorded','backfill') else 'recorded'
+                    sources[source]=sources[source]+1
+                    if month in trend:trend[month]['delivery_days']=trend[month]['delivery_days']+[days]
+                elif (created.date()-order_day).days<=LIVE_ENTRY_DAYS:
+                    days=max(0,(updated.date()-order_day).days);delivery_days.append(days);sources['ledger']=sources['ledger']+1
+                    if month in trend:trend[month]['delivery_days']=trend[month]['delivery_days']+[days]
+                else:excluded=excluded+1
+        for entitlement in state.get('entitlements',{}).values():
+            doc=documents.get(entitlement.get('document_id'))
+            if doc and doc['draft']['currency']==currency:
+                entitled_units=entitled_units+entitlement['quantity'];returned_units=returned_units+entitlement['returned']
+        for request_id,request in state.get('requests',{}).items():
+            command=request['command']
+            if command.get('action')!='submit_return':continue
+            doc=documents.get(command['document_id'])
+            if not doc or doc['draft']['currency']!=currency:continue
+            status=request['status'];returns[status]=returns.get(status,0)+1
+            units=sum(line['quantity'] for line in command['lines'])
+            created=timestamp(request['created_at']);month=created.strftime('%Y-%m')
+            if month in trend and status!='rejected':trend[month]['units_returned']=trend[month]['units_returned']+units
+            if status=='pending' and (now-created).days>=RETURN_WAIT_DAYS:
+                alerts.append({'severity':'warning','kind':'return_waiting','title':'Return for '+doc['number']+' waiting',
+                               'detail':f"{units} units · submitted {(now-created).days} days ago (target {RETURN_WAIT_DAYS})",
+                               'link':'/returns?organization='+org,'age_days':(now-created).days})
+    shortfalls=[]
+    for product_id,needed in demand.items():
+        available=free.get(product_id,0)
+        if needed>available:
+            shortfalls.append({'id':product_id,'name':names.get(product_id,'Product'),'needed':needed,'free':available})
+            alerts.append({'severity':'critical','kind':'stock_shortfall','title':names.get(product_id,'Product')+' short for pending orders',
+                           'detail':f"{needed} needed by pending orders · {available} free",'link':'/inventory/show/'+product_id,'age_days':0})
+    out_of_stock=[p for p in products if amount(p.get('stock'))<=0]
+    low=[p for p in products if amount(p.get('stock'))>0 and amount(p.get('stock'))<=amount(p.get('min_stock'))]
+    if out_of_stock:
+        alerts.append({'severity':'warning','kind':'out_of_stock','title':f"{len(out_of_stock)} products out of stock",
+                       'detail':', '.join(sorted(names.get(p['id'],'Product') for p in out_of_stock)[:4])+(' and more' if len(out_of_stock)>4 else ''),
+                       'link':'/replenishment','age_days':0})
+    if low:
+        alerts.append({'severity':'info','kind':'low_stock','title':f"{len(low)} products at or below minimum",
+                       'detail':', '.join(sorted(names.get(p['id'],'Product') for p in low)[:4])+(' and more' if len(low)>4 else ''),
+                       'link':'/replenishment','age_days':0})
+    if ledgers and capacity_used>=LEDGER_MAX_EVENTS*0.8:
+        alerts.append({'severity':'critical' if capacity_used>=LEDGER_MAX_EVENTS*0.95 else 'warning','kind':'ledger_capacity',
+                       'title':'Stock ledger nearly full','detail':f"{capacity_used} of {LEDGER_MAX_EVENTS} events used",'link':'/operations','age_days':0})
+    alerts.sort(key=lambda a:(SEVERITY_RANK[a['severity']],-a['age_days'],a['title']))
+    counts={k:sum(1 for a in alerts if a['severity']==k) for k in SEVERITY_RANK}
+    value_cost=Decimal('0');missing_cost=0;value_selling=Decimal('0')
+    for p in products:
+        stock=amount(p.get('stock'));value_selling=value_selling+stock*amount(p.get('selling_price'))
+        if p.get('purchase_price') is None:missing_cost=missing_cost+1
+        else:value_cost=value_cost+stock*amount(p.get('purchase_price'))
+    delivery_days.sort()
+    average=None if not delivery_days else str((Decimal(sum(delivery_days))/len(delivery_days)).quantize(Decimal('0.1')))
+    median=None if not delivery_days else str(delivery_days[len(delivery_days)//2])
+    on_time=percent(sum(1 for d in delivery_days if d<=DELIVERY_TARGET_DAYS),len(delivery_days))
+    buckets=[('0-2 days',0,2),('3-5 days',3,5),('6-7 days',6,7),('8-14 days',8,14),('15+ days',15,10**6)]
+    fill_rate=percent(shipped_units,ordered_units);return_rate=percent(returned_units,entitled_units);reserved_rate=percent(reserved_units,on_hand_units)
+    has_sales=bool(ordered_units or open_count or delivery_days or excluded)
+    def band(value,good,watch,higher_is_better=True):
+        if value is None:return 'none'
+        number=Decimal(value)
+        if higher_is_better:return 'good' if number>=good else 'watch' if number>=watch else 'risk'
+        return 'good' if number<=good else 'watch' if number<=watch else 'risk'
+    delivery_status=worst([band(average,DELIVERY_TARGET_DAYS,DELIVERY_TARGET_DAYS*1.5,False),'risk' if len(late)>=3 else 'watch' if late else 'good' if has_sales else 'none'])
+    stock_status='risk' if shortfalls else 'watch' if out_of_stock or low else 'good' if products else 'none'
+    returns_status=worst([band(return_rate,5,10,False),'watch' if any(a['kind']=='return_waiting' for a in alerts) else 'none'])
+    segments=[
+        {'key':'orders','label':'Orders','value':metric('Open orders','count',open_count),'caption':'open orders',
+         'status':('watch' if pending_approval else 'good') if has_sales else 'none','link':'/orders',
+         'metrics':[metric('Open order value','money',money(open_value)),metric('Waiting for approval','count',pending_sales),
+                    metric(f'Approval older than {APPROVAL_WAIT_DAYS} days','count',pending_approval)]},
+        {'key':'fulfilment','label':'Fulfilment','value':metric('Fill rate','percent',fill_rate),'caption':'of confirmed units shipped',
+         'status':band(fill_rate,80,50),'link':'/orders',
+         'metrics':[metric('Units confirmed','count',ordered_units),metric('Units shipped','count',shipped_units),metric('Shipped this month','money',money(trend[month_keys[-1]]['revenue']))]},
+        {'key':'delivery','label':'Days to deliver','value':metric('Average','days',average),'caption':f'average · target {DELIVERY_TARGET_DAYS} days',
+         'status':delivery_status,'link':'/orders',
+         'metrics':[metric('Late orders','count',len(late)),metric('On time','percent',on_time),metric('Median','days',median),
+                    metric('Orders measured','count',len(delivery_days)),metric('Backfilled delivery dates','count',sources['backfill']),metric('No delivery date','count',excluded)]},
+        {'key':'returns','label':'Returns','value':metric('Return rate','percent',return_rate),'caption':'of shipped units returned',
+         'status':returns_status,'link':'/returns',
+         'metrics':[metric('Units shipped','count',entitled_units),metric('Units returned','count',returned_units),metric('Pending returns','count',returns.get('pending',0)),
+                    metric('Approved returns','count',returns.get('posted',0))]},
+        {'key':'stock','label':'Stock health','value':metric('Out of stock','count',len(out_of_stock)),'caption':'products out of stock',
+         'status':stock_status,'link':'/replenishment',
+         'metrics':[metric('Low stock','count',len(low)),metric('Short for pending orders','count',len(shortfalls)),metric('Active products','count',len(products))]},
+        {'key':'inventory','label':'Inventory','value':metric('Value at selling price','money',money(value_selling)),'caption':'at selling price',
+         'status':'good' if products else 'none','link':'/stock-by-warehouse',
+         'metrics':[metric('Value at cost','money',money(value_cost)),metric('Products without cost','count',missing_cost),metric('Units on hand','count',on_hand_units),
+                    metric('Units reserved','count',reserved_units),metric('Reserved share','percent',reserved_rate)]},
+        {'key':'purchasing','label':'Purchasing','value':metric('Open purchase orders','count',po_open),'caption':'open purchase orders',
+         'status':'risk' if po_overdue else 'good' if ledgers else 'none','link':'/purchase-orders',
+         'metrics':[metric('Overdue deliveries','count',po_overdue),metric('Open PO value','money',money(po_open_value))]},
+        {'key':'alerts','label':'Alerts','value':metric('Open alerts','count',len(alerts)),'caption':'need attention',
+         'status':'risk' if counts['critical'] else 'watch' if counts['warning'] else 'good','link':'/',
+         'metrics':[metric('Critical','count',counts['critical']),metric('Warnings','count',counts['warning']),metric('For information','count',counts['info'])]},
+    ]
+    top=sorted(product_revenue.items(),key=lambda x:(-x[1]['revenue'],names.get(x[0],'')))[:5]
+    return {'targets':{'delivery_days':DELIVERY_TARGET_DAYS,'approval_days':APPROVAL_WAIT_DAYS,'return_days':RETURN_WAIT_DAYS},
+            'status':worst([s['status'] for s in segments]),'segments':segments,'alerts':alerts[:25],'alert_counts':counts,
+            'trend':[{'month':v['month'],'revenue':money(v['revenue']),'orders':v['orders'],'units_shipped':v['units_shipped'],'units_returned':v['units_returned'],
+                      'avg_delivery_days':None if not v['delivery_days'] else str((Decimal(sum(v['delivery_days']))/len(v['delivery_days'])).quantize(Decimal('0.1')))} for v in trend.values()],
+            'delivery':{'samples':len(delivery_days),'excluded':excluded,'sources':sources,'average_days':average,'median_days':median,'on_time_rate':on_time,
+                        'buckets':[{'label':label,'count':sum(1 for d in delivery_days if low_<=d<=high)} for label,low_,high in buckets],
+                        'late':sorted(late,key=lambda x:-x['age_days'])[:10]},
+            'top_products':[{'id':k,'name':names.get(k,'Product'),'units':v['units'],'revenue':money(v['revenue'])} for k,v in top],
+            'shortfalls':shortfalls[:10],
+            'capacity':{'used':capacity_used,'max':LEDGER_MAX_EVENTS} if ledgers else None,
+            'basis':'Ledger documents, return requests and stock bins for activated workspaces in the selected currency, plus active products. Delivery time uses recorded delivery dates (order_deliveries, including backfilled history marked as such) or, for orders entered within '+str(LIVE_ENTRY_DAYS)+' days of their order date, the ledger shipment time.'}
 
 def main(params, user_data, sdk_client):
     if not user_data:return {"ok":False,"code":"UNAUTHENTICATED"}
@@ -109,6 +340,7 @@ def main(params, user_data, sdk_client):
         # still use the caller. Unknown/unreadable organizations never become
         # production implicitly; all panels use the same classified subset.
         products=read_scoped_rows(sdk_client,"products",selected)
+        ledger_states=[]
         legacy_orgs=[org for org in selected if org not in ledger_orgs]
         orders=[]
         for org in legacy_orgs:
@@ -120,7 +352,8 @@ def main(params, user_data, sdk_client):
             if any(r.get('organization_id')==org and r.get('is_active') is True and
                    (r.get('has_variants') is not False or r.get('tracking_type')!='none' or r.get('type')!='standard') for r in products):
                 return {"ok":False,"code":"UNSUPPORTED_STOCK"}
-            totals,documents=ledger_projection(sdk_client,org)
+            totals,documents,ledger_state=ledger_projection(sdk_client,org)
+            ledger_states.append((org,ledger_state))
             products=[{**r,'stock':totals.get(r['id'],0)} if r.get('organization_id')==org else r for r in products]
             orders=[r for r in orders if r.get('organization_id')!=org]+documents
         # Validate scope discriminators before filtering: silently assigning a
@@ -171,10 +404,18 @@ def main(params, user_data, sdk_client):
         # pending/rejected drafts are not receivables.
         receivables=sum((max(Decimal("0"),amount(r.get("total"))-(Decimal("0") if r.get("ledger") else amount(r.get("amount_paid"))))
                          for r in orders if not r.get("ledger") or r["status"] in ("approved","partially_fulfilled","fulfilled")),Decimal("0"))
+        try:
+            # Analysis failure is reported, never replaced with estimates or zeros.
+            deliveries=[]
+            for org,unused_state in ledger_states:
+                deliveries.extend(read_rows(sdk_client,'order_deliveries',org))
+            analysis=build_analysis(now,currency,products,ledger_states,deliveries)
+        except (Exception,InvalidOperation):
+            analysis=None
         recent=sorted(orders,key=lambda r:(order_times[r["id"]],str(r["id"])),reverse=True)[:5]
         recent_products=sorted(products,key=lambda r:(product_times[r["id"]],str(r["id"])),reverse=True)[:5]
         return {"ok":True,"currency":currency,"dataset":dataset,"unclassified_organizations":unclassified,"generated_at":now.isoformat(),
-                "catalogue_quality":quality,
+                "catalogue_quality":quality,"analysis":analysis,
                 "order_pipeline":[{'status':k,'count':v['count'],'value':money(v['value'])} for k,v in sorted(pipeline.items())],
                 "monthly_sales":[{'month':k,'count':v['count'],'revenue':money(v['revenue'])} for k,v in months.items()],
                 "product_count":len(products),"category_count":len(categories),"location_count":len(locations),

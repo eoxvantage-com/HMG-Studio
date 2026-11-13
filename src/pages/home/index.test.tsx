@@ -4,6 +4,7 @@ import { act, fireEvent, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { Home } from "./index";
 import { MemoryRouter } from "react-router";
+import { analysisFixture } from "../../services/__fixtures__/dashboardAnalysis";
 const rate = vi.hoisted(() => vi.fn());
 vi.mock("../../services/dashboardCurrency", () => ({ getDashboardRate: rate }));
 const custom=vi.fn();
@@ -116,5 +117,62 @@ describe("live ERP dashboard",()=>{
   expect(screen.getByRole("combobox",{name:"Display currency"}).textContent).toContain("EUR");
   expect(screen.getAllByText(/€46,900.00/).length).toBeGreaterThan(0);
   const lastSignal=rate.mock.calls.at(-1)?.[1] as AbortSignal;view.unmount();expect(lastSignal.aborted).toBe(true);
+ });
+
+ it("shows a live indicator and keeps the overview as the default tab",async()=>{
+  custom.mockResolvedValue({data:{...summary,analysis:analysisFixture()}});
+  mount();await screen.findByText("8");
+  expect(screen.getByRole("tab",{name:"Overview"}).getAttribute("aria-selected")).toBe("true");
+  expect(screen.getByText(/Live · updated/)).toBeTruthy();
+  expect(screen.getByRole("tab",{name:/Alerts/}).textContent).toContain("2");
+ });
+ it("analysis ring previews on hover and shows details on click, from server data only",async()=>{
+  custom.mockResolvedValue({data:{...summary,analysis:analysisFixture()}});
+  mount();await screen.findByText("8");
+  fireEvent.click(screen.getByRole("tab",{name:"Analysis"}));
+  expect(await screen.findByText("Operations health")).toBeTruthy();
+  const delivery=screen.getByRole("button",{name:/Days to deliver: Not available/});
+  fireEvent.mouseEnter(delivery);
+  expect(delivery.getAttribute("aria-pressed")).toBe("false");
+  fireEvent.click(delivery);
+  expect(delivery.getAttribute("aria-pressed")).toBe("true");
+  expect(screen.getByText("Backfilled, not measured")).toBeTruthy();
+  expect(screen.getByRole("link",{name:"SO-E77B0C59"}).getAttribute("href")).toBe("/orders/show/b0646aef-4672-5715-8cc8-43e3e77b0c59?organization=org");
+  fireEvent.keyDown(screen.getByRole("button",{name:/Inventory: ₹27\.7L/}),{key:"Enter"});
+  expect(screen.getByText("Value at cost")).toBeTruthy();
+  expect(screen.getByRole("link",{name:"Open inventory"}).getAttribute("href")).toBe("/stock-by-warehouse");
+  expect(screen.getByText(/No delivery dates recorded yet; 14 shipped orders have no delivery date/)).toBeTruthy();
+  expect(custom).toHaveBeenCalledTimes(1);
+ });
+ it("alerts tab lists server alerts by severity with short document numbers",async()=>{
+  custom.mockResolvedValue({data:{...summary,analysis:analysisFixture()}});
+  mount();await screen.findByText("8");
+  fireEvent.click(screen.getByRole("tab",{name:/Alerts/}));
+  expect(await screen.findByText("PO-567890AB delivery overdue")).toBeTruthy();
+  expect(screen.getByText("SO-E77B0C59 not shipped")).toBeTruthy();
+  fireEvent.click(screen.getByRole("button",{name:"Critical (1)"}));
+  expect(screen.queryByText("SO-E77B0C59 not shipped")).toBeNull();
+  expect(screen.getByRole("link",{name:/PO-567890AB delivery overdue/}).getAttribute("href")).toBe("/purchase-orders/show/po1?organization=org");
+ });
+ it("says analysis is unavailable instead of inventing figures",async()=>{
+  custom.mockResolvedValue({data:{...summary,analysis:null}});
+  mount();await screen.findByText("8");
+  fireEvent.click(screen.getByRole("tab",{name:"Analysis"}));
+  expect(await screen.findByText(/Analysis is unavailable right now/)).toBeTruthy();
+  expect(screen.queryByText("Operations health")).toBeNull();
+ });
+ it("shows recorded delivery statistics and switches to the monthly view",async()=>{
+  const analysis=analysisFixture();
+  analysis.delivery={...analysis.delivery,samples:14,excluded:0,sources:{recorded:0,backfill:14,ledger:0},average_days:"6.4",median_days:"6",on_time_rate:"71.4",buckets:[{label:"0-2 days",count:0},{label:"3-5 days",count:6},{label:"6-7 days",count:4},{label:"8-14 days",count:4},{label:"15+ days",count:0}]};
+  analysis.trend=analysis.trend.map((row,i)=>({...row,avg_delivery_days:i<5?"6.0":null}));
+  custom.mockResolvedValue({data:{...summary,analysis}});
+  mount();await screen.findByText("8");
+  fireEvent.click(screen.getByRole("tab",{name:"Analysis"}));
+  expect(await screen.findByText("6.4 days")).toBeTruthy();
+  expect(screen.getByText("71.4%")).toBeTruthy();
+  expect(screen.getByText(/14 of 14 delivery dates were backfilled/)).toBeTruthy();
+  expect(screen.getByRole("img",{name:/3-5 days: 6/})).toBeTruthy();
+  fireEvent.click(screen.getByRole("button",{name:"By month"}));
+  expect(screen.getByRole("img",{name:/Average days to deliver by month: Jun 6/})).toBeTruthy();
  });
 });

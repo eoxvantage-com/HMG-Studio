@@ -4,6 +4,9 @@ import { MemoryRouter } from "react-router";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { NotificationsPage } from "./notifications";
 import { NotificationBell } from "../../components/NotificationBell";
+import { analysisFixture } from "../../services/__fixtures__/dashboardAnalysis";
+const dash = vi.hoisted(() => ({ value: { dashboard: null as unknown, query: {}, updatedAt: null } }));
+vi.mock("../../hooks/useDashboard", () => ({ useDashboard: () => dash.value, DASHBOARD_REFRESH_MS: 45000 }));
 const owner = "11111111-1111-4111-8111-111111111111";
 const row = { id: "22222222-2222-4222-8222-222222222222", user_id: owner, title: "Stone stock alert", message: "Review the yard", type: "info", priority: "normal", read_at: null, created_at: "2026-11-06T09:00:00", action_url: "/inventory" };
 const getList = vi.fn(); const create = vi.fn(); const update = vi.fn(); const deleteOne = vi.fn();
@@ -115,4 +118,15 @@ describe("header notification bell", () => {
     expect(await screen.findByRole("button", { name: "Notifications unavailable" })).toBeTruthy();
     expect(screen.queryByRole("button", { name: "Notifications, 40 unread" })).toBeNull();
   });
+it("bell lists server operations alerts and counts critical ones", async () => {
+  getList.mockResolvedValue({ data: [], total: 0 }); identity.mockResolvedValue({ id: owner });
+  dash.value = { dashboard: { analysis: analysisFixture() }, query: {}, updatedAt: null };
+  mount(true);
+  const bell = await screen.findByRole("button", { name: /Notifications, 1 unread/ });
+  fireEvent.click(bell);
+  expect(await screen.findByText("PO-567890AB delivery overdue")).toBeTruthy();
+  expect(screen.queryByText("3 products at or below minimum")).toBeNull();
+  expect(screen.getByRole("link", { name: "All operations alerts (3)" }).getAttribute("href")).toBe("/?tab=alerts");
+  dash.value = { dashboard: null, query: {}, updatedAt: null };
+});
 });

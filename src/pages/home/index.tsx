@@ -1,19 +1,21 @@
 import { useEffect, useMemo, useState } from "react";
-import { useCustom } from "@refinedev/core";
-import { Link as RouterLink } from "react-router";
-import { Accordion, AccordionDetails, AccordionSummary, Alert, Box, Button, Card, CardActionArea, CardContent, Chip, IconButton, LinearProgress, Link, MenuItem, Skeleton, Stack, Table, TableBody, TableCell, TableHead, TableRow, TextField, Tooltip, Typography } from "@mui/material";
+import { Link as RouterLink, useSearchParams } from "react-router";
+import { Accordion, AccordionDetails, AccordionSummary, Alert, Badge, Box, Button, Card, CardActionArea, CardContent, Chip, IconButton, LinearProgress, Link, MenuItem, Skeleton, Stack, Tab, Table, TableBody, TableCell, TableHead, TableRow, Tabs, TextField, Tooltip, Typography } from "@mui/material";
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 import ArrowOutwardRoundedIcon from "@mui/icons-material/ArrowOutwardRounded";
 import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
 import RefreshRoundedIcon from "@mui/icons-material/RefreshRounded";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import { PageContainer } from "../../components/PageContainer";
-import { parseDashboard, type Dashboard } from "../../services/dashboard";
+import type { Dashboard } from "../../services/dashboard";
+import { DASHBOARD_REFRESH_MS, useDashboard } from "../../hooks/useDashboard";
+import { AlertsTab, AnalysisTab } from "./analysis";
 import { getDashboardRate, type DashboardCurrency, type DashboardRate } from "../../services/dashboardCurrency";
 import { shortNumber, statusColor, statusLabel } from "../../services/commercePresentation";
 
-const meta = { kind: "function", async: false } as const;
-const queryOptions = { retry: false, refetchOnWindowFocus: true };
+const TABS = ["overview", "analysis", "alerts"] as const;
+type DashboardTab = typeof TABS[number];
+const timeFormat = new Intl.DateTimeFormat("en-IN", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
 const dateFormat = new Intl.DateTimeFormat("en-US", { month: "short", day: "2-digit", year: "numeric", timeZone: "UTC" });
 const monthLabel = (month: string) => new Date(`${month}-01T00:00:00Z`).toLocaleDateString("en-IN", { month: "short", year: "numeric", timeZone: "UTC" });
 
@@ -31,14 +33,18 @@ function Kpi({ label, value, context, href, tone }: { label: string; value: stri
   </CardContent></CardActionArea></Card>;
 }
 
+function AnalysisUnavailable({ retry }: { retry: () => void }) {
+  return <Alert severity="warning" action={<Button color="inherit" onClick={retry}>Retry</Button>}>Analysis is unavailable right now. The server could not compute it from the current records, so nothing is shown instead of estimates.</Alert>;
+}
+
 export const Home = () => {
   const [currency, setCurrency] = useState<DashboardCurrency>("INR");
   // One HMG Stones workspace: the dashboard combines every active business organization.
-  const dataset = "all" as const;
-  const dashboardConfig = useMemo(() => ({ payload: { currency: "INR", dataset } }), []);
-  const { result, query } = useCustom<Dashboard>({ url: "hmg-dashboard-v1", method: "post", dataProviderName: "app", meta, config: dashboardConfig, queryOptions, errorNotification: false });
-  const projection = parseDashboard(result?.data);
-  const d = projection?.currency === "INR" && projection.dataset === dataset ? projection : null;
+  // Live: refetches every 45 seconds while the tab is visible, and on focus.
+  const { dashboard: d, query, updatedAt } = useDashboard({ live: true });
+  const [params, setParams] = useSearchParams();
+  const tab: DashboardTab = TABS.includes(params.get("tab") as DashboardTab) ? params.get("tab") as DashboardTab : "overview";
+  const selectTab = (next: DashboardTab) => setParams(current => { const copy = new URLSearchParams(current); if (next === "overview") copy.delete("tab"); else copy.set("tab", next); return copy; }, { replace: true });
   const [fx, setFx] = useState<{ currency: DashboardCurrency; status: "loading" | "ready" | "error"; value?: DashboardRate }>({ currency: "INR", status: "ready" });
   const [rateAttempt, setRateAttempt] = useState(0);
   const canConvert = Boolean(d) && !query.isError && !query.isLoading;
@@ -63,6 +69,7 @@ export const Home = () => {
     <Box><Typography variant="h2" component="h1">Dashboard</Typography><Typography variant="body2" color="text.secondary" sx={{ mt: .5 }}>HMG Stones · stock, orders and money owed{d?.generated_at ? ` · as of ${dateFormat.format(new Date(d.generated_at))}` : ""}</Typography></Box>
     <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" alignItems="center">
       <TextField select size="small" label="Display currency" value={currency} onChange={e => { if (["INR", "USD", "EUR"].includes(e.target.value)) { const next = e.target.value as DashboardCurrency; setFx({ currency: next, status: "loading" }); setCurrency(next); } }} sx={{ minWidth: 150 }}>{["INR", "USD", "EUR"].map(c => <MenuItem key={c} value={c}>{c}</MenuItem>)}</TextField>
+      {updatedAt && !query.isError && <Tooltip title={`Live data from the Taruvi database. Refreshes every ${DASHBOARD_REFRESH_MS / 1000} seconds while this tab is open.`}><Chip size="small" variant="outlined" icon={<Box component="span" sx={{ width: 8, height: 8, borderRadius: "50%", bgcolor: "success.main", ml: 1, animation: query.isFetching ? "hmgPulse 1s ease-in-out infinite" : "none", "@keyframes hmgPulse": { "50%": { opacity: .3 } } }} />} label={`Live · updated ${timeFormat.format(updatedAt)}`} /></Tooltip>}
       <Tooltip title="Refresh"><span><IconButton aria-label="Refresh" onClick={() => void query.refetch()} disabled={query.isFetching}><RefreshRoundedIcon /></IconButton></span></Tooltip>
       <Button component={RouterLink} to="/inventory/create" variant="outlined" startIcon={<AddRoundedIcon />}>Add product</Button>
       <Button component={RouterLink} to="/orders/create" variant="contained" startIcon={<AddRoundedIcon />}>New order</Button>
@@ -70,6 +77,7 @@ export const Home = () => {
   </Stack>;
   if (query.isLoading) return <PageContainer><Stack spacing={3}>{title}<Box sx={{ display: "grid", gap: 2, gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", xl: "repeat(4,1fr)" } }}>{[0, 1, 2, 3].map(i => <Skeleton key={i} variant="rounded" height={120} />)}</Box><Skeleton variant="rounded" height={280} /></Stack></PageContainer>;
   if (query.isError || !d?.ok) return <PageContainer><Stack spacing={3}>{title}<Alert severity="warning" action={<Button onClick={() => void query.refetch()}>Retry</Button>}>Dashboard data unavailable</Alert><Typography color="text.secondary">Taruvi could not return the complete authorized projection. No totals have been substituted. You can still open modules from the sidebar.</Typography></Stack></PageContainer>;
+  const analysisAlerts = d.analysis ? d.analysis.alert_counts.critical + d.analysis.alert_counts.warning : 0;
   const ledgerSales = d.sales_basis === "fulfilled_order_value";
   const fulfilled = d.fulfilled_value ?? d.revenue_month;
   const tiles = [
@@ -88,6 +96,14 @@ export const Home = () => {
           : <Alert severity="info" aria-busy="true">Loading the {currency} reference rate. Amounts are unavailable until it loads.</Alert>}
     </Box>}
     {query.isFetching && <LinearProgress aria-label="Refreshing dashboard" />}
+    <Tabs value={tab} onChange={(_, next: DashboardTab) => selectTab(next)} aria-label="Dashboard views" sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <Tab value="overview" label="Overview" />
+      <Tab value="analysis" label="Analysis" />
+      <Tab value="alerts" label={<Badge color="error" badgeContent={analysisAlerts || undefined} max={99} sx={{ "& .MuiBadge-badge": { right: -14, top: 2 } }}>Alerts</Badge>} sx={{ pr: analysisAlerts ? 3.5 : undefined }} />
+    </Tabs>
+    {tab === "analysis" && (d.analysis ? <AnalysisTab analysis={d.analysis} dashboard={d} money={money} onShowAlerts={() => selectTab("alerts")} /> : <AnalysisUnavailable retry={() => void query.refetch()} />)}
+    {tab === "alerts" && (d.analysis ? <AlertsTab analysis={d.analysis} /> : <AnalysisUnavailable retry={() => void query.refetch()} />)}
+    {tab === "overview" && <>
     <Box aria-label="Key performance indicators" sx={{ display: "grid", gap: 2, gridTemplateColumns: { xs: "minmax(0,1fr)", sm: "repeat(2,minmax(0,1fr))", xl: "repeat(4,minmax(0,1fr))" } }}>
       {[tiles[0], tiles[1], tiles[3], tiles[2]].map(tile => <Kpi key={tile.label} {...tile} />)}
     </Box>
@@ -131,5 +147,6 @@ export const Home = () => {
     </Box>
     <Accordion disableGutters><AccordionSummary expandIcon={<ExpandMoreRoundedIcon />}><Typography variant="h6">Recent Products</Typography><Chip size="small" label={d.recent_products.length} sx={{ ml: 1 }} /></AccordionSummary><AccordionDetails><Box sx={{ overflowX: "auto" }}><Table size="small"><TableHead><TableRow><TableCell>SKU</TableCell><TableCell>Product</TableCell><TableCell align="right">Stock</TableCell></TableRow></TableHead><TableBody>{d.recent_products.map(p => <TableRow key={p.id}><TableCell>{p.sku}</TableCell><TableCell><Link component={RouterLink} to={`/inventory/show/${p.id}`}>{p.name}</Link></TableCell><TableCell align="right">{p.stock}</TableCell></TableRow>)}{!d.recent_products.length && <TableRow><TableCell colSpan={3}>No recent products in the INR ledger yet.</TableCell></TableRow>}</TableBody></Table></Box></AccordionDetails></Accordion>
     <Accordion disableGutters><AccordionSummary expandIcon={<ExpandMoreRoundedIcon />}><Typography variant="body2">How these numbers are calculated</Typography></AccordionSummary><AccordionDetails><Stack spacing={1}>{d.scope && <Typography variant="caption" color="text.secondary">{d.scope}</Typography>}{d.limitations?.map(item => <Typography key={item} variant="caption" color="text.secondary">{item}</Typography>)}</Stack></AccordionDetails></Accordion>
+    </>}
   </Stack></PageContainer>;
 };

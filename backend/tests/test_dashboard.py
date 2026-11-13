@@ -1,3 +1,5 @@
+import json
+from decimal import Decimal
 import importlib.util
 from pathlib import Path
 from copy import deepcopy
@@ -394,3 +396,168 @@ def test_scope_leaking_catalogue_query_fails_closed():
 def test_selected_scoped_categories_denial_is_not_swallowed():
     tables=scoped_tables();tables['product_categories']=PermissionError('denied')
     assert invoke({}, {'id':'ordinary-admin'}, tables, require_scoped=True)==UNAVAILABLE
+
+
+# ---------------------------------------------------------------- analysis
+NOW=datetime(2026,11,13,9,0,tzinfo=timezone.utc)
+
+def sales_doc(doc_id,status,order_date,created,updated,qty=4,shipped=0,price='10.00',product_id='p',currency='INR'):
+    line='line-'+doc_id
+    return {'id':doc_id,'kind':'sales_order','number':'SO-'+doc_id,'status':status,'total':str(Decimal(price)*qty),
+            'created_at':created,'updated_at':updated,
+            'draft':{'customer_id':None,'customer_name':'Buyer '+doc_id,'currency':currency,'order_date':order_date,
+                     'items':[{'line_id':line,'product_id':product_id,'quantity':qty,'unit_price':price}]},
+            'snapshots':{'customers':{},'products':{product_id:{'name':'Marble slab','sku':'SLAB-1'}}},
+            'fulfilled':{json.dumps([line,'l'],separators=(',',':')):shipped} if shipped else {}}
+
+def purchase_doc(doc_id,status,expected,created='2026-11-01T10:00:00+00:00'):
+    return {'id':doc_id,'kind':'purchase_order','number':'PO-'+doc_id,'status':status,'total':'500.00',
+            'created_at':created,'updated_at':created,
+            'draft':{'supplier_id':'s','currency':'INR','order_date':'2026-11-01','expected_date':expected,'items':[]},
+            'snapshots':{'suppliers':{'s':{'name':'Quarry Co'}},'products':{}},'fulfilled':{},'received':{}}
+
+def analysis_fixture():
+    tables,state=ledger_fixture()
+    tables['products'][0].update(purchase_price='6.00',min_stock='1')
+    docs=[
+        # Entered live: order date == creation date, shipped 3 days later.
+        sales_doc('live','fulfilled','2026-11-02','2026-11-02T08:00:00+00:00','2026-11-05T08:00:00+00:00',shipped=4),
+        # Backfilled: entered months after its order date; never a delivery sample.
+        sales_doc('hist','fulfilled','2026-07-10','2026-11-12T13:00:00+00:00','2026-11-12T13:00:05+00:00',shipped=4),
+        # Approved 12 days ago and not shipped: a late shipment.
+        sales_doc('late','approved','2026-11-01','2026-11-01T09:00:00+00:00','2026-11-01T09:00:00+00:00'),
+        # Pending for 5 days, needing more than the free stock.
+        sales_doc('wait','pending','2026-11-08','2026-11-08T09:00:00+00:00','2026-11-08T09:00:00+00:00',qty=9),
+        sales_doc('usd','fulfilled','2026-11-02','2026-11-02T08:00:00+00:00','2026-11-03T08:00:00+00:00',shipped=4,currency='USD'),
+        purchase_doc('po1','approved','2026-11-08'),
+        purchase_doc('po2','pending','2026-11-20'),
+    ]
+    state['state'].update(sequence=40,documents={d['id']:d for d in docs},
+        entitlements={'e1':{'id':'e1','document_id':'live','product_id':'p','quantity':4,'returned':1}},
+        requests={'r1':{'status':'pending','created_at':'2026-11-06T09:00:00+00:00',
+                        'command':{'action':'submit_return','document_id':'live','lines':[{'entitlement_id':'e1','quantity':1}]}}})
+    return tables,state
+
+def analysis_of(tables,state):
+    result=invoke({}, {'id':'u'}, tables, ledger=state, now=NOW)
+    assert result['ok'] is True
+    return result['analysis']
+
+def segment(analysis,key):
+    return next(s for s in analysis['segments'] if s['key']==key)
+
+def metric_value(seg,label):
+    return next(m['value'] for m in seg['metrics'] if m['label']==label)
+
+def test_analysis_measures_delivery_only_for_live_entered_orders():
+    a=analysis_of(*analysis_fixture())
+    assert a['delivery']['samples']==1 and a['delivery']['excluded']==1
+    assert a['delivery']['average_days']=='3.0' and a['delivery']['on_time_rate']=='100.0'
+    assert [b['count'] for b in a['delivery']['buckets']]==[0,1,0,0,0]
+    assert metric_value(segment(a,'delivery'),'No delivery date')=='1'
+    assert a['delivery']['sources']=={'recorded':0,'backfill':0,'ledger':1}
+
+def test_analysis_flags_late_shipments_against_seven_day_target():
+    a=analysis_of(*analysis_fixture())
+    assert a['targets']['delivery_days']==7
+    assert [o['number'] for o in a['delivery']['late']]==['SO-late']
+    assert a['delivery']['late'][0]['age_days']==12
+    late=[x for x in a['alerts'] if x['kind']=='late_shipment']
+    assert late and late[0]['severity']=='warning' and late[0]['link'].startswith('/orders/show/late')
+
+def test_analysis_flags_overdue_purchase_and_shortfall_and_waiting_items():
+    a=analysis_of(*analysis_fixture())
+    kinds={x['kind']:x for x in a['alerts']}
+    assert kinds['purchase_overdue']['severity']=='critical' and '5 days late' in kinds['purchase_overdue']['detail']
+    assert kinds['stock_shortfall']['detail']=='9 needed by pending orders · 3 free'
+    assert kinds['approval']['title']=='SO-wait waiting for approval'
+    assert kinds['return_waiting']['severity']=='warning'
+    assert a['alerts'][0]['severity']=='critical'
+    assert a['alert_counts']['critical']>=2
+    assert segment(a,'purchasing')['status']=='risk'
+    assert metric_value(segment(a,'purchasing'),'Overdue deliveries')=='1'
+
+def test_analysis_rates_and_trend_use_selected_currency_only():
+    a=analysis_of(*analysis_fixture())
+    assert segment(a,'returns')['value']['value']=='25.0'
+    # live 4 + hist 4 shipped of 4+4+4 confirmed units (USD order excluded).
+    assert segment(a,'fulfilment')['value']['value']=='66.7'
+    months={m['month']:m for m in a['trend']}
+    assert len(a['trend'])==6 and months['2026-07']['revenue']=='40.00' and months['2026-11']['revenue']=='40.00'
+    assert months['2026-11']['units_returned']==1
+    assert a['top_products'][0]=={'id':'p','name':'Marble','units':8,'revenue':'80.00'}
+    assert a['capacity']=={'used':41,'max':200}
+
+def test_analysis_inventory_values_use_recorded_cost_without_inventing_missing_cost():
+    tables,state=analysis_fixture()
+    a=analysis_of(tables,state)
+    inventory=segment(a,'inventory')
+    assert inventory['value']['value']=='40.00'
+    assert metric_value(inventory,'Value at cost')=='24.00' and metric_value(inventory,'Products without cost')=='0'
+    tables['products'][0]['purchase_price']=None
+    inventory=segment(analysis_of(tables,state),'inventory')
+    assert metric_value(inventory,'Value at cost')=='0.00' and metric_value(inventory,'Products without cost')=='1'
+
+def test_analysis_with_no_sales_reports_not_available_instead_of_zero():
+    tables,state=ledger_fixture()
+    state['state']['sequence']=0
+    a=analysis_of(tables,state)
+    assert segment(a,'delivery')['value']['value'] is None
+    assert segment(a,'fulfilment')['value']['value'] is None
+    assert segment(a,'returns')['status']=='none'
+
+def test_malformed_ledger_documents_make_analysis_unavailable_not_the_dashboard():
+    tables,state=analysis_fixture()
+    del state['state']['documents']['live']['created_at']
+    result=invoke({}, {'id':'u'}, tables, ledger=state, now=NOW)
+    assert result['ok'] is True and result['analysis'] is None and result['inventory_value']=='40.00'
+
+def test_ledger_capacity_alert_near_limit():
+    tables,state=analysis_fixture()
+    state['state']['sequence']=170
+    alert=next(x for x in analysis_of(tables,state)['alerts'] if x['kind']=='ledger_capacity')
+    assert alert['severity']=='warning' and alert['detail']=='171 of 200 events used'
+
+
+
+def delivery_row(document_id,delivered_on,source='backfill',org='production',row_id=None):
+    return {'id':row_id or 'd-'+document_id,'organization_id':org,'document_id':document_id,'order_number':'SO-'+document_id,
+            'order_date':'2026-07-10','delivered_on':delivered_on,'source':source,'deleted_at':None}
+
+def test_recorded_delivery_dates_measure_backfilled_orders():
+    tables,state=analysis_fixture()
+    tables['order_deliveries']=[delivery_row('hist','2026-07-16')]
+    a=analysis_of(tables,state)
+    assert a['delivery']['samples']==2 and a['delivery']['excluded']==0
+    assert a['delivery']['sources']=={'recorded':0,'backfill':1,'ledger':1}
+    assert a['delivery']['average_days']=='4.5'
+    months={m['month']:m for m in a['trend']}
+    assert months['2026-07']['avg_delivery_days']=='6.0' and months['2026-11']['avg_delivery_days']=='3.0'
+    assert months['2026-08']['avg_delivery_days'] is None
+    assert metric_value(segment(a,'delivery'),'Backfilled delivery dates')=='1'
+
+def test_recorded_delivery_date_overrides_ledger_ship_time_and_ignores_other_orgs():
+    tables,state=analysis_fixture()
+    tables['order_deliveries']=[delivery_row('live','2026-11-12',source='recorded'),delivery_row('hist','2026-07-11',org='other',row_id='x')]
+    a=analysis_of(tables,state)
+    assert a['delivery']['sources']=={'recorded':1,'backfill':0,'ledger':0}
+    assert a['delivery']['average_days']=='10.0' and a['delivery']['excluded']==1
+
+def test_deleted_delivery_rows_are_ignored():
+    tables,state=analysis_fixture()
+    row=delivery_row('hist','2026-07-16');row['deleted_at']='2026-11-13T00:00:00Z'
+    tables['order_deliveries']=[row]
+    assert analysis_of(tables,state)['delivery']['excluded']==1
+
+def test_impossible_or_duplicate_delivery_dates_make_analysis_unavailable():
+    tables,state=analysis_fixture()
+    tables['order_deliveries']=[delivery_row('hist','2026-07-01')]
+    result=invoke({}, {'id':'u'}, tables, ledger=state, now=NOW)
+    assert result['ok'] is True and result['analysis'] is None
+    tables['order_deliveries']=[delivery_row('hist','2026-07-16'),delivery_row('hist','2026-07-17',row_id='dup')]
+    assert invoke({}, {'id':'u'}, tables, ledger=state, now=NOW)['analysis'] is None
+
+def test_delivery_reads_are_scoped_to_the_ledger_organization():
+    tables,state=analysis_fixture();reads=[]
+    invoke({}, {'id':'u'}, tables, ledger=state, now=NOW, reads=reads)
+    assert [f for t,f in reads if t=='order_deliveries']==[[('organization_id','production')]]

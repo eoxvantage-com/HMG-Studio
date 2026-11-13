@@ -9,6 +9,10 @@ import WarningAmberRoundedIcon from "@mui/icons-material/WarningAmberRounded";
 import InfoRoundedIcon from "@mui/icons-material/InfoRounded";
 import { usePersonalNotifications } from "../services/notificationQueries";
 import { clearActivity, markAllActivityRead, useActivityLog, type ActivityEntry } from "../services/activityLog";
+import { useDashboard } from "../hooks/useDashboard";
+import { shortNumber } from "../services/commercePresentation";
+
+const tidy = (value: string) => value.replace(/\b([A-Z]{2,4}-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\b/gi, match => shortNumber(match));
 
 const ICONS = {
   success: <CheckCircleRoundedIcon color="success" fontSize="small" />,
@@ -37,9 +41,13 @@ export function NotificationBell() {
   const unread = usePersonalNotifications({ status: "unread", pageSize: 1 });
   const preview = usePersonalNotifications({ pageSize: 5, enabled: !!anchor });
   const activity = useActivityLog();
+  // Operations alerts come from the server dashboard analysis (same cached query as the Dashboard page).
+  const { dashboard } = useDashboard();
+  const operations = (dashboard?.analysis?.alerts ?? []).filter(alert => alert.severity !== "info");
+  const critical = dashboard?.analysis?.alert_counts.critical ?? 0;
   const unavailable = unread.failed || unread.identityUnavailable;
   const serverUnread = !unavailable && unread.page ? unread.page.total : 0;
-  const count = serverUnread + activity.unread;
+  const count = serverUnread + activity.unread + critical;
   const label = unavailable ? activity.unread ? `Notifications, ${activity.unread} new alerts` : "Notifications unavailable"
     : unread.page ? `Notifications, ${count} unread` : "Loading notifications";
   const close = () => { setAnchor(null); if (activity.unread) markAllActivityRead(); };
@@ -50,6 +58,12 @@ export function NotificationBell() {
     <Popover id="notification-preview" open={!!anchor} anchorEl={anchor} onClose={close} anchorOrigin={{ vertical: "bottom", horizontal: "right" }} transformOrigin={{ vertical: "top", horizontal: "right" }}>
       <Box role="dialog" aria-label="Notifications" sx={{ width: { xs: 320, sm: 400 }, maxWidth: "calc(100vw - 32px)", maxHeight: "70vh", overflowY: "auto" }}>
         <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ p: 2 }}><Typography variant="h6">Notifications</Typography><IconButton aria-label="Close notifications" onClick={close}><CloseRoundedIcon /></IconButton></Stack><Divider />
+        {operations.length > 0 && <>
+          <SectionTitle>Operations alerts</SectionTitle>
+          <List dense aria-label="Operations alerts">{operations.slice(0, 5).map((alert, index) => <ListItem key={`${alert.kind}-${index}`} disablePadding><ListItemButton component={RouterLink} to={alert.link} onClick={close}><ListItemIcon sx={{ minWidth: 32 }}>{alert.severity === "critical" ? ICONS.error : ICONS.warning}</ListItemIcon><ListItemText primary={tidy(alert.title)} secondary={alert.detail} /></ListItemButton></ListItem>)}</List>
+          <Button component={RouterLink} to="/?tab=alerts" size="small" onClick={close} sx={{ mx: 1, mb: 1 }}>All operations alerts ({dashboard?.analysis?.alerts.length ?? 0})</Button>
+          <Divider />
+        </>}
         <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ pr: 1 }}>
           <SectionTitle>Recent alerts</SectionTitle>
           {activity.entries.length > 0 && <Stack direction="row"><Button size="small" onClick={markAllActivityRead} disabled={!activity.unread}>Mark all read</Button><Button size="small" onClick={clearActivity}>Clear</Button></Stack>}
