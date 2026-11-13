@@ -1,63 +1,90 @@
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { Refine, type DataProvider } from "@refinedev/core";
-import { MemoryRouter } from "react-router";
+import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
+import { MemoryRouter, useLocation } from "react-router";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { ErpModulePage } from "./index";
+import fixture from "../../services/__fixtures__/commerce-ledger.json";
+import { parseCommerceState, type CommerceState } from "../../services/commerceLedger";
+import { ApprovalsPage } from "./approvals";
+import { formatMoney, shortNumber } from "../../services/commercePresentation";
 
-const getList = vi.fn();
-const mutate = vi.fn();
-const provider = { getApiUrl: () => "https://example.invalid", getList,
-  create: mutate, update: mutate, deleteOne: mutate } as unknown as DataProvider;
+const f = vi.hoisted(() => ({ read: vi.fn(), api: vi.fn(), execute: vi.fn(), legacyList: vi.fn(), state: null as CommerceState | null, unavailable: false }));
+vi.mock("@refinedev/core", () => ({
+  useGetIdentity: () => ({ data: { id: "11111111-1111-4111-8111-111111111111" }, isLoading: false, isFetching: false, isError: false }),
+  useWarnAboutChange: () => ({ warnWhen: false, setWarnWhen: vi.fn() }),
+  useNotification: () => ({ open: vi.fn() }),
+  useList: (args: Record<string, unknown>) => f.read(args),
+  useCustomMutation: () => ({ mutateAsync: f.api }),
+}));
+vi.mock("../../hooks/useCommerceLedger", () => ({ useCommerceLedger: () => ({
+  owner: "11111111-1111-4111-8111-111111111111", state: f.unavailable ? null : f.state,
+  enabled: !f.unavailable, locked: f.unavailable, pending: null, busy: false, storageBlocked: false,
+  message: f.unavailable ? "Forbidden: workflow access could not be verified." : "",
+  refresh: vi.fn(), execute: f.execute,
+}) }));
+const org = fixture.state.organization_id;
+function LocationProbe() { const location = useLocation(); return <output aria-label="Current route">{location.pathname}{location.search}</output>; }
 function mount() {
-  return render(<MemoryRouter initialEntries={["/approvals"]}><Refine dataProvider={provider}
-    notificationProvider={() => ({ open: vi.fn(), close: vi.fn() })}
-    options={{ disableTelemetry: true }}><ErpModulePage moduleKey="approvals" action="list" /></Refine></MemoryRouter>);
+  return render(<MemoryRouter initialEntries={[`/approvals?organization=${org}`]}>
+    <ApprovalsPage renderList={f.legacyList} /><LocationProbe />
+  </MemoryRouter>);
 }
-describe("read-only pending approval queues", () => {
-  beforeEach(() => { getList.mockResolvedValue({ data: [], total: 0 }); });
+
+describe("unified ledger approval workspace", () => {
+  beforeEach(() => {
+    f.read.mockReset(); f.api.mockReset(); f.execute.mockReset(); f.legacyList.mockReset(); f.unavailable = false;
+    f.state = parseCommerceState(fixture, org)!.state;
+    f.read.mockImplementation(({ resource }: { resource: string }) => ({
+      result: { data: resource === "organizations" ? [{ id: org, name: "HMG Studio", is_active: true, deleted_at: null, settings: { stock_authority: "ledger_v2" } }] : [], total: resource === "organizations" ? 1 : 0 },
+      query: { isLoading: false, isFetching: false, isError: false },
+    }));
+    f.api.mockImplementation(async ({ values }: { values: { kind: string; status?: string } }) => {
+      const documents = Object.values(f.state!.documents).filter(document => document.kind === values.kind && (!values.status || document.status === values.status));
+      return { data: { ok: true, code: "DOCUMENTS", organization_id: org, data: documents, total: documents.length, head: f.state!.head, capabilities: ["commerce_v2"] } };
+    });
+  });
   afterEach(cleanup);
-  it("filters approval state, not ordinary pending document state, on every request", async () => {
+
+  it("delegates all five normal queues to the same ledger without invoking legacy lists or writes", async () => {
     mount();
-    await waitFor(() => expect(getList).toHaveBeenCalled());
-    expect(screen.getByRole("tab", { name: "Sales orders" })).toBeTruthy();
-    for (const [params] of getList.mock.calls) {
-      expect(params.resource).toBe("orders");
-      expect(params.filters).toContainEqual({ field: "approval_status", operator: "eq", value: "pending" });
-    }
-    fireEvent.change(screen.getByRole("textbox", { name: /Search sales orders/i }), { target: { value: "SYN" } });
-    await waitFor(() => expect(getList).toHaveBeenLastCalledWith(expect.objectContaining({
-      filters: expect.arrayContaining([{ field: "approval_status", operator: "eq", value: "pending" },
-        expect.objectContaining({ operator: "or", value: expect.arrayContaining([{ field: "order_number", operator: "contains", value: "SYN" }]) })]),
-      pagination: expect.objectContaining({ currentPage: 1, pageSize: 10, mode: "server" }),
-    })));
-    expect(mutate).not.toHaveBeenCalled();
-    expect(screen.queryByRole("button", { name: /^Approve$/ })).toBeNull();
-    expect(screen.getByText(/not a reviewer-assigned queue/i)).toBeTruthy();
+    await waitFor(() => expect(f.api).toHaveBeenCalled());
+    const labels = ["Sales orders", "Purchase orders", "Returns", "Stock transfers", "Stock adjustments"];
+    expect(screen.getAllByRole("tab")).toHaveLength(5);
+    for (const label of labels) expect(screen.getByRole("tab", { name: label })).toBeTruthy();
+    expect(screen.queryByRole("tab", { name: /QA/i })).toBeNull();
+    for (const label of labels.slice(1)) fireEvent.click(screen.getByRole("tab", { name: label }));
+    expect(f.legacyList).not.toHaveBeenCalled();
+    expect(f.execute).not.toHaveBeenCalled();
+    const resources = f.read.mock.calls.map(([params]) => params.resource);
+    for (const resource of ["orders", "purchase_orders", "return_orders", "stock_transfers", "stock_adjustments", "stock_adjustment_requests"])
+      expect(resources).not.toContain(resource);
+    expect(f.api.mock.calls.every(([request]) => request.values.action === "documents" && request.method === "post" && request.dataProviderName === "app")).toBe(true);
   });
-  it("switches resource-specific queues without loading inactive tabs", async () => {
-    mount(); await screen.findByText("No sales orders yet");
-    for (const [label, resource, field] of [
-      ["Purchase orders", "purchase_orders", "approval_status"],
-      ["Stock transfers", "stock_transfers", "approval_status"],
-      ["Stock adjustment requests", "stock_adjustment_requests", "status"],
-    ]) {
-      getList.mockClear(); fireEvent.click(screen.getByRole("tab", { name: label }));
-      await waitFor(() => expect(getList).toHaveBeenCalled());
-      for (const [params] of getList.mock.calls) {
-        expect(params.resource).toBe(resource);
-        expect(params.filters).toContainEqual({ field, operator: "eq", value: "pending" });
-      }
-    }
+
+  it("requests pending sales and purchasing documents through the scoped native endpoint", async () => {
+    mount();
+    await waitFor(() => expect(f.api).toHaveBeenCalledWith(expect.objectContaining({ values: expect.objectContaining({ action: "documents", organization_id: org, kind: "sales_order", status: "pending", page: 1 }) })));
+    fireEvent.click(screen.getByRole("tab", { name: "Purchase orders" }));
+    await waitFor(() => expect(f.api).toHaveBeenCalledWith(expect.objectContaining({ values: expect.objectContaining({ action: "documents", organization_id: org, kind: "purchase_order", status: "pending", page: 1 }) })));
+    expect(f.execute).not.toHaveBeenCalled();
   });
-  it("keeps denied queues retryable instead of displaying a false empty state", async () => {
-    getList.mockRejectedValue({ message: "Forbidden", statusCode: 403 }); mount();
-    expect(await screen.findByText("Unable to load sales orders")).toBeTruthy();
-    expect(screen.getByRole("button", { name: "Try again" })).toBeTruthy();
-    expect(screen.queryByText("No sales orders yet")).toBeNull();
+
+  it("preserves organization context in normal review/edit links and shows row currency", async () => {
+    mount();
+    const pending = Object.values(f.state!.documents).find(document => document.kind === "sales_order" && document.status === "pending")!;
+    const cell = await screen.findByText(shortNumber(pending.number));
+    const row = cell.closest("tr")!;
+    expect(within(row).getByText(formatMoney(pending.total, pending.draft.currency))).toBeTruthy();
+    const review = within(row).getByRole("link", { name: "Review" });
+    expect(review.getAttribute("href")).toBe(`/orders/show/${pending.id}?organization=${org}`);
+    expect(within(row).getByRole("link", { name: "Edit" }).getAttribute("href")).toBe(`/orders/edit/${pending.id}?organization=${org}`);
+    fireEvent.click(review);
+    expect(screen.getByLabelText("Current route").textContent).toBe(`/orders/show/${pending.id}?organization=${org}`);
   });
-  it("qualifies monetary list values with their own row currency without conversion", async () => {
-    getList.mockResolvedValue({ data: [{ id: "order-1", order_number: "SYN-1", approval_status: "pending",
-      status: "processing", total: "100.00", currency: "INR" }], total: 1 });
-    mount(); expect(await screen.findByText(/100\.00 INR/)).toBeTruthy();
+
+  it("keeps an unavailable workflow retryable without claiming an empty queue", () => {
+    f.unavailable = true; mount();
+    expect(screen.getByText(/Forbidden: workflow access could not be verified/)).toBeTruthy();
+    expect(screen.getByRole("button", { name: "Refresh workflow" })).toBeTruthy();
+    expect(screen.queryByText(/No documents yet|No matching items/)).toBeNull();
+    expect(f.api).not.toHaveBeenCalled(); expect(f.execute).not.toHaveBeenCalled(); expect(f.legacyList).not.toHaveBeenCalled();
   });
 });

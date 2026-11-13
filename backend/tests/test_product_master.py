@@ -1,5 +1,7 @@
 """Offline product-master command tests; never mutate the live Taruvi app."""
 import importlib.util
+import base64
+import hashlib
 from datetime import datetime
 from pathlib import Path
 from types import SimpleNamespace
@@ -552,12 +554,253 @@ def test_update_supplied_unchanged_price_repairs_mismatched_selling_price(sdk, e
 
 
 @pytest.mark.parametrize("timespec", ["microseconds", "milliseconds"])
-def test_delete_confirms_timestamp_with_native_iso_normalization(sdk, existing_product, timespec):
+@pytest.mark.parametrize("utc_naive", [False, True])
+def test_delete_confirms_timestamp_with_native_iso_normalization(sdk, existing_product, timespec, utc_naive):
     original = sdk.database.update
     def normalized_update(*args, **kwargs):
         result = original(*args, **kwargs)
-        existing_product["deleted_at"] = datetime.fromisoformat(existing_product["deleted_at"]).isoformat(timespec=timespec).replace("+00:00", "Z")
+        existing_product["deleted_at"] = datetime.fromisoformat(existing_product["deleted_at"]).isoformat(timespec=timespec).replace("+00:00", "" if utc_naive else "Z")
         return result
     sdk.database.update = normalized_update
     assert invoke(sdk, delete_request(), ACTOR).get("deleted") is True
     assert len(sdk.database.writes) == 1
+
+
+@pytest.mark.parametrize("filename", ["product_master.py", "contact_master.py"])
+@pytest.mark.parametrize("actual,expected,allowed", [
+    ("2026-11-09T09:20:48.982000", "2026-11-09T09:20:48.982+00:00", True),
+    ("2026-11-09T09:20:48.982Z", "2026-11-09T09:20:48.982+00:00", True),
+    ("2026-11-09T04:20:48.982-05:00", "2026-11-09T09:20:48.982+00:00", True),
+    ("2026-11-09T09:20:48.982001", "2026-11-09T09:20:48.982+00:00", False),
+    ("2026-11-09", "2026-11-09T00:00:00+00:00", False),
+    ("2026-11-09T09:20", "2026-11-09T09:20:00+00:00", False),
+    ("bad timestamp", "2026-11-09T09:20:48.982+00:00", False),
+    (None, "2026-11-09T09:20:48.982+00:00", False),
+    ("2026-11-09T09:20:48.982", "2026-11-09T09:20:48.982", False),
+])
+def test_native_timestamp_exact_instant_contract(filename, actual, expected, allowed):
+    spec = importlib.util.spec_from_file_location("timestamp_command", Path(__file__).parents[1] / "functions" / filename)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    assert module.same_instant(actual, expected) is allowed
+
+
+PNG = base64.b64decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jN2kAAAAASUVORK5CYII=')
+
+
+@pytest.fixture
+def media_sdk(sdk):
+    storage = SimpleNamespace(objects={}, uploads=[], reads=[], fail_upload=False, fail_after_upload=False,
+                              fail_download=False, corrupt_download=False)
+    def upload(files, paths, metadatas):
+        assert len(files) == len(paths) == len(metadatas) == 1
+        assert files[0][0].endswith('.png')
+        data = files[0][1].read()
+        storage.uploads.append((paths[0], data, metadatas[0]))
+        if storage.fail_upload:
+            raise PermissionError('private storage error')
+        storage.objects[paths[0]] = data
+        if storage.fail_after_upload:
+            raise TimeoutError('private upload timeout')
+        return {'data': [{'path': paths[0]}]}
+    def download(path):
+        storage.reads.append(path)
+        if storage.fail_download:
+            raise PermissionError('private storage read error')
+        return b'wrong bytes' if storage.corrupt_download else storage.objects[path]
+    storage.upload, storage.download = upload, download
+    def bucket(name):
+        assert name == 'products'
+        return storage
+    sdk.storage = SimpleNamespace(from_=bucket)
+    sdk.media = storage
+    return sdk
+
+
+def image_request(**changes):
+    return request(image_upload={'content_base64': base64.b64encode(PNG).decode(), 'content_type': 'image/png'}, **changes)
+
+
+def test_product_image_create_links_only_verified_bytes(media_sdk):
+    result = invoke(media_sdk, image_request(), ACTOR)
+    path = f'hmg-products/{ORG}/{PRODUCT}/{hashlib.sha256(PNG).hexdigest()}.png'
+    assert result.get('ok') is True
+    assert result['record']['image'] == 'storage://products/' + path
+    assert media_sdk.media.objects[path] == PNG
+    assert media_sdk.media.reads == [path]
+    assert media_sdk.database.rows['products'][0]['image'] == result['record']['image']
+    assert len(media_sdk.database.writes) == 1
+
+
+def test_product_image_update_preserves_stock_and_metadata(media_sdk, existing_product):
+    result = invoke(media_sdk, image_request(action='update', values={}), ACTOR)
+    assert result.get('ok') is True
+    assert result['record']['image'].startswith('storage://products/hmg-products/' + ORG + '/' + PRODUCT + '/')
+    assert existing_product['stock'] == 12
+    assert existing_product['has_variants'] is True
+    assert set(media_sdk.database.writes[0][1]) == {'image', 'updated_at'}
+
+
+@pytest.mark.parametrize('flag', ['fail_upload', 'fail_download', 'corrupt_download'])
+def test_product_image_stage_failure_never_writes_product(media_sdk, flag):
+    setattr(media_sdk.media, flag, True)
+    result = invoke(media_sdk, image_request(), ACTOR)
+    assert result.get('code') == 'MEDIA_UNCONFIRMED'
+    assert result.get('product_write_attempted') is False
+    assert result.get('request_id') == PRODUCT
+    assert not media_sdk.database.writes
+    assert not result.get('verified')
+    assert 'private' not in str(result)
+
+
+def test_product_image_lost_upload_response_reconciles_bytes(media_sdk):
+    media_sdk.media.fail_after_upload = True
+    assert invoke(media_sdk, image_request(), ACTOR).get('ok') is True
+    assert len(media_sdk.media.uploads) == 1
+    assert len(media_sdk.database.writes) == 1
+
+
+def test_product_image_native_batch_denial_does_not_link_missing_file(media_sdk):
+    # Native storage can return HTTP success while every file is denied.
+    media_sdk.media.upload = lambda **kwargs: {
+        'uploaded_count': 0, 'failed_count': 1, 'total': 1,
+        'successful': [], 'failed': [{'index': 0, 'path': kwargs['paths'][0],
+                                     'error': 'Permission denied'}], 'message': 'Failed upload'}
+    result = invoke(media_sdk, image_request(), ACTOR)
+    assert result['code'] == 'MEDIA_UNCONFIRMED'
+    assert result['product_write_attempted'] is False
+    assert not media_sdk.database.writes
+
+
+def test_product_image_batch_success_at_wrong_path_does_not_link(media_sdk):
+    def upload(**kwargs):
+        media_sdk.media.objects['unexpected/path.png'] = PNG
+        return {'uploaded_count': 1, 'failed_count': 0, 'total': 1,
+                'successful': [{'path': 'unexpected/path.png'}], 'failed': []}
+    media_sdk.media.upload = upload
+    assert invoke(media_sdk, image_request(), ACTOR)['code'] == 'MEDIA_UNCONFIRMED'
+    assert not media_sdk.database.writes
+
+
+def test_product_image_native_batch_success_still_requires_exact_readback(media_sdk):
+    original = media_sdk.media.upload
+    def upload(**kwargs):
+        original(**kwargs)
+        return {'uploaded_count': 1, 'failed_count': 0, 'total': 1,
+                'successful': [{'path': kwargs['paths'][0]}], 'failed': []}
+    media_sdk.media.upload = upload
+    assert invoke(media_sdk, image_request(), ACTOR)['ok'] is True
+    assert len(media_sdk.database.writes) == 1
+
+
+def test_product_image_create_replay_does_not_duplicate_record(media_sdk):
+    first_result = invoke(media_sdk, image_request(), ACTOR)
+    result = invoke(media_sdk, image_request(), ACTOR)
+    assert first_result.get('ok') and result.get('ok')
+    assert result.get('replayed') is True
+    assert first_result['record']['image'] == result['record']['image']
+    assert len(media_sdk.database.writes) == 1
+
+
+def test_product_image_existing_create_media_failure_keeps_outcome_uncertain(media_sdk):
+    assert invoke(media_sdk, image_request(), ACTOR).get('ok')
+    media_sdk.media.fail_download = True
+    result = invoke(media_sdk, image_request(), ACTOR)
+    assert result.get('code') == 'READBACK_FAILED'
+    assert 'product_write_attempted' not in result
+    assert len(media_sdk.database.writes) == 1
+
+
+@pytest.mark.parametrize('payload', [
+    None, {}, {'content_base64': '!!!!', 'content_type': 'image/png'},
+    {'content_base64': base64.b64encode(b'<svg/>').decode(), 'content_type': 'image/png'},
+    {'content_base64': base64.b64encode(PNG).decode(), 'content_type': 'text/html'},
+    {'content_base64': base64.b64encode(PNG).decode(), 'content_type': 'image/jpeg'},
+    {'content_base64': base64.b64encode(PNG).decode(), 'content_type': 'image/png', 'path': '../../other'},
+    {'content_base64': 'A' * 2796205, 'content_type': 'image/png'},
+])
+def test_product_image_invalid_payload_rejected_before_io(media_sdk, payload):
+    result = invoke(media_sdk, request(image_upload=payload), ACTOR)
+    assert result.get('code') == 'VALIDATION_ERROR'
+    assert not media_sdk.media.uploads
+    assert not media_sdk.database.writes
+
+
+def test_product_image_authorization_precedes_storage(media_sdk, existing_product):
+    original = media_sdk.policy.check_resources
+    def deny_image(resources, principal):
+        result = original(resources, principal)
+        if resources[0]['resource']['attr'].get('image'):
+            result['results'][0]['actions'][resources[0]['actions'][0]] = 'EFFECT_DENY'
+        return result
+    media_sdk.policy.check_resources = deny_image
+    result = invoke(media_sdk, image_request(action='update', values={}), ACTOR)
+    assert result.get('code') == 'FORBIDDEN'
+    assert not media_sdk.media.uploads
+    assert not media_sdk.database.writes
+
+
+def test_product_image_metadata_edit_without_upload_preserves_existing_image(media_sdk, existing_product):
+    existing_product['image'] = 'storage://products/hmg-catalogue/' + 'a' * 64 + '.png'
+    result = invoke(media_sdk, request(action='update', values={'name': 'New name'}), ACTOR)
+    assert result.get('ok') is True
+    assert result['record']['image'] == existing_product['image']
+    assert not media_sdk.media.uploads
+    assert 'image' not in media_sdk.database.writes[0][1]
+
+
+@pytest.mark.parametrize('action', ['readback', 'delete'])
+def test_product_image_upload_not_accepted_on_read_or_delete(media_sdk, action):
+    payload = image_request(action=action)
+    del payload['values']
+    assert invoke(media_sdk, payload, ACTOR).get('code') == 'VALIDATION_ERROR'
+    assert not media_sdk.media.uploads
+    assert not media_sdk.database.writes
+
+
+def test_product_image_client_cannot_set_reference_directly(media_sdk):
+    payload = request()
+    payload['values']['image'] = 'storage://products/foreign/private.png'
+    assert invoke(media_sdk, payload, ACTOR).get('code') == 'VALIDATION_ERROR'
+    assert not media_sdk.media.uploads
+
+
+def test_product_image_header_only_webp_rejected_before_storage(media_sdk):
+    body = b'RIFF' + (22).to_bytes(4, 'little') + b'WEBPVP8X' + (10).to_bytes(4, 'little') + b'\x00' * 10
+    payload = request(image_upload={'content_base64': base64.b64encode(body).decode(), 'content_type': 'image/webp'})
+    assert invoke(media_sdk, payload, ACTOR).get('code') == 'VALIDATION_ERROR'
+    assert not media_sdk.media.uploads
+    assert not media_sdk.database.writes
+
+
+def test_product_image_new_payload_on_replayed_create_conflicts_without_upload(media_sdk):
+    assert invoke(media_sdk, image_request(), ACTOR).get('ok')
+    media_sdk.media.uploads.clear()
+    other = PNG[:29] + bytes([PNG[29] ^ 1]) + PNG[30:]
+    payload = request(image_upload={'content_base64': base64.b64encode(other).decode(), 'content_type': 'image/png'})
+    assert invoke(media_sdk, payload, ACTOR).get('code') == 'CONFLICT'
+    assert not media_sdk.media.uploads
+    assert len(media_sdk.database.writes) == 1
+
+
+def test_product_image_database_timeout_retains_uncertain_write_semantics(media_sdk):
+    media_sdk.database.fail_before_write = True
+    assert invoke(media_sdk, image_request(), ACTOR).get('code') == 'WRITE_UNCONFIRMED'
+    assert len(media_sdk.media.uploads) == 1
+    assert len(media_sdk.database.writes) == 1
+
+
+@pytest.mark.parametrize('reason', ['policy', 'organization', 'foreign_location', 'sku'])
+def test_product_image_create_rejection_has_no_storage_side_effect(media_sdk, reason):
+    payload = image_request()
+    if reason == 'policy':
+        media_sdk.policy.deny = True
+    elif reason == 'organization':
+        payload['organization_id'] = PRODUCT
+    elif reason == 'foreign_location':
+        payload['values']['location_id'] = PRODUCT
+    else:
+        media_sdk.database.rows['products'] = [{'id': LOCATION, 'organization_id': ORG, 'sku': payload['values']['sku']}]
+    assert not invoke(media_sdk, payload, ACTOR).get('ok')
+    assert not media_sdk.media.uploads
+    assert not media_sdk.database.writes

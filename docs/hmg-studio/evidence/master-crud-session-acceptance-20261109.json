@@ -1,0 +1,125 @@
+{
+  "status": "live_master_api_acceptance_only",
+  "passed": true,
+  "retained": true,
+  "source_sha256": "a7a512f2aeb86d079b9624af6e61a3a3b8fcc896b5d23fbfa8a8611761c88f54",
+  "source_evidence_sha256": "aea8de3db7a1fdb8031191c9636a952f53590161a1b84cfa71ccda99eccdb942",
+  "actions": [
+    {
+      "action": "product_create",
+      "ok": true,
+      "verified": true,
+      "http_status": 200
+    },
+    {
+      "action": "product_readback",
+      "ok": true,
+      "verified": true,
+      "http_status": 200
+    },
+    {
+      "action": "product_update",
+      "ok": true,
+      "verified": true,
+      "http_status": 200
+    },
+    {
+      "action": "product_readback",
+      "ok": true,
+      "verified": true,
+      "http_status": 200
+    },
+    {
+      "action": "product_delete",
+      "ok": true,
+      "verified": true,
+      "http_status": 200
+    },
+    {
+      "action": "customers_create",
+      "ok": true,
+      "verified": true,
+      "http_status": 200
+    },
+    {
+      "action": "customers_readback",
+      "ok": true,
+      "verified": true,
+      "http_status": 200
+    },
+    {
+      "action": "customers_update",
+      "ok": true,
+      "verified": true,
+      "http_status": 200
+    },
+    {
+      "action": "customers_readback",
+      "ok": true,
+      "verified": true,
+      "http_status": 200
+    },
+    {
+      "action": "customers_delete",
+      "ok": true,
+      "verified": true,
+      "http_status": 200
+    },
+    {
+      "action": "suppliers_create",
+      "ok": true,
+      "verified": true,
+      "http_status": 200
+    },
+    {
+      "action": "suppliers_readback",
+      "ok": true,
+      "verified": true,
+      "http_status": 200
+    },
+    {
+      "action": "suppliers_update",
+      "ok": true,
+      "verified": true,
+      "http_status": 200
+    },
+    {
+      "action": "suppliers_readback",
+      "ok": true,
+      "verified": true,
+      "http_status": 200
+    },
+    {
+      "action": "suppliers_delete",
+      "ok": true,
+      "verified": true,
+      "http_status": 200
+    }
+  ],
+  "logical_delete_status": {
+    "products": true,
+    "customers": true,
+    "suppliers": true
+  },
+  "denied_actions": [
+    {
+      "action": "roleless_customer_create",
+      "http_status": 403,
+      "status": "permission_denied"
+    },
+    {
+      "action": "roleless_product_command_execute",
+      "http_status": 403,
+      "status": "forbidden"
+    },
+    {
+      "action": "roleless_contact_command_execute",
+      "http_status": 403,
+      "status": "forbidden"
+    }
+  ],
+  "qa_role_status": "revoked_verified",
+  "ui_acceptance_status": "not_claimed_user_manual_testing",
+  "posting_status": "blocked_pending_atomicity",
+  "frontend_release_status": "not_uploaded_by_this_documentation_update"
+}

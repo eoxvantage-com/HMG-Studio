@@ -1,0 +1,188 @@
+{
+  "date": "2026-11-11",
+  "scope": "isolated QA only; no production cutover",
+  "site": "https://hmg-stones.taruvibase.cloud",
+  "app": "hmg-studio",
+  "organization_id": "5d61a85e-d8e4-5a2a-a861-0c1dabe2a352",
+  "function": "hmg-stock-ledger-v1",
+  "table": "stock_ledger_events",
+  "live_acceptance": {
+    "complete": true,
+    "checks": [
+      {
+        "name": "secret_denials",
+        "passed": true
+      },
+      {
+        "name": "direct_ledger_denials",
+        "passed": true
+      },
+      {
+        "name": "lost_response_replay",
+        "passed": true
+      },
+      {
+        "name": "identical_concurrent_commands",
+        "passed": true
+      },
+      {
+        "name": "competing_moves",
+        "passed": true
+      },
+      {
+        "name": "multiline_atomic_failure",
+        "passed": true
+      },
+      {
+        "name": "pending_and_concurrent_approvals",
+        "passed": true
+      },
+      {
+        "name": "reject_pending",
+        "passed": true
+      },
+      {
+        "name": "return_restock",
+        "passed": true
+      },
+      {
+        "name": "overreturn_denied",
+        "passed": true
+      },
+      {
+        "name": "nonrestock_return",
+        "passed": true
+      },
+      {
+        "name": "changed_payload_replay_denied",
+        "passed": true
+      },
+      {
+        "name": "cross_organization_denied",
+        "passed": true
+      },
+      {
+        "name": "predecessor_key_unique",
+        "passed": true,
+        "http_status": 409
+      },
+      {
+        "name": "request_key_unique",
+        "passed": true,
+        "http_status": 409
+      },
+      {
+        "name": "roleless_execution_denied",
+        "passed": true,
+        "http_status": 403
+      }
+    ],
+    "final_sequence": 11,
+    "final_qa_event_count": 12,
+    "temporary_acceptance_user_deactivated": true
+  },
+  "service_identity_runtime": {
+    "identity_matches": true,
+    "staff": null,
+    "superuser": false,
+    "checks": {
+      "ledger": {
+        "status": 200,
+        "total": 12,
+        "count": 12
+      },
+      "other_org": {
+        "status": 200,
+        "total": 0,
+        "count": 0
+      },
+      "legacy": {
+        "status": 403
+      },
+      "functions": {
+        "status": 403
+      },
+      "other_app": {
+        "status": 404
+      },
+      "upsert_existing": {
+        "status": 403
+      },
+      "bulk_update": {
+        "status": 403
+      },
+      "bulk_delete_missing": {
+        "status": 403
+      },
+      "update": {
+        "status": 403
+      },
+      "delete_missing": {
+        "status": 403
+      },
+      "cross_org_create": {
+        "status": 400
+      },
+      "valid_cross_org_create": {
+        "status": 403
+      }
+    }
+  },
+  "validation": {
+    "backend_tests_passed": 840,
+    "backend_warning_count": 1,
+    "frontend_tests_passed": 356,
+    "frontend_test_files_passed": 39,
+    "typecheck": "passed",
+    "production_build": "passed",
+    "browser_acceptance": "not performed"
+  },
+  "deployment": {
+    "complete": true,
+    "worker": "hmg-studio-hmg-site",
+    "active_build": "e043d171-b88a-40f8-8d32-1c950986d9d6",
+    "archive_sha256": "48f8c98f4aec826d7befab79279fcd02dc4c4432566f4dea8247cb218d9ba684",
+    "served_file_count": 6,
+    "local_archive_manifest_matched": true
+  },
+  "qualifications": [
+    "staff=null is unknown, not proof of non-staff status",
+    "DELETE probes used missing row IDs, not deletion of existing authoritative events",
+    "cross_org_create 400 is validation failure; valid_cross_org_create 403 is the authorization probe",
+    "Historical diagnostic NameError in acceptance receipt predates successful gateway acceptance; not a failed gateway check",
+    "No production cutover, legacy readers unchanged, no browser acceptance"
+  ],
+  "sources": [
+    ".cache/ledger-20261111/live-acceptance.json",
+    ".cache/ledger-20261111/runtime-access-result.json",
+    ".cache/ledger-20261111/hmg-studio-hmg-site-deployment.json",
+    ".cache/ledger-20261111/backend-tests-final.log",
+    ".cache/ledger-20261111/frontend-tests-final.log",
+    ".cache/ledger-20261111/typecheck-final.log",
+    ".cache/ledger-20261111/build-prepare-final.log",
+    ".cache/ledger-20261111/runtime-final.json"
+  ],
+  "final_runtime": {
+    "private_gateway_code_matches": true,
+    "code_sha256": "84dc901356a09ea31be6409de48781e8dcab713282a0807eeecf84a3f6b54dc7",
+    "diagnostics_disabled": [
+      "hmg-ledger-access-probe",
+      "hmg-ledger-diagnostic"
+    ],
+    "active_temporary_qa_users": 0,
+    "writer": {
+      "is_active": true,
+      "is_staff": null,
+      "is_superuser": false,
+      "roles": [
+        {
+          "name": "HMG Ledger Writer QA",
+          "slug": "hmg-studio-hmg-ledger-writer-qa",
+          "type": "app_role",
+          "app_slug": "hmg-studio",
+          "source": "direct"
+        }
+      ]
+    }
+  }
+}

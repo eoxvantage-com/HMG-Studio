@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { inventoryFilters, inventoryMetrics, productImageUrl, barcodeIdentity, money, primaryProductRelation, stockLocationChart } from "./inventory";
+import { inventoryFilters, inventoryMetrics, productImageUrl, barcodeIdentity, money, primaryProductRelation, stockLocationChart, inventoryAuthorityRecord } from "./inventory";
 
 describe("inventory presentation contracts", () => {
   it("sends search as one server OR with active and deletion constraints", () => {
@@ -62,4 +62,25 @@ describe("compact product relationships and stock chart scope", () => {
     expect(stockLocationChart([{ ...stock, quantity: -3 }], 1).points[0].quantity).toBe(-3);
     expect(stockLocationChart([{ ...stock, quantity: 0 }], 1).points[0].quantity).toBe(0);
   });
+});
+
+
+describe("authoritative inventory",()=>{
+ const record={id:"p",organization_id:"o",has_variants:false,tracking_type:"none",type:"standard",sku:"HMG-WEB-001",stock:999,selling_price:10};
+ it("never falls back while authority is unknown or ledger unavailable",()=>{
+  expect(inventoryMetrics(inventoryAuthorityRecord(record,undefined)).stock).toBeNull();
+  expect(inventoryMetrics(inventoryAuthorityRecord(record,{kind:"unavailable"})).stock).toBeNull();
+ });
+ it("uses complete ledger bins exclusively including a verified zero for catalogue items",()=>{
+  const authority={kind:"ledger" as const,balances:[{product_id:"p",location_id:"l",quantity:4,reserved:2}]};
+  expect(inventoryMetrics(inventoryAuthorityRecord(record,authority)).stock).toBe(4);
+  expect(inventoryMetrics(inventoryAuthorityRecord(record,{...authority,balances:[]})).stock).toBe(0);
+ });
+ it("keeps unsupported tracked stock unknown instead of zero",()=>{
+  for(const fields of [{tracking_type:"batch"},{tracking_type:"serial"},{type:"assembly"}]) expect(inventoryMetrics(inventoryAuthorityRecord({...record,...fields},{kind:"ledger",balances:[]})).stock).toBeNull();
+ });
+ it("retains explicit legacy stock but does not infer variant totals",()=>{
+  expect(inventoryMetrics(inventoryAuthorityRecord({...record,sku:"STONE"},{kind:"legacy"})).stock).toBe(999);
+  expect(inventoryMetrics(inventoryAuthorityRecord({...record,has_variants:true},{kind:"ledger",balances:[]})).stock).toBeNull();
+ });
 });

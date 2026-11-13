@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-10",
+  "status": "destination_static_previews_ready_for_manual_acceptance",
+  "source_site": "https://insurance.taruvi.cloud",
+  "destination_site": "https://hmg-stones.taruvibase.cloud",
+  "source_unchanged": true,
+  "workers": [
+    {
+      "app": "hmg-studio",
+      "worker": "hmg-studio-hmg-site",
+      "url": "https://hmg-studio-hmg-site.taruvibase.app/",
+      "active_build": "8fd44792-93ff-4221-a3c8-e87abbed2cfd",
+      "archive_sha256": "d64703970e82c68b9fa1a283f082f64dec9e80e08575d74c5244ed9c2ef8b1a0",
+      "served_file_count": 6,
+      "local_archive_manifest_matched": true
+    },
+    {
+      "app": "hmg_stones",
+      "worker": "hmg-stones-hmg-site",
+      "url": "https://hmg-stones-hmg-site.taruvibase.app/",
+      "active_build": "687ccba7-d945-4b73-b12c-466b56a504dc",
+      "archive_sha256": "d859a778eb71c07227b310c7981539648302d3ad1041212df5736944769c8a17",
+      "served_file_count": 24,
+      "local_archive_manifest_matched": true
+    }
+  ],
+  "source_snapshots": [
+    {
+      "app": "hmg-studio",
+      "verified_rows": 492,
+      "tables": 32
+    },
+    {
+      "app": "hmg_stones",
+      "verified_rows": 461,
+      "tables": 4
+    }
+  ],
+  "source_media_verified": 456,
+  "extra_stones_catalogue": {
+    "products": 110,
+    "categories": 9,
+    "unique_images": 108,
+    "organization_id": "55dcee2a-dea1-4dfc-83ee-9474f7b5815b",
+    "active": false,
+    "physical_stock_verified": false,
+    "commercial_prices_verified": false
+  },
+  "qa_input_records": 40,
+  "qa_input_tables": 15,
+  "qa_postings_executed": false,
+  "historical_users": {
+    "count": 4,
+    "active": false,
+    "app_access_count": 0
+  },
+  "pradeep_admin_roles": [
+    "hmg-studio-admin",
+    "hmg_stones-hmg-administrator"
+  ],
+  "validation": {
+    "studio_frontend_tests": 335,
+    "studio_frontend_files": 37,
+    "studio_backend_tests": 770,
+    "stones_frontend_tests": 42,
+    "stones_frontend_files": 4,
+    "typechecks": "passed_both",
+    "builds": "passed_both",
+    "browser_acceptance": "user_manual_pending"
+  },
+  "remaining": [
+    "AI secrets deferred by user",
+    "Atomic stock/return/approval posting remains gated",
+    "Dashboard includes accessible test workspaces; production-only filters deferred",
+    "Dependency remediation; static artifact review not blanket production clearance",
+    "Manual acceptance and source-write-frozen final delta reconciliation before retirement"
+  ],
+  "private_receipt_hashes": {
+    "hmg-studio-records-restore.json": "f6d32c9b191774e333a1260d8724dc8b9bb037127a0a2c6033132d8702d02b3e",
+    "hmg_stones-records-restore.json": "c8ad17d84a91ba28aab2f5382fc27cfdd79777e02bc0f4405fb2cc79c9b5aa87",
+    "studio-media-repair.json": "aaa6cc3bb542d56374baf7a760e6b39c983b9c644594640126ecc1146d2c4892",
+    "stones-gallery-readback.json": "79ea3a7e81a97ac0952f1b2fdbc9db130e9167e59609fb2b8272f23f0c79c4c1",
+    "historical-user-app-access.json": "df1bc7d04bff02f400f233dde922bde7471208fa0ae0ba4400ffe5571975d9f1",
+    "qa-inputs-restore.json": "ad6d85205c4e044fcabd2cbbd08dc6990c0a210cd21d81f43819ac6e623f09e2",
+    "stones-catalogue-reuse.json": "fb52b32c38cd5313841fd4d821d623ed774c7226efb60210b63bfc955351ddfd",
+    "pradeep-admin-assignment.json": "b3c1e9754cac7595df75978385ee72e2be42df9b0f9e51f2e98424343824a785",
+    "default-workers.json": "c79e325ee0a9fe4a6adaa8b2e3a6d77cb02ebedda95179d72efd661d23422aa2",
+    "final-live-function-checks.json": "dcf7bc9d8cbc07048cbea22e5d31e7a2dc6d2561f502c1929c64f2215a73d28f"
+  }
+}

@@ -18,7 +18,7 @@ const masterFields: Record<string, string[]> = {
   // The web product form calls `price` the selling price. The separate
   // `selling_price` column belongs to another API surface and must not create
   // a second, divergent selling-price control here.
-  products: ["organization_id", "sku", "name", "description", "price", "barcode", "barcode_type", "type", "category_id", "location_id", "currency", "notes", "purchase_price", "min_stock", "reorder_point", "reorder_quantity", "tracking_type"],
+  products: ["organization_id", "sku", "name", "description", "price", "barcode", "barcode_type", "type", "category_id", "location_id", "currency", "notes", "purchase_price", "min_stock", "reorder_point", "reorder_quantity", "tracking_type", "is_active"],
   customers: ["organization_id", "name", "code", "company_name", "contact_name", "email", "phone", "billing_address", "billing_city", "billing_state", "billing_zip_code", "billing_country", "shipping_address", "shipping_city", "shipping_state", "shipping_zip_code", "shipping_country", "tax_id", "payment_terms", "credit_limit", "currency", "notes", "is_active"],
   suppliers: ["organization_id", "name", "code", "contact_name", "email", "phone", "address", "city", "state", "zip_code", "country", "website", "payment_terms", "currency", "notes", "is_active", "rating"],
   product_locations: ["organization_id", "warehouse_id", "name", "code", "description", "aisle", "shelf", "bin", "capacity", "is_active"],
@@ -86,6 +86,7 @@ export function editableFields(resource: ErpResource, action: "create" | "edit")
   };
   return resource.schema.fields.filter(field => allowed.includes(field.name) && !(action === "edit" && (field.name === "organization_id" || (resource.name === "products" && ["currency", "type", "tracking_type"].includes(field.name)))))
     .map(field => {
+      if (["customers", "suppliers"].includes(resource.name) && field.name === "currency") return { ...field, format: "currency-code" };
       // The live supplier policy restricts ratings to 0..5; retain any tighter schema bounds.
       if (resource.name === "suppliers" && field.name === "rating") return { ...field, constraints: { ...field.constraints, minimum: Math.max(0, field.constraints?.minimum ?? 0), maximum: Math.min(5, field.constraints?.maximum ?? 5) } };
       if (resource.name !== "products") return nonnegative.includes(field.name) ? { ...field, constraints: { ...field.constraints, minimum: Math.max(0, field.constraints?.minimum ?? 0) } } : field;
@@ -108,6 +109,8 @@ export function writeBlocker(resource: ErpResource, action: "create" | "update" 
   // opening-stock posting. Never let a manifest flag enable generic table
   // writes before the verified product command is deployed and wired here.
   if (resource.name === "products" && resource.verifiedCommand !== "hmg-product-master-v1") return "Product changes require the verified product command; direct catalogue writes are unavailable.";
+  if (["customers", "suppliers"].includes(resource.name) && resource.verifiedCommand !== "hmg-contact-master-v1") return "Contact changes require the verified contact command; direct writes are unavailable.";
+  if (["product_locations", "warehouses"].includes(resource.name) && resource.verifiedCommand !== "hmg-contact-master-v1") return "Location and warehouse changes require the verified metadata command; direct table writes are unavailable.";
   return "";
 }
 const decimalPattern = /^-?\d+(?:\.\d+)?$/;

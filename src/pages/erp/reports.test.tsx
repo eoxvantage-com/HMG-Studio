@@ -8,7 +8,8 @@ vi.mock("@refinedev/core", async () => ({ ...await vi.importActual("@refinedev/c
 configure({ asyncUtilTimeout: 5000 }); vi.setConfig({ testTimeout: 15000 });
 const org = "33333333-3333-4333-8333-333333333333";
 const getList = vi.fn();
-const provider = { getApiUrl: () => "https://example.invalid", getList } as unknown as DataProvider;
+const provider = { getApiUrl: () => "https://example.invalid", getList,
+  getOne: async ({ id }: { id: string }) => ({ data: { id, is_active: true, deleted_at: null, settings: {} } }) } as unknown as DataProvider;
 const tree = () => <MemoryRouter><Refine dataProvider={provider} options={{ disableTelemetry: true }}><ReportsWorkspace /></Refine></MemoryRouter>;
 beforeEach(() => {
   auth.data.id = "11111111-1111-4111-8111-111111111111"; auth.isLoading = false; auth.isFetching = false; auth.isError = false;

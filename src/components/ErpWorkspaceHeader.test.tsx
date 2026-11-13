@@ -5,11 +5,11 @@ import { ErpWorkspaceHeader } from "./ErpWorkspaceHeader";
 vi.mock("./NotificationBell", () => ({ NotificationBell: () => <button aria-label="Notifications" /> }));
 afterEach(cleanup);
 describe("ERP workspace header", () => {
-  it("shows route context, demonstration provenance and account link", () => {
+  it("shows route context and account link without a demonstration label", () => {
     render(<MemoryRouter initialEntries={["/categories"]}><ErpWorkspaceHeader /></MemoryRouter>);
     expect(screen.getByText("Categories")).toBeTruthy();
     expect(screen.getByRole("button", { name: "Notifications" })).toBeTruthy();
-    expect(screen.getByText("Demonstration workspace")).toBeTruthy();
+    expect(screen.queryByText("Demonstration workspace")).toBeNull();
     expect(screen.getByRole("link", { name: "Account preferences" }).getAttribute("href")).toBe("/settings/account");
   });
   it("opens the same complete navigation on mobile", () => {

@@ -1,0 +1,18 @@
+{
+  "site": "insurance",
+  "app": "hmg-studio",
+  "worker": "hmg-studio",
+  "url": "https://hmg-studio.taruvibase.app/",
+  "activeBuild": "1385c6ff-b7f6-4946-99f7-c0f0c52c5954",
+  "buildStatus": "completed",
+  "manifestMatched": true,
+  "verifiedFiles": [
+    "assets/index-BxLdldLr.css",
+    "assets/index-C-Ha1nZY.js",
+    "brand/hmg-stones-logo.webp",
+    "brand/PROVENANCE.md",
+    "favicon.ico",
+    "index.html"
+  ],
+  "verifiedAt": "2026-11-09T14:53:12.452Z"
+}

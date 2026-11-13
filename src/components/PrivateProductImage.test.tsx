@@ -10,6 +10,12 @@ const source = `storage://products/hmg-catalogue/${"a".repeat(64)}.jpg`;
 beforeEach(() => { identityError = false; owner = "11111111-1111-4111-8111-111111111111"; getOne.mockReset(); getOne.mockResolvedValue({ data: new Blob(["photo"], { type: "image/jpeg" }) }); URL.createObjectURL = vi.fn(() => "blob:local-photo"); URL.revokeObjectURL = vi.fn(); });
 afterEach(cleanup);
 describe("private product media", () => {
+  it("downloads a new scoped product upload through the same private provider", async () => {
+    const path = `hmg-products/${owner}/${owner}/${"b".repeat(64)}.png`;
+    render(<PrivateProductImage source={`storage://products/${path}`} alt="New marble" />);
+    expect(await screen.findByAltText("New marble")).toBeTruthy();
+    expect(getOne).toHaveBeenCalledWith({ resource: "products", id: path });
+  });
   it("revokes a previously visible image when identity refresh fails", async () => {
     const view = render(<PrivateProductImage source={source} alt="Marble" />);
     await screen.findByAltText("Marble");
@@ -48,4 +54,11 @@ describe("private product media", () => {
     resolve({ data: new Blob(["photo"], { type: "image/jpeg" }) });
     await waitFor(() => expect(screen.queryByAltText("Marble")).toBeNull()); expect(URL.createObjectURL).not.toHaveBeenCalled();
   });
+});
+
+it("reads approved migrated product images through authenticated storage", async () => {
+  const path = `migration-b6cc3e51248d4cfe91f8dfcfc8fcea41/hmg-catalogue/${"c".repeat(64)}.jpg`;
+  render(<PrivateProductImage source={`storage://products/${path}`} alt="Migrated marble" />);
+  expect(await screen.findByAltText("Migrated marble")).toBeTruthy();
+  expect(getOne).toHaveBeenCalledWith({resource:"products",id:path});
 });

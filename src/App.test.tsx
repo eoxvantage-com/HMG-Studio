@@ -47,10 +47,6 @@ vi.mock("./providers/refineProviders", () => ({
   },
   taruviAccessControlProvider: harness.accessControl,
 }));
-vi.mock("@refinedev/devtools", () => ({
-  DevtoolsPanel: () => null,
-  DevtoolsProvider: ({ children }: PropsWithChildren) => children,
-}));
 vi.mock("@refinedev/kbar", () => ({
   RefineKbar: () => null,
   RefineKbarProvider: ({ children }: PropsWithChildren) => children,

@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-11",
+  "site": "https://hmg-stones.taruvibase.cloud",
+  "deployments": {
+    "hmg-studio": {
+      "url": "https://hmg-studio-hmg-site.taruvibase.app/",
+      "build": "4ef96eec-9af9-4059-b0de-47c21d8b0bfa",
+      "served_files_verified": 6,
+      "archive_sha256": "cfeca05b4aa16f438680adbe84d85c9fe919a3018d08367f7f22e7006c9322f0"
+    },
+    "hmg_stones": {
+      "url": "https://hmg-stones-hmg-site.taruvibase.app/",
+      "build": "4666f39c-2430-4917-b4a8-58f50ec149f2",
+      "served_files_verified": 24,
+      "archive_sha256": "93c733bd2d91691c31ba5952afbfa434a3b1d75305116e7c3abf7ba786680652"
+    }
+  },
+  "dashboard": {
+    "code_sha256": "0adf23f1ac87ad4605fb6bb8de7a7e806abe878c91e3442c46e499d667fe9489",
+    "datasets": {
+      "production": {
+        "product_count": 0,
+        "order_count": 0,
+        "inventory_value": "0.00",
+        "unclassified_organizations": 0,
+        "catalogue_quality": {
+          "total": 110,
+          "inactive": 110,
+          "missing_selling_price": 110,
+          "missing_image": 0
+        }
+      },
+      "test": {
+        "product_count": 23,
+        "order_count": 22,
+        "inventory_value": "3430050.00",
+        "unclassified_organizations": 0,
+        "catalogue_quality": {
+          "total": 286,
+          "inactive": 263,
+          "missing_selling_price": 263,
+          "missing_image": 19
+        }
+      }
+    }
+  },
+  "dependency_audits": {
+    "studio": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "stones": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "stones-baseline": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    }
+  },
+  "tests": {
+    "studio_frontend": 340,
+    "studio_backend": 780,
+    "deployment": 12,
+    "stones_release_baseline": 42,
+    "stones_dirty_tree_transport_recheck": 31
+  },
+  "secret_type_created": "hmg-api-key",
+  "secret_values_read_or_migrated": false,
+  "manual_ui_acceptance": "pending user",
+  "stock_return_approval_posting": "blocked: no supported cross-table atomic transaction primitive",
+  "source_insurance_modified": false,
+  "remaining": [
+    "AI secrets require correct app, names and api_key field; provider verification remains pending",
+    "all-or-nothing stock posting capability",
+    "manual UI acceptance",
+    "source-write-frozen delta reconciliation before source retirement"
+  ]
+}

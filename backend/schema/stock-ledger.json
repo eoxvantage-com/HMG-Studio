@@ -1,0 +1,32 @@
+{
+  "name": "hmg_studio_stock_ledger",
+  "app_slug": "hmg-studio",
+  "resources": [
+    {
+      "name": "stock_ledger_events",
+      "title": "Atomic Stock Ledger Events",
+      "description": "Append-only organization-scoped command events. One event contains all stock, reservation, return, and approval effects; browser and caller writes are denied by policy.",
+      "schema_format": "frictionless",
+      "provider_type": "flat_table",
+      "audit_enabled": true,
+      "schema": {
+        "fields": [
+          { "name": "id", "type": "string", "format": "uuid", "constraints": { "required": true } },
+          { "name": "organization_id", "type": "string", "format": "uuid", "constraints": { "required": true } },
+          { "name": "sequence", "type": "integer", "constraints": { "required": true, "minimum": 0 } },
+          { "name": "predecessor_key", "type": "string", "constraints": { "required": true, "unique": true, "minLength": 1, "maxLength": 255 } },
+          { "name": "request_key", "type": "string", "constraints": { "required": true, "unique": true, "minLength": 1, "maxLength": 255 } },
+          { "name": "event", "type": "object", "constraints": { "required": true } },
+          { "name": "created_at", "type": "datetime", "constraints": { "required": true } }
+        ],
+        "primaryKey": ["id"],
+        "foreignKeys": [
+          { "fields": ["organization_id"], "reference": { "resource": "hmg_studio_organizations", "fields": ["id"] }, "x-actions": { "onDelete": "RESTRICT" } }
+        ],
+        "indexes": [
+          { "name": "ledger_org_sequence", "fields": ["organization_id", "sequence"], "unique": true }
+        ]
+      }
+    }
+  ]
+}

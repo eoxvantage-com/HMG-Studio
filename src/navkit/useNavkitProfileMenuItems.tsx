@@ -1,5 +1,6 @@
 import { useMemo } from "react";
-import type { ProfileMenuItem } from "@taruvi/navkit";
+// Import the type without pulling Navkit's React 19 component sources into this React 18 app.
+import type { ProfileMenuItem } from "@taruvi/navkit/src/types";
 import ManageAccountsRoundedIcon from "@mui/icons-material/ManageAccountsRounded";
 import { useNavigate } from "react-router";
 

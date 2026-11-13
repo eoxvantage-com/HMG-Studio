@@ -360,6 +360,9 @@
     {
       "name": "customers",
       "title": "Customers",
+      "writeAuthorizationVerified": true,
+      "verifiedWriteActions": ["create", "update", "delete"],
+      "verifiedCommand": "hmg-contact-master-v1",
       "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
       "schema": {
         "fields": [
@@ -4161,6 +4164,9 @@
     {
       "name": "product_locations",
       "title": "Product Locations",
+      "writeAuthorizationVerified": true,
+      "verifiedWriteActions": ["create", "update"],
+      "verifiedCommand": "hmg-contact-master-v1",
       "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
       "schema": {
         "fields": [
@@ -4994,6 +5000,9 @@
     {
       "name": "products",
       "title": "Products",
+      "writeAuthorizationVerified": true,
+      "verifiedWriteActions": ["create", "update", "delete"],
+      "verifiedCommand": "hmg-product-master-v1",
       "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
       "schema": {
         "fields": [
@@ -10026,6 +10035,9 @@
     {
       "name": "suppliers",
       "title": "Suppliers",
+      "writeAuthorizationVerified": true,
+      "verifiedWriteActions": ["create", "update", "delete"],
+      "verifiedCommand": "hmg-contact-master-v1",
       "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
       "schema": {
         "fields": [
@@ -10920,6 +10932,9 @@
     {
       "name": "warehouses",
       "title": "Warehouses",
+      "writeAuthorizationVerified": true,
+      "verifiedWriteActions": ["create", "update"],
+      "verifiedCommand": "hmg-contact-master-v1",
       "description": "HMG Studio ERP business schema; source declaration facts independently mapped to Taruvi.",
       "schema": {
         "fields": [

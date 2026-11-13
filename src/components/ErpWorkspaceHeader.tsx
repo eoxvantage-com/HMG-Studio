@@ -1,4 +1,4 @@
-import { Box, Breadcrumbs, Chip, IconButton, Link as MuiLink, Stack, Tooltip, Typography } from "@mui/material";
+import { Box, Breadcrumbs, IconButton, Link as MuiLink, Stack, Tooltip, Typography } from "@mui/material";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import { Link, useLocation } from "react-router";
@@ -17,7 +17,6 @@ export function ErpWorkspaceHeader() {
       <Breadcrumbs separator="›" aria-label="Workspace breadcrumb"><MuiLink component={Link} to="/" underline="hover" color="text.secondary">Workspace</MuiLink><Typography variant="caption" color="text.primary">{label}</Typography></Breadcrumbs>
     </Stack>
     <Stack direction="row" alignItems="center" spacing={1}>
-      <Chip size="small" variant="outlined" label="Demonstration workspace" sx={{ display: { xs: "none", sm: "inline-flex" }, fontWeight: 400, letterSpacing: 0 }} />
       <NotificationBell />
       <Tooltip title="Account preferences"><IconButton component={Link} to="/settings/account" aria-label="Account preferences"><AccountCircleRoundedIcon fontSize="small" /></IconButton></Tooltip>
     </Stack>

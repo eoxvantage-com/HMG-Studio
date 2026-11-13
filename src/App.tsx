@@ -1,12 +1,11 @@
 import { Authenticated, Refine } from "@refinedev/core";
-import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 
 import {
   ErrorComponent,
   RefineSnackbarProvider,
-  useNotificationProvider,
 } from "@refinedev/mui";
+import { useRecordingNotificationProvider } from "./providers/notificationProvider";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import GlobalStyles from "@mui/material/GlobalStyles";
@@ -61,8 +60,7 @@ const SessionLoading = () => (
 );
 
 const AppContent = () => (
-  <RefineSnackbarProvider>
-    <DevtoolsProvider>
+  <RefineSnackbarProvider maxSnack={4} autoHideDuration={7000} preventDuplicate>
       <Refine
         dataProvider={{
           default: taruviDataProvider,
@@ -70,7 +68,7 @@ const AppContent = () => (
           app: taruviAppProvider,
           user: taruviUserProvider,
         }}
-        notificationProvider={useNotificationProvider}
+        notificationProvider={useRecordingNotificationProvider}
         routerProvider={routerProvider}
         authProvider={taruviAuthProvider}
         accessControlProvider={taruviAccessControlProvider}
@@ -119,8 +117,6 @@ const AppContent = () => (
           </Route>
         </Routes>
       </Refine>
-      <DevtoolsPanel />
-    </DevtoolsProvider>
   </RefineSnackbarProvider>
 );
 

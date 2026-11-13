@@ -1,113 +1,135 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useCustom } from "@refinedev/core";
-import { useEffect } from "react";
-import { Accordion, AccordionDetails, AccordionSummary, Alert, Box, Button, Card, CardActionArea, CardContent, Chip, Divider, LinearProgress, Link, MenuItem, Skeleton, Stack, Table, TableBody, TableCell, TableHead, TableRow, TextField, Typography } from "@mui/material";
+import { Link as RouterLink } from "react-router";
+import { Accordion, AccordionDetails, AccordionSummary, Alert, Box, Button, Card, CardActionArea, CardContent, Chip, IconButton, LinearProgress, Link, MenuItem, Skeleton, Stack, Table, TableBody, TableCell, TableHead, TableRow, TextField, Tooltip, Typography } from "@mui/material";
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 import ArrowOutwardRoundedIcon from "@mui/icons-material/ArrowOutwardRounded";
+import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
 import RefreshRoundedIcon from "@mui/icons-material/RefreshRounded";
+import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import { PageContainer } from "../../components/PageContainer";
 import { parseDashboard, type Dashboard } from "../../services/dashboard";
 import { getDashboardRate, type DashboardCurrency, type DashboardRate } from "../../services/dashboardCurrency";
+import { shortNumber, statusColor, statusLabel } from "../../services/commercePresentation";
 
-const meta={kind:"function",async:false} as const;
-const queryOptions={retry:false,refetchOnWindowFocus:true};
-// The server parameter selects a ledger, not a presentation currency.
-const dashboardConfig={payload:{currency:"INR"}};
-const dateFormat=new Intl.DateTimeFormat("en-US",{month:"short",day:"2-digit",year:"numeric",timeZone:"UTC"});
-const orderStatusColor = (status: string) => {
- if (status === "pending") return "warning";
- if (status === "shipped" || status === "delivered" || status === "completed") return "success";
- if (status === "cancelled") return "error";
- if (status === "processing" || status === "confirmed") return "info";
- return "default";
-};
-function PanelHeading({title,href,action}:{title:string;href?:string;action?:string}){
- return <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={2} sx={{pb:2,mb:2,borderBottom:1,borderColor:"divider"}}>
-   <Typography variant="h5" component="h2">{title}</Typography>{href&&<Link href={href} underline="hover" variant="body2" sx={{flexShrink:0,display:"inline-flex",alignItems:"center",minHeight:44}}>{action}<ArrowOutwardRoundedIcon sx={{fontSize:16,ml:.5}}/></Link>}
- </Stack>;
+const meta = { kind: "function", async: false } as const;
+const queryOptions = { retry: false, refetchOnWindowFocus: true };
+const dateFormat = new Intl.DateTimeFormat("en-US", { month: "short", day: "2-digit", year: "numeric", timeZone: "UTC" });
+const monthLabel = (month: string) => new Date(`${month}-01T00:00:00Z`).toLocaleDateString("en-IN", { month: "short", year: "numeric", timeZone: "UTC" });
+
+function PanelHeading({ title, subtitle, href, action }: { title: string; subtitle?: string; href?: string; action?: string }) {
+  return <Stack direction="row" alignItems="flex-start" justifyContent="space-between" spacing={2} sx={{ mb: 2 }}>
+    <Box><Typography variant="h5" component="h2">{title}</Typography>{subtitle && <Typography variant="caption" color="text.secondary">{subtitle}</Typography>}</Box>
+    {href && <Link component={RouterLink} to={href} underline="hover" variant="body2" sx={{ flexShrink: 0, display: "inline-flex", alignItems: "center", minHeight: 32 }}>{action}<ArrowOutwardRoundedIcon sx={{ fontSize: 16, ml: .5 }} /></Link>}
+  </Stack>;
 }
-export const Home=()=>{
- const [currency,setCurrency]=useState<DashboardCurrency>("INR");
- const {result,query}=useCustom<Dashboard>({url:"hmg-dashboard-v1",method:"post",dataProviderName:"app",meta,config:dashboardConfig,queryOptions,errorNotification:false});
- const projection=parseDashboard(result?.data);
- const d=projection?.currency==="INR" ? projection : null;
- const [fx,setFx]=useState<{currency:DashboardCurrency;status:"loading"|"ready"|"error";value?:DashboardRate}>({currency:"INR",status:"ready"});
- const [rateAttempt,setRateAttempt]=useState(0);
- const canConvert=Boolean(d)&&!query.isError&&!query.isLoading;
- useEffect(()=>{
-  if(currency==="INR"||!canConvert)return;
-  const controller=new AbortController();let active=true;
-  setFx({currency,status:"loading"});
-  void getDashboardRate(currency,controller.signal).then(value=>{
-   if(active)setFx({currency,status:"ready",value});
-  }).catch(()=>{if(active)setFx({currency,status:"error"});});
-  // Refresh public data while open; a failed refresh never keeps stale amounts.
-  const refresh=setTimeout(()=>{setFx({currency,status:"loading"});setRateAttempt(n=>n+1);},300_000);
-  return ()=>{active=false;controller.abort();clearTimeout(refresh);};
- },[currency,canConvert,rateAttempt]);
- const currentFx=fx.currency===currency?fx:null;
- const rate=currency==="INR"?1:currentFx?.status==="ready"?currentFx.value?.rate:undefined;
- const moneyFormat=useMemo(()=>new Intl.NumberFormat("en-IN",{style:"currency",currency,maximumFractionDigits:2}),[currency]);
- const compactMoneyFormat=useMemo(()=>new Intl.NumberFormat("en-IN",{style:"currency",currency,maximumFractionDigits:1,notation:"compact"}),[currency]);
- const money=(value:string|number,compact=false)=>{
-  const converted=rate===undefined?NaN:Number(value)*rate;
-  return Number.isFinite(converted)?(compact?compactMoneyFormat:moneyFormat).format(converted):"Amount unavailable";
- };
- const title=<Stack direction={{xs:"column",sm:"row"}} spacing={2} justifyContent="space-between" alignItems={{xs:"stretch",sm:"center"}}>
-  <Box><Typography variant="caption" color="text.secondary">Workspace overview</Typography><Typography variant="h2" component="h1" sx={{mt:.5}}>Dashboard</Typography><Typography variant="body2" color="text.secondary" sx={{mt:.75}}>Inventory, orders and financial priorities.</Typography></Box>
-  <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" alignItems="center">
-   {d?.generated_at&&<Typography variant="caption" color="text.secondary" sx={{display:{xs:"none",lg:"block"},mr:1}}>{dateFormat.format(new Date(d.generated_at))}</Typography>}
-   <TextField select size="small" label="Display currency" value={currency} onChange={e=>{if(["INR","USD","EUR"].includes(e.target.value)){const next=e.target.value as DashboardCurrency;setFx({currency:next,status:"loading"});setCurrency(next);}}} sx={{minWidth:150}}>{["INR","USD","EUR"].map(c=><MenuItem key={c} value={c}>{c}</MenuItem>)}</TextField>
-   <Button variant="outlined" startIcon={<RefreshRoundedIcon/>} onClick={()=>void query.refetch()} disabled={query.isFetching}>Refresh</Button>
-   <Button href="/orders" variant="contained" endIcon={<ArrowOutwardRoundedIcon/>}>Orders</Button>
-  </Stack>
- </Stack>;
- if(query.isLoading)return <PageContainer><Stack spacing={3}>{title}<Skeleton variant="rounded" height={120}/><Skeleton variant="rounded" height={160}/><Skeleton variant="rounded" height={280}/></Stack></PageContainer>;
- if(query.isError||!d?.ok)return <PageContainer><Stack spacing={3}>{title}<Alert severity="warning" action={<Button onClick={()=>void query.refetch()}>Retry</Button>}>Dashboard data unavailable</Alert><Typography color="text.secondary">Taruvi could not return the complete authorized projection. No totals have been substituted. You can still open modules from the sidebar.</Typography></Stack></PageContainer>;
- const tiles=[
-  {label:"Total Products",value:String(d.product_count),context:`${d.category_count} Categories · ${d.location_count} Locations`,href:"/inventory"},
-  {label:"Inventory Value",value:money(d.inventory_value,true),context:`at selling price · ${currency}`,href:"/inventory"},
-  {label:"Pending Orders",value:String(d.pending_orders),context:`${d.order_count} Orders · all time`,href:"/orders"},
-  {label:"Revenue This Month",value:money(d.revenue_month,true),context:`Shipped / delivered · ${currency}`,href:"/orders"},
- ];
- return <PageContainer><Stack spacing={2.5}>
-  {title}
-  <Box aria-live="polite">
-   {currency==="INR"?<Alert severity="info">INR ledger · Recorded INR amounts. Counts and records are restricted to this ledger; other currency ledgers are not included.</Alert>:
-    currentFx?.status==="ready"?<Alert severity="info">INR ledger · Display currency {currency} · Reference date {currentFx.value?.date}. Indicative conversion only, not an accounting rate. Source: <Link href="https://frankfurter.dev/" target="_blank" rel="noopener noreferrer">Frankfurter (ECB)</Link>. Counts and records remain unchanged.</Alert>:
-    currentFx?.status==="error"?<Alert severity="warning" action={<Button onClick={()=>{setFx({currency,status:"loading"});setRateAttempt(n=>n+1);}}>Retry rate</Button>}>INR ledger · {currency} reference rate unavailable. Amounts are unavailable; counts and records remain unchanged.</Alert>:
-    <Alert severity="info" aria-busy="true">INR ledger · Loading {currency} reference rate. Amounts are unavailable; counts and records remain unchanged.</Alert>}
-  </Box>
-  {query.isFetching&&<LinearProgress aria-label="Refreshing dashboard"/>}
-  <Box aria-label="Key performance indicators" sx={{display:"grid",gap:2,gridTemplateColumns:{xs:"minmax(0,1fr)",sm:"repeat(2,minmax(0,1fr))",xl:"repeat(4,minmax(0,1fr))"}}}>
-   {tiles.map(tile=><Card key={tile.label}><CardActionArea href={tile.href} aria-label={`${tile.label}: ${tile.value}. ${tile.context}`} sx={{height:"100%","&:focus-visible":{outlineOffset:-3}}}><CardContent><Typography variant="body2" color="text.secondary">{tile.label}</Typography><Typography variant="h2" component="p" sx={{my:1.5,fontVariantNumeric:"tabular-nums"}}>{tile.value}</Typography><Typography variant="caption" color="text.secondary">{tile.context}</Typography></CardContent></CardActionArea></Card>)}
-  </Box>
-  <Card><CardContent><PanelHeading title="Replenishment" href="/inventory" action="View inventory"/>
-   {!d.low_stock.length?<Stack alignItems="center" sx={{py:3}}><Typography color="text.secondary">{d.product_count ? "All products are well stocked" : "No products in the INR ledger yet"}</Typography><Typography variant="caption" color="text.secondary">Based on current stock and minimum quantities.</Typography></Stack>:
-   <Box sx={{overflowX:"auto"}}><Table size="small"><TableHead><TableRow><TableCell>Product</TableCell><TableCell>SKU</TableCell><TableCell align="right">Stock</TableCell><TableCell align="right">Minimum</TableCell><TableCell align="right">Action</TableCell></TableRow></TableHead><TableBody>{d.low_stock.map(p=><TableRow key={p.id}><TableCell>{p.name}</TableCell><TableCell>{p.sku}</TableCell><TableCell align="right">{p.stock}</TableCell><TableCell align="right">{p.minimum}</TableCell><TableCell align="right"><Link href={`/inventory/show/${p.id}`}>View product</Link></TableCell></TableRow>)}</TableBody></Table><Typography variant="caption" color="text.secondary">{d.low_stock_count} products at or below minimum stock</Typography></Box>}
-  </CardContent></Card>
-  <Box sx={{display:"grid",gridTemplateColumns:{xs:"minmax(0,1fr)",lg:"repeat(2,minmax(0,1fr))"},gap:2}}>
-   <Card sx={{gridColumn:"1 / -1",minWidth:0}}><CardContent><PanelHeading title="Recent Orders" href="/orders" action="All orders"/>
-    <Box sx={{overflowX:"auto"}}><Table size="small"><TableHead><TableRow><TableCell>Order / Customer</TableCell><TableCell>Status</TableCell><TableCell>Date</TableCell><TableCell align="right">Total</TableCell></TableRow></TableHead><TableBody>
-     {d.recent_orders.map(o=><TableRow key={o.id}><TableCell><Link href={`/orders/show/${o.id}`}>{o.order_number}</Link><Typography variant="caption" component="div" color="text.secondary">{o.customer_name}</Typography></TableCell><TableCell><Chip size="small" label={o.status} color={orderStatusColor(o.status)}/></TableCell><TableCell sx={{whiteSpace:"nowrap"}}>{o.order_date?dateFormat.format(new Date(o.order_date)):"Not recorded"}</TableCell><TableCell align="right" sx={{whiteSpace:"nowrap",fontVariantNumeric:"tabular-nums"}}>{money(o.total)}</TableCell></TableRow>)}
-     {!d.recent_orders.length&&<TableRow><TableCell colSpan={4}>No orders in the INR ledger yet.</TableCell></TableRow>}
-    </TableBody></Table></Box><Typography variant="caption" color="text.secondary">{d.recent_orders.length} / {d.order_count} Orders</Typography>
-   </CardContent></Card>
-   <Card><CardContent><PanelHeading title="Stock Value by Category"/><Typography variant="caption" color="text.secondary">at selling price · {currency}</Typography>
-    <Stack spacing={2.5} sx={{mt:2}}>{d.stock_by_category.map(c=><Box key={c.name}><Stack direction="row" justifyContent="space-between" spacing={1}><Typography variant="body2" sx={{overflowWrap:"anywhere"}}>{c.name}</Typography><Typography variant="body2" sx={{fontVariantNumeric:"tabular-nums",flexShrink:0}}>{money(c.value)}</Typography></Stack><LinearProgress aria-label={`${c.name} share of stock value`} variant="determinate" value={Number(d.inventory_value)>0?Math.max(0,Math.min(100,Number(c.value)/Number(d.inventory_value)*100)):0} sx={{mt:1}}/></Box>)}
-     {!d.stock_by_category.length&&<Typography color="text.secondary">No stock value available.</Typography>}</Stack>
-    <Divider sx={{my:2}}/><Stack direction="row" justifyContent="space-between"><Typography variant="caption">{d.product_count} products · {currency}</Typography><Typography variant="caption">{money(d.inventory_value)}</Typography></Stack>
-   </CardContent></Card>
-   <Card><CardContent><PanelHeading title="Financial watch" href="/reports" action="Reports"/>
-    <Typography variant="caption" color="text.secondary">Outstanding order balances</Typography><Typography variant="h4" component="p" sx={{my:1,fontVariantNumeric:"tabular-nums"}}>{money(d.receivables,true)}</Typography><Typography variant="caption" color="text.secondary">Non-cancelled orders less payments · {currency}</Typography>
-    <Divider sx={{my:2}}/><Typography variant="h6" component="h3" sx={{mb:2}}>Quick Actions</Typography>
-    <Box sx={{display:"grid",gridTemplateColumns:{xs:"minmax(0,1fr)",sm:"repeat(2,minmax(0,1fr))"},gap:2}}>
-     {[["Add Product","/inventory/create"],["Stock Adjustments","/stock-adjustments"],["Stock Transfers","/stock-transfers"],["Import / Export","/import-export"]].map(([label,href])=><Button key={href} href={href} variant="outlined" endIcon={<ArrowOutwardRoundedIcon/>} sx={{justifyContent:"space-between",minHeight:44,textAlign:"left"}}>{label}</Button>)}
+function Kpi({ label, value, context, href, tone }: { label: string; value: string; context: string; href: string; tone?: "error" | "success" }) {
+  return <Card><CardActionArea component={RouterLink} to={href} aria-label={`${label}: ${value}. ${context}`} sx={{ height: "100%", "&:focus-visible": { outlineOffset: -3 } }}><CardContent>
+    <Stack direction="row" justifyContent="space-between" alignItems="center"><Typography variant="body2" color="text.secondary">{label}</Typography><ChevronRightRoundedIcon fontSize="small" color="disabled" /></Stack>
+    <Typography variant="h2" component="p" sx={{ my: 1.25, fontVariantNumeric: "tabular-nums", color: tone ? `${tone}.main` : undefined }}>{value}</Typography>
+    <Typography variant="caption" color="text.secondary">{context}</Typography>
+  </CardContent></CardActionArea></Card>;
+}
+
+export const Home = () => {
+  const [currency, setCurrency] = useState<DashboardCurrency>("INR");
+  // One HMG Stones workspace: the dashboard combines every active business organization.
+  const dataset = "all" as const;
+  const dashboardConfig = useMemo(() => ({ payload: { currency: "INR", dataset } }), []);
+  const { result, query } = useCustom<Dashboard>({ url: "hmg-dashboard-v1", method: "post", dataProviderName: "app", meta, config: dashboardConfig, queryOptions, errorNotification: false });
+  const projection = parseDashboard(result?.data);
+  const d = projection?.currency === "INR" && projection.dataset === dataset ? projection : null;
+  const [fx, setFx] = useState<{ currency: DashboardCurrency; status: "loading" | "ready" | "error"; value?: DashboardRate }>({ currency: "INR", status: "ready" });
+  const [rateAttempt, setRateAttempt] = useState(0);
+  const canConvert = Boolean(d) && !query.isError && !query.isLoading;
+  useEffect(() => {
+    if (currency === "INR" || !canConvert) return;
+    const controller = new AbortController(); let active = true;
+    setFx({ currency, status: "loading" });
+    void getDashboardRate(currency, controller.signal).then(value => { if (active) setFx({ currency, status: "ready", value }); }).catch(() => { if (active) setFx({ currency, status: "error" }); });
+    // Refresh public data while open; a failed refresh never keeps stale amounts.
+    const refresh = setTimeout(() => { setFx({ currency, status: "loading" }); setRateAttempt(n => n + 1); }, 300_000);
+    return () => { active = false; controller.abort(); clearTimeout(refresh); };
+  }, [currency, canConvert, rateAttempt]);
+  const currentFx = fx.currency === currency ? fx : null;
+  const rate = currency === "INR" ? 1 : currentFx?.status === "ready" ? currentFx.value?.rate : undefined;
+  const moneyFormat = useMemo(() => new Intl.NumberFormat("en-IN", { style: "currency", currency, maximumFractionDigits: 2 }), [currency]);
+  const compactMoneyFormat = useMemo(() => new Intl.NumberFormat("en-IN", { style: "currency", currency, maximumFractionDigits: 1, notation: "compact" }), [currency]);
+  const money = (value: string | number, compact = false) => {
+    const converted = rate === undefined ? NaN : Number(value) * rate;
+    return Number.isFinite(converted) ? (compact ? compactMoneyFormat : moneyFormat).format(converted) : "Amount unavailable";
+  };
+  const title = <Stack direction={{ xs: "column", md: "row" }} spacing={2} justifyContent="space-between" alignItems={{ xs: "stretch", md: "center" }}>
+    <Box><Typography variant="h2" component="h1">Dashboard</Typography><Typography variant="body2" color="text.secondary" sx={{ mt: .5 }}>HMG Stones · stock, orders and money owed{d?.generated_at ? ` · as of ${dateFormat.format(new Date(d.generated_at))}` : ""}</Typography></Box>
+    <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" alignItems="center">
+      <TextField select size="small" label="Display currency" value={currency} onChange={e => { if (["INR", "USD", "EUR"].includes(e.target.value)) { const next = e.target.value as DashboardCurrency; setFx({ currency: next, status: "loading" }); setCurrency(next); } }} sx={{ minWidth: 150 }}>{["INR", "USD", "EUR"].map(c => <MenuItem key={c} value={c}>{c}</MenuItem>)}</TextField>
+      <Tooltip title="Refresh"><span><IconButton aria-label="Refresh" onClick={() => void query.refetch()} disabled={query.isFetching}><RefreshRoundedIcon /></IconButton></span></Tooltip>
+      <Button component={RouterLink} to="/inventory/create" variant="outlined" startIcon={<AddRoundedIcon />}>Add product</Button>
+      <Button component={RouterLink} to="/orders/create" variant="contained" startIcon={<AddRoundedIcon />}>New order</Button>
+    </Stack>
+  </Stack>;
+  if (query.isLoading) return <PageContainer><Stack spacing={3}>{title}<Box sx={{ display: "grid", gap: 2, gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", xl: "repeat(4,1fr)" } }}>{[0, 1, 2, 3].map(i => <Skeleton key={i} variant="rounded" height={120} />)}</Box><Skeleton variant="rounded" height={280} /></Stack></PageContainer>;
+  if (query.isError || !d?.ok) return <PageContainer><Stack spacing={3}>{title}<Alert severity="warning" action={<Button onClick={() => void query.refetch()}>Retry</Button>}>Dashboard data unavailable</Alert><Typography color="text.secondary">Taruvi could not return the complete authorized projection. No totals have been substituted. You can still open modules from the sidebar.</Typography></Stack></PageContainer>;
+  const ledgerSales = d.sales_basis === "fulfilled_order_value";
+  const fulfilled = d.fulfilled_value ?? d.revenue_month;
+  const tiles = [
+    { label: "Total Products", value: String(d.product_count), context: `${d.category_count} categories · ${d.location_count} locations`, href: "/inventory" },
+    { label: "Inventory Value", value: money(d.inventory_value, true), context: `At selling price · ${currency}`, href: "/inventory" },
+    { label: ledgerSales ? "Fulfilled Order Value" : "Shipped order value", value: money(fulfilled, true), context: `${d.fulfilled_value !== undefined ? `${d.fulfilled_count ?? 0} orders, all time · ` : ""}${money(d.revenue_month, true)} this month`, href: "/orders" },
+    { label: "Open orders", value: String(d.open_orders ?? d.pending_orders), context: `${d.pending_orders} awaiting approval · ${d.order_count} orders in total`, href: "/approvals" },
+  ];
+  const peak = Math.max(0, ...(d.monthly_sales ?? []).map(m => Number(m.revenue))) || 1;
+  const orderLink = (o: Dashboard["recent_orders"][number]) => `/orders/show/${o.id}${o.organization_id ? `?organization=${o.organization_id}` : ""}`;
+  return <PageContainer><Stack spacing={2.5}>
+    {title}
+    {currency !== "INR" && <Box aria-live="polite">
+      {currentFx?.status === "ready" ? <Alert severity="info">Showing {currency} · Reference date {currentFx.value?.date}. Indicative conversion only, not an accounting rate. Source: <Link href="https://frankfurter.dev/" target="_blank" rel="noopener noreferrer">Frankfurter (ECB)</Link>. Counts and records remain unchanged.</Alert>
+        : currentFx?.status === "error" ? <Alert severity="warning" action={<Button onClick={() => { setFx({ currency, status: "loading" }); setRateAttempt(n => n + 1); }}>Retry rate</Button>}>{currency} reference rate unavailable. Amounts are unavailable; counts and records remain unchanged.</Alert>
+          : <Alert severity="info" aria-busy="true">Loading the {currency} reference rate. Amounts are unavailable until it loads.</Alert>}
+    </Box>}
+    {query.isFetching && <LinearProgress aria-label="Refreshing dashboard" />}
+    <Box aria-label="Key performance indicators" sx={{ display: "grid", gap: 2, gridTemplateColumns: { xs: "minmax(0,1fr)", sm: "repeat(2,minmax(0,1fr))", xl: "repeat(4,minmax(0,1fr))" } }}>
+      {[tiles[0], tiles[1], tiles[3], tiles[2]].map(tile => <Kpi key={tile.label} {...tile} />)}
     </Box>
-   </CardContent></Card>
-  </Box>
-  <Accordion disableGutters><AccordionSummary expandIcon={<ExpandMoreRoundedIcon/>}><Typography variant="h6">Recent Products</Typography><Chip size="small" label={d.recent_products.length} sx={{ml:1}}/></AccordionSummary><AccordionDetails><Box sx={{overflowX:"auto"}}><Table size="small"><TableHead><TableRow><TableCell>SKU</TableCell><TableCell>Product</TableCell><TableCell align="right">Stock</TableCell></TableRow></TableHead><TableBody>{d.recent_products.map(p=><TableRow key={p.id}><TableCell>{p.sku}</TableCell><TableCell><Link href={`/inventory/show/${p.id}`}>{p.name}</Link></TableCell><TableCell align="right">{p.stock}</TableCell></TableRow>)}{!d.recent_products.length&&<TableRow><TableCell colSpan={3}>No recent products in the INR ledger yet.</TableCell></TableRow>}</TableBody></Table></Box></AccordionDetails></Accordion>
-  {d.limitations?.length ? <Typography variant="caption" color="text.secondary">{d.limitations.join(" ")}</Typography> : null}
-  <Stack direction={{xs:"column",sm:"row"}} justifyContent="space-between" spacing={1} sx={{pt:2,borderTop:1,borderColor:"divider"}}><Typography variant="caption" color="text.secondary">HMG Stones · Demonstration workspace · Not production business data</Typography><Link href="/settings/account" variant="caption">Account preferences</Link></Stack>
- </Stack></PageContainer>;
+    <Box sx={{ display: "grid", gap: 2, gridTemplateColumns: { xs: "minmax(0,1fr)", lg: "minmax(0,3fr) minmax(0,2fr)" } }}>
+      <Card sx={{ minWidth: 0 }}><CardContent><PanelHeading title="Recent Orders" subtitle={`${d.recent_orders.length} of ${d.order_count} orders`} href="/orders" action="All orders" />
+        <Box sx={{ overflowX: "auto" }}><Table size="small"><TableHead><TableRow><TableCell>Order</TableCell><TableCell>Customer</TableCell><TableCell>Status</TableCell><TableCell>Date</TableCell><TableCell align="right">Total</TableCell></TableRow></TableHead><TableBody>
+          {d.recent_orders.map(o => <TableRow key={o.id} hover><TableCell><Tooltip title={o.order_number}><Link component={RouterLink} to={orderLink(o)} fontWeight={600} underline="hover">{shortNumber(o.order_number)}</Link></Tooltip></TableCell><TableCell sx={{ maxWidth: 220, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{o.customer_name || "—"}</TableCell><TableCell><Chip size="small" label={statusLabel(o.status)} color={statusColor(o.status)} /></TableCell><TableCell sx={{ whiteSpace: "nowrap" }}>{o.order_date ? dateFormat.format(new Date(o.order_date)) : "—"}</TableCell><TableCell align="right" sx={{ whiteSpace: "nowrap", fontVariantNumeric: "tabular-nums" }}>{money(o.total)}</TableCell></TableRow>)}
+          {!d.recent_orders.length && <TableRow><TableCell colSpan={5}>No orders in the INR ledger yet.</TableCell></TableRow>}
+        </TableBody></Table></Box>
+      </CardContent></Card>
+      <Card><CardContent><PanelHeading title="Financial watch" subtitle="Based on order values; payments are not recorded yet" href="/reports" action="Reports" />
+        <Stack spacing={2}>
+          <Box><Typography variant="caption" color="text.secondary">Outstanding order balances</Typography><Typography variant="h4" component="p" sx={{ fontVariantNumeric: "tabular-nums" }}>{d.receivables === null ? "Not available" : money(d.receivables)}</Typography><Typography variant="caption" color="text.secondary">{d.receivables_reason ?? (d.receivables === null ? "" : `Non-cancelled orders less payments · ${currency}`)}</Typography></Box>
+          {(d.order_pipeline ?? []).length > 0 && <Box><Typography variant="caption" color="text.secondary">Order pipeline</Typography><Stack spacing={1} sx={{ mt: 1 }}>{d.order_pipeline!.map(row => <Stack key={row.status} direction="row" justifyContent="space-between" alignItems="center" spacing={2}><Chip label={statusLabel(row.status)} color={statusColor(row.status)} size="small" /><Typography variant="body2" sx={{ fontVariantNumeric: "tabular-nums" }}>{row.count} · {money(row.value)}</Typography></Stack>)}</Stack></Box>}
+        </Stack>
+      </CardContent></Card>
+    </Box>
+    <Box sx={{ display: "grid", gap: 2, gridTemplateColumns: { xs: "minmax(0,1fr)", lg: "repeat(2,minmax(0,1fr))" } }}>
+      {d.monthly_sales && <Card><CardContent><PanelHeading title={ledgerSales ? "Monthly fulfilled sales" : "Monthly shipped / delivered sales"} subtitle={`Last six months · by order date · ${currency}`} />
+        <Stack spacing={1.75}>{d.monthly_sales.map(row => <Box key={row.month}><Stack direction="row" justifyContent="space-between" spacing={2}><Typography variant="body2">{monthLabel(row.month)}</Typography><Typography variant="body2" sx={{ fontVariantNumeric: "tabular-nums" }}>{row.count} orders · {money(row.revenue)}</Typography></Stack><LinearProgress aria-label={`${row.month} shipped sales relative to peak month`} variant="determinate" value={Math.max(0, Math.min(100, 100 * Number(row.revenue) / peak))} sx={{ mt: .75, height: 8, borderRadius: 4 }} /></Box>)}</Stack>
+      </CardContent></Card>}
+      <Card><CardContent><PanelHeading title="Stock Value by Category" subtitle={`At selling price · ${money(d.inventory_value)} in total`} href="/inventory" action="View inventory" />
+        <Stack spacing={1.75}>{d.stock_by_category.filter(c => Number(c.value) > 0).map(c => <Box key={c.name}><Stack direction="row" justifyContent="space-between" spacing={1}><Typography variant="body2" sx={{ overflowWrap: "anywhere" }}>{c.name}</Typography><Typography variant="body2" sx={{ fontVariantNumeric: "tabular-nums", flexShrink: 0 }}>{money(c.value)}</Typography></Stack><LinearProgress aria-label={`${c.name} share of stock value`} variant="determinate" value={Number(d.inventory_value) > 0 ? Math.max(0, Math.min(100, Number(c.value) / Number(d.inventory_value) * 100)) : 0} sx={{ mt: .75, height: 8, borderRadius: 4 }} /></Box>)}
+          {!d.stock_by_category.some(c => Number(c.value) > 0) && <Typography color="text.secondary">No stock value available.</Typography>}</Stack>
+      </CardContent></Card>
+    </Box>
+    <Card><CardContent><PanelHeading title="Replenishment" subtitle={d.low_stock_count ? `${d.low_stock_count} products at or below minimum stock` : "Based on current stock and minimum quantities"} href="/inventory" action="Open inventory" />
+      {!d.low_stock.length ? <Stack alignItems="center" sx={{ py: 3 }}><Typography color="text.secondary">{d.product_count ? "All products are well stocked" : "No products in the INR ledger yet"}</Typography></Stack>
+        : <Box sx={{ overflowX: "auto" }}><Table size="small"><TableHead><TableRow><TableCell>Product</TableCell><TableCell>SKU</TableCell><TableCell align="right">Stock</TableCell><TableCell align="right">Minimum</TableCell><TableCell align="right">Action</TableCell></TableRow></TableHead><TableBody>{d.low_stock.map(p => <TableRow key={p.id} hover><TableCell>{p.name}</TableCell><TableCell>{p.sku}</TableCell><TableCell align="right" sx={{ color: Number(p.stock) <= 0 ? "error.main" : undefined, fontWeight: 600 }}>{p.stock}</TableCell><TableCell align="right">{p.minimum}</TableCell><TableCell align="right"><Link component={RouterLink} to={`/inventory/show/${p.id}`}>View product</Link></TableCell></TableRow>)}</TableBody></Table></Box>}
+    </CardContent></Card>
+    <Box sx={{ display: "grid", gap: 2, gridTemplateColumns: { xs: "minmax(0,1fr)", lg: "repeat(2,minmax(0,1fr))" } }}>
+      {d.catalogue_quality && <Card><CardContent><PanelHeading title="Catalogue readiness" href="/inventory" action="Review catalogue" />
+        <Box sx={{ display: "grid", gap: 2, gridTemplateColumns: "repeat(2,minmax(0,1fr))" }}>{[["Catalogue records", d.catalogue_quality.total], ["Inactive references", d.catalogue_quality.inactive], ["Without selling price", d.catalogue_quality.missing_selling_price], ["Without image", d.catalogue_quality.missing_image]].map(([label, value]) => <Box key={String(label)}><Typography variant="caption" color="text.secondary">{label}</Typography><Typography variant="h5" component="p" sx={{ color: label !== "Catalogue records" && label !== "Inactive references" && Number(value) > 0 ? "warning.main" : undefined }}>{value}</Typography></Box>)}</Box>
+        <Typography variant="caption" color="text.secondary">Includes inactive reference products. This checks recorded fields, not image-file availability.</Typography>
+      </CardContent></Card>}
+      <Card><CardContent><PanelHeading title="Quick actions" />
+        <Box sx={{ display: "grid", gridTemplateColumns: { xs: "minmax(0,1fr)", sm: "repeat(2,minmax(0,1fr))" }, gap: 1.5 }}>
+          {[["New sales order", "/orders/create"], ["New purchase order", "/purchase-orders/create"], ["Add product", "/inventory/create"], ["Stock adjustment", "/stock-adjustments"], ["Stock transfer", "/stock-transfers"], ["Approvals queue", "/approvals"]].map(([label, href]) => <Button key={href} component={RouterLink} to={href} variant="outlined" endIcon={<ArrowOutwardRoundedIcon />} sx={{ justifyContent: "space-between", minHeight: 44, textAlign: "left" }}>{label}</Button>)}
+        </Box>
+      </CardContent></Card>
+    </Box>
+    <Accordion disableGutters><AccordionSummary expandIcon={<ExpandMoreRoundedIcon />}><Typography variant="h6">Recent Products</Typography><Chip size="small" label={d.recent_products.length} sx={{ ml: 1 }} /></AccordionSummary><AccordionDetails><Box sx={{ overflowX: "auto" }}><Table size="small"><TableHead><TableRow><TableCell>SKU</TableCell><TableCell>Product</TableCell><TableCell align="right">Stock</TableCell></TableRow></TableHead><TableBody>{d.recent_products.map(p => <TableRow key={p.id}><TableCell>{p.sku}</TableCell><TableCell><Link component={RouterLink} to={`/inventory/show/${p.id}`}>{p.name}</Link></TableCell><TableCell align="right">{p.stock}</TableCell></TableRow>)}{!d.recent_products.length && <TableRow><TableCell colSpan={3}>No recent products in the INR ledger yet.</TableCell></TableRow>}</TableBody></Table></Box></AccordionDetails></Accordion>
+    <Accordion disableGutters><AccordionSummary expandIcon={<ExpandMoreRoundedIcon />}><Typography variant="body2">How these numbers are calculated</Typography></AccordionSummary><AccordionDetails><Stack spacing={1}>{d.scope && <Typography variant="caption" color="text.secondary">{d.scope}</Typography>}{d.limitations?.map(item => <Typography key={item} variant="caption" color="text.secondary">{item}</Typography>)}</Stack></AccordionDetails></Accordion>
+  </Stack></PageContainer>;
 };

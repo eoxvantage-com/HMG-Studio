@@ -33,7 +33,7 @@ describe("ERP schema-backed form contracts", () => {
     expect(() => buildErpFilters(resource, "", "guessed_column", "x")).toThrow();
   });
   it("never exposes stock, generated fields or tenant reassignment for editing", () => {
-    expect(editableFields(resource, "edit").map(field => field.name)).toEqual(["name", "sku", "price", "description"]);
+    expect(editableFields(resource, "edit").map(field => field.name)).toEqual(["name", "sku", "price", "description", "is_active"]);
     expect(editableFields(resource, "create").some(field => field.name === "organization_id")).toBe(true);
   });
   it("keeps transactional resources read-only, including apparently draft records", () => {
@@ -46,7 +46,7 @@ describe("ERP schema-backed form contracts", () => {
   it("does not let create verification enable update or deletion", () => {
     const verified = { ...resource, writeAuthorizationVerified: true, verifiedWriteActions: ["create" as const] };
     expect(writeBlocker(verified, "create")).toMatch(/product.*command/i);
-    expect(writeBlocker({ ...verified, name: "customers" }, "create")).toBe("");
+    expect(writeBlocker({ ...verified, name: "customers", verifiedCommand: "hmg-contact-master-v1" }, "create")).toBe("");
     expect(writeBlocker({ ...verified, verifiedWriteActions: ["create", "update"] }, "update")).toMatch(/product.*command/i);
     expect(writeBlocker(verified, "update")).toMatch(/update.*verified/i);
     expect(writeBlocker(verified, "delete")).toMatch(/delete.*verified/i);
@@ -54,8 +54,10 @@ describe("ERP schema-backed form contracts", () => {
   });
   it("normalizes blank optional fields to null and preserves false and decimal precision", () => {
     expect(normalizeValues(editableFields(resource, "edit"), { name: " Quartz ", sku: " Q1 ", price: "9007199254740993.25", description: "" }))
-      .toEqual({ name: "Quartz", sku: "Q1", price: "9007199254740993.25", description: null });
-    expect(() => normalizeValues(editableFields(resource, "edit"), { is_active: false })).toThrow(/Active cannot be changed/i);
+      .toEqual({ name: "Quartz", sku: "Q1", price: "9007199254740993.25", description: null, is_active: true });
+    // Products can be activated/deactivated from the edit form; false must survive normalization.
+    expect(normalizeValues(editableFields(resource, "edit"), { name: "Quartz", sku: "Q1", price: "1", is_active: false })).toMatchObject({ is_active: false });
+    expect(() => normalizeValues(editableFields(resource, "edit"), { stock: 5 })).toThrow(/cannot be changed/i);
   });
   it("rejects unknown fields, whitespace required fields and invalid decimals", () => {
     const fields = editableFields(resource, "edit");
@@ -108,9 +110,11 @@ describe("ERP schema-backed form contracts", () => {
       "currency", "purchase_price", "price", "min_stock", "reorder_point", "reorder_quantity",
       "category_id", "location_id", "tracking_type", "notes",
     ]));
-    expect(names).not.toEqual(expect.arrayContaining(["stock", "selling_price", "images", "has_variants", "is_active"]));
+    expect(names).not.toEqual(expect.arrayContaining(["stock", "selling_price", "images", "has_variants"]));
+    expect(names).toContain("is_active");
     expect(editableFields(product, "edit").some(field => field.name === "organization_id")).toBe(false);
-    expect(editableFields(product, "edit").some(field => ["currency", "is_active"].includes(field.name))).toBe(false);
+    expect(editableFields(product, "edit").some(field => field.name === "currency")).toBe(false);
+    expect(editableFields(product, "edit").some(field => field.name === "is_active")).toBe(true);
     expect(fieldLabel("price")).toBe("Selling price");
   });
   it("uses source product defaults and validates price, thresholds and choice values", () => {
@@ -172,10 +176,34 @@ it("normalizes product-create currency before permission and readback comparison
 });
 
 it.each(["customers", "suppliers"])("only permits verified logical deletion for %s", name => {
-  const master = { ...getErpResource(name)!, liveVerified: true, writeAuthorizationVerified: true, verifiedWriteActions: ["delete" as const] };
+  const master = { ...getErpResource(name)!, verifiedCommand: "hmg-contact-master-v1", liveVerified: true, writeAuthorizationVerified: true, verifiedWriteActions: ["delete" as const] };
   expect(writeBlocker(master, "delete")).toBe("");
   expect(writeBlocker({ ...master, verifiedWriteActions: ["update"] }, "delete")).not.toBe("");
   expect(writeBlocker({ ...master, liveVerified: false }, "delete")).not.toBe("");
   expect(writeBlocker({ ...master, writeAuthorizationVerified: false }, "delete")).not.toBe("");
   expect(writeBlocker({ ...master, name: "warehouses" }, "delete")).not.toBe("");
+});
+
+it.each(["customers", "suppliers"])("requires the private contact command for %s writes", name => {
+ const master = { ...getErpResource(name)!, liveVerified: true, writeAuthorizationVerified: true, verifiedWriteActions: ["create", "update", "delete"] } as ErpResource;
+ for (const action of ["create", "update", "delete"] as const) {
+  expect(writeBlocker({ ...master, verifiedCommand: undefined }, action)).not.toBe("");
+  expect(writeBlocker({ ...master, verifiedCommand: "hmg-contact-master-v1" }, action)).toBe("");
+ }
+});
+
+it.each(["customers", "suppliers"])("normalizes %s currency before permission and command readback", name => {
+ const fields = editableFields(getErpResource(name)!, "edit").filter(field => field.name === "currency");
+ expect(normalizeValues(fields, { currency: " inr " })).toEqual({ currency: "INR" });
+ expect(() => normalizeValues(fields, { currency: "IN12" })).toThrow(/three ASCII letters/i);
+});
+
+it.each(["product_locations", "warehouses"])("requires the private metadata command and prevents protected %s writes", name => {
+  const base = {...getErpResource(name)!,liveVerified:true,writeAuthorizationVerified:true,verifiedWriteActions:["create","update","delete"] as const};
+  const verified = {...base,verifiedWriteActions:[...base.verifiedWriteActions],verifiedCommand:"hmg-contact-master-v1"};
+  expect(writeBlocker({...verified,verifiedCommand:undefined},"create")).toMatch(/command/i);
+  expect(writeBlocker(verified,"create")).toBe("");expect(writeBlocker(verified,"update")).toBe("");
+  expect(writeBlocker(verified,"delete")).toMatch(/deletion/i);
+  expect(writeBlocker({...verified,writeAuthorizationVerified:false},"create")).toMatch(/authorization/i);
+  for(const action of ["create","edit"] as const){const names=editableFields(verified,action).map(field=>field.name);for(const field of ["is_default","stock","quantity","deleted_at"])expect(names).not.toContain(field);if(action==="edit")expect(names).not.toContain("organization_id");}
 });

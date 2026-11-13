@@ -124,6 +124,42 @@ def fixtures():
     return data
 
 
+def migration_acceptance_fixtures(actor_id):
+    """Fresh isolated input fixtures, not stock postings or completed workflows.
+
+    Reuse the existing fixture relationships but never opening balances,
+    payments, adjustments, schedules or outbound notifications.
+    """
+    from uuid import UUID
+    UUID(actor_id)
+    allowed={'organizations','product_categories','warehouses','product_locations',
+             'customers','suppliers','products','orders','order_items','purchase_orders',
+             'purchase_order_items','stock_transfers','stock_transfer_items','stock_audits','stock_audit_items'}
+    data={t:copy.deepcopy(rows) for t,rows in fixtures().items() if t in allowed}
+    data['products']=[r for r in data['products'] if r.get('type')=='standard']
+    mapping={r['id']:str(uuid5(NAMESPACE_URL,'hmg-studio/migration-acceptance/2026-11-10/'+r['id'])) for rows in data.values() for r in rows}
+    mapping[QA_USER]=actor_id
+    def remap(value):
+        if isinstance(value,dict):return {k:remap(v) for k,v in value.items()}
+        if isinstance(value,list):return [remap(v) for v in value]
+        if isinstance(value,str):return mapping.get(value,value)
+        return value
+    data=remap(data)
+    for table,rows in data.items():
+        for row in rows:
+            for key in ('sku','code','slug','order_number','po_number','transfer_number','audit_number'):
+                if row.get(key):row[key]='QA-MIG-20261110-'+row[key]
+            for key in ('name','title'):
+                if row.get(key):row[key]='QA ONLY - '+row[key]
+            for key in ('notes','description'):
+                if key in row:row[key]='QA MIGRATION ACCEPTANCE: input fixture only; no executed workflow. '+row[key]
+            if table=='products':row['stock']=0
+            if table=='stock_audit_items':row['system_quantity']=0
+            if table=='orders':row.update(status='pending',stock_committed=False,amount_paid='0',payment_status='unpaid')
+    data['organizations'][0].update(name='QA ONLY - HMG migration acceptance 20261110',slug='qa-hmg-migration-20261110',settings={'dataset_kind':'test','purpose':'unposted migration acceptance'})
+    return data
+
+
 STRUCTURED_FIELDS = {
     "saved_reports": {"columns": "columns_json", "filters": "filters_json", "sort": "sort_json"},
     "activity_logs": {"properties": "properties_json"},

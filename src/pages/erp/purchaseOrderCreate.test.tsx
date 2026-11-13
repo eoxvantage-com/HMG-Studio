@@ -10,6 +10,21 @@ const base = { suppliers, products, organizationCurrency: "USD", today: "2026-11
 afterEach(cleanup);
 
 describe("purchase order create form", () => {
+  it("reviews a complete draft before sending a commerce command", async () => {
+    const onSubmit = vi.fn(async () => undefined);
+    render(<MemoryRouter><PurchaseOrderCreate {...base} products={[{id:"p1",name:"Stone",sku:"STONE",has_variants:false}]} lookupStatus="ready" writeBlocker="" confirmBeforeSubmit onSubmit={onSubmit} /></MemoryRouter>);
+    fireEvent.change(screen.getByRole("combobox", {name:"Supplier"}), {target:{value:"Stone"}});
+    fireEvent.click(await screen.findByRole("option", {name:"Stone Supplier"}));
+    fireEvent.change(screen.getByRole("combobox", {name:"Product"}), {target:{value:"Stone"}});
+    fireEvent.click(await screen.findByRole("option", {name:/Stone.*STONE/}));
+    fireEvent.click(screen.getByRole("button", {name:"Add line"}));
+    fireEvent.click(screen.getByRole("button", {name:"Create purchase order"}));
+    expect(await screen.findByRole("dialog", {name:"Review purchase order"})).toBeTruthy();
+    expect(onSubmit).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole("button", {name:"Confirm purchase order"}));
+    await waitFor(() => expect(onSubmit).toHaveBeenCalledTimes(1));
+  });
+
   it("shows source fields and an honest unsaved/loading state without sending a write", () => {
     const onSubmit = vi.fn();
     render(<MemoryRouter><PurchaseOrderCreate {...base} lookupStatus="loading" onSubmit={onSubmit} /></MemoryRouter>);
@@ -130,7 +145,7 @@ describe("purchase order create form", () => {
     fireEvent.click(within(await screen.findByRole("dialog", { name: "Change supplier?" })).getByRole("button", { name: "Change supplier and clear lines" }));
     await waitFor(() => expect(screen.queryByRole("dialog", { name: "Change supplier?" })).toBeNull());
     expect((screen.getByLabelText(/Currency \*/) as HTMLInputElement).value).toBe("USD");
-    expect(screen.getByRole("region", { name: "Purchase order lines" }).textContent).toContain("No lines added");
+    expect(screen.getByRole("region", { name: "Purchase order lines" }).textContent).toContain("No lines yet");
     expect(onSupplierSelected).toHaveBeenLastCalledWith("s2");
   });
 

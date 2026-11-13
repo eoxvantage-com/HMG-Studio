@@ -1,12 +1,17 @@
 /** Validate the complete read-only projection before formatting or rendering it. */
 export type Dashboard = {
+  dataset: "production" | "test" | "all"; unclassified_organizations: number;
   ok: true; currency: string; generated_at: string; product_count: number; category_count: number; location_count: number;
-  inventory_value: string; pending_orders: number; order_count: number; revenue_month: string; receivables: string;
+  inventory_value: string; pending_orders: number; order_count: number; revenue_month: string; receivables: string | null; receivables_reason?: string | null; sales_basis?: "fulfilled_order_value" | "shipped_order_value";
+  fulfilled_value?: string; fulfilled_count?: number; open_orders?: number;
   stock_by_category: { name: string; value: string }[];
   low_stock: { id: string; name: string; sku: string; stock: string; minimum: string }[]; low_stock_count: number;
-  recent_orders: { id: string; order_number: string; customer_name: string | null; status: string; order_date: string | null; total: string; currency: string }[];
+  recent_orders: { id: string; organization_id?: string; order_number: string; customer_name: string | null; status: string; order_date: string | null; total: string; currency: string }[];
   recent_products: { id: string; sku: string; name: string; stock: number; selling_price: string | null; currency: string }[];
   scope?: string; limitations?: string[];
+  order_pipeline?: { status: string; count: number; value: string }[];
+  monthly_sales?: { month: string; count: number; revenue: string }[];
+  catalogue_quality?: { total: number; inactive: number; missing_selling_price: number; missing_image: number };
 };
 const record = (v: unknown): v is Record<string, unknown> => !!v && typeof v === "object" && !Array.isArray(v);
 const text = (v: unknown): v is string => typeof v === "string";
@@ -16,13 +21,24 @@ const date = (v: unknown) => text(v) && Number.isFinite(Date.parse(v));
 const rows = (v: unknown, check: (r: Record<string, unknown>) => boolean) => Array.isArray(v) && v.every(r => record(r) && check(r));
 export function parseDashboard(value: unknown): Dashboard | null {
   if (!record(value) || value.ok !== true || !text(value.currency) || !/^[A-Z]{3}$/.test(value.currency) || !date(value.generated_at)) return null;
+  if (typeof value.dataset !== "string" || !["production", "test", "all"].includes(value.dataset) || !count(value.unclassified_organizations)) return null;
   if (!["product_count", "category_count", "location_count", "pending_orders", "order_count", "low_stock_count"].every(k => count(value[k]))) return null;
-  if (!["inventory_value", "revenue_month", "receivables"].every(k => text(value[k]) && numeric(value[k]))) return null;
+  if (!["inventory_value", "revenue_month"].every(k => text(value[k]) && numeric(value[k]))) return null;
+  if (value.receivables === null ? !text(value.receivables_reason) || !value.receivables_reason.trim() : !text(value.receivables) || !numeric(value.receivables)) return null;
+  if (value.sales_basis !== undefined && !["fulfilled_order_value", "shipped_order_value"].includes(String(value.sales_basis))) return null;
   if (!rows(value.stock_by_category, r => text(r.name) && text(r.value) && numeric(r.value))) return null;
   if (!rows(value.low_stock, r => text(r.id) && !!r.id && text(r.name) && text(r.sku) && numeric(r.stock) && numeric(r.minimum))) return null;
   if (!rows(value.recent_orders, r => text(r.id) && !!r.id && text(r.order_number) && (r.customer_name == null || text(r.customer_name)) && text(r.status) && (r.order_date == null || date(r.order_date)) && numeric(r.total) && r.currency === value.currency)) return null;
   if (!rows(value.recent_products, r => text(r.id) && !!r.id && text(r.sku) && text(r.name) && numeric(r.stock) && (r.selling_price == null || numeric(r.selling_price)) && r.currency === value.currency)) return null;
+  if (value.fulfilled_value !== undefined && (!text(value.fulfilled_value) || !numeric(value.fulfilled_value))) return null;
+  if (["fulfilled_count", "open_orders"].some(k => value[k] !== undefined && !count(value[k]))) return null;
   if (value.scope !== undefined && !text(value.scope)) return null;
   if (value.limitations !== undefined && (!Array.isArray(value.limitations) || !value.limitations.every(text))) return null;
+  if (value.order_pipeline !== undefined && !rows(value.order_pipeline, r => text(r.status) && !!r.status.trim() && count(r.count) && text(r.value) && numeric(r.value))) return null;
+  if (value.monthly_sales !== undefined && (!rows(value.monthly_sales, r => text(r.month) && /^\d{4}-(0[1-9]|1[0-2])$/.test(r.month) && count(r.count) && text(r.revenue) && numeric(r.revenue)) || (value.monthly_sales as unknown[]).length > 6)) return null;
+  if (value.catalogue_quality !== undefined) {
+    const q = value.catalogue_quality;
+    if (!record(q) || !count(q.total) || !["inactive", "missing_selling_price", "missing_image"].every(k => count(q[k]) && (q[k] as number) <= (q.total as number))) return null;
+  }
   return value as Dashboard;
 }

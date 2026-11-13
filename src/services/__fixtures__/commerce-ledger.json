@@ -1,0 +1,355 @@
+{
+  "ok": true,
+  "code": "STATE",
+  "state": {
+    "organization_id": "00000000-0000-0000-0000-000000000001",
+    "sequence": 9,
+    "head": "84eb9cef7b02f28cb248e083808799958373e1632b0ca441126dad4115f288dd",
+    "balances": [
+      {
+        "product_id": "00000000-0000-0000-0000-000000000002",
+        "location_id": "00000000-0000-0000-0000-000000000003",
+        "quantity": 8,
+        "reserved": 0
+      },
+      {
+        "product_id": "00000000-0000-0000-0000-000000000002",
+        "location_id": "00000000-0000-0000-0000-000000000004",
+        "quantity": 0,
+        "reserved": 0
+      }
+    ],
+    "entitlements": {
+      "72e2ec09-6d28-5ac0-a0a6-301d6208fe94": {
+        "id": "72e2ec09-6d28-5ac0-a0a6-301d6208fe94",
+        "document_id": "00000000-0000-0000-0000-00000000006e",
+        "line_id": "00000000-0000-0000-0000-000000000008",
+        "product_id": "00000000-0000-0000-0000-000000000002",
+        "quantity": 2,
+        "returned": 0,
+        "source_fulfillment_request_id": "00000000-0000-0000-0000-000000000070",
+        "source_location_id": "00000000-0000-0000-0000-000000000003"
+      }
+    },
+    "reservations": {
+      "00000000-0000-0000-0000-00000000006e": {
+        "[\"00000000-0000-0000-0000-000000000002\",\"00000000-0000-0000-0000-000000000003\"]": 0
+      }
+    },
+    "requests": {
+      "00000000-0000-0000-0000-000000000071": {
+        "status": "pending",
+        "command": {
+          "request_id": "00000000-0000-0000-0000-000000000071",
+          "action": "submit_return",
+          "reason": "Offline fixture",
+          "document_id": "00000000-0000-0000-0000-00000000006e",
+          "lines": [
+            {
+              "entitlement_id": "72e2ec09-6d28-5ac0-a0a6-301d6208fe94",
+              "location_id": "00000000-0000-0000-0000-000000000004",
+              "quantity": 1,
+              "condition": "new",
+              "restock": true
+            }
+          ]
+        },
+        "created_by": "00000000-0000-0000-0000-000000000005",
+        "created_at": "2026-11-11T12:00:00+00:00"
+      }
+    },
+    "documents": {
+      "00000000-0000-0000-0000-000000000064": {
+        "id": "00000000-0000-0000-0000-000000000064",
+        "kind": "purchase_order",
+        "number": "PO-00000000-0000-0000-0000-000000000064",
+        "revision": 3,
+        "status": "received",
+        "approval_status": "approved",
+        "draft": {
+          "supplier_id": "00000000-0000-0000-0000-000000000007",
+          "order_date": "2026-11-11",
+          "expected_date": null,
+          "currency": "INR",
+          "notes": "",
+          "tax": "1.00",
+          "shipping": "2.00",
+          "items": [
+            {
+              "line_id": "00000000-0000-0000-0000-000000000008",
+              "product_id": "00000000-0000-0000-0000-000000000002",
+              "product_variant_id": null,
+              "quantity": 10,
+              "unit_cost": "5.00",
+              "supplier_sku": null
+            }
+          ]
+        },
+        "snapshots": {
+          "products": {
+            "00000000-0000-0000-0000-000000000002": {
+              "id": "00000000-0000-0000-0000-000000000002",
+              "name": "Fixture Stone",
+              "sku": "FIXTURE-001"
+            }
+          },
+          "locations": {
+            "00000000-0000-0000-0000-000000000003": {
+              "id": "00000000-0000-0000-0000-000000000003",
+              "name": "Fixture Yard"
+            },
+            "00000000-0000-0000-0000-000000000004": {
+              "id": "00000000-0000-0000-0000-000000000004",
+              "name": "Fixture Returns"
+            }
+          },
+          "customers": {
+            "00000000-0000-0000-0000-000000000006": {
+              "id": "00000000-0000-0000-0000-000000000006",
+              "name": "Fixture Buyer",
+              "email": "buyer@example.test",
+              "currency": "INR",
+              "company_name": "Fixture Company"
+            }
+          },
+          "suppliers": {
+            "00000000-0000-0000-0000-000000000007": {
+              "id": "00000000-0000-0000-0000-000000000007",
+              "name": "Fixture Supplier"
+            }
+          }
+        },
+        "subtotal": "50.00",
+        "total": "53.00",
+        "created_by": "00000000-0000-0000-0000-000000000005",
+        "created_at": "2026-11-11T12:00:00+00:00",
+        "updated_at": "2026-11-11T12:00:00+00:00",
+        "allocations": [],
+        "fulfilled": {},
+        "received": {
+          "[\"00000000-0000-0000-0000-000000000008\",\"00000000-0000-0000-0000-000000000003\"]": 10
+        }
+      },
+      "00000000-0000-0000-0000-00000000006e": {
+        "id": "00000000-0000-0000-0000-00000000006e",
+        "kind": "sales_order",
+        "number": "SO-00000000-0000-0000-0000-00000000006e",
+        "revision": 3,
+        "status": "fulfilled",
+        "approval_status": "approved",
+        "draft": {
+          "customer_id": "00000000-0000-0000-0000-000000000006",
+          "customer_name": "Fixture Buyer",
+          "customer_email": "buyer@example.test",
+          "customer_address": "Fixture address",
+          "order_date": "2026-11-11",
+          "currency": "INR",
+          "notes": "",
+          "tax": "1.00",
+          "shipping": "2.00",
+          "items": [
+            {
+              "line_id": "00000000-0000-0000-0000-000000000008",
+              "product_id": "00000000-0000-0000-0000-000000000002",
+              "product_variant_id": null,
+              "quantity": 2,
+              "unit_price": "10.25"
+            }
+          ]
+        },
+        "snapshots": {
+          "products": {
+            "00000000-0000-0000-0000-000000000002": {
+              "id": "00000000-0000-0000-0000-000000000002",
+              "name": "Fixture Stone",
+              "sku": "FIXTURE-001"
+            }
+          },
+          "locations": {
+            "00000000-0000-0000-0000-000000000003": {
+              "id": "00000000-0000-0000-0000-000000000003",
+              "name": "Fixture Yard"
+            },
+            "00000000-0000-0000-0000-000000000004": {
+              "id": "00000000-0000-0000-0000-000000000004",
+              "name": "Fixture Returns"
+            }
+          },
+          "customers": {
+            "00000000-0000-0000-0000-000000000006": {
+              "id": "00000000-0000-0000-0000-000000000006",
+              "name": "Fixture Buyer",
+              "email": "buyer@example.test",
+              "currency": "INR",
+              "company_name": "Fixture Company"
+            }
+          },
+          "suppliers": {
+            "00000000-0000-0000-0000-000000000007": {
+              "id": "00000000-0000-0000-0000-000000000007",
+              "name": "Fixture Supplier"
+            }
+          }
+        },
+        "subtotal": "20.50",
+        "total": "23.50",
+        "created_by": "00000000-0000-0000-0000-000000000005",
+        "created_at": "2026-11-11T12:00:00+00:00",
+        "updated_at": "2026-11-11T12:00:00+00:00",
+        "allocations": [
+          {
+            "line_id": "00000000-0000-0000-0000-000000000008",
+            "location_id": "00000000-0000-0000-0000-000000000003",
+            "quantity": 2
+          }
+        ],
+        "fulfilled": {
+          "[\"00000000-0000-0000-0000-000000000008\",\"00000000-0000-0000-0000-000000000003\"]": 2
+        },
+        "received": {}
+      },
+      "00000000-0000-0000-0000-000000000078": {
+        "id": "00000000-0000-0000-0000-000000000078",
+        "kind": "sales_order",
+        "number": "SO-00000000-0000-0000-0000-000000000078",
+        "revision": 1,
+        "status": "pending",
+        "approval_status": "pending",
+        "draft": {
+          "customer_id": "00000000-0000-0000-0000-000000000006",
+          "customer_name": "Fixture Buyer",
+          "customer_email": "buyer@example.test",
+          "customer_address": "Fixture address",
+          "order_date": "2026-11-11",
+          "currency": "INR",
+          "notes": "",
+          "tax": "1.00",
+          "shipping": "2.00",
+          "items": [
+            {
+              "line_id": "00000000-0000-0000-0000-000000000008",
+              "product_id": "00000000-0000-0000-0000-000000000002",
+              "product_variant_id": null,
+              "quantity": 2,
+              "unit_price": "10.25"
+            }
+          ]
+        },
+        "snapshots": {
+          "products": {
+            "00000000-0000-0000-0000-000000000002": {
+              "id": "00000000-0000-0000-0000-000000000002",
+              "name": "Fixture Stone",
+              "sku": "FIXTURE-001"
+            }
+          },
+          "locations": {
+            "00000000-0000-0000-0000-000000000003": {
+              "id": "00000000-0000-0000-0000-000000000003",
+              "name": "Fixture Yard"
+            },
+            "00000000-0000-0000-0000-000000000004": {
+              "id": "00000000-0000-0000-0000-000000000004",
+              "name": "Fixture Returns"
+            }
+          },
+          "customers": {
+            "00000000-0000-0000-0000-000000000006": {
+              "id": "00000000-0000-0000-0000-000000000006",
+              "name": "Fixture Buyer",
+              "email": "buyer@example.test",
+              "currency": "INR",
+              "company_name": "Fixture Company"
+            }
+          },
+          "suppliers": {
+            "00000000-0000-0000-0000-000000000007": {
+              "id": "00000000-0000-0000-0000-000000000007",
+              "name": "Fixture Supplier"
+            }
+          }
+        },
+        "subtotal": "20.50",
+        "total": "23.50",
+        "created_by": "00000000-0000-0000-0000-000000000005",
+        "created_at": "2026-11-11T12:00:00+00:00",
+        "updated_at": "2026-11-11T12:00:00+00:00",
+        "allocations": [],
+        "fulfilled": {},
+        "received": {}
+      },
+      "00000000-0000-0000-0000-000000000082": {
+        "id": "00000000-0000-0000-0000-000000000082",
+        "kind": "purchase_order",
+        "number": "PO-00000000-0000-0000-0000-000000000082",
+        "revision": 1,
+        "status": "pending",
+        "approval_status": "pending",
+        "draft": {
+          "supplier_id": "00000000-0000-0000-0000-000000000007",
+          "order_date": "2026-11-11",
+          "expected_date": null,
+          "currency": "INR",
+          "notes": "",
+          "tax": "1.00",
+          "shipping": "2.00",
+          "items": [
+            {
+              "line_id": "00000000-0000-0000-0000-000000000008",
+              "product_id": "00000000-0000-0000-0000-000000000002",
+              "product_variant_id": null,
+              "quantity": 10,
+              "unit_cost": "5.00",
+              "supplier_sku": null
+            }
+          ]
+        },
+        "snapshots": {
+          "products": {
+            "00000000-0000-0000-0000-000000000002": {
+              "id": "00000000-0000-0000-0000-000000000002",
+              "name": "Fixture Stone",
+              "sku": "FIXTURE-001"
+            }
+          },
+          "locations": {
+            "00000000-0000-0000-0000-000000000003": {
+              "id": "00000000-0000-0000-0000-000000000003",
+              "name": "Fixture Yard"
+            },
+            "00000000-0000-0000-0000-000000000004": {
+              "id": "00000000-0000-0000-0000-000000000004",
+              "name": "Fixture Returns"
+            }
+          },
+          "customers": {
+            "00000000-0000-0000-0000-000000000006": {
+              "id": "00000000-0000-0000-0000-000000000006",
+              "name": "Fixture Buyer",
+              "email": "buyer@example.test",
+              "currency": "INR",
+              "company_name": "Fixture Company"
+            }
+          },
+          "suppliers": {
+            "00000000-0000-0000-0000-000000000007": {
+              "id": "00000000-0000-0000-0000-000000000007",
+              "name": "Fixture Supplier"
+            }
+          }
+        },
+        "subtotal": "50.00",
+        "total": "53.00",
+        "created_by": "00000000-0000-0000-0000-000000000005",
+        "created_at": "2026-11-11T12:00:00+00:00",
+        "updated_at": "2026-11-11T12:00:00+00:00",
+        "allocations": [],
+        "fulfilled": {},
+        "received": {}
+      }
+    }
+  },
+  "capabilities": [
+    "commerce_v2"
+  ]
+}

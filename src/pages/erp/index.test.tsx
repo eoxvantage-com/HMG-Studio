@@ -1,3 +1,4 @@
+import { StyleProvider, createCache as createAntCache } from "@ant-design/cssinjs";
 import { cleanup, configure, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { Refine, type DataProvider } from "@refinedev/core";
 import routerProvider from "@refinedev/react-router";
@@ -22,7 +23,7 @@ vi.mock("../../services/erp", async importOriginal => {
   const actual = await importOriginal<typeof import("../../services/erp")>();
   return { ...actual, verifyReadback: (...args: Parameters<typeof actual.verifyReadback>) => { harness.readback = args; return actual.verifyReadback(...args); }, getErpResource: (name: string) => {
     const item = actual.getErpResource(name);
-    return item ? { ...item, liveVerified: harness.live, verifiedCommand: harness.command ? "hmg-product-master-v1" : undefined, writeAuthorizationVerified: harness.writable, verifiedWriteActions: harness.writable ? harness.actions : [] } : undefined;
+    return item ? { ...item, liveVerified: harness.live, verifiedCommand: harness.command ? "hmg-product-master-v1" : harness.writable && ["customers", "suppliers", "warehouses"].includes(name) ? "hmg-contact-master-v1" : undefined, writeAuthorizationVerified: harness.writable, verifiedWriteActions: harness.writable ? harness.actions : [] } : undefined;
   } };
 });
 const getList = vi.fn();
@@ -33,17 +34,17 @@ const custom = vi.fn();
 const notify = vi.fn();
 const can = vi.fn(async (_params: unknown) => ({ can: true }));
 const provider = { getApiUrl: () => "https://example.invalid", getList, getOne, create, update } as unknown as DataProvider;
-const row = { id: "11111111-1111-4111-8111-111111111111", organization_id: "22222222-2222-4222-8222-222222222222", name: "Granite", sku: "GR1", price: "0", min_stock: 0, type: "standard", tracking_type: "none", is_active: true, currency: "USD" };
+const row = { priority: 0, id: "11111111-1111-4111-8111-111111111111", organization_id: "22222222-2222-4222-8222-222222222222", name: "Granite", sku: "GR1", price: "0", min_stock: 0, type: "standard", tracking_type: "none", is_active: true, currency: "USD" };
 let emotionCache: ReturnType<typeof createCache>;
-function mount(action: "list" | "create" | "edit" | "show" = "list") {
+function mount(action: "list" | "create" | "edit" | "show" = "list", moduleKey = "inventory") {
   const url = action === "list" ? "/inventory" : action === "create" ? "/inventory/create" : `/inventory/${action}/${row.id}`;
-  return render(<CacheProvider value={emotionCache}><MemoryRouter initialEntries={[url]}><Refine routerProvider={routerProvider} dataProvider={{ default: provider, app: { ...provider, custom } }}
+  return render(<StyleProvider cache={createAntCache()} autoClear><CacheProvider value={emotionCache}><MemoryRouter initialEntries={[url]}><Refine routerProvider={routerProvider} dataProvider={{ default: provider, app: { ...provider, custom } }}
     accessControlProvider={{ can }} notificationProvider={() => ({ open: notify, close: vi.fn() })}
     options={{ disableTelemetry: true }} resources={[{ name: "products", list: "/inventory", create: "/inventory/create", edit: "/inventory/edit/:id", show: "/inventory/show/:id" }]}>
-    <Routes><Route path="/inventory" element={<ErpModulePage moduleKey="inventory" action="list" />} />
+    <Routes><Route path="/inventory" element={<ErpModulePage moduleKey={moduleKey} action="list" />} />
       <Route path="/inventory/create" element={<ErpModulePage moduleKey="inventory" action="create" />} />
       <Route path="/inventory/:action/:id" element={<ErpModulePage moduleKey="inventory" action={action} />} /></Routes>
-  </Refine></MemoryRouter></CacheProvider>);
+  </Refine></MemoryRouter></CacheProvider></StyleProvider>);
 }
 describe("schema-backed ERP module pages", () => {
   beforeEach(() => {
@@ -53,6 +54,7 @@ describe("schema-backed ERP module pages", () => {
     const getComputedStyle = window.getComputedStyle.bind(window);
     vi.spyOn(window, "getComputedStyle").mockImplementation(element => getComputedStyle(element));
     window.matchMedia = vi.fn().mockImplementation(() => ({ matches: false, addListener: vi.fn(), removeListener: vi.fn(), addEventListener: vi.fn(), removeEventListener: vi.fn() }));
+    for (const mock of [can, getList, getOne, create, update, custom, notify]) mock.mockReset();
     harness.command = false; harness.writable = false; harness.live = true; harness.readback = []; harness.resource = "products";
     harness.actions = ["create", "update"];
     can.mockResolvedValue({ can: true });
@@ -65,24 +67,32 @@ describe("schema-backed ERP module pages", () => {
     emotionCache.sheet.flush();
     expect(document.querySelectorAll('style[data-emotion^="erp-test"]').length).toBe(0);
   });
+  it.each([["stock-by-warehouse", "product_location_stocks", "Stock by warehouse"], ["reservations", "stock_reservations", "Reservations"], ["replenishment", "warehouse_reorder_points", "Replenishment"]])("renders %s from the live ledger, never the legacy %s table", async (moduleKey, resource, title) => {
+    harness.resource = resource;
+    getList.mockResolvedValue({ data: [], total: 0 });
+    mount("list", moduleKey);
+    expect(await screen.findByRole("heading", { name: title })).toBeTruthy();
+    expect(getList.mock.calls.some(([args]) => args.resource === resource)).toBe(false);
+  });
   it("does not query hidden relation panels and exposes relations after the original first eight", async () => {
     mount("show");
     await screen.findByRole("heading", { name: "Granite" });
-    expect(getList).not.toHaveBeenCalled();
+    expect(getList.mock.calls.every(([args]) => args.resource === "organizations")).toBe(true);
     expect(screen.queryByRole("tablist")).toBeNull();
     expect(getOne).toHaveBeenCalledTimes(1);
     expect(screen.queryByText(/^Product variants \(/i)).toBeNull();
+    // The lazy stock panel selects its ledger/native authority when expanded.
     expect(screen.getByText(/^Stock by location \(/i)).toBeTruthy();
     expect(screen.getByText(/^Suppliers \(/i)).toBeTruthy();
     const more = screen.getByRole("button", { name: "More related data" });
     expect(more.getAttribute("aria-expanded")).toBe("false");
     fireEvent.click(more);
-    expect(getList).not.toHaveBeenCalled();
+    expect(getList.mock.calls.every(([args]) => args.resource === "organizations")).toBe(true);
     const variants = screen.getByText(/^Product variants \(/i).closest("button")!;
     expect(variants.getAttribute("aria-expanded")).toBe("false");
     fireEvent.click(variants);
     await waitFor(() => expect(getList).toHaveBeenCalledWith(expect.objectContaining({ resource: "product_variants", filters: expect.arrayContaining([{ field: "product_id", operator: "eq", value: row.id }]) })));
-    expect(getList.mock.calls.every(([args]) => args.resource === "product_variants")).toBe(true);
+    expect(getList.mock.calls.every(([args]) => ["organizations", "product_variants"].includes(args.resource))).toBe(true);
     fireEvent.click(variants);
     expect(screen.queryByLabelText(/Search product variants/i)).toBeNull();
   });
@@ -98,13 +108,12 @@ describe("schema-backed ERP module pages", () => {
     expect(update).not.toHaveBeenCalled();
   });
   it("resolves displayed business references with bounded ID filters, never identity datatables", async () => {
-    harness.resource = "orders";
-    const customerId = "33333333-3333-4333-8333-333333333333";
-    getOne.mockResolvedValue({ data: { ...row, order_number: "SO-001", customer_id: customerId, created_by: row.id } });
-    getList.mockImplementation(async ({ resource }) => ({ data: resource === "customers" ? [{ id: customerId, name: "Stone Buyer" }] : [], total: resource === "customers" ? 1 : 0 }));
+    const locationId = "33333333-3333-4333-8333-333333333333";
+    getOne.mockResolvedValue({ data: { ...row, location_id: locationId, created_by: row.id } });
+    getList.mockImplementation(async ({ resource }) => ({ data: resource === "product_locations" ? [{ id: locationId, name: "Stone Yard" }] : [], total: resource === "product_locations" ? 1 : 0 }));
     mount("show");
-    await screen.findByRole("heading", { name: "SO-001" });
-    await waitFor(() => expect(getList).toHaveBeenCalledWith(expect.objectContaining({ resource: "customers", filters: [{ field: "id", operator: "in", value: [customerId] }] })));
+    await screen.findByRole("heading", { name: "Granite" });
+    await waitFor(() => expect(getList).toHaveBeenCalledWith(expect.objectContaining({ resource: "product_locations", filters: [{ field: "id", operator: "in", value: [locationId] }] })));
     expect(getList.mock.calls.some(([args]) => args.resource === "auth_user")).toBe(false);
     expect(getOne).toHaveBeenCalledTimes(1);
   });
@@ -159,7 +168,7 @@ describe("schema-backed ERP module pages", () => {
   it("exposes create actions for inventory, orders, and returns", async () => {
     harness.resource = "products";
     mount("list");
-    expect(await screen.findByRole("button", { name: /Add product/i })).toBeTruthy();
+    expect(await screen.findByRole("link", { name: /Add product/i })).toBeTruthy();
     cleanup(); emotionCache.sheet.flush(); emotionCache = createCache({ key: "erp-test" });
     harness.resource = "orders";
     mount("list");
@@ -195,7 +204,7 @@ describe("schema-backed ERP module pages", () => {
     expect(screen.queryByRole("checkbox", { name: /^Active/i })).toBeNull();
     expect(screen.queryByRole("spinbutton", { name: "Stock" })).toBeNull();
     expect(screen.getAllByRole("spinbutton", { name: /Selling price/i })).toHaveLength(1);
-    expect(screen.getByText(/Opening stock, variants, suppliers and images require a verified server workflow/i)).toBeTruthy();
+    expect(screen.getByText(/Opening stock, variants and suppliers require a verified server workflow/i)).toBeTruthy();
   });
   it("renders typed master fields, excludes stock and locks organization on edit", async () => {
     harness.writable = true; mount("edit");
@@ -214,12 +223,13 @@ describe("schema-backed ERP module pages", () => {
     expect(update).not.toHaveBeenCalled();
   });
   it("does not notify success until fresh readback matches the submitted fields", async () => {
-    harness.resource = "customers"; harness.writable = true; mount("edit");
+    harness.resource = "warehouses"; harness.writable = true; custom.mockResolvedValue({ data: { ok: true, verified: true, record: row } }); mount("edit");
     fireEvent.change(await screen.findByDisplayValue("Granite"), { target: { value: "Quartz" } });
     fireEvent.click(screen.getByRole("button", { name: "Save record" }));
     await screen.findByText(/Save could not be confirmed/i);
-    expect(update).toHaveBeenCalledTimes(1);
-    expect(can).toHaveBeenCalledWith(expect.objectContaining({ action: "update", params: expect.objectContaining({ id: row.id, organization_id: row.organization_id, name: "Quartz" }) }));
+    expect(custom).toHaveBeenCalledTimes(1); expect(update).not.toHaveBeenCalled();
+    expect(custom.mock.calls[0][0].payload).toMatchObject({ resource: "warehouses", action: "update", request_id: row.id, organization_id: row.organization_id, values: { name: "Quartz" } });
+    expect(can).toHaveBeenCalledWith(expect.objectContaining({ resource: "function:hmg-contact-master-v1", action: "execute", params: expect.objectContaining({ metadata_resource: "warehouses", action: "update", id: row.id, organization_id: row.organization_id, name: "Quartz" }) }));
     expect(notify.mock.calls.some(call => call[0].type === "success")).toBe(false);
     expect(screen.getByRole("button", { name: "Check saved record" })).toBeTruthy();
   });
@@ -227,7 +237,7 @@ describe("schema-backed ERP module pages", () => {
   it("resets page one and clears stale row counts when search returns zero", async () => {
     getList.mockResolvedValue({ data: [row], total: 25 }); mount();
     await screen.findByText("Granite", { selector: "a" });
-    fireEvent.click(screen.getByTitle("Next Page"));
+    fireEvent.click(screen.getByRole("button", { name: "Go to next page" }));
     await waitFor(() => expect(getList).toHaveBeenLastCalledWith(expect.objectContaining({ pagination: expect.objectContaining({ currentPage: 2 }) })));
     getList.mockResolvedValue({ data: [], total: 0 });
     fireEvent.change(screen.getByLabelText(/Search products/i), { target: { value: "not found" } });
@@ -237,18 +247,16 @@ describe("schema-backed ERP module pages", () => {
     expect(screen.queryByText("25 products")).toBeNull();
   }, 30000);
   it("reports success only after a matching fresh readback", async () => {
-    harness.resource = "customers"; harness.writable = true;
-    getOne.mockImplementation(async () => ({ data: update.mock.calls.length ? { ...row, ...update.mock.calls.at(-1)?.[0].variables } : row }));
+    harness.resource = "warehouses"; harness.writable = true;
+    custom.mockImplementation(async ({ payload }) => ({ data: { ok: true, verified: true, record: { ...row, ...payload.values } } }));
     mount("edit");
     fireEvent.change(await screen.findByDisplayValue("Granite"), { target: { value: "Quartz" } });
     fireEvent.click(screen.getByRole("button", { name: "Save record" }));
-    await waitFor(() => expect(update).toHaveBeenCalledTimes(1));
-    await waitFor(() => expect(getOne.mock.calls.length).toBeGreaterThanOrEqual(2));
-    expect((await getOne.mock.results.at(-1)?.value).data).toMatchObject({ ...row, ...update.mock.calls.at(-1)?.[0].variables });
+    await waitFor(() => expect(custom).toHaveBeenCalledTimes(1));
+    expect(custom.mock.calls[0][0]).toMatchObject({ url: "hmg-contact-master-v1", payload: { resource: "warehouses", action: "update", request_id: row.id, organization_id: row.organization_id, values: { name: "Quartz" } } });
     expect(harness.readback[3]).toMatchObject(harness.readback[2] as Record<string, unknown>);
     await waitFor(() => expect(notify).toHaveBeenCalledWith(expect.objectContaining({ type: "success", message: "Record saved" })));
-    expect(getOne.mock.calls.length).toBeGreaterThanOrEqual(2);
-    expect(update).toHaveBeenCalledTimes(1);
+    expect(update).not.toHaveBeenCalled(); expect(create).not.toHaveBeenCalled();
   });
   it("saves products through the private command, not generic table writes", async () => {
     harness.command = true; harness.writable = true;
@@ -280,19 +288,20 @@ describe("schema-backed ERP module pages", () => {
     custom.mockResolvedValue({ data: { ok: true, verified: true, deleted: true, id: row.id } });
     mount("show");
     fireEvent.click(await screen.findByRole("button", { name: "Delete product" }));
-    expect(screen.getByRole("dialog")).toBeTruthy();
+    const dialog = within(screen.getByRole("dialog"));
     expect(custom).not.toHaveBeenCalled();
     can.mockResolvedValue({ can: false });
-    fireEvent.click(screen.getAllByRole("button", { name: "Delete product" }).at(-1)!);
-    expect(await screen.findByText(/No write was sent/)).toBeTruthy();
+    fireEvent.click(dialog.getByRole("button", { name: "Delete product" }));
+    expect(await dialog.findByText(/No write was sent/)).toBeTruthy();
     expect(custom).not.toHaveBeenCalled();
   });
   it("checks ambiguous deletion through an authorized fresh table read, never a second command", async () => {
     harness.command = true; harness.writable = true; harness.actions = ["delete"];
     custom.mockRejectedValue(new Error("timeout")); mount("show");
     fireEvent.click(await screen.findByRole("button", { name: "Delete product" }));
-    fireEvent.click(screen.getAllByRole("button", { name: "Delete product" }).at(-1)!);
-    const check = await screen.findByRole("button", { name: "Check saved record" });
+    const dialog = within(screen.getByRole("dialog"));
+    fireEvent.click(dialog.getByRole("button", { name: "Delete product" }));
+    const check = await dialog.findByRole("button", { name: "Check saved record" });
     getOne.mockResolvedValue({ data: { ...row, is_active: false, deleted_at: "2026-11-09T00:00:00Z" } });
     fireEvent.click(check);
     await waitFor(() => expect(notify).toHaveBeenCalledWith(expect.objectContaining({ type: "success", message: "Product removed" })));
@@ -320,55 +329,71 @@ describe("schema-backed ERP module pages", () => {
     expect(notify.mock.calls.some(call => call[0].type === "success")).toBe(false);
     if (failure === "denied") expect(getOne).toHaveBeenCalledTimes(callsBefore);
   });
-  it.each(["customers", "suppliers"])("logically deletes %s with fresh delete/update permission and verified readback", async name => {
+  it.each(["customers", "suppliers"])("deletes %s through the private command after fresh permission", async name => {
     harness.resource = name; harness.writable = true; harness.actions = ["delete"];
+    custom.mockResolvedValue({ data: { ok: true, verified: true, deleted: true, id: row.id } });
     mount("show");
     const label = `Delete ${name === "customers" ? "customer" : "supplier"}`;
     fireEvent.click(await screen.findByRole("button", { name: label }));
-    expect(update).not.toHaveBeenCalled();
-    getOne.mockImplementation(async () => ({ data: update.mock.calls.length ? { ...row, ...update.mock.calls.at(-1)?.[0].variables } : row }));
-    fireEvent.click(screen.getAllByRole("button", { name: label }).at(-1)!);
+    expect(custom).not.toHaveBeenCalled();
+    fireEvent.click(within(screen.getByRole("dialog")).getByRole("button", { name: label }));
     await waitFor(() => expect(notify).toHaveBeenCalledWith(expect.objectContaining({ type: "success", message: name === "customers" ? "Customer removed" : "Supplier removed" })));
-    expect(update).toHaveBeenCalledTimes(1);
-    const values = update.mock.calls[0][0].variables;
-    expect(values).toEqual({ is_active: false, deleted_at: expect.any(String) });
-    expect(Number.isFinite(Date.parse(values.deleted_at))).toBe(true);
+    expect(custom).toHaveBeenCalledTimes(1);
+    expect(custom.mock.calls[0][0]).toMatchObject({ url: "hmg-contact-master-v1", payload: { resource: name, action: "delete", request_id: row.id, organization_id: row.organization_id } });
     expect(can).toHaveBeenCalledWith(expect.objectContaining({ resource: `datatable:${name}`, action: "delete", params: row }));
-    expect(can).toHaveBeenCalledWith(expect.objectContaining({ resource: `datatable:${name}`, action: "update", params: expect.objectContaining({ id: row.id, organization_id: row.organization_id, ...values }) }));
+    expect(update).not.toHaveBeenCalled();
+  });
+  it("denies contact deletion without fresh permission", async () => {
+    harness.resource = "customers"; harness.writable = true; harness.actions = ["delete"];
+    mount("show");
+    fireEvent.click(await screen.findByRole("button", { name: "Delete customer" }));
+    can.mockResolvedValue({ can: false });
+    fireEvent.click(within(screen.getByRole("dialog")).getByRole("button", { name: "Delete customer" }));
+    expect(await screen.findByText(/No write was sent/)).toBeTruthy();
+    expect(update).not.toHaveBeenCalled();
     expect(custom).not.toHaveBeenCalled();
   });
-  it.each(["delete", "update"])("denies customer deletion without fresh %s permission", async action => {
+  it("keeps failed contact deletion uncertain and recovers read-only", async () => {
     harness.resource = "customers"; harness.writable = true; harness.actions = ["delete"];
-    mount("show");
+    custom.mockRejectedValue(new Error("timeout")); mount("show");
     fireEvent.click(await screen.findByRole("button", { name: "Delete customer" }));
-    can.mockImplementation(async (params: any) => ({ can: params.action !== action }));
-    fireEvent.click(screen.getAllByRole("button", { name: "Delete customer" }).at(-1)!);
-    expect(await screen.findByText(/No write was sent/)).toBeTruthy();
-    expect(update).not.toHaveBeenCalled(); expect(custom).not.toHaveBeenCalled();
-  });
-  it("never claims generic deletion from mismatched readback and recovers without rewriting", async () => {
-    harness.resource = "suppliers"; harness.writable = true; harness.actions = ["delete"];
-    mount("show");
-    fireEvent.click(await screen.findByRole("button", { name: "Delete supplier" }));
-    getOne.mockResolvedValue({ data: { ...row, organization_id: "other", is_active: false, deleted_at: "2026-11-09T00:00:00Z" } });
-    fireEvent.click(screen.getAllByRole("button", { name: "Delete supplier" }).at(-1)!);
-    const check = await screen.findByRole("button", { name: "Check saved record" });
+    const dialog = within(screen.getByRole("dialog"));
+    fireEvent.click(dialog.getByRole("button", { name: "Delete customer" }));
+    const check = await dialog.findByRole("button", { name: "Check saved record" });
     expect(notify.mock.calls.some(call => call[0].type === "success")).toBe(false);
-    expect(update).toHaveBeenCalledTimes(1);
-    getOne.mockResolvedValue({ data: { ...row, ...update.mock.calls[0][0].variables } });
+    getOne.mockResolvedValue({ data: { ...row, deleted_at: "2026-11-09T00:00:00Z", is_active: false } });
     fireEvent.click(check);
-    await waitFor(() => expect(notify).toHaveBeenCalledWith(expect.objectContaining({ type: "success", message: "Supplier removed" })));
-    expect(update).toHaveBeenCalledTimes(1); expect(custom).not.toHaveBeenCalled();
+    await waitFor(() => expect(notify).toHaveBeenCalledWith(expect.objectContaining({ type: "success", message: "Customer removed" })));
+    expect(custom).toHaveBeenCalledTimes(1); expect(update).not.toHaveBeenCalled();
   });
-  it("keeps a failed generic deletion uncertain and does not retry the write", async () => {
-    harness.resource = "customers"; harness.writable = true; harness.actions = ["delete"];
-    update.mockRejectedValue(new Error("timeout")); mount("show");
-    fireEvent.click(await screen.findByRole("button", { name: "Delete customer" }));
-    fireEvent.click(screen.getAllByRole("button", { name: "Delete customer" }).at(-1)!);
+  it.each([["products", "VALIDATION_ERROR"], ["customers", "VALIDATION_ERROR"], ["suppliers", "VALIDATION_ERROR"], ["customers", "DUPLICATE_CODE"], ["suppliers", "DUPLICATE_CODE"], ["customers", "VALIDATION_UNAVAILABLE"]])("allows correcting a definite %s command rejection %s", async (name, code) => {
+    harness.resource = name; harness.writable = true; harness.command = name === "products";
+    custom.mockResolvedValueOnce({ data: { ok: false, code } });
+    custom.mockImplementation(async ({ payload }) => ({ data: { ok: true, verified: true, record: { ...row, ...payload.values, selling_price: payload.values.price } } }));
+    mount("edit");
+    fireEvent.change(await screen.findByDisplayValue("Granite"), { target: { value: "Rejected draft" } });
+    fireEvent.click(screen.getByRole("button", { name: "Save record" }));
+    expect(await screen.findByText(code === "DUPLICATE_CODE" ? /code is already used/i : code === "VALIDATION_UNAVAILABLE" ? /Validation is temporarily unavailable/i : /server rejected this request without saving/i)).toBeTruthy();
+    expect(screen.queryByRole("button", { name: "Check saved record" })).toBeNull();
+    const field = screen.getByDisplayValue("Rejected draft");
+    expect(field.hasAttribute("disabled")).toBe(false);
+    fireEvent.change(field, { target: { value: "Corrected draft" } });
+    fireEvent.click(screen.getByRole("button", { name: "Save record" }));
+    await waitFor(() => expect(notify).toHaveBeenCalledWith(expect.objectContaining({ type: "success", message: "Record saved" })));
+    expect(custom).toHaveBeenCalledTimes(2);
+    expect(custom.mock.calls[1][0]).toMatchObject({ url: name === "products" ? "hmg-product-master-v1" : "hmg-contact-master-v1", payload: { action: "update", request_id: row.id, organization_id: row.organization_id, values: { name: "Corrected draft" }, ...(name === "products" ? {} : { resource: name }) } });
+    expect(create).not.toHaveBeenCalled(); expect(update).not.toHaveBeenCalled();
+  });
+  it.each(["products", "customers", "suppliers"])("keeps unknown %s command outcomes uncertain with readback only", async name => {
+    harness.resource = name; harness.writable = true; harness.command = name === "products";
+    custom.mockResolvedValue({ data: { ok: false, code: "WRITE_UNCONFIRMED" } }); mount("edit");
+    fireEvent.change(await screen.findByDisplayValue("Granite"), { target: { value: "Uncertain draft" } });
+    fireEvent.click(screen.getByRole("button", { name: "Save record" }));
     fireEvent.click(await screen.findByRole("button", { name: "Check saved record" }));
-    await waitFor(() => expect(can).toHaveBeenCalledWith(expect.objectContaining({ action: "read" })));
-    expect(update).toHaveBeenCalledTimes(1);
+    await waitFor(() => expect(custom).toHaveBeenCalledTimes(2));
+    expect(custom.mock.calls[1][0].payload).toEqual({ action: "readback", request_id: row.id, organization_id: row.organization_id, ...(name === "products" ? {} : { resource: name }) });
     expect(notify.mock.calls.some(call => call[0].type === "success")).toBe(false);
+    expect(create).not.toHaveBeenCalled(); expect(update).not.toHaveBeenCalled();
   });
   it.each(["customers", "suppliers"])("shows %s tombstones instead of editable forms", async name => {
     harness.resource = name; harness.writable = true;
@@ -385,11 +410,13 @@ describe("schema-backed ERP module pages", () => {
     expect(screen.queryByRole("button", { name: "Save record" })).toBeNull();
   });
   it("checks full proposed permissions before writing and denies without a mutation", async () => {
-    harness.resource = "customers"; harness.writable = true; can.mockResolvedValue({ can: false }); mount("edit");
+    harness.resource = "warehouses"; harness.writable = true; can.mockResolvedValue({ can: false }); mount("edit");
     fireEvent.change(await screen.findByDisplayValue("Granite"), { target: { value: "Quartz" } });
     fireEvent.click(screen.getByRole("button", { name: "Save record" }));
     expect(await screen.findByText(/No write was sent/)).toBeTruthy();
     expect(update).not.toHaveBeenCalled();
+    expect(custom).not.toHaveBeenCalled(); expect(create).not.toHaveBeenCalled();
+    expect(can).toHaveBeenCalledWith(expect.objectContaining({ resource: "function:hmg-contact-master-v1", action: "execute", params: expect.objectContaining({ metadata_resource: "warehouses", action: "update", id: row.id, organization_id: row.organization_id, name: "Quartz" }) }));
     expect(screen.queryByRole("button", { name: "Check saved record" })).toBeNull();
   });
 });
