@@ -3,6 +3,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { MemoryRouter } from "react-router";
 import { ErpWorkspaceHeader } from "./ErpWorkspaceHeader";
 vi.mock("./NotificationBell", () => ({ NotificationBell: () => <button aria-label="Notifications" /> }));
+vi.mock("./AppSwitcher", () => ({ AppSwitcher: () => <button aria-label="Apps" /> }));
 afterEach(cleanup);
 describe("ERP workspace header", () => {
   it("shows route context and account link without a demonstration label", () => {

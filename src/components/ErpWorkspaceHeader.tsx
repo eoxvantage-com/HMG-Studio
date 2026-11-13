@@ -6,6 +6,7 @@ import { ERP_MODULES } from "../erp/modules";
 import { ERP_OPEN_NAVIGATION } from "./sidenav/MuiSidenav";
 import { taruviTokens } from "../../themeOptions";
 import { NotificationBell } from "./NotificationBell";
+import { AppSwitcher } from "./AppSwitcher";
 
 export function ErpWorkspaceHeader() {
   const { pathname } = useLocation();
@@ -17,6 +18,7 @@ export function ErpWorkspaceHeader() {
       <Breadcrumbs separator="›" aria-label="Workspace breadcrumb"><MuiLink component={Link} to="/" underline="hover" color="text.secondary">Workspace</MuiLink><Typography variant="caption" color="text.primary">{label}</Typography></Breadcrumbs>
     </Stack>
     <Stack direction="row" alignItems="center" spacing={1}>
+      <AppSwitcher />
       <NotificationBell />
       <Tooltip title="Account preferences"><IconButton component={Link} to="/settings/account" aria-label="Account preferences"><AccountCircleRoundedIcon fontSize="small" /></IconButton></Tooltip>
     </Stack>
